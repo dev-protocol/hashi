@@ -6,5 +6,8 @@
   "repository": "https://github.com/dev-protocol/hashi",
   "author": "Dev Protocol",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@matteusan/sentro": "0.1.7"
+  }
 }
