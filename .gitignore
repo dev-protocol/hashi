@@ -1,0 +1,14 @@
+# Dependencies folder
+/node_modules
+/vendor
+
+# Map files
+*/**/*.css.map
+
+# Test files
+*/**/*.test.css
+*/**/*.test.css.map
+
+# Workstations
+/.idea
+/.vscode

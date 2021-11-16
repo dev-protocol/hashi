@@ -1,0 +1,24 @@
+{
+  "name": "@dev-protocol/hashi",
+  "version": "0.1.0",
+  "description": "Dev Protocol's design system implementation for the web.",
+  "main": "index.js",
+  "repository": "https://github.com/dev-protocol/hashi",
+  "author": "Dev Protocol",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build:ts": "webpack --config webpack.config.js",
+    "build:ts:watch": "webpack --config webpack.config.js --watch",
+    "build:sass": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.42.1",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
