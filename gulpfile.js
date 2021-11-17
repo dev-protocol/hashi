@@ -23,29 +23,42 @@
 
 const {src, dest, watch, series} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const purgecss = require('gulp-purgecss')
 
 function sassTaskDev() {
     return src(['src/**/*.scss', '!src/**/*.test.scss'], {sourcemaps: true})
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }).on('error', sass.logError))
         .pipe(dest('./src', {sourcemaps: '.'}));
 }
 
 function sassTaskTest() {
-    return src(['test/**/*.scss'], {sourcemaps: true})
-        .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./test', {sourcemaps: '.'}));
+    return src(['tests/**/*.scss'], {sourcemaps: true})
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }).on('error', sass.logError))
+        .pipe(dest('./tests', {sourcemaps: '.'}));
+}
+
+function purge() {
+    return src('tests/**/*.css')
+        .pipe(purgecss({
+            content: ['tests/**/*.html']
+        }))
+        .pipe(dest('./tests'))
 }
 
 function watchTask() {
     watch(['src/**/*.scss', '!src/**/*.test.scss'], sassTaskDev());
-    watch(['test/**/*.scss'], sassTaskTest());
+    watch(['tests/**/*.scss'], sassTaskTest());
     // watch(['src/main.scss'], sassTaskProd());
     // watch('test/scripts/**/*.ts', tsTask());
 }
 
 exports.default = series(
-    sassTaskDev,
+    // sassTaskDev,
     sassTaskTest,
-    // sassTaskProd,
+    // purge,
     // watchTask
 );

@@ -1,0 +1,144 @@
+//
+//  Copyright (c) 2021 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+
+@use '../hs-core';
+@use 'button-base';
+@use 'sass:map';
+
+/// @access public
+$button-fill: '' !default;
+$button-ink: '' !default;
+$button-border: '' !default;
+$button-radius: '' !default;
+
+/// @access private
+$button-fill-default: '#{$button-fill}-400';
+$button-fill-hover: '#{$button-fill}-400';
+$button-fill-active: '#{$button-fill}-200';
+$button-fill-disabled: 'surface-600';
+$button-fill-alpha-hover: 'neutral-alpha-200';
+$button-fill-alpha-active: 'neutral-alpha-400';
+
+$button-ink-final: '#{$button-ink}-ink';
+$button-radius-final: 'radius-#{$button-radius}';
+
+/// @access private
+$button-border-default: '#{$button-fill}-400';
+$button-border-hover: '#{$button-fill}-400';
+$button-border-active: '#{$button-fill}-200';
+$button-border-disabled: 'surface-600';
+$button-border-alpha-hover: 'neutral-alpha-200';
+$button-border-alpha-active: 'neutral-alpha-400';
+
+/// @access public
+@mixin render() {
+    @include button-base.base() {
+        @include text();
+        @include outlined();
+        @include filled();
+    }
+}
+
+/// @access protected
+@mixin text {
+    background-color: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
+    color: hs-core.theme-key-create('button-ink', hs-core.theme-token-get($button-fill-default));
+    border: 1px solid hs-core.theme-key-create('button-border', rgba(0 0 0 / 0));
+    border-radius: hs-core.theme-key-create('button-radius', hs-core.theme-token-get($button-radius-final));
+    
+    &:hover,
+    &:focus {
+        @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-hover));
+        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-hover));
+    }
+    
+    &:active {
+        @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-active));
+        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-active));
+    }
+    
+    &:disabled {
+        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-disabled));
+    
+        &:hover,
+        &:active {
+            background: none;
+        }
+    }
+}
+
+/// @access protected
+@mixin outlined {
+    &.hs-button--outlined {
+        @include hs-core.theme-key-bind('button-fill', rgba(0 0 0 / 0));
+        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-default));
+        @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-default));
+    
+        &:hover,
+        &:focus {
+            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-hover));
+            @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-hover));
+            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-hover));
+        }
+    
+        &:active {
+            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-active));
+            @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-active));
+            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-active));
+        }
+    
+        &:disabled {
+            @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-disabled));
+            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-disabled));
+            
+            &:hover,
+            &:active {
+                background: none;
+            }
+        }
+    }
+}
+
+/// @access protected
+@mixin filled {
+    &.hs-button--filled {
+        @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-default));
+        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-ink-final));
+        @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-default));
+    
+        &:hover,
+        &:focus {
+            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-hover));
+            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-hover));
+        }
+    
+        &:active {
+            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-active));
+            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-active));
+        }
+    
+        &:disabled {
+            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-disabled));
+            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-disabled));
+        }
+    }
+}

@@ -19,9 +19,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-@use '~@matteusan/sentro' with ($prefix: 'hs', $context: 'theme');
+
+@use 'node_modules/@matteusan/sentro' with ($prefix: 'hs', $context: 'theme');
 
 $context: '' !default;
 
+@forward 'theme-init';
+@forward 'theme-setters';
 @forward 'theme-keys' as key-* with ($context: $context);
 @forward 'theme-tokens' as token-*;

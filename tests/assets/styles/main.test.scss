@@ -20,12 +20,13 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use '../../../src' as hashi;
+@use '../../../src/hs-button' with (
+    $button-fill: 'native-blue'
+);
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
+:root {
+    @include hashi.theme-init();
 }
 
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
+@include hs-button.render();

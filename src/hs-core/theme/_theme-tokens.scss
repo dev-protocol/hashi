@@ -20,7 +20,7 @@
 //  SOFTWARE.
 //
 
-@use '~@matteusan/sentro';
+@use 'node_modules/@matteusan/sentro';
 
 @function get($query) {
     @return sentro.token-get($query);

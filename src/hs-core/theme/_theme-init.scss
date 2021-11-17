@@ -20,12 +20,19 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use 'sass:map';
+@use '../support';
+@use '../tokens';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
+@use 'theme-tokens';
 
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
+@mixin init($custom-tokens: (), $clean: false) {
+    @if support.is-type('bool', $clean) {
+        @if $clean == true {
+            @include theme-tokens.config($custom-tokens);
+        } @else if $clean == false {
+            $_merged-theme: map.merge(tokens.$hs-tokens, $custom-tokens);
+            @include theme-tokens.config($_merged-theme);
+        }
+    }
 }

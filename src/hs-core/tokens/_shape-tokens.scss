@@ -20,12 +20,14 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
-
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
-
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
+$hs-shape-tokens: (
+    'radius': (
+        'xs': 0.3rem,
+        'sm': 0.5rem,
+        'md': 0.7rem,
+        'lg': 1rem,
+        'xl': 1.7rem,
+        'xxl': 2.3rem,
+        'pill': 700px // for pill shaped components
+    )
+)

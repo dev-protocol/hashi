@@ -20,12 +20,14 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use 'theme-tokens';
+@use '../support';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
+@use 'sass:map';
+@use 'sass:list';
 
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
+@mixin config(
+    $map: (),
+) {
+    @include theme-tokens.config($map);
 }

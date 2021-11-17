@@ -20,12 +20,21 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+// @use 'node_modules/@matteusan/sentro';
+@use 'sass:color';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
+@function color-split($color) {
+    @return (
+        '200': tint($color, 32%),
+        '400': $color,
+        '600': shade($color, 47%),
+    );
 }
 
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
+@function tint($color, $percent) {
+    @return color.adjust(color.mix(#fff, $color, $percent), $saturation: 11%);
+}
+
+@function shade($color, $percent) {
+    @return color.adjust(color.mix(#000, $color, $percent), $saturation: 11%);
 }

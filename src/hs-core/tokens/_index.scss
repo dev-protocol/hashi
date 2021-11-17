@@ -20,12 +20,18 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use 'color-tokens';
+@use 'shape-tokens';
+@use 'typography-tokens';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
+@use 'sass:map';
 
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
+$_shape-type: map.deep-merge(
+    shape-tokens.$hs-shape-tokens,
+    typography-tokens.$hs-type-tokens
+);
+
+$hs-tokens: map.deep-merge(
+    color-tokens.$hs-color-tokens,
+    $_shape-type
+);

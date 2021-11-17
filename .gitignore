@@ -2,6 +2,11 @@
 /node_modules
 /vendor
 
+# Compiled
+/dump
+/build
+/dist
+
 # Map files
 */**/*.css.map
 
@@ -12,3 +17,10 @@
 # Workstations
 /.idea
 /.vscode
+/dump/
+
+# On hold dirs
+/src/hs-core/color/
+/src/hs-core/shape/
+/src/hs-core/type/
+/src/hs-core/settings/

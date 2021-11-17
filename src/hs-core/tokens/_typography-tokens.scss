@@ -19,13 +19,50 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-
 @use 'node_modules/@matteusan/sentro';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
+$h1: sentro.px-to-rem(36px);
+$h2: sentro.px-to-rem(29px);
+$h3: sentro.px-to-rem(13px);
+$h4: sentro.px-to-rem(18px);
+$body: sentro.px-to-rem(14px);
+$icon: sentro.px-to-rem(24px);
+$button: sentro.px-to-rem(16px);
+$small: sentro.px-to-rem(12px);
 
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
+$hs-type-tokens: (
+    'size': (
+        // General type tokens
+        'h1': $h1,
+        'h2': $h2,
+        'h3': $h3,
+        'h4': $h4,
+        'body': $body,
+        // Special type tokens
+        'icon': $icon,
+        'button': $button,
+        'small': $small,
+    ),
+    'weight': (
+        'h1': bold,
+        'h2': bold,
+        'h3': bold,
+        'h4': bold,
+        'body': normal,
+        // == //
+        'icon': normal,
+        'button': bold,
+        'small': normal,
+    ),
+    'line-height': (
+        'h1': $h1 + sentro.px-to-rem(13px),
+        'h2': $h2 + sentro.px-to-rem(10px),
+        'h3': $h3 + sentro.px-to-rem(8px),
+        'h4': $h4 + sentro.px-to-rem(6px),
+        'body': $body + sentro.px-to-rem(5px),
+        // == //
+        'icon': $icon + sentro.px-to-rem(5px),
+        'button': $button + sentro.px-to-rem(5px),
+        'small': $small + sentro.px-to-rem(4px),
+    )
+);

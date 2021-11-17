@@ -20,12 +20,31 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use '../support';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
-
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
+$hs-color-tokens: (
+    'surface': (
+        '200': #f1f1f1,
+        '400': #c4c4c4,
+        '600': #9a9a9a,
+        'ink': #000,
+    ),
+    'neutral': (
+        '200': #272727,
+        '400': #171717,
+        '600': #000000,
+        'ink': #fff,
+    ),
+    'neutral-alpha': (
+        '200': rgba(#000, 10%),
+        '400': rgba(#000, 13%),
+        '600': rgba(#000, 15%)
+    ),
+    'scarlet': support.color-split(#ff3815),
+    'plox': support.color-split(#d500e6),
+    'native-blue': support.color-split(#5b8bf5),
+    'bright-cyan': support.color-split(#00d0fd),
+    'success': support.color-split(#1fed33),
+    'warning': support.color-split(#ffe600),
+    'danger': support.color-split(#ff3815)
+);
