@@ -23,122 +23,53 @@
 @use '../hs-core';
 @use 'button-base';
 @use 'sass:map';
+@use 'sass:list';
 
-/// @access public
-$button-fill: '' !default;
-$button-ink: '' !default;
-$button-border: '' !default;
-$button-radius: '' !default;
+$_init-settings: (
+    variants: 'all'
+);
 
-/// @access private
-$button-fill-default: '#{$button-fill}-400';
-$button-fill-hover: '#{$button-fill}-400';
-$button-fill-active: '#{$button-fill}-200';
-$button-fill-disabled: 'surface-600';
-$button-fill-alpha-hover: 'neutral-alpha-200';
-$button-fill-alpha-active: 'neutral-alpha-400';
+$c-presets: hs-core.$color-presets;
 
-$button-ink-final: '#{$button-ink}-ink';
-$button-radius-final: 'radius-#{$button-radius}';
-
-/// @access private
-$button-border-default: '#{$button-fill}-400';
-$button-border-hover: '#{$button-fill}-400';
-$button-border-active: '#{$button-fill}-200';
-$button-border-disabled: 'surface-600';
-$button-border-alpha-hover: 'neutral-alpha-200';
-$button-border-alpha-active: 'neutral-alpha-400';
-
-/// @access public
-@mixin render() {
-    @include button-base.base() {
-        @include text();
-        @include outlined();
-        @include filled();
-    }
-}
-
-/// @access protected
-@mixin text {
-    background-color: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
-    color: hs-core.theme-key-create('button-ink', hs-core.theme-token-get($button-fill-default));
-    border: 1px solid hs-core.theme-key-create('button-border', rgba(0 0 0 / 0));
-    border-radius: hs-core.theme-key-create('button-radius', hs-core.theme-token-get($button-radius-final));
-    
-    &:hover,
-    &:focus {
-        @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-hover));
-        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-hover));
-    }
-    
-    &:active {
-        @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-active));
-        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-active));
-    }
-    
-    &:disabled {
-        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-disabled));
-    
-        &:hover,
-        &:active {
-            background: none;
-        }
-    }
-}
-
-/// @access protected
-@mixin outlined {
-    &.hs-button--outlined {
-        @include hs-core.theme-key-bind('button-fill', rgba(0 0 0 / 0));
-        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-default));
-        @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-default));
-    
-        &:hover,
-        &:focus {
-            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-hover));
-            @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-hover));
-            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-hover));
-        }
-    
-        &:active {
-            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-alpha-active));
-            @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-active));
-            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-active));
-        }
-    
-        &:disabled {
-            @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-fill-disabled));
-            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-disabled));
-            
-            &:hover,
-            &:active {
-                background: none;
+@mixin render($settings: ()) {
+    @include button-base.init() {
+        $_merged-settings: map.merge($_init-settings, $settings);
+        $variants: map.get($_merged-settings, 'variants');
+        
+        @if list.index($variants, 'text') or list.index($variants, 'all') {
+            @each $preset, $props in $c-presets {
+                &.#{$preset} {
+                    @include hs-core.color-override('button', $preset, 'text', true);
+                }
             }
         }
-    }
-}
-
-/// @access protected
-@mixin filled {
-    &.hs-button--filled {
-        @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-default));
-        @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get($button-ink-final));
-        @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-default));
     
-        &:hover,
-        &:focus {
-            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-hover));
-            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-hover));
+        &.hs-button--outlined {
+            background: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
+            color: hs-core.theme-key-create('button-ink', #fff);
+            border: 1px solid hs-core.theme-key-create('button-border', #000);
+    
+            @if list.index($variants, 'outlined') or list.index($variants, 'all') {
+                @each $preset, $props in $c-presets {
+                    &.#{$preset} {
+                        @include hs-core.color-override('button', $preset, 'outlined', true);
+                    }
+                }
+            }
         }
     
-        &:active {
-            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-active));
-            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-active));
-        }
+        &.hs-button--filled {
+            background: hs-core.theme-key-create('button-fill', #000);
+            color: hs-core.theme-key-create('button-ink', #fff);
+            border: 1px solid hs-core.theme-key-create('button-border', #000);
     
-        &:disabled {
-            @include hs-core.theme-key-bind('button-fill', hs-core.theme-token-get($button-fill-disabled));
-            @include hs-core.theme-key-bind('button-border', hs-core.theme-token-get($button-border-disabled));
+            @if list.index($variants, 'filled') or list.index($variants, 'all') {
+                @each $preset, $props in $c-presets {
+                    &.#{$preset} {
+                        @include hs-core.color-override('button', $preset, 'filled', true);
+                    }
+                }
+            }
         }
     }
 }

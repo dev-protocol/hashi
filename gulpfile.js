@@ -26,7 +26,15 @@ const sass = require('gulp-sass')(require('sass'));
 const purgecss = require('gulp-purgecss')
 
 function sassTaskDev() {
-    return src(['src/**/*.scss', '!src/**/*.test.scss'], {sourcemaps: true})
+    return src(['src/**/*.scss', 'src/**/*.test.scss', '!src/**/main.scss'], {sourcemaps: true})
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }).on('error', sass.logError))
+        .pipe(dest('./src', {sourcemaps: '.'}));
+}
+
+function sassTaskProd() {
+    return src(['src/**/main.scss'], {sourcemaps: true})
         .pipe(sass({
             includePaths: ['node_modules']
         }).on('error', sass.logError))
@@ -57,7 +65,8 @@ function watchTask() {
 }
 
 exports.default = series(
-    // sassTaskDev,
+    sassTaskDev,
+    // sassTaskProd,
     sassTaskTest,
     // purge,
     // watchTask

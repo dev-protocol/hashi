@@ -20,7 +20,7 @@
 /dump/
 
 # On hold dirs
-/src/hs-core/color/
+# /src/hs-core/color/
 /src/hs-core/shape/
 /src/hs-core/type/
 /src/hs-core/settings/

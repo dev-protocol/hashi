@@ -1,0 +1,174 @@
+//
+//  Copyright (c) 2021 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+
+@use '../theme';
+@use 'color-presets';
+@use 'color-validators';
+
+@use 'sass:map';
+
+$_presets: color-presets.$presets;
+
+@mixin override($component-name, $color-theme, $style, $stateful: false) {
+    @if $style == text {
+        @include _text-override($component-name, $color-theme, $stateful);
+    }
+    
+    @if $style == outlined {
+        @include _outlined-override($component-name, $color-theme, $stateful);
+    }
+    
+    @if $style == filled {
+        @include _filled-override($component-name, $color-theme, $stateful);
+    }
+}
+
+@mixin _text-override($component-name, $color-theme, $stateful: false) {
+    $fill: map.get($_presets, $color-theme, 'fill');
+    
+    @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
+    @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+    @include theme.key-bind('#{$component-name}-border', rgba(0 0 0 / 0));
+    
+    @if $stateful == true {
+        &:hover {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-200'));
+        }
+    
+        &:active {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-400'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-200'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-400'));
+        }
+    
+        &:focus {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-300'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-300'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-300'));
+        }
+    
+        &:disabled {
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled'));
+            
+            &:hover {
+                background-color: rgba(0 0 0 / 0);
+                border: 1px solid rgba(0 0 0 / 0);
+            }
+        }
+    }
+}
+
+@mixin _outlined-override($component-name, $color-theme, $stateful: false) {
+    $fill: map.get($_presets, $color-theme, 'fill');
+    $ink: map.get($_presets, $color-theme, 'ink');
+    $border: map.get($_presets, $color-theme, 'border');
+    
+    @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
+    @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+    @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+    
+    @if $stateful == true {
+        &:hover {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-400'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+        }
+        
+        &:active {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-200'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-200'));
+        }
+        
+        &:focus {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-300'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-300'));
+        }
+        
+        &:disabled {
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled'));
+            
+            &:hover {
+                background-color: rgba(0 0 0 / 0) !important;
+                border: 1px solid theme.token-get('disabled') !important;
+            }
+        }
+    }
+}
+
+@mixin _filled-override($component-name, $color-theme, $stateful: false) {
+    $fill: map.get($_presets, $color-theme, 'fill');
+    $ink: map.get($_presets, $color-theme, 'ink');
+    $border: map.get($_presets, $color-theme, 'border');
+    
+    @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-400'));
+    @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
+    @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+    
+    @if $stateful == true {
+        &:hover {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-400'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+        }
+        
+        &:active {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-200'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-200'));
+        }
+        
+        &:focus {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-300'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-300'));
+        }
+        
+        &:disabled {
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('disabled'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled'));
+            
+            &:hover {
+                background-color: theme.token-get('disabled');
+            }
+        }
+    }
+}
+
+@function _get-preset($query, $prop, $state: 'default') {
+    
+    @if $prop == ink and $state == active {
+        @return theme.token-get('#{map.get($_presets, $query, $prop)}');
+    }
+    
+    @if $prop == ink {
+        @return theme.token-get('#{map.get($_presets, $query, $prop)}');
+    }
+    
+    @if $state == active {
+        @return theme.token-get('#{map.get($_presets, $query, $prop)}-200');
+    }
+    
+    @return theme.token-get('#{map.get($_presets, $query, $prop)}-400');
+}

@@ -20,7 +20,5 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+@forward 'color-setters';
+@forward 'color-presets';

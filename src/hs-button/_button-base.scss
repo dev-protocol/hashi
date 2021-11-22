@@ -23,8 +23,7 @@
 @use '../hs-core';
 @use 'sass:map';
 
-/// @access protected
-@mixin base() {
+@mixin init() {
 	.hs-button {
 		width: 100%;
 		min-width: 62px;
@@ -37,11 +36,17 @@
 		padding: 0.6rem 0.8rem;
 		
 		user-select: none;
-		line-height: inherit;
 		overflow: visible;
 		vertical-align: middle;
 		box-sizing: border-box;
 		cursor: pointer;
+		
+		border-radius: hs-core.theme-token-get('radius-xs');
+		
+		// Default fallback
+		background: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
+		color: hs-core.theme-key-create('button-ink', #000);
+		border: 1px solid hs-core.theme-key-create('button-border', rgba(0 0 0 / 0));
 		
 		@include hs-core.tools-prefix(transition, all 0.1s ease);
 		
@@ -66,8 +71,9 @@
 
 		.hs-button__label {
 			color: hs-core.theme-key-create('button-label-ink', hs-core.theme-key-get('button-ink'));
-			font-size: hs-core.theme-key-create('button-label-size', hs-core.tools-to-rem(16px));
-			font-weight: 700;
+			font-size: hs-core.theme-key-create('button-label-size', hs-core.theme-token-get('size-button'));
+			font-weight: hs-core.theme-key-create('button-weight', hs-core.theme-token-get('weight-button'));
+			line-height: hs-core.theme-key-create('button-line-height', hs-core.theme-token-get('line-height-button'));
 		}
 	}
 }

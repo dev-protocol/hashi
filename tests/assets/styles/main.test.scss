@@ -21,12 +21,27 @@
 //
 
 @use '../../../src' as hashi;
-@use '../../../src/hs-button' with (
-    $button-fill: 'native-blue'
-);
+@use '../../../src/hs-button';
+
+* {
+    color: inherit;
+}
 
 :root {
     @include hashi.theme-init();
+}
+
+body {
+    background-color: #fafafa;
+    color: #000
+}
+
+section {
+    margin: 0.8rem 0;
+    
+    > * + * {
+        margin-left: 0.5rem;
+    }
 }
 
 @include hs-button.render();

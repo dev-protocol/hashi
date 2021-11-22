@@ -20,7 +20,4 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+@use '../button-styles';

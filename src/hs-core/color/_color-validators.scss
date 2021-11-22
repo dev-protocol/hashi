@@ -20,7 +20,29 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+@use 'sass:map';
+@use 'sass:list';
+
+@use '../support';
+
+$_property-ref: (
+    'fill': background-color,
+    'ink': color,
+    'border': border-color
+);
+
+$_validator-ref: map.keys($_property-ref);
+
+@function is-color-prop($map) {
+    @if support.is-type('map', $map) {
+        $props: map.keys($map);
+    
+        @each $prop in $props {
+            @if not list.index($_validator-ref, $prop) {
+                @error "Invalid prop: #{$prop}! Please select from the following valid properties: #{$_validator-ref}.";
+            } @else {
+                @return true;
+            }
+        }
+    }
+}

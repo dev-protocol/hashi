@@ -20,15 +20,5 @@
 //  SOFTWARE.
 //
 
-$button-fill: 'neutral' !default;
-$button-ink: 'neutral' !default;
-$button-border: $button-fill !default;
-$button-radius: 'xs' !default;
-
-@use '../hs-core';
-@forward 'button-styles' with (
-    $button-fill: $button-fill,
-    $button-ink: $button-ink,
-    $button-border: $button-border,
-    $button-radius: $button-radius
-);
+@forward 'button-base';
+@forward 'button-styles';

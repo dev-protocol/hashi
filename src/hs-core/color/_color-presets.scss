@@ -20,7 +20,55 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+$presets: (
+    // 'gradient': (
+    //     fill: 'gradient',
+    //     ink: 'gradient-ink',
+    //     border: 'gradient'
+    // ),
+    'surface': (
+        fill: 'surface',
+        ink: 'surface-ink',
+        border: 'surface'
+    ),
+    'neutral': (
+        fill: 'neutral',
+        ink: 'neutral-ink',
+        border: 'neutral'
+    ),
+    'scarlet': (
+        fill: 'scarlet',
+        ink: 'scarlet-ink',
+        border: 'scarlet'
+    ),
+    'plox': (
+        fill: 'plox',
+        ink: 'plox-ink',
+        border: 'plox'
+    ),
+    'native-blue': (
+        fill: 'native-blue',
+        ink: 'native-blue-ink',
+        border: 'native-blue'
+    ),
+    'bright-cyan': (
+        fill: 'bright-cyan',
+        ink: 'bright-cyan-ink',
+        border: 'bright-cyan'
+    ),
+    'success': (
+        fill: 'success',
+        ink: 'success-ink',
+        border: 'success'
+    ),
+    'warning': (
+        fill: 'warning',
+        ink: 'warning-ink',
+        border: 'warning'
+    ),
+    'danger': (
+        fill: 'danger',
+        ink: 'danger-ink',
+        border: 'danger'
+    )
+);
