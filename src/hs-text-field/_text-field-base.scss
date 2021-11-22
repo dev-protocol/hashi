@@ -20,5 +20,8 @@
 //  SOFTWARE.
 //
 
-// @forward 'button-base';
-@forward 'button-styles';
+@use '../hs-core';
+
+@mixin init() {
+    @content;
+}
