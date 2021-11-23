@@ -31,15 +31,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/styles/main.test.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"/>
 </head>
 <body>
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<h4>Header 4</h4>
-<i>Icon</i>
-<p>Body</p>
-<p>Button</p>
 
 <section id="text-buttons">
     <button class="hs-button scarlet" role="button">
@@ -132,8 +126,23 @@
 </section>
 
 <label class="hs-text-field">
-    Hello
+    <span class="hs-text-field__label">Hello</span>
     <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
+    <span class="hs-text-field__input__icon"></span>
+    <span class="hs-text-field__helper">Helper text</span>
+</label>
+
+<label class="hs-text-field">
+    <span class="hs-text-field__label">Hello</span>
+    <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
+    <span class="hs-text-field__input__icon"></span>
+    <span class="hs-text-field__helper">Helper text</span>
+</label>
+
+<label class="hs-text-field danger">
+    <span class="hs-text-field__label">Hello</span>
+    <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
+    <span class="hs-text-field__input__icon"></span>
     <span class="hs-text-field__helper">Helper text</span>
 </label>
 

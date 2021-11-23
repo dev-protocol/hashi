@@ -23,5 +23,41 @@
 @use '../hs-core';
 
 @mixin init() {
-    @content;
+    .hs-text-field {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        margin-bottom: 0.8rem;
+        
+        @include hs-core.tools-prefix(transition, all 0.1s ease);
+    
+        @content;
+        
+        .hs-text-field__label {
+            color: hs-core.theme-key-create('text-field-label-ink', hs-core.theme-token-get('surface-ink'));
+            font-size: hs-core.theme-key-create('text-field-label-size', hs-core.theme-token-get('size-body'));
+            line-height: hs-core.theme-key-create('text-field-label-line-height', hs-core.theme-token-get('line-height-body'));
+        }
+        
+        .hs-text-field__input {
+            width: 100%;
+            padding: 0.4rem 0.075rem;
+            background: hs-core.theme-key-create('text-field-fill', rgba(0 0 0 / 0));
+            color: hs-core.theme-key-create('text-field-ink', hs-core.theme-token-get('surface-ink'));
+            border: none;
+            border-bottom: 2px solid hs-core.theme-key-create('text-field-border', hs-core.theme-token-get('neutral-600'));
+            font-size: hs-core.theme-key-create('text-field-input-size', hs-core.tools-to-rem(16px));
+            line-height: hs-core.theme-key-create('text-field-input-line-height', hs-core.theme-token-get('line-height-button'));
+            resize: none;
+            outline: none;
+            @include hs-core.tools-prefix(transition, all 0.1s ease);
+        }
+        
+        .hs-text-field__helper {
+            margin-top: 0.2rem;
+            color: hs-core.theme-key-create('text-field-helper-ink', hs-core.theme-token-get('surface-ink'));
+            font-size: hs-core.theme-key-create('text-field-helper-size', hs-core.theme-token-get('size-small'));
+            line-height: hs-core.theme-key-create('text-field-helper-line-height', hs-core.theme-token-get('line-height-small'));
+        }
+    }
 }

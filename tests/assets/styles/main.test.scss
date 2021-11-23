@@ -22,6 +22,7 @@
 
 @use '../../../src' as hashi;
 @use '../../../src/hs-button';
+@use '../../../src/hs-text-field';
 
 * {
     color: inherit;
@@ -45,3 +46,4 @@ section {
 }
 
 @include hs-button.render();
+@include hs-text-field.render();

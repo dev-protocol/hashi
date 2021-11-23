@@ -63,10 +63,10 @@
 
 		.hs-button__icon {
 			color: hs-core.theme-key-create('button-icon-ink', inherit);
-			font-size: hs-core.theme-key-create('button-icon-size', hs-core.tools-to-rem(20px));
+			font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
 			/* @fallback */
-			width: hs-core.theme-key-create('button-icon-size', hs-core.tools-to-rem(20px));
-			height: hs-core.theme-key-create('button-icon-size', hs-core.tools-to-rem(20px));
+			width: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
+			height: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
 		}
 
 		.hs-button__label {

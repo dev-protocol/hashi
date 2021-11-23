@@ -1,4 +1,4 @@
-//
+/*
 //  Copyright (c) 2021 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,26 +18,8 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+*/
 
-@use '../hs-core';
-@use 'text-field-base';
+@use 'text-field-styles' as hs-text-field;
 
-@mixin render() {
-    @include text-field-base.init() {
-        &.danger {
-            @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('text-field-helper-ink', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('text-field-label-ink', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
-            
-            .hs-text-field__input:focus-within {
-                @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
-            }
-        }
-        
-        .hs-text-field__input:focus-within {
-            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('native-blue-400'));
-        }
-    }
-}
+@include hs-text-field.render();

@@ -66,7 +66,7 @@ function watchTask() {
 
 exports.default = series(
     sassTaskDev,
-    // sassTaskProd,
+    sassTaskProd,
     sassTaskTest,
     // purge,
     // watchTask
