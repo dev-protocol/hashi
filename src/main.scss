@@ -22,12 +22,17 @@
 
 @use 'hs-core';
 
+@use 'hs-init' as hashi;
 @use 'hs-button';
+@use 'hs-button-group';
+@use 'hs-card';
+@use 'hs-select-field';
 @use 'hs-text-field';
 
-:root {
-    @include hs-core.theme-init();
+@include hashi.init() {
+    @include hs-button.render();
+    @include hs-button-group.render();
+    @include hs-card.render();
+    @include hs-select-field.render();
+    @include hs-text-field.render();
 }
-
-@include hs-button.render();
-@include hs-text-field.render();

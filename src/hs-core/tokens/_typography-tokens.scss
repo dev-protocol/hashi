@@ -23,7 +23,7 @@
 
 $h1: sentro.px-to-rem(36px);
 $h2: sentro.px-to-rem(29px);
-$h3: sentro.px-to-rem(13px);
+$h3: sentro.px-to-rem(23px);
 $h4: sentro.px-to-rem(18px);
 $body: sentro.px-to-rem(14px);
 $icon: sentro.px-to-rem(24px);
@@ -31,6 +31,10 @@ $button: sentro.px-to-rem(16px);
 $small: sentro.px-to-rem(12px);
 
 $hs-type-tokens: (
+    'family': (
+        'global': 'Roboto Mono',
+        'header': 'IBM Plex Mono',
+    ),
     'size': (
         // General type tokens
         'h1': $h1,
@@ -44,15 +48,15 @@ $hs-type-tokens: (
         'small': $small,
     ),
     'weight': (
-        'h1': bold,
-        'h2': bold,
-        'h3': bold,
-        'h4': bold,
-        'body': normal,
+        'h1': 700,
+        'h2': 700,
+        'h3': 700,
+        'h4': 700,
+        'body': 400,
         // == //
-        'icon': normal,
-        'button': bold,
-        'small': normal,
+        'icon': 400,
+        'button': 700,
+        'small': 400,
     ),
     'line-height': (
         'h1': $h1 + sentro.px-to-rem(13px),

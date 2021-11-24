@@ -20,16 +20,26 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use '../hs-core';
+@use 'select-field-base';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
-
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
-
-@mixin elevation($number, $color: #000, $opacity-boost: 0.075) {
-    @include sentro.elevation-apply($number, $color, $opacity-boost);
+@mixin render() {
+    @include select-field-base.init() {
+        &.danger {
+            @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
+            @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
+            
+            .hs-select-field__input {
+                &:focus-within {
+                    @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
+                }
+            }
+        }
+        
+        .hs-select-field__input {
+            &:focus-within {
+                @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('native-blue-400'));
+            }
+        }
+    }
 }

@@ -21,29 +21,20 @@
 //
 
 @use '../../../src' as hashi;
-@use '../../../src/hs-button';
-@use '../../../src/hs-text-field';
 
-* {
-    color: inherit;
-}
-
-:root {
-    @include hashi.theme-init();
-}
-
-body {
-    background-color: #fafafa;
-    color: #000
-}
-
-section {
-    margin: 0.8rem 0;
+@include hashi.init() {
     
-    > * + * {
-        margin-left: 0.5rem;
+    section {
+        margin: 0.8rem 0;
+        
+        > * + * {
+            margin-left: 0.5rem;
+        }
     }
+    
+    @include hashi.button-render();
+    @include hashi.button-group-render();
+    @include hashi.card-render();
+    @include hashi.text-field-render();
+    @include hashi.select-field-render();
 }
-
-@include hs-button.render();
-@include hs-text-field.render();

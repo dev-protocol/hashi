@@ -26,7 +26,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: var(--hs-button-padding, 0.6rem 0.8rem);
+  padding: var(--hs-button-padding, 0.5rem 0.7rem);
   user-select: none;
   overflow: visible;
   vertical-align: middle;
@@ -284,7 +284,7 @@
 }
 .hs-button.hs-button--outlined {
   background: var(--hs-button-fill, rgba(0, 0, 0, 0));
-  color: var(--hs-button-ink, #fff);
+  color: var(--hs-button-ink, #000);
   border: 1px solid var(--hs-button-border, #000);
 }
 .hs-button.hs-button--outlined.surface {

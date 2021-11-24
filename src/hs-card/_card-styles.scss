@@ -20,16 +20,13 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
+@use 'card-base';
+@use '../hs-core';
 
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
-
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
-
-@mixin elevation($number, $color: #000, $opacity-boost: 0.075) {
-    @include sentro.elevation-apply($number, $color, $opacity-boost);
+@mixin render() {
+    @include card-base.init() {
+        @include hs-core.theme-key-bind('card-fill', hs-core.theme-token-get('surface-300'));
+        @include hs-core.theme-key-bind('card-ink', hs-core.theme-token-get('surface-ink'));
+        @include hs-core.theme-key-bind('card-border', hs-core.theme-token-get('surface-300'));
+    }
 }

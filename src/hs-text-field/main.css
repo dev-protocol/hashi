@@ -24,6 +24,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 0.8rem;
+  box-sizing: border-box;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }

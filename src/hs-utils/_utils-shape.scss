@@ -20,16 +20,3 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@matteusan/sentro';
-
-@function to-rem($px) {
-    @return sentro.px-to-rem($px);
-}
-
-@mixin prefix($property, $value) {
-    @include sentro.prefix($property, $value);
-}
-
-@mixin elevation($number, $color: #000, $opacity-boost: 0.075) {
-    @include sentro.elevation-apply($number, $color, $opacity-boost);
-}

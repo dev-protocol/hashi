@@ -46,7 +46,7 @@ $c-presets: hs-core.$color-presets;
     
         &.hs-button--outlined {
             background: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
-            color: hs-core.theme-key-create('button-ink', #fff);
+            color: hs-core.theme-key-create('button-ink', #000);
             border: 1px solid hs-core.theme-key-create('button-border', #000);
     
             @if list.index($variants, 'outlined') or list.index($variants, 'all') {
