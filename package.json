@@ -1,5 +1,5 @@
 {
-  "name": "@dev-protocol/hashi",
+  "name": "@devprotocol/hashi-web",
   "version": "0.1.0",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "index.js",

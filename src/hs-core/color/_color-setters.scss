@@ -63,9 +63,9 @@ $_presets: color-presets.$presets;
         }
     
         &:focus {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-300'));
-            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-300'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-300'));
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-200'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-200'));
         }
     
         &:disabled {
@@ -102,9 +102,9 @@ $_presets: color-presets.$presets;
         }
         
         &:focus {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-300'));
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-200'));
             @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-300'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-200'));
         }
         
         &:disabled {
@@ -140,8 +140,8 @@ $_presets: color-presets.$presets;
         }
         
         &:focus {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-300'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-300'));
+            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-200'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-200'));
         }
         
         &:disabled {

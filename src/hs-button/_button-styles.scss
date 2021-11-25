@@ -26,7 +26,8 @@
 @use 'sass:list';
 
 $_init-settings: (
-    variants: 'all'
+    variants: 'all',
+    color-presets: 'all'
 );
 
 $c-presets: hs-core.$color-presets;
@@ -35,11 +36,20 @@ $c-presets: hs-core.$color-presets;
     @include button-base.init() {
         $_merged-settings: map.merge($_init-settings, $settings);
         $variants: map.get($_merged-settings, 'variants');
+        $color-presets: map.get($_merged-settings, 'color-presets');
         
         @if list.index($variants, 'text') or list.index($variants, 'all') {
-            @each $preset, $props in $c-presets {
-                &.#{$preset} {
-                    @include hs-core.color-override('button', $preset, 'text', true);
+            @if $color-presets == 'all' {
+                @each $preset, $props in $c-presets {
+                    &.#{$preset} {
+                        @include hs-core.color-override('button', $preset, 'text', true);
+                    }
+                }
+            } @else {
+                @each $preset, $props in $color-presets {
+                    &.#{$preset} {
+                        @include hs-core.color-override('button', $preset, 'text', true);
+                    }
                 }
             }
         }
@@ -50,9 +60,17 @@ $c-presets: hs-core.$color-presets;
             border: 1px solid hs-core.theme-key-create('button-border', #000);
     
             @if list.index($variants, 'outlined') or list.index($variants, 'all') {
-                @each $preset, $props in $c-presets {
-                    &.#{$preset} {
-                        @include hs-core.color-override('button', $preset, 'outlined', true);
+                @if $color-presets == 'all' {
+                    @each $preset, $props in $c-presets {
+                        &.#{$preset} {
+                            @include hs-core.color-override('button', $preset, 'outlined', true);
+                        }
+                    }
+                } @else {
+                    @each $preset, $props in $color-presets {
+                        &.#{$preset} {
+                            @include hs-core.color-override('button', $preset, 'outlined', true);
+                        }
                     }
                 }
             }
@@ -64,9 +82,17 @@ $c-presets: hs-core.$color-presets;
             border: 1px solid hs-core.theme-key-create('button-border', #000);
     
             @if list.index($variants, 'filled') or list.index($variants, 'all') {
-                @each $preset, $props in $c-presets {
-                    &.#{$preset} {
-                        @include hs-core.color-override('button', $preset, 'filled', true);
+                @if $color-presets == 'all' {
+                    @each $preset, $props in $c-presets {
+                        &.#{$preset} {
+                            @include hs-core.color-override('button', $preset, 'filled', true);
+                        }
+                    }
+                } @else {
+                    @each $preset, $props in $color-presets {
+                        &.#{$preset} {
+                            @include hs-core.color-override('button', $preset, 'filled', true);
+                        }
                     }
                 }
             }

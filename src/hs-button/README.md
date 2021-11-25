@@ -1,11 +1,10 @@
 # HSButton Component
-- This component uses [box-icons](https://boxicons.com/) icon-set.
-# Usage
+## Usage
 #### Browser Support
-| Edge | Firefox | Chrome | Safari | Opera |
-|---|---|---|---|---|
-| ^16 | ^31 | ^49 | ^10 | ^36 |
-## HTML
+| IE | Edge | Firefox | Chrome | Safari | Opera |
+|---|---|---|---|---|---|
+| ❌ | ^16 | ^31 | ^49 | ^10 | ^36 |
+### HTML
 ```html
 <button class="hs-button" role="button">
     <i class="hs-button__icon" aria-hidden="true"></i>
@@ -13,15 +12,15 @@
 </button>
 ```
 
-## SCSS/CSS
+### SCSS/CSS
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-button';
 
 @include hs-button.render();
 ```
 
-# API
-## CSS Classes
+## API
+### CSS Classes
 These are used to extend and modify the styles of a component on the markup.
 
 | Class | Effect |
@@ -38,7 +37,7 @@ These are used to extend and modify the styles of a component on the markup.
 </button>
 ```
 
-## Custom Properties
+### Custom Properties
 These are for creating your own component themes.
 
 | Property | Effect |
@@ -70,4 +69,23 @@ These are for creating your own component themes.
     }
 }
 ```
+### SCSS `render()` mixin
+| Property | Type | Effect |
+|---|---|---|
+| `$settings` | `map` | Configures what and how to render the styles for the component. |
 
+#### `$settings` variable
+| Property | Type | Effect |
+|---|---|---|
+| `variants` | `string or list` | Defines what variants to render. Available variants include: `text`, `outlined`, `filled`, and `all`. |
+| `color-presets` | `string or list` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
+
+#### Example
+```scss
+@use 'path/to/@devprotocol/hashi/hs-button';
+
+hs-button.render($settings: (
+    variants: ('filled', 'outlined'),
+    color-presets: ('scarlet', 'native-blue', 'success', 'warning', 'danger')
+));
+```
