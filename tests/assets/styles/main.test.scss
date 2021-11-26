@@ -35,6 +35,7 @@
     @include hashi.button-render();
     @include hashi.button-group-render();
     @include hashi.card-render();
+    @include hashi.link-render();
     @include hashi.text-field-render();
     @include hashi.select-field-render();
 }

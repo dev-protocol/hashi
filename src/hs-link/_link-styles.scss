@@ -21,34 +21,28 @@
 //
 
 @use '../hs-core';
-@use 'select-field-base';
-
+@use 'link-base';
 @use 'sass:map';
 
-$_init-type: (
-    family: 'action',
-    size: 'button',
-    weight: 'body',
-    line-height: 'button'
+$_init-color: (
+    preset: 'native-blue'
 );
 
-@mixin render() {
-    @include select-field-base.init() {
-        .hs-select-field__input {
-            &:focus-within {
-                @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('native-blue-400'));
-            }
-        }
+$core-color-presets: hs-core.$color-presets;
+
+@mixin render(
+    $color: ()
+) {
+    $_merged-color: map.merge($_init-color, $color);
+    $color-presets: map.get($_merged-color, 'preset');
+    
+    @include link-base.init() {
+        color: hs-core.theme-key-create('link-ink', hs-core.theme-token-get('surface-ink'));
         
-        &.danger {
-            @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
-            
-            .hs-select-field__input {
-                &:focus-within {
-                    @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-                }
-            }
+        @if $color-presets == 'all' {
+            @error "You cannot have multiple color instances of hs-link. Only pick one!";
+        } @else {
+            @include hs-core.color-override('link', $color-presets, 'text', true);
         }
     }
 }

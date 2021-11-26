@@ -76,11 +76,13 @@
     }
     
     p,
-    span {
+    span,
+    a {
         font-family: hs-core.theme-token-get('family-global');
         font-size: hs-core.theme-token-get('size-body');
         font-weight: hs-core.theme-token-get('weight-body');
         line-height: hs-core.theme-token-get('line-height-body');
+        text-decoration: none;
     }
     
     small {

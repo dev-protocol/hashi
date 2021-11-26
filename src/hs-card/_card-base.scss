@@ -28,9 +28,6 @@
         background-color: hs-core.theme-key-create('card-fill', #fff);
         color: hs-core.theme-key-create('card-ink', #000);
         border: 1px solid hs-core.theme-key-create('card-border', #fff);
-        
-        border-radius: hs-core.theme-key-create('card-radius', hs-core.theme-token-get('radius-sm'));
-        @include hs-core.tools-elevation(2);
     
         @content;
         
@@ -38,7 +35,6 @@
             display: grid;
             grid-template-columns: 1fr 70px;
             grid-gap: 0.7rem;
-            padding: 1rem;
             
             .hs-card__mast {
                 .hs-card__title {
@@ -71,7 +67,13 @@
         }
         
         .hs-card__content {
-            padding: 1rem;
+            padding: 1rem 0;
+            
+            * {
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+            }
         }
         
         .hs-card__actions {
@@ -79,7 +81,6 @@
             flex-flow: row nowrap;
             justify-content: flex-end;
             margin-top: 0.7rem;
-            padding: 1rem;
             
             & > * + * {
                 margin-left: hs-core.theme-key-create('card-action-gap', 0.5rem);

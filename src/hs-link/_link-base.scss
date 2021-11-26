@@ -21,34 +21,17 @@
 //
 
 @use '../hs-core';
-@use 'select-field-base';
 
-@use 'sass:map';
-
-$_init-type: (
-    family: 'action',
-    size: 'button',
-    weight: 'body',
-    line-height: 'button'
-);
-
-@mixin render() {
-    @include select-field-base.init() {
-        .hs-select-field__input {
-            &:focus-within {
-                @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('native-blue-400'));
-            }
+@mixin init() {
+    a.hs-link {
+        display: inline-block;
+        font-size: hs-core.theme-token-get('size-body');
+        
+        &:hover,
+        &:focus {
+            text-decoration: underline;
         }
         
-        &.danger {
-            @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
-            
-            .hs-select-field__input {
-                &:focus-within {
-                    @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-                }
-            }
-        }
+        @content;
     }
 }

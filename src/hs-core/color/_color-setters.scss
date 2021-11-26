@@ -26,24 +26,24 @@
 
 @use 'sass:map';
 
-$_presets: color-presets.$presets;
+$core-color-presets: color-presets.$presets;
 
-@mixin override($component-name, $color-theme, $style, $stateful: false) {
+@mixin override($component-name, $color-preset, $style, $stateful: false) {
     @if $style == text {
-        @include _text-override($component-name, $color-theme, $stateful);
+        @include _text-override($component-name, $color-preset, $stateful);
     }
     
     @if $style == outlined {
-        @include _outlined-override($component-name, $color-theme, $stateful);
+        @include _outlined-override($component-name, $color-preset, $stateful);
     }
     
     @if $style == filled {
-        @include _filled-override($component-name, $color-theme, $stateful);
+        @include _filled-override($component-name, $color-preset, $stateful);
     }
 }
 
-@mixin _text-override($component-name, $color-theme, $stateful: false) {
-    $fill: map.get($_presets, $color-theme, 'fill');
+@mixin _text-override($component-name, $color-preset, $stateful: false) {
+    $fill: map.get($core-color-presets, $color-preset, 'fill');
     
     @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
     @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
@@ -79,10 +79,10 @@ $_presets: color-presets.$presets;
     }
 }
 
-@mixin _outlined-override($component-name, $color-theme, $stateful: false) {
-    $fill: map.get($_presets, $color-theme, 'fill');
-    $ink: map.get($_presets, $color-theme, 'ink');
-    $border: map.get($_presets, $color-theme, 'border');
+@mixin _outlined-override($component-name, $color-preset, $stateful: false) {
+    $fill: map.get($core-color-presets, $color-preset, 'fill');
+    $ink: map.get($core-color-presets, $color-preset, 'ink');
+    $border: map.get($core-color-presets, $color-preset, 'border');
     
     @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
     @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
@@ -119,10 +119,10 @@ $_presets: color-presets.$presets;
     }
 }
 
-@mixin _filled-override($component-name, $color-theme, $stateful: false) {
-    $fill: map.get($_presets, $color-theme, 'fill');
-    $ink: map.get($_presets, $color-theme, 'ink');
-    $border: map.get($_presets, $color-theme, 'border');
+@mixin _filled-override($component-name, $color-preset, $stateful: false) {
+    $fill: map.get($core-color-presets, $color-preset, 'fill');
+    $ink: map.get($core-color-presets, $color-preset, 'ink');
+    $border: map.get($core-color-presets, $color-preset, 'border');
     
     @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-400'));
     @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
@@ -157,18 +157,17 @@ $_presets: color-presets.$presets;
 }
 
 @function _get-preset($query, $prop, $state: 'default') {
-    
     @if $prop == ink and $state == active {
-        @return theme.token-get('#{map.get($_presets, $query, $prop)}');
+        @return theme.token-get('#{map.get($core-color-presets, $query, $prop)}');
     }
     
     @if $prop == ink {
-        @return theme.token-get('#{map.get($_presets, $query, $prop)}');
+        @return theme.token-get('#{map.get($core-color-presets, $query, $prop)}');
     }
     
     @if $state == active {
-        @return theme.token-get('#{map.get($_presets, $query, $prop)}-200');
+        @return theme.token-get('#{map.get($core-color-presets, $query, $prop)}-200');
     }
     
-    @return theme.token-get('#{map.get($_presets, $query, $prop)}-400');
+    @return theme.token-get('#{map.get($core-color-presets, $query, $prop)}-400');
 }

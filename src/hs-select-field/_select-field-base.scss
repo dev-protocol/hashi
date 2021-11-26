@@ -34,6 +34,8 @@
         & > * + * {
             margin-left: hs-core.theme-key-create('select-field-gap', 0.8rem);
         }
+    
+        @content;
         
         .hs-select-field__label {
             color: hs-core.theme-key-create('select-field-label-ink', hs-core.theme-token-get('surface-ink'));
@@ -55,7 +57,5 @@
             background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
             color: #000;
         }
-    
-        @content;
     }
 }

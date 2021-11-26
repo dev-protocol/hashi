@@ -26,18 +26,21 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: var(--hs-button-padding, 0.5rem 0.7rem);
   user-select: none;
   overflow: visible;
   vertical-align: middle;
   box-sizing: border-box;
   cursor: pointer;
-  border-radius: var(--hs-button-radius, var(--hs-theme-radius-xs));
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
   background: var(--hs-button-fill, rgba(0, 0, 0, 0));
   color: var(--hs-button-ink, #000);
   border: 1px solid var(--hs-button-border, rgba(0, 0, 0, 0));
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  border-radius: var(--hs-button-radius, var(--hs-theme-radius-xs));
+  padding: var(--hs-button-padding, var(--hs-theme-padding-sm));
+  font-size: var(--hs-button-size, var(--hs-theme-size-button));
+  font-weight: var(--hs-button-weight, var(--hs-theme-weight-button));
+  line-height: var(--hs-button-line-height, var(--hs-theme-line-height-button));
 }
 .hs-button.surface {
   --hs-button-fill: rgba(0, 0, 0, 0);
@@ -785,8 +788,8 @@
 }
 .hs-button .hs-button__label {
   color: var(--hs-button-label-ink, var(--hs-button-ink));
-  font-size: var(--hs-button-label-size, var(--hs-theme-size-button));
-  font-weight: var(--hs-button-weight, var(--hs-theme-weight-button));
-  line-height: var(--hs-button-line-height, var(--hs-theme-line-height-button));
+  font-size: var(--hs-button-label-size, inherit);
+  font-weight: inherit;
+  line-height: inherit;
 }
 /*# sourceMappingURL=main.css.map */

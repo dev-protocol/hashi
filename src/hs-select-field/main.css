@@ -30,6 +30,16 @@
 .hs-select-field > * + * {
   margin-left: var(--hs-select-field-gap, 0.8rem);
 }
+.hs-select-field .hs-select-field__input:focus-within {
+  --hs-select-field-border: var(--hs-theme-native-blue-400);
+}
+.hs-select-field.danger {
+  --hs-select-field-border: var(--hs-theme-danger-400);
+  --hs-select-field-label-ink: var(--hs-theme-danger-400);
+}
+.hs-select-field.danger .hs-select-field__input:focus-within {
+  --hs-select-field-border: var(--hs-theme-danger-400);
+}
 .hs-select-field .hs-select-field__label {
   color: var(--hs-select-field-label-ink, var(--hs-theme-surface-ink));
   font-size: var(--hs-select-field-label-size, var(--hs-theme-size-body));
@@ -47,15 +57,5 @@
 .hs-select-field .hs-select-field__option {
   background-color: var(--hs-select-field-fill, rgba(0, 0, 0, 0));
   color: #000;
-}
-.hs-select-field.danger {
-  --hs-select-field-border: var(--hs-theme-danger-400);
-  --hs-select-field-label-ink: var(--hs-theme-danger-400);
-}
-.hs-select-field.danger .hs-select-field__input:focus-within {
-  --hs-select-field-border: var(--hs-theme-danger-400);
-}
-.hs-select-field .hs-select-field__input:focus-within {
-  --hs-select-field-border: var(--hs-theme-native-blue-400);
 }
 /*# sourceMappingURL=main.css.map */

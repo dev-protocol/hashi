@@ -25,6 +25,8 @@
   color-scheme: light;
   --hs-theme-family-global: Roboto Mono;
   --hs-theme-family-header: IBM Plex Mono;
+  --hs-theme-family-body: Roboto Mono;
+  --hs-theme-family-action: Roboto Mono;
   --hs-theme-size-h1: 2.25rem;
   --hs-theme-size-h2: 1.8125rem;
   --hs-theme-size-h3: 1.4375rem;
@@ -57,6 +59,12 @@
   --hs-theme-radius-xl: 1.7rem;
   --hs-theme-radius-xxl: 2.3rem;
   --hs-theme-radius-pill: 700px;
+  --hs-theme-padding-none: 0;
+  --hs-theme-padding-xs: 0.3rem 0.5rem;
+  --hs-theme-padding-sm: 0.4rem 0.6rem;
+  --hs-theme-padding-md: 0.5rem 0.7rem;
+  --hs-theme-padding-lg: 0.6rem 0.8rem;
+  --hs-theme-padding-xl: 1rem;
   --hs-theme-surface-200: #f1f1f1;
   --hs-theme-surface-300: #d7d7d7;
   --hs-theme-surface-400: #c4c4c4;
@@ -153,11 +161,13 @@ h4 {
 }
 
 p,
-span {
+span,
+a {
   font-family: var(--hs-theme-family-global);
   font-size: var(--hs-theme-size-body);
   font-weight: var(--hs-theme-weight-body);
   line-height: var(--hs-theme-line-height-body);
+  text-decoration: none;
 }
 
 small {
@@ -177,6 +187,8 @@ html[theme=dark] {
   color-scheme: dark !important;
   --hs-theme-family-global: Roboto Mono;
   --hs-theme-family-header: IBM Plex Mono;
+  --hs-theme-family-body: Roboto Mono;
+  --hs-theme-family-action: Roboto Mono;
   --hs-theme-size-h1: 2.25rem;
   --hs-theme-size-h2: 1.8125rem;
   --hs-theme-size-h3: 1.4375rem;
@@ -209,6 +221,12 @@ html[theme=dark] {
   --hs-theme-radius-xl: 1.7rem;
   --hs-theme-radius-xxl: 2.3rem;
   --hs-theme-radius-pill: 700px;
+  --hs-theme-padding-none: 0;
+  --hs-theme-padding-xs: 0.3rem 0.5rem;
+  --hs-theme-padding-sm: 0.4rem 0.6rem;
+  --hs-theme-padding-md: 0.5rem 0.7rem;
+  --hs-theme-padding-lg: 0.6rem 0.8rem;
+  --hs-theme-padding-xl: 1rem;
   --hs-theme-surface-200: #3a4158;
   --hs-theme-surface-300: #222b3d;
   --hs-theme-surface-400: #111827;

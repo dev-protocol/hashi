@@ -25,22 +25,64 @@
 @use 'sass:map';
 @use 'sass:list';
 
-$_init-settings: (
-    variants: 'all',
-    color-presets: 'all'
+$_init-color: (
+    preset: 'all'
 );
 
-$c-presets: hs-core.$color-presets;
+$_init-shape: (
+    radius: 'xs',
+    padding: 'sm',
+);
 
-@mixin render($settings: ()) {
+$_init-type: (
+    family: 'action',
+    size: 'button',
+    weight: 'button',
+    line-height: 'button'
+);
+
+$_init-settings: (
+    variants: 'all',
+);
+
+$core-color-presets: hs-core.$color-presets;
+
+@mixin render(
+    $color: (),
+    $shape: (),
+    $type: (),
+    $settings: ()
+) {
+    $_merged-color: map.merge($_init-color, $color);
+    $_merged-shape: map.merge($_init-shape, $shape);
+    $_merged-type: map.merge($_init-type, $type);
+    $_merged-settings: map.merge($_init-settings, $settings);
+    
+    $color-presets: map.get($_merged-color, 'preset');
+    $radius: map.get($_merged-shape, 'radius');
+    $padding: map.get($_merged-shape, 'padding');
+    $variants: map.get($_merged-settings, 'variants');
+    
+    $type-family: map.get($_merged-type, 'family');
+    $type-size: map.get($_merged-type, 'size');
+    $type-weight: map.get($_merged-type, 'weight');
+    $type-line-height: map.get($_merged-type, 'line-height');
+    
     @include button-base.init() {
-        $_merged-settings: map.merge($_init-settings, $settings);
-        $variants: map.get($_merged-settings, 'variants');
-        $color-presets: map.get($_merged-settings, 'color-presets');
+        background: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
+        color: hs-core.theme-key-create('button-ink', #000);
+        border: 1px solid hs-core.theme-key-create('button-border', rgba(0 0 0 / 0));
+    
+        border-radius: hs-core.theme-key-create('button-radius', hs-core.theme-token-get('radius-#{$radius}'));
+        padding: hs-core.theme-key-create('button-padding', hs-core.theme-token-get('padding-#{$padding}'));
+    
+        font-size: hs-core.theme-key-create('button-size', hs-core.theme-token-get('size-#{$type-size}'));
+        font-weight: hs-core.theme-key-create('button-weight', hs-core.theme-token-get('weight-#{$type-weight}'));
+        line-height: hs-core.theme-key-create('button-line-height', hs-core.theme-token-get('line-height-#{$type-line-height}'));
         
         @if list.index($variants, 'text') or list.index($variants, 'all') {
             @if $color-presets == 'all' {
-                @each $preset, $props in $c-presets {
+                @each $preset, $props in $core-color-presets {
                     &.#{$preset} {
                         @include hs-core.color-override('button', $preset, 'text', true);
                     }
@@ -61,7 +103,7 @@ $c-presets: hs-core.$color-presets;
     
             @if list.index($variants, 'outlined') or list.index($variants, 'all') {
                 @if $color-presets == 'all' {
-                    @each $preset, $props in $c-presets {
+                    @each $preset, $props in $core-color-presets {
                         &.#{$preset} {
                             @include hs-core.color-override('button', $preset, 'outlined', true);
                         }
@@ -83,7 +125,7 @@ $c-presets: hs-core.$color-presets;
     
             @if list.index($variants, 'filled') or list.index($variants, 'all') {
                 @if $color-presets == 'all' {
-                    @each $preset, $props in $c-presets {
+                    @each $preset, $props in $core-color-presets {
                         &.#{$preset} {
                             @include hs-core.color-override('button', $preset, 'filled', true);
                         }
