@@ -20,27 +20,4 @@
 //  SOFTWARE.
 //
 
-@use '../hs-core';
-@use 'sass:map';
-
-$_color-presets: map.keys(hs-core.$color-presets);
-
-@mixin color-utils() {
-    @each $preset in $_color-presets {
-        .bg-#{$preset} {
-            background-color: hs-core.theme-token-get('#{$preset}-400');
-        }
-    }
-    
-    @each $preset in $_color-presets {
-        .text-#{$preset} {
-            color: hs-core.theme-token-get('#{$preset}-400');
-        }
-    }
-    
-    @each $preset in $_color-presets {
-        .border-#{$preset} {
-            border-color: hs-core.theme-token-get('#{$preset}-400');
-        }
-    }
-}
+@forward 'appbar-styles';

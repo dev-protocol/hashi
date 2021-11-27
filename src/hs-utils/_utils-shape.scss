@@ -20,3 +20,24 @@
 //  SOFTWARE.
 //
 
+@use '../hs-core';
+@use 'sass:map';
+
+$radius-presets: (
+    'none',
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+    'xxl',
+    'pill'
+);
+
+@mixin shape-utils() {
+    @each $preset in $radius-presets {
+        .radius-#{$preset} {
+            border-radius: hs-core.theme-token-get('radius-#{$preset}') !important;
+        }
+    }
+}

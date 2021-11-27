@@ -1,4 +1,4 @@
-//
+/*
 //  Copyright (c) 2021 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,29 +18,10 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+*/
 
-@use '../hs-core';
-@use 'sass:map';
+@use 'utils-color';
+@use 'utils-shape';
 
-$_color-presets: map.keys(hs-core.$color-presets);
-
-@mixin color-utils() {
-    @each $preset in $_color-presets {
-        .bg-#{$preset} {
-            background-color: hs-core.theme-token-get('#{$preset}-400');
-        }
-    }
-    
-    @each $preset in $_color-presets {
-        .text-#{$preset} {
-            color: hs-core.theme-token-get('#{$preset}-400');
-        }
-    }
-    
-    @each $preset in $_color-presets {
-        .border-#{$preset} {
-            border-color: hs-core.theme-token-get('#{$preset}-400');
-        }
-    }
-}
+@include utils-color.color-utils();
+@include utils-shape.shape-utils();

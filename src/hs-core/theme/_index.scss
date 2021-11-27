@@ -28,3 +28,4 @@ $context: '' !default;
 @forward 'theme-setters';
 @forward 'theme-keys' as key-* with ($context: $context);
 @forward 'theme-tokens' as token-*;
+@forward 'theme-breakpoints' as breakpoint-*;

@@ -28,16 +28,8 @@ $breakpoints-map: (
     'large': 890px
 );
 
-@mixin config($breakpoints) {
-    
-    $_init-breakpoints: (
-        'small': 320px,
-        'medium': 540px,
-        'large': 890px
-    );
-    
-    $breakpoints-map: map.merge($_init-breakpoints, $breakpoints) !global;
-    
+@function get($query) {
+    @return map.get($breakpoints-map, $query);
 }
 
 @mixin create($query, $context: 'min') {
@@ -46,9 +38,6 @@ $breakpoints-map: (
     }
 }
 
-@function get($query) {
-    @return map.get($breakpoints-map, $query);
-}
 
 @function _sanitize-breakpoint($query, $context) {
     @if not $context == 'min' or not $context == 'max' {

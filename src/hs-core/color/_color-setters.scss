@@ -28,25 +28,25 @@
 
 $core-color-presets: color-presets.$presets;
 
-@mixin override($component-name, $color-preset, $style, $stateful: false) {
+@mixin override($component-name, $color-preset, $style, $stateful: false, $tone: '400') {
     @if $style == text {
-        @include _text-override($component-name, $color-preset, $stateful);
+        @include _text-override($component-name, $color-preset, $stateful, $tone);
     }
     
     @if $style == outlined {
-        @include _outlined-override($component-name, $color-preset, $stateful);
+        @include _outlined-override($component-name, $color-preset, $stateful, $tone);
     }
     
     @if $style == filled {
-        @include _filled-override($component-name, $color-preset, $stateful);
+        @include _filled-override($component-name, $color-preset, $stateful, $tone);
     }
 }
 
-@mixin _text-override($component-name, $color-preset, $stateful: false) {
+@mixin _text-override($component-name, $color-preset, $stateful: false, $tone: '400') {
     $fill: map.get($core-color-presets, $color-preset, 'fill');
     
     @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
-    @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+    @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-#{$tone}'));
     @include theme.key-bind('#{$component-name}-border', rgba(0 0 0 / 0));
     
     @if $stateful == true {
@@ -79,14 +79,14 @@ $core-color-presets: color-presets.$presets;
     }
 }
 
-@mixin _outlined-override($component-name, $color-preset, $stateful: false) {
+@mixin _outlined-override($component-name, $color-preset, $stateful: false, $tone: '400') {
     $fill: map.get($core-color-presets, $color-preset, 'fill');
     $ink: map.get($core-color-presets, $color-preset, 'ink');
     $border: map.get($core-color-presets, $color-preset, 'border');
     
     @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
-    @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
-    @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+    @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-#{$tone}'));
+    @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-#{$tone}'));
     
     @if $stateful == true {
         &:hover {
@@ -119,14 +119,14 @@ $core-color-presets: color-presets.$presets;
     }
 }
 
-@mixin _filled-override($component-name, $color-preset, $stateful: false) {
+@mixin _filled-override($component-name, $color-preset, $stateful: false, $tone: '400') {
     $fill: map.get($core-color-presets, $color-preset, 'fill');
     $ink: map.get($core-color-presets, $color-preset, 'ink');
     $border: map.get($core-color-presets, $color-preset, 'border');
     
-    @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-400'));
+    @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-#{$tone}'));
     @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
-    @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+    @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-#{$tone}'));
     
     @if $stateful == true {
         &:hover {

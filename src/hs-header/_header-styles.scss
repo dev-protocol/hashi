@@ -1,0 +1,67 @@
+//
+//  Copyright (c) 2021 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+
+@use 'header-base';
+@use '../hs-core';
+@use 'sass:map';
+
+$_init-color: (
+    preset: 'surface',
+);
+
+$_init-settings: (
+    is-scrollable: false,
+    has-elevation: true
+);
+
+@mixin render(
+    $color: (),
+    $settings: ()
+) {
+    $_merged-color: map.merge($_init-color, $color);
+    $_merged-settings: map.merge($_init-settings, $settings);
+    
+    $preset: map.get($_merged-color, 'preset');
+    $is-scrollable: map.get($_merged-settings, 'is-scrollable');
+    $has-elevation: map.get($_merged-settings, 'has-elevation');
+    
+    @include header-base.init() {
+        @if $has-elevation == true {
+            @include hs-core.tools-elevation(5);
+        }
+    
+        @if $is-scrollable == true {
+            background-color: hs-core.theme-key-create('header-fill', rgba(0 0 0 / 0));
+            color: hs-core.theme-key-create('header-ink', hs-core.theme-token-get('surface-ink'));
+            border: 1px solid hs-core.theme-key-create('header-border', rgba(0 0 0 / 0));
+            
+            &.hs-header--scrollable {
+                @include hs-core.color-override('header', $preset, 'filled', false, '300');
+            }
+        } @else {
+            @include hs-core.color-override('header', $preset, 'filled', false, '300');
+            background-color: hs-core.theme-key-create('header-fill', #000);
+            color: hs-core.theme-key-create('header-ink', #fff);
+            border: 1px solid hs-core.theme-key-create('header-border', #000);
+        }
+    }
+}
