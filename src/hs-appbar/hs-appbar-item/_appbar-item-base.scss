@@ -34,7 +34,9 @@
         user-select: none;
         cursor: pointer;
         
-        border: 1px solid rgba(0 0 0 / 0);
+        background-color: hs-core.theme-key-create('appbar-item-fill', rgba(0 0 0 / 0));
+        color: hs-core.theme-key-create('appbar-item-ink', inherit);
+        border: 1px solid hs-core.theme-key-create('appbar-item-border', rgba(0 0 0 / 0));
         border-radius: hs-core.theme-token-get('radius-xs');
         padding: hs-core.theme-token-get('padding-none');
     
@@ -42,18 +44,18 @@
             padding: hs-core.theme-token-get('padding-xs');
     
             &:hover {
-                background-color: hs-core.theme-token-get('neutral-alpha-400');
-                border-color: hs-core.theme-token-get('neutral-alpha-400');
+                @include hs-core.theme-key-bind('appbar-item-fill', hs-core.theme-token-get('neutral-alpha-400'));
+                @include hs-core.theme-key-bind('appbar-item-border', hs-core.theme-token-get('neutral-alpha-400'));
             }
             
             &:active {
-                background-color: hs-core.theme-token-get('neutral-alpha-600');
-                border-color: hs-core.theme-token-get('neutral-alpha-600');
+                @include hs-core.theme-key-bind('appbar-item-fill', hs-core.theme-token-get('neutral-alpha-600'));
+                @include hs-core.theme-key-bind('appbar-item-border', hs-core.theme-token-get('neutral-alpha-600'));
             }
     
             &:focus {
-                background-color: hs-core.theme-token-get('neutral-alpha-300');
-                border-color: hs-core.theme-token-get('neutral-alpha-300');
+                @include hs-core.theme-key-bind('appbar-item-fill', rgba(0 0 0 / 0));
+                @include hs-core.theme-key-bind('appbar-item-border', rgba(0 0 0 / 0));
             }
         }
         

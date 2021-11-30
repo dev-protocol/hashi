@@ -22,8 +22,16 @@
 
 @use '../hs-core';
 @use 'text-field-base';
+@use 'sass:map';
 
-@mixin render() {
+$_init-color: (
+    accent: 'native-blue'
+);
+
+@mixin render($color: ()) {
+    $_merged-color: map.merge($_init-color, $color);
+    $accent: map.get($_merged-color, 'accent');
+    
     @include text-field-base.init() {
         &.danger {
             @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('danger-400'));
@@ -37,7 +45,7 @@
         }
         
         .hs-text-field__input:focus-within {
-            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('native-blue-400'));
+            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('#{$accent}-400'));
         }
     }
 }

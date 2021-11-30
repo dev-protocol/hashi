@@ -24,6 +24,13 @@
 
 @include hashi.init() {
     
+    .content-wrap {
+        width: calc(100% - 30px);
+        max-width: 1077px;
+        margin: 0 auto;
+        padding: 67px 0 60px 0;
+    }
+    
     section {
         margin: 0.8rem 0;
         

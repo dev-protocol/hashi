@@ -31,6 +31,11 @@
         > * + * {
             margin-left: hs-core.theme-key-create('button-group-gap', 0.3rem);
         }
+    
+        input[type='radio'],
+        input[type='checkbox'] {
+            display: none;
+        }
         
         > .hs-button {
             @include hs-core.theme-key-bind('button-radius', hs-core.theme-token-get('radius-none'));

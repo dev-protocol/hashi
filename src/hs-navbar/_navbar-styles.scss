@@ -22,9 +22,30 @@
 
 @use '../hs-core';
 @use 'navbar-base';
+@use 'sass:map';
 
-@mixin render($breakpoint: 'medium') {
+$_init-color: (
+    preset: 'surface'
+);
+
+$_init-settings: (
+    breakpoint: 'medium'
+);
+
+@mixin render(
+    $color: (),
+    $settings: ()
+) {
+    $_merged-color: map.merge($_init-color, $color);
+    $_merged-settings: map.merge($_init-settings, $settings);
+    
+    $preset: map.get($_merged-color, 'preset');
+    $breakpoint: map.get($_merged-settings, 'breakpoint');
+    
     @include navbar-base.init($breakpoint) {
-        @include hs-core.color-override('navbar', 'surface', 'filled', false, 200);
+        @include hs-core.color-override('navbar', $preset, 'filled', false, 200);
+        background-color: hs-core.theme-key-create('navbar-fill', #fff);
+        color: hs-core.theme-key-create('navbar-ink', #000);
+        border: 1px solid hs-core.theme-key-create('navbar-border', #fff);
     }
 }
