@@ -38,6 +38,7 @@
     @include hashi.card-render();
     @include hashi.header-render();
     @include hashi.link-render();
+    @include hashi.navbar-render();
     @include hashi.text-field-render();
     @include hashi.select-field-render();
 }

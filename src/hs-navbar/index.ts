@@ -1,4 +1,5 @@
 /*
+ *
  *  Copyright (c) 2021 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,25 +22,8 @@
  *
  */
 
-const path = require("path");
+import { HSNavbar } from "./component";
 
-module.exports = {
-    entry: './tests/assets/scripts/main.ts',
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
-    },
-    mode: "production",
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'tests/assets/scripts'),
-    },
-};
+export default [
+    HSNavbar
+];

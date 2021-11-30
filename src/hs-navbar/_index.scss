@@ -1,4 +1,4 @@
-/*
+//
 //  Copyright (c) 2021 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,33 +18,6 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-*/
+//
 
-@use 'hs-core';
-
-@use 'hs-init' as hashi;
-@use 'hs-appbar';
-@use 'hs-button';
-@use 'hs-button-group';
-@use 'hs-card';
-@use 'hs-header';
-@use 'hs-link';
-@use 'hs-navbar';
-@use 'hs-select-field';
-@use 'hs-text-field';
-@use 'hs-utils';
-
-@include hashi.init() {
-    @include hs-appbar.render();
-    @include hs-button.render();
-    @include hs-button-group.render();
-    @include hs-card.render();
-    @include hs-header.render();
-    @include hs-link.render();
-    @include hs-navbar.render();
-    @include hs-select-field.render();
-    @include hs-text-field.render();
-    
-    @include hs-utils.color-utils();
-    @include hs-utils.shape-utils();
-}
+@forward 'navbar-styles';

@@ -84,9 +84,17 @@
                     // }
                 }
             }
-            
+    
             .hs-header__actions {
-                //
+                .hs-button {
+                    min-width: 0;
+                    padding: 0.6rem 0.8rem !important;
+                    @include hs-core.theme-key-bind('button-ink', hs-core.theme-token-get('surface-ink'));
+            
+                    @include hs-core.theme-breakpoint-create($breakpoint) {
+                        display: none !important;
+                    }
+                }
             }
         }
     }

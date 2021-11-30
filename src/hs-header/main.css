@@ -73,4 +73,14 @@
   font-weight: var(--hs-theme-weight-h3);
   line-height: var(--hs-theme-line-height-h3);
 }
+.hs-header .hs-header__wrap .hs-header__actions .hs-button {
+  min-width: 0;
+  padding: 0.6rem 0.8rem !important;
+  --hs-button-ink: var(--hs-theme-surface-ink);
+}
+@media (min-width: 540px) {
+  .hs-header .hs-header__wrap .hs-header__actions .hs-button {
+    display: none !important;
+  }
+}
 /*# sourceMappingURL=main.css.map */

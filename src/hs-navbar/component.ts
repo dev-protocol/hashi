@@ -1,4 +1,5 @@
 /*
+ *
  *  Copyright (c) 2021 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,25 +22,35 @@
  *
  */
 
-const path = require("path");
+export class HSNavbar {
+    private component?: any = '.hs-navbar';
+    private trigger?: any = '.hs-js-navbar__trigger';
 
-module.exports = {
-    entry: './tests/assets/scripts/main.ts',
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
-    },
-    mode: "production",
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'tests/assets/scripts'),
-    },
-};
+    constructor(component?: string, trigger?: string) {
+        this.component = component;
+        this.trigger = trigger;
+    }
+
+    init() {
+        const navbar: any = document.querySelector((this.component));
+        const navbarTrigger: any = document.querySelector((this.trigger));
+        let navbarState: boolean = false;
+        
+        if (!navbar) {
+            throw new Error('Navbar class is not provided! Please provide a navbar class');
+        }
+        if (!navbarTrigger) {
+            throw new Error('Navbar trigger class is not provided! Please provide a trigger class')
+        }
+
+        navbarTrigger.addEventListener('click', function() {
+            navbarState = !navbarState;
+
+            if (!navbarState) {
+                navbar.classList.remove('visible');
+            } else {
+                navbar.classList.add('visible');
+            }
+        });
+    }
+}
