@@ -1,6 +1,6 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "0.1.0-alpha",
+  "version": "0.1.0-alpha.1",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "index.js",
   "repository": "https://github.com/dev-protocol/hashi",
