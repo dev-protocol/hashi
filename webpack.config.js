@@ -21,10 +21,11 @@
  *
  */
 
+import { config } from './hsconfig';
 const path = require("path");
 
 module.exports = {
-    entry: './tests/assets/scripts/main.ts',
+    entry: config.ts.src,
     module: {
         rules: [
             {

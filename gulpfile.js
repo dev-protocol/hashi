@@ -21,6 +21,8 @@
  *
  */
 
+import { config } from './hsconfig';
+
 const {src, dest, watch, series} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const purgecss = require('gulp-purgecss')
@@ -42,7 +44,7 @@ function sassTaskProd() {
 }
 
 function sassTaskTest() {
-    return src(['tests/**/*.scss'], {sourcemaps: true})
+    return src(config.sass.src, {sourcemaps: true})
         .pipe(sass({
             includePaths: ['node_modules']
         }).on('error', sass.logError))

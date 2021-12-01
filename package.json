@@ -11,7 +11,7 @@
     "build:ts": "webpack --config webpack.config.js",
     "build:ts:watch": "webpack --config webpack.config.js --watch",
     "build:sass": "gulp",
-    "publish": "cd src && npm publish --access=public",
+    "publish:public": "cd src && npm publish --access=public",
     "bump": "npm --no-git-tag-version version patch && cd src && npm --no-git-tag-version version patch"
   },
   "dependencies": {
