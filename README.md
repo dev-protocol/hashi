@@ -1,5 +1,5 @@
 # Hashi・橋
-![img.png](media/img.png)
+![img.png](https://github.com/dev-protocol/hashi-web/raw/main/media/img.png)
 - **[EN]**: Dev Protocol's design system implementation for the web.
 - **[JP]**: Dev Protocolのデザインシステムのウェブ向けの実現。
 
