@@ -1,0 +1,66 @@
+---
+id: shape-tokens
+title: Shape Tokens
+slug: /core/tokens/shape-tokens
+sidebar_position: 1
+---
+
+export const ShapePreview = ({ shape, children }) => {
+    return (
+        <span
+            style={{
+                minWidth: '100px',
+                padding: '0.5rem',
+                color: '#fff'
+            }}
+            className={`bg-native-blue ${shape}`}
+        >
+            { children || shape }
+        </span>
+    )
+}
+
+## Schema
+All shape tokens follow a variant naming scheme assigned to differing values.
+
+| Variant | Description | Value |
+|---|---|---|
+| `none` | No shape token size. | <ShapePreview shape="radius-none">0rem</ShapePreview> |
+| `xs` | Smallest shape token size. | <ShapePreview shape="radius-xs">0.3rem</ShapePreview> |
+| `sm` | Small shape token size. | <ShapePreview shape="radius-sm">0.5rem</ShapePreview> |
+| `md` | Middle shape token size. | <ShapePreview shape="radius-md">0.7rem</ShapePreview> |
+| `lg` | Large shape token size | <ShapePreview shape="radius-lg">1rem</ShapePreview> |
+| `xl` | Largest shape token size. (not the pill variant) | <ShapePreview shape="radius-xl">1.7rem</ShapePreview> |
+| `pill` | [For padding tokens only!] Pill shape. | <ShapePreview shape="radius-pill">500px</ShapePreview> |
+
+## Token Presets
+Here are the tokens pre-built in the design system.
+
+| Token | Description |
+|---|---|
+| `radius` | Token for setting border radius values. |
+| `padding` | Token for setting padding values. |
+
+## Using the tokens
+```scss
+hashi.theme-token-get('<shape-token>-<shape-variant>');
+```
+Example
+```scss
+@use 'path/to/@devprotocol/hashi';
+
+.hs-component {
+    @include hashi.theme-key-bind('component-radius', hashi.theme-token-get('radius-md'));
+}
+```
+Or in a component context:
+```scss
+@use 'path/to/@devprotocol/hashi/hs-component';
+
+@include hs-component.render(
+    $shape: (
+        padding: 'sm',
+        radius: 'xs'
+    )
+);
+```

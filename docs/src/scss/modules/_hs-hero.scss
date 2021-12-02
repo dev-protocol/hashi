@@ -1,0 +1,78 @@
+//
+//  Copyright (c) 2021 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+
+@use '~@devprotocol/hashi';
+
+@mixin use() {
+    .hs-hero {
+        width: 100%;
+        height: calc(90vh - 60px);
+        display: grid;
+        grid-gap: 1rem;
+        place-items: center;
+        padding: 2.5rem 0;
+        // background-image: url('../media/ui-ux.png');
+        background-color: hashi.theme-token-get('surface-400');
+        border-bottom: 2px solid hashi.theme-token-get('surface-300');
+        
+        .hs-hero__wrap {
+            width: calc(100% - 40px);
+            max-width: 640px;
+            display: flex;
+            flex-flow: row nowrap;
+            margin: 0 auto;
+            
+            .hs-hero__logo {
+                position: relative;
+                margin: 0 clamp(1rem, 7vw, 2.5rem) 0 0;
+                font-size: clamp(100px, 20vw, 200px);
+                font-weight: 700;
+                line-height: normal;
+                color: hashi.theme-token-get('neutral-400');
+                text-shadow:
+                    3px 3px hashi.theme-token-get('scarlet-400'),
+                    6px 6px hashi.theme-token-get('plox-400'),
+                    9px 9px hashi.theme-token-get('native-blue-400'),
+                    12px 12px hashi.theme-token-get('bright-cyan-400'),
+            ;
+                user-select: none;
+            }
+            
+            .hs-hero__text {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: flex-start;
+    
+                h1 {
+                    margin-bottom: 0.2rem;
+                }
+    
+                .hs-hero__actions {
+                    a {
+                        text-decoration: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

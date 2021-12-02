@@ -1,0 +1,70 @@
+//
+//  Copyright (c) 2021 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+
+@use '~@devprotocol/hashi';
+
+@mixin use() {
+    :root {
+        --ifm-color-primary: #ff3815;
+        --ifm-color-primary-dark: #f82500;
+        --ifm-color-primary-darker: #eb2300;
+        --ifm-color-primary-darkest: #c11d00;
+        --ifm-color-primary-light: #ff4f31;
+        --ifm-color-primary-lighter: #ff5b3e;
+        --ifm-color-primary-lightest: #ff7e68;
+        --ifm-navbar-background-color: #{hashi.theme-token-get('surface-300')};
+        --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
+        --ifm-toc-border-color: rgba(0 0 0 / 0);
+    }
+    
+    html {
+        width: 100%;
+        height: 100%;
+        font-size: 100%;
+        box-sizing: border-box;
+        background-color: hashi.theme-token-get('surface-400');
+        
+        &[data-theme='dark'] {
+            color-scheme: dark !important;
+            @include hashi.theme-init((
+                'surface': (
+                    '200': #3a4158,
+                    '300': #222b3d,
+                    '400': #111827,
+                    '600': #040b10,
+                    'ink': #fff
+                ),
+                'neutral': (
+                    '200': #ffffff,
+                    '300': #f1f1f1,
+                    '400': #d7d7d7,
+                    '600': #bfbfbf,
+                    'ink': #000000,
+                )
+            ));
+            
+            body {
+                background-color: hashi.theme-token-get('surface-400');
+            }
+        }
+    }
+}

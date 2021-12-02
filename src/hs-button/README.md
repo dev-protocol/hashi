@@ -72,20 +72,52 @@ These are for creating your own component themes.
 ### SCSS `render()` mixin
 | Property | Type | Effect |
 |---|---|---|
+| `$color` | `map` | Configures what and how to render the styles for the component. |
+| `$shape` | `map` | Configures what and how to render the styles for the component. |
+| `$type` | `map` | Configures what and how to render the styles for the component. |
 | `$settings` | `map` | Configures what and how to render the styles for the component. |
 
-#### `$settings` variable
+#### `$color` parameter
+| Property | Type | Effect |
+|---|---|---|
+| `preset` | `token or list of tokens` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
+
+#### `$shape` parameter
+| Property | Type | Effect |
+|---|---|---|
+| `radius` | `string` | Defines the border radius of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
+| `padding` | `string` | Defines the padding of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
+
+#### `$type` parameter
+| Property | Type | Effect |
+|---|---|---|
+| `family` | `token` | Defines the font family to be used. |
+| `size` | `token` | Defines the font size to be used. |
+| `weight` | `token` | Defines the font weight to be used. |
+| `line-height` | `token` | Defines the line height to be used. |
+
+#### `$settings` parameter
 | Property | Type | Effect |
 |---|---|---|
 | `variants` | `string or list` | Defines what variants to render. Available variants include: `text`, `outlined`, `filled`, and `all`. |
-| `color-presets` | `string or list` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
 
 #### Example
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-button';
 
-hs-button.render($settings: (
-    variants: ('filled', 'outlined'),
-    color-presets: ('scarlet', 'native-blue', 'success', 'warning', 'danger')
-));
+hs-button.render(
+    $color: (
+        presets: ('scarlet', 'native-blue', 'success', 'warning', 'danger'),
+    ),
+    $shape: (
+        radius: 'md'
+    ),
+    $type: (
+        family: 'global',
+        weight: 'global'
+    ),
+    $settings: (
+        variants: ('filled', 'outlined'),
+    ),
+);
 ```
