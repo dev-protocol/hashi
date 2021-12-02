@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
     return (
         <Layout
             title={ `` }
-            description="Description will go into a meta tag in <head />">
+            description="Dev Protocol's design system for building bridges from software to user.">
             <HSHero />
             <main className="content-wrap">
                 <h1>Aims</h1>
