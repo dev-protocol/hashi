@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.5.tgz#9283c9ce5b289a3c4f61c12757469e59377f81f3"
   integrity sha512-6nFkfkmSeV/rqSaS4oWHgmpnYw194f6hmWF5is6b0J1naJZoiD0NTc9AiUwPHvWsowkjuHErCZT1wa0jg+BLIA==
 
-"@matteusan/sentro@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.7.tgz#270830995b45830c851e725069738d0175b56f31"
-  integrity sha512-Vkh4AQ3HUUoW0E/G7Q4ljdQnCnjSjaOfWbJ9xyvM5P5Wl0n9sbWqdEgne+wMsDXQjlOnpQXDSvli7gcUmnTx1A==
+"@matteusan/sentro@0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.9.tgz#0d9b507f3b4017b39c0409d817b572d36e43a0c9"
+  integrity sha512-G3eKMsU4llMPIOOluGGcSjVUNrNohBxq7bhrfyj7uNmGwWb5qVC5sHx/FuielSur+7f7QEBBIzM/lp12LSErdQ==
 
 "@types/eslint-scope@^3.7.0":
   version "3.7.1"
