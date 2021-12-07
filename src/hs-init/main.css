@@ -57,7 +57,6 @@
   --hs-theme-radius-md: 0.7rem;
   --hs-theme-radius-lg: 1rem;
   --hs-theme-radius-xl: 1.7rem;
-  --hs-theme-radius-xxl: 2.3rem;
   --hs-theme-radius-pill: 700px;
   --hs-theme-padding-none: 0;
   --hs-theme-padding-xs: 0.3rem 0.5rem;
@@ -219,7 +218,6 @@ html[theme=dark] {
   --hs-theme-radius-md: 0.7rem;
   --hs-theme-radius-lg: 1rem;
   --hs-theme-radius-xl: 1.7rem;
-  --hs-theme-radius-xxl: 2.3rem;
   --hs-theme-radius-pill: 700px;
   --hs-theme-padding-none: 0;
   --hs-theme-padding-xs: 0.3rem 0.5rem;

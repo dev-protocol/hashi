@@ -35,15 +35,15 @@ a.hs-link:hover {
   --hs-link-ink: var(--hs-theme-native-blue-400);
   --hs-link-border: var(--hs-theme-neutral-alpha-200);
 }
+a.hs-link:focus {
+  --hs-link-fill: var(--hs-theme-neutral-alpha-200);
+  --hs-link-ink: var(--hs-theme-native-blue-400);
+  --hs-link-border: var(--hs-theme-neutral-alpha-200);
+}
 a.hs-link:active {
   --hs-link-fill: var(--hs-theme-neutral-alpha-400);
   --hs-link-ink: var(--hs-theme-native-blue-200);
   --hs-link-border: var(--hs-theme-neutral-alpha-400);
-}
-a.hs-link:focus {
-  --hs-link-fill: var(--hs-theme-neutral-alpha-200);
-  --hs-link-ink: var(--hs-theme-native-blue-200);
-  --hs-link-border: var(--hs-theme-neutral-alpha-200);
 }
 a.hs-link:disabled {
   --hs-link-ink: var(--hs-theme-disabled);

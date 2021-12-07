@@ -81,16 +81,20 @@ $core-color-presets: hs-core.$color-presets;
         line-height: hs-core.theme-key-create('button-line-height', hs-core.theme-token-get('line-height-#{$type-line-height}'));
         
         @if list.index($variants, 'text') or list.index($variants, 'all') {
-            @if $color-presets == 'all' {
-                @each $preset, $props in $core-color-presets {
-                    &.#{$preset} {
-                        @include hs-core.color-override('button', $preset, 'text', true);
-                    }
-                }
+            @if list.length($color-presets) == 1 and not list.index($color-presets, 'all') {
+                @include hs-core.color-override('button', $color-presets, 'text', true);
             } @else {
-                @each $preset, $props in $color-presets {
-                    &.#{$preset} {
-                        @include hs-core.color-override('button', $preset, 'text', true);
+                @if $color-presets == 'all' {
+                    @each $preset, $props in $core-color-presets {
+                        &.#{$preset} {
+                            @include hs-core.color-override('button', $preset, 'text', true);
+                        }
+                    }
+                } @else {
+                    @each $preset, $props in $color-presets {
+                        &.#{$preset} {
+                            @include hs-core.color-override('button', $preset, 'text', true);
+                        }
                     }
                 }
             }
@@ -102,16 +106,20 @@ $core-color-presets: hs-core.$color-presets;
             border: 1px solid hs-core.theme-key-create('button-border', #000);
     
             @if list.index($variants, 'outlined') or list.index($variants, 'all') {
-                @if $color-presets == 'all' {
-                    @each $preset, $props in $core-color-presets {
-                        &.#{$preset} {
-                            @include hs-core.color-override('button', $preset, 'outlined', true);
-                        }
-                    }
+                @if list.length($color-presets) == 1 and not list.index($color-presets, 'all') {
+                    @include hs-core.color-override('button', $color-presets, 'outlined', true);
                 } @else {
-                    @each $preset, $props in $color-presets {
-                        &.#{$preset} {
-                            @include hs-core.color-override('button', $preset, 'outlined', true);
+                    @if $color-presets == 'all' {
+                        @each $preset, $props in $core-color-presets {
+                            &.#{$preset} {
+                                @include hs-core.color-override('button', $preset, 'outlined', true);
+                            }
+                        }
+                    } @else {
+                        @each $preset, $props in $color-presets {
+                            &.#{$preset} {
+                                @include hs-core.color-override('button', $preset, 'outlined', true);
+                            }
                         }
                     }
                 }
@@ -124,16 +132,20 @@ $core-color-presets: hs-core.$color-presets;
             border: 1px solid hs-core.theme-key-create('button-border', #000);
     
             @if list.index($variants, 'filled') or list.index($variants, 'all') {
-                @if $color-presets == 'all' {
-                    @each $preset, $props in $core-color-presets {
-                        &.#{$preset} {
-                            @include hs-core.color-override('button', $preset, 'filled', true);
-                        }
-                    }
+                @if list.length($color-presets) == 1 and not list.index($color-presets, 'all') {
+                    @include hs-core.color-override('button', $color-presets, 'filled', true);
                 } @else {
-                    @each $preset, $props in $color-presets {
-                        &.#{$preset} {
-                            @include hs-core.color-override('button', $preset, 'filled', true);
+                    @if $color-presets == 'all' {
+                        @each $preset, $props in $core-color-presets {
+                            &.#{$preset} {
+                                @include hs-core.color-override('button', $preset, 'filled', true);
+                            }
+                        }
+                    } @else {
+                        @each $preset, $props in $color-presets {
+                            &.#{$preset} {
+                                @include hs-core.color-override('button', $preset, 'filled', true);
+                            }
                         }
                     }
                 }

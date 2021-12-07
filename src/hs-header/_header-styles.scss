@@ -30,7 +30,7 @@ $_init-color: (
 
 $_init-settings: (
     is-scrollable: false,
-    has-elevation: true
+    has-elevation: false
 );
 
 @mixin render(

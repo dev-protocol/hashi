@@ -21,9 +21,18 @@
 //
 
 @use 'node_modules/@matteusan/sentro';
+@use 'sass:meta';
+@use 'sass:string';
 
 @function get($query) {
     @return sentro.token-get($query);
+}
+
+@function switch($ref, $query) {
+    @if meta.type-of($query) != string.unquote($ref) {
+        @return sentro.token-get($query);
+    }
+    @return $query;
 }
 
 @mixin config($map: (), $tokens...) {

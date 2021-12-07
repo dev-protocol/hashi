@@ -44,7 +44,7 @@ const HSButton: React.FC<HSButtonProps> = ({ type, color, label, icon, link, isD
     } else {
         return (
             <Link to={ link }>
-            <button className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` } disabled={ isDisabled }>
+                <button className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` } disabled={ isDisabled }>
                     <span className="hs-button__label">{ label || children }</span>
                 </button>
             </Link>
