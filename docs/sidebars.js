@@ -13,25 +13,28 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  docs: {
-    'Getting Started': ['getting-started/introduction', 'getting-started/setup'],
-    'Core': [
-        {
-            type: 'category',
-            label: 'Tokens',
-            collapsed: false,
-            items: [
-                'hs-core/tokens/tokens-index',
-                'hs-core/tokens/color-tokens',
-                'hs-core/tokens/shape-tokens',
-                'hs-core/tokens/type-tokens'
-            ]
-        },
-    ],
-    'Components': [
-        'hs-components/hs-button'
-    ],
-  }
+    docs: {
+        'Getting Started': ['getting-started/introduction', 'getting-started/setup'],
+        'Core': [
+            {
+                type: 'category',
+                label: 'Tokens',
+                collapsed: false,
+                items: [
+                    'hs-core/tokens/tokens-index',
+                    'hs-core/tokens/color-tokens',
+                    'hs-core/tokens/shape-tokens',
+                    'hs-core/tokens/type-tokens'
+                ]
+            },
+        ],
+        'Components': [
+            'hs-components/hs-button'
+        ],
+        'Spec': [
+            'spec/component-usage'
+        ],
+    }
 };
 
 module.exports = sidebars;

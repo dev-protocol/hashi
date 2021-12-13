@@ -37,6 +37,7 @@
             .navbar__item {
                 @extend .hs-button;
                 @extend .neutral;
+                max-width: max-content !important;
                 
                 > span {
                     font-size: inherit;

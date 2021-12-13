@@ -62,4 +62,30 @@
     @include hs-utils.shape-utils();
     
     @include ifm-overrides.use();
+    
+    .hs-status-tag {
+        width: 100%;
+        max-width: max-content;
+        margin-bottom: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-weight: 700;
+        background-color: hashi.theme-key-create('status-tag-fill', rgba(#f4f4f4, 10%));
+        color: #fff;
+        border-left: 5px solid hashi.theme-key-create('status-tag-border', #f4f4f4);
+        
+        &.implemented {
+            @include hashi.theme-key-bind('status-tag-fill', rgba(#228437, 10%));
+            @include hashi.theme-key-bind('status-tag-border', #228437);
+        }
+    
+        &.proposal {
+            @include hashi.theme-key-bind('status-tag-fill', rgba(#ffac00, 10%));
+            @include hashi.theme-key-bind('status-tag-border', #ffac00);
+        }
+    
+        &.rejected {
+            @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
+            @include hashi.theme-key-bind('status-tag-border', #c72828);
+        }
+    }
 }
