@@ -8,6 +8,6 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@matteu-san/sentro": "0.1.10"
+    "@matteu-san/sentro": "0.1.11"
   }
 }
