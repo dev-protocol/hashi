@@ -22,7 +22,6 @@
 .hs-button {
   width: 100%;
   min-width: 62px;
-  max-width: max-content;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -791,6 +790,5 @@
   font-size: var(--hs-button-label-size, inherit);
   font-weight: inherit;
   line-height: inherit;
-  white-space: nowrap;
 }
 /*# sourceMappingURL=main.css.map */

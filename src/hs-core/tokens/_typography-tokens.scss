@@ -19,16 +19,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-@use 'node_modules/@matteu-san/sentro';
 
-$h1: sentro.px-to-rem(36px);
-$h2: sentro.px-to-rem(29px);
-$h3: sentro.px-to-rem(23px);
-$h4: sentro.px-to-rem(18px);
-$body: sentro.px-to-rem(14px);
-$icon: sentro.px-to-rem(24px);
-$button: sentro.px-to-rem(16px);
-$small: sentro.px-to-rem(12px);
+@use '../tools';
+
+$h1: tools.to-rem(36px);
+$h2: tools.to-rem(29px);
+$h3: tools.to-rem(23px);
+$h4: tools.to-rem(18px);
+$body: tools.to-rem(14px);
+$icon: tools.to-rem(24px);
+$button: tools.to-rem(16px);
+$small: tools.to-rem(12px);
 
 $hs-type-tokens: (
     'family': (
@@ -61,14 +62,14 @@ $hs-type-tokens: (
         'small': 400,
     ),
     'line-height': (
-        'h1': $h1 + sentro.px-to-rem(13px),
-        'h2': $h2 + sentro.px-to-rem(10px),
-        'h3': $h3 + sentro.px-to-rem(8px),
-        'h4': $h4 + sentro.px-to-rem(6px),
-        'body': $body + sentro.px-to-rem(5px),
+        'h1': $h1 + tools.to-rem(13px),
+        'h2': $h2 + tools.to-rem(10px),
+        'h3': $h3 + tools.to-rem(8px),
+        'h4': $h4 + tools.to-rem(6px),
+        'body': $body + tools.to-rem(5px),
         // == //
-        'icon': $icon + sentro.px-to-rem(5px),
-        'button': $button + sentro.px-to-rem(5px),
-        'small': $small + sentro.px-to-rem(4px),
+        'icon': $icon + tools.to-rem(5px),
+        'button': $button + tools.to-rem(5px),
+        'small': $small + tools.to-rem(4px),
     )
 );

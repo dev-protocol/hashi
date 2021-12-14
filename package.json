@@ -1,6 +1,6 @@
 {
-  "name": "@devprotocol/hashi",
-  "version": "0.1.0-alpha.1",
+  "name": "hashi",
+  "version": "0.1.0-alpha.3",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "index.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
@@ -15,7 +15,7 @@
     "bump": "npm --no-git-tag-version version patch && cd src && npm --no-git-tag-version version patch"
   },
   "dependencies": {
-    "@matteu-san/sentro": "0.1.11"
+    "@matteusan/sentro": "0.1.12"
   },
   "devDependencies": {
     "gulp": "4.0.2",

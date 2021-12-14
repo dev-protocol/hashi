@@ -41,6 +41,7 @@
     
     @include hs-button.render();
     @include hs-card.render();
+    
     .hs-card {
         h1,
         h2,
@@ -54,6 +55,7 @@
             margin: 0;
         }
     }
+    
     @include hs-component-preview.use();
     @include hs-doc-card.use();
     @include hs-hero.use();

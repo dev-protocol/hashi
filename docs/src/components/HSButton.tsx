@@ -22,6 +22,9 @@
  *
  */
 
+// A5C261
+// 75B0D2
+
 import React from 'react';
 import Link from '@docusaurus/Link';
 
@@ -43,7 +46,7 @@ const HSButton: React.FC<HSButtonProps> = ({ type, color, label, icon, link, isD
         );
     } else {
         return (
-            <Link to={ link }>
+            <Link to={ link } target={ link.search('https://') !== -1 || link.search('http://') !== -1 ? 'blank' : undefined }>
                 <button className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` } disabled={ isDisabled }>
                     <span className="hs-button__label">{ label || children }</span>
                 </button>
