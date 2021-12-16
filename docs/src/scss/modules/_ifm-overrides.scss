@@ -56,6 +56,10 @@
         }
     }
     
+    .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+        border-right: 1px solid #{hashi.theme-token-get('surface-400')};
+    }
+    
     .table-of-contents__link {
         padding: 0 0.6rem;
         border-left: 5px solid rgba(0 0 0 / 0);
@@ -68,5 +72,6 @@
     
     .footer {
         --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
+        --ifm-footer-color: #{hashi.theme-token-get('surface-ink')};
     }
 }
