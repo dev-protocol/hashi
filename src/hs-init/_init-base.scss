@@ -23,9 +23,6 @@
 @use '../hs-core';
 
 @mixin init() {
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;700&display=swap');
-    
     :root {
         color-scheme: light;
         @include hs-core.theme-init();
@@ -36,7 +33,6 @@
         padding: 0;
         box-sizing: inherit;
         color: inherit;
-        font-family: hs-core.theme-token-get('family-global');
         
         &::before,
         &::after {
@@ -47,50 +43,7 @@
         }
     }
     
-    h1 {
-        font-family: hs-core.theme-token-get('family-header');
-        font-size: hs-core.theme-token-get('size-h1');
-        font-weight: hs-core.theme-token-get('weight-h1');
-        line-height: hs-core.theme-token-get('line-height-h1');
-    }
-    
-    h2 {
-        font-family: hs-core.theme-token-get('family-header');
-        font-size: hs-core.theme-token-get('size-h2');
-        font-weight: hs-core.theme-token-get('weight-h2');
-        line-height: hs-core.theme-token-get('line-height-h2');
-    }
-    
-    h3 {
-        font-family: hs-core.theme-token-get('family-header');
-        font-size: hs-core.theme-token-get('size-h3');
-        font-weight: hs-core.theme-token-get('weight-h3');
-        line-height: hs-core.theme-token-get('line-height-h3');
-    }
-    
-    h4 {
-        font-family: hs-core.theme-token-get('family-header');
-        font-size: hs-core.theme-token-get('size-h4');
-        font-weight: hs-core.theme-token-get('weight-h4');
-        line-height: hs-core.theme-token-get('line-height-h4');
-    }
-    
-    p,
-    span,
-    a {
-        font-family: hs-core.theme-token-get('family-global');
-        font-size: hs-core.theme-token-get('size-body');
-        font-weight: hs-core.theme-token-get('weight-body');
-        line-height: hs-core.theme-token-get('line-height-body');
-        text-decoration: none;
-    }
-    
-    small {
-        font-family: hs-core.theme-token-get('family-global');
-        font-size: hs-core.theme-token-get('size-small');
-        font-weight: hs-core.theme-token-get('weight-small');
-        line-height: hs-core.theme-token-get('line-height-small');
-    }
+    @include hs-core.typography-init();
     
     html {
         width: 100%;
@@ -98,6 +51,8 @@
         font-size: 100%;
         box-sizing: border-box;
         
+        &[hashi-theme='dark'],
+        &[data-theme='dark'],
         &[theme='dark'] {
             color-scheme: dark !important;
             @include hs-core.theme-init((
