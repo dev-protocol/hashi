@@ -57,7 +57,7 @@ function purge() {
         .pipe(dest('./tests'))
 }
 
-function watchTask() {
+function watchTasks() {
     watch(['src/**/*.scss', '!src/**/*.test.scss'], sassTaskDev());
     watch(['tests/**/*.scss'], sassTaskTest());
     // watch(['src/main.scss'], sassTaskProd());
@@ -69,5 +69,5 @@ exports.default = series(
     sassTaskProd,
     sassTaskTest,
     // purge,
-    // watchTask
+	// watchTasks
 );
