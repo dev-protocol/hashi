@@ -46,6 +46,11 @@
     @include hashi.header-render();
     @include hashi.link-render();
     @include hashi.navbar-render();
-    @include hashi.text-field-render();
     @include hashi.select-field-render();
+    @include hashi.table-render();
+    @include hashi.text-field-render();
+    
+    .fill-current {
+        fill: currentColor;
+    }
 }
