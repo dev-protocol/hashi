@@ -11,8 +11,12 @@
 */**/*.css.map
 
 # Test files
+## CSS
 */**/*.test.css
 */**/*.test.css.map
+## JS
+*/**/*.test.js
+*/**/*.test.d.ts
 
 # Workstations
 /.idea
