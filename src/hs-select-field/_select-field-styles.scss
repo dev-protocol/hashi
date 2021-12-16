@@ -28,6 +28,8 @@ $_init-color: (
     accent: 'native-blue'
 );
 
+$dev-color-tone: 400 !default;
+
 @mixin render($color: ()) {
     $_merged-color: map.merge($_init-color, $color);
     $accent: map.get($_merged-color, 'accent');
@@ -35,7 +37,7 @@ $_init-color: (
     @include select-field-base.init() {
         .hs-select-field__input {
             &:focus-within {
-                @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('#{$accent}-400'));
+                @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('#{$accent}-#{$dev-color-tone}'));
             }
         }
         

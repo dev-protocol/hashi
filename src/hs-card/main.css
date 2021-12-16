@@ -21,12 +21,9 @@
 */
 .hs-card {
   box-sizing: border-box;
-  background-color: var(--hs-card-fill, #fff);
-  color: var(--hs-card-ink, #000);
-  border: 1px solid var(--hs-card-border, #fff);
-  --hs-card-fill: var(--hs-theme-surface-300);
-  --hs-card-ink: var(--hs-theme-surface-ink);
-  --hs-card-border: var(--hs-theme-surface-300);
+  background-color: var(--hs-card-fill, var(--hs-theme-surface-300));
+  color: var(--hs-card-ink, var(--hs-theme-surface-ink));
+  border: 1px solid var(--hs-card-border, var(--hs-theme-surface-300));
   -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.275), 0px 2px 2px 0px rgba(0, 0, 0, 0.215), 0px 1px 5px 0px rgba(0, 0, 0, 0.195);
   -ms-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.275), 0px 2px 2px 0px rgba(0, 0, 0, 0.215), 0px 1px 5px 0px rgba(0, 0, 0, 0.195);
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.275), 0px 2px 2px 0px rgba(0, 0, 0, 0.215), 0px 1px 5px 0px rgba(0, 0, 0, 0.195);

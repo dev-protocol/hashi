@@ -25,7 +25,7 @@
 @mixin init($breakpoint: 'medium') {
     .hs-header {
         width: 100%;
-        padding: 0.3rem 0.5rem;
+        padding: 0.5rem;
     
         position: fixed;
         top: 0;
@@ -52,11 +52,13 @@
             }
             
             .hs-header__brand {
+                width: auto;
                 display: grid;
                 place-items: center;
                 
                 a {
                     width: 100%;
+                    height: calc(100% - 0.5rem);
                     min-height: hs-core.theme-token-get('size-h3');
                     box-sizing: border-box;
                     
@@ -64,24 +66,28 @@
                     h2,
                     h3,
                     .hs-header__brand__name {
+                        position: relative;
+                        top: -0.2rem;
                         font-family: hs-core.theme-token-get('family-header');
                         font-size: hs-core.theme-token-get('size-h3');
                         font-weight: hs-core.theme-token-get('weight-h3');
                         line-height: hs-core.theme-token-get('line-height-h3');
                     }
-    
-                    // Image support is broken, will be added once a fix is found.
-                    // img,
-                    // svg,
-                    // .hs-header__brand__logo {
-                    //     width: 100%;
-                    //     height: hs-core.theme-token-get('size-h3');
-                    //     padding: 0.5rem 0;
-    
-                    //     @include hs-core.theme-breakpoint-create($breakpoint) {
-                    //         padding: 0.3rem 0;
-                    //     }
-                    // }
+                    
+                    img,
+                    svg,
+                    .hs-header__brand__logo {
+                        width: 180px;
+                        height: auto;
+                        position: relative;
+                        top: -0.1rem;
+                        // padding: 0.5rem 0;
+                        
+                        @include hs-core.theme-breakpoint-create($breakpoint) {
+                            top: -0.1rem;
+                            padding: 0.5rem;
+                        }
+                    }
                 }
             }
     

@@ -25,9 +25,6 @@
 @mixin init() {
     .hs-card {
         box-sizing: border-box;
-        background-color: hs-core.theme-key-create('card-fill', #fff);
-        color: hs-core.theme-key-create('card-ink', #000);
-        border: 1px solid hs-core.theme-key-create('card-border', #fff);
     
         @content;
         

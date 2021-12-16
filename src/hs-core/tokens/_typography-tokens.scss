@@ -26,17 +26,18 @@ $h1: tools.to-rem(36px);
 $h2: tools.to-rem(29px);
 $h3: tools.to-rem(23px);
 $h4: tools.to-rem(18px);
-$body: tools.to-rem(14px);
+$body: tools.to-rem(16px);
 $icon: tools.to-rem(24px);
 $button: tools.to-rem(16px);
-$small: tools.to-rem(12px);
+$small: tools.to-rem(14px);
 
 $hs-type-tokens: (
     'family': (
-        'global': 'Roboto Mono',
-        'header': 'IBM Plex Mono',
-        'body': 'Roboto Mono',
-        'action': 'Roboto Mono'
+        'global': 'Whyte',
+        'header': 'WhyteInktrap',
+        'body': 'Whyte',
+        'action': 'WhyteInktrap',
+        'code': 'IBM Plex Mono'
     ),
     'size': (
         // General type tokens

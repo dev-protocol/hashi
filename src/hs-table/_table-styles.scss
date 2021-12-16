@@ -20,33 +20,8 @@
 //  SOFTWARE.
 //
 
-@use '../hs-core';
-@use 'link-base';
-@use 'sass:map';
+@use 'table-base';
 
-$_init-color: (
-    default: 'native-blue',
-    preset: 'native-blue',
-);
-
-$dev-color-tone: 400 !default;
-
-$core-color-presets: hs-core.$color-presets;
-
-@mixin render(
-    $color: ()
-) {
-    $_merged-color: map.merge($_init-color, $color);
-    $default-color: map.get($_merged-color, 'default');
-    $color-presets: map.get($_merged-color, 'preset');
-    
-    @include link-base.init() {
-        color: hs-core.theme-key-create('link-ink', hs-core.theme-token-get('#{$default-color}-#{$dev-color-tone}'));
-        
-        @if $color-presets == 'all' {
-            @error "You cannot have multiple color instances of hs-link. Only pick one!";
-        } @else {
-            @include hs-core.color-override('link', $color-presets, 'text', true);
-        }
-    }
+@mixin render() {
+    @include table-base.init();
 }

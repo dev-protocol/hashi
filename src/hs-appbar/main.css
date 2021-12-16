@@ -54,7 +54,7 @@
 .hs-appbar .hs-appbar__wrap {
   display: grid;
   grid-column: 1/-1;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   grid-gap: 0.5rem;
@@ -67,14 +67,11 @@
   }
 }
 .hs-appbar .hs-appbar__wrap .hs-appbar__item {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
+  list-style: none;
   background-color: var(--hs-appbar-item-fill, rgba(0, 0, 0, 0));
   color: var(--hs-appbar-item-ink, inherit);
   border: 1px solid var(--hs-appbar-item-border, rgba(0, 0, 0, 0));
@@ -99,18 +96,21 @@
   }
 }
 .hs-appbar .hs-appbar__wrap .hs-appbar__item.active {
-  color: var(--hs-theme-native-blue-400);
+  color: var(--hs-theme-scarlet-400);
 }
 .hs-appbar .hs-appbar__wrap .hs-appbar__item > a, .hs-appbar .hs-appbar__wrap .hs-appbar__item > p {
-  display: block;
-  color: inherit;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .hs-appbar .hs-appbar__wrap .hs-appbar__item .hs-appbar__item__icon {
-  font-size: var(--hs-appbar-item-icon-size, 1.5rem);
+  font-size: var(--hs-appbar-item-icon-size, var(--hs-theme-size-h3));
   color: inherit;
 }
 .hs-appbar .hs-appbar__wrap .hs-appbar__item .hs-appbar__item__label {
-  font-size: var(--hs-appbar-item-label-size, 0.75rem);
+  font-size: var(--hs-appbar-item-label-size, var(--hs-theme-size-small));
+  line-height: var(--hs-appbar-item-label-line-height, var(--hs-theme-line-height-small));
   color: inherit;
 }
 @media (min-width: 540px) {

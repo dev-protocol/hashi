@@ -24,15 +24,12 @@
 
 @mixin render($breakpoint, $active) {
     .hs-appbar__item {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        
         margin: 0 auto;
         box-sizing: border-box;
         user-select: none;
         cursor: pointer;
+        
+        list-style: none;
         
         background-color: hs-core.theme-key-create('appbar-item-fill', rgba(0 0 0 / 0));
         color: hs-core.theme-key-create('appbar-item-ink', inherit);
@@ -69,12 +66,14 @@
     
         & > a,
         & > p {
-            display: block;
-            color: inherit;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
         }
         
         .hs-appbar__item__icon {
-            font-size: hs-core.theme-key-create('appbar-item-icon-size', hs-core.tools-to-rem(24px));
+            font-size: hs-core.theme-key-create('appbar-item-icon-size', hs-core.theme-token-get('size-h3'));
             color: inherit;
     
             @include hs-core.theme-breakpoint-create($breakpoint) {
@@ -83,7 +82,8 @@
         }
         
         .hs-appbar__item__label {
-            font-size: hs-core.theme-key-create('appbar-item-label-size', hs-core.tools-to-rem(12px));
+            font-size: hs-core.theme-key-create('appbar-item-label-size', hs-core.theme-token-get('size-small'));
+            line-height: hs-core.theme-key-create('appbar-item-label-line-height', hs-core.theme-token-get('line-height-small'));
             color: inherit;
             
             @include hs-core.theme-breakpoint-create($breakpoint) {

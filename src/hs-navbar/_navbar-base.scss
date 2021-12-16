@@ -51,15 +51,18 @@
         }
         
         .hs-navbar__item {
+            display: block;
             padding: 0.7rem 1rem;
             border-radius: hs-core.theme-key-create('navbar-item-radius', hs-core.theme-token-get('radius-xs'));
             background-color: hs-core.theme-key-create('navbar-item-fill', rgba(0 0 0 / 0));
             color: hs-core.theme-key-create('navbar-item-ink', inherit);
             border: 1px solid hs-core.theme-key-create('navbar-item-border', rgba(0 0 0 / 0));
+            list-style: none;
             @include hs-core.tools-prefix(transition, all 0.1s ease);
             
             @include hs-core.theme-breakpoint-create($breakpoint) {
                 padding: 0.4rem 0.6rem;
+                display: inline-block;
             }
             
             &:hover {

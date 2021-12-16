@@ -41,10 +41,11 @@
         height: 100%;
         font-size: 100%;
         box-sizing: border-box;
-        background-color: hashi.theme-token-get('surface-400');
+        background-color: #fff !important;
         
         &[data-theme='dark'] {
             color-scheme: dark !important;
+            background-color: hashi.theme-token-get('surface-400') !important;
             @include hashi.theme-init((
                 'surface': (
                     '200': #3a4158,
@@ -63,8 +64,16 @@
             ));
             
             body {
-                background-color: hashi.theme-token-get('surface-400');
+                background-color: hashi.theme-token-get('surface-400') !important;
             }
+    
+            .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+                background-color: hashi.theme-token-get('surface-600') !important;
+            }
+        }
+        
+        body {
+            background-color: #fff;
         }
     }
 }
