@@ -6,3 +6,4 @@ sidebar_position: 1
 ---
 # Introduction
 Dev Protocol's design system implementation for the web.
+![cover.png](https://raw.githubusercontent.com/dev-protocol/hashi-web/main/media/img.png)

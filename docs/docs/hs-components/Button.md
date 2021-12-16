@@ -105,9 +105,10 @@ These are for creating your own component themes.
 | `$settings` | `map` | Additional style and rendering configurations. |
 
 #### `$color` parameter
-| Property | Type | Effect |
-|---|---|---|
-| `preset` | `token or list of tokens` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
+| Property  | Type | Effect |
+|-----------|---|---|
+| `default` | `token` | Defines what the default color to use |
+| `preset`  | `token or list of tokens` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
 
 #### `$shape` parameter
 | Property | Type | Effect |
