@@ -20,39 +20,35 @@
 //  SOFTWARE.
 //
 
-@use '../hs-core';
-
 @mixin init() {
-    .hs-table {
-        width: 100%;
-        margin: 0.5rem 0;
-        border-collapse: collapse;
+    .content-wrap {
+        width: calc(100% - 30px);
+        max-width: 1077px;
+        margin: 3rem auto 5rem auto;
+    }
+    
+    .grid-3 {
+        margin-top: 0.7rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
         
-        thead > tr {
-            background-color: hs-core.theme-token-get('surface-400');
-            
-            > td {
-                font-family: hs-core.theme-token-get('family-action');
-            }
+        @media (min-width: 640px) {
+            grid-template-columns: repeat(2, 1fr);
         }
         
-        tr {
-            padding: 0.4rem;
-            background-color: hs-core.theme-token-get('surface-200');
-            
-            &:nth-child(even) {
-                background-color: hs-core.theme-token-get('surface-300');
-            }
-            
-            th {
-                padding: 0.5rem;
-                text-align: center;
-            }
-            
-            td {
-                padding: 0.5rem;
-                text-align: center;
-            }
+        @media (min-width: 870px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        > a .hs-button,
+        > .hs-button {
+            min-width: 100% !important;
+            min-height: 100%;
+        }
+        
+        a {
+            text-decoration: none !important;
         }
     }
 }

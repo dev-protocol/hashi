@@ -52,8 +52,8 @@
   color: var(--hs-text-field-ink, var(--hs-theme-surface-ink));
   border: none;
   border-bottom: 2px solid var(--hs-text-field-border, var(--hs-theme-neutral-600));
-  font-size: var(--hs-text-field-input-size, 1rem);
-  line-height: var(--hs-text-field-input-line-height, var(--hs-theme-line-height-button));
+  font-size: var(--hs-text-field-size, 1rem);
+  line-height: var(--hs-text-field-line-height, var(--hs-theme-line-height-button));
   resize: none;
   outline: none;
   -webkit-transition: all 0.1s ease;

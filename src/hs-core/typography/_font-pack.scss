@@ -21,6 +21,7 @@
 //
 
 @mixin load-font-pack() {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
     @font-face {
         font-family: 'Whyte';
         src: url('https://devstaticasset.azureedge.net/font/ABCWhyte-Regular.woff2') format('woff2');

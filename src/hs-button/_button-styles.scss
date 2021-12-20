@@ -79,6 +79,7 @@ $core-color-presets: hs-core.$color-presets;
         border-radius: hs-core.theme-key-create('button-radius', hs-core.theme-token-get('radius-#{$radius}'));
         padding: hs-core.theme-key-create('button-padding', hs-core.theme-token-get('padding-#{$padding}'));
     
+        font-family: hs-core.theme-key-create('button-family', hs-core.theme-token-get('family-action'));
         font-size: hs-core.theme-key-create('button-size', hs-core.theme-token-get('size-#{$type-size}'));
         font-weight: hs-core.theme-key-create('button-weight', hs-core.theme-token-get('weight-#{$type-weight}'));
         line-height: hs-core.theme-key-create('button-line-height', hs-core.theme-token-get('line-height-#{$type-line-height}'));

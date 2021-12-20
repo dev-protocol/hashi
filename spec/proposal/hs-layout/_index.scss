@@ -20,39 +20,3 @@
 //  SOFTWARE.
 //
 
-@use '../hs-core';
-
-@mixin init() {
-    .hs-table {
-        width: 100%;
-        margin: 0.5rem 0;
-        border-collapse: collapse;
-        
-        thead > tr {
-            background-color: hs-core.theme-token-get('surface-400');
-            
-            > td {
-                font-family: hs-core.theme-token-get('family-action');
-            }
-        }
-        
-        tr {
-            padding: 0.4rem;
-            background-color: hs-core.theme-token-get('surface-200');
-            
-            &:nth-child(even) {
-                background-color: hs-core.theme-token-get('surface-300');
-            }
-            
-            th {
-                padding: 0.5rem;
-                text-align: center;
-            }
-            
-            td {
-                padding: 0.5rem;
-                text-align: center;
-            }
-        }
-    }
-}

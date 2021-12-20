@@ -39,6 +39,7 @@
   outline: none;
   border-radius: var(--hs-button-radius, var(--hs-theme-radius-xs));
   padding: var(--hs-button-padding, var(--hs-theme-padding-sm));
+  font-family: var(--hs-button-family, var(--hs-theme-family-action));
   font-size: var(--hs-button-size, var(--hs-theme-size-button));
   font-weight: var(--hs-button-weight, var(--hs-theme-weight-button));
   line-height: var(--hs-button-line-height, var(--hs-theme-line-height-button));

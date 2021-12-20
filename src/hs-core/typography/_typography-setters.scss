@@ -80,7 +80,8 @@
         line-height: theme.token-get('line-height-small');
     }
     
-    code {
+    code,
+    code * {
         font-family: theme.token-get('family-code');
         font-size: theme.token-get('size-body');
         font-weight: theme.token-get('weight-body');

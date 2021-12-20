@@ -19,6 +19,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 :root {
   color-scheme: light;
   --hs-theme-family-global: Whyte;
@@ -207,7 +208,8 @@ small {
   line-height: var(--hs-theme-line-height-small);
 }
 
-code {
+code,
+code * {
   font-family: var(--hs-theme-family-code);
   font-size: var(--hs-theme-size-body);
   font-weight: var(--hs-theme-weight-body);
