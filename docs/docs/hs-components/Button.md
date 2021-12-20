@@ -50,35 +50,29 @@ sidebar_position: 1
 ### CSS Classes
 These are used to extend and modify the styles of a component on the markup.
 
-| Class | Effect |
---- | ---
-| `.hs-button--outlined` | Renders the component in its outlined style. |
-| `.hs-button--filled` | Renders the component in its filled style. |
-| `.scarlet`, `.plox`, `.native-blue`, `.bright-cyan`, `.surface`, `.neutral`, `.success`, `.warning`, `.danger` | Modifies the button color. |
-
-#### Example
-```html
-<button class="hs-button hs-button--outlined scarlet" role="button">
-    <i class="hs-button__icon" aria-hidden="true"></i>
-    <span class="hs-button__label">BUTTON</span>
-</button>
-```
+| Class                                                                                                          | Effect                                       |
+|----------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| `.hs-button`                                                                                                   | Main button class.                           |
+| `.hs-button--outlined`                                                                                         | Renders the component in its outlined style. |
+| `.hs-button--filled`                                                                                           | Renders the component in its filled style.   |
+| `.scarlet`, `.plox`, `.native-blue`, `.bright-cyan`, `.surface`, `.neutral`, `.success`, `.warning`, `.danger` | Modifies the button color.                   |
 
 ### Custom Properties
 These are for creating your own component themes.
 
-| Property | Effect |
-|---|---|
-| `--hs-button-fill` | Changes the button's background color. |
-| `--hs-button-ink` | Changes the button's text color. |
-| `--hs-button-border` | Changes the button's border color. |
-| `--hs-button-radius` | Changes the button's border radius. |
-| `--hs-button-gap` | Changes the button's label and icon gap. |
-| `--hs-button-weight` | Changes the button's border color. |
-| `--hs-button-icon-ink` | Changes the button's icon color. |
-| `--hs-button-icon-size` | Changes the button's icon size. |
-| `--hs-button-label-ink` | Changes the button's label color. |
-| `--hs-button-label-size` | Changes the button's label size. |
+| Property                 | Effect                                   |
+|--------------------------|------------------------------------------|
+| `--hs-button-fill`       | Changes the button's background color.   |
+| `--hs-button-ink`        | Changes the button's text color.         |
+| `--hs-button-border`     | Changes the button's border color.       |
+| `--hs-button-radius`     | Changes the button's border radius.      |
+| `--hs-button-gap`        | Changes the button's label and icon gap. |
+| `--hs-button-padding`    | Changes the button's padding.            |
+| `--hs-button-weight`     | Changes the button's border color.       |
+| `--hs-button-icon-ink`   | Changes the button's icon color.         |
+| `--hs-button-icon-size`  | Changes the button's icon size.          |
+| `--hs-button-label-ink`  | Changes the button's label color.        |
+| `--hs-button-label-size` | Changes the button's label size.         |
 
 #### Example
 ```scss
@@ -105,28 +99,27 @@ These are for creating your own component themes.
 | `$settings` | `map` | Additional style and rendering configurations. |
 
 #### `$color` parameter
-| Property  | Type | Effect |
-|-----------|---|---|
-| `default` | `token` | Defines what the default color to use |
+| Property  | Type                      | Effect                                                                                                                                                                   |
+|-----------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `default` | `token`                   | Defines what the default color to use                                                                                                                                    |
 | `preset`  | `token or list of tokens` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
 
 #### `$shape` parameter
-| Property | Type | Effect |
-|---|---|---|
-| `radius` | `string` | Defines the border radius of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
-| `padding` | `string` | Defines the padding of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
+| Property  | Type     | Effect                                                                                               |
+|-----------|----------|------------------------------------------------------------------------------------------------------|
+| `radius`  | `string` | Defines the border radius of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
+| `padding` | `string` | Defines the padding of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl`       |
 
 #### `$type` parameter
-| Property | Type | Effect |
-|---|---|---|
-| `family` | `token` | Defines the font family to be used. |
-| `size` | `token` | Defines the font size to be used. |
-| `weight` | `token` | Defines the font weight to be used. |
+| Property      | Type    | Effect                              |
+|---------------|---------|-------------------------------------|
+| `size`        | `token` | Defines the font size to be used.   |
+| `weight`      | `token` | Defines the font weight to be used. |
 | `line-height` | `token` | Defines the line height to be used. |
 
 #### `$settings` parameter
-| Property | Type | Effect |
-|---|---|---|
+| Property   | Type             | Effect                                                                                                |
+|------------|------------------|-------------------------------------------------------------------------------------------------------|
 | `variants` | `string or list` | Defines what variants to render. Available variants include: `text`, `outlined`, `filled`, and `all`. |
 
 #### Example

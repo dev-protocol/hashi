@@ -22,8 +22,10 @@
 
 @use '~@devprotocol/hashi';
 @use '~@devprotocol/hashi/hs-button';
+@use '~@devprotocol/hashi/hs-button-group';
 @use '~@devprotocol/hashi/hs-card';
 @use '~@devprotocol/hashi/hs-link';
+@use '~@devprotocol/hashi/hs-text-field';
 @use '~@devprotocol/hashi/hs-utils';
 
 @use 'modules/doc-theme-overrides';
@@ -35,11 +37,23 @@
 
 @use 'modules/ifm-overrides';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 @include hashi.init() {
+    code span {
+        font-family: hashi.theme-token-get('family-code') !important;
+    }
+    
     @include doc-theme-overrides.use();
     @include hs-layout.use();
     
     @include hs-button.render();
+    
+    .hs-button {
+        max-width: 100% !important;
+    }
+    
+    @include hs-button-group.render();
     @include hs-card.render();
     
     .hs-card {
@@ -60,6 +74,7 @@
     @include hs-doc-card.use();
     @include hs-hero.use();
     @include hs-link.render();
+    @include hs-text-field.render();
     @include hs-utils.color-utils();
     @include hs-utils.shape-utils();
     

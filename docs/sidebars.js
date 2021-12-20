@@ -29,7 +29,10 @@ const sidebars = {
             },
         ],
         'Components': [
-            'hs-components/hs-button'
+            'hs-components/hs-button',
+            'hs-components/hs-button-group',
+            'hs-components/hs-card',
+            'hs-components/hs-text-field',
         ],
         'Spec': [
             'spec/component-usage'
