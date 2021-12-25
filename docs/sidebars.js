@@ -29,9 +29,12 @@ const sidebars = {
             },
         ],
         'Components': [
+            'hs-components/hs-appbar',
             'hs-components/hs-button',
             'hs-components/hs-button-group',
             'hs-components/hs-card',
+            'hs-components/hs-header',
+            'hs-components/hs-select-field',
             'hs-components/hs-text-field',
         ],
         'Spec': [

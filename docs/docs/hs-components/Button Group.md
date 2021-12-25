@@ -40,6 +40,6 @@ sidebar_position: 2
 ### CSS Classes
 These are used to extend and modify the styles of a component on the markup.
 
-| Class | Effect |
--------|---|
+| Class              | Effect                                            |
+|--------------------|---------------------------------------------------|
 | `.hs-button-group` | A wrapper class around buttons for grouping them. |

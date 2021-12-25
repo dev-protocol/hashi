@@ -31,7 +31,7 @@
         place-items: center;
         padding: 2.5rem 0;
         // background-image: url('../media/ui-ux.png');
-        background-color: hashi.theme-token-get('surface-400');
+        background-color: hashi.theme-token-get('surface-300');
         border-bottom: 2px solid hashi.theme-token-get('surface-300');
         
         .hs-hero__wrap {
@@ -53,8 +53,19 @@
                     6px 6px hashi.theme-token-get('plox-400'),
                     9px 9px hashi.theme-token-get('native-blue-400'),
                     12px 12px hashi.theme-token-get('bright-cyan-400'),
-            ;
+                ;
                 user-select: none;
+                @include hashi.tools-prefix(transition, text-shadow 0.4s ease);
+                
+                &:hover,
+                &:active {
+                    text-shadow:
+                        (3px * 1.67) (3px * 1.67) hashi.theme-token-get('scarlet-400'),
+                        (6px * 1.67) (6px * 1.67) hashi.theme-token-get('plox-400'),
+                        (9px * 1.67) (9px * 1.67) hashi.theme-token-get('native-blue-400'),
+                        (12px * 1.67) (12px * 1.67) hashi.theme-token-get('bright-cyan-400'),
+                    ;
+                }
             }
             
             .hs-hero__text {
@@ -73,6 +84,12 @@
                     }
                 }
             }
+        }
+    }
+    
+    html[data-theme='dark'] {
+        .hs-hero {
+            background-color: hashi.theme-token-get('surface-300');
         }
     }
 }

@@ -112,15 +112,15 @@ These are for creating your own component themes.
 | `line-height` | `token` | Defines the line height to be used. |
 
 #### `$settings` parameter
-| Property        | Type      | Effect |
-|-----------------|-----------|--|
+| Property        | Type      | Effect                                                         |
+|-----------------|-----------|----------------------------------------------------------------|
 | `has-elevation` | `boolean` | Determines if the component will render with elevation or not. |
 
 #### Example
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-card';
 
-hs-card.render(
+@include hs-card.render(
     $color: (
         default: 'surface'
     ),

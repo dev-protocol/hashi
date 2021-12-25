@@ -45,7 +45,7 @@ This doc contains proposals for the syntax of using a hashi component in SCSS.
 ```
 
 <div class="hs-status-tag proposal">
-    <span class="hs-status-tag__label">Status: <b>PROPOSED (v0.2.0)</b></span>
+    <span class="hs-status-tag__label">Status: <b>PROPOSED (v1.0.0)</b></span>
 </div>
 
 ```scss

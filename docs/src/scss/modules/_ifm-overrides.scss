@@ -23,8 +23,15 @@
 @use '~@devprotocol/hashi';
 
 @mixin use() {
+    :root {
+    
+    }
     .navbar {
         box-shadow: none;
+        
+        .navbar__toggle {
+            color: #fff !important;
+        }
         
         .navbar__items {
             display: flex;
@@ -35,9 +42,16 @@
             }
             
             .navbar__item {
+                --hs-button-ink: #fff;
                 @extend .hs-button;
                 @extend .neutral;
                 max-width: max-content !important;
+                
+                &:hover,
+                &:focus,
+                &:active {
+                    --hs-button-ink: #fff;
+                }
                 
                 > span {
                     font-size: inherit;

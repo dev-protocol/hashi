@@ -53,6 +53,8 @@ These are used to extend and modify the styles of a component on the markup.
 | Class                                                                                                          | Effect                                       |
 |----------------------------------------------------------------------------------------------------------------|----------------------------------------------|
 | `.hs-button`                                                                                                   | Main button class.                           |
+| `.hs-button__label`                                                                                            | Class for the button label.                  |
+| `.hs-button__icon`                                                                                             | Class for the button icon.                   |
 | `.hs-button--outlined`                                                                                         | Renders the component in its outlined style. |
 | `.hs-button--filled`                                                                                           | Renders the component in its filled style.   |
 | `.scarlet`, `.plox`, `.native-blue`, `.bright-cyan`, `.surface`, `.neutral`, `.success`, `.warning`, `.danger` | Modifies the button color.                   |
@@ -91,12 +93,12 @@ These are for creating your own component themes.
 }
 ```
 ### SCSS `render()` mixin
-| Property | Type | Effect |
-|---|---|---|
-| `$color` | `map` | Configures what and how to render the color styles for the component. |
-| `$shape` | `map` | Configures what and how to render the shape styles for the component. |
-| `$type` | `map` | Configures what and how to render the typography styles for the component. |
-| `$settings` | `map` | Additional style and rendering configurations. |
+| Property    | Type  | Effect                                                                     |
+|-------------|-------|----------------------------------------------------------------------------|
+| `$color`    | `map` | Configures what and how to render the color styles for the component.      |
+| `$shape`    | `map` | Configures what and how to render the shape styles for the component.      |
+| `$type`     | `map` | Configures what and how to render the typography styles for the component. |
+| `$settings` | `map` | Additional style and rendering configurations.                             |
 
 #### `$color` parameter
 | Property  | Type                      | Effect                                                                                                                                                                   |
@@ -126,7 +128,7 @@ These are for creating your own component themes.
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-button';
 
-hs-button.render(
+@include hs-button.render(
     $color: (
         presets: ('scarlet', 'native-blue', 'success', 'warning', 'danger'),
     ),

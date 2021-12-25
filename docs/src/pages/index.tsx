@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import '../scss/main.scss';
 import HSCard from "@site/src/components/HSCard";

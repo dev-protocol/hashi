@@ -47,6 +47,11 @@ const config = {
         title: 'Hashi',
         items: [
           {
+            to: '/docs/getting-started/introduction',
+            label: 'Docs',
+            position: 'left'
+          },
+          {
             to: 'https://initto.devprotocol.xyz',
             label: 'Blog',
             position: 'left'

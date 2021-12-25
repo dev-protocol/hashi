@@ -42,11 +42,11 @@ We recommend having a css purger (like purgecss) integrated into your app's work
 ```shell
 # NPM
 npm install @devprotocol/hashi --save
-npm install --save-dev purgecss --save
+npm install purgecss --save-dev
 
 # Yarn
-yarn add @devprotocol/hashi
-yarn add --dev purgecss
+yarn add @devprotocol/hashi --save
+yarn add --dev purgecss --save
 ```
 
 ### Instantiation

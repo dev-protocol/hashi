@@ -88,17 +88,17 @@ These are for creating your own component themes.
 | `$color`    | `map` | Configures what and how to render the color styles for the component. |
 
 #### `$color` parameter
-| Property  | Type    | Effect                                 |
-|-----------|---------|----------------------------------------|
-| `default` | `token` | Defines what the default color to use. |
+| Property | Type    | Effect                                |
+|----------|---------|---------------------------------------|
+| `accent` | `token` | Defines what the accent color to use. |
 
 #### Example
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-text-field';
 
-hs-text-field.render(
+@include hs-text-field.render(
     $color: (
-        default: 'surface'
+        accent: 'surface'
     )
 );
 ```

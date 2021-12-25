@@ -31,7 +31,8 @@
         --ifm-color-primary-light: #ff4f31;
         --ifm-color-primary-lighter: #ff5b3e;
         --ifm-color-primary-lightest: #ff7e68;
-        --ifm-navbar-background-color: #{hashi.theme-token-get('surface-300')};
+        --ifm-navbar-background-color: #{hashi.theme-token-get('neutral-600')};
+        --ifm-navbar-link-color: #{hashi.theme-token-get('neutral-ink')};
         --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
         --ifm-toc-border-color: rgba(0 0 0 / 0);
     }
@@ -44,6 +45,8 @@
         background-color: #fff !important;
         
         &[data-theme='dark'] {
+            --ifm-navbar-background-color: #{hashi.theme-token-get('surface-400')};
+            --ifm-navbar-link-color: #{hashi.theme-token-get('surface-ink')};
             color-scheme: dark !important;
             background-color: hashi.theme-token-get('surface-400') !important;
             @include hashi.theme-init((
@@ -70,10 +73,42 @@
             .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
                 background-color: hashi.theme-token-get('surface-600') !important;
             }
+    
+            .menu__link {
+                color: #fff;
+                fill: hashi.theme-token-get('neutral-ink');
+    
+                &--sublist::after {
+                    $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0, 0, 0, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+                    background: #{$aye} 50% / 2rem 2rem;
+                }
+    
+                &--active {
+                    color: var(--ifm-color-primary);
+                }
+            }
         }
         
         body {
             background-color: #fff;
+        }
+        
+        .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+            background-color: hashi.theme-token-get('neutral-400') !important;
+        }
+    
+        .menu__link {
+            color: #fff;
+            fill: hashi.theme-token-get('neutral-ink');
+        
+            &--sublist::after {
+                $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(255, 255, 255, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+                background: #{$aye} 50% / 2rem 2rem;
+            }
+        
+            &--active {
+                color: var(--ifm-color-primary);
+            }
         }
     }
 }
