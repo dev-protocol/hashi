@@ -34,6 +34,7 @@ const sidebars = {
             'hs-components/hs-button-group',
             'hs-components/hs-card',
             'hs-components/hs-header',
+            'hs-components/hs-link',
             'hs-components/hs-select-field',
             'hs-components/hs-text-field',
         ],

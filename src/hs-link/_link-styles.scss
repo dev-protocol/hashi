@@ -23,10 +23,10 @@
 @use '../hs-core';
 @use 'link-base';
 @use 'sass:map';
+@use 'sass:list';
 
 $_init-color: (
     default: 'native-blue',
-    preset: 'native-blue',
 );
 
 $dev-color-tone: 400 !default;
@@ -38,12 +38,11 @@ $core-color-presets: hs-core.$color-presets;
 ) {
     $_merged-color: map.merge($_init-color, $color);
     $default-color: map.get($_merged-color, 'default');
-    $color-presets: map.get($_merged-color, 'preset');
     
     @include link-base.init() {
         color: hs-core.theme-key-create('link-ink', hs-core.theme-token-get('#{$default-color}-#{$dev-color-tone}'));
         
-        @if $color-presets == 'all' {
+        @if $default-color == 'all' or list.length($default-color) > 1 {
             @error "You cannot have multiple color instances of hs-link. Only pick one!";
         } @else {
             @include hs-core.color-override('link', $color-presets, 'text', true);
