@@ -21,15 +21,37 @@
 //
 
 @use '../theme';
-@use 'font-pack' as *;
+@use 'sass:map';
 
-@mixin override($component-name, $preset) {
-    //
+@use 'font-pack';
+
+@mixin apply($component-name, $type-preset) {
+    $family: map.get($type-preset, 'family');
+    $size: map.get($type-preset, 'size');
+    $weight: map.get($type-preset, 'weight');
+    $line-height: map.get($type-preset, 'line-height');
+    
+    @if $family {
+        @include theme.key-bind('#{$component-name}-family', 'family-#{$family}');
+    }
+    
+    @if $size {
+        @include theme.key-bind('#{$component-name}-size', 'size-#{$size}');
+    }
+    
+    @if $weight {
+        @include theme.key-bind('#{$component-name}-weight', 'weight-#{$weight}');
+    }
+    
+    @if $line-height {
+        @include theme.key-bind('#{$component-name}-line-height', 'line-height-#{$line-height}');
+    
+    }
 }
 
 @mixin init() {
     
-    @include load-font-pack();
+    @include font-pack.load();
     
     * {
         font-family: theme.token-get('family-global');

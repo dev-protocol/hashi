@@ -20,9 +20,4 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'shape' as shape-*;
-@forward 'typography' as typography-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+@forward 'shape-setters';

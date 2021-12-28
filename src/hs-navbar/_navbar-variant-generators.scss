@@ -20,9 +20,36 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'shape' as shape-*;
-@forward 'typography' as typography-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+@use '../hs-core';
+
+/// Component variant maker.
+/// @param {string} $class-name
+/// @return {*} extension class.
+@mixin extend($class-name) {
+    .hs-navbar.#{$class-name} {
+        @content;
+    }
+}
+
+/// Color variant map.
+/// @param {map} $color-map
+/// @param {string} $style
+/// @param {int} $tone
+/// @return {*} color styles.
+@mixin color($color-map, $style: 'filled', $tone: 400) {
+    @include hs-core.color-apply('navbar', $color-map, $style, true, $tone);
+}
+
+/// Shape variant mixin.
+/// @param {map} $shape-map
+/// @return {*} shape styles.
+@mixin shape($shape-map) {
+    @include hs-core.shape-apply('navbar', $shape-map);
+}
+
+/// Typography variant mixin.
+/// @param {map} $type-map
+/// @return {*} typography styles.
+@mixin typography($type-map) {
+    @include hs-core.typography-apply('navbar', $type-map);
+}

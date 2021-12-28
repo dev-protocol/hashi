@@ -20,9 +20,18 @@
 //  SOFTWARE.
 //
 
-@forward 'color' as color-*;
-@forward 'shape' as shape-*;
-@forward 'typography' as typography-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
+@use '../theme';
+@use 'sass:map';
+
+@mixin apply($component-name, $shape-preset) {
+    $radius: map.get($shape-preset, 'radius');
+    $padding: map.get($shape-preset, 'padding');
+    
+    @if $radius {
+        @include theme.key-bind('#{$component-name}-radius', 'radius-#{$radius}');
+    }
+    
+    @if $padding {
+        @include theme.key-bind('#{$component-name}-padding', 'padding-#{$radius}');
+    }
+}
