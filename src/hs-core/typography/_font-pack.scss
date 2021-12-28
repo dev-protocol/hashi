@@ -20,7 +20,7 @@
 //  SOFTWARE.
 //
 
-@mixin load-font-pack() {
+@mixin load() {
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
     @font-face {
         font-family: 'Whyte';

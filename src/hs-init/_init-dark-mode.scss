@@ -21,48 +21,51 @@
 //
 
 @use '../hs-core';
-@use 'init-dark-mode';
 
-@mixin init() {
-    :root {
-        color-scheme: light;
-        @include hs-core.theme-init();
-    }
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: inherit;
-        color: inherit;
-        
-        &::before,
-        &::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: inherit;
-            color: inherit;
-        }
-    }
-    
-    @include hs-core.typography-init();
-    
-    html {
-        width: 100%;
-        height: 100%;
-        font-size: 100%;
-        box-sizing: border-box;
-        
-        &[hashi-theme='dark'],
-        &[data-theme='dark'],
-        &[theme='dark'] {
-            @include init-dark-mode.main-chunk();
-        }
-    }
+@mixin main-chunk() {
+    color-scheme: dark !important;
+    @include hs-core.theme-init((
+        'surface': (
+            '200': #3a4158,
+            '300': #222b3d,
+            '400': #111827,
+            '600': #040b10,
+            'ink': #fff
+        ),
+        'neutral': (
+            '200': #ffffff,
+            '300': #f1f1f1,
+            '400': #d7d7d7,
+            '600': #bfbfbf,
+            'ink': #000000,
+        )
+    ));
     
     body {
-        background-color: hs-core.theme-token-get('surface-200');
-        color: hs-core.theme-token-get('surface-ink');
+        background-color: hs-core.theme-token-get('surface-400');
     }
     
-    @content;
+    .hs-appbar {
+        @include hs-core.color-apply('appbar', (
+            fill: 'surface',
+            ink: 'surface-ink',
+            border: 'surface'
+        ), 'filled', $tone: 300);
+    }
+    
+    .hs-header {
+        @include hs-core.color-apply('header', (
+            fill: 'surface',
+            ink: 'surface-ink',
+            border: 'surface'
+        ), 'filled', $tone: 300);
+    }
+    
+    .hs-navbar {
+        @include hs-core.color-apply('navbar', (
+            fill: 'surface',
+            ink: 'surface-ink',
+            border: 'surface'
+        ), 'filled', $tone: 300);
+    }
 }
