@@ -50,6 +50,14 @@
     @include hashi.table-render();
     @include hashi.text-field-render();
     
+    @include hashi.button-extend('my-variant') {
+        @include hashi.button-color((
+            fill: 'surface',
+            ink: 'surface-ink',
+            border: 'native-blue'
+        ), 'filled');
+    }
+    
     .fill-current {
         fill: currentColor;
     }
