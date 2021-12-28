@@ -1818,10 +1818,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@devprotocol/hashi@0.1.0-alpha.4":
-  version "0.1.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-0.1.0-alpha.4.tgz#9d956e1c21bccc1b3819b7374fa48f2c73421309"
-  integrity sha512-BGMReIRelORKjP6p4GU95HBAAsBo5xZKuQ/cXw7nKsx/OJks/5D1aHvqYcOHR9olXevVNmN9rTsBWLP4vB6DMw==
+"@devprotocol/hashi@0.1.0-alpha.5":
+  version "0.1.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-0.1.0-alpha.5.tgz#25a6b2fb20a1027987f6d18eaa26e0b76efdd42e"
+  integrity sha512-kfoYkgFlIwNWNdzPNNDo0lokbikX9bytQCTetYBTaruQQqpgnfsZqOfZDfiks5NBj+nX6Fh9qvaSgBnf4q+IIA==
   dependencies:
     "@matteusan/sentro" "0.1.12"
 
@@ -1840,7 +1840,7 @@
     "@docsearch/css" "3.0.0-alpha.41"
     algoliasearch "^4.0.0"
 
-"@docusaurus/core@2.0.0-beta.14", "@docusaurus/core@^2.0.0-beta.14":
+"@docusaurus/core@2.0.0-beta.14":
   version "2.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-2.0.0-beta.14.tgz#9baf8fbfe29f444f985616013b5d80435ea5f29e"
   integrity sha512-dW95WbD+WE+35Ee1RYIS1QDcBhvUxUWuDmrWr1X0uH5ZHIeOmOnsGVjjn4FA8VN2MkF0uuWknmRakQmJk0KMZw==
@@ -1961,7 +1961,7 @@
     url-loader "^4.1.1"
     webpack "^5.61.0"
 
-"@docusaurus/module-type-aliases@^2.0.0-beta.14":
+"@docusaurus/module-type-aliases@2.0.0-beta.14":
   version "2.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@docusaurus/module-type-aliases/-/module-type-aliases-2.0.0-beta.14.tgz#8a11f9c4a408d8e8cc4cb59ba81a28ecc629256a"
   integrity sha512-jlSwYoRVeNxvmjbVil35mRVSXZdOmEM95Sph7NxC6IE/ceT1a8s4tpzI2xUMsGgSfLBldqhkXe+WSOYqUL7x3w==
@@ -2075,7 +2075,7 @@
     sitemap "^7.0.0"
     tslib "^2.3.1"
 
-"@docusaurus/preset-classic@^2.0.0-beta.14":
+"@docusaurus/preset-classic@2.0.0-beta.14":
   version "2.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-2.0.0-beta.14.tgz#128026fb201fdc6271614587ca09187bc83d930a"
   integrity sha512-43rHA6wM4FcbHLPiBpqY4VSUjUXOWvW/N4q0wvf1LMoPH25lUzIaldpjD3Unzq5+UCYCFES24ktl58QOh7PB2g==
