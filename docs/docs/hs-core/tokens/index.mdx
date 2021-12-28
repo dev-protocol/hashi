@@ -9,6 +9,8 @@ sidebar_position: 1
 
 Tokens are the heart and soul of the design system, hence, they are one of the most valuable assets. These are your source of truth and provides a centralized repository of design constants that will be used throughout the design system.
 
+One of the philosophies applied to this is that these are the building blocks for creating components. We encourage you to use Hashi's token API to style your components.
+
 export const TokenCard = ({ color, to, children }) => {
     return (
         <a href={ `/docs/core/tokens/${to}` }>
@@ -19,7 +21,7 @@ export const TokenCard = ({ color, to, children }) => {
     )
 }
 
-## Token Index
+Below are the documented essential tokens.
 
 <section class="grid">
     <TokenCard to="color-tokens" color="scarlet">Color</TokenCard>

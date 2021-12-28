@@ -50,14 +50,13 @@ sidebar_position: 1
 ### CSS Classes
 These are used to extend and modify the styles of a component on the markup.
 
-| Class                                                                                                          | Effect                                       |
-|----------------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| `.hs-button`                                                                                                   | Main button class.                           |
-| `.hs-button__label`                                                                                            | Class for the button label.                  |
-| `.hs-button__icon`                                                                                             | Class for the button icon.                   |
-| `.hs-button--outlined`                                                                                         | Renders the component in its outlined style. |
-| `.hs-button--filled`                                                                                           | Renders the component in its filled style.   |
-| `.scarlet`, `.plox`, `.native-blue`, `.bright-cyan`, `.surface`, `.neutral`, `.success`, `.warning`, `.danger` | Modifies the button color.                   |
+| Class                  | Effect                                       |
+|------------------------|----------------------------------------------|
+| `.hs-button`           | Main button class.                           |
+| `.hs-button__label`    | Class for the button label.                  |
+| `.hs-button__icon`     | Class for the button icon.                   |
+| `.hs-button--outlined` | Renders the component in its outlined style. |
+| `.hs-button--filled`   | Renders the component in its filled style.   |
 
 ### Custom Properties
 These are for creating your own component themes.
@@ -101,10 +100,9 @@ These are for creating your own component themes.
 | `$settings` | `map` | Additional style and rendering configurations.                             |
 
 #### `$color` parameter
-| Property  | Type                      | Effect                                                                                                                                                                   |
-|-----------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `default` | `token`                   | Defines what the default color to use                                                                                                                                    |
-| `preset`  | `token or list of tokens` | Defines what color-presets to render. Available variants include: `neutral`, `scarlet`, `plox`, `native-blue`, `bright-cyan`, `success`, `warning`, `danger`, and `all`. |
+| Property  | Type    | Effect                                 |
+|-----------|---------|----------------------------------------|
+| `default` | `token` | Defines what the default color to use. |
 
 #### `$shape` parameter
 | Property  | Type     | Effect                                                                                               |

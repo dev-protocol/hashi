@@ -10,7 +10,30 @@ This portion of the documentation will show you how to integrate Dev Protocol's 
 For almost every application you'll be developing with the Hashi Design System, we recommend you head over to our [recommended setup](#recommended-setup).
 
 ## Quick Setup
+## Install from a CDN
 ### Installation
+Add this link tag in your project's `<head></head>` tags
+```html
+<!-- FILE: index.html -->
+
+<link rel="stylesheet" href="https://unpkg.com/@devprotocol/hashi@latest/main.css">
+```
+### Instantiation
+You can configure components using a separate CSS file, and using Hashi's built-in CSS custom properties API. The custom properties API can be found in the component's documentation.
+```css
+/* FILE: style.css */
+
+.my-button-theme {
+    --hs-button-fill: red;
+    --hs-button-ink: blue;
+    --hs-button-border: green;
+}
+```
+
+## Install as a package (recommended)
+### Installation
+Run the commands below in your terminal.
+
 ```shell
 # NPM
 npm install @devprotocol/hashi
@@ -20,6 +43,8 @@ yarn add @devprotocol/hashi
 ```
 
 ### Instantiation
+Instantiate the design system in your SCSS stylesheet.
+
 ```scss
 // FILE: style.scss
 

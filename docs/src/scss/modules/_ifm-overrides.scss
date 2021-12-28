@@ -44,7 +44,7 @@
             .navbar__item {
                 --hs-button-ink: #fff;
                 @extend .hs-button;
-                @extend .neutral;
+                // @extend .neutral;
                 max-width: max-content !important;
                 
                 &:hover,
