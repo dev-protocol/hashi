@@ -22,7 +22,7 @@
 a.hs-link {
   display: inline-block;
   font-size: var(--hs-theme-size-body);
-  color: var(--hs-link-ink, var(--hs-theme-native-blue-400));
+  color: var(--hs-link-ink, var(--hs-theme-surface-ink));
   --hs-link-fill: rgba(0, 0, 0, 0);
   --hs-link-ink: var(--hs-theme-native-blue-400);
   --hs-link-border: rgba(0, 0, 0, 0);

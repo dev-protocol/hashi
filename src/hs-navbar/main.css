@@ -12,14 +12,14 @@
   --hs-navbar-fill: var(--hs-theme-surface-200);
   --hs-navbar-ink: var(--hs-theme-surface-ink);
   --hs-navbar-border: var(--hs-theme-surface-200);
-  background-color: var(--hs-navbar-fill, #fff);
-  color: var(--hs-navbar-ink, #000);
-  border: 1px solid var(--hs-navbar-border, #fff);
+  background-color: var(--hs-navbar-fill, #000);
+  color: var(--hs-navbar-ink, #fff);
+  border: 1px solid var(--hs-navbar-border, #000);
 }
 .hs-navbar.visible {
   display: flex;
 }
-@media (min-width: 540px) {
+@media (min-width: 630px) {
   .hs-navbar {
     display: flex;
     position: relative;
@@ -40,7 +40,7 @@
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
-@media (min-width: 540px) {
+@media (min-width: 630px) {
   .hs-navbar .hs-navbar__item {
     padding: 0.4rem 0.6rem;
     display: inline-block;

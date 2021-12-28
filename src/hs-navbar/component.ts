@@ -26,7 +26,7 @@ export class HSNavbar {
     private component?: any = '.hs-navbar';
     private trigger?: any = '.hs-js-navbar__trigger';
 
-    constructor(component?: string, trigger?: string) {
+    constructor(component?: any, trigger?: any) {
         this.component = component;
         this.trigger = trigger;
     }

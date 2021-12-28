@@ -1,6 +1,6 @@
 export declare class HSNavbar {
     private component?;
     private trigger?;
-    constructor(component?: string, trigger?: string);
+    constructor(component?: any, trigger?: any);
     init(): void;
 }

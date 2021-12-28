@@ -24,6 +24,6 @@
 
 import { HSNavbar } from "./component";
 
-export default [
+export {
     HSNavbar
-];
+};

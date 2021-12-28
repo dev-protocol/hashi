@@ -29,14 +29,14 @@
   background-color: var(--hs-appbar-fill, #000);
   color: var(--hs-appbar-ink, #fff);
   border: 1px solid var(--hs-appbar-border, #000);
-  --hs-appbar-fill: var(--hs-theme-surface-300);
-  --hs-appbar-ink: var(--hs-theme-surface-ink);
-  --hs-appbar-border: var(--hs-theme-surface-300);
+  --hs-appbar-fill: var(--hs-theme-neutral-600);
+  --hs-appbar-ink: var(--hs-theme-neutral-ink);
+  --hs-appbar-border: var(--hs-theme-neutral-600);
 }
 .hs-appbar * {
   box-sizing: border-box;
 }
-@media (min-width: 540px) {
+@media (min-width: 630px) {
   .hs-appbar {
     width: max-content;
     bottom: inherit;
@@ -54,14 +54,14 @@
 .hs-appbar .hs-appbar__wrap {
   display: grid;
   grid-column: 1/-1;
-  padding: 0.3rem;
+  padding: 0.5rem;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   grid-gap: 0.5rem;
   text-align: center;
   height: max-content;
 }
-@media (min-width: 540px) {
+@media (min-width: 630px) {
   .hs-appbar .hs-appbar__wrap {
     padding: 0 0.5rem;
   }
@@ -78,7 +78,7 @@
   border-radius: var(--hs-theme-radius-xs);
   padding: var(--hs-theme-padding-none);
 }
-@media (min-width: 540px) {
+@media (min-width: 630px) {
   .hs-appbar .hs-appbar__wrap .hs-appbar__item {
     padding: var(--hs-theme-padding-xs);
   }
@@ -113,7 +113,7 @@
   line-height: var(--hs-appbar-item-label-line-height, var(--hs-theme-line-height-small));
   color: inherit;
 }
-@media (min-width: 540px) {
+@media (min-width: 630px) {
   .hs-appbar .hs-appbar__wrap .hs-appbar__item .hs-appbar__item__label {
     display: none !important;
   }

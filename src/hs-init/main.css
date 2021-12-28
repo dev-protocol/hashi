@@ -25,7 +25,7 @@
   --hs-theme-family-global: Whyte;
   --hs-theme-family-header: WhyteInktrap;
   --hs-theme-family-body: Whyte;
-  --hs-theme-family-action: WhyteInktrap;
+  --hs-theme-family-action: IBM Plex Mono;
   --hs-theme-family-code: IBM Plex Mono;
   --hs-theme-size-h1: 2.25rem;
   --hs-theme-size-h2: 1.8125rem;
@@ -227,7 +227,7 @@ html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
   --hs-theme-family-global: Whyte;
   --hs-theme-family-header: WhyteInktrap;
   --hs-theme-family-body: Whyte;
-  --hs-theme-family-action: WhyteInktrap;
+  --hs-theme-family-action: IBM Plex Mono;
   --hs-theme-family-code: IBM Plex Mono;
   --hs-theme-size-h1: 2.25rem;
   --hs-theme-size-h2: 1.8125rem;
@@ -320,6 +320,21 @@ html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
 }
 html[hashi-theme=dark] body, html[data-theme=dark] body, html[theme=dark] body {
   background-color: var(--hs-theme-surface-400);
+}
+html[hashi-theme=dark] .hs-appbar, html[data-theme=dark] .hs-appbar, html[theme=dark] .hs-appbar {
+  --hs-appbar-fill: var(--hs-theme-surface-300);
+  --hs-appbar-ink: var(--hs-theme-surface-ink);
+  --hs-appbar-border: var(--hs-theme-surface-300);
+}
+html[hashi-theme=dark] .hs-header, html[data-theme=dark] .hs-header, html[theme=dark] .hs-header {
+  --hs-header-fill: var(--hs-theme-surface-300);
+  --hs-header-ink: var(--hs-theme-surface-ink);
+  --hs-header-border: var(--hs-theme-surface-300);
+}
+html[hashi-theme=dark] .hs-navbar, html[data-theme=dark] .hs-navbar, html[theme=dark] .hs-navbar {
+  --hs-navbar-fill: var(--hs-theme-surface-300);
+  --hs-navbar-ink: var(--hs-theme-surface-ink);
+  --hs-navbar-border: var(--hs-theme-surface-300);
 }
 
 body {
