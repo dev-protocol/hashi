@@ -26,7 +26,8 @@
 @use 'sass:map';
 
 $_init-color: (
-    default: 'surface'
+    default: 'surface',
+    tone: 300
 );
 
 $_init-shape: (
@@ -35,16 +36,16 @@ $_init-shape: (
 );
 
 $_init-type: (
+    family: 'body',
     size: 'body',
     weight: 'body',
     line-height: 'body',
 );
 
 $_init-settings: (
+    elevation-level: 2,
     has-elevation: true
 );
-
-$dev-color-tone: 300 !default;
 
 @mixin render(
     $color: (),
@@ -57,29 +58,33 @@ $dev-color-tone: 300 !default;
     $_merged-type: map.merge($_init-type, $type);
     $_merged-settings: map.merge($_init-settings, $settings);
     
-    $default-color: map.get($_init-color, 'default');
+    $default-color: map.get($_merged-color, 'default');
+    $tone: map.get($_merged-color, 'tone');
     
     $radius: map.get($_merged-shape, 'radius');
     $padding: map.get($_merged-shape, 'padding');
     
+    $type-family: map.get($_merged-type, 'family');
     $type-size: map.get($_merged-type, 'size');
     $type-weight: map.get($_merged-type, 'weight');
     $type-line-height: map.get($_merged-type, 'line-height');
     
+    $elevation-level: map.get($_merged-settings, 'elevation-level');
     $has-elevation: map.get($_merged-settings, 'has-elevation');
     
     @include card-base.init() {
-        background-color: hs-core.theme-key-create('card-fill', hs-core.theme-token-get('#{$default-color}-#{$dev-color-tone}'));
+        background-color: hs-core.theme-key-create('card-fill', hs-core.theme-token-get('#{$default-color}-#{$tone}'));
         color: hs-core.theme-key-create('card-ink', hs-core.theme-token-get('#{$default-color}-ink'));
-        border: 1px solid hs-core.theme-key-create('card-border', hs-core.theme-token-get('#{$default-color}-#{$dev-color-tone}'));
+        border: 1px solid hs-core.theme-key-create('card-border', hs-core.theme-token-get('#{$default-color}-#{$tone}'));
         
         @if $has-elevation {
-            @include hs-core.tools-elevation(2);
+            @include hs-core.tools-elevation($elevation-level);
         }
     
         border-radius: hs-core.theme-key-create('card-radius', hs-core.theme-token-get('radius-#{$radius}'));
         padding: hs-core.theme-key-create('card-padding', hs-core.theme-token-get('padding-#{$padding}'));
     
+        font-family: hs-core.theme-key-create('card-family', hs-core.theme-token-get('family-#{$type-family}'));
         font-size: hs-core.theme-key-create('card-size', hs-core.theme-token-get('size-#{$type-size}'));
         font-weight: hs-core.theme-key-create('card-weight', hs-core.theme-token-get('weight-#{$type-weight}'));
         line-height: hs-core.theme-key-create('card-line-height', hs-core.theme-token-get('line-height-#{$type-line-height}'));

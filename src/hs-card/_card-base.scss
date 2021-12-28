@@ -25,7 +25,7 @@
 @mixin init() {
     .hs-card {
         box-sizing: border-box;
-    
+        
         @content;
         
         .hs-card__header {
@@ -35,11 +35,13 @@
             
             .hs-card__mast {
                 .hs-card__title {
+                    font-family: hs-core.theme-key-create('card-title-family', hs-core.theme-token-get('family-header'));
                     font-size: hs-core.theme-key-create('card-title-size', hs-core.theme-token-get('size-h3'));
                     line-height: hs-core.theme-token-get('line-height-h3');
                 }
-    
+                
                 .hs-card__subtitle {
+                    font-family: hs-core.theme-key-create('card-subtitle-family', hs-core.theme-token-get('family-body'));
                     font-size: hs-core.theme-key-create('card-subtitle-size', hs-core.theme-token-get('size-small'));
                     line-height: hs-core.theme-token-get('line-height-small');
                 }
@@ -67,6 +69,7 @@
             padding: 1rem 0;
             
             * {
+                font-family: inherit;
                 font-size: inherit;
                 font-weight: inherit;
                 line-height: inherit;
