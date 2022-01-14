@@ -23,21 +23,28 @@
 @use '../hs-core';
 @use 'sass:map';
 
-$radius-presets: (
+$shape-presets: (
     'none',
     'xs',
     'sm',
     'md',
     'lg',
     'xl',
-    'xxl',
     'pill'
 );
 
 @mixin shape-utils() {
-    @each $preset in $radius-presets {
-        .radius-#{$preset} {
-            border-radius: hs-core.theme-token-get('radius-#{$preset}') !important;
+    @each $shape-preset in $shape-presets {
+        .r-#{$shape-preset} {
+            border-radius: hs-core.theme-token-get('radius-#{$shape-preset}') !important;
+        }
+    
+        .p-#{$shape-preset} {
+            padding: hs-core.theme-token-get('padding-#{$shape-preset}') !important;
+        }
+    
+        .m-#{$shape-preset} {
+            margin: hs-core.theme-token-get('margin-#{$shape-preset}') !important;
         }
     }
 }

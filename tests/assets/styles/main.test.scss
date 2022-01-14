@@ -21,6 +21,13 @@
 //
 
 @use '../../../src' as hashi;
+@use '../../../src/hs-button' with ($fill: 'native-blue');
+@use '../../../src/hs-button-group';
+@use '../../../src/hs-link';
+@use '../../../src/hs-profile';
+@use '../../../src/hs-select-field';
+@use '../../../src/hs-text-field';
+@use '../../../src/hs-utils';
 
 @include hashi.init() {
     
@@ -39,19 +46,24 @@
         }
     }
     
-    @include hashi.appbar-render();
-    @include hashi.button-render();
-    @include hashi.button-group-render();
-    @include hashi.card-render();
-    @include hashi.header-render();
-    @include hashi.link-render();
-    @include hashi.navbar-render();
-    @include hashi.select-field-render();
-    @include hashi.table-render();
-    @include hashi.text-field-render();
+    @include hs-button.render();
+    @include hs-button-group.render();
+    @include hs-link.render();
+    @include hs-profile.render();
+    @include hs-select-field.render();
+    @include hs-text-field.render();
     
-    @include hashi.button-extend('my-variant') {
-        @include hashi.button-color((
+    @include hs-utils.color-utils();
+    @include hs-utils.shape-utils();
+    @include hs-utils.typography-utils();
+    
+    // @include hashi.appbar-render();
+    // @include hashi.card-render();
+    // @include hashi.header-render();
+    // @include hashi.navbar-render();
+    
+    @include hs-button.extend('my-variant') {
+        @include hs-button.color((
             fill: 'surface',
             ink: 'surface-ink',
             border: 'native-blue'

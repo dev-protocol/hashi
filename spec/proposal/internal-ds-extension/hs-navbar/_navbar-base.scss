@@ -1,0 +1,79 @@
+//
+//  Copyright (c) 2021 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+
+@use '../../../../src/hs-core/index';
+
+@mixin init($breakpoint: 'medium') {
+    .hs-navbar {
+        width: 100%;
+        height: calc(100% - 56px);
+        display: none;
+        flex-flow: column nowrap;
+        gap: 0.7rem;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 1rem;
+        cursor: pointer;
+        
+        @content;
+        
+        &.visible {
+            display: flex;
+        }
+        
+        @include hs-core.theme-breakpoint-create($breakpoint) {
+            display: flex;
+            position: relative;
+            flex-flow: row nowrap;
+            padding: 0.5rem;
+            background-color: rgba(0 0 0 / 0);
+            border-color: rgba(0 0 0 / 0);
+        }
+        
+        .hs-navbar__item {
+            display: block;
+            padding: 0.7rem 1rem;
+            border-radius: hs-core.theme-key-create('navbar-item-radius', hs-core.theme-token-get('radius-xs'));
+            background-color: hs-core.theme-key-create('navbar-item-fill', rgba(0 0 0 / 0));
+            color: hs-core.theme-key-create('navbar-item-ink', inherit);
+            border: 1px solid hs-core.theme-key-create('navbar-item-border', rgba(0 0 0 / 0));
+            list-style: none;
+            @include hs-core.tools-prefix(transition, all 0.1s ease);
+            
+            @include hs-core.theme-breakpoint-create($breakpoint) {
+                padding: 0.4rem 0.6rem;
+                display: inline-block;
+            }
+            
+            &:hover {
+                @include hs-core.theme-key-bind('navbar-item-fill', hs-core.theme-token-get('neutral-alpha-200'));
+                @include hs-core.theme-key-bind('navbar-item-border', hs-core.theme-token-get('neutral-alpha-200'));
+            }
+    
+            &:active {
+                @include hs-core.theme-key-bind('navbar-item-fill', hs-core.theme-token-get('neutral-alpha-400'));
+                @include hs-core.theme-key-bind('navbar-item-border', hs-core.theme-token-get('neutral-alpha-400'));
+            }
+        }
+    }
+}

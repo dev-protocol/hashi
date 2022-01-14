@@ -48,7 +48,7 @@
             border: none;
             border-bottom: 2px solid hs-core.theme-key-create('text-field-border', hs-core.theme-token-get('neutral-600'));
             font-size: hs-core.theme-key-create('text-field-size', hs-core.tools-to-rem(16px));
-            line-height: hs-core.theme-key-create('text-field-line-height', hs-core.theme-token-get('line-height-button'));
+            line-height: hs-core.theme-key-create('text-field-line-height', hs-core.theme-token-get('line-height-action'));
             resize: none;
             outline: none;
             @include hs-core.tools-prefix(transition, all 0.1s ease);

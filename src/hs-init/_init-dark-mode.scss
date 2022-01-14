@@ -23,49 +23,9 @@
 @use '../hs-core';
 
 @mixin main-chunk() {
-    color-scheme: dark !important;
-    @include hs-core.theme-init((
-        'surface': (
-            '200': #3a4158,
-            '300': #222b3d,
-            '400': #111827,
-            '600': #040b10,
-            'ink': #fff
-        ),
-        'neutral': (
-            '200': #ffffff,
-            '300': #f1f1f1,
-            '400': #d7d7d7,
-            '600': #bfbfbf,
-            'ink': #000000,
-        )
-    ));
+    
     
     body {
         background-color: hs-core.theme-token-get('surface-400');
-    }
-    
-    .hs-appbar {
-        @include hs-core.color-apply('appbar', (
-            fill: 'surface',
-            ink: 'surface-ink',
-            border: 'surface'
-        ), 'filled', $tone: 300);
-    }
-    
-    .hs-header {
-        @include hs-core.color-apply('header', (
-            fill: 'surface',
-            ink: 'surface-ink',
-            border: 'surface'
-        ), 'filled', $tone: 300);
-    }
-    
-    .hs-navbar {
-        @include hs-core.color-apply('navbar', (
-            fill: 'surface',
-            ink: 'surface-ink',
-            border: 'surface'
-        ), 'filled', $tone: 300);
     }
 }

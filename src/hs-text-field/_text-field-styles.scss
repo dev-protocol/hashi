@@ -29,6 +29,18 @@ $_init-color: (
     accent: 'native-blue'
 );
 
+$fill: '' !default;
+$ink: '' !default;
+$border: $fill !default;
+
+$radius: '' !default;
+$padding: '' !default;
+
+$family: '' !default;
+$size: '' !default;
+$weight: '' !default;
+$line-height: '' !default;
+
 @mixin render($color: ()) {
     $_merged-color: map.merge($_init-color, $color);
     

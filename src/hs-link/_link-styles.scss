@@ -21,24 +21,26 @@
 //
 
 @use '../hs-core';
-@use 'link-base';
 @use 'sass:map';
 @use 'sass:list';
 
-$_init-color: (
-    default: 'native-blue',
-    tone: 400
-);
+@use 'link-base';
+
+$ink: 'native-blue' !default;
+$tone: 400 !default;
+
+$family: '' !default;
+$size: '' !default;
+$weight: '' !default;
+$line-height: '' !default;
 
 @mixin render(
     $color: ()
 ) {
-    $_merged-color: map.merge($_init-color, $color);
-    $default-color: map.get($_merged-color, 'default');
     $color-map: (
-        fill: $default-color,
-        ink: '#{$default-color}-ink',
-        border: $default-color
+        fill: $ink,
+        ink: '#{$ink}-ink',
+        border: $ink
     );
     
     @include link-base.init() {

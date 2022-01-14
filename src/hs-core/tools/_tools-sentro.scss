@@ -26,6 +26,10 @@
     @return sentro.px-to-rem($px);
 }
 
+@function line-clamp($num-of-lines) {
+    @return sentro.line-clamp($num-of-lines);
+}
+
 @mixin prefix($property, $value) {
     @include sentro.prefix($property, $value);
 }

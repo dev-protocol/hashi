@@ -52,16 +52,34 @@
         font-size: 100%;
         box-sizing: border-box;
         
-        &[hashi-theme='dark'],
-        &[data-theme='dark'],
-        &[theme='dark'] {
-            @include init-dark-mode.main-chunk();
+        @include hs-core.dark-mode {
+            color-scheme: dark !important;
+            @include hs-core.theme-init((
+                'surface': (
+                    '200': #3a4158,
+                    '300': #222b3d,
+                    '400': #111827,
+                    '600': #040b10,
+                    'ink': #fff
+                ),
+                'neutral': (
+                    '200': #ffffff,
+                    '300': #f1f1f1,
+                    '400': #d7d7d7,
+                    '600': #bfbfbf,
+                    'ink': #000000,
+                )
+            ));
         }
     }
     
     body {
         background-color: hs-core.theme-token-get('surface-200');
         color: hs-core.theme-token-get('surface-ink');
+        
+        @include hs-core.dark-mode {
+            background-color: hs-core.theme-token-get('surface-400');
+        }
     }
     
     @content;

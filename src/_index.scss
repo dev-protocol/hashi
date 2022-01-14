@@ -22,15 +22,3 @@
 
 @forward 'hs-core';
 @forward 'hs-init';
-
-@forward 'hs-appbar' as appbar-*;
-@forward 'hs-button' as button-*;
-@forward 'hs-button-group' as button-group-*;
-@forward 'hs-card' as card-*;
-@forward 'hs-header' as header-*;
-@forward 'hs-link' as link-*;
-@forward 'hs-navbar' as navbar-*;
-@forward 'hs-select-field' as select-field-*;
-@forward 'hs-table' as table-*;
-@forward 'hs-text-field' as text-field-*;
-@forward 'hs-utils';

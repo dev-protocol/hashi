@@ -38,3 +38,7 @@
 @mixin config($map: (), $tokens...) {
     @include sentro.token-add($map, $tokens);
 }
+
+@function get-raw($key) {
+    @return sentro.token-get-raw($key);
+}

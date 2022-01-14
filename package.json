@@ -15,7 +15,7 @@
     "bump": "npm --no-git-tag-version version patch && cd src && npm --no-git-tag-version version patch"
   },
   "dependencies": {
-    "@matteusan/sentro": "0.1.13"
+    "@matteusan/sentro": "0.1.14"
   },
   "devDependencies": {
     "gulp": "4.0.2",

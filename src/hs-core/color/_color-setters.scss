@@ -59,21 +59,21 @@ $_required-props: ('fill', 'ink', 'border');
     
     @if $stateful == true {
         &:hover {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
             @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-border', rgba(theme.token-get-raw('#{$fill}-400') ,2%));
         }
     
         &:focus {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
             @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-border', rgba(theme.token-get-raw('#{$fill}-400') ,2%));
         }
     
         &:active {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-400'));
-            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-200'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('neutral-alpha-400'));
+            @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 33%));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+            @include theme.key-bind('#{$component-name}-border', rgba(theme.token-get-raw('#{$fill}-400') ,3.3%));
         }
     
         &:disabled {
@@ -98,21 +98,21 @@ $_required-props: ('fill', 'ink', 'border');
     
     @if $stateful == true {
         &:focus {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('neutral-alpha-200'));
+            @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
             @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
             @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
         }
         
         &:hover {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-#{$tone}'));
-            @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-#{$tone}'));
+            @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
         }
         
         &:active {
-            @include theme.key-bind('#{$component-name}-fill', theme.token-get('#{$fill}-200'));
-            @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-200'));
+            @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 33%));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
         }
         
         &:disabled {
