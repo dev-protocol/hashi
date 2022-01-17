@@ -25,27 +25,42 @@
 
 @use 'font-pack';
 
-@mixin apply($component-name, $type-preset) {
+@mixin apply($component-name, $type-preset, $extend: false) {
     $family: map.get($type-preset, 'family');
     $size: map.get($type-preset, 'size');
     $weight: map.get($type-preset, 'weight');
     $line-height: map.get($type-preset, 'line-height');
     
     @if $family {
-        @include theme.key-bind('#{$component-name}-family', 'family-#{$family}');
+        @if $extend {
+            @include theme.key-bind('#{$component-name}-family', theme.token-get($family));
+        } @else {
+            font-family: theme.key-create('#{$component-name}-family', theme.token-get($family));
+        }
     }
     
     @if $size {
-        @include theme.key-bind('#{$component-name}-size', 'size-#{$size}');
+        @if $extend {
+            @include theme.key-bind('#{$component-name}-size', theme.token-switch($size));
+        } @else {
+            font-size: theme.key-create('#{$component-name}-size', theme.token-switch($size));
+        }
     }
     
     @if $weight {
-        @include theme.key-bind('#{$component-name}-weight', 'weight-#{$weight}');
+        @if $extend {
+            @include theme.key-bind('#{$component-name}-weight', theme.token-get($weight));
+        } @else {
+            font-weight: theme.key-create('#{$component-name}-weight', theme.token-get($weight));
+        }
     }
     
     @if $line-height {
-        @include theme.key-bind('#{$component-name}-line-height', 'line-height-#{$line-height}');
-    
+        @if $extend {
+            @include theme.key-bind('#{$component-name}-line-height', theme.token-switch($line-height));
+        } @else {
+            line-height: theme.key-create('#{$component-name}-line-height', theme.token-switch($line-height));
+        }
     }
 }
 

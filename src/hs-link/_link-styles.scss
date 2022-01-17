@@ -29,14 +29,12 @@
 $ink: 'native-blue' !default;
 $tone: 400 !default;
 
-$family: '' !default;
-$size: '' !default;
-$weight: '' !default;
-$line-height: '' !default;
+$family: 'family-body' !default;
+$size: 'size-body' !default;
+$weight: 'weight-body' !default;
+$line-height: 'line-height-body' !default;
 
-@mixin render(
-    $color: ()
-) {
+@mixin render() {
     $color-map: (
         fill: $ink,
         ink: '#{$ink}-ink',
@@ -44,7 +42,12 @@ $line-height: '' !default;
     );
     
     @include link-base.init() {
-        color: hs-core.theme-key-create('link-ink', hs-core.theme-token-get('surface-ink'));
-        @include hs-core.color-apply('link', $color-map, 'text', true);
+        @include hs-core.color-apply('link', $color-map, 'text', true, $extend: false);
+        @include hs-core.typography-apply('link', (
+            'family': $family,
+            'size': $size,
+            'weight': $weight,
+            'line-height': $line-height
+        ));
     }
 }

@@ -37,19 +37,19 @@
 /// @param {int} $tone
 /// @return {*} color styles.
 @mixin color($color-map, $style: 'text', $tone: 400) {
-    @include hs-core.color-apply('button', $color-map, $style, true, $tone);
+    @include hs-core.color-apply('button', $color-map, $style, true, $tone, $extend: true);
 }
 
 /// Shape variant mixin.
 /// @param {map} $shape-map
 /// @return {*} shape styles.
 @mixin shape($shape-map) {
-    @include hs-core.shape-apply('button', $shape-map);
+    @include hs-core.shape-apply('button', $shape-map, $extend: true);
 }
 
 /// Typography variant mixin.
 /// @param {map} $type-map
 /// @return {*} typography styles.
 @mixin typography($type-map) {
-    @include hs-core.typography-apply('button', $type-map);
+    @include hs-core.typography-apply('button', $type-map, $extend: true);
 }

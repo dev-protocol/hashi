@@ -28,11 +28,8 @@
     @return sentro.token-get($query);
 }
 
-@function switch($ref, $query) {
-    @if meta.type-of($query) != string.unquote($ref) {
-        @return sentro.token-get($query);
-    }
-    @return $query;
+@function switch($query) {
+    @return sentro.token-switch($query);
 }
 
 @mixin config($map: (), $tokens...) {
@@ -41,4 +38,8 @@
 
 @function get-raw($key) {
     @return sentro.token-get-raw($key);
+}
+
+@function check($key) {
+    @return sentro.token-check($key);
 }

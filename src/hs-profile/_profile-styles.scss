@@ -20,7 +20,18 @@
 //  SOFTWARE.
 //
 
+$fill: '' !default;
+$ink: '' !default;
+$border: $fill !default;
+$tone: 400 !default;
 
+$radius: '' !default;
+$padding: '' !default;
+
+$family: '' !default;
+$size: '' !default;
+$weight: '' !default;
+$line-height: '' !default;
 
 @use '../hs-core';
 

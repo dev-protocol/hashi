@@ -50,40 +50,28 @@ $variants: 'all' !default;
     );
     
     @include button-base.init() {
-        background: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
-        color: hs-core.theme-key-create('button-ink', hs-core.theme-token-get('#{$fill}-400'));
-        border: 1px solid hs-core.theme-key-create('button-border', rgba(0 0 0 / 0));
+        @include hs-core.color-apply('button', $color-map, 'text', $stateful: true);
+        @include hs-core.shape-apply('button', (
+            radius: $radius,
+            padding: $padding
+        ));
+        @include hs-core.typography-apply('button', (
+            family: $family,
+            size: $size,
+            weight: $weight,
+            line-height: $line-height
+        ));
         outline: none;
     
-        border-radius: hs-core.theme-key-create('button-radius', hs-core.theme-token-switch('number', $radius));
-        padding: hs-core.theme-key-create('button-padding', hs-core.theme-token-switch('list', $padding));
-    
-        font-family: hs-core.theme-key-create('button-family', hs-core.theme-token-switch('list', $family));
-        font-size: hs-core.theme-key-create('button-size', hs-core.theme-token-switch('number', $size));
-        font-weight: hs-core.theme-key-create('button-weight', hs-core.theme-token-switch('number', $weight));
-        line-height: hs-core.theme-key-create('button-line-height', hs-core.theme-token-switch('number', $line-height));
-        
-        @if list.index($variants, 'text') or list.index($variants, 'all') {
-            @include hs-core.color-apply('button', $color-map, 'text', true);
-        }
-    
-        &.hs-button--outlined {
-            background: hs-core.theme-key-create('button-fill', rgba(0 0 0 / 0));
-            color: hs-core.theme-key-create('button-ink', hs-core.theme-token-get('#{$fill}-400'));
-            border: 1px solid hs-core.theme-key-create('button-border', hs-core.theme-token-get('#{$border}-400'));
-    
-            @if list.index($variants, 'outlined') or list.index($variants, 'all') {
-                @include hs-core.color-apply('button', $color-map, 'outlined', true);
+        @if list.index($variants, 'outlined') or list.index($variants, 'all') {
+            &.hs-button--outlined {
+                @include hs-core.color-apply('button', $color-map, 'outlined', $stateful: true, $extend: true);
             }
         }
     
-        &.hs-button--filled {
-            background: hs-core.theme-key-create('button-fill', hs-core.theme-token-get('#{$fill}-400'));
-            color: hs-core.theme-key-create('button-ink', hs-core.theme-token-get($ink));
-            border: 1px solid hs-core.theme-key-create('button-border', hs-core.theme-token-get('#{$border}-400'));
-    
-            @if list.index($variants, 'filled') or list.index($variants, 'all') {
-                @include hs-core.color-apply('button', $color-map, 'filled', true);
+        @if list.index($variants, 'filled') or list.index($variants, 'all') {
+            &.hs-button--filled {
+                @include hs-core.color-apply('button', $color-map, 'filled', $stateful: true, $extend: true);
             }
         }
     }

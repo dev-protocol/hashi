@@ -15,16 +15,16 @@
     "bump": "npm --no-git-tag-version version patch && cd src && npm --no-git-tag-version version patch"
   },
   "dependencies": {
-    "@matteusan/sentro": "0.1.14"
+    "@matteusan/sentro": "0.1.17"
   },
   "devDependencies": {
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "4.1.3",
     "gulp-sass": "5.1.0",
-    "sass": "1.47.0",
+    "sass": "1.48.0",
     "ts-loader": "9.2.6",
-    "typescript": "4.5.4",
+    "typescript": "4.4.4",
     "webpack": "5.66.0",
     "webpack-cli": "4.9.1"
   }

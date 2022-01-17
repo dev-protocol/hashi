@@ -52,7 +52,7 @@
 			margin-left: hs-core.theme-key-create('button-gap', 0.3rem);
 		}
 
-		&__icon {
+		.hs-button__icon {
 			color: hs-core.theme-key-create('button-icon-ink', inherit);
 			font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
 			/* @fallback */
@@ -68,7 +68,7 @@
 			}
 		}
 
-		&__label {
+		.hs-button__label {
 			color: hs-core.theme-key-create('button-label-ink', hs-core.theme-key-get('button-ink'));
 			font-size: hs-core.theme-key-create('button-label-size', inherit);
 			font-weight: inherit;

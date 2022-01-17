@@ -104,11 +104,11 @@ $hs-tokens: (
     ),
     // ===== TYPOGRAPHY ===== //
     'family': (
-        'global': 'Whyte',
-        'header': 'WhyteInktrap',
-        'body': 'Whyte',
-        'action': 'IBM Plex Mono',
-        'code': 'IBM Plex Mono'
+        'global': ('Whyte', sans-serif),
+        'header': ('WhyteInktrap', sans-serif),
+        'body': ('Whyte', sans-serif),
+        'action': ('IBM Plex Mono', monospace),
+        'code': ('IBM Plex Mono', monospace)
     ),
     'size': (
         // General type tokens

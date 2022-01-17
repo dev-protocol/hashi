@@ -24,30 +24,23 @@
 @use 'text-field-base';
 @use 'sass:map';
 
-$_init-color: (
-    tone: 400,
-    accent: 'native-blue'
-);
+$accent: 'native-blue' !default;
+$tone: 400;
 
-$fill: '' !default;
-$ink: '' !default;
-$border: $fill !default;
+$radius: 'radius-xs' !default;
+$padding: (0.4rem 0.075rem) !default;
 
-$radius: '' !default;
-$padding: '' !default;
+$family: 'family-body' !default;
+$size: 'size-body' !default;
+$weight: 'weight-body' !default;
+$line-height: 'line-height-body' !default;
 
-$family: '' !default;
-$size: '' !default;
-$weight: '' !default;
-$line-height: '' !default;
-
-@mixin render($color: ()) {
-    $_merged-color: map.merge($_init-color, $color);
-    
-    $tone: map.get($_merged-color, 'tone');
-    $accent: map.get($_merged-color, 'accent');
-    
+@mixin render() {
     @include text-field-base.init() {
+        .hs-text-field__input:focus-within {
+            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
+        }
+        
         &.danger {
             @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('danger-400'));
             @include hs-core.theme-key-bind('text-field-helper-ink', hs-core.theme-token-get('danger-400'));
@@ -57,10 +50,6 @@ $line-height: '' !default;
             .hs-text-field__input:focus-within {
                 @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
             }
-        }
-        
-        .hs-text-field__input:focus-within {
-            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
         }
     }
 }

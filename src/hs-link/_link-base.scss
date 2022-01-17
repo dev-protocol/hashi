@@ -25,13 +25,11 @@
 @mixin init() {
     a.hs-link {
         display: inline-block;
-        font-size: hs-core.theme-token-get('size-body');
+        @content;
         
         &:hover,
         &:focus {
             text-decoration: underline;
         }
-        
-        @content;
     }
 }
