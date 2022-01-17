@@ -39,6 +39,8 @@ $size: 'size-action' !default;
 $weight: 'weight-action' !default;
 $line-height: 'line-height-action' !default;
 
+$gap: 0 !default;
+
 $variants: 'all' !default;
 
 @mixin render() {
@@ -49,7 +51,7 @@ $variants: 'all' !default;
         border: $border
     );
     
-    @include button-base.init() {
+    @include button-base.init($gap) {
         @include hs-core.color-apply('button', $color-map, 'text', $stateful: true);
         @include hs-core.shape-apply('button', (
             radius: $radius,

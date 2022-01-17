@@ -33,6 +33,13 @@ $shape-presets: (
     'pill'
 );
 
+$directions: (
+    't': top,
+    'r': right,
+    'b': bottom,
+    'l': left,
+);
+
 @mixin shape-utils() {
     @each $shape-preset in $shape-presets {
         .r-#{$shape-preset} {
@@ -43,8 +50,20 @@ $shape-presets: (
             padding: hs-core.theme-token-get('padding-#{$shape-preset}') !important;
         }
     
+        @each $direction in $directions {
+            .p#{$direction}-#{$shape-preset} {
+                padding-#{map.get($directions, $direction)}: hs-core.theme-token-get('padding-#{$shape-preset}') !important;
+            }
+        }
+    
         .m-#{$shape-preset} {
             margin: hs-core.theme-token-get('margin-#{$shape-preset}') !important;
+        }
+    
+        @each $direction in $directions {
+            .m#{$direction}-#{$shape-preset} {
+                margin-#{map.get($directions, $direction)}: hs-core.theme-token-get('margin-#{$shape-preset}') !important;
+            }
         }
     }
 }

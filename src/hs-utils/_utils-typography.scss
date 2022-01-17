@@ -53,11 +53,15 @@ $family-presets: (
         .size-#{$type-preset} {
             font-size: hs-core.theme-token-get('size-#{$type-preset}') !important;
         }
-        
+    }
+    
+    @each $type-preset in $type-presets {
         .weight-#{$type-preset} {
             font-weight: hs-core.theme-token-get('weight-#{$type-preset}') !important;
         }
-        
+    }
+    
+    @each $type-preset in $type-presets {
         .line-height-#{$type-preset} {
             line-height: hs-core.theme-token-get('line-height-#{$type-preset}') !important;
         }

@@ -24,19 +24,31 @@
 @use 'sass:map';
 
 $_color-presets: map.keys(hs-core.$color-presets);
+$_tones: (
+    200,
+    300,
+    400,
+    600
+);
 
 @mixin color-utils() {
     @each $preset in $_color-presets {
-        .bg-#{$preset} {
-            background-color: hs-core.theme-token-get('#{$preset}-400');
+        @each $tone in $_tones {
+            .bg-#{$preset} {
+                background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+            }
         }
     
-        .text-#{$preset} {
-            color: hs-core.theme-token-get('#{$preset}-400');
+        @each $tone in $_tones {
+            .text-#{$preset} {
+                color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+            }
         }
     
-        .border-#{$preset} {
-            border-color: hs-core.theme-token-get('#{$preset}-400');
+        @each $tone in $_tones {
+            .border-#{$preset} {
+                border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+            }
         }
     }
 }

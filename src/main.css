@@ -448,23 +448,18 @@ html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
   padding: 0;
 }
 .hs-button > * + * {
-  margin-left: var(--hs-button-gap, 0.3rem);
+  margin-left: var(--hs-button-gap, 0);
 }
 .hs-button .hs-button__icon {
   color: var(--hs-button-icon-ink, inherit);
   font-size: var(--hs-button-icon-size, var(--hs-theme-size-icon));
-  /* @fallback */
-  width: var(--hs-button-icon-size, var(--hs-theme-size-icon));
-  height: var(--hs-button-icon-size, var(--hs-theme-size-icon));
 }
 .hs-button .hs-button__icon > * {
   color: var(--hs-button-icon-ink, inherit);
   font-size: var(--hs-button-icon-size, var(--hs-theme-size-icon));
-  /* @fallback */
-  width: var(--hs-button-icon-size, var(--hs-theme-size-icon));
-  height: var(--hs-button-icon-size, var(--hs-theme-size-icon));
 }
 .hs-button .hs-button__label {
+  padding: 0 0.3rem;
   color: var(--hs-button-label-ink, var(--hs-button-ink));
   font-size: var(--hs-button-label-size, inherit);
   font-weight: inherit;
@@ -495,14 +490,13 @@ html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
 
 a.hs-link {
   display: inline-block;
-  font-size: var(--hs-theme-size-body);
-  color: var(--hs-link-ink, var(--hs-theme-surface-ink));
   background: var(--hs-link-fill, rgba(0, 0, 0, 0));
   color: var(--hs-link-ink, var(--hs-theme-native-blue-400));
   border: 1px solid var(--hs-link-border, rgba(0, 0, 0, 0));
-}
-a.hs-link:hover, a.hs-link:focus {
-  text-decoration: underline;
+  font-family: var(--hs-link-family, var(--hs-theme-family-body));
+  font-size: var(--hs-link-size, var(--hs-theme-size-body));
+  font-weight: var(--hs-link-weight, var(--hs-theme-weight-body));
+  line-height: var(--hs-link-line-height, var(--hs-theme-line-height-body));
 }
 a.hs-link:hover {
   --hs-link-fill: rgba(91, 139, 245, 0.2);
@@ -525,6 +519,9 @@ a.hs-link:disabled {
 a.hs-link:disabled:hover {
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0);
+}
+a.hs-link:hover, a.hs-link:focus {
+  text-decoration: underline;
 }
 
 .hs-select-field {
@@ -576,6 +573,9 @@ a.hs-link:disabled:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
+.hs-text-field .hs-text-field__input:focus-within {
+  --hs-text-field-border: var(--hs-theme-native-blue-400);
+}
 .hs-text-field.danger {
   --hs-text-field-ink: var(--hs-theme-danger-400);
   --hs-text-field-helper-ink: var(--hs-theme-danger-400);
@@ -584,9 +584,6 @@ a.hs-link:disabled:hover {
 }
 .hs-text-field.danger .hs-text-field__input:focus-within {
   --hs-text-field-border: var(--hs-theme-danger-400);
-}
-.hs-text-field .hs-text-field__input:focus-within {
-  --hs-text-field-border: var(--hs-theme-native-blue-400);
 }
 .hs-text-field .hs-text-field__label {
   color: var(--hs-text-field-label-ink, var(--hs-theme-surface-ink));

@@ -23,7 +23,7 @@
 @use '../hs-core';
 @use 'sass:map';
 
-@mixin init() {
+@mixin init($gap) {
 	.hs-button {
 		width: 100%;
 		min-width: 62px;
@@ -49,26 +49,21 @@
 		}
 
 		& > * + * {
-			margin-left: hs-core.theme-key-create('button-gap', 0.3rem);
+			margin-left: hs-core.theme-key-create('button-gap', $gap);
 		}
 
 		.hs-button__icon {
 			color: hs-core.theme-key-create('button-icon-ink', inherit);
 			font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
-			/* @fallback */
-			width: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
-			height: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
 			
 			> * {
 				color: hs-core.theme-key-create('button-icon-ink', inherit);
 				font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
-				/* @fallback */
-				width: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
-				height: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
 			}
 		}
 
 		.hs-button__label {
+			padding: 0 0.3rem;
 			color: hs-core.theme-key-create('button-label-ink', hs-core.theme-key-get('button-ink'));
 			font-size: hs-core.theme-key-create('button-label-size', inherit);
 			font-weight: inherit;
