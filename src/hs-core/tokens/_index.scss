@@ -49,16 +49,10 @@ $hs-tokens: (
         '600': #000000,
         'ink': #ffffff,
     ),
-    'neutral-alpha': (
-        '200': rgba(#b4b4b4, 10%),
-        '300': rgba(#b4b4b4, 11%),
-        '400': rgba(#b4b4b4, 13%),
-        '600': rgba(#b4b4b4, 15%)
-    ),
     // Disabled is a special token set and does not follow the design specs' 600-200 color naming scheme.
     'disabled': (
-        'default': #bababa,
-        'ink': #fff
+        'default': rgba(0,0,0,.12), // ALT: #bababa
+        'ink': rgba(0,0,0,.37) // ALT: #646464
     ),
     'scarlet': support.color-split(#ff3815),
     'scarlet-ink': #fff,

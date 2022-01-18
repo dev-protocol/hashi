@@ -33,6 +33,13 @@ $shape-presets: (
     'pill'
 );
 
+$radius-directions: (
+    'tl': top-left,
+    'tr': top-right,
+    'br': bottom-right,
+    'bl': bottom-left
+);
+
 $directions: (
     't': top,
     'r': right,
@@ -43,26 +50,36 @@ $directions: (
 @mixin shape-utils() {
     @each $shape-preset in $shape-presets {
         .r-#{$shape-preset} {
-            border-radius: hs-core.theme-token-get('radius-#{$shape-preset}') !important;
+            border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
         }
-    
-        .p-#{$shape-preset} {
-            padding: hs-core.theme-token-get('padding-#{$shape-preset}') !important;
-        }
-    
-        @each $direction in $directions {
-            .p#{$direction}-#{$shape-preset} {
-                padding-#{map.get($directions, $direction)}: hs-core.theme-token-get('padding-#{$shape-preset}') !important;
+        
+        @each $direction-id, $direction in $radius-directions {
+            .r#{$direction-id}-#{$shape-preset} {
+                border-#{$direction}-radius: hs-core.theme-token-get('padding-#{$shape-preset}');
             }
         }
+    }
     
-        .m-#{$shape-preset} {
-            margin: hs-core.theme-token-get('margin-#{$shape-preset}') !important;
+    @each $shape-preset in $shape-presets {
+        .p-#{$shape-preset} {
+            padding: hs-core.theme-token-get('padding-#{$shape-preset}');
         }
+        
+        @each $direction-id, $direction in $directions {
+            .p#{$direction-id}-#{$shape-preset} {
+                padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
+            }
+        }
+    }
     
-        @each $direction in $directions {
-            .m#{$direction}-#{$shape-preset} {
-                margin-#{map.get($directions, $direction)}: hs-core.theme-token-get('margin-#{$shape-preset}') !important;
+    @each $shape-preset in $shape-presets {
+        .m-#{$shape-preset} {
+            margin: hs-core.theme-token-get('margin-#{$shape-preset}');
+        }
+        
+        @each $direction-id, $direction in $directions {
+            .m#{$direction-id}-#{$shape-preset} {
+                margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
             }
         }
     }

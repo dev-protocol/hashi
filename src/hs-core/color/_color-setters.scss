@@ -83,11 +83,14 @@ $_required-props: ('fill', 'ink', 'border');
         }
     
         &:disabled {
-            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled'));
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
             
-            &:hover {
-                background-color: rgba(0 0 0 / 0);
-                border: 1px solid rgba(0 0 0 / 0);
+            &:hover,
+            &:active,
+            &:focus {
+                @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
+                @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
+                @include theme.key-bind('#{$component-name}-border', rgba(0 0 0 / 0));
             }
         }
     }
@@ -128,12 +131,15 @@ $_required-props: ('fill', 'ink', 'border');
         }
         
         &:disabled {
-            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled'));
-            
-            &:hover {
-                background-color: rgba(0 0 0 / 0) !important;
-                border: 1px solid theme.token-get('disabled') !important;
+            @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled-ink'));
+    
+            &:hover,
+            &:active,
+            &:focus {
+                @include theme.key-bind('#{$component-name}-fill', rgba(0 0 0 / 0));
+                @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
+                @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled-ink'));
             }
         }
     }
@@ -173,10 +179,14 @@ $_required-props: ('fill', 'ink', 'border');
         &:disabled {
             @include theme.key-bind('#{$component-name}-fill', theme.token-get('disabled'));
             @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
-            @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled'));
-            
-            &:hover {
-                background-color: theme.token-get('disabled');
+            @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled') !important);
+    
+            &:hover,
+            &:active,
+            &:focus {
+                @include theme.key-bind('#{$component-name}-fill', theme.token-get('disabled'));
+                @include theme.key-bind('#{$component-name}-ink', theme.token-get('disabled-ink'));
+                @include theme.key-bind('#{$component-name}-border', theme.token-get('disabled') !important);
             }
         }
     }

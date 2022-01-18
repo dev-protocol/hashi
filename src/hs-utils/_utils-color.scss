@@ -22,32 +22,82 @@
 
 @use '../hs-core';
 @use 'sass:map';
+@use 'sass:math';
 
 $_color-presets: map.keys(hs-core.$color-presets);
 $_tones: (
-    200,
-    300,
-    400,
-    600
+    200: 10%,
+    300: 20%,
+    400: 30%,
+    600: 50%
+);
+
+$states: (
+    'hover',
+    'focus',
+    'active',
+    'disabled'
 );
 
 @mixin color-utils() {
     @each $preset in $_color-presets {
-        @each $tone in $_tones {
-            .bg-#{$preset} {
+        @each $tone, $tone-percentage in $_tones {
+            .bg-#{$preset}-#{$tone} {
                 background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
             }
-        }
     
-        @each $tone in $_tones {
-            .text-#{$preset} {
-                color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+            .bg-#{$preset}-alpha-#{$tone} {
+                background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+            }
+            
+            @each $state in $states {
+                .#{$state}\:bg-#{$preset}-#{$tone}:#{$state} {
+                    background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+                }
+    
+                .#{$state}\:bg-#{$preset}-alpha-#{$tone}:#{$state} {
+                    background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+                }
             }
         }
     
-        @each $tone in $_tones {
-            .border-#{$preset} {
+        @each $tone, $tone-percentage in $_tones {
+            .text-#{$preset}-#{$tone} {
+                color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+            }
+    
+            .text-#{$preset}-alpha-#{$tone} {
+                color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+            }
+    
+            @each $state in $states {
+                .#{$state}\:text-#{$preset}-#{$tone}:#{$state} {
+                    color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+                }
+        
+                .#{$state}\:text-#{$preset}-alpha-#{$tone}:#{$state} {
+                    color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+                }
+            }
+        }
+    
+        @each $tone, $tone-percentage in $_tones {
+            .border-#{$preset}-#{$tone} {
                 border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+            }
+    
+            .border-#{$preset}-alpha-#{$tone} {
+                border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+            }
+    
+            @each $state in $states {
+                .#{$state}\:border-#{$preset}-#{$tone}:#{$state} {
+                    border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+                }
+        
+                .#{$state}\:border-#{$preset}-alpha-#{$tone}:#{$state} {
+                    border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+                }
             }
         }
     }
