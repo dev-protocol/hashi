@@ -47,15 +47,33 @@ $directions: (
     'l': left,
 );
 
+$shape-states: (
+    'hover',
+    'focus',
+    'active'
+);
+
 @mixin shape-utils() {
     @each $shape-preset in $shape-presets {
         .r-#{$shape-preset} {
             border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
         }
         
+        @each $state in $shape-states {
+            .#{$state}\:r-#{$shape-preset}:#{$state} {
+                border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
+            }
+        }
+        
         @each $direction-id, $direction in $radius-directions {
             .r#{$direction-id}-#{$shape-preset} {
                 border-#{$direction}-radius: hs-core.theme-token-get('padding-#{$shape-preset}');
+            }
+    
+            @each $state in $shape-states {
+                .#{$state}\:r#{$direction-id}-#{$shape-preset}:#{$state} {
+                    border-#{$direction}-radius: hs-core.theme-token-get('padding-#{$shape-preset}');
+                }
             }
         }
     }
@@ -64,10 +82,22 @@ $directions: (
         .p-#{$shape-preset} {
             padding: hs-core.theme-token-get('padding-#{$shape-preset}');
         }
+    
+        @each $state in $shape-states {
+            .#{$state}\:p-#{$shape-preset}:#{$state} {
+                padding: hs-core.theme-token-get('padding-#{$shape-preset}');
+            }
+        }
         
         @each $direction-id, $direction in $directions {
             .p#{$direction-id}-#{$shape-preset} {
                 padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
+            }
+    
+            @each $state in $shape-states {
+                .#{$state}\:p#{$direction-id}-#{$shape-preset}:#{$state} {
+                    padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
+                }
             }
         }
     }
@@ -76,10 +106,22 @@ $directions: (
         .m-#{$shape-preset} {
             margin: hs-core.theme-token-get('margin-#{$shape-preset}');
         }
+    
+        @each $state in $shape-states {
+            .#{$state}\:m-#{$shape-preset}:#{$state} {
+                margin: hs-core.theme-token-get('margin-#{$shape-preset}');
+            }
+        }
         
         @each $direction-id, $direction in $directions {
             .m#{$direction-id}-#{$shape-preset} {
                 margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
+            }
+    
+            @each $state in $shape-states {
+                .#{$state}\:m#{$direction-id}-#{$shape-preset}:#{$state} {
+                    margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
+                }
             }
         }
     }

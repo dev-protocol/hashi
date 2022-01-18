@@ -32,11 +32,10 @@ $_tones: (
     600: 50%
 );
 
-$states: (
+$color-states: (
     'hover',
     'focus',
-    'active',
-    'disabled'
+    'active'
 );
 
 @mixin color-utils() {
@@ -50,7 +49,7 @@ $states: (
                 background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             }
             
-            @each $state in $states {
+            @each $state in $color-states {
                 .#{$state}\:bg-#{$preset}-#{$tone}:#{$state} {
                     background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
                 }
@@ -70,7 +69,7 @@ $states: (
                 color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             }
     
-            @each $state in $states {
+            @each $state in $color-states {
                 .#{$state}\:text-#{$preset}-#{$tone}:#{$state} {
                     color: hs-core.theme-token-get('#{$preset}-#{$tone}');
                 }
@@ -90,7 +89,7 @@ $states: (
                 border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             }
     
-            @each $state in $states {
+            @each $state in $color-states {
                 .#{$state}\:border-#{$preset}-#{$tone}:#{$state} {
                     border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
                 }

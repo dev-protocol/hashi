@@ -42,28 +42,58 @@ $family-presets: (
     'code'
 );
 
+$type-states: (
+    'hover',
+    'focus',
+    'active'
+);
+
 @mixin typography-utils() {
     @each $family-preset in $family-presets {
-        .family-#{$family-preset} {
+        .ff-#{$family-preset} {
             font-family: hs-core.theme-token-get('family-#{$family-preset}');
         }
+        
+        @each $state in $type-states {
+            .#{$state}\:ff-#{$family-preset}:#{$state} {
+                font-family: hs-core.theme-token-get('family-#{$family-preset}');
+            }
+        }
     }
     
     @each $type-preset in $type-presets {
-        .size-#{$type-preset} {
+        .fs-#{$type-preset} {
             font-size: hs-core.theme-token-get('size-#{$type-preset}');
         }
-    }
-    
-    @each $type-preset in $type-presets {
-        .weight-#{$type-preset} {
-            font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
+        
+        @each $state in $type-states {
+            .#{$state}\:fs-#{$type-preset}:#{$state} {
+                font-size: hs-core.theme-token-get('size-#{$type-preset}');
+            }
         }
     }
     
     @each $type-preset in $type-presets {
-        .line-height-#{$type-preset} {
+        .fw-#{$type-preset} {
+            font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
+        }
+    
+        @each $state in $type-states {
+            .#{$state}\:fw-#{$type-preset}:#{$state} {
+                font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
+            }
+        }
+    }
+    
+    @each $type-preset in $type-presets {
+        .lh-#{$type-preset} {
             line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
+        }
+    
+        @each $state in $type-states {
+            .#{$state}\:lh-#{$type-preset}:#{$state} {
+                line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
+            }
         }
     }
 }
