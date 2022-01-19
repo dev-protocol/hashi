@@ -226,7 +226,7 @@ html {
   font-size: 100%;
   box-sizing: border-box;
 }
-html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
+html[theme=dark], html[hashi-theme=dark], html[data-theme=dark] {
   color-scheme: dark !important;
   --hs-theme-surface-200: #3a4158;
   --hs-theme-surface-300: #222b3d;
@@ -238,8 +238,8 @@ html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
   --hs-theme-neutral-400: #d7d7d7;
   --hs-theme-neutral-600: #bfbfbf;
   --hs-theme-neutral-ink: #000000;
-  --hs-theme-disabled: rgba(0, 0, 0, 0.12);
-  --hs-theme-disabled-ink: rgba(0, 0, 0, 0.37);
+  --hs-theme-disabled: rgba(255, 255, 255, 0.12);
+  --hs-theme-disabled-ink: rgba(255, 255, 255, 0.37);
   --hs-theme-scarlet-200: #ff7860;
   --hs-theme-scarlet-300: #ff5a3d;
   --hs-theme-scarlet-400: #ff3815;
@@ -331,7 +331,12 @@ body {
   background-color: var(--hs-theme-surface-200);
   color: var(--hs-theme-surface-ink);
 }
-html[hashi-theme=dark], html[data-theme=dark], html[theme=dark] {
+@media (prefers-color-scheme: dark) {
+  html[hashi-theme=dark] body, html[data-theme=dark] body, html[theme=dark] body {
+    background-color: var(--hs-theme-surface-400);
+  }
+}
+html[hashi-theme=dark] body, html[data-theme=dark] body, html[theme=dark] body {
   background-color: var(--hs-theme-surface-400);
 }
 

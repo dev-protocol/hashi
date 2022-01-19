@@ -25,6 +25,7 @@
 @use 'hs-init' as hashi;
 @use 'hs-button';
 @use 'hs-button-group';
+@use 'hs-card';
 @use 'hs-link';
 @use 'hs-select-field';
 @use 'hs-text-field';
@@ -33,10 +34,12 @@
 @include hashi.init() {
     @include hs-button.render();
     @include hs-button-group.render();
+    @include hs-card.render();
     @include hs-link.render();
     @include hs-select-field.render();
     @include hs-text-field.render();
     
     @include hs-utils.color-utils();
     @include hs-utils.shape-utils();
+    @include hs-utils.typography-utils();
 }
