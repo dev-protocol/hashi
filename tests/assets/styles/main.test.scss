@@ -23,6 +23,7 @@
 @use '../../../src' as hashi;
 @use '../../../src/hs-button' with ($fill: 'plox');
 @use '../../../src/hs-button-group';
+@use '../../../src/hs-card';
 @use '../../../src/hs-link';
 @use '../../../src/hs-profile';
 @use '../../../src/hs-select-field';
@@ -48,6 +49,7 @@
     
     @include hs-button.render();
     @include hs-button-group.render();
+    @include hs-card.render();
     @include hs-link.render();
     @include hs-profile.render();
     @include hs-select-field.render();

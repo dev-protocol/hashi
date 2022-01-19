@@ -23,7 +23,7 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en" hashi-theme="light">
+<html lang="en" hashi-theme="dark">
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
@@ -41,7 +41,7 @@
 <main class="content-wrap">
     <section id="text-buttons">
         <button class="hs-button neutral" role="button" disabled>
-            <i class="hs-button__icon material-icons">keyboard_arrow_left</i>
+            <i class="hs-button__icon material-icons" aria-hidden="true">keyboard_arrow_left</i>
             <span class="hs-button__label">Go Back</span>
         </button>
         <button class="hs-button scarlet" role="button">
@@ -192,6 +192,48 @@
                 <h3 class="hs-profile__name">Name of person</h3>
                 <p class="hs-profile__role">Role of person</p>
                 <p class="hs-profile__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="width: calc(100% - 30px); max-width: 420px; margin: 0 auto; padding: 3rem 0;">
+        <div class="hs-card">
+            <div class="hs-card__header">
+                <h2 class="hs-card__title">CARD TITLE</h2>
+                <p class="hs-card__subtitle">Card Subtitle. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, maiores.</p>
+            </div>
+            <div class="hs-card__content">
+                <p>Lorem ipsum dolor sit amet, <a href="#" class="hs-link">consectetur</a> adipisicing elit. Optio, repellendus.</p>
+                <label class="hs-select-field">
+                    <span class="hs-select-field__label">Select</span>
+                    <select class="hs-select-field__input">
+                        <option class="hs-select-field__option">Option 1</option>
+                        <option class="hs-select-field__option">Option 2</option>
+                        <option class="hs-select-field__option">Option 3</option>
+                        <option class="hs-select-field__option">Option 4</option>
+                        <option class="hs-select-field__option">Option 5</option>
+                    </select>
+                </label>
+                <label class="hs-text-field">
+                    <span class="hs-text-field__label">Hello</span>
+                    <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
+                    <span class="hs-text-field__input__icon"></span>
+                    <span class="hs-text-field__helper">Helper text</span>
+                </label>
+                <label class="hs-text-field danger">
+                    <span class="hs-text-field__label">Hello</span>
+                    <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
+                    <span class="hs-text-field__input__icon"></span>
+                    <span class="hs-text-field__helper">Helper text</span>
+                </label>
+            </div>
+            <div class="hs-card__actions">
+                <button class="hs-button hs-button--outlined neutral" role="button">
+                    <span class="hs-button__label">BEG</span>
+                </button>
+                <button class="hs-button hs-button--filled neutral" role="button">
+                    <span class="hs-button__label">BEG</span>
+                </button>
             </div>
         </div>
     </section>
