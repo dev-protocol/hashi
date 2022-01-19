@@ -44,15 +44,12 @@ $gap: 0 !default;
 $variants: 'all' !default;
 
 @mixin render() {
-    
-    $color-map: (
-        fill: $fill,
-        ink: $ink,
-        border: $border
-    );
-    
     @include button-base.init($gap) {
-        @include hs-core.color-apply('button', $color-map, 'text', $stateful: true);
+        @include hs-core.color-apply('button', (
+            fill: $fill,
+            ink: $ink,
+            border: $border
+        ), 'text', $tone: $tone, $stateful: true);
         @include hs-core.shape-apply('button', (
             radius: $radius,
             padding: $padding
@@ -67,13 +64,21 @@ $variants: 'all' !default;
     
         @if list.index($variants, 'outlined') or list.index($variants, 'all') {
             &.hs-button--outlined {
-                @include hs-core.color-apply('button', $color-map, 'outlined', $stateful: true, $extend: true);
+                @include hs-core.color-apply('button', (
+                    fill: $fill,
+                    ink: $ink,
+                    border: $border
+                ), 'outlined', $stateful: true, $extend: true);
             }
         }
     
         @if list.index($variants, 'filled') or list.index($variants, 'all') {
             &.hs-button--filled {
-                @include hs-core.color-apply('button', $color-map, 'filled', $stateful: true, $extend: true);
+                @include hs-core.color-apply('button', (
+                    fill: $fill,
+                    ink: $ink,
+                    border: $border
+                ), 'filled', $stateful: true, $extend: true);
             }
         }
     }
