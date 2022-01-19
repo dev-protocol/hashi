@@ -15,7 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@devprotocol/hashi": "0.1.0-alpha.5",
+    "@devprotocol/hashi": "0.1.0-beta",
     "@docusaurus/core": "2.0.0-beta.14",
     "@docusaurus/preset-classic": "2.0.0-beta.14",
     "@mdx-js/react": "1.6.22",
@@ -26,7 +26,7 @@
     "prism-react-renderer": "1.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "1.47.0",
+    "sass": "1.48.0",
     "url-loader": "4.1.1"
   },
   "devDependencies": {
