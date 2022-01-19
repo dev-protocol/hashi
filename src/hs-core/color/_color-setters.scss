@@ -156,7 +156,7 @@ $_required-props: ('fill', 'ink', 'border');
         @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-#{$tone}'));
     } @else {
         background: theme.key-create('#{$component-name}-fill', theme.token-get('#{$fill}-#{$tone}'));
-        color: theme.key-create('#{$component-name}-ink', theme.token-get('#{$fill}-#{$tone}'));
+        color: theme.key-create('#{$component-name}-ink', theme.token-get($ink));
         border: 1px solid theme.key-create('#{$component-name}-border', theme.token-get('#{$border}-#{$tone}'));
     }
     
