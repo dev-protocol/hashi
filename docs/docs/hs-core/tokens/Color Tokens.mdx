@@ -14,7 +14,7 @@ export const ColorPreview = ({ color, text = '#fff', children }) => {
                 backgroundColor: color.charAt(0) == '#' ? color : '',
                 color: text
             }}
-            className={ color.charAt(0) !== '#' ? `bg-${color}` : '' }>
+            className={ color.charAt(0) !== '#' ? `bg-${color}-400` : '' }>
         { children || color }</span>
     )
 }
@@ -29,10 +29,10 @@ All color tokens follow a numbering scheme assigned to different tones. We'll be
 | `400` | This is the default color tone. | <ColorPreview color="#ff3815" /> |
 | `600` | This is the darkest color tone. | <ColorPreview color="#8f1803" /> |
 
-## Properties
-Here are the color-related properties available in the design system. (All colors shown below are in their 400 tone number).
+## Tokens
+Here are the color-related tokens available in the design system. (All colors shown below are in their 400 tone number).
 
-| Property | Description | Value |
+| Token | Description | Value |
 |---|---|---|
 | `neutral` | Color for anything. | <ColorPreview color="neutral" text="#000" /> |
 | `surface` | Color for surfaces (`backgrounds`, `cards`, `headers`, etc.) | <ColorPreview color="surface" /> |
@@ -43,6 +43,13 @@ Here are the color-related properties available in the design system. (All color
 | `success` | Color for indicating success. | <ColorPreview color="success" /> |
 | `warning` | Color for indicating warning. | <ColorPreview color="warning" text="#000" /> |
 | `danger` | Color for indicating danger. | <ColorPreview color="danger" /> |
+
+## Properties
+| Property | Description |
+|---|---|
+| `fill` | A component's background color. |
+| `ink` | A component's text color. |
+| `border` | A component's border color. |
 
 ## Using the tokens
 ```scss
@@ -58,13 +65,13 @@ Example
 ```
 Or in a component context:
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-component';
-
-@include hs-component.render(
-    $color: (
-        // You can leave out the tone # since the code will do the picking for you.
-        default: 'scarlet',
-        accent: 'native-blue'
-    )
+@use 'path/to/@devprotocol/hashi/hs-component' with (
+    // As you can see, you can leave out the tone # since the code will do the picking for you.
+    $fill: 'scarlet',
+    $ink: 'scarlet-ink',
+    $border: 'plox',
+    $accent: 'native-blue'
 );
+
+@include hs-component.render();
 ```

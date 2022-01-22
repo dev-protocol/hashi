@@ -18,8 +18,8 @@ This doc contains proposals for the syntax of using a hashi component in SCSS.
 ```
 
 ## Theming
-<div class="hs-status-tag implemented">
-    <span class="hs-status-tag__label">Status: <b>IMPLEMENTED (v0.1.0)</b></span>
+<div class="hs-status-tag deprecated">
+    <span class="hs-status-tag__label">Status: <b>DEPRECATED (v0.1.0-alpha, -beta)</b></span>
 </div>
 
 ```scss
@@ -44,8 +44,8 @@ This doc contains proposals for the syntax of using a hashi component in SCSS.
 );
 ```
 
-<div class="hs-status-tag proposal">
-    <span class="hs-status-tag__label">Status: <b>PROPOSED (v1.0.0)</b></span>
+<div class="hs-status-tag implemented">
+    <span class="hs-status-tag__label">Status: <b>IMPLEMENTED (v0.1.0)</b></span>
 </div>
 
 ```scss
@@ -54,17 +54,17 @@ This doc contains proposals for the syntax of using a hashi component in SCSS.
     //
     // All values to be passed should be 
     // valid token queries.
-    $component-fill: 'surface', 
-    $component-ink: 'surface-ink',
-    $component-radius: 'xs',
-    $component-padding: 'sm'
+    $fill: 'surface', 
+    $ink: 'surface-ink',
+    $radius: 'xs',
+    $padding: 'sm'
 );
 
 @include hs-component.use();
 
-.hs-component--variant {
-    @include hs-component.color-override($component-name, $preset, $style);
-    @include hs-component.shape-override($component-name, $preset);
-    @include hs-component.type-override($component-name, $preset);
+@include hs-component.extend('.class-name') {
+    @include hs-component.color(($preset), $style);
+    @include hs-component.shape(($preset));
+    @include hs-component.type(($preset));
 }
 ```

@@ -39,20 +39,14 @@
 @use 'modules/ifm-overrides';
 
 @include hashi.init() {
-    code span {
-        font-family: hashi.theme-token-get('family-code') !important;
-    }
     
     @include doc-theme-overrides.use();
     @include hs-layout.use();
     
     @include hs-button.render();
-    
     .hs-button {
-        font-family: hashi.theme-token-get('family-code') !important;
         max-width: 100% !important;
     }
-    
     @include hs-button-group.render();
     @include hs-card.render();
     
@@ -78,6 +72,7 @@
     @include hs-text-field.render();
     @include hs-utils.color-utils();
     @include hs-utils.shape-utils();
+    @include hs-utils.typography-utils();
     
     @include ifm-overrides.use();
     
@@ -102,6 +97,11 @@
         }
     
         &.rejected {
+            @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
+            @include hashi.theme-key-bind('status-tag-border', #c72828);
+        }
+    
+        &.deprecated {
             @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
             @include hashi.theme-key-bind('status-tag-border', #c72828);
         }

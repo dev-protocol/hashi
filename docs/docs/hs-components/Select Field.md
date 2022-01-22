@@ -96,23 +96,21 @@ These are for creating your own component themes.
     }
 }
 ```
-### SCSS `render()` mixin
-| Property    | Type  | Effect                                                                |
-|-------------|-------|-----------------------------------------------------------------------|
-| `$color`    | `map` | Configures what and how to render the color styles for the component. |
+### Hashi `render()` API
+For more information please refer to the [render API](../hs-core/core-apis/Render.md) page.
 
-#### `$color` parameter
-| Property | Type    | Effect                                |
-|----------|---------|---------------------------------------|
-| `accent` | `token` | Defines what the accent color to use. |
-
-#### Example
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-select-field';
+$accent: 'native-blue' !default;
+$tone: 400;
 
-@include hs-select-field.render(
-    $color: (
-        accent: 'surface'
-    )
-);
+$radius: 'radius-sm' !default;
+$padding: (0.4rem 0.075rem) !default;
+
+$family: 'family-body' !default;
+$size: 'size-body' !default;
+$weight: 'weight-body' !default;
+$line-height: 'line-height-body' !default;
 ```
+
+### Hashi `extend()` API
+Please refer to the [extend API](../hs-core/core-apis/Extend.md) page.

@@ -85,51 +85,26 @@ These are for creating your own component themes.
     }
 }
 ```
-### SCSS `render()` mixin
-| Property    | Type  | Effect                                                                     |
-|-------------|-------|----------------------------------------------------------------------------|
-| `$color`    | `map` | Configures what and how to render the color styles for the component.      |
-| `$shape`    | `map` | Configures what and how to render the shape styles for the component.      |
-| `$type`     | `map` | Configures what and how to render the typography styles for the component. |
-| `$settings` | `map` | Additional style and rendering configurations.                             |
+### Hashi `render()` API
+For more information please refer to the [render API](../hs-core/core-apis/Render.md) page.
 
-#### `$color` parameter
-| Property  | Type     | Effect                                 |
-|-----------|----------|----------------------------------------|
-| `default` | `token`  | Defines what the default color to use. |
-
-#### `$shape` parameter
-| Property  | Type     | Effect                                                                                               |
-|-----------|----------|------------------------------------------------------------------------------------------------------|
-| `radius`  | `string` | Defines the border radius of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
-| `padding` | `string` | Defines the padding of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl`       |
-
-#### `$type` parameter
-| Property      | Type    | Effect                              |
-|---------------|---------|-------------------------------------|
-| `size`        | `token` | Defines the font size to be used.   |
-| `weight`      | `token` | Defines the font weight to be used. |
-| `line-height` | `token` | Defines the line height to be used. |
-
-#### `$settings` parameter
-| Property        | Type      | Effect                                                         |
-|-----------------|-----------|----------------------------------------------------------------|
-| `has-elevation` | `boolean` | Determines if the component will render with elevation or not. |
-
-#### Example
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-card';
+$fill: 'surface' !default;
+$ink: 'surface-ink' !default;
+$border: $fill !default;
+$tone: 300 !default;
 
-@include hs-card.render(
-    $color: (
-        default: 'surface'
-    ),
-    $shape: (
-        radius: 'md'
-    ),
-    $type: (
-        family: 'global',
-        weight: 'global'
-    ),
-);
+$radius: 'radius-sm' !default;
+$padding: 'padding-xl' !default;
+
+$family: 'family-body' !default;
+$size: 'size-body' !default;
+$weight: 'weight-body' !default;
+$line-height: 'line-height-body' !default;
+
+$elevation-level: 2 !default;
+$has-elevation: true !default;
 ```
+
+### Hashi `extend()` API
+Please refer to the [extend API](../hs-core/core-apis/Extend.md) page.

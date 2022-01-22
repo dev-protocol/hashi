@@ -1,10 +1,12 @@
 ---
-id: hs-button
-title: Button
-slug: /components/button
+id: hs-button 
+title: Button 
+slug: /components/button 
 sidebar_position: 1
 ---
+
 # HSButton Component
+
 <div class="hs-component-preview col-2">
     <div class="hs-component-preview__row">
         <button class="hs-button native-blue" role="button">
@@ -31,8 +33,11 @@ sidebar_position: 1
 </div>
 
 ## Usage
+
 ### HTML
+
 ```html
+
 <button class="hs-button" role="button">
     <i class="hs-button__icon" aria-hidden="true"></i>
     <span class="hs-button__label">BUTTON</span>
@@ -40,6 +45,7 @@ sidebar_position: 1
 ```
 
 ### SCSS/CSS
+
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-button';
 
@@ -47,6 +53,7 @@ sidebar_position: 1
 ```
 
 ## API
+
 ### CSS Classes
 These are used to extend and modify the styles of a component on the markup.
 
@@ -76,6 +83,7 @@ These are for creating your own component themes.
 | `--hs-button-label-size` | Changes the button's label size.         |
 
 #### Example
+
 ```scss
 .my-button-theme {
     --hs-button-fill: #232323;
@@ -91,54 +99,28 @@ These are for creating your own component themes.
     }
 }
 ```
-### SCSS `render()` mixin
-| Property    | Type  | Effect                                                                     |
-|-------------|-------|----------------------------------------------------------------------------|
-| `$color`    | `map` | Configures what and how to render the color styles for the component.      |
-| `$shape`    | `map` | Configures what and how to render the shape styles for the component.      |
-| `$type`     | `map` | Configures what and how to render the typography styles for the component. |
-| `$settings` | `map` | Additional style and rendering configurations.                             |
 
-#### `$color` parameter
-| Property  | Type    | Effect                                 |
-|-----------|---------|----------------------------------------|
-| `default` | `token` | Defines what the default color to use. |
+### Hashi `render()` API
+For more information please refer to the [render API](../hs-core/core-apis/Render.md) page.
 
-#### `$shape` parameter
-| Property  | Type     | Effect                                                                                               |
-|-----------|----------|------------------------------------------------------------------------------------------------------|
-| `radius`  | `string` | Defines the border radius of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl` |
-| `padding` | `string` | Defines the padding of the component. Available radius sizes are: `xs`, `sm`, `md`, `lg`, `xl`       |
-
-#### `$type` parameter
-| Property      | Type    | Effect                              |
-|---------------|---------|-------------------------------------|
-| `size`        | `token` | Defines the font size to be used.   |
-| `weight`      | `token` | Defines the font weight to be used. |
-| `line-height` | `token` | Defines the line height to be used. |
-
-#### `$settings` parameter
-| Property   | Type             | Effect                                                                                                |
-|------------|------------------|-------------------------------------------------------------------------------------------------------|
-| `variants` | `string or list` | Defines what variants to render. Available variants include: `text`, `outlined`, `filled`, and `all`. |
-
-#### Example
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-button';
+$fill: 'scarlet' !default;
+$ink: 'scarlet-ink' !default;
+$border: $fill !default;
+$tone: 400 !default;
 
-@include hs-button.render(
-    $color: (
-        presets: ('scarlet', 'native-blue', 'success', 'warning', 'danger'),
-    ),
-    $shape: (
-        radius: 'md'
-    ),
-    $type: (
-        family: 'global',
-        weight: 'global'
-    ),
-    $settings: (
-        variants: ('filled', 'outlined'),
-    ),
-);
+$radius: 'radius-xs' !default;
+$padding: (0.5rem 0.7rem) !default;
+
+$family: 'family-action' !default;
+$size: 'size-action' !default;
+$weight: 'weight-action' !default;
+$line-height: 'line-height-action' !default;
+
+$gap: 0 !default;
+
+$variants: 'all' !default;
 ```
+
+### Hashi `extend()` API
+Please refer to the [extend API](../hs-core/core-apis/Extend.md) page.

@@ -14,7 +14,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
     docs: {
-        'Getting Started': ['getting-started/introduction', 'getting-started/setup'],
+        'Getting Started': ['getting-started/introduction', 'getting-started/setup', 'getting-started/philosophy'],
         'Core': [
             {
                 type: 'category',
@@ -27,16 +27,27 @@ const sidebars = {
                     'hs-core/tokens/type-tokens'
                 ]
             },
+            {
+                type: 'category',
+                label: 'Core APIs',
+                collapsed: false,
+                items: [
+                    'hs-core/core-apis/init',
+                    'hs-core/core-apis/render',
+                    'hs-core/core-apis/extend',
+                    'hs-core/core-apis/token',
+                    'hs-core/core-apis/key',
+                ]
+            },
         ],
         'Components': [
-            'hs-components/hs-appbar',
             'hs-components/hs-button',
             'hs-components/hs-button-group',
             'hs-components/hs-card',
-            'hs-components/hs-header',
             'hs-components/hs-link',
             'hs-components/hs-select-field',
             'hs-components/hs-text-field',
+            'hs-components/hs-utils',
         ],
         'Spec': [
             'spec/component-usage'

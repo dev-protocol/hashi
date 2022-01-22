@@ -27,24 +27,16 @@ import React from 'react';
 interface HSCardProps {
     title: string;
     description?: string;
-    icon?: string;
-    actions?: any;
+    actions?: React.ReactElement | string;
 }
 
-const HSCard: React.FC<HSCardProps> = ({ title, description, icon, actions, children }) => {
+const HSCard: React.FC<HSCardProps> = ({ title, description, actions, children }) => {
     return (
         <div className="hs-card">
             <div className="hs-card__header">
-                <div className="hs-card__mast">
-                    <h2 className="hs-card__title">{ title }</h2>
-                    { description &&
+                <h2 className="hs-card__title">{ title }</h2>
+                { description &&
                     <p className="hs-card__subtitle">{ description }</p>
-                    }
-                </div>
-                { icon &&
-                <div className="hs-card__icon">
-                    <img src={ icon } alt="Icon" />
-                </div>
                 }
             </div>
             { children &&

@@ -13,7 +13,7 @@ export const ShapePreview = ({ shape, children }) => {
                 padding: '0.5rem',
                 color: '#fff'
             }}
-            className={`bg-native-blue ${shape}`}
+            className={`bg-native-blue-400 ${shape}`}
         >
             { children || shape }
         </span>
@@ -25,13 +25,13 @@ All shape tokens follow a variant naming scheme assigned to differing values.
 
 | Variant | Description | Value |
 |---|---|---|
-| `none` | No shape token size. | <ShapePreview shape="radius-none">0rem</ShapePreview> |
-| `xs` | Smallest shape token size. | <ShapePreview shape="radius-xs">0.3rem</ShapePreview> |
-| `sm` | Small shape token size. | <ShapePreview shape="radius-sm">0.5rem</ShapePreview> |
-| `md` | Middle shape token size. | <ShapePreview shape="radius-md">0.7rem</ShapePreview> |
-| `lg` | Large shape token size | <ShapePreview shape="radius-lg">1rem</ShapePreview> |
-| `xl` | Largest shape token size. (not the pill variant) | <ShapePreview shape="radius-xl">1.7rem</ShapePreview> |
-| `pill` | [For padding tokens only!] Pill shape. | <ShapePreview shape="radius-pill">500px</ShapePreview> |
+| `none` | No shape token size. | <ShapePreview shape="r-none">0rem</ShapePreview> |
+| `xs` | Smallest shape token size. | <ShapePreview shape="r-xs">0.3rem</ShapePreview> |
+| `sm` | Small shape token size. | <ShapePreview shape="r-sm">0.5rem</ShapePreview> |
+| `md` | Middle shape token size. | <ShapePreview shape="r-md">0.7rem</ShapePreview> |
+| `lg` | Large shape token size | <ShapePreview shape="r-lg">1rem</ShapePreview> |
+| `xl` | Largest shape token size. (not the pill variant) | <ShapePreview shape="r-xl">1.7rem</ShapePreview> |
+| `pill` | [For padding tokens only!] Pill shape. | <ShapePreview shape="r-pill">500px</ShapePreview> |
 
 ## Properties
 Here are the shape-related properties pre-built in the design system.
@@ -55,12 +55,10 @@ Example
 ```
 Or in a component context:
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-component';
-
-@include hs-component.render(
-    $shape: (
-        padding: 'sm',
-        radius: 'xs'
-    )
+@use 'path/to/@devprotocol/hashi/hs-component' with (
+    $padding: 'padding-sm',
+    $radius: 'radius-xs'
 );
+
+@include hs-component.render();
 ```

@@ -14,10 +14,10 @@ All typography tokens follow a variant naming scheme assigned to differing value
 | `h1`, `h2`, `h3`, `h4` | Type variant for the different headers (h1-h4). |
 | `body` | Type variant for all text. |
 | `icon` | Type variant for icons. |
-| `button` | Type variant for buttons. |
+| `action` | Type variant for buttons/actions. |
 | `small` | Type variant for small texts (helper texts, etc.). |
 
-### Special Schema (for the `family` token)
+### Special Schema (for the `family` property)
 | Variant | Description |
 |---|---|
 | `global` | Type variant for all typography. |
@@ -50,13 +50,11 @@ Example
 ```
 Or in a component context:
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-component';
-
-@include hs-component.render(
-    $type: (
-        family: 'global',
-        size: 'h1',
-        weight: 'h2'
-    )
+@use 'path/to/@devprotocol/hashi/hs-component' with (
+    $family: 'family-global',
+    $size: 'size-h1',
+    $weight: 'weight-h2'
 );
+
+@include hs-component.render();
 ```

@@ -42,49 +42,21 @@
         height: 100%;
         font-size: 100%;
         box-sizing: border-box;
-        background-color: #fff !important;
+        background-color: #fff;
         
         &[data-theme='dark'] {
             --ifm-navbar-background-color: #{hashi.theme-token-get('surface-400')};
             --ifm-navbar-link-color: #{hashi.theme-token-get('surface-ink')};
-            color-scheme: dark !important;
             background-color: hashi.theme-token-get('surface-400') !important;
-            @include hashi.theme-init((
-                'surface': (
-                    '200': #3a4158,
-                    '300': #222b3d,
-                    '400': #111827,
-                    '600': #040b10,
-                    'ink': #fff
-                ),
-                'neutral': (
-                    '200': #ffffff,
-                    '300': #f1f1f1,
-                    '400': #d7d7d7,
-                    '600': #bfbfbf,
-                    'ink': #000000,
-                )
-            ));
-            
-            body {
-                background-color: hashi.theme-token-get('surface-400') !important;
-            }
     
             .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
-                background-color: hashi.theme-token-get('surface-600') !important;
+                background-color: hashi.theme-token-get('surface-600');
             }
-    
+            
             .menu__link {
-                color: #fff;
-                fill: hashi.theme-token-get('neutral-ink');
-    
                 &--sublist::after {
                     $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0, 0, 0, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
                     background: #{$aye} 50% / 2rem 2rem;
-                }
-    
-                &--active {
-                    color: var(--ifm-color-primary);
                 }
             }
         }
@@ -94,12 +66,17 @@
         }
         
         .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
-            background-color: hashi.theme-token-get('neutral-400') !important;
+            background-color: hashi.theme-token-get('neutral-400');
         }
     
         .menu__link {
             color: #fff;
             fill: hashi.theme-token-get('neutral-ink');
+            
+            @include hashi.dark-mode {
+                color: #fff;
+                fill: hashi.theme-token-get('neutral-ink');
+            }
         
             &--sublist::after {
                 $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(255, 255, 255, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
@@ -108,6 +85,10 @@
         
             &--active {
                 color: var(--ifm-color-primary);
+                
+                @include hashi.dark-mode {
+                    color: var(--ifm-color-primary);
+                }
             }
         }
     }
