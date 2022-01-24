@@ -75,10 +75,13 @@
                 align-items: flex-start;
     
                 h1 {
+                    font-family: hashi.theme-token-get('family-header');
                     margin-bottom: 0.2rem;
                 }
     
                 .hs-hero__actions {
+                    font-family: hashi.theme-token-get('family-body');
+                    
                     a {
                         text-decoration: none !important;
                     }

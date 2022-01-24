@@ -51,6 +51,7 @@
                 }
                 
                 > span {
+                    font-family: inherit;
                     font-size: inherit;
                     font-weight: inherit;
                 }
@@ -58,17 +59,13 @@
         }
     }
     
-    .backToTopButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-BackToTopButton-styles-module {
+    .theme-back-to-top-button {
         --ifm-color-emphasis-200: #{hashi.theme-token-get('scarlet-400')} !important;
         --ifm-color-emphasis-1000: #{hashi.theme-token-get('scarlet-ink')} !important;
         
         &:hover {
             background-color: hashi.theme-token-get('scarlet-300') !important;
         }
-    }
-    
-    .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
-        border-right: 1px solid #{hashi.theme-token-get('surface-400')};
     }
     
     .table-of-contents__link {
@@ -82,7 +79,12 @@
     }
     
     .footer {
-        --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
-        --ifm-footer-color: #{hashi.theme-token-get('surface-ink')};
+        --ifm-footer-background-color: #{hashi.theme-token-get('neutral-600')};
+        --ifm-footer-color: #{hashi.theme-token-get('neutral-ink')};
+        
+        @include hashi.dark-mode {
+            --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
+            --ifm-footer-color: #{hashi.theme-token-get('surface-ink')};
+        }
     }
 }

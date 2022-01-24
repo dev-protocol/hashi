@@ -49,14 +49,14 @@
             --ifm-navbar-link-color: #{hashi.theme-token-get('surface-ink')};
             background-color: hashi.theme-token-get('surface-400') !important;
     
-            .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+            .menu {
                 background-color: hashi.theme-token-get('surface-600');
-            }
-            
-            .menu__link {
-                &--sublist::after {
-                    $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0, 0, 0, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
-                    background: #{$aye} 50% / 2rem 2rem;
+                
+                &__link {
+                    &--sublist::after {
+                        $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0, 0, 0, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+                        background: #{$aye} 50% / 2rem 2rem;
+                    }
                 }
             }
         }
@@ -65,29 +65,29 @@
             background-color: #fff;
         }
         
-        .menu_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocSidebar-styles-module {
+        .menu {
             background-color: hashi.theme-token-get('neutral-400');
-        }
-    
-        .menu__link {
-            color: #fff;
-            fill: hashi.theme-token-get('neutral-ink');
             
-            @include hashi.dark-mode {
+            &__link {
                 color: #fff;
                 fill: hashi.theme-token-get('neutral-ink');
-            }
-        
-            &--sublist::after {
-                $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(255, 255, 255, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
-                background: #{$aye} 50% / 2rem 2rem;
-            }
-        
-            &--active {
-                color: var(--ifm-color-primary);
-                
+    
                 @include hashi.dark-mode {
+                    color: #fff;
+                    fill: hashi.theme-token-get('neutral-ink');
+                }
+    
+                &--sublist::after {
+                    $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(255, 255, 255, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+                    background: #{$aye} 50% / 2rem 2rem;
+                }
+    
+                &--active {
                     color: var(--ifm-color-primary);
+        
+                    @include hashi.dark-mode {
+                        color: var(--ifm-color-primary);
+                    }
                 }
             }
         }
