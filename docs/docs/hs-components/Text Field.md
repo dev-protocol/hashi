@@ -83,7 +83,7 @@ These are for creating your own component themes.
 }
 ```
 ### Hashi `render()` API
-For more information please refer to the [render API](../hs-core/core-apis/Render.md) page.
+Here are all the themeable properties for this component. The directions to use these properties are located in the [render API](../hs-core/core-apis/Render.md) page.
 
 ```scss
 $accent: 'native-blue' !default;

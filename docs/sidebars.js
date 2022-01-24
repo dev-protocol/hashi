@@ -29,7 +29,7 @@ const sidebars = {
             },
             {
                 type: 'category',
-                label: 'Core APIs',
+                label: 'Core API',
                 collapsed: false,
                 items: [
                     'hs-core/core-apis/init',
@@ -39,12 +39,22 @@ const sidebars = {
                     'hs-core/core-apis/key',
                 ]
             },
+            {
+                type: 'category',
+                label: 'Helpers',
+                collapsed: false,
+                items: [
+                    'hs-core/helpers/breakpoints',
+                    'hs-core/helpers/dark-mode',
+                ]
+            },
         ],
         'Components': [
             'hs-components/hs-button',
             'hs-components/hs-button-group',
             'hs-components/hs-card',
             'hs-components/hs-link',
+            'hs-components/hs-profile',
             'hs-components/hs-select-field',
             'hs-components/hs-text-field',
             'hs-components/hs-utils',

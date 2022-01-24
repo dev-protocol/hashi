@@ -5,7 +5,7 @@ slug: /components/card
 sidebar_position: 3
 ---
 # HSCard Component
-![card.png](card.png)
+![HSCard Component](card.png)
 
 ## Usage
 ### HTML
