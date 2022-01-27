@@ -44,8 +44,8 @@
     @include hs-layout.use();
     
     @include hs-button.render();
-    .hs-button {
-        max-width: 100% !important;
+    .hs-button__label {
+        white-space: nowrap;
     }
     @include hs-button-group.render();
     @include hs-card.render();
