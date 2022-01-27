@@ -35,5 +35,7 @@
 
 @mixin create($query, $context: 'min') {
     @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-create() instead.';
-    @include helpers.breakpoint-create($query, $context);
+    @include helpers.breakpoint-create($query, $context) {
+        @content;
+    }
 }
