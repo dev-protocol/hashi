@@ -60,7 +60,8 @@ const sidebars = {
             'hs-components/hs-utils',
         ],
         'Spec': [
-            'spec/component-usage'
+            'spec/tokens',
+            'spec/component-usage',
         ],
     }
 };

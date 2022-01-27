@@ -4,7 +4,7 @@ title: Utils
 slug: /components/utils
 ---
 # HSUtils
-This is a special set of mixins that generate utility classes based on Hashi's Design Tokens. This provides a useful API for doing minor modifications without going to the stylesheets.
+This is a special set of mixins that generate utility classes based on Hashi's Design Tokens. To see how we use these utility classes, please refer to the ["Utility Philosophy" section](../getting-started/philosophy.md#utility-philosophy) of the Philosophy page.
 
 **Do keep in mind it is encouraged that you use the token API, and key API if you wish to create components. This is just meant for minor modifications in the markup.**
 
@@ -34,27 +34,36 @@ The general schema is a prefix and a token value. Valid token values can be foun
 | `disabled:` | Scopes the util to an element's disabled state. |
 
 ### Color
-| Prefix    | Description                             |
-|-----------|-----------------------------------------|
-| `bg-`     | Modifies an element's background color. |
-| `text-`   | Modifies an element's text color.       |
-| `border-` | Modifies an element's border color.     |
+| Prefix    | Description                                     |
+|-----------|-------------------------------------------------|
+| `bg-`     | Defines/Modifies an element's background color. |
+| `text-`   | Defines/Modifies an element's text color.       |
+| `border-` | Defines/Modifies an element's border color.     |
 
 ### Shape
-The shape utils also follow the same directional configuration schema as tailwind's. The only difference is that there's no x or y directional configuration.
+The shape utils also follow the same directional configuration schema as tailwind's.
 
-| Prefix          | Description                          |
-|-----------------|--------------------------------------|
-| `r[direction]-` | Modifies an element's border radius. |
-| `m[direction]-` | Modifies an element's margin.        |
-| `p[direction]-` | Modifies an element's padding.       |
+| Prefix          | Description                                  |
+|-----------------|----------------------------------------------|
+| `r[direction]-` | Defines/Modifies an element's border radius. |
+| `m[direction]-` | Defines/Modifies an element's margin.        |
+| `p[direction]-` | Defines/Modifies an element's padding.       |
+| `gap-`          | Defines/Modifies an element's gap.           |
 
 *[direction] is optional.
 
 ### Typography
-| Prefix | Description                        |
-|--------|------------------------------------|
-| `ff-`  | Modifies an element's font family. |
-| `fs-`  | Modifies an element's font size.   |
-| `fw-`  | Modifies an element's font weight. |
-| `lh-`  | Modifies an element's line height. |
+| Prefix         | Description                                |
+|----------------|--------------------------------------------|
+| `family-`      | Defines/Modifies an element's font family. |
+| `size-`        | Defines/Modifies an element's font size.   |
+| `weight-`      | Defines/Modifies an element's font weight. |
+| `line-height-` | Defines/Modifies an element's line height. |
+
+### Flex Layout
+| Prefix     | Description                                                |
+|------------|------------------------------------------------------------|
+| `flex`     | Defines that the element is a flex display.                |
+| `flow-`    | Defines the flex flow of an element.                       |
+| `justify-` | Defines/Modifies the element's `justify-content` property. |
+| `align-`   | Defines/Modifies the element's `align-items` property.     |

@@ -39,9 +39,8 @@
             }
             
             .navbar__item {
-                --hs-button-ink: #fff;
-                @extend .hs-button;
-                // @extend .neutral;
+                // --hs-button-ink: #fff;
+                // @extend .hs-button;
                 max-width: max-content !important;
                 
                 &:hover,

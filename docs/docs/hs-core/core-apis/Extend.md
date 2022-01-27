@@ -11,6 +11,8 @@ The Extend API tends to generate more code than usual, but it is a powerful tool
 
 Most of the values to be passed in the API's submodules (Color, Shape, Typography) are taking in [Hashi's design tokens](../tokens/index.mdx).
 
+Most of the time, you will only need this rarely as [Utility Classes](../../hs-components/Utils.md) are built in the design system. But for other reasons -- like extracting it as a 'component-like' variant -- this is definitely the way to go.
+
 ```scss
 @use 'node_modules/@devprotocol/hashi/hs-component';
 

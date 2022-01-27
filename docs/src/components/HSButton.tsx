@@ -47,11 +47,17 @@ const HSButton: React.FC<HSButtonProps> = ({ type, color, label, icon, link, isD
     );
 
     if (!link) {
-        return ButtonBase;
+        return (
+            <button className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` } disabled={ isDisabled }>
+                { icon && <i className="hs-button__icon">{ icon }</i> }
+                <span className="hs-button__label">{ label || children }</span>
+            </button>
+        );
     } else {
         return (
-            <Link to={ link } target={ link.indexOf('/') !== 0 ? '_blank' : '_self' }>
-                { ButtonBase }
+            <Link to={ link } target={ link.indexOf('/') !== 0 ? '_blank' : '_self' } className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` }>
+                { icon && <i className="hs-button__icon">{ icon }</i> }
+                <span className="hs-button__label">{ label || children }</span>
             </Link>
         );
     }

@@ -5,7 +5,7 @@ slug: /components/button-group
 sidebar_position: 2
 ---
 # HSButtonGroup Component
-<div class="hs-component-preview col-2">
+<div class="hs-component-preview">
     <div class="hs-component-preview__row">
         <div class="hs-button-group">
             <button class="hs-button hs-button--outlined native-blue" role="button">
@@ -25,7 +25,14 @@ sidebar_position: 2
 ### HTML
 ```html
 <div class="hs-button-group">
-    <!-- BUTTON COMPONENTS INSERTED HERE -->
+    <label class="hs-button hs-button--filled">
+        <span class="hs-button__label">BUTTON</span>
+        <input type="radio" name="choice" value="button">
+    </label>
+    <label class="hs-button hs-button--filled">
+        <span class="hs-button__label">BUTTON</span>
+        <input type="checkbox" name="choice" value="button">
+    </label>
 </div>
 ```
 

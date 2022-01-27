@@ -37,11 +37,34 @@ sidebar_position: 1
 ### HTML
 
 ```html
-
 <button class="hs-button" role="button">
     <i class="hs-button__icon" aria-hidden="true"></i>
     <span class="hs-button__label">BUTTON</span>
 </button>
+```
+
+There's a caveat to the HTML structure. If you wish to use the button component to redirect a user to another page, please use `<a></a>` tags instead. This improves accessibility, and the way styles work for this component. Additionally, anchor elements don't have a disabled attribute so you wouldn't really need a disabled state for this.
+
+```html
+<a class="hs-button" href="https://devprotocol.xyz" target="_blank">
+    <i class="hs-button__icon" aria-hidden="true"></i>
+    <span class="hs-button__label">BUTTON</span>
+</a>
+```
+
+Additionally, you can use radios and checkboxes whenever you put it under the Button Group wrapper.
+
+```html
+<div class="hs-button-group">
+    <label class="hs-button hs-button--filled">
+        <span class="hs-button__label">BUTTON</span>
+        <input type="radio" name="choice" value="button">
+    </label>
+    <label class="hs-button hs-button--filled">
+        <span class="hs-button__label">BUTTON</span>
+        <input type="checkbox" name="choice" value="button">
+    </label>
+</div>
 ```
 
 ### SCSS/CSS

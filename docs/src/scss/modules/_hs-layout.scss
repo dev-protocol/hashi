@@ -33,9 +33,9 @@
         display: grid;
         place-items: center;
         margin: 1rem auto 0 auto;
-        
-        .hs-button {
-            width: 100% !important;
+    
+        a {
+            text-decoration: none !important;
         }
     }
     
@@ -51,12 +51,6 @@
         
         @media (min-width: 870px) {
             grid-template-columns: repeat(3, 1fr);
-        }
-        
-        > a .hs-button,
-        > .hs-button {
-            min-width: 100% !important;
-            min-height: 100%;
         }
         
         a {
