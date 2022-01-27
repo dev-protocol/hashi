@@ -40,10 +40,10 @@
     }
     
     section {
-        margin: 0.8rem 0;
+        margin: hashi.theme-token-get('margin-xl') 0;
         
         > * + * {
-            margin-left: 0.5rem;
+            margin-left: hashi.theme-token-get('space-xs');
         }
     }
     
@@ -58,6 +58,7 @@
     @include hs-utils.color-utils();
     @include hs-utils.shape-utils();
     @include hs-utils.typography-utils();
+    @include hs-utils.layout-utils();
     
     // @include hashi.appbar-render();
     // @include hashi.card-render();
