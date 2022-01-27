@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,22 +18,36 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
-@use '../helpers';
 @use 'sass:map';
 
+$breakpoints: (
+    'small': 320px,
+    'medium': 630px,
+    'large': 890px
+);
+
 @mixin config($breakpoints) {
-    @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-config() instead.';
-    @include helpers.breakpoint-config($breakpoints);
+    $breakpoints: map.merge($breakpoints, $breakpoints) !global;
 }
 
 @function get($query) {
-    @warn 'This function will be deprecated on v0.2.0. We advise you to use breakpoint-get() instead.';
-    @return helpers.breakpoint-get($query);
+    @return map.get($breakpoints, $query);
 }
 
 @mixin create($query, $context: 'min') {
-    @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-create() instead.';
-    @include helpers.breakpoint-create($query, $context);
+    @media (#{$context}-width: _sanitize-breakpoint($query, $context)) {
+        @content;
+    }
+}
+
+@function _sanitize-breakpoint($query, $context) {
+    @if not $context == 'min' or not $context == 'max' {
+        @error "Invalid context: #{$context}! Please select from the following valid contexts: min, max.";
+    } @else if $context == 'min' {
+        @return map.get($breakpoints, $query);
+    } @else if $context == 'max' {
+        @return map.get($breakpoints, $query) - 1;
+    }
 }
