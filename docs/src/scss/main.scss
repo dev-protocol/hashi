@@ -44,9 +44,6 @@
     @include hs-layout.use();
     
     @include hs-button.render();
-    .hs-button__label {
-        white-space: nowrap;
-    }
     @include hs-button-group.render();
     @include hs-card.render();
     
