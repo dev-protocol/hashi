@@ -1,13 +1,13 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Dev Protocol's design system implementation for the web.",
-  "main": "index.js",
+  "main": "tailwind.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
   "author": "Dev Protocol",
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@matteusan/sentro": "0.1.19"
+    "@matteusan/sentro": "0.1.20"
   }
 }

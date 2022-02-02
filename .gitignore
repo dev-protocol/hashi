@@ -1,6 +1,8 @@
 # Dependencies folder
 /node_modules
+/**/node_modules
 /vendor
+/**/vendor
 
 # Compiled
 /dump
