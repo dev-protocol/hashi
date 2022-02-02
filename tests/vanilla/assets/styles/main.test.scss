@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -20,15 +20,15 @@
 //  SOFTWARE.
 //
 
-@use '../../../src' as hashi;
-@use '../../../src/hs-button' with ($fill: 'plox');
-@use '../../../src/hs-button-group';
-@use '../../../src/hs-card';
-@use '../../../src/hs-link';
-@use '../../../src/hs-profile';
-@use '../../../src/hs-select-field';
-@use '../../../src/hs-text-field';
-@use '../../../src/hs-utils';
+@use '../../../../src/index' as hashi;
+@use '../../../../src/hs-button/index' with ($fill: 'plox');
+@use '../../../../src/hs-button-group/index';
+@use '../../../../src/hs-card/index';
+@use '../../../../src/hs-link/index';
+@use '../../../../src/hs-profile/index';
+@use '../../../../src/hs-select-field/index';
+@use '../../../../src/hs-text-field/index';
+@use '../../../../src/hs-utils/index';
 
 @include hashi.init() {
     
