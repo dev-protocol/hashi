@@ -48,6 +48,13 @@ $type-states: (
     'active'
 );
 
+$type-alignments: (
+    'left',
+    'center',
+    'right',
+    'justify'
+);
+
 @mixin typography-utils() {
     @each $family-preset in $family-presets {
         .family-#{$family-preset} {
@@ -94,6 +101,12 @@ $type-states: (
             .#{$state}\:line-height-#{$type-preset}:#{$state} {
                 line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
             }
+        }
+    }
+    
+    @each $type-alignment in $type-alignments {
+        .text-#{$type-alignment} {
+            text-align: $type-alignment;
         }
     }
 }
