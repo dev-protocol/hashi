@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +28,7 @@
 		width: 100%;
 		min-width: 62px;
 		max-width: max-content;
+		height: max-content;
 		
 		display: inline-flex;
 		justify-content: center;
@@ -68,7 +69,6 @@
 			font-size: hs-core.theme-key-create('button-label-size', inherit);
 			font-weight: inherit;
 			line-height: inherit;
-			white-space: nowrap;
 		}
 	}
 }
