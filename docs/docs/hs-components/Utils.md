@@ -67,3 +67,7 @@ The shape utils also follow the same directional configuration schema as tailwin
 | `flow-`    | Defines the flex flow of an element.                       |
 | `justify-` | Defines/Modifies the element's `justify-content` property. |
 | `align-`   | Defines/Modifies the element's `align-items` property.     |
+
+
+## Need more util classes?
+If you find the built-in utility classes aren't enough, we recommend checking out Hashi's [Tailwind integration documentation](../integrations/tailwind).
