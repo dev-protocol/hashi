@@ -1818,12 +1818,12 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@devprotocol/hashi@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-0.1.2.tgz#a4ee6e52bfa8758945c57c082c42f3aa7d650314"
-  integrity sha512-NflN59+9QEZReBlabUZjzfQJnqRI25nOnYyE8NDZ6AoOcZK53a85RXloMBonkxvzAh1jxaD80zy/Zg96K2Cdhg==
+"@devprotocol/hashi@0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-0.1.3.tgz#abe34f19c8bbc40ebc82910eb91d516ed4e7d8cd"
+  integrity sha512-sM/fFHIH2fbAfCP2C7AeEHQ4/3/RmfKpBV5PA7yLr/O2eBa3xvJ4xGvvevaIei6m76aB20qdrNu2SiV33FNxNA==
   dependencies:
-    "@matteusan/sentro" "0.1.19"
+    "@matteusan/sentro" "0.1.20"
 
 "@docsearch/css@3.0.0-alpha.41":
   version "3.0.0-alpha.41"
@@ -2221,10 +2221,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@matteusan/sentro@0.1.19":
-  version "0.1.19"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.19.tgz#cbab1dac51c6645ede0ed646612e0b74ea4158cd"
-  integrity sha512-vwbeEQc+fAN4kUKO/5osGPcDRhmyTnCjPC0z6p0empywju5cKodzYzR7rgBno922YO2r3x6XoKW5bzafZuibxg==
+"@matteusan/sentro@0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.20.tgz#edbd1e335c5662c08a1898dc07d8742d02124d85"
+  integrity sha512-7pqB45X1SFy/sdlIABf1ShVw+BQRXLAe/+VYRQh0pcEUAWgtghoA9DAu5q7PexK4q+azuotHuP0cGhzoFqlV0w==
 
 "@mdx-js/mdx@1.6.22", "@mdx-js/mdx@^1.6.21":
   version "1.6.22"
