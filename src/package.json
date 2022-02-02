@@ -2,7 +2,7 @@
   "name": "@devprotocol/hashi",
   "version": "0.1.3",
   "description": "Dev Protocol's design system implementation for the web.",
-  "main": "tailwind.js",
+  "main": "index.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
   "author": "Dev Protocol",
   "license": "MIT",
