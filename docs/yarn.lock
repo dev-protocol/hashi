@@ -1818,10 +1818,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@devprotocol/hashi@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-0.1.3.tgz#abe34f19c8bbc40ebc82910eb91d516ed4e7d8cd"
-  integrity sha512-sM/fFHIH2fbAfCP2C7AeEHQ4/3/RmfKpBV5PA7yLr/O2eBa3xvJ4xGvvevaIei6m76aB20qdrNu2SiV33FNxNA==
+"@devprotocol/hashi@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-0.1.4.tgz#5d8b7a506a0f6c184034741256825b7ebdcb0d3a"
+  integrity sha512-IkxPfMGPREZCF19RG+lpUrRRF/vG5hmkkKGXKsxo7m9qulQ3t24Ut3vGYU3zfly45QaX1IgeRAOQM3VHlC0CDg==
   dependencies:
     "@matteusan/sentro" "0.1.20"
 
