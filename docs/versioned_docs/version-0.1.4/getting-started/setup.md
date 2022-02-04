@@ -9,6 +9,7 @@ This portion of the documentation will show you how to integrate Dev Protocol's 
 
 For almost every application you'll be developing with the Hashi Design System, we recommend you head over to our [recommended setup](#recommended-setup).
 
+## Quick Setup
 ## Install from a CDN
 ### Installation
 Add this link tag in your project's `<head></head>` tags
@@ -29,7 +30,7 @@ You can configure components using a separate CSS file, and using Hashi's built-
 }
 ```
 
-## Install as a package
+## Install as a package (recommended)
 ### Installation
 Run the commands below in your terminal.
 
@@ -59,8 +60,7 @@ Instantiate the design system in your SCSS stylesheet.
 }
 ```
 
-# Complete Setups
-## PurgeCSS Setup (recommended)
+## Recommended Setup
 We recommend having a css purger (like purgecss) integrated into your app's workflow to purge all unused css from the design system (specifically the built-in utility classes).
 
 ### Installation

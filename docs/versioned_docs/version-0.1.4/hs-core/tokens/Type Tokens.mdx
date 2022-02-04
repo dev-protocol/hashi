@@ -1,0 +1,60 @@
+---
+id: type-tokens
+title: Typography Tokens
+slug: /core/tokens/typography-tokens
+sidebar_position: 1
+---
+
+## Schema
+All typography tokens follow a variant naming scheme assigned to differing values.
+
+### General Schema
+| Variant | Description |
+|---|---|
+| `h1`, `h2`, `h3`, `h4` | Type variant for the different headers (h1-h4). |
+| `body` | Type variant for all text. |
+| `icon` | Type variant for icons. |
+| `action` | Type variant for buttons/actions. |
+| `small` | Type variant for small texts (helper texts, etc.). |
+
+### Special Schema (for the `family` property)
+| Variant | Description |
+|---|---|
+| `global` | Type variant for all typography. |
+| `header` | Type variant for the different headers (h1-h4). |
+| `body` | Type variant for body text (paragraphs, spans, anchors, etc.). |
+| `action` | Type variant for action texts (buttons, etc). |
+| `code` | Type variant for embedded code and/or monospace-styled texts. |
+
+## Properties
+Here are the typography-related properties pre-built in the design system.
+
+| Property | Description |
+|---|---|
+| `family` | Property for setting font family values. |
+| `size` | Property for setting font size values. |
+| `weight` | Property for setting font weight values. |
+| `line-height` | Property for setting line height values. |
+
+## Using the tokens
+```scss
+hashi.theme-token-get('<type-token>-<type-variant>');
+```
+Example
+```scss
+@use 'path/to/@devprotocol/hashi';
+
+.hs-component {
+    @include hashi.theme-key-bind('component-label-size', hashi.theme-token-get('size-h1'));
+}
+```
+Or in a component context:
+```scss
+@use 'path/to/@devprotocol/hashi/hs-component' with (
+    $family: 'family-global',
+    $size: 'size-h1',
+    $weight: 'weight-h2'
+);
+
+@include hs-component.render();
+```

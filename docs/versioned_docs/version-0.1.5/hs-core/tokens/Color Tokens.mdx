@@ -1,0 +1,77 @@
+---
+id: color-tokens
+title: Color Tokens
+slug: /core/tokens/color-tokens
+sidebar_position: 1
+---
+
+export const ColorPreview = ({ color, text = '#fff', children }) => {
+    return (
+        <span
+            style={{
+                padding: '0.5rem',
+                borderRadius: '0.3rem',
+                backgroundColor: color.charAt(0) == '#' ? color : '',
+                color: text
+            }}
+            className={ color.charAt(0) !== '#' ? `bg-${color}-400` : '' }>
+        { children || color }</span>
+    )
+}
+
+## Schema
+All color tokens follow a numbering scheme assigned to different tones. We'll be using `scarlet` for the demo below.
+
+| Tone # | Description | Preview |
+|---|---|---|
+| `200` | This is the lightest color tone. | <ColorPreview color="#ff7860" /> |
+| `300` | This is the lighter color tone. | <ColorPreview color="#ff5a3d" /> |
+| `400` | This is the default color tone. | <ColorPreview color="#ff3815" /> |
+| `600` | This is the darkest color tone. | <ColorPreview color="#8f1803" /> |
+
+## Tokens
+Here are the color-related tokens available in the design system. (All colors shown below are in their 400 tone number).
+
+| Token | Description | Value |
+|---|---|---|
+| `neutral` | Color for anything. | <ColorPreview color="neutral" text="#000" /> |
+| `surface` | Color for surfaces (`backgrounds`, `cards`, `headers`, etc.) | <ColorPreview color="surface" /> |
+| `scarlet` | Color option for an eye-catching accent color. | <ColorPreview color="scarlet" /> |
+| `plox` | Color option for an eye-catching accent color. | <ColorPreview color="plox" /> |
+| `native-blue` | Color option for an eye-catching accent color. | <ColorPreview color="native-blue" /> |
+| `bright-cyan` | Color option for an eye-catching accent color. | <ColorPreview color="bright-cyan" text="#000" /> |
+| `success` | Color for indicating success. | <ColorPreview color="success" /> |
+| `warning` | Color for indicating warning. | <ColorPreview color="warning" text="#000" /> |
+| `danger` | Color for indicating danger. | <ColorPreview color="danger" /> |
+
+## Properties
+| Property | Description |
+|---|---|
+| `fill` | Property for setting background color values. |
+| `ink` | Property for setting text color values. |
+| `border` | Property for setting border color values. |
+
+## Using the tokens
+```scss
+hashi.theme-token-get('<color-token>-<color-tone-#>');
+```
+Example
+```scss
+@use 'path/to/@devprotocol/hashi';
+
+.hs-component {
+    @include hashi.theme-key-bind('component-fill', hashi.theme-token-get('scarlet-300'));
+}
+```
+Or in a component context:
+```scss
+@use 'path/to/@devprotocol/hashi/hs-component' with (
+    // As you can see, you can leave out the tone # since the code will do the picking for you.
+    $fill: 'scarlet',
+    $ink: 'scarlet-ink',
+    $border: 'plox',
+    $accent: 'native-blue'
+);
+
+@include hs-component.render();
+```

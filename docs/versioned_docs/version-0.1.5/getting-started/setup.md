@@ -9,6 +9,7 @@ This portion of the documentation will show you how to integrate Dev Protocol's 
 
 For almost every application you'll be developing with the Hashi Design System, we recommend you head over to our [recommended setup](#recommended-setup).
 
+## Quick Setup
 ## Install from a CDN
 ### Installation
 Add this link tag in your project's `<head></head>` tags

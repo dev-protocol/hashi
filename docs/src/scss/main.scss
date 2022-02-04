@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -39,68 +39,67 @@
 @use 'modules/ifm-overrides';
 
 @include hashi.init() {
-    
-    @include doc-theme-overrides.use();
-    @include hs-layout.use();
-    
-    @include hs-button.render();
-    @include hs-button-group.render();
-    @include hs-card.render();
-    
-    .hs-card {
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        span,
-        small {
-            margin: 0;
-        }
+  @include doc-theme-overrides.use();
+  @include hs-layout.use();
+
+  @include hs-button.render();
+  @include hs-button-group.render();
+  @include hs-card.render();
+
+  .hs-card {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    small {
+      margin: 0;
     }
-    
-    @include hs-component-preview.use();
-    @include hs-doc-card.use();
-    @include hs-hero.use();
-    @include hs-link.render();
-    @include hs-select-field.render();
-    @include hs-text-field.render();
-    @include hs-utils.color-utils();
-    @include hs-utils.shape-utils();
-    @include hs-utils.typography-utils();
-    
-    @include ifm-overrides.use();
-    
-    .hs-status-tag {
-        width: 100%;
-        max-width: max-content;
-        margin-bottom: 1rem;
-        padding: 0.4rem 0.8rem;
-        font-weight: 700;
-        background-color: hashi.theme-key-create('status-tag-fill', rgba(#f4f4f4, 10%));
-        color: #fff;
-        border-left: 5px solid hashi.theme-key-create('status-tag-border', #f4f4f4);
-        
-        &.implemented {
-            @include hashi.theme-key-bind('status-tag-fill', rgba(#228437, 10%));
-            @include hashi.theme-key-bind('status-tag-border', #228437);
-        }
-    
-        &.proposal {
-            @include hashi.theme-key-bind('status-tag-fill', rgba(#ffac00, 10%));
-            @include hashi.theme-key-bind('status-tag-border', #ffac00);
-        }
-    
-        &.rejected {
-            @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
-            @include hashi.theme-key-bind('status-tag-border', #c72828);
-        }
-    
-        &.deprecated {
-            @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
-            @include hashi.theme-key-bind('status-tag-border', #c72828);
-        }
+  }
+
+  @include hs-component-preview.use();
+  @include hs-doc-card.use();
+  @include hs-hero.use();
+  @include hs-link.render();
+  @include hs-select-field.render();
+  @include hs-text-field.render();
+  @include hs-utils.color-utils();
+  @include hs-utils.shape-utils();
+  @include hs-utils.typography-utils();
+
+  @include ifm-overrides.use();
+
+  .hs-status-tag {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+    background-color: hashi.theme-key-create('status-tag-fill', rgba(#f4f4f4, 10%));
+    color: #fff;
+    border-left: 5px solid hashi.theme-key-create('status-tag-border', #f4f4f4);
+
+    &.implemented {
+      @include hashi.theme-key-bind('status-tag-fill', rgba(#228437, 10%));
+      @include hashi.theme-key-bind('status-tag-border', #228437);
     }
+
+    &.proposal {
+      @include hashi.theme-key-bind('status-tag-fill', rgba(#ffac00, 10%));
+      @include hashi.theme-key-bind('status-tag-border', #ffac00);
+    }
+
+    &.rejected {
+      @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
+      @include hashi.theme-key-bind('status-tag-border', #c72828);
+    }
+
+    &.deprecated {
+      @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
+      @include hashi.theme-key-bind('status-tag-border', #c72828);
+    }
+  }
 }
