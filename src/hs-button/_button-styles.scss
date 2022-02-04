@@ -44,42 +44,42 @@ $gap: 0 !default;
 $variants: 'all' !default;
 
 @mixin render() {
-    @include button-base.init($gap) {
+  @include button-base.init($gap) {
+    @include hs-core.color-apply('button', (
+      fill: $fill,
+      ink: $ink,
+      border: $border
+    ), 'text', $tone: $tone, $stateful: true);
+    @include hs-core.shape-apply('button', (
+      radius: $radius,
+      padding: $padding
+    ));
+    @include hs-core.typography-apply('button', (
+      family: $family,
+      size: $size,
+      weight: $weight,
+      line-height: $line-height
+    ));
+    outline: none;
+
+    @if list.index($variants, 'outlined') or list.index($variants, 'all') {
+      &.hs-button--outlined {
         @include hs-core.color-apply('button', (
-            fill: $fill,
-            ink: $ink,
-            border: $border
-        ), 'text', $tone: $tone, $stateful: true);
-        @include hs-core.shape-apply('button', (
-            radius: $radius,
-            padding: $padding
-        ));
-        @include hs-core.typography-apply('button', (
-            family: $family,
-            size: $size,
-            weight: $weight,
-            line-height: $line-height
-        ));
-        outline: none;
-    
-        @if list.index($variants, 'outlined') or list.index($variants, 'all') {
-            &.hs-button--outlined {
-                @include hs-core.color-apply('button', (
-                    fill: $fill,
-                    ink: $ink,
-                    border: $border
-                ), 'outlined', $stateful: true, $extend: true);
-            }
-        }
-    
-        @if list.index($variants, 'filled') or list.index($variants, 'all') {
-            &.hs-button--filled {
-                @include hs-core.color-apply('button', (
-                    fill: $fill,
-                    ink: $ink,
-                    border: $border
-                ), 'filled', $stateful: true, $extend: true);
-            }
-        }
+          fill: $fill,
+          ink: $ink,
+          border: $border
+        ), 'outlined', $stateful: true, $extend: true);
+      }
     }
+
+    @if list.index($variants, 'filled') or list.index($variants, 'all') {
+      &.hs-button--filled {
+        @include hs-core.color-apply('button', (
+          fill: $fill,
+          ink: $ink,
+          border: $border
+        ), 'filled', $stateful: true, $extend: true);
+      }
+    }
+  }
 }

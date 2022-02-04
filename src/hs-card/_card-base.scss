@@ -1,4 +1,4 @@
-///
+//
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,50 +18,50 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 
 @mixin init() {
-    .hs-card {
-        box-sizing: border-box;
-        background-color: hs-core.theme-key-create('card-fill', #fff);
-        color: hs-core.theme-key-create('card-ink', #000);
-        border: 1px solid hs-core.theme-key-create('card-border', #fff);
-        
-        @content;
-        
-        .hs-card__header {
-            .hs-card__title {
-                font-size: hs-core.theme-key-create('card-title-size', hs-core.theme-token-get('size-h3'));
-                line-height: hs-core.theme-token-get('line-height-h3');
-            }
-    
-            .hs-card__subtitle {
-                font-size: hs-core.theme-key-create('card-subtitle-size', hs-core.theme-token-get('size-small'));
-                line-height: hs-core.theme-token-get('line-height-small');
-            }
-        }
-        
-        .hs-card__content {
-            padding: 1rem 0;
-            
-            * {
-                font-size: inherit;
-                font-weight: inherit;
-                line-height: inherit;
-            }
-        }
-        
-        .hs-card__actions {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: flex-end;
-            margin-top: 0.7rem;
-            
-            & > * + * {
-                margin-left: hs-core.theme-key-create('card-action-gap', 0.5rem);
-            }
-        }
+  .hs-card {
+    box-sizing: border-box;
+    background-color: hs-core.theme-key-create('card-fill', #fff);
+    color: hs-core.theme-key-create('card-ink', #000);
+    border: 1px solid hs-core.theme-key-create('card-border', #fff);
+
+    @content;
+
+    .hs-card__header {
+      .hs-card__title {
+        font-size: hs-core.theme-key-create('card-title-size', hs-core.theme-token-get('size-h3'));
+        line-height: hs-core.theme-token-get('line-height-h3');
+      }
+
+      .hs-card__subtitle {
+        font-size: hs-core.theme-key-create('card-subtitle-size', hs-core.theme-token-get('size-small'));
+        line-height: hs-core.theme-token-get('line-height-small');
+      }
     }
+
+    .hs-card__content {
+      padding: 1rem 0;
+
+      * {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+    }
+
+    .hs-card__actions {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      margin-top: 0.7rem;
+
+      & > * + * {
+        margin-left: hs-core.theme-key-create('card-action-gap', 0.5rem);
+      }
+    }
+  }
 }

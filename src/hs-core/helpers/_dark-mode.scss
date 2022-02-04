@@ -23,25 +23,25 @@
 @use 'sass:selector';
 
 @mixin dark-mode {
-    @media (prefers-color-scheme: dark) {
-        @at-root #{selector.nest('html[hashi-theme="dark"], html[data-theme="dark"], html[theme="dark"]', &)} {
-            @content;
-        }
-    }
-    
+  @media (prefers-color-scheme: dark) {
     @at-root #{selector.nest('html[hashi-theme="dark"], html[data-theme="dark"], html[theme="dark"]', &)} {
-        @content;
+      @content;
     }
+  }
+
+  @at-root #{selector.nest('html[hashi-theme="dark"], html[data-theme="dark"], html[theme="dark"]', &)} {
+    @content;
+  }
 }
 
 @mixin light-mode {
-    @media (prefers-color-scheme: light) {
-        @at-root #{selector.nest('html[hashi-theme="light"], html[data-theme="light"], html[theme="light"]', &)} {
-            @content;
-        }
-    }
-    
+  @media (prefers-color-scheme: light) {
     @at-root #{selector.nest('html[hashi-theme="light"], html[data-theme="light"], html[theme="light"]', &)} {
-        @content;
+      @content;
     }
+  }
+
+  @at-root #{selector.nest('html[hashi-theme="light"], html[data-theme="light"], html[theme="light"]', &)} {
+    @content;
+  }
 }

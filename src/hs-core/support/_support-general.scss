@@ -30,30 +30,30 @@
 /// @param {boolean} $errors
 /// @return {boolean|error} true if matching, error/false if not.
 @function is-type($reference, $query, $errors: true) {
-    @if $errors != true {
-        @return _validate-data-type($reference, $query);
+  @if $errors != true {
+    @return _validate-data-type($reference, $query);
+  } @else {
+    @if _validate-data-type($reference, $query) == false {
+      @error "Invalid #{string.unquote($reference)}: #{$query}! Expecting a valid #{string.unquote($reference)}.";
     } @else {
-        @if _validate-data-type($reference, $query) == false {
-            @error "Invalid #{string.unquote($reference)}: #{$query}! Expecting a valid #{string.unquote($reference)}.";
-        } @else {
-            @return true;
-        }
+      @return true;
     }
+  }
 }
 
 /// Checks if query is empty.
 /// @param {*} $value
 /// @return {boolean} true if empty, false if not.
 @function is-empty($value) {
-    @if not $value
+  @if not $value
        or $value == ''
        or $value == ()
        or $value == none
        or $value == null
        or length($value) == 0 {
-        @return true;
-    }
-    @return false;
+    @return true;
+  }
+  @return false;
 }
 
 /// Validates a data type on a given reference and query.
@@ -62,8 +62,8 @@
 /// @param {*} $query
 /// @return {boolean} true if matching, false if not.
 @function _validate-data-type($reference, $query) {
-    @if meta.type-of($query) != string.unquote($reference) {
-        @return false;
-    }
-    @return true;
+  @if meta.type-of($query) != string.unquote($reference) {
+    @return false;
+  }
+  @return true;
 }

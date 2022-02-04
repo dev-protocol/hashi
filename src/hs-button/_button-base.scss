@@ -24,53 +24,53 @@
 @use 'sass:map';
 
 @mixin init($gap) {
-	.hs-button {
-		width: 100%;
-		min-width: 62px;
-		max-width: max-content;
-		height: max-content;
-		
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		
-		user-select: none;
-		overflow: visible;
-		vertical-align: middle;
-		box-sizing: border-box;
-		cursor: pointer;
-		
-		@include hs-core.tools-prefix(transition, all 0.1s ease);
-		
-		@content;
-		
-		::-moz-focus-inner {
-			border-style: none;
-			padding: 0;
-		}
+  .hs-button {
+    width: 100%;
+    min-width: 62px;
+    max-width: max-content;
+    height: max-content;
 
-		& > * + * {
-			margin-left: hs-core.theme-key-create('button-gap', $gap);
-		}
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
-		.hs-button__icon {
-			color: hs-core.theme-key-create('button-icon-ink', inherit);
-			font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
-			
-			> * {
-				color: hs-core.theme-key-create('button-icon-ink', inherit);
-				font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
-			}
-		}
+    user-select: none;
+    overflow: visible;
+    vertical-align: middle;
+    box-sizing: border-box;
+    cursor: pointer;
 
-		.hs-button__label {
-			padding: 0 0.3rem;
-			color: hs-core.theme-key-create('button-label-ink', hs-core.theme-key-get('button-ink'));
-			font-size: hs-core.theme-key-create('button-label-size', inherit);
-			font-weight: inherit;
-			line-height: inherit;
-			text-align: center;
-		}
-	}
+    @include hs-core.tools-prefix(transition, all 0.1s ease);
+
+    @content;
+
+    ::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    & > * + * {
+      margin-left: hs-core.theme-key-create('button-gap', $gap);
+    }
+
+    .hs-button__icon {
+      color: hs-core.theme-key-create('button-icon-ink', inherit);
+      font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
+
+      > * {
+        color: hs-core.theme-key-create('button-icon-ink', inherit);
+        font-size: hs-core.theme-key-create('button-icon-size', hs-core.theme-token-get('size-icon'));
+      }
+    }
+
+    .hs-button__label {
+      padding: 0 0.3rem;
+      color: hs-core.theme-key-create('button-label-ink', hs-core.theme-key-get('button-ink'));
+      font-size: hs-core.theme-key-create('button-label-size', inherit);
+      font-weight: inherit;
+      line-height: inherit;
+      text-align: center;
+    }
+  }
 }
 

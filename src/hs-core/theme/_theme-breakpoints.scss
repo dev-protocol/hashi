@@ -24,18 +24,18 @@
 @use 'sass:map';
 
 @mixin config($breakpoints) {
-    @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-config() instead.';
-    @include helpers.breakpoint-config($breakpoints);
+  @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-config() instead.';
+  @include helpers.breakpoint-config($breakpoints);
 }
 
 @function get($query) {
-    @warn 'This function will be deprecated on v0.2.0. We advise you to use breakpoint-get() instead.';
-    @return helpers.breakpoint-get($query);
+  @warn 'This function will be deprecated on v0.2.0. We advise you to use breakpoint-get() instead.';
+  @return helpers.breakpoint-get($query);
 }
 
 @mixin create($query, $context: 'min') {
-    @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-create() instead.';
-    @include helpers.breakpoint-create($query, $context) {
-        @content;
-    }
+  @warn 'This mixin will be deprecated on v0.2.0. We advise you to use breakpoint-create() instead.';
+  @include helpers.breakpoint-create($query, $context) {
+    @content;
+  }
 }

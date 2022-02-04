@@ -23,13 +23,13 @@
 @use '../hs-core';
 
 @mixin init() {
-    a.hs-link {
-        display: inline-block;
-        @content;
-        
-        &:hover,
-        &:focus {
-            text-decoration: underline;
-        }
+  a.hs-link {
+    display: inline-block;
+    @content;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
+  }
 }

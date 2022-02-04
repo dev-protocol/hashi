@@ -23,9 +23,9 @@
 @use '../hs-core';
 
 @mixin main-chunk() {
-    
-    
-    body {
-        background-color: hs-core.theme-token-get('surface-400');
-    }
+
+
+  body {
+    background-color: hs-core.theme-token-get('surface-400');
+  }
 }

@@ -35,19 +35,19 @@ $weight: 'weight-body' !default;
 $line-height: 'line-height-body' !default;
 
 @mixin render() {
-    $color-map: (
-        fill: $ink,
-        ink: '#{$ink}-ink',
-        border: $ink
-    );
-    
-    @include link-base.init() {
-        @include hs-core.color-apply('link', $color-map, 'text', true, $extend: false);
-        @include hs-core.typography-apply('link', (
-            'family': $family,
-            'size': $size,
-            'weight': $weight,
-            'line-height': $line-height
-        ));
-    }
+  $color-map: (
+    fill: $ink,
+    ink: '#{$ink}-ink',
+    border: $ink
+  );
+
+  @include link-base.init() {
+    @include hs-core.color-apply('link', $color-map, 'text', true, $extend: false);
+    @include hs-core.typography-apply('link', (
+      'family': $family,
+      'size': $size,
+      'weight': $weight,
+      'line-height': $line-height
+    ));
+  }
 }

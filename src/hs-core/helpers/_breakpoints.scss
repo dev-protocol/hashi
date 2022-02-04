@@ -23,31 +23,31 @@
 @use 'sass:map';
 
 $breakpoints: (
-    'small': 320px,
-    'medium': 630px,
-    'large': 890px
+  'small': 320px,
+  'medium': 630px,
+  'large': 890px
 );
 
 @mixin config($breakpoints) {
-    $breakpoints: map.merge($breakpoints, $breakpoints) !global;
+  $breakpoints: map.merge($breakpoints, $breakpoints) !global;
 }
 
 @function get($query) {
-    @return map.get($breakpoints, $query);
+  @return map.get($breakpoints, $query);
 }
 
 @mixin create($query, $context: 'min') {
-    @media (#{$context}-width: _sanitize-breakpoint($query, $context)) {
-        @content;
-    }
+  @media (#{$context}-width: _sanitize-breakpoint($query, $context)) {
+    @content;
+  }
 }
 
 @function _sanitize-breakpoint($query, $context) {
-    @if not $context == 'min' or not $context == 'max' {
-        @error "Invalid context: #{$context}! Please select from the following valid contexts: min, max.";
-    } @else if $context == 'min' {
-        @return map.get($breakpoints, $query);
-    } @else if $context == 'max' {
-        @return map.get($breakpoints, $query) - 1;
-    }
+  @if not $context == 'min' or not $context == 'max' {
+    @error "Invalid context: #{$context}! Please select from the following valid contexts: min, max.";
+  } @else if $context == 'min' {
+    @return map.get($breakpoints, $query);
+  } @else if $context == 'max' {
+    @return map.get($breakpoints, $query) - 1;
+  }
 }

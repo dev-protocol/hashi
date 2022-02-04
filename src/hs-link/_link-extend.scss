@@ -26,9 +26,9 @@
 /// @param {string} $class-name
 /// @return {*} extension class.
 @mixin extend($class-name) {
-    .hs-link.#{$class-name} {
-        @content;
-    }
+  .hs-link.#{$class-name} {
+    @content;
+  }
 }
 
 /// Color variant map.
@@ -37,19 +37,19 @@
 /// @param {int} $tone
 /// @return {*} color styles.
 @mixin color($color-map, $style: 'text', $tone: 400) {
-    @include hs-core.color-apply('link', $color-map, $style, true, $tone);
+  @include hs-core.color-apply('link', $color-map, $style, true, $tone);
 }
 
 /// Shape variant mixin.
 /// @param {map} $shape-map
 /// @return {*} shape styles.
 @mixin shape($shape-map) {
-    @include hs-core.shape-apply('link', $shape-map);
+  @include hs-core.shape-apply('link', $shape-map);
 }
 
 /// Typography variant mixin.
 /// @param {map} $type-map
 /// @return {*} typography styles.
 @mixin typography($type-map) {
-    @include hs-core.typography-apply('link', $type-map);
+  @include hs-core.typography-apply('link', $type-map);
 }

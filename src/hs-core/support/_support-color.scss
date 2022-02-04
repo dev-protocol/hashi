@@ -24,18 +24,18 @@
 @use 'sass:color';
 
 @function color-split($color) {
-    @return (
-        '200': tint($color, 32%),
-        '300': tint($color, 17%),
-        '400': $color,
-        '600': shade($color, 47%),
-    );
+  @return (
+    '200': tint($color, 32%),
+    '300': tint($color, 17%),
+    '400': $color,
+    '600': shade($color, 47%),
+  );
 }
 
 @function tint($color, $percent) {
-    @return color.adjust(color.mix(#fff, $color, $percent), $saturation: 11%);
+  @return color.adjust(color.mix(#fff, $color, $percent), $saturation: 11%);
 }
 
 @function shade($color, $percent) {
-    @return color.adjust(color.mix(#000, $color, $percent), $saturation: 11%);
+  @return color.adjust(color.mix(#000, $color, $percent), $saturation: 11%);
 }

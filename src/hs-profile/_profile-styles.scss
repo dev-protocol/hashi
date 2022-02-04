@@ -45,62 +45,62 @@ $elevation-level: 2 !default;
 $has-elevation: true !default;
 
 @mixin render() {
-    .hs-profile {
-        width: hs-core.theme-key-create('profile-width', hs-core.theme-token-switch($width));
-        display: grid;
-        grid-template-columns: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size)) 1fr;
-        gap: hs-core.theme-key-create('profile-gap', hs-core.theme-token-switch($gap));
-        @include hs-core.color-apply('profile', (
-            fill: $fill,
-            ink: $ink,
-            border: $border
-        ), 'filled', $tone: $tone);
-        // @include hs-core.theme-key-bind('profile-ink', hs-core.theme-token-switch($ink));
-        @include hs-core.shape-apply('profile', (
-            radius: $radius,
-            padding: $padding
-        ));
-        
-        @if $has-elevation {
-            @include hs-core.tools-elevation($elevation-level);
-        }
-        
-        .hs-profile__img {
-            width: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size));
-            height: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size));
-            border-radius: 50%;
-            border: 2px solid hs-core.theme-key-create('profile-img-border', hs-core.theme-token-get('#{$accent}-#{$accent-tone}'));
-            overflow: hidden;
-            user-select: none;
-            
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-        
-        .hs-profile__info {
-            //
-            
-            .hs-profile__name {
-                font-size: hs-core.theme-key-create('profile-name-size', hs-core.theme-token-switch('size-#{$name-type-preset}'));
-                font-weight: hs-core.theme-key-create('profile-name-weight', hs-core.theme-token-switch('weight-#{$name-type-preset}'));
-                line-height: hs-core.theme-key-create('profile-name-line-height', hs-core.theme-token-switch('line-height-#{$name-type-preset}'));
-            }
-            
-            .hs-profile__description {
-                font-size: hs-core.theme-key-create('profile-description-size', hs-core.theme-token-switch('size-#{$description-type-preset}'));
-                font-weight: hs-core.theme-key-create('profile-description-weight', hs-core.theme-token-switch('weight-#{$description-type-preset}'));
-                line-height: hs-core.theme-key-create('profile-description-line-height', hs-core.theme-token-switch('line-height-#{$description-type-preset}'));
-            }
-            
-            .hs-profile__role {
-                font-size: hs-core.theme-key-create('profile-role-size', hs-core.theme-token-switch('size-#{$role-type-preset}'));
-                font-weight: hs-core.theme-key-create('profile-role-weight', hs-core.theme-token-switch('weight-#{$role-type-preset}'));
-                line-height: hs-core.theme-key-create('profile-role-line-height', hs-core.theme-token-switch('line-height-#{$role-type-preset}'));
-            }
-        }
+  .hs-profile {
+    width: hs-core.theme-key-create('profile-width', hs-core.theme-token-switch($width));
+    display: grid;
+    grid-template-columns: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size)) 1fr;
+    gap: hs-core.theme-key-create('profile-gap', hs-core.theme-token-switch($gap));
+    @include hs-core.color-apply('profile', (
+      fill: $fill,
+      ink: $ink,
+      border: $border
+    ), 'filled', $tone: $tone);
+    // @include hs-core.theme-key-bind('profile-ink', hs-core.theme-token-switch($ink));
+    @include hs-core.shape-apply('profile', (
+      radius: $radius,
+      padding: $padding
+    ));
+
+    @if $has-elevation {
+      @include hs-core.tools-elevation($elevation-level);
     }
+
+    .hs-profile__img {
+      width: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size));
+      height: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size));
+      border-radius: 50%;
+      border: 2px solid hs-core.theme-key-create('profile-img-border', hs-core.theme-token-get('#{$accent}-#{$accent-tone}'));
+      overflow: hidden;
+      user-select: none;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .hs-profile__info {
+      //
+
+      .hs-profile__name {
+        font-size: hs-core.theme-key-create('profile-name-size', hs-core.theme-token-switch('size-#{$name-type-preset}'));
+        font-weight: hs-core.theme-key-create('profile-name-weight', hs-core.theme-token-switch('weight-#{$name-type-preset}'));
+        line-height: hs-core.theme-key-create('profile-name-line-height', hs-core.theme-token-switch('line-height-#{$name-type-preset}'));
+      }
+
+      .hs-profile__description {
+        font-size: hs-core.theme-key-create('profile-description-size', hs-core.theme-token-switch('size-#{$description-type-preset}'));
+        font-weight: hs-core.theme-key-create('profile-description-weight', hs-core.theme-token-switch('weight-#{$description-type-preset}'));
+        line-height: hs-core.theme-key-create('profile-description-line-height', hs-core.theme-token-switch('line-height-#{$description-type-preset}'));
+      }
+
+      .hs-profile__role {
+        font-size: hs-core.theme-key-create('profile-role-size', hs-core.theme-token-switch('size-#{$role-type-preset}'));
+        font-weight: hs-core.theme-key-create('profile-role-weight', hs-core.theme-token-switch('weight-#{$role-type-preset}'));
+        line-height: hs-core.theme-key-create('profile-role-line-height', hs-core.theme-token-switch('line-height-#{$role-type-preset}'));
+      }
+    }
+  }
 }

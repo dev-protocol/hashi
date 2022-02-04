@@ -30,7 +30,7 @@ $context: '' !default;
 /// @param {*} $value
 /// @return {sentro.key} returns type sentro.key
 @function create($key, $value) {
-    @return sentro.key-create('#{_sanitize-context($context)}#{$key}', $value);
+  @return sentro.key-create('#{_sanitize-context($context)}#{$key}', $value);
 }
 
 /// Binds a key.
@@ -38,7 +38,7 @@ $context: '' !default;
 /// @param {*} $value
 /// @return {sentro.key-bind} returns type sentro.key-bind
 @mixin bind($key, $value) {
-    @include sentro.key-bind('#{_sanitize-context($context)}#{$key}', $value);
+  @include sentro.key-bind('#{_sanitize-context($context)}#{$key}', $value);
 }
 
 /// Gets a key.
@@ -46,7 +46,7 @@ $context: '' !default;
 /// @param {*} $value
 /// @return {sentro.key-bind} returns type sentro.key-bind
 @function get($key) {
-    @return sentro.key-get('#{_sanitize-context($context)}#{$key}');
+  @return sentro.key-get('#{_sanitize-context($context)}#{$key}');
 }
 
 /// Sanitizes context
@@ -54,8 +54,8 @@ $context: '' !default;
 /// @param {string} $context
 /// @return {string} returns cleaned and verified context.
 @function _sanitize-context($context) {
-    @if support.is-empty($context) {
-        @return '';
-    }
-    @return '#{$context}-';
+  @if support.is-empty($context) {
+    @return '';
+  }
+  @return '#{$context}-';
 }

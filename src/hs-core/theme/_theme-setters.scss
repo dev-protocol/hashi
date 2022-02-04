@@ -27,7 +27,7 @@
 @use 'sass:list';
 
 @mixin config(
-    $map: (),
+  $map: (),
 ) {
-    @include theme-tokens.config($map);
+  @include theme-tokens.config($map);
 }

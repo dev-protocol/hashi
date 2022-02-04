@@ -24,31 +24,31 @@
 @use 'sass:map';
 
 @mixin apply($component-name, $shape-preset, $extend: false) {
-    $radius: map.get($shape-preset, 'radius');
-    $padding: map.get($shape-preset, 'padding');
-    $margin: map.get($shape-preset, 'margin');
-    
-    @if $radius {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-radius', theme.token-switch($radius));
-        } @else {
-            border-radius: theme.key-create('#{$component-name}-radius', theme.token-switch($radius));
-        }
+  $radius: map.get($shape-preset, 'radius');
+  $padding: map.get($shape-preset, 'padding');
+  $margin: map.get($shape-preset, 'margin');
+
+  @if $radius {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-radius', theme.token-switch($radius));
+    } @else {
+      border-radius: theme.key-create('#{$component-name}-radius', theme.token-switch($radius));
     }
-    
-    @if $padding {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-padding', theme.token-switch($padding));
-        } @else {
-            padding: theme.key-create('#{$component-name}-padding', theme.token-switch($padding));
-        }
+  }
+
+  @if $padding {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-padding', theme.token-switch($padding));
+    } @else {
+      padding: theme.key-create('#{$component-name}-padding', theme.token-switch($padding));
     }
-    
-    @if $margin {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-margin', theme.token-switch($margin));
-        } @else {
-            margin: theme.key-create('#{$component-name}-margin', theme.token-switch($margin));
-        }
+  }
+
+  @if $margin {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-margin', theme.token-switch($margin));
+    } @else {
+      margin: theme.key-create('#{$component-name}-margin', theme.token-switch($margin));
     }
+  }
 }

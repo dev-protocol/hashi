@@ -23,5 +23,5 @@
 @use 'button-group-base';
 
 @mixin render() {
-    @include button-group-base.init();
+  @include button-group-base.init();
 }

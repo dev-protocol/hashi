@@ -42,30 +42,30 @@ $elevation-level: 2 !default;
 $has-elevation: true !default;
 
 @mixin render(
-    $color: (),
-    $shape: (),
-    $type: (),
-    $settings: ()
+  $color: (),
+  $shape: (),
+  $type: (),
+  $settings: ()
 ) {
-    @include card-base.init() {
-        @include hs-core.color-apply('card', (
-            fill: $fill,
-            ink: $ink,
-            border: $border
-        ), 'filled', $tone: $tone);
-        @include hs-core.shape-apply('card', (
-            radius: $radius,
-            padding: $padding
-        ));
-        @include hs-core.typography-apply('card', (
-            family: $family,
-            size: $size,
-            weight: $weight,
-            line-height: $line-height
-        ));
-        
-        @if $has-elevation {
-            @include hs-core.tools-elevation($elevation-level);
-        }
+  @include card-base.init() {
+    @include hs-core.color-apply('card', (
+      fill: $fill,
+      ink: $ink,
+      border: $border
+    ), 'filled', $tone: $tone);
+    @include hs-core.shape-apply('card', (
+      radius: $radius,
+      padding: $padding
+    ));
+    @include hs-core.typography-apply('card', (
+      family: $family,
+      size: $size,
+      weight: $weight,
+      line-height: $line-height
+    ));
+
+    @if $has-elevation {
+      @include hs-core.tools-elevation($elevation-level);
     }
+  }
 }

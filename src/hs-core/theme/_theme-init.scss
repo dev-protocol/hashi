@@ -27,12 +27,12 @@
 @use 'theme-tokens';
 
 @mixin init($custom-tokens: (), $clean: false) {
-    @if support.is-type('bool', $clean) {
-        @if $clean == true {
-            @include theme-tokens.config($custom-tokens);
-        } @else if $clean == false {
-            $_merged-theme: map.merge(tokens.$hs-tokens, $custom-tokens);
-            @include theme-tokens.config($_merged-theme);
-        }
+  @if support.is-type('bool', $clean) {
+    @if $clean == true {
+      @include theme-tokens.config($custom-tokens);
+    } @else if $clean == false {
+      $_merged-theme: map.merge(tokens.$hs-tokens, $custom-tokens);
+      @include theme-tokens.config($_merged-theme);
     }
+  }
 }

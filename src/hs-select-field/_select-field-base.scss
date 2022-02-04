@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,39 +23,39 @@
 @use '../hs-core';
 
 @mixin init() {
-    .hs-select-field {
-        width: 100%;
-        max-width: 450px;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        margin-bottom: 0.9rem;
-        
-        & > * + * {
-            margin-left: hs-core.theme-key-create('select-field-gap', 0.8rem);
-        }
-    
-        @content;
-        
-        .hs-select-field__label {
-            color: hs-core.theme-key-create('select-field-label-ink', hs-core.theme-token-get('surface-ink'));
-            font-size: hs-core.theme-key-create('select-field-label-size', hs-core.theme-token-get('size-body'));
-        }
-        
-        .hs-select-field__input {
-            width: 100%;
-            padding: 0.4rem 0.075rem;
-            background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
-            color: hs-core.theme-key-create('select-field-ink', hs-core.theme-token-get('surface-ink'));
-            border: none;
-            border-bottom: 2px solid hs-core.theme-key-create('select-field-border', hs-core.theme-token-get('neutral-400'));
-            font-size: hs-core.theme-key-create('select-field-input-size', hs-core.tools-to-rem(16px));
-            outline: none;
-        }
-        
-        .hs-select-field__option {
-            background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
-            color: #000;
-        }
+  .hs-select-field {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 0.9rem;
+
+    & > * + * {
+      margin-left: hs-core.theme-key-create('select-field-gap', 0.8rem);
     }
+
+    @content;
+
+    .hs-select-field__label {
+      color: hs-core.theme-key-create('select-field-label-ink', hs-core.theme-token-get('surface-ink'));
+      font-size: hs-core.theme-key-create('select-field-label-size', hs-core.theme-token-get('size-body'));
+    }
+
+    .hs-select-field__input {
+      width: 100%;
+      padding: 0.4rem 0.075rem;
+      background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
+      color: hs-core.theme-key-create('select-field-ink', hs-core.theme-token-get('surface-ink'));
+      border: none;
+      border-bottom: 2px solid hs-core.theme-key-create('select-field-border', hs-core.theme-token-get('neutral-400'));
+      font-size: hs-core.theme-key-create('select-field-input-size', hs-core.tools-to-rem(16px));
+      outline: none;
+    }
+
+    .hs-select-field__option {
+      background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
+      color: #000;
+    }
+  }
 }

@@ -26,102 +26,102 @@
 @use 'font-pack';
 
 @mixin apply($component-name, $type-preset, $extend: false) {
-    $family: map.get($type-preset, 'family');
-    $size: map.get($type-preset, 'size');
-    $weight: map.get($type-preset, 'weight');
-    $line-height: map.get($type-preset, 'line-height');
-    
-    @if $family {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-family', theme.token-get($family));
-        } @else {
-            font-family: theme.key-create('#{$component-name}-family', theme.token-get($family));
-        }
+  $family: map.get($type-preset, 'family');
+  $size: map.get($type-preset, 'size');
+  $weight: map.get($type-preset, 'weight');
+  $line-height: map.get($type-preset, 'line-height');
+
+  @if $family {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-family', theme.token-get($family));
+    } @else {
+      font-family: theme.key-create('#{$component-name}-family', theme.token-get($family));
     }
-    
-    @if $size {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-size', theme.token-switch($size));
-        } @else {
-            font-size: theme.key-create('#{$component-name}-size', theme.token-switch($size));
-        }
+  }
+
+  @if $size {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-size', theme.token-switch($size));
+    } @else {
+      font-size: theme.key-create('#{$component-name}-size', theme.token-switch($size));
     }
-    
-    @if $weight {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-weight', theme.token-get($weight));
-        } @else {
-            font-weight: theme.key-create('#{$component-name}-weight', theme.token-get($weight));
-        }
+  }
+
+  @if $weight {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-weight', theme.token-get($weight));
+    } @else {
+      font-weight: theme.key-create('#{$component-name}-weight', theme.token-get($weight));
     }
-    
-    @if $line-height {
-        @if $extend {
-            @include theme.key-bind('#{$component-name}-line-height', theme.token-switch($line-height));
-        } @else {
-            line-height: theme.key-create('#{$component-name}-line-height', theme.token-switch($line-height));
-        }
+  }
+
+  @if $line-height {
+    @if $extend {
+      @include theme.key-bind('#{$component-name}-line-height', theme.token-switch($line-height));
+    } @else {
+      line-height: theme.key-create('#{$component-name}-line-height', theme.token-switch($line-height));
     }
+  }
 }
 
 @mixin init() {
-    
-    @include font-pack.load();
-    
-    * {
-        font-family: theme.token-get('family-global');
-    }
-    
-    h1 {
-        font-family: theme.token-get('family-header');
-        font-size: theme.token-get('size-h1');
-        font-weight: theme.token-get('weight-h1');
-        line-height: theme.token-get('line-height-h1');
-    }
-    
-    h2 {
-        font-family: theme.token-get('family-header');
-        font-size: theme.token-get('size-h2');
-        font-weight: theme.token-get('weight-h2');
-        line-height: theme.token-get('line-height-h2');
-    }
-    
-    h3 {
-        font-family: theme.token-get('family-header');
-        font-size: theme.token-get('size-h3');
-        font-weight: theme.token-get('weight-h3');
-        line-height: theme.token-get('line-height-h3');
-    }
-    
-    h4 {
-        font-family: theme.token-get('family-header');
-        font-size: theme.token-get('size-h4');
-        font-weight: theme.token-get('weight-h4');
-        line-height: theme.token-get('line-height-h4');
-    }
-    
-    p,
-    span,
-    a {
-        font-family: theme.token-get('family-global');
-        font-size: theme.token-get('size-body');
-        font-weight: theme.token-get('weight-body');
-        line-height: theme.token-get('line-height-body');
-        text-decoration: none;
-    }
-    
-    small {
-        font-family: theme.token-get('family-global');
-        font-size: theme.token-get('size-small');
-        font-weight: theme.token-get('weight-small');
-        line-height: theme.token-get('line-height-small');
-    }
-    
-    code,
-    code * {
-        font-family: theme.token-get('family-code');
-        font-size: theme.token-get('size-body');
-        font-weight: theme.token-get('weight-body');
-        line-height: theme.token-get('line-height-body');
-    }
+
+  @include font-pack.load();
+
+  * {
+    font-family: theme.token-get('family-global');
+  }
+
+  h1 {
+    font-family: theme.token-get('family-header');
+    font-size: theme.token-get('size-h1');
+    font-weight: theme.token-get('weight-h1');
+    line-height: theme.token-get('line-height-h1');
+  }
+
+  h2 {
+    font-family: theme.token-get('family-header');
+    font-size: theme.token-get('size-h2');
+    font-weight: theme.token-get('weight-h2');
+    line-height: theme.token-get('line-height-h2');
+  }
+
+  h3 {
+    font-family: theme.token-get('family-header');
+    font-size: theme.token-get('size-h3');
+    font-weight: theme.token-get('weight-h3');
+    line-height: theme.token-get('line-height-h3');
+  }
+
+  h4 {
+    font-family: theme.token-get('family-header');
+    font-size: theme.token-get('size-h4');
+    font-weight: theme.token-get('weight-h4');
+    line-height: theme.token-get('line-height-h4');
+  }
+
+  p,
+  span,
+  a {
+    font-family: theme.token-get('family-global');
+    font-size: theme.token-get('size-body');
+    font-weight: theme.token-get('weight-body');
+    line-height: theme.token-get('line-height-body');
+    text-decoration: none;
+  }
+
+  small {
+    font-family: theme.token-get('family-global');
+    font-size: theme.token-get('size-small');
+    font-weight: theme.token-get('weight-small');
+    line-height: theme.token-get('line-height-small');
+  }
+
+  code,
+  code * {
+    font-family: theme.token-get('family-code');
+    font-size: theme.token-get('size-body');
+    font-weight: theme.token-get('weight-body');
+    line-height: theme.token-get('line-height-body');
+  }
 }

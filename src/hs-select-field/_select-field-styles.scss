@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -36,23 +36,23 @@ $weight: 'weight-body' !default;
 $line-height: 'line-height-body' !default;
 
 @mixin render() {
-    
-    @include select-field-base.init() {
-        .hs-select-field__input {
-            &:focus-within {
-                @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
-            }
-        }
-        
-        &.danger {
-            @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
-            
-            .hs-select-field__input {
-                &:focus-within {
-                    @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-                }
-            }
-        }
+
+  @include select-field-base.init() {
+    .hs-select-field__input {
+      &:focus-within {
+        @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
+      }
     }
+
+    &.danger {
+      @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
+      @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
+
+      .hs-select-field__input {
+        &:focus-within {
+          @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
+        }
+      }
+    }
+  }
 }
