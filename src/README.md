@@ -21,7 +21,7 @@ yarn add @devprotocol/hashi
 @use 'path/to/@devprotocol/hashi/hs-component';
 
 @include hashi.init() {
-    @include hs-component.render();
+  @include hs-component.render();
 }
 ```
 
