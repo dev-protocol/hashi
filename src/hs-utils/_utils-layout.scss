@@ -39,23 +39,23 @@ $alignments: (
 );
 
 @mixin layout-utils() {
-    .flex {
+    .hs-flex {
         display: flex;
         
         @each $flow in $flows {
-            &.flow-#{$flow} {
+            &.hs-flow-#{$flow} {
                 flex-flow: #{$flow} nowrap;
             }
         }
         
         @each $variant, $alignment in $alignments {
-            &.justify-#{$variant} {
+            &.hs-justify-#{$variant} {
                 justify-content: $alignment;
             }
         }
     
         @each $variant, $alignment in $alignments {
-            &.align-#{$variant} {
+            &.hs-align-#{$variant} {
                 align-items: $alignment;
             }
         }

@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
 @use 'sass:map';
@@ -41,60 +41,60 @@ $color-states: (
 @mixin color-utils() {
     @each $preset in $_color-presets {
         @each $tone, $tone-percentage in $_tones {
-            .bg-#{$preset}-#{$tone} {
+            .hs-bg-#{$preset}-#{$tone} {
                 background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
             }
     
-            .bg-#{$preset}-alpha-#{$tone} {
+            .hs-bg-#{$preset}-alpha-#{$tone} {
                 background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             }
             
             @each $state in $color-states {
-                .#{$state}\:bg-#{$preset}-#{$tone}:#{$state} {
+                .\@#{$state}\:hs-bg-#{$preset}-#{$tone}:#{$state} {
                     background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
                 }
     
-                .#{$state}\:bg-#{$preset}-alpha-#{$tone}:#{$state} {
+                .\@#{$state}\:hs-bg-#{$preset}-alpha-#{$tone}:#{$state} {
                     background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
                 }
             }
         }
     
         @each $tone, $tone-percentage in $_tones {
-            .text-#{$preset}-#{$tone} {
+            .hs-text-#{$preset}-#{$tone} {
                 color: hs-core.theme-token-get('#{$preset}-#{$tone}');
             }
     
-            .text-#{$preset}-alpha-#{$tone} {
+            .hs-text-#{$preset}-alpha-#{$tone} {
                 color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             }
     
             @each $state in $color-states {
-                .#{$state}\:text-#{$preset}-#{$tone}:#{$state} {
+                .\@#{$state}\:hs-text-#{$preset}-#{$tone}:#{$state} {
                     color: hs-core.theme-token-get('#{$preset}-#{$tone}');
                 }
         
-                .#{$state}\:text-#{$preset}-alpha-#{$tone}:#{$state} {
+                .\@#{$state}\:hs-text-#{$preset}-alpha-#{$tone}:#{$state} {
                     color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
                 }
             }
         }
     
         @each $tone, $tone-percentage in $_tones {
-            .border-#{$preset}-#{$tone} {
+            .hs-border-#{$preset}-#{$tone} {
                 border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
             }
     
-            .border-#{$preset}-alpha-#{$tone} {
+            .hs-border-#{$preset}-alpha-#{$tone} {
                 border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             }
     
             @each $state in $color-states {
-                .#{$state}\:border-#{$preset}-#{$tone}:#{$state} {
+                .\@#{$state}\:hs-border-#{$preset}-#{$tone}:#{$state} {
                     border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
                 }
         
-                .#{$state}\:border-#{$preset}-alpha-#{$tone}:#{$state} {
+                .\@#{$state}\:hs-border-#{$preset}-alpha-#{$tone}:#{$state} {
                     border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
                 }
             }

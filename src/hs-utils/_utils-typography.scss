@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
 @use 'sass:map';
@@ -57,55 +57,55 @@ $type-alignments: (
 
 @mixin typography-utils() {
     @each $family-preset in $family-presets {
-        .family-#{$family-preset} {
+        .hs-family-#{$family-preset} {
             font-family: hs-core.theme-token-get('family-#{$family-preset}');
         }
         
         @each $state in $type-states {
-            .#{$state}\:family-#{$family-preset}:#{$state} {
+            .\@#{$state}\:hs-family-#{$family-preset}:#{$state} {
                 font-family: hs-core.theme-token-get('family-#{$family-preset}');
             }
         }
     }
     
     @each $type-preset in $type-presets {
-        .size-#{$type-preset} {
+        .hs-size-#{$type-preset} {
             font-size: hs-core.theme-token-get('size-#{$type-preset}');
         }
         
         @each $state in $type-states {
-            .#{$state}\:size-#{$type-preset}:#{$state} {
+            .\@#{$state}\:hs-size-#{$type-preset}:#{$state} {
                 font-size: hs-core.theme-token-get('size-#{$type-preset}');
             }
         }
     }
     
     @each $type-preset in $type-presets {
-        .weight-#{$type-preset} {
+        .hs-weight-#{$type-preset} {
             font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
         }
     
         @each $state in $type-states {
-            .#{$state}\:weight-#{$type-preset}:#{$state} {
+            .\@#{$state}\:hs-weight-#{$type-preset}:#{$state} {
                 font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
             }
         }
     }
     
     @each $type-preset in $type-presets {
-        .line-height-#{$type-preset} {
+        .hs-line-height-#{$type-preset} {
             line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
         }
     
         @each $state in $type-states {
-            .#{$state}\:line-height-#{$type-preset}:#{$state} {
+            .\@#{$state}\:hs-line-height-#{$type-preset}:#{$state} {
                 line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
             }
         }
     }
     
     @each $type-alignment in $type-alignments {
-        .text-#{$type-alignment} {
+        .hs-text-#{$type-alignment} {
             text-align: $type-alignment;
         }
     }
