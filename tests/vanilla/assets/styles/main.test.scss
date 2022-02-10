@@ -1,4 +1,4 @@
-///
+//
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,10 +18,10 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
-@use '../../../../src/index' as hashi;
-@use '../../../../src/hs-button' with ($fill: 'plox');
+@use '../../../../src' as hashi;
+@use '../../../../src/hs-button' with ($fill: 'native-blue', $ink: 'native-blue-ink');
 @use '../../../../src/hs-button-group';
 @use '../../../../src/hs-card';
 @use '../../../../src/hs-link';
@@ -31,41 +31,56 @@
 @use '../../../../src/hs-utils';
 
 @include hashi.init() {
-    
-    .content-wrap {
-        width: calc(100% - 30px);
-        max-width: 1077px;
-        margin: 0 auto;
-        padding: 67px 0 60px 0;
+  .content-wrap {
+    width: calc(100% - 30px);
+    max-width: 1077px;
+    margin: 0 auto;
+    padding: 67px 0 60px 0;
+  }
+
+  section {
+    display: flex;
+    gap: hashi.theme-token-get('space-xs');
+    margin: hashi.theme-token-get('margin-xl') 0;
+  }
+
+  #typography,
+  #colors {
+    flex-flow: column nowrap;
+  }
+
+  .color-module {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: hashi.theme-token-get('space-xs');
+
+    > div {
+      width: 100%;
+      height: 50px;
+      padding: hashi.theme-token-get('padding-xs') hashi.theme-token-get('padding-sm');
+      border-radius: hashi.theme-token-get('radius-xs');
     }
-    
-    section {
-        margin: hashi.theme-token-get('margin-xl') 0;
-        
-        > * + * {
-            margin-left: hashi.theme-token-get('space-xs');
-        }
-    }
-    
-    @include hs-button.render();
-    @include hs-button-group.render();
-    @include hs-card.render();
-    @include hs-link.render();
-    @include hs-profile.render();
-    @include hs-select-field.render();
-    @include hs-text-field.render();
-    
-    @include hs-utils.color-utils();
-    @include hs-utils.shape-utils();
-    @include hs-utils.typography-utils();
-    @include hs-utils.layout-utils();
-    
-    // @include hashi.appbar-render();
-    // @include hashi.card-render();
-    // @include hashi.header-render();
-    // @include hashi.navbar-render();
-    
-    .fill-current {
-        fill: currentColor;
-    }
+  }
+
+  @include hs-button.render();
+  @include hs-button-group.render();
+  @include hs-card.render();
+  @include hs-link.render();
+  @include hs-profile.render();
+  @include hs-select-field.render();
+  @include hs-text-field.render();
+
+  @include hs-utils.color-utils();
+  @include hs-utils.shape-utils();
+  @include hs-utils.typography-utils();
+  @include hs-utils.layout-utils();
+
+  // @include hashi.appbar-render();
+  // @include hashi.card-render();
+  // @include hashi.header-render();
+  // @include hashi.navbar-render();
+
+  .fill-current {
+    fill: currentColor;
+  }
 }
