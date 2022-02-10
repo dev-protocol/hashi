@@ -41,12 +41,15 @@ sidebar_position: 4
 ### CSS Classes
 These are used to structure, extend, and modify the styles of a component on the markup.
 
-| Class                    | Effect                              |
-|--------------------------|-------------------------------------|
-| `.hs-text-field`         | Main text field class.              |
-| `.hs-text-field__label`  | The text field's label class.       |
-| `.hs-text-field__input`  | The text field's main input class.  |
-| `.hs-text-field__helper` | The text field's helper text class. |
+| Class                    | Effect                                      |
+|--------------------------|---------------------------------------------|
+| `.hs-text-field`         | Main text field class.                      |
+| `.hs-text-field__label`  | The text field's label class.               |
+| `.hs-text-field__input`  | The text field's main input class.          |
+| `.hs-text-field__helper` | The text field's helper text class.         |
+| `.is-success`            | Renders the component in its success state. |
+| `.is-warning`            | Renders the component in its warning state. |
+| `.is-danger`             | Renders the component in its danger state.  |
 
 ### Custom Properties
 These are for creating your own component themes.

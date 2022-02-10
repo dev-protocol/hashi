@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@
 @use 'sass:list';
 
 @use 'button-base';
+@use 'button-extend';
 
 $fill: 'scarlet' !default;
 $ink: 'scarlet-ink' !default;
@@ -42,6 +43,12 @@ $line-height: 'line-height-action' !default;
 $gap: 0 !default;
 
 $variants: 'all' !default;
+
+$_states: (
+  'success',
+  'warning',
+  'danger'
+);
 
 @mixin render() {
   @include button-base.init($gap) {
@@ -62,6 +69,16 @@ $variants: 'all' !default;
     ));
     outline: none;
 
+    @each $state in $_states {
+      &.is-#{$state} {
+        @include hs-core.color-apply('button', (
+          fill: $state,
+          ink: '#{$state}-ink',
+          border: $state
+        ), 'text', $tone: $tone, $stateful: true, $extend: true);
+      }
+    }
+
     @if list.index($variants, 'outlined') or list.index($variants, 'all') {
       &.hs-button--outlined {
         @include hs-core.color-apply('button', (
@@ -69,6 +86,16 @@ $variants: 'all' !default;
           ink: $ink,
           border: $border
         ), 'outlined', $stateful: true, $extend: true);
+
+        @each $state in $_states {
+          &.is-#{$state} {
+            @include hs-core.color-apply('button', (
+              fill: $state,
+              ink: '#{$state}-ink',
+              border: $state
+            ), 'outlined', $tone: $tone, $stateful: true, $extend: true);
+          }
+        }
       }
     }
 
@@ -79,6 +106,16 @@ $variants: 'all' !default;
           ink: $ink,
           border: $border
         ), 'filled', $stateful: true, $extend: true);
+
+        @each $state in $_states {
+          &.is-#{$state} {
+            @include hs-core.color-apply('button', (
+              fill: $state,
+              ink: '#{$state}-ink',
+              border: $state
+            ), 'filled', $tone: $tone, $stateful: true, $extend: true);
+          }
+        }
       }
     }
   }

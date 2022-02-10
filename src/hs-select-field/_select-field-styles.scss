@@ -21,8 +21,9 @@
 //
 
 @use '../hs-core';
-@use 'select-field-base';
 @use 'sass:map';
+
+@use 'select-field-base';
 
 $accent: 'native-blue' !default;
 $tone: 400;
@@ -44,7 +45,29 @@ $line-height: 'line-height-body' !default;
       }
     }
 
-    &.danger {
+    &.is-success {
+      @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('success-400'));
+      @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('success-400'));
+
+      .hs-select-field__input {
+        &:focus-within {
+          @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('success-400'));
+        }
+      }
+    }
+
+    &.is-warning {
+      @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('warning-400'));
+      @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('warning-400'));
+
+      .hs-select-field__input {
+        &:focus-within {
+          @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('warning-400'));
+        }
+      }
+    }
+
+    &.is-danger {
       @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
       @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
 

@@ -87,6 +87,9 @@ These are used to extend and modify the styles of a component on the markup.
 | `.hs-button__icon`     | Class for the button icon.                   |
 | `.hs-button--outlined` | Renders the component in its outlined style. |
 | `.hs-button--filled`   | Renders the component in its filled style.   |
+| `.is-success`          | Renders the component in its success state.  |
+| `.is-warning`          | Renders the component in its warning state.  |
+| `.is-danger`           | Renders the component in its danger state.   |
 
 ### Custom Properties
 These are for creating your own component themes.

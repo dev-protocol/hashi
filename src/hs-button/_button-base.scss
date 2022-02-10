@@ -66,6 +66,7 @@
     .hs-button__label {
       padding: 0 0.3rem;
       color: hs-core.theme-key-create('button-label-ink', hs-core.theme-key-get('button-ink'));
+      font-family: inherit;
       font-size: hs-core.theme-key-create('button-label-size', inherit);
       font-weight: inherit;
       line-height: inherit;
@@ -73,4 +74,3 @@
     }
   }
 }
-

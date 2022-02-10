@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -36,20 +36,42 @@ $weight: 'weight-body' !default;
 $line-height: 'line-height-body' !default;
 
 @mixin render() {
-    @include text-field-base.init() {
-        .hs-text-field__input:focus-within {
-            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
-        }
-        
-        &.danger {
-            @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('text-field-helper-ink', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('text-field-label-ink', hs-core.theme-token-get('danger-400'));
-            @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
-            
-            .hs-text-field__input:focus-within {
-                @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
-            }
-        }
+  @include text-field-base.init() {
+    .hs-text-field__input:focus-within {
+      @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
     }
+
+    &.is-success {
+      @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('success-400'));
+      @include hs-core.theme-key-bind('text-field-helper-ink', hs-core.theme-token-get('success-400'));
+      @include hs-core.theme-key-bind('text-field-label-ink', hs-core.theme-token-get('success-400'));
+      @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('success-400'));
+
+      .hs-text-field__input:focus-within {
+        @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('success-400'));
+      }
+    }
+
+    &.is-warning {
+      @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('warning-400'));
+      @include hs-core.theme-key-bind('text-field-helper-ink', hs-core.theme-token-get('warning-400'));
+      @include hs-core.theme-key-bind('text-field-label-ink', hs-core.theme-token-get('warning-400'));
+      @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('warning-400'));
+
+      .hs-text-field__input:focus-within {
+        @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('warning-400'));
+      }
+    }
+
+    &.is-danger {
+      @include hs-core.theme-key-bind('text-field-ink', hs-core.theme-token-get('danger-400'));
+      @include hs-core.theme-key-bind('text-field-helper-ink', hs-core.theme-token-get('danger-400'));
+      @include hs-core.theme-key-bind('text-field-label-ink', hs-core.theme-token-get('danger-400'));
+      @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
+
+      .hs-text-field__input:focus-within {
+        @include hs-core.theme-key-bind('text-field-border', hs-core.theme-token-get('danger-400'));
+      }
+    }
+  }
 }
