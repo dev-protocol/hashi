@@ -25,9 +25,9 @@
 @use 'sass:map';
 
 $h1: tools.to-rem(36px);
-$h2: tools.to-rem(29px);
-$h3: tools.to-rem(23px);
-$h4: tools.to-rem(18px);
+$h2: tools.to-rem(30px);
+$h3: tools.to-rem(24px);
+$h4: tools.to-rem(20px);
 $body: tools.to-rem(16px);
 $icon: tools.to-rem(24px);
 $button: tools.to-rem(16px);
@@ -108,19 +108,18 @@ $hs-tokens: (
   // ===== TYPOGRAPHY ===== //
   'family': (
     'global': ('Whyte', sans-serif),
-    'header': ('WhyteInktrap', sans-serif),
+    'header': ('Syne', sans-serif),
     'body': ('Whyte', sans-serif),
-    'action': ('IBM Plex Mono', monospace),
+    'action': ('Whyte', monospace),
     'code': ('IBM Plex Mono', monospace)
   ),
   'size': (
-    // General type tokens
     'h1': $h1,
     'h2': $h2,
     'h3': $h3,
     'h4': $h4,
     'body': $body,
-    // Special type tokens
+    // == //
     'icon': $icon,
     'action': $button,
     'small': $small,
@@ -133,7 +132,7 @@ $hs-tokens: (
     'body': 400,
     // == //
     'icon': 400,
-    'action': 700,
+    'action': 400,
     'small': 400,
   ),
   'line-height': (

@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2021 Dev Protocol
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -119,15 +119,15 @@ $_required-props: ('fill', 'ink', 'border');
     }
 
     &:hover {
-      @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
-      @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component-name}-fill', theme.token-get-raw('#{$fill}-400'));
+      @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
       @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
     }
 
     &:active {
-      @include theme.key-bind('#{$component-name}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 33%));
-      @include theme.key-bind('#{$component-name}-ink', theme.token-get('#{$fill}-400'));
-      @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-400'));
+      @include theme.key-bind('#{$component-name}-fill', theme.token-get-raw('#{$fill}-200'));
+      @include theme.key-bind('#{$component-name}-ink', theme.token-get($ink));
+      @include theme.key-bind('#{$component-name}-border', theme.token-get('#{$border}-200'));
     }
 
     &:disabled {
