@@ -1,4 +1,4 @@
-///
+//
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 @use 'sass:map';
@@ -26,78 +26,108 @@
 
 $_color-presets: map.keys(hs-core.$color-presets);
 $_tones: (
-    200: 10%,
-    300: 20%,
-    400: 30%,
-    600: 50%
+  200: 8%,
+  300: 12%,
+  400: 20%,
+  600: 33%
 );
 
 $color-states: (
-    'hover',
-    'focus',
-    'active'
+  'hover',
+  'focus',
+  'active'
 );
 
 @mixin color-utils() {
-    @each $preset in $_color-presets {
-        @each $tone, $tone-percentage in $_tones {
-            .hs-bg-#{$preset}-#{$tone} {
-                background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
-            }
-    
-            .hs-bg-#{$preset}-alpha-#{$tone} {
-                background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
-            }
-            
-            @each $state in $color-states {
-                .\@#{$state}\:hs-bg-#{$preset}-#{$tone}:#{$state} {
-                    background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
-                }
-    
-                .\@#{$state}\:hs-bg-#{$preset}-alpha-#{$tone}:#{$state} {
-                    background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
-                }
-            }
+  @each $preset in $_color-presets {
+    @each $tone, $tone-percentage in $_tones {
+      .hs-bg-#{$preset}-#{$tone} {
+        background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+        color: hs-core.theme-token-get('#{$preset}-ink');
+      }
+
+      .hs-bg-#{$preset}-alpha-#{$tone} {
+        @if $preset == 'surface' {
+          background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+          color: hs-core.theme-token-get('surface-ink');
+        } @else {
+          background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-400'), $tone-percentage);
+          color: hs-core.theme-token-get('#{$preset}-400');
         }
-    
-        @each $tone, $tone-percentage in $_tones {
-            .hs-text-#{$preset}-#{$tone} {
-                color: hs-core.theme-token-get('#{$preset}-#{$tone}');
-            }
-    
-            .hs-text-#{$preset}-alpha-#{$tone} {
-                color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
-            }
-    
-            @each $state in $color-states {
-                .\@#{$state}\:hs-text-#{$preset}-#{$tone}:#{$state} {
-                    color: hs-core.theme-token-get('#{$preset}-#{$tone}');
-                }
-        
-                .\@#{$state}\:hs-text-#{$preset}-alpha-#{$tone}:#{$state} {
-                    color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
-                }
-            }
+      }
+
+      @each $state in $color-states {
+        .\@#{$state}\:hs-bg-#{$preset}-#{$tone}:#{$state} {
+          background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+          color: hs-core.theme-token-get('#{$preset}-ink');
         }
-    
-        @each $tone, $tone-percentage in $_tones {
-            .hs-border-#{$preset}-#{$tone} {
-                border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
-            }
-    
-            .hs-border-#{$preset}-alpha-#{$tone} {
-                border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
-            }
-    
-            @each $state in $color-states {
-                .\@#{$state}\:hs-border-#{$preset}-#{$tone}:#{$state} {
-                    border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
-                }
-        
-                .\@#{$state}\:hs-border-#{$preset}-alpha-#{$tone}:#{$state} {
-                    border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
-                }
-            }
+
+        .\@#{$state}\:hs-bg-#{$preset}-alpha-#{$tone}:#{$state} {
+          @if $preset == 'surface' {
+            background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+            color: hs-core.theme-token-get('surface-ink');
+          } @else {
+            background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-400'), $tone-percentage);
+            color: hs-core.theme-token-get('#{$preset}-400');
+          }
         }
+      }
     }
+
+    @each $tone, $tone-percentage in $_tones {
+      .hs-text-#{$preset}-#{$tone} {
+        color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+      }
+
+      .hs-text-#{$preset}-alpha-#{$tone} {
+        @if $preset == 'surface' {
+          color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+        } @else {
+          color: rgba(hs-core.theme-token-get-raw('#{$preset}-400'), $tone-percentage);
+        }
+      }
+
+      @each $state in $color-states {
+        .\@#{$state}\:hs-text-#{$preset}-#{$tone}:#{$state} {
+          color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+        }
+
+        .\@#{$state}\:hs-text-#{$preset}-alpha-#{$tone}:#{$state} {
+          @if $preset == 'surface' {
+            color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+          } @else {
+            color: rgba(hs-core.theme-token-get-raw('#{$preset}-400'), $tone-percentage);
+          }
+        }
+      }
+    }
+
+    @each $tone, $tone-percentage in $_tones {
+      .hs-border-#{$preset}-#{$tone} {
+        border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+      }
+
+      .hs-border-#{$preset}-alpha-#{$tone} {
+        @if $preset == 'surface' {
+          border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+        } @else {
+          border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-400'), $tone-percentage);
+        }
+      }
+
+      @each $state in $color-states {
+        .\@#{$state}\:hs-border-#{$preset}-#{$tone}:#{$state} {
+          border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
+        }
+
+        .\@#{$state}\:hs-border-#{$preset}-alpha-#{$tone}:#{$state} {
+          @if $preset == 'surface' {
+            border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
+          } @else {
+            border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-400'), $tone-percentage);
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-///
+//
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,46 +18,46 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 $flows: (
-    row,
-    column,
+  row,
+  column,
 );
 
 $alignments: (
-    'start': flex-start,
-    'center': center,
-    'end': flex-end,
-    'between': space-between,
-    'around': space-around,
-    'evenly': space-evenly,
-    'right': right,
-    'left': left,
-    'normal': normal,
-    'inherit': inherit
+  'start': flex-start,
+  'center': center,
+  'end': flex-end,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly,
+  'right': right,
+  'left': left,
+  'normal': normal,
+  'inherit': inherit
 );
 
 @mixin layout-utils() {
-    .hs-flex {
-        display: flex;
-        
-        @each $flow in $flows {
-            &.hs-flow-#{$flow} {
-                flex-flow: #{$flow} nowrap;
-            }
-        }
-        
-        @each $variant, $alignment in $alignments {
-            &.hs-justify-#{$variant} {
-                justify-content: $alignment;
-            }
-        }
-    
-        @each $variant, $alignment in $alignments {
-            &.hs-align-#{$variant} {
-                align-items: $alignment;
-            }
-        }
+  .hs-flex {
+    display: flex;
+
+    @each $flow in $flows {
+      &.hs-flow-#{$flow} {
+        flex-flow: #{$flow} nowrap;
+      }
     }
+
+    @each $variant, $alignment in $alignments {
+      &.hs-justify-#{$variant} {
+        justify-content: $alignment;
+      }
+    }
+
+    @each $variant, $alignment in $alignments {
+      &.hs-align-#{$variant} {
+        align-items: $alignment;
+      }
+    }
+  }
 }
