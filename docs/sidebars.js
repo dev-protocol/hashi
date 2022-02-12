@@ -41,7 +41,7 @@ const sidebars = {
             {
                 type: 'category',
                 label: 'Tokens',
-                collapsed: false,
+                collapsed: true,
                 items: [
                     'hs-core/tokens/tokens-index',
                     'hs-core/tokens/color-tokens',
@@ -52,7 +52,7 @@ const sidebars = {
             {
                 type: 'category',
                 label: 'Core API',
-                collapsed: false,
+                collapsed: true,
                 items: [
                     'hs-core/core-apis/init',
                     'hs-core/core-apis/render',
@@ -64,7 +64,7 @@ const sidebars = {
             {
                 type: 'category',
                 label: 'Helpers',
-                collapsed: false,
+                collapsed: true,
                 items: [
                     'hs-core/helpers/breakpoints',
                     'hs-core/helpers/dark-mode',

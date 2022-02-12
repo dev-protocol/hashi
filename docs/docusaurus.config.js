@@ -61,44 +61,43 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      colorMode: { defaultMode: 'dark' },
-      navbar: {
-        title: 'Hashi',
-        items: [
-          {
-            to: '/docs/getting-started/introduction',
-            label: 'Docs',
-            position: 'left'
-          },
-          {
-            to: 'https://initto.devprotocol.xyz',
-            label: 'Blog',
-            position: 'left'
-          },
-          {
-            href: 'https://github.com/dev-protocol/hashi-web',
-            label: 'Source',
-            position: 'left',
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'left',
-            dropdownActiveClassDisabled: true,
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Dev Protocol`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+  themeConfig: {
+    autoCollapseSidebarCategories: false,
+    colorMode: { defaultMode: 'dark' },
+    navbar: {
+      title: 'Hashi',
+      items: [
+        {
+          to: '/docs/getting-started/introduction',
+          label: 'Docs',
+          position: 'left'
+        },
+        {
+          to: 'https://initto.devprotocol.xyz',
+          label: 'Blog',
+          position: 'left'
+        },
+        {
+          href: 'https://github.com/dev-protocol/hashi-web',
+          label: 'Source',
+          position: 'left',
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'left',
+          dropdownActiveClassDisabled: true,
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      copyright: `Copyright © ${new Date().getFullYear()} Dev Protocol`,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
+  }
 };
 
 module.exports = config;

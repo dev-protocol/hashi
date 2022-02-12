@@ -34,11 +34,14 @@ The general schema is a prefix and a token value. Valid token values can be foun
 | `@disabled:` | Scopes the util to an element's disabled state. |
 
 ### Color
-| Prefix       | Description                                     |
-|--------------|-------------------------------------------------|
-| `hs-bg-`     | Defines/Modifies an element's background color. |
-| `hs-text-`   | Defines/Modifies an element's text color.       |
-| `hs-border-` | Defines/Modifies an element's border color.     |
+| Prefix                     | Description                                     |
+|----------------------------|-------------------------------------------------|
+| `hs-bg-[color]-[tone]`     | Defines/Modifies an element's background color. |
+| `hs-text-[color]-[tone]`   | Defines/Modifies an element's text color.       |
+| `hs-border-[color]-[tone]` | Defines/Modifies an element's border color.     |
+
+#### Available Colors
+
 
 ### Shape
 The shape utils also follow the same directional configuration schema as tailwind's.
