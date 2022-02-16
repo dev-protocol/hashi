@@ -14,6 +14,7 @@ This is a special set of mixins that generate utility classes based on Hashi's D
 @include hs-utils.color-utils();
 @include hs-utils.shape-utils();
 @include hs-utils.typography-utils();
+@include hs-utils.layout-utils();
 ```
 
 ```html
@@ -34,11 +35,11 @@ The general schema is a prefix and a token value. Valid token values can be foun
 | `@disabled:` | Scopes the util to an element's disabled state. |
 
 ### Color
-| Prefix                     | Description                                     |
-|----------------------------|-------------------------------------------------|
-| `hs-bg-[color]-[tone]`     | Defines/Modifies an element's background color. |
-| `hs-text-[color]-[tone]`   | Defines/Modifies an element's text color.       |
-| `hs-border-[color]-[tone]` | Defines/Modifies an element's border color.     |
+| Prefix                  | Description                                     |
+|-------------------------|-------------------------------------------------|
+| `bg-[color]-[tone]`     | Defines/Modifies an element's background color. |
+| `text-[color]-[tone]`   | Defines/Modifies an element's text color.       |
+| `border-[color]-[tone]` | Defines/Modifies an element's border color.     |
 
 #### Available Colors
 
@@ -46,30 +47,36 @@ The general schema is a prefix and a token value. Valid token values can be foun
 ### Shape
 The shape utils also follow the same directional configuration schema as tailwind's.
 
-| Prefix             | Description                                  |
-|--------------------|----------------------------------------------|
-| `hs-r[direction]-` | Defines/Modifies an element's border radius. |
-| `hs-m[direction]-` | Defines/Modifies an element's margin.        |
-| `hs-p[direction]-` | Defines/Modifies an element's padding.       |
-| `hs-gap-`          | Defines/Modifies an element's gap.           |
+| Prefix          | Description                                  |
+|-----------------|----------------------------------------------|
+| `r[direction]-` | Defines/Modifies an element's border radius. |
+| `m[direction]-` | Defines/Modifies an element's margin.        |
+| `p[direction]-` | Defines/Modifies an element's padding.       |
+| `gap-`          | Defines/Modifies an element's gap.           |
 
 *[direction] is optional.
 
 ### Typography
-| Prefix            | Description                                |
-|-------------------|--------------------------------------------|
-| `hs-family-`      | Defines/Modifies an element's font family. |
-| `hs-size-`        | Defines/Modifies an element's font size.   |
-| `hs-weight-`      | Defines/Modifies an element's font weight. |
-| `hs-line-height-` | Defines/Modifies an element's line height. |
+| Prefix         | Description                                |
+|----------------|--------------------------------------------|
+| `family-`      | Defines/Modifies an element's font family. |
+| `size-`        | Defines/Modifies an element's font size.   |
+| `weight-`      | Defines/Modifies an element's font weight. |
+| `line-height-` | Defines/Modifies an element's line height. |
+
+### Display Layout
+| Prefix     | Description                                 |
+|------------|---------------------------------------------|
+| `display-` | Defines that the element is a flex display. |
 
 ### Flex Layout
-| Prefix        | Description                                                |
-|---------------|------------------------------------------------------------|
-| `hs-flex`     | Defines that the element is a flex display.                |
-| `hs-flow-`    | Defines the flex flow of an element.                       |
-| `hs-justify-` | Defines/Modifies the element's `justify-content` property. |
-| `hs-align-`   | Defines/Modifies the element's `align-items` property.     |
+| Prefix     | Description                                                |
+|------------|------------------------------------------------------------|
+| `flex`     | Defines that the element is a flex display.                |
+| `flow-`    | Defines the flex flow of an element.                       |
+| `justify-` | Defines/Modifies the element's `justify-content` property. |
+| `items-`   | Defines/Modifies the element's `align-items` property.     |
+| `content-` | Defines/Modifies the element's `align-content` property.   |
 
 
 ## Need more util classes?

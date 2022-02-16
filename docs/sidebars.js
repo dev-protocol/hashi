@@ -36,7 +36,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
     docs: {
-        'Getting Started': ['getting-started/introduction', 'getting-started/setup', 'getting-started/philosophy'],
+        'Getting Started': ['getting-started/introduction', 'getting-started/setup', 'getting-started/concepts'],
         'Core': [
             {
                 type: 'category',

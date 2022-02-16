@@ -6,11 +6,11 @@ This mixin initializes the entire design system, together with its helper functi
 @tailwind utilities;
 @tailwind screens;
 ```
-Hashi's version of this is for the CSS preprocessor Sass.
+Hashi's version of this is for the CSS preprocessor, Sass.
 ```scss
 @use 'node_modules/@devprotocol/hashi';
 
-@include hashi.init() {
+@include hashi.init {
   // Code here...
 }
 ```
@@ -22,11 +22,35 @@ If you require a few modifications, like the global typography, global color pre
 
 ```scss
 @use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-component';
 
-@include hashi.init() {
+@include hashi.init {
+  // Initial config
   @include hashi.color-config(
-    $primary: 'surface', /// @type 'surface' | 'neutral'
-    $accent: 'plox', /// @type 'neutral' | 'scarlet' | 'plox' | 'native-blue' | 'bright-cyan'
+    $primary: 'surface',
+    $accent: 'plox'
   );
+  @include hashi.shape-config(
+    $radius: (
+      'small': 'radius-xs',
+      'medium': 'radius-sm',
+      'large': 'radius-md'
+    ),
+    $padding: (
+      // ...
+    )
+  );
+  @include hashi.typohgraphy-config(
+    $header: ('Fira Code', monospace)
+  );
+  @include hashi.breakpoint-config(
+    $small: 340px,
+    $medium: 640px,
+    $large: 1290px,
+    $xlarge: 1440px
+  );
+  
+  // Components
+  @include hs-component.render();
 }
 ```
