@@ -65,11 +65,11 @@ $shape-states: (
       border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
     }
 
-    @each $state in $shape-states {
-      .\@#{$state}\:r-#{$shape-preset}:#{$state} {
-        border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
-      }
-    }
+    // @each $state in $shape-states {
+    //   .\@#{$state}\:r-#{$shape-preset}:#{$state} {
+    //     border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
+    //   }
+    // }
 
     @each $direction-id, $directions in $radius-directions {
       .r#{$direction-id}-#{$shape-preset} {
@@ -78,13 +78,13 @@ $shape-states: (
         }
       }
 
-      @each $state in $shape-states {
-        .\@#{$state}\:r#{$direction-id}-#{$shape-preset}:#{$state} {
-          @each $direction in $directions {
-            border-#{$direction}-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
-          }
-        }
-      }
+      // @each $state in $shape-states {
+      //   .\@#{$state}\:r#{$direction-id}-#{$shape-preset}:#{$state} {
+      //     @each $direction in $directions {
+      //       border-#{$direction}-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
+      //     }
+      //   }
+      // }
     }
   }
 
@@ -93,11 +93,11 @@ $shape-states: (
       padding: hs-core.theme-token-get('padding-#{$shape-preset}');
     }
 
-    @each $state in $shape-states {
-      .\@#{$state}\:p-#{$shape-preset}:#{$state} {
-        padding: hs-core.theme-token-get('padding-#{$shape-preset}');
-      }
-    }
+    // @each $state in $shape-states {
+    //   .\@#{$state}\:p-#{$shape-preset}:#{$state} {
+    //     padding: hs-core.theme-token-get('padding-#{$shape-preset}');
+    //   }
+    // }
 
     @each $direction-id, $directions in $directions {
       .p#{$direction-id}-#{$shape-preset} {
@@ -106,13 +106,13 @@ $shape-states: (
         }
       }
 
-      @each $state in $shape-states {
-        .\@#{$state}\:p#{$direction-id}-#{$shape-preset}:#{$state} {
-          @each $direction in $directions {
-            padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
-          }
-        }
-      }
+      // @each $state in $shape-states {
+      //   .\@#{$state}\:p#{$direction-id}-#{$shape-preset}:#{$state} {
+      //     @each $direction in $directions {
+      //       padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
+      //     }
+      //   }
+      // }
     }
   }
 
@@ -121,11 +121,11 @@ $shape-states: (
       margin: hs-core.theme-token-get('margin-#{$shape-preset}');
     }
 
-    @each $state in $shape-states {
-      .\@#{$state}\:m-#{$shape-preset}:#{$state} {
-        margin: hs-core.theme-token-get('margin-#{$shape-preset}');
-      }
-    }
+    // @each $state in $shape-states {
+    //   .\@#{$state}\:m-#{$shape-preset}:#{$state} {
+    //     margin: hs-core.theme-token-get('margin-#{$shape-preset}');
+    //   }
+    // }
 
     @each $direction-id, $directions in $directions {
       .m#{$direction-id}-#{$shape-preset} {
@@ -134,13 +134,13 @@ $shape-states: (
         }
       }
 
-      @each $state in $shape-states {
-        .\@#{$state}\:m#{$direction-id}-#{$shape-preset}:#{$state} {
-          @each $direction in $directions {
-            margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
-          }
-        }
-      }
+      // @each $state in $shape-states {
+      //   .\@#{$state}\:m#{$direction-id}-#{$shape-preset}:#{$state} {
+      //     @each $direction in $directions {
+      //       margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
+      //     }
+      //   }
+      // }
     }
   }
 
@@ -149,10 +149,10 @@ $shape-states: (
       gap: hs-core.theme-token-get('space-#{$shape-preset}');
     }
 
-    @each $state in $shape-states {
-      .\@#{$state}\:gap-#{$shape-preset}:#{$state} {
-        gap: hs-core.theme-token-get('space-#{$shape-preset}');
-      }
-    }
+    // @each $state in $shape-states {
+    //   .\@#{$state}\:gap-#{$shape-preset}:#{$state} {
+    //     gap: hs-core.theme-token-get('space-#{$shape-preset}');
+    //   }
+    // }
   }
 }

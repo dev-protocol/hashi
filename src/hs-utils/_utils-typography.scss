@@ -61,11 +61,11 @@ $type-alignments: (
       font-family: hs-core.theme-token-get('family-#{$family-preset}');
     }
 
-    @each $state in $type-states {
-      .\@#{$state}\:family-#{$family-preset}:#{$state} {
-        font-family: hs-core.theme-token-get('family-#{$family-preset}');
-      }
-    }
+    // @each $state in $type-states {
+    //   .\@#{$state}\:family-#{$family-preset}:#{$state} {
+    //     font-family: hs-core.theme-token-get('family-#{$family-preset}');
+    //   }
+    // }
   }
 
   @each $type-preset in $type-presets {
@@ -73,11 +73,11 @@ $type-alignments: (
       font-size: hs-core.theme-token-get('size-#{$type-preset}');
     }
 
-    @each $state in $type-states {
-      .\@#{$state}\:size-#{$type-preset}:#{$state} {
-        font-size: hs-core.theme-token-get('size-#{$type-preset}');
-      }
-    }
+    // @each $state in $type-states {
+    //   .\@#{$state}\:size-#{$type-preset}:#{$state} {
+    //     font-size: hs-core.theme-token-get('size-#{$type-preset}');
+    //   }
+    // }
   }
 
   @each $type-preset in $type-presets {
@@ -85,11 +85,11 @@ $type-alignments: (
       font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
     }
 
-    @each $state in $type-states {
-      .\@#{$state}\:weight-#{$type-preset}:#{$state} {
-        font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
-      }
-    }
+    // @each $state in $type-states {
+    //   .\@#{$state}\:weight-#{$type-preset}:#{$state} {
+    //     font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
+    //   }
+    // }
   }
 
   @each $type-preset in $type-presets {
@@ -97,11 +97,11 @@ $type-alignments: (
       line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
     }
 
-    @each $state in $type-states {
-      .\@#{$state}\:line-height-#{$type-preset}:#{$state} {
-        line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
-      }
-    }
+    // @each $state in $type-states {
+    //   .\@#{$state}\:line-height-#{$type-preset}:#{$state} {
+    //     line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
+    //   }
+    // }
   }
 
   @each $type-alignment in $type-alignments {
