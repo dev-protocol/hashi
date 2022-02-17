@@ -20,8 +20,68 @@
 //  SOFTWARE.
 //
 
-@use 'button-group-base';
+@use '../hs-core';
+
+$fill: 'scarlet' !default;
+$ink: 'scarlet-ink' !default;
+$border: $fill !default;
+$tone: 400 !default;
+
+$radius: 'radius-xs' !default;
+$padding: (0.5rem 0.7rem) !default;
+
+$family: 'family-action' !default;
+$size: 'size-action' !default;
+$weight: 'weight-action' !default;
+$line-height: 'line-height-action' !default;
+
+$gap: 0 !default;
 
 @mixin render() {
-  @include button-group-base.init();
+  .hs-button-group {
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+
+    > * + * {
+      margin-left: hs-core.theme-key-create('button-group-gap', 0.3rem);
+    }
+
+    input[type='radio'],
+    input[type='checkbox'] {
+      display: none;
+    }
+
+    > .hs-button {
+      @include hs-core.theme-key-bind('button-radius', hs-core.theme-token-get('radius-none'));
+      @include hs-core.color-apply('button', (
+        fill: $fill,
+        ink: $ink,
+        border: $border
+      ), 'outlined', $stateful: true, $extend: true);
+
+      &.is-active,
+      &[aria-selected='true'],
+      &[hashi-selected='true'],
+      &[data-selected='true'] {
+        @include hs-core.color-apply('button', (
+          fill: $fill,
+          ink: $ink,
+          border: $border
+        ), 'filled', $stateful: true, $extend: true);
+      }
+
+      &:first-child {
+        @include hs-core.theme-key-bind('button-radius',
+          hs-core.theme-token-get('radius-xs') 0 0 hs-core.theme-token-get('radius-xs')
+        );
+      }
+
+      &:last-child {
+        @include hs-core.theme-key-bind('button-radius',
+          0 hs-core.theme-token-get('radius-xs') hs-core.theme-token-get('radius-xs') 0
+        );
+      }
+    }
+  }
 }

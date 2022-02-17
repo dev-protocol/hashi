@@ -23,36 +23,5 @@
 @use '../hs-core';
 
 @mixin init() {
-  .hs-button-group {
-    display: flex;
-    flex-flow: row nowrap;
-    box-sizing: border-box;
-
-    > * + * {
-      margin-left: hs-core.theme-key-create('button-group-gap', 0.3rem);
-    }
-
-    input[type='radio'],
-    input[type='checkbox'] {
-      display: none;
-    }
-
-    > .hs-button {
-      @include hs-core.theme-key-bind('button-radius', hs-core.theme-token-get('radius-none'));
-
-      &:first-child {
-        @include hs-core.theme-key-bind('button-radius',
-          hs-core.theme-token-get('radius-xs') 0 0 hs-core.theme-token-get('radius-xs')
-        );
-      }
-
-      &:last-child {
-        @include hs-core.theme-key-bind('button-radius',
-          0 hs-core.theme-token-get('radius-xs') hs-core.theme-token-get('radius-xs') 0
-        );
-      }
-    }
-
-    @content;
-  }
+  //
 }
