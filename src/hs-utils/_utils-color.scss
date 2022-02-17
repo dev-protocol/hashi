@@ -41,12 +41,12 @@ $color-states: (
 @mixin color-utils() {
   @each $preset in $_color-presets {
     @each $tone, $tone-percentage in $_tones {
-      .hs-bg-#{$preset}-#{$tone} {
+      .bg-#{$preset}-#{$tone} {
         background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
         color: hs-core.theme-token-get('#{$preset}-ink');
       }
 
-      .hs-bg-#{$preset}-alpha-#{$tone} {
+      .bg-#{$preset}-alpha-#{$tone} {
         @if $preset == 'surface' {
           background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
           color: hs-core.theme-token-get('surface-ink');
@@ -57,12 +57,12 @@ $color-states: (
       }
 
       @each $state in $color-states {
-        .\@#{$state}\:hs-bg-#{$preset}-#{$tone}:#{$state} {
+        .\@#{$state}\:bg-#{$preset}-#{$tone}:#{$state} {
           background-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
           color: hs-core.theme-token-get('#{$preset}-ink');
         }
 
-        .\@#{$state}\:hs-bg-#{$preset}-alpha-#{$tone}:#{$state} {
+        .\@#{$state}\:bg-#{$preset}-alpha-#{$tone}:#{$state} {
           @if $preset == 'surface' {
             background-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
             color: hs-core.theme-token-get('surface-ink');
@@ -75,11 +75,11 @@ $color-states: (
     }
 
     @each $tone, $tone-percentage in $_tones {
-      .hs-text-#{$preset}-#{$tone} {
+      .text-#{$preset}-#{$tone} {
         color: hs-core.theme-token-get('#{$preset}-#{$tone}');
       }
 
-      .hs-text-#{$preset}-alpha-#{$tone} {
+      .text-#{$preset}-alpha-#{$tone} {
         @if $preset == 'surface' {
           color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
         } @else {
@@ -88,11 +88,11 @@ $color-states: (
       }
 
       @each $state in $color-states {
-        .\@#{$state}\:hs-text-#{$preset}-#{$tone}:#{$state} {
+        .\@#{$state}\:text-#{$preset}-#{$tone}:#{$state} {
           color: hs-core.theme-token-get('#{$preset}-#{$tone}');
         }
 
-        .\@#{$state}\:hs-text-#{$preset}-alpha-#{$tone}:#{$state} {
+        .\@#{$state}\:text-#{$preset}-alpha-#{$tone}:#{$state} {
           @if $preset == 'surface' {
             color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
           } @else {
@@ -103,11 +103,11 @@ $color-states: (
     }
 
     @each $tone, $tone-percentage in $_tones {
-      .hs-border-#{$preset}-#{$tone} {
+      .border-#{$preset}-#{$tone} {
         border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
       }
 
-      .hs-border-#{$preset}-alpha-#{$tone} {
+      .border-#{$preset}-alpha-#{$tone} {
         @if $preset == 'surface' {
           border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
         } @else {
@@ -116,11 +116,11 @@ $color-states: (
       }
 
       @each $state in $color-states {
-        .\@#{$state}\:hs-border-#{$preset}-#{$tone}:#{$state} {
+        .\@#{$state}\:border-#{$preset}-#{$tone}:#{$state} {
           border-color: hs-core.theme-token-get('#{$preset}-#{$tone}');
         }
 
-        .\@#{$state}\:hs-border-#{$preset}-alpha-#{$tone}:#{$state} {
+        .\@#{$state}\:border-#{$preset}-alpha-#{$tone}:#{$state} {
           @if $preset == 'surface' {
             border-color: rgba(hs-core.theme-token-get-raw('#{$preset}-#{$tone}'), $tone-percentage);
           } @else {

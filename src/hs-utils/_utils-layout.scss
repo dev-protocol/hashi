@@ -20,6 +20,18 @@
 //  SOFTWARE.
 //
 
+$displays: (
+  'block',
+  // 'flex',
+  'grid',
+  'inline-block',
+  // 'inline-flex',
+  'inline-grid'
+  'none',
+  'table',
+  'table-cell',
+);
+
 $flows: (
   row,
   column,
@@ -39,24 +51,64 @@ $alignments: (
 );
 
 @mixin layout-utils() {
-  .hs-flex {
+  @each $display in $displays {
+    .#{$display} {
+      display: $display;
+    }
+  }
+
+  .flex {
     display: flex;
 
     @each $flow in $flows {
-      &.hs-flow-#{$flow} {
+      &.flow-#{$flow} {
         flex-flow: #{$flow} nowrap;
       }
     }
 
     @each $variant, $alignment in $alignments {
-      &.hs-justify-#{$variant} {
+      &.justify-#{$variant} {
         justify-content: $alignment;
       }
     }
 
     @each $variant, $alignment in $alignments {
-      &.hs-align-#{$variant} {
+      &.items-#{$variant} {
         align-items: $alignment;
+      }
+    }
+
+    @each $variant, $alignment in $alignments {
+      &.content-#{$variant} {
+        align-content: $alignment;
+      }
+    }
+  }
+
+  .inline-flex {
+    display: inline-flex;
+
+    @each $flow in $flows {
+      &.flow-#{$flow} {
+        flex-flow: #{$flow} nowrap;
+      }
+    }
+
+    @each $variant, $alignment in $alignments {
+      &.justify-#{$variant} {
+        justify-content: $alignment;
+      }
+    }
+
+    @each $variant, $alignment in $alignments {
+      &.items-#{$variant} {
+        align-items: $alignment;
+      }
+    }
+
+    @each $variant, $alignment in $alignments {
+      &.content-#{$variant} {
+        align-content: $alignment;
       }
     }
   }

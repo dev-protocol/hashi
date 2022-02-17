@@ -61,25 +61,25 @@ $shape-states: (
 
 @mixin shape-utils() {
   @each $shape-preset in $shape-presets {
-    .hs-r-#{$shape-preset} {
+    .r-#{$shape-preset} {
       border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
     }
 
     @each $state in $shape-states {
-      .\@#{$state}\:hs-r-#{$shape-preset}:#{$state} {
+      .\@#{$state}\:r-#{$shape-preset}:#{$state} {
         border-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
       }
     }
 
     @each $direction-id, $directions in $radius-directions {
-      .hs-r#{$direction-id}-#{$shape-preset} {
+      .r#{$direction-id}-#{$shape-preset} {
         @each $direction in $directions {
           border-#{$direction}-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
         }
       }
 
       @each $state in $shape-states {
-        .\@#{$state}\:hs-r#{$direction-id}-#{$shape-preset}:#{$state} {
+        .\@#{$state}\:r#{$direction-id}-#{$shape-preset}:#{$state} {
           @each $direction in $directions {
             border-#{$direction}-radius: hs-core.theme-token-get('radius-#{$shape-preset}');
           }
@@ -89,25 +89,25 @@ $shape-states: (
   }
 
   @each $shape-preset in $shape-presets {
-    .hs-p-#{$shape-preset} {
+    .p-#{$shape-preset} {
       padding: hs-core.theme-token-get('padding-#{$shape-preset}');
     }
 
     @each $state in $shape-states {
-      .\@#{$state}\:hs-p-#{$shape-preset}:#{$state} {
+      .\@#{$state}\:p-#{$shape-preset}:#{$state} {
         padding: hs-core.theme-token-get('padding-#{$shape-preset}');
       }
     }
 
     @each $direction-id, $directions in $directions {
-      .hs-p#{$direction-id}-#{$shape-preset} {
+      .p#{$direction-id}-#{$shape-preset} {
         @each $direction in $directions {
           padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
         }
       }
 
       @each $state in $shape-states {
-        .\@#{$state}\:hs-p#{$direction-id}-#{$shape-preset}:#{$state} {
+        .\@#{$state}\:p#{$direction-id}-#{$shape-preset}:#{$state} {
           @each $direction in $directions {
             padding-#{$direction}: hs-core.theme-token-get('padding-#{$shape-preset}');
           }
@@ -117,25 +117,25 @@ $shape-states: (
   }
 
   @each $shape-preset in $shape-presets {
-    .hs-m-#{$shape-preset} {
+    .m-#{$shape-preset} {
       margin: hs-core.theme-token-get('margin-#{$shape-preset}');
     }
 
     @each $state in $shape-states {
-      .\@#{$state}\:hs-m-#{$shape-preset}:#{$state} {
+      .\@#{$state}\:m-#{$shape-preset}:#{$state} {
         margin: hs-core.theme-token-get('margin-#{$shape-preset}');
       }
     }
 
     @each $direction-id, $directions in $directions {
-      .hs-m#{$direction-id}-#{$shape-preset} {
+      .m#{$direction-id}-#{$shape-preset} {
         @each $direction in $directions {
           margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
         }
       }
 
       @each $state in $shape-states {
-        .\@#{$state}\:hs-m#{$direction-id}-#{$shape-preset}:#{$state} {
+        .\@#{$state}\:m#{$direction-id}-#{$shape-preset}:#{$state} {
           @each $direction in $directions {
             margin-#{$direction}: hs-core.theme-token-get('margin-#{$shape-preset}');
           }
@@ -145,12 +145,12 @@ $shape-states: (
   }
 
   @each $shape-preset in $shape-presets {
-    .hs-gap-#{$shape-preset} {
+    .gap-#{$shape-preset} {
       gap: hs-core.theme-token-get('space-#{$shape-preset}');
     }
 
     @each $state in $shape-states {
-      .\@#{$state}\:hs-gap-#{$shape-preset}:#{$state} {
+      .\@#{$state}\:gap-#{$shape-preset}:#{$state} {
         gap: hs-core.theme-token-get('space-#{$shape-preset}');
       }
     }

@@ -57,55 +57,55 @@ $type-alignments: (
 
 @mixin typography-utils() {
   @each $family-preset in $family-presets {
-    .hs-family-#{$family-preset} {
+    .family-#{$family-preset} {
       font-family: hs-core.theme-token-get('family-#{$family-preset}');
     }
 
     @each $state in $type-states {
-      .\@#{$state}\:hs-family-#{$family-preset}:#{$state} {
+      .\@#{$state}\:family-#{$family-preset}:#{$state} {
         font-family: hs-core.theme-token-get('family-#{$family-preset}');
       }
     }
   }
 
   @each $type-preset in $type-presets {
-    .hs-size-#{$type-preset} {
+    .size-#{$type-preset} {
       font-size: hs-core.theme-token-get('size-#{$type-preset}');
     }
 
     @each $state in $type-states {
-      .\@#{$state}\:hs-size-#{$type-preset}:#{$state} {
+      .\@#{$state}\:size-#{$type-preset}:#{$state} {
         font-size: hs-core.theme-token-get('size-#{$type-preset}');
       }
     }
   }
 
   @each $type-preset in $type-presets {
-    .hs-weight-#{$type-preset} {
+    .weight-#{$type-preset} {
       font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
     }
 
     @each $state in $type-states {
-      .\@#{$state}\:hs-weight-#{$type-preset}:#{$state} {
+      .\@#{$state}\:weight-#{$type-preset}:#{$state} {
         font-weight: hs-core.theme-token-get('weight-#{$type-preset}');
       }
     }
   }
 
   @each $type-preset in $type-presets {
-    .hs-line-height-#{$type-preset} {
+    .line-height-#{$type-preset} {
       line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
     }
 
     @each $state in $type-states {
-      .\@#{$state}\:hs-line-height-#{$type-preset}:#{$state} {
+      .\@#{$state}\:line-height-#{$type-preset}:#{$state} {
         line-height: hs-core.theme-token-get('line-height-#{$type-preset}');
       }
     }
   }
 
   @each $type-alignment in $type-alignments {
-    .hs-text-#{$type-alignment} {
+    .text-#{$type-alignment} {
       text-align: $type-alignment;
     }
   }
