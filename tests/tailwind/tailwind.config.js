@@ -21,20 +21,6 @@
  */
 
 module.exports = {
-    content: ['./*.html'],
-    presets: [require('@devprotocol/hashi/tailwind.js')],
-    theme: {
-        // ['none', 'xs', 'sm', 'md', 'lg', 'xl', 'pill']
-        borderRadius: {
-            'none': 'var(--hs-theme-radius-none)',
-            'xs': 'var(--hs-theme-radius-xs)',
-            'sm': 'var(--hs-theme-radius-sm)',
-            'md': 'var(--hs-theme-radius-md)',
-            'lg': 'var(--hs-theme-radius-lg)',
-            'xl': 'var(--hs-theme-radius-xl)',
-            'pill': 'var(--hs-theme-radius-pill)',
-        },
-        extend: {}
-    },
-    plugins: []
+  content: ['./*.html'],
+  presets: [require('@devprotocol/hashi/tailwind')]
 }
