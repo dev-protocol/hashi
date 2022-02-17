@@ -40,7 +40,7 @@
     box-sizing: border-box;
     cursor: pointer;
 
-    @include hs-core.tools-prefix(transition, all 0.1s ease);
+    @include hs-core.tools-prefix(transition, all 0.2s ease);
 
     @content;
 
