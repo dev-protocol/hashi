@@ -11,11 +11,12 @@ export const ColorPreview = ({color, text = '#fff', children}) => {
       style={{
         padding: '0.5rem',
         borderRadius: '0.3rem',
-        backgroundColor: color.charAt(0) == '#' ? color : '',
+        backgroundColor: color.charAt(0) === '#' ? color : '',
         color: text
       }}
       className={color.charAt(0) !== '#' ? `hs-bg-${color}-400` : ''}>
-        {children || color}</span>
+        {children || color}
+    </span>
   )
 }
 
@@ -154,17 +155,17 @@ Example
 @use 'path/to/@devprotocol/hashi';
 
 .hs-component {
-    @include hashi.theme-key-bind('component-fill', hashi.theme-token-get('scarlet-300'));
+  @include hashi.theme-key-bind('component-fill', hashi.theme-token-get('scarlet-300'));
 }
 ```
 Or in a component context:
 ```scss
 @use 'path/to/@devprotocol/hashi/hs-component' with (
-    // As you can see, you can leave out the tone # since the code will do the picking for you.
-    $fill: 'scarlet',
-    $ink: 'scarlet-ink',
-    $border: 'plox',
-    $accent: 'native-blue'
+  // As you can see, you can leave out the tone # since the code will do the picking for you.
+  $fill: 'scarlet',
+  $ink: 'scarlet-ink',
+  $border: 'plox',
+  $accent: 'native-blue'
 );
 
 @include hs-component.render();
