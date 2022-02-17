@@ -18,7 +18,7 @@ If you wish to see how to initialize Hashi, please refer to [this page](../getti
 In your project's `tailwind.config.js` file, write the code snippet below:
 ```js
 module.exports = {
-    presets: [require('@devprotocol/hashi/tailwind.js')],
+    presets: [require('@devprotocol/hashi/tailwind')],
     ...
 }
 ```
