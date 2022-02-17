@@ -25,7 +25,7 @@
 @mixin load() {
   $_hs-typography-families: (
     'global': ('Whyte', sans-serif),
-    'header': ('Syne', sans-serif),
+    'header': ('Whyte', sans-serif),
     'body': ('Whyte', sans-serif),
     'action': ('Whyte', sans-serif),
     'code': ('IBM Plex Mono', sans-serif),
@@ -47,10 +47,17 @@
         font-display: swap;
       }
     }
-  }
 
-  @if $header == ('Syne', sans-serif) {
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
+    @if $header == ('Whyte', sans-serif) {
+      @font-face {
+        font-family: 'Whyte';
+        src: url('https://devstaticasset.azureedge.net/font/ABCWhyteInktrap-Bold.woff2')
+        format('woff2');
+        font-style: bold;
+        font-weight: 700;
+        font-display: swap;
+      }
+    }
   }
 
   @if $code == ('IBM Plex Mono', monospace) {

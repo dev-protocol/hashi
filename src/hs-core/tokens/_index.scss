@@ -42,6 +42,13 @@ $hs-tokens: (
     '600': #9a9a9a,
     'ink': #000000,
   ),
+  // 'surface-dark': (
+  //   '200': #3a4158,
+  //   '300': #222b3d,
+  //   '400': #111827,
+  //   '600': #040b10,
+  //   'ink': #fff
+  // ),
   'neutral': (
     '200': #383838,
     '300': #272727,
@@ -49,11 +56,22 @@ $hs-tokens: (
     '600': #000000,
     'ink': #ffffff,
   ),
+  // 'neutral-dark': (
+  //   '200': #ffffff,
+  //   '300': #f1f1f1,
+  //   '400': #d7d7d7,
+  //   '600': #bfbfbf,
+  //   'ink': #000000,
+  // ),
   // Disabled is a special token set and does not follow the design specs' 600-200 color naming scheme.
   'disabled': (
-    'default': rgba(0, 0, 0, .12), // ALT: #bababa
-    'ink': rgba(0, 0, 0, .37) // ALT: #646464
+    'default': rgba(0, 0, 0, .12),
+    'ink': rgba(0, 0, 0, .37)
   ),
+  // 'disabled-dark': (
+  //   'default': rgba(255, 255, 255, .12),
+  //   'ink': rgba(255, 255, 255, .37)
+  // ),
   'scarlet': support.color-split(#ff3815),
   'scarlet-ink': #fff,
   'plox': support.color-split(#d500e6),
@@ -91,24 +109,24 @@ $hs-tokens: (
     'none': 0,
     'xs': 0.5rem,
     'sm': 1rem,
-    'md': 0.7rem,
-    'lg': 0.9rem,
-    'xl': 1.2rem,
-    'pill': 0.9rem,
+    'md': 2rem,
+    'lg': 4rem,
+    'xl': 8rem,
+    'pill': 1rem,
   ),
   'space': (
     'none': 0,
     'xs': 0.5rem,
     'sm': 1rem,
-    'md': 0.7rem,
-    'lg': 0.9rem,
-    'xl': 1.2rem,
-    'pill': 0.9rem,
+    'md': 2rem,
+    'lg': 4rem,
+    'xl': 8rem,
+    'pill': 1rem,
   ),
   // ===== TYPOGRAPHY ===== //
   'family': (
     'global': ('Whyte', sans-serif),
-    'header': ('Syne', sans-serif),
+    'header': ('Whyte', sans-serif),
     'body': ('Whyte', sans-serif),
     'action': ('Whyte', monospace),
     'code': ('IBM Plex Mono', monospace)
