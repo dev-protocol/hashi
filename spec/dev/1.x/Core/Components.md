@@ -39,3 +39,11 @@ This lets us use the same class names for every component while not clashing in 
 
 ## Composition
 > 🚧 This portion is still under construction.
+
+Hashi lets you create custom components to solve your project's design problems. From layouts, to coloring, to adding radii, to changing the font size, Hashi will cover it all for you.
+
+### Simple composition (utilities)
+By using utility classes, you can create layouts of components, add color, and modify the shapes and sizes of a component easily. This is generally recommended for components that are not complex in structure.
+
+### Advanced composition (composition API)
+This is for components that are complex in structure, and requires more attention, care, and effort to building. We expose a handful of composition APIs to help you in building these complex components. You will be writing CSS in SCSS. 
