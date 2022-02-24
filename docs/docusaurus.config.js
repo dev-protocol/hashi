@@ -30,13 +30,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 const config = {
   title: 'Hashi',
   tagline: 'Dev Protocol\'s design system for building bridges from software to user.',
-  url: 'https://devdocs.devprotocol.xyz',
+  url: 'https://hashi.devprotocol.xyz',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://docs.devprotocol.xyz/_includes/assets/images/devprotocol-logo.png',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'devprotocol',
+  projectName: 'hashi',
   plugins: ['docusaurus-plugin-sass'],
   presets: [
     [
@@ -45,14 +45,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/dev-protocol/hashi-web/docs',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/dev-protocol/initto',
+          editUrl: 'https://github.com/dev-protocol/initto',
         },
         theme: {
           customCss: require.resolve('./src/scss/main.scss'),
@@ -68,8 +65,13 @@ const config = {
       title: 'Hashi',
       items: [
         {
-          to: '/docs/getting-started/introduction',
-          label: 'Docs',
+          to: '/docs/next/design',
+          label: 'Design',
+          position: 'left'
+        },
+        {
+          to: '/docs/next/develop',
+          label: 'Develop',
           position: 'left'
         },
         {

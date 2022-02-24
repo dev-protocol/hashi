@@ -35,60 +35,78 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-    docs: {
-        'Getting Started': ['getting-started/introduction', 'getting-started/setup', 'getting-started/concepts'],
-        'Core': [
-            {
-                type: 'category',
-                label: 'Tokens',
-                collapsed: true,
-                items: [
-                    'hs-core/tokens/tokens-index',
-                    'hs-core/tokens/color-tokens',
-                    'hs-core/tokens/shape-tokens',
-                    'hs-core/tokens/type-tokens'
-                ]
-            },
-            {
-                type: 'category',
-                label: 'Core API',
-                collapsed: true,
-                items: [
-                    'hs-core/core-apis/init',
-                    'hs-core/core-apis/render',
-                    'hs-core/core-apis/extend',
-                    'hs-core/core-apis/token',
-                    'hs-core/core-apis/key',
-                ]
-            },
-            {
-                type: 'category',
-                label: 'Helpers',
-                collapsed: true,
-                items: [
-                    'hs-core/helpers/breakpoints',
-                    'hs-core/helpers/dark-mode',
-                ]
-            },
-        ],
-        'Components': [
-            'hs-components/hs-button',
-            'hs-components/hs-button-group',
-            'hs-components/hs-card',
-            'hs-components/hs-link',
-            'hs-components/hs-profile',
-            'hs-components/hs-select-field',
-            'hs-components/hs-text-field',
-            'hs-components/hs-utils',
-        ],
-        'Integrations': [
-            'integrations/tailwind'
-        ],
-        'Spec': [
-            'spec/tokens',
-            'spec/component-usage',
-        ],
-    }
+  design: {
+    'Getting Started': [
+      'design/getting-started/introduction',
+      'design/getting-started/ui-kit'
+    ],
+    'Design Fundamentals': [
+      'design/fundamentals/colors',
+      'design/fundamentals/typography'
+    ],
+    'Components': [
+      'design/hs-components/hs-button',
+      'design/hs-components/hs-card',
+      'design/hs-components/hs-text-field',
+    ]
+  },
+  develop: {
+    'Getting Started': [
+      'develop/getting-started/introduction',
+      'develop/getting-started/setup',
+      'develop/getting-started/concepts'],
+    'Core': [
+      {
+        type: 'category',
+        label: 'Tokens',
+        collapsed: true,
+        items: [
+          'develop/hs-core/tokens/tokens-index',
+          'develop/hs-core/tokens/color-tokens',
+          'develop/hs-core/tokens/shape-tokens',
+          'develop/hs-core/tokens/type-tokens'
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Core API',
+        collapsed: true,
+        items: [
+          'develop/hs-core/core-apis/init',
+          'develop/hs-core/core-apis/render',
+          'develop/hs-core/core-apis/extend',
+          'develop/hs-core/core-apis/token',
+          'develop/hs-core/core-apis/key',
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Helpers',
+        collapsed: true,
+        items: [
+          'develop/hs-core/helpers/breakpoints',
+          'develop/hs-core/helpers/dark-mode',
+        ]
+      },
+    ],
+    'Components': [
+      'develop/hs-components/hs-button',
+      'develop/hs-components/hs-button-group',
+      'develop/hs-components/hs-card',
+      'develop/hs-components/hs-link',
+      'develop/hs-components/hs-profile',
+      'develop/hs-components/hs-select-field',
+      'develop/hs-components/hs-text-field',
+      'develop/hs-components/hs-utils',
+    ],
+    'Integrations': [
+      'develop/integrations/tailwind'
+    ],
+    'Spec': [
+      'develop/spec/tokens',
+      'develop/spec/component-usage',
+    ],
+  }
 };
 
 module.exports = sidebars;
