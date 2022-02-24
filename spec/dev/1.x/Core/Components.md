@@ -3,8 +3,8 @@ Hashi's components are designed to be primitive, and small. The components shoul
 
 These components can also be subcomponents of a larger, more project-specific components that solve its own design problems.
 
-## Composition
-The components must be composable using class names. In comparison to the composition and extension API in the previous version, v1's implementation is more of a class name focused API.
+## Modification
+The components must be modifiable using class names. In comparison to the modification API in the previous version, v1's implementation is more of a class name focused API.
 
 We tried to put a more "human-feel" to the class names. We're using what we call a "base-description" pattern in terms of naming classes. BEM does provide a good way of doing this, however we generally found this very verbose and takes up a lot of character space. Hence, we tried to deviate from BEM's variance pattern to our own.
 
@@ -22,5 +22,20 @@ We tried to put a more "human-feel" to the class names. We're using what we call
 
 By making the class API like this, it's more readable and concise. As you can see, the only thing we retained from BEM is the element part of it. We truly believe this API style will make the class names API more consistent, readable, and developer-friendly.
 
-### Advanced Composition
+### Aren't there specificity issues?
+To solve specificity issues, these modification classes are created with the base class as the key.
+
+```scss
+.hs-button {
+  // base styles...
+  
+  &.is-outlined {
+    // outlined styles...
+  }
+}
+```
+
+This lets us use the same class names for every component while not clashing in with other modifiers.
+
+## Composition
 > 🚧 This portion is still under construction.
