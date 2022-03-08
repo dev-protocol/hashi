@@ -51,7 +51,7 @@ for that.
     )
   );
   @include hashi.typography-config(
-    $header: ('Syne', sans-serif)
+    $supertitle: ('Syne', sans-serif)
   );
   @include hashi.breakpoint-config(
     $small: 340px,
