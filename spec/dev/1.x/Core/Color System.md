@@ -15,7 +15,7 @@ and select field accent colors, etc. The accent color property takes in a map wi
 
 ### Background Color
 The background color serves as the main surface area the elements will be placed on. The background color property only
-takes one immutable color for both light and dark mode.
+takes one immutable color each for both light and dark mode. The color must also be specified with a tone value.
 
 ## Component Color Anatomy
 A component generally has three color parts: the fill, the ink, and the border. It is required to have these three
