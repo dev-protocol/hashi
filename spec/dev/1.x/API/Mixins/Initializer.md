@@ -31,36 +31,21 @@ If you require a few modifications, like the global typography, global color pre
 for that.
 
 ```scss
-@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi' with (
+  $accent: 'plox',
+  $family: (
+    'supertitle': ('Syne', sans-serif)
+  ),
+  $breakpoints: (
+    'small': 350px,
+    'medium': 670px,
+    'large': 1290px,
+    'xlarge': 1440px
+  )
+);
 @use 'node_modules/@devprotocol/hashi/hs-component';
 
 @include hashi.init {
-  // Initial config
-  @include hashi.color-config(
-    $primary: 'surface',
-    $accent: 'plox'
-  );
-  @include hashi.shape-config(
-    $radius: (
-      'small': 'xs',
-      'medium': 'sm',
-      'large': 'md'
-    ),
-    $padding: (
-      // ...
-    )
-  );
-  @include hashi.typography-config(
-    $supertitle: ('Syne', sans-serif)
-  );
-  @include hashi.breakpoint-config(
-    $small: 340px,
-    $medium: 640px,
-    $large: 1290px,
-    $xlarge: 1440px
-  );
-  
-  // Components
   @include hs-component.render();
 }
 ```

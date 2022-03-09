@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,18 +18,23 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
-@use '../hs-core';
+@use 'sass:color';
 
-@mixin init() {
-  a.hs-link {
-    display: inline-block;
-    @content;
+@function color-split($color) {
+  @return (
+    '200': tint($color, 32%),
+    '300': tint($color, 16%),
+    '400': $color,
+    '600': shade($color, 32%),
+  );
+}
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
+@function tint($color, $percent) {
+  @return color.adjust(color.mix(#fff, $color, $percent), $saturation: 11%);
+}
+
+@function shade($color, $percent) {
+  @return color.adjust(color.mix(#000, $color, $percent), $saturation: 11%);
 }

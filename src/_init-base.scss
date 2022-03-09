@@ -1,0 +1,134 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+$vue-mode: false !default;
+$_validation: if($vue-mode, false, true);
+
+@use 'hs-core';
+@use 'hs-core/tokens';
+
+@use 'sass:map';
+@use 'sass:string';
+
+$primary: 'surface' !default;
+$dark-primary: 'surface-dark' !default;
+$accent: 'scarlet' !default;
+$dark-accent: $accent !default;
+$background: 'surface-200' !default;
+$background-ink: 'surface-ink' !default;
+$dark-background: 'surface-dark-400' !default;
+$dark-background-ink: 'surface-dark-ink' !default;
+
+$family: () !default;
+$_init-family: (
+  'supertitle': 'var(--hs-theme-family-supertitle)',
+  'title': 'var(--hs-theme-family-title)',
+  'subtitle': 'var(--hs-theme-family-subtitle)',
+  'body': 'var(--hs-theme-family-body)',
+  'mono': 'var(--hs-theme-family-mono)',
+  'small': 'var(--hs-theme-family-small)',
+);
+$_families: map.merge($_init-family, $family);
+
+$breakpoints: () !default;
+$_init-breakpoints: (
+  'small': 320px,
+  'medium': 630px,
+  'large': 890px
+);
+
+@mixin init {
+  :root {
+    @include hs-core.token-config(
+      $map: tokens.$hs-tokens,
+      $primary: (
+        200: 'var(--hs-theme-#{$primary}-200)',
+        300: 'var(--hs-theme-#{$primary}-300)',
+        400: 'var(--hs-theme-#{$primary}-400)',
+        600: 'var(--hs-theme-#{$primary}-600)',
+        'ink': 'var(--hs-theme-#{$primary}-ink)',
+      ),
+      $accent: (
+        200: 'var(--hs-theme-#{$accent}-200)',
+        300: 'var(--hs-theme-#{$accent}-300)',
+        400: 'var(--hs-theme-#{$accent}-400)',
+        600: 'var(--hs-theme-#{$accent}-600)',
+        'ink': 'var(--hs-theme-#{$accent}-ink)',
+      ),
+      $background: (
+        'default': 'var(--hs-theme-#{$background})',
+        'ink': 'var(--hs-theme-#{$background-ink})'
+      ),
+    );
+  }
+  
+  @include hs-core.breakpoint-config(
+    $map: map.merge($_init-breakpoints, $breakpoints)
+  );
+  
+  *,
+  :before,
+  :after {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    box-sizing: inherit;
+  }
+  
+  html {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    background: hs-core.token-get('background');
+    color: hs-core.token-get('background-ink');
+    box-sizing: border-box;
+    color-scheme: light;
+    
+    &[hashi-theme='dark'],
+    &[theme='dark'],
+    &[data-theme='dark'] {
+      color-scheme: dark;
+      @include hs-core.token-config(
+        $primary: (
+          200: 'var(--hs-theme-#{$dark-primary}-200)',
+          300: 'var(--hs-theme-#{$dark-primary}-300)',
+          400: 'var(--hs-theme-#{$dark-primary}-400)',
+          600: 'var(--hs-theme-#{$dark-primary}-600)',
+          'ink': 'var(--hs-theme-#{$dark-primary}-ink)',
+        ),
+        $accent: (
+          200: 'var(--hs-theme-#{$dark-accent}-200)',
+          300: 'var(--hs-theme-#{$dark-accent}-300)',
+          400: 'var(--hs-theme-#{$dark-accent}-400)',
+          600: 'var(--hs-theme-#{$dark-accent}-600)',
+          'ink': 'var(--hs-theme-#{$dark-accent}-ink)',
+        ),
+        $background: (
+          'default': 'var(--hs-theme-#{$dark-background})',
+          'ink': 'var(--hs-theme-#{$dark-background-ink})'
+        ),
+      );
+    }
+  }
+  
+  @content;
+}

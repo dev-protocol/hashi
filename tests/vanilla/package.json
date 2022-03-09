@@ -1,0 +1,9 @@
+{
+  "name": "hs-test-vanilla",
+  "version": "1.0.0",
+  "description": "test bruh",
+  "main": "index.js",
+  "author": "MatteuSan",
+  "license": "MIT",
+  "private": true
+}

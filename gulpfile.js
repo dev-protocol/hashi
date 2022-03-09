@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2021 Dev Protocol
+ *  Copyright (c) 2022 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -18,56 +18,55 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
- *
  */
 
-const {src, dest, watch, series} = require('gulp');
+const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const purgecss = require('gulp-purgecss')
 
 function sassTaskDev() {
-    return src(['src/**/*.scss', 'src/**/*.test.scss', '!src/**/main.scss'], {sourcemaps: true})
-        .pipe(sass({
-            includePaths: ['node_modules']
-        }).on('error', sass.logError))
-        .pipe(dest('./src', {sourcemaps: '.'}));
+  return src(['src/**/*.scss', 'src/**/*.test.scss', '!src/**/main.scss'], { sourcemaps: true })
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
+    .pipe(dest('./src', { sourcemaps: '.' }));
 }
 
 function sassTaskProd() {
-    return src(['src/**/main.scss'], {sourcemaps: true})
-        .pipe(sass({
-            includePaths: ['node_modules']
-        }).on('error', sass.logError))
-        .pipe(dest('./src', {sourcemaps: '.'}));
+  return src(['src/**/main.scss'], { sourcemaps: true })
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
+    .pipe(dest('./src', { sourcemaps: '.' }));
 }
 
 function sassTaskTest() {
-    return src(['tests/**/*.scss'], {sourcemaps: true})
-        .pipe(sass({
-            includePaths: ['node_modules']
-        }).on('error', sass.logError))
-        .pipe(dest('./tests', {sourcemaps: '.'}));
+  return src(['tests/**/*.scss'], { sourcemaps: true })
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
+    .pipe(dest('./tests', { sourcemaps: '.' }));
 }
 
 function purge() {
-    return src('tests/**/*.css')
-        .pipe(purgecss({
-            content: ['tests/**/*.html']
-        }))
-        .pipe(dest('./tests'))
+  return src('tests/**/*.css')
+    .pipe(purgecss({
+      content: ['tests/**/*.html']
+    }))
+    .pipe(dest('./tests'))
 }
 
 function watchTasks() {
-    watch(['src/**/*.scss', '!src/**/*.test.scss'], sassTaskDev());
-    watch(['tests/**/*.scss'], sassTaskTest());
-    // watch(['src/main.scss'], sassTaskProd());
-    // watch('test/scripts/**/*.ts', tsTask());
+  watch(['src/**/*.scss', '!src/**/*.test.scss'], sassTaskDev());
+  watch(['tests/**/*.scss'], sassTaskTest());
+  // watch(['src/main.scss'], sassTaskProd());
+  // watch('test/scripts/**/*.ts', tsTask());
 }
 
 exports.default = series(
-    sassTaskDev,
-    sassTaskProd,
-    sassTaskTest,
-    // purge,
-	// watchTasks
+  // sassTaskDev,
+  // sassTaskProd,
+  sassTaskTest,
+  // purge,
+  // watchTasks
 );

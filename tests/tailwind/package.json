@@ -12,7 +12,7 @@
     "test:tailwind:watch": "npx tailwindcss -i main.test.css -o style.test.css --watch"
   },
   "devDependencies": {
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18"
+    "postcss": "8.4.6",
+    "tailwindcss": "3.0.18"
   }
 }

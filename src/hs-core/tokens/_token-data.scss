@@ -1,0 +1,149 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use 'token-support' as support;
+@use '../tools';
+
+$hs-tokens: (
+  // ===== COLOR ===== //
+  'surface': (
+    '200': #f1f1f1,
+    '300': #d7d7d7,
+    '400': #c4c4c4,
+    '600': #9a9a9a,
+    'ink': #000000,
+  ),
+  'surface-dark': (
+    '200': #3a4158,
+    '300': #222b3d,
+    '400': #111827,
+    '600': #040b10,
+    'ink': #fff
+  ),
+  'neutral': (
+    '200': #383838,
+    '300': #272727,
+    '400': #171717,
+    '600': #000000,
+    'ink': #ffffff,
+  ),
+  'neutral-dark': (
+    '200': #ffffff,
+    '300': #f1f1f1,
+    '400': #d7d7d7,
+    '600': #bfbfbf,
+    'ink': #000000,
+  ),
+  // Disabled is a special token set and does not follow the design specs' 600-200 color naming scheme.
+  'disabled': (
+    'default': rgba(0, 0, 0, .12),
+    'ink': rgba(0, 0, 0, .37),
+  ),
+  'disabled-dark': (
+    'default': rgba(255, 255, 255, .12),
+    'ink': rgba(255, 255, 255, .37),
+  ),
+  'scarlet': support.color-split(#ff3815),
+  'scarlet-ink': #fff,
+  'plox': support.color-split(#d500e6),
+  'plox-ink': #fff,
+  'native-blue': support.color-split(#5b8bf5),
+  'native-blue-ink': #fff,
+  'bright-cyan': support.color-split(#00d0fd),
+  'bright-cyan-ink': #000,
+  'success': support.color-split(#30a83d),
+  'success-ink': #fff,
+  'warning': support.color-split(#fdad00),
+  'warning-ink': #000,
+  'danger': support.color-split(#c92020),
+  'danger-ink': #fff,
+  // ===== SHAPE ===== //
+  'radius': (
+    'none': 0,
+    'xs': 0.3rem,
+    'sm': 0.5rem,
+    'md': 0.7rem,
+    'lg': 1rem,
+    'xl': 1.7rem,
+    'pill': 700px,
+  ),
+  'padding': (
+    'none': 0,
+    'xs': 0.5rem,
+    'sm': 0.7rem,
+    'md': 1rem,
+    'lg': 1.3rem,
+    'xl': 1.7rem,
+    'pill': 1.3rem,
+  ),
+  'margin': (
+    'none': 0,
+    'xs': 0.5rem,
+    'sm': 1rem,
+    'md': 2rem,
+    'lg': 4rem,
+    'xl': 8rem,
+    'pill': 1rem,
+  ),
+  'space': (
+    'none': 0,
+    'xs': 0.5rem,
+    'sm': 1rem,
+    'md': 2rem,
+    'lg': 4rem,
+    'xl': 8rem,
+    'pill': 1rem,
+  ),
+  // ===== TYPOGRAPHY ===== //
+  'family': (
+    'supertitle': ('Syne', sans-serif),
+    'title': ('Syne', sans-serif),
+    'subtitle': ('Syne', sans-serif),
+    'body': ('Whyte', sans-serif),
+    'mono': ('IBM Plex Mono', monospace),
+    'small': ('Whyte', sans-serif),
+  ),
+  'size': (
+    'supertitle': tools.to-rem(42px),
+    'title': tools.to-rem(36px),
+    'subtitle': tools.to-rem(24px),
+    'body': tools.to-rem(16px),
+    'mono': tools.to-rem(16px),
+    'small': tools.to-rem(14px),
+  ),
+  'weight': (
+    'supertitle': 700,
+    'title': 700,
+    'subtitle': 700,
+    'body': 400,
+    'mono': 400,
+    'small': 400,
+  ),
+  'line-height': (
+    'supertitle': tools.to-rem(60px),
+    'title': tools.to-rem(40px),
+    'subtitle': tools.to-rem(30px),
+    'body': tools.to-rem(24px),
+    'mono': tools.to-rem(24px),
+    'small': tools.to-rem(20px),
+  )
+);

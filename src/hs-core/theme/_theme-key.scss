@@ -20,52 +20,24 @@
 //  SOFTWARE.
 ///
 
-@use '../hs-core';
-@use 'sass:map';
+@use 'node_modules/@matteusan/sentro';
 
-@use 'card-base';
+@function check($key) {
+  @return sentro.key-check($key);
+}
 
-$fill: 'surface' !default;
-$ink: 'surface-ink' !default;
-$border: $fill !default;
-$tone: 300 !default;
+@function create($key, $value) {
+  @return sentro.key-create($key, $value);
+}
 
-$radius: 'radius-sm' !default;
-$padding: 'padding-xl' !default;
+@function get($key) {
+  @return sentro.key-get($key);
+}
 
-$family: 'family-body' !default;
-$size: 'size-body' !default;
-$weight: 'weight-body' !default;
-$line-height: 'line-height-body' !default;
+@function get-raw($key) {
+  @return sentro.key-get-raw($key);
+}
 
-$elevation-level: 2 !default;
-$has-elevation: true !default;
-
-@mixin render(
-  $color: (),
-  $shape: (),
-  $type: (),
-  $settings: ()
-) {
-  @include card-base.init() {
-    @include hs-core.color-apply('card', (
-      fill: $fill,
-      ink: $ink,
-      border: $border
-    ), 'filled', $tone: $tone);
-    @include hs-core.shape-apply('card', (
-      radius: $radius,
-      padding: $padding
-    ));
-    @include hs-core.typography-apply('card', (
-      family: $family,
-      size: $size,
-      weight: $weight,
-      line-height: $line-height
-    ));
-
-    @if $has-elevation {
-      @include hs-core.tools-elevation($elevation-level);
-    }
-  }
+@mixin bind($key, $value) {
+  @include sentro.key-bind($key, $value);
 }

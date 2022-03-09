@@ -88,4 +88,9 @@ export const hsColorTokens = {
     600: 'var(--hs-theme-danger-600)',
     'ink': 'var(--hs-theme-danger-ink)'
   },
-}
+};
+
+hsColorTokens.primary = hsColorTokens.surface;
+hsColorTokens.accent = hsColorTokens.scarlet;
+hsColorTokens.lightBackground = hsColorTokens.surface['200'];
+hsColorTokens.darkBackground = hsColorTokens.surface['600'];
