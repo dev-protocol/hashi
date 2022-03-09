@@ -29,6 +29,8 @@ $_validation: if($vue-mode, false, true);
 @use 'sass:map';
 @use 'sass:string';
 
+@use 'init-font-pack' as font-pack;
+
 $primary: 'surface' !default;
 $dark-primary: 'surface-dark' !default;
 $accent: 'scarlet' !default;
@@ -85,13 +87,62 @@ $_init-breakpoints: (
     $map: map.merge($_init-breakpoints, $breakpoints)
   );
   
+  @include font-pack.load($_families);
+  
   *,
   :before,
   :after {
     margin: 0;
     padding: 0;
     color: inherit;
+    font-family: hs-core.token-get('family-body');
     box-sizing: inherit;
+  }
+  
+  h1 {
+    font-family: hs-core.token-get('family-supertitle');
+    font-size: hs-core.token-get('size-supertitle');
+    font-weight: hs-core.token-get('weight-supertitle');
+    line-height: hs-core.token-get('line-height-supertitle');
+  }
+  
+  h2 {
+    font-family: hs-core.token-get('family-title');
+    font-size: hs-core.token-get('size-title');
+    font-weight: hs-core.token-get('weight-title');
+    line-height: hs-core.token-get('line-height-title');
+  }
+  
+  h3 {
+    font-family: hs-core.token-get('family-subtitle');
+    font-size: hs-core.token-get('size-subtitle');
+    font-weight: hs-core.token-get('weight-subtitle');
+    line-height: hs-core.token-get('line-height-subtitle');
+  }
+  
+  p,
+  span,
+  a {
+    font-family: hs-core.token-get('family-body');
+    font-size: hs-core.token-get('size-body');
+    font-weight: hs-core.token-get('weight-body');
+    line-height: hs-core.token-get('line-height-body');
+    text-decoration: none;
+  }
+  
+  small {
+    font-family: hs-core.token-get('family-small');
+    font-size: hs-core.token-get('size-small');
+    font-weight: hs-core.token-get('weight-small');
+    line-height: hs-core.token-get('line-height-small');
+  }
+  
+  code,
+  code * {
+    font-family: hs-core.token-get('family-mono');
+    font-size: hs-core.token-get('size-mono');
+    font-weight: hs-core.token-get('weight-mono');
+    line-height: hs-core.token-get('line-height-mono');
   }
   
   html {
