@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '~@devprotocol/hashi';
 
@@ -35,7 +35,7 @@
             gap: 0.5rem;
             
             .navbar__title {
-                font-size: hashi.tools-to-rem(24px);
+                font-size: hashi.to-rem(24px);
             }
             
             .navbar__item {
@@ -59,11 +59,11 @@
     }
     
     .theme-back-to-top-button {
-        --ifm-color-emphasis-200: #{hashi.theme-token-get('scarlet-400')} !important;
-        --ifm-color-emphasis-1000: #{hashi.theme-token-get('scarlet-ink')} !important;
+        --ifm-color-emphasis-200: #{hashi.token-get('scarlet-400')} !important;
+        --ifm-color-emphasis-1000: #{hashi.token-get('scarlet-ink')} !important;
         
         &:hover {
-            background-color: hashi.theme-token-get('scarlet-300') !important;
+            background-color: hashi.token-get('scarlet-300') !important;
         }
     }
     
@@ -78,12 +78,12 @@
     }
     
     .footer {
-        --ifm-footer-background-color: #{hashi.theme-token-get('neutral-600')};
-        --ifm-footer-color: #{hashi.theme-token-get('neutral-ink')};
+        --ifm-footer-background-color: #{hashi.token-get('neutral-600')};
+        --ifm-footer-color: #{hashi.token-get('neutral-ink')};
         
         @include hashi.dark-mode {
-            --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
-            --ifm-footer-color: #{hashi.theme-token-get('surface-ink')};
+            --ifm-footer-background-color: #{hashi.token-get('surface-300')};
+            --ifm-footer-color: #{hashi.token-get('surface-ink')};
         }
     }
 }

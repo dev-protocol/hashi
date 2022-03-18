@@ -31,9 +31,9 @@
     --ifm-color-primary-light: #ff4f31;
     --ifm-color-primary-lighter: #ff5b3e;
     --ifm-color-primary-lightest: #ff7e68;
-    --ifm-navbar-background-color: #{hashi.theme-token-get('neutral-600')};
-    --ifm-navbar-link-color: #{hashi.theme-token-get('neutral-ink')};
-    --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
+    --ifm-navbar-background-color: #{hashi.token-get('neutral-600')};
+    --ifm-navbar-link-color: #{hashi.token-get('neutral-ink')};
+    --ifm-footer-background-color: #{hashi.token-get('surface-300')};
     --ifm-toc-border-color: rgba(0 0 0 / 0);
   }
 
@@ -45,12 +45,12 @@
     background-color: #fff;
 
     &[data-theme='dark'] {
-      --ifm-navbar-background-color: #{hashi.theme-token-get('surface-400')};
-      --ifm-navbar-link-color: #{hashi.theme-token-get('surface-ink')};
-      background-color: hashi.theme-token-get('surface-400') !important;
+      --ifm-navbar-background-color: #{hashi.token-get('surface-400')};
+      --ifm-navbar-link-color: #{hashi.token-get('surface-ink')};
+      background-color: hashi.token-get('surface-400') !important;
 
       .menu {
-        background-color: hashi.theme-token-get('surface-600');
+        background-color: hashi.token-get('surface-600');
 
         &__link {
           &--sublist::after {
@@ -66,7 +66,7 @@
     }
 
     .menu {
-      background-color: hashi.theme-token-get('neutral-400');
+      background-color: hashi.token-get('neutral-400');
 
       .menu__list,
       .menu__list-item {
@@ -93,9 +93,9 @@
       &__link {
         padding: 0.7rem 1rem;
         color: #fff;
-        fill: hashi.theme-token-get('neutral-ink');
+        fill: hashi.token-get('neutral-ink');
         border: 1px solid rgba(0 0 0 / 0);
-        @include hashi.tools-prefix(transition, all 0.1s ease);
+        @include hashi.prefix(transition, all 0.1s ease);
 
         &:hover,
         &:focus {
@@ -117,7 +117,7 @@
 
         @include hashi.dark-mode {
           color: #fff;
-          fill: hashi.theme-token-get('neutral-ink');
+          fill: hashi.token-get('neutral-ink');
         }
 
         &--sublist::after {
@@ -136,16 +136,16 @@
     }
 
     .pagination-nav__link {
-      background-color: rgba(hashi.theme-token-get-raw('scarlet-400'), 0%);
-      border: 1px solid rgba(hashi.theme-token-get-raw('scarlet-400'), 100%);
-      @include hashi.tools-prefix(transition, all 0.1s ease);
+      background-color: rgba(hashi.token-get-raw('scarlet-400'), 0%);
+      border: 1px solid rgba(hashi.token-get-raw('scarlet-400'), 100%);
+      @include hashi.prefix(transition, all 0.1s ease);
 
       &:hover {
-        background-color: rgba(hashi.theme-token-get-raw('scarlet-400'), 20%);
+        background-color: rgba(hashi.token-get-raw('scarlet-400'), 20%);
       }
 
       &:active {
-        background-color: rgba(hashi.theme-token-get-raw('scarlet-400'), 33%);
+        background-color: rgba(hashi.token-get-raw('scarlet-400'), 33%);
       }
 
       .pagination-nav__sublabel {

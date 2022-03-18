@@ -1,7 +1,12 @@
+---
+title: Surface
+slug: /design/foundation/shape/surface
+displayed_sidebar: design
+---
 # Surface
 Surface is the area all elements operate on. Surfaces can be found in components, or in the back of pages.
 
-![surface.png](_Media/Surface.png)
+![surface.png](../_media/surface.png)
 
 ## Behavior
 The behavior of a surface is like how a three-dimensional object would operate in a space. It has size, and depth.
@@ -14,20 +19,19 @@ Here are the default immutable shadow specs.
 | Property | Value |
 |----------|-------|
 | Color    | #000  |
-| Blur     | 7px   |
 | Opacity  | 15%   |
 
-The y-offset and spread depends on the elevation level.
+The y-offset, blur, and spread depends on the elevation level.
 
-| Level | Y Offset | Spread |
-|-------|----------|--------|
-| 0     | 1px      | 0px    |
-| 1     | 3px      | 1px    |
-| 3     | 6px      | 2px    |
-| 5     | 10px     | 3px    |
-| 7     | 15px     | 4px    |
+| Level | Y Offset | Blur | Spread |
+|-------|----------|------|--------|
+| 0     | 1px      | 0px  | 0px    |
+| 1     | 3px      | 4px  | 1px    |
+| 3     | 6px      | 10px | 2px    |
+| 5     | 10px     | 15px | 3px    |
+| 7     | 15px     | 20px | 4px    |
 
-![elevations.png](_Media/Elevations.png)
+![elevations.png](../_media/elevations.png)
 
 #### When do I add depth to an element?
 You add depth to an element if it overlaps 3 or more elements before it (excluding the background). Or if the element is generally a temporary overlapping element (like a modal, or a dialog).

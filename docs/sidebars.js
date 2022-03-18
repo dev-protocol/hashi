@@ -37,17 +37,37 @@
 const sidebars = {
   design: {
     'Getting Started': [
-      'design/getting-started/introduction',
-      'design/getting-started/ui-kit'
+      'design/introduction',
+      'design/getting-started/ui-kit',
     ],
-    'Design Fundamentals': [
-      'design/fundamentals/colors',
-      'design/fundamentals/typography'
+    'Foundation': [
+      {
+        'Color': [
+          'design/foundation/color/color-theming',
+          'design/foundation/color/applying-color',
+          'design/foundation/color/color-tokens',
+        ],
+        'Shape': [
+          'design/foundation/shape/shape-theming',
+          'design/foundation/shape/surface',
+          'design/foundation/shape/shape-tokens',
+        ],
+        'Typography': [
+          'design/foundation/typography/typography',
+          'design/foundation/typography/iconography',
+          'design/foundation/typography/typography-tokens',
+        ],
+        'Layout': [
+          'design/foundation/layout/grid',
+          'design/foundation/layout/spacing',
+          'design/foundation/layout/breakpoints',
+        ]
+      },
     ],
     'Components': [
-      'design/hs-components/hs-button',
-      'design/hs-components/hs-card',
-      'design/hs-components/hs-text-field',
+      'design/components/hs-button',
+      'design/components/hs-card',
+      'design/components/hs-text-field',
     ]
   },
   develop: {

@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '~@devprotocol/hashi';
 
@@ -31,8 +31,8 @@
         place-items: center;
         padding: 2.5rem 0;
         // background-image: url('../media/ui-ux.png');
-        background-color: hashi.theme-token-get('surface-300');
-        border-bottom: 2px solid hashi.theme-token-get('surface-300');
+        background-color: hashi.token-get('surface-300');
+        border-bottom: 2px solid hashi.token-get('surface-300');
         
         .hs-hero__wrap {
             width: calc(100% - 40px);
@@ -49,21 +49,21 @@
                 line-height: normal;
                 color: #fff;
                 text-shadow:
-                    3px 3px hashi.theme-token-get('scarlet-400'),
-                    6px 6px hashi.theme-token-get('plox-400'),
-                    9px 9px hashi.theme-token-get('native-blue-400'),
-                    12px 12px hashi.theme-token-get('bright-cyan-400'),
+                    3px 3px hashi.token-get('scarlet-400'),
+                    6px 6px hashi.token-get('plox-400'),
+                    9px 9px hashi.token-get('native-blue-400'),
+                    12px 12px hashi.token-get('bright-cyan-400'),
                 ;
                 user-select: none;
-                @include hashi.tools-prefix(transition, text-shadow 0.4s ease);
+                @include hashi.prefix(transition, text-shadow 0.4s ease);
                 
                 &:hover,
                 &:active {
                     text-shadow:
-                        (3px * 1.67) (3px * 1.67) hashi.theme-token-get('scarlet-400'),
-                        (6px * 1.67) (6px * 1.67) hashi.theme-token-get('plox-400'),
-                        (9px * 1.67) (9px * 1.67) hashi.theme-token-get('native-blue-400'),
-                        (12px * 1.67) (12px * 1.67) hashi.theme-token-get('bright-cyan-400'),
+                        (3px * 1.67) (3px * 1.67) hashi.token-get('scarlet-400'),
+                        (6px * 1.67) (6px * 1.67) hashi.token-get('plox-400'),
+                        (9px * 1.67) (9px * 1.67) hashi.token-get('native-blue-400'),
+                        (12px * 1.67) (12px * 1.67) hashi.token-get('bright-cyan-400'),
                     ;
                 }
             }
@@ -75,14 +75,14 @@
                 align-items: flex-start;
     
                 h1 {
-                    --ifm-heading-font-family: #{hashi.theme-token-get('family-header')};
-                    --ifm-heading-font-weight: #{hashi.theme-token-get('weight-h1')};
-                    font-family: hashi.theme-token-get('family-header');
+                    --ifm-heading-font-family: #{hashi.token-get('family-supertitle')};
+                    --ifm-heading-font-weight: #{hashi.token-get('weight-supertitle')};
+                    font-family: hashi.token-get('family-supertitle');
                     margin-bottom: 0.2rem;
                 }
     
                 .hs-hero__actions {
-                    font-family: hashi.theme-token-get('family-body');
+                    font-family: hashi.token-get('family-body');
                     width: 100%;
                     
                     a {
@@ -95,7 +95,7 @@
     
     html[data-theme='dark'] {
         .hs-hero {
-            background-color: hashi.theme-token-get('surface-300');
+            background-color: hashi.token-get('surface-300');
         }
     }
 }
