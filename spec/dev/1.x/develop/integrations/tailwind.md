@@ -12,7 +12,7 @@ In your project's `tailwind.config.js` file, write the code snippet below:
 
 ```js
 module.exports = {
-  presets: [require('src/tailwind/index')],
+  presets: [require('@devprotocol/hashi/tailwind')],
   ...
 }
 ```
