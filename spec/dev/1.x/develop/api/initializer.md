@@ -51,9 +51,9 @@ The initializer has parameters that let you configure the color, shape, and typo
 | `$surface`           | Sets the color for the non-emphasized surfaces in an interface. The neutral of the bunch.         | `dp-white`                          |
 | `$surface-dark`      | Sets the color for the non-emphasized surfaces in a dark interface. The neutral of the bunch.     | `dp-blue-grey`                      |
 | `$surface-dark`      | Sets the color for the non-emphasized surfaces in a dark interface. The neutral of the bunch.     | `dp-blue-grey`                      |
-| `$radius-small`      | Sets the radius for small components like buttons, text fields, etc.                              | `radius-sm`                         |
-| `$radius-medium`     | Sets the radius for medium components like cards, profiles, etc.                                  | `radius-md`                         |
-| `$radius-large`      | Sets the radius for large components like headers, drawers, etc.                                  | `radius-lg`                         |
+| `$radius-small`      | Sets the radius for small components like buttons, text fields, etc.                              | `radius-xs`                         |
+| `$radius-medium`     | Sets the radius for medium components like cards, profiles, etc.                                  | `radius-sm`                         |
+| `$radius-large`      | Sets the radius for large components like headers, drawers, etc.                                  | `radius-md`                         |
 | `$family-supertitle` | Sets the font family for the supertitle typography variant.                                       | `('Syne', sans-serif, 700)`         |
 | `$family-title`      | Sets the font family for the title typography variant.                                            | `('Syne', sans-serif, 700)`         |
 | `$family-subtitle`   | Sets the font family for the subtitle typography variant.                                         | `('Syne', sans-serif, 700)`         |
