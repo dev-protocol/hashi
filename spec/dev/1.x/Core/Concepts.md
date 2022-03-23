@@ -1,5 +1,5 @@
 # Concepts
-After realizing our [aims](../Introduction.md#aims), we've decided on a few concepts we'd like to apply those aims to the design system.
+After realizing our [aims](../introduction.md#aims), we've decided on a few concepts we'd like to apply those aims to the design system.
 
 ## Token-driven Architecture
 Token-driven architecture is a type of design system architecture that uses **design tokens** to run the designs. **Design tokens** are singular, immutable, and powerful values/rules that govern over the design system.
