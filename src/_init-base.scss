@@ -31,14 +31,14 @@ $_validation: if($vue-mode, false, true);
 
 @use 'init-font-pack' as font-pack;
 
-$primary: 'surface' !default;
-$dark-primary: 'surface-dark' !default;
-$accent: 'scarlet' !default;
-$dark-accent: $accent !default;
-$background: 'surface-200' !default;
-$background-ink: 'surface-ink' !default;
-$dark-background: 'surface-dark-400' !default;
-$dark-background-ink: 'surface-dark-ink' !default;
+$primary: 'primary' !default;
+$dark-primary: 'primary-dark' !default;
+$accent: 'neutral' !default;
+$dark-accent: 'neutral-dark' !default;
+$surface: 'surface-200' !default;
+$surface-ink: 'surface-ink' !default;
+$dark-surface: 'surface-dark-400' !default;
+$dark-surface-ink: 'surface-dark-ink' !default;
 
 $family: () !default;
 $_init-family: (
@@ -54,8 +54,9 @@ $_families: map.merge($_init-family, $family);
 $breakpoints: () !default;
 $_init-breakpoints: (
   'small': 320px,
-  'medium': 630px,
-  'large': 890px
+  'medium': 640px,
+  'large': 960px,
+  'xlarge': 1280px,
 );
 
 @mixin init {
@@ -77,8 +78,8 @@ $_init-breakpoints: (
         'ink': 'var(--hs-theme-#{$accent}-ink)',
       ),
       $background: (
-        'default': 'var(--hs-theme-#{$background})',
-        'ink': 'var(--hs-theme-#{$background-ink})'
+        'default': 'var(--hs-theme-#{$surface})',
+        'ink': 'var(--hs-theme-#{$surface-ink})'
       ),
     );
   }
@@ -120,6 +121,15 @@ $_init-breakpoints: (
     line-height: hs-core.token-get('line-height-subtitle');
   }
   
+  h4,
+  h5,
+  h6 {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+  
   p,
   span,
   a {
@@ -127,6 +137,9 @@ $_init-breakpoints: (
     font-size: hs-core.token-get('size-body');
     font-weight: hs-core.token-get('weight-body');
     line-height: hs-core.token-get('line-height-body');
+  }
+  
+  a {
     text-decoration: none;
   }
   
@@ -174,8 +187,8 @@ $_init-breakpoints: (
           'ink': 'var(--hs-theme-#{$dark-accent}-ink)',
         ),
         $background: (
-          'default': 'var(--hs-theme-#{$dark-background})',
-          'ink': 'var(--hs-theme-#{$dark-background-ink})'
+          'default': 'var(--hs-theme-#{$dark-surface})',
+          'ink': 'var(--hs-theme-#{$dark-surface-ink})'
         ),
       );
     }

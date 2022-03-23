@@ -20,28 +20,8 @@
 //  SOFTWARE.
 ///
 
-$primary: 'surface' !default;
-$dark-primary: 'surface-dark' !default;
-$accent: 'neutral' !default;
-$dark-accent: $accent !default;
-$background: 'surface-200' !default;
-$background-ink: 'surface-ink' !default;
-$dark-background: 'surface-dark-400' !default;
-$dark-background-ink: 'surface-dark-ink' !default;
+@use 'node_modules/@matteusan/sentro';
 
-$family: () !default;
-$breakpoints: () !default;
-
-@forward 'hs-core';
-@forward 'init-base' with (
-  $primary: $primary,
-  $dark-primary: $dark-primary,
-  $accent: $accent,
-  $dark-accent: $dark-accent,
-  $background: $background,
-  $background-ink: $background-ink,
-  $dark-background: $dark-background,
-  $dark-background-ink: $dark-background-ink,
-  $family: $family,
-  $breakpoints: $breakpoints
-);
+@mixin prefix($property, $value) {
+  @include sentro.prefix($property, $value);
+}

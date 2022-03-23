@@ -21,6 +21,7 @@
 ///
 
 @use 'node_modules/@matteusan/sentro';
+@use '../tools';
 
 @function check($query) {
   @return sentro.token-check($query);
@@ -34,8 +35,16 @@
   @return sentro.token-get-raw($query);
 }
 
-@function switch($query) {
-  @return sentro.token-switch($query);
+@function switch($query, $fallback: ()) {
+  @if tools.is-empty($fallback) {
+    @return sentro.token-switch($query);
+  } @else {
+    @if sentro.token-check($query) {
+      @return sentro.token-get($query);
+    } @else {
+      @return $query;
+    }
+  }
 }
 
 @mixin config($map: (), $tokens...) {

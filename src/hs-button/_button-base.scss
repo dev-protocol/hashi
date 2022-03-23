@@ -1,0 +1,76 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+
+@mixin init($gap) {
+  .hs-button {
+    width: 100%;
+    min-width: 62px;
+    max-width: max-content;
+    height: max-content;
+  
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  
+    user-select: none;
+    overflow: visible;
+    vertical-align: middle;
+    box-sizing: border-box;
+    cursor: pointer;
+    
+    @include hs-core.prefix(transition, all 0.2s ease);
+  
+    @content;
+  
+    ::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+  
+    & > * + * {
+      margin-left: hs-core.key-create('button-gap', hs-core.token-switch('space-#{$gap}', $gap));
+    }
+  
+    .hs-button__icon {
+      color: hs-core.key-create('button-icon-ink', inherit);
+      font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+    
+      > * {
+        color: hs-core.key-create('button-icon-ink', inherit);
+        font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+      }
+    }
+  
+    .hs-button__label {
+      padding: 0 0.3rem;
+      color: hs-core.key-create('button-label-ink', hs-core.key-get('button-ink'));
+      font-family: inherit;
+      font-size: hs-core.key-create('button-label-size', inherit);
+      font-weight: inherit;
+      line-height: inherit;
+      text-align: center;
+    }
+  }
+  
+}
