@@ -22,11 +22,14 @@ updated on when we release a version with the said feature.
 Dev Protocol has specific branding colors, which is why we only provide developers with select tokens to work with. The
 current available colors are:
 
-- Surface
-- Neutral
-- Scarlet
-- Plox
-- Native Blue
-- Bright Cyan
+| Color Name   | Base Hex |
+|--------------|----------|
+| DP White     | #ffffff  |
+| DP Black     | #000000  |
+| DP Blue Grey | #111827  |
+| Scarlet      | #ff3815  |
+| Plox         | #d500e6  |
+| Native Blue  | #5b8bf5  |
+| Bright Cyan  | #00d0fd  |
 
 As of this version, we are working on making the design system extend to other colors that we may need in the future.
