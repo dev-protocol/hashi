@@ -10,14 +10,14 @@ modifications. Henceforth, it will only support default states, and media querie
 
 ```html
 <h1 class="border-surface-200 px-md py-lg rd-md">
-    This is a title dialog
+  This is a title dialog
 </h1>
 <section class="d-grid cols-1 @md:cols-2 @lg:cols-3 gap-sm">
-    <HSCard />
-    <HSCard />
-    <HSCard />
-    <HSCard />
-    <HSCard />
+  <HSCard />
+  <HSCard />
+  <HSCard />
+  <HSCard />
+  <HSCard />
 </section>
 ```
 
