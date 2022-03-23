@@ -39,3 +39,11 @@ Single-purpose, consistent, and predictable classes for styling/modifying an ele
 .lh-normal { ... }
 .lh-condensed { ... }
 ```
+## Text Alignment
+**Syntax:** `adjust-[text-alignment]`
+```scss
+.adjust-left { ... }
+.adjust-center { ... }
+.adjust-right { ... }
+.adjust-justify { ... }
+```
