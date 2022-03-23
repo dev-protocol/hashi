@@ -6,7 +6,11 @@ displayed_sidebar: develop
 Single-purpose, consistent, and predictable classes for styling/modifying an element's typography.
 
 ## Typography Preset
-**Syntax:** `[type]`
+This set of utility classes serves as a shorthand for all the other utility classes presented here.
+
+These usually contain the preset's set family, size, weight, and line height
+
+**Syntax:** `[preset]`
 ```scss
 .supertitle { ... }
 .title { ... }
