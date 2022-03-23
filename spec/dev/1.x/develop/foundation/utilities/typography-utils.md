@@ -8,7 +8,7 @@ Single-purpose, consistent, and predictable classes for styling/modifying an ele
 ## Typography Preset
 This set of utility classes serves as a shorthand for all the other utility classes presented here.
 
-These usually contain the preset's set family, size, weight, and line height
+These contain the preset's set family, size, weight, and line height
 
 **Syntax:** `[preset]`
 ```scss
