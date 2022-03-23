@@ -38,6 +38,8 @@ const sidebars = {
   design: {
     'Getting Started': [
       'design/introduction',
+      'design/foundation/terminologies',
+      'design/foundation/concepts-and-influences',
       'design/getting-started/ui-kit',
     ],
     'Foundation': [
@@ -53,7 +55,7 @@ const sidebars = {
           'design/foundation/shape/shape-tokens',
         ],
         'Typography': [
-          'design/foundation/typography/typography',
+          'design/foundation/typography/typography-theming',
           'design/foundation/typography/iconography',
           'design/foundation/typography/typography-tokens',
         ],
