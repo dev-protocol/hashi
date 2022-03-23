@@ -5,6 +5,16 @@ displayed_sidebar: develop
 # Typography Utility Classes
 Single-purpose, consistent, and predictable classes for styling/modifying an element's typography.
 
+## Typography Preset
+**Syntax:** `[type]`
+```scss
+.supertitle { ... }
+.title { ... }
+.subtitle { ... }
+.body { ... }
+.mono { ... }
+.small { ... }
+```
 ## Family
 **Syntax:** `family-[family]`
 ```scss
