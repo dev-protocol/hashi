@@ -1,4 +1,9 @@
-# Hashi Typography System
+---
+title: Theming
+slug: /design/foundation/typography/theming
+displayed_sidebar: design
+---
+# Typography Theming
 Hashi's typography system is a system designed to handle font/type-related concerns like the font sizes, typefaces,
 line-heights, etc.
 
@@ -38,20 +43,15 @@ This typeface is mostly used inside code snippets in projects. Since Dev Protoco
 blockchain, we've decided to include Monospace in our guidelines for consistency. Some of our recommended fonts
 include: `IBM Plex Mono`, `Fira Code`, etc. The default typeface is `IBM Plex Mono`.
 
-## Sizes and Weights
-### Sizes with default weights
-| Type       | Size (px) | Leading (px) | Default Weight |
-|------------|-----------|--------------|----------------|
-| Supertitle | 42        | 60           | 700            |
-| Title      | 36        | 40           | 700            |
-| Subtitle   | 24        | 30           | 700            |
-| Body       | 16        | 24           | 400            |
-| Mono       | 16        | 24           | 400            |
-| Small      | 12        | 20           | 300            |
+## Sizes, Line Heights and Weights
+These are non-modifiable constants for Hashi's standardized typography sizes, default line heights, and default weights.
 
-### Weight Specs
-| Type    | Weight |
-|---------|--------|
-| Bold    | 700    |
-| Regular | 400    |
-| Light   | 300    |
+### Sizes with default weights
+| Type       | Size (px) | Line Height (1.5) | Default Weight |
+|------------|-----------|-------------------|----------------|
+| Supertitle | 42        | 63                | 700            |
+| Title      | 36        | 54                | 700            |
+| Subtitle   | 24        | 30                | 700            |
+| Body       | 16        | 24                | 400            |
+| Mono       | 16        | 24                | 400            |
+| Small      | 12        | 18                | 300            |
