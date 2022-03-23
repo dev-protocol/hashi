@@ -21,7 +21,7 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en" hashi-theme="dark">
+<html lang="en" hashi-theme="light">
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
@@ -37,16 +37,36 @@
 <body>
 
 <main class="content-wrap">
-    <section id="typography">
-        <h1 class="family-supertitle">Supertitle [42/60]</h1>
-        <h2 class="family-title">Title [36/40]</h2>
-        <h3 class="family-subtitle">Subtitle [24/30]</h3>
-        <p class="family-body size-body weight-body line-height-body">Body [16/24]</p>
-        <p class="family-mono"><code>Mono [16/24]</code></p>
-        <small class="family-small size-small weight-small line-height-small">Small [14/20]</small>
+    <section id="typography" class="adjust-left @md:adjust-center @lg:adjust-right">
+        <h1 class="supertitle">Supertitle [42/63]</h1>
+        <h2 class="title">Title [36/54]</h2>
+        <h3 class="subtitle">Subtitle [24/36]</h3>
+        <p class="body">Body [16/24]</p>
+        <p class="mono"><code>Mono [16/24]</code></p>
+        <small class="small">Small [14/18]</small>
     </section>
 
     <section id="colors">
+        <div class="color-module">
+            <div class="bg-primary-200"><span>Primary 200</span></div>
+            <div class="bg-primary-300"><span>Primary 300</span></div>
+            <div class="bg-primary-400"><span>Primary 400</span></div>
+            <div class="bg-primary-600"><span>Primary 600</span></div>
+            <div class="bg-primary-alpha-200"><span>Primary Alpha 200</span></div>
+            <div class="bg-primary-alpha-300"><span>Primary Alpha 300</span></div>
+            <div class="bg-primary-alpha-400"><span>Primary Alpha 400</span></div>
+            <div class="bg-primary-alpha-600"><span>Primary Alpha 600</span></div>
+        </div>
+        <div class="color-module">
+            <div class="bg-accent-200"><span>Accent 200</span></div>
+            <div class="bg-accent-300"><span>Accent 300</span></div>
+            <div class="bg-accent-400"><span>Accent 400</span></div>
+            <div class="bg-accent-600"><span>Accent 600</span></div>
+            <div class="bg-accent-alpha-200"><span>Accent Alpha 200</span></div>
+            <div class="bg-accent-alpha-300"><span>Accent Alpha 300</span></div>
+            <div class="bg-accent-alpha-400"><span>Accent Alpha 400</span></div>
+            <div class="bg-accent-alpha-600"><span>Accent Alpha 600</span></div>
+        </div>
         <div class="color-module">
             <div class="bg-surface-200"><span>Surface 200</span></div>
             <div class="bg-surface-300"><span>Surface 300</span></div>
@@ -56,56 +76,6 @@
             <div class="bg-surface-alpha-300"><span>Surface Alpha 300</span></div>
             <div class="bg-surface-alpha-400"><span>Surface Alpha 400</span></div>
             <div class="bg-surface-alpha-600"><span>Surface Alpha 600</span></div>
-        </div>
-        <div class="color-module">
-            <div class="bg-neutral-200"><span>Neutral 200</span></div>
-            <div class="bg-neutral-300"><span>Neutral 300</span></div>
-            <div class="bg-neutral-400"><span>Neutral 400</span></div>
-            <div class="bg-neutral-600"><span>Neutral 600</span></div>
-            <div class="bg-neutral-alpha-200"><span>Neutral Alpha 200</span></div>
-            <div class="bg-neutral-alpha-300"><span>Neutral Alpha 300</span></div>
-            <div class="bg-neutral-alpha-400"><span>Neutral Alpha 400</span></div>
-            <div class="bg-neutral-alpha-600"><span>Neutral Alpha 600</span></div>
-        </div>
-        <div class="color-module">
-            <div class="bg-scarlet-200"><span>Scarlet 200</span></div>
-            <div class="bg-scarlet-300"><span>Scarlet 300</span></div>
-            <div class="bg-scarlet-400"><span>Scarlet 400</span></div>
-            <div class="bg-scarlet-600"><span>Scarlet 600</span></div>
-            <div class="bg-scarlet-alpha-200"><span>Scarlet Alpha 200</span></div>
-            <div class="bg-scarlet-alpha-300"><span>Scarlet Alpha 300</span></div>
-            <div class="bg-scarlet-alpha-400"><span>Scarlet Alpha 400</span></div>
-            <div class="bg-scarlet-alpha-600"><span>Scarlet Alpha 600</span></div>
-        </div>
-        <div class="color-module">
-            <div class="bg-plox-200"><span>Plox 200</span></div>
-            <div class="bg-plox-300"><span>Plox 300</span></div>
-            <div class="bg-plox-400"><span>Plox 400</span></div>
-            <div class="bg-plox-600"><span>Plox 600</span></div>
-            <div class="bg-plox-alpha-200"><span>Plox Alpha 200</span></div>
-            <div class="bg-plox-alpha-300"><span>Plox Alpha 300</span></div>
-            <div class="bg-plox-alpha-400"><span>Plox Alpha 400</span></div>
-            <div class="bg-plox-alpha-600"><span>Plox Alpha 600</span></div>
-        </div>
-        <div class="color-module">
-            <div class="bg-native-blue-200"><span>Native Blue 200</span></div>
-            <div class="bg-native-blue-300"><span>Native Blue 300</span></div>
-            <div class="bg-native-blue-400"><span>Native Blue 400</span></div>
-            <div class="bg-native-blue-600"><span>Native Blue 600</span></div>
-            <div class="bg-native-blue-alpha-200"><span>Native Blue Alpha 200</span></div>
-            <div class="bg-native-blue-alpha-300"><span>Native Blue Alpha 300</span></div>
-            <div class="bg-native-blue-alpha-400"><span>Native Blue Alpha 400</span></div>
-            <div class="bg-native-blue-alpha-600"><span>Native Blue Alpha 600</span></div>
-        </div>
-        <div class="color-module">
-            <div class="bg-bright-cyan-200"><span>Bright Cyan 200</span></div>
-            <div class="bg-bright-cyan-300"><span>Bright Cyan 300</span></div>
-            <div class="bg-bright-cyan-400"><span>Bright Cyan 400</span></div>
-            <div class="bg-bright-cyan-600"><span>Bright Cyan 600</span></div>
-            <div class="bg-bright-cyan-alpha-200"><span>Bright Cyan Alpha 200</span></div>
-            <div class="bg-bright-cyan-alpha-300"><span>Bright Cyan Alpha 300</span></div>
-            <div class="bg-bright-cyan-alpha-400"><span>Bright Cyan Alpha 400</span></div>
-            <div class="bg-bright-cyan-alpha-600"><span>Bright Cyan Alpha 600</span></div>
         </div>
         <div class="color-module">
             <div class="bg-success-200"><span>Success 200</span></div>
