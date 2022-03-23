@@ -21,6 +21,8 @@
 ///
 
 @use 'node_modules/@matteusan/sentro';
+@use 'sass:string';
+@use 'sass:meta';
 @use '../tools';
 
 @function check($query) {
@@ -32,19 +34,24 @@
 }
 
 @function get-raw($query) {
+  @if check($query) and meta.type-of(sentro.token-get-raw($query)) == string {
+    $_token: sentro.token-get-raw($query);
+    @if string.index($_token, 'var(--hs-theme-') == 1 {
+      $_extracted: string.slice($_token, 16, (string.length($_token) - 1));
+      @return sentro.token-get-raw($_extracted);
+    }
+  }
   @return sentro.token-get-raw($query);
 }
 
 @function switch($query, $fallback: ()) {
   @if tools.is-empty($fallback) {
     @return sentro.token-switch($query);
-  } @else {
-    @if sentro.token-check($query) {
-      @return sentro.token-get($query);
-    } @else {
-      @return $query;
-    }
   }
+  @if sentro.token-check($query) {
+    @return sentro.token-get($query);
+  }
+  @return $query;
 }
 
 @mixin config($map: (), $tokens...) {

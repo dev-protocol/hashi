@@ -30,7 +30,7 @@
   $mono: map.get($families, 'mono');
   $small: map.get($families, 'small');
   
-  @if $body == var(--hs-theme-family-body) or $small == var(--hs-theme-family-small) {
+  @if $body == ('Whyte', sans-serif) or $small == ('Whyte', sans-serif) {
     @font-face {
       font-family: 'Whyte';
       src: url('https://devstaticasset.azureedge.net/font/ABCWhyte-Regular.woff2') format('woff2');
@@ -49,13 +49,13 @@
     }
   }
   
-  @if $supertitle == var(--hs-theme-family-supertitle)
-    or $title == var(--hs-theme-family-title)
-    or $subtitle == var(--hs-theme-family-subtitle) {
+  @if $supertitle == ('Syne', sans-serif)
+    or $title == ('Syne', sans-serif)
+    or $subtitle == ('Syne', sans-serif) {
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
   }
   
-  @if $mono == var(--hs-theme-family-mono) {
+  @if $mono == ('IBM Plex Mono', sans-serif) {
     @font-face {
       font-family: 'IBM Plex Mono';
       font-style: normal;

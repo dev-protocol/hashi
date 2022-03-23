@@ -20,7 +20,15 @@
 //  SOFTWARE.
 ///
 
-@forward 'layout-utils';
-@forward 'color-utils';
-@forward 'shape-utils';
-@forward 'typography-utils';
+@use '../hs-core';
+
+$_breakpoints: (
+  'small': 'sm',
+  'medium': 'md',
+  'large': 'lg',
+  'xlarge': 'xl',
+);
+
+@mixin shape-utils() {
+  //
+}

@@ -27,30 +27,15 @@ $_validation: if($vue-mode, false, true);
 @use 'hs-core/tokens';
 
 @use 'sass:map';
+@use 'sass:list';
 @use 'sass:string';
 
 @use 'init-font-pack' as font-pack;
 
-$primary: 'primary' !default;
-$dark-primary: 'primary-dark' !default;
-$accent: 'neutral' !default;
-$dark-accent: 'neutral-dark' !default;
-$surface: 'surface-200' !default;
-$surface-ink: 'surface-ink' !default;
-$dark-surface: 'surface-dark-400' !default;
-$dark-surface-ink: 'surface-dark-ink' !default;
-
-$family: () !default;
-$_init-family: (
-  'supertitle': 'var(--hs-theme-family-supertitle)',
-  'title': 'var(--hs-theme-family-title)',
-  'subtitle': 'var(--hs-theme-family-subtitle)',
-  'body': 'var(--hs-theme-family-body)',
-  'mono': 'var(--hs-theme-family-mono)',
-  'small': 'var(--hs-theme-family-small)',
-);
-$_families: map.merge($_init-family, $family);
-
+$background: 'surface-200' !default;
+$dark-background: 'surface-400' !default;
+$background-ink: 'surface-ink' !default;
+$dark-background-ink: $background-ink !default;
 $breakpoints: () !default;
 $_init-breakpoints: (
   'small': 320px,
@@ -59,7 +44,33 @@ $_init-breakpoints: (
   'xlarge': 1280px,
 );
 
-@mixin init {
+@mixin init(
+  $primary: 'dp-black',
+  $primary-dark: 'dp-blue-grey',
+  $accent: 'dp-black',
+  $accent-dark: 'dp-white',
+  $surface: 'dp-white',
+  $surface-dark: 'dp-blue-grey',
+  $radius-small: 'radius-xs',
+  $radius-medium: 'radius-sm',
+  $radius-large: 'radius-md',
+  $family-supertitle: ('Syne', sans-serif, 700),
+  $family-title: ('Syne', sans-serif, 700),
+  $family-subtitle: ('Syne', sans-serif, 700),
+  $family-body: ('Whyte', sans-serif, 400),
+  $family-mono: ('IBM Plex Mono', monospace, 400),
+  $family-small: ('Whyte', sans-serif, 300),
+) {
+  
+  $_families: (
+    'supertitle': _get-family($family-supertitle),
+    'title': _get-family($family-title),
+    'subtitle': _get-family($family-subtitle),
+    'body': _get-family($family-body),
+    'mono': _get-family($family-mono),
+    'small': _get-family($family-small)
+  );
+  
   :root {
     @include hs-core.token-config(
       $map: tokens.$hs-tokens,
@@ -77,9 +88,32 @@ $_init-breakpoints: (
         600: 'var(--hs-theme-#{$accent}-600)',
         'ink': 'var(--hs-theme-#{$accent}-ink)',
       ),
+      $surface: (
+        200: 'var(--hs-theme-#{$surface}-200)',
+        300: 'var(--hs-theme-#{$surface}-300)',
+        400: 'var(--hs-theme-#{$surface}-400)',
+        600: 'var(--hs-theme-#{$surface}-600)',
+        'ink': 'var(--hs-theme-#{$surface}-ink)',
+      ),
       $background: (
-        'default': 'var(--hs-theme-#{$surface})',
-        'ink': 'var(--hs-theme-#{$surface-ink})'
+        'default': 'var(--hs-theme-#{$background})',
+        'ink': 'var(--hs-theme-#{$background-ink})'
+      ),
+      $family: (
+        'supertitle': _get-family($family-supertitle),
+        'title': _get-family($family-title),
+        'subtitle': _get-family($family-subtitle),
+        'body': _get-family($family-body),
+        'mono': _get-family($family-mono),
+        'small': _get-family($family-small)
+      ),
+      $weight: (
+        'supertitle': _get-weight($family-supertitle),
+        'title': _get-weight($family-title),
+        'subtitle': _get-weight($family-subtitle),
+        'body': _get-weight($family-body),
+        'mono': _get-weight($family-mono),
+        'small': _get-weight($family-small)
       ),
     );
   }
@@ -96,31 +130,13 @@ $_init-breakpoints: (
     margin: 0;
     padding: 0;
     color: inherit;
-    font-family: hs-core.token-get('family-body');
     box-sizing: inherit;
+    border: 1px solid rgba(0 0 0 / 0);
   }
   
-  h1 {
-    font-family: hs-core.token-get('family-supertitle');
-    font-size: hs-core.token-get('size-supertitle');
-    font-weight: hs-core.token-get('weight-supertitle');
-    line-height: hs-core.token-get('line-height-supertitle');
-  }
-  
-  h2 {
-    font-family: hs-core.token-get('family-title');
-    font-size: hs-core.token-get('size-title');
-    font-weight: hs-core.token-get('weight-title');
-    line-height: hs-core.token-get('line-height-title');
-  }
-  
-  h3 {
-    font-family: hs-core.token-get('family-subtitle');
-    font-size: hs-core.token-get('size-subtitle');
-    font-weight: hs-core.token-get('weight-subtitle');
-    line-height: hs-core.token-get('line-height-subtitle');
-  }
-  
+  h1,
+  h2,
+  h3,
   h4,
   h5,
   h6 {
@@ -164,6 +180,7 @@ $_init-breakpoints: (
     font-size: 100%;
     background: hs-core.token-get('background');
     color: hs-core.token-get('background-ink');
+    font-family: hs-core.token-get('family-body');
     box-sizing: border-box;
     color-scheme: light;
     
@@ -173,26 +190,43 @@ $_init-breakpoints: (
       color-scheme: dark;
       @include hs-core.token-config(
         $primary: (
-          200: 'var(--hs-theme-#{$dark-primary}-200)',
-          300: 'var(--hs-theme-#{$dark-primary}-300)',
-          400: 'var(--hs-theme-#{$dark-primary}-400)',
-          600: 'var(--hs-theme-#{$dark-primary}-600)',
-          'ink': 'var(--hs-theme-#{$dark-primary}-ink)',
+          200: 'var(--hs-theme-#{$primary-dark}-200)',
+          300: 'var(--hs-theme-#{$primary-dark}-300)',
+          400: 'var(--hs-theme-#{$primary-dark}-400)',
+          600: 'var(--hs-theme-#{$primary-dark}-600)',
+          'ink': 'var(--hs-theme-#{$primary-dark}-ink)',
         ),
         $accent: (
-          200: 'var(--hs-theme-#{$dark-accent}-200)',
-          300: 'var(--hs-theme-#{$dark-accent}-300)',
-          400: 'var(--hs-theme-#{$dark-accent}-400)',
-          600: 'var(--hs-theme-#{$dark-accent}-600)',
-          'ink': 'var(--hs-theme-#{$dark-accent}-ink)',
+          200: 'var(--hs-theme-#{$accent-dark}-200)',
+          300: 'var(--hs-theme-#{$accent-dark}-300)',
+          400: 'var(--hs-theme-#{$accent-dark}-400)',
+          600: 'var(--hs-theme-#{$accent-dark}-600)',
+          'ink': 'var(--hs-theme-#{$accent-dark}-ink)',
+        ),
+        $surface: (
+          200: 'var(--hs-theme-#{$surface-dark}-200)',
+          300: 'var(--hs-theme-#{$surface-dark}-300)',
+          400: 'var(--hs-theme-#{$surface-dark}-400)',
+          600: 'var(--hs-theme-#{$surface-dark}-600)',
+          'ink': 'var(--hs-theme-#{$surface-dark}-ink)',
         ),
         $background: (
-          'default': 'var(--hs-theme-#{$dark-surface})',
-          'ink': 'var(--hs-theme-#{$dark-surface-ink})'
+          'default': 'var(--hs-theme-#{$dark-background})',
+          'ink': 'var(--hs-theme-#{$dark-background-ink})'
         ),
       );
     }
   }
   
   @content;
+}
+
+@function _get-family($query) {
+  $family: list.nth($query, 1);
+  $type: list.nth($query, 2);
+  @return ('#{$family}', $type);
+}
+
+@function _get-weight($query) {
+  @return list.nth($query, 3);
 }

@@ -25,33 +25,26 @@
 
 $hs-tokens: (
   // ===== COLOR ===== //
-  'surface': (
-    '200': #f1f1f1,
-    '300': #d7d7d7,
-    '400': #c4c4c4,
-    '600': #9a9a9a,
-    'ink': #000000,
+  'dp-white': (
+    '200': #ffffff,
+    '300': #f1f1f1,
+    '400': #d7d7d7,
+    '600': #c4c4c4,
+    'ink': #040b10,
   ),
-  'surface-dark': (
-    '200': #3a4158,
-    '300': #222b3d,
-    '400': #111827,
-    '600': #040b10,
-    'ink': #fff
-  ),
-  'neutral': (
+  'dp-black': (
     '200': #383838,
     '300': #272727,
     '400': #171717,
     '600': #000000,
     'ink': #ffffff,
   ),
-  'neutral-dark': (
-    '200': #ffffff,
-    '300': #f1f1f1,
-    '400': #d7d7d7,
-    '600': #bfbfbf,
-    'ink': #000000,
+  'dp-blue-grey': (
+    '200': #3a4158,
+    '300': #222b3d,
+    '400': #111827,
+    '600': #040b10,
+    'ink': #fff
   ),
   // Disabled is a special token set and does not follow the design specs' 600-200 color naming scheme.
   'disabled': (
@@ -114,14 +107,6 @@ $hs-tokens: (
     'pill': 0.8rem,
   ),
   // ===== TYPOGRAPHY ===== //
-  'family': (
-    'supertitle': ('Syne', sans-serif),
-    'title': ('Syne', sans-serif),
-    'subtitle': ('Syne', sans-serif),
-    'body': ('Whyte', sans-serif),
-    'mono': ('IBM Plex Mono', monospace),
-    'small': ('Whyte', sans-serif),
-  ),
   'size': (
     'supertitle': tools.to-rem(42px),
     'title': tools.to-rem(36px),
@@ -131,19 +116,19 @@ $hs-tokens: (
     'small': tools.to-rem(14px),
   ),
   'weight': (
-    'supertitle': 700,
-    'title': 700,
-    'subtitle': 700,
-    'body': 400,
-    'mono': 400,
-    'small': 400,
+    'bold': 700,
+    'normal': 400,
+    'light': 300
   ),
   'line-height': (
-    'supertitle': tools.to-rem(60px),
-    'title': tools.to-rem(40px),
-    'subtitle': tools.to-rem(30px),
+    'supertitle': tools.to-rem(63px),
+    'title': tools.to-rem(54px),
+    'subtitle': tools.to-rem(36px),
     'body': tools.to-rem(24px),
     'mono': tools.to-rem(24px),
-    'small': tools.to-rem(20px),
+    'small': tools.to-rem(18px),
+    'broad': 1.75,
+    'normal': 1.5,
+    'condensed': 1.25
   )
 );
