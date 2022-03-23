@@ -26,6 +26,6 @@ modifications. Henceforth, it will only support default states, and media querie
 ## Utility Classes Documentation
 - [Syntax](syntax.md)
 - Layout Utils
-- Color Utils
-- Shape Utils
-- Typography Utils
+- [Color Utils](color-utils.md)
+- [Shape Utils](shape-utils.md)
+- [Typography Utils](typography-utils.md)
