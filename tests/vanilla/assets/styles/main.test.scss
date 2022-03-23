@@ -20,10 +20,8 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@devprotocol/hashi' with (
-  $accent: 'plox'
-);
-// @use 'node_modules/@devprotocol/hashi/hs-core';
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-button';
 // @use '../../../../src/hs-button' with ($fill: 'native-blue', $ink: 'native-blue-ink');
 // @use '../../../../src/hs-button-group';
 // @use '../../../../src/hs-card';
@@ -65,7 +63,7 @@
     }
   }
 
-  // @include hs-button.render();
+  @include hs-button.render();
   // @include hs-button-group.render();
   // @include hs-card.render();
   // @include hs-link.render();
