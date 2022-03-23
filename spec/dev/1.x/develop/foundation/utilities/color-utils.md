@@ -8,36 +8,36 @@ Single-purpose, consistent, and predictable classes for styling/modifying an ele
 ## Text Colors
 **Syntax:** `text-[color]`
 ```scss
-.text-primary { ... }
-.text-accent { ... }
-.text-surface { ... }
-.text-danger { ... }
-.text-warning { ... }
-.text-success { ... }
+.text-primary-[200, 300, 400, 600] { ... }
+.text-accent-[200, 300, 400, 600] { ... }
+.text-surface-[200, 300, 400, 600] { ... }
+.text-danger-[200, 300, 400, 600] { ... }
+.text-warning-[200, 300, 400, 600] { ... }
+.text-success-[200, 300, 400, 600] { ... }
 ```
 ## Background Colors
 **Syntax:** `bg-[color]`
 ```scss
-.bg-primary { ... }
-.bg-accent { ... }
-.bg-surface { ... }
-.bg-danger { ... }
-.bg-warning { ... }
-.bg-success { ... }
-.bg-primary-alpha { ... }
-.bg-accent-alpha { ... }
-.bg-surface-alpha { ... }
-.bg-danger-alpha { ... }
-.bg-warning-alpha { ... }
-.bg-success-alpha { ... }
+.bg-primary-[200, 300, 400, 600] { ... }
+.bg-accent-[200, 300, 400, 600] { ... }
+.bg-surface-[200, 300, 400, 600] { ... }
+.bg-danger-[200, 300, 400, 600] { ... }
+.bg-warning-[200, 300, 400, 600] { ... }
+.bg-success-[200, 300, 400, 600] { ... }
+.bg-primary-alpha-[200, 300, 400, 600] { ... }
+.bg-accent-alpha-[200, 300, 400, 600] { ... }
+.bg-surface-alpha-[200, 300, 400, 600] { ... }
+.bg-danger-alpha-[200, 300, 400, 600] { ... }
+.bg-success-alpha-[200, 300, 400, 600] { ... }
+.bg-warning-alpha-[200, 300, 400, 600] { ... }
 ```
 ## Border Colors
 **Syntax:** `border-[color]`
 ```scss
-.border-primary { ... }
-.border-accent { ... }
-.border-surface { ... }
-.border-danger { ... }
-.border-warning { ... }
-.border-success { ... }
+.border-primary-[200, 300, 400, 600] { ... }
+.border-accent-[200, 300, 400, 600] { ... }
+.border-surface-[200, 300, 400, 600] { ... }
+.border-danger-[200, 300, 400, 600] { ... }
+.border-warning-[200, 300, 400, 600] { ... }
+.border-success-[200, 300, 400, 600] { ... }
 ```
