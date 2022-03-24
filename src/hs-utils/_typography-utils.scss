@@ -136,13 +136,13 @@ $_alignments: (
   }
   
   @each $preset in $_alignments {
-    .adjust-#{$preset} {
+    .text-align-#{$preset} {
       text-align: string.unquote($preset);
     }
   
     @each $breakpoint, $shorthand in $_breakpoints {
       @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:adjust-#{$preset} {
+        .\@#{$shorthand}\:text-align-#{$preset} {
           text-align: string.unquote($preset);
         }
       }
