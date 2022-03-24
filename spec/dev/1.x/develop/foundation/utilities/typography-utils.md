@@ -54,10 +54,10 @@ These contain the preset's set family, size, weight, and line height
 .lh-condensed { ... }
 ```
 ## Text Alignment
-**Syntax:** `adjust-[text-alignment]`
+**Syntax:** `text-align-[text-alignment]`
 ```scss
-.adjust-left { ... }
-.adjust-center { ... }
-.adjust-right { ... }
-.adjust-justify { ... }
+.text-align-left { ... }
+.text-align-center { ... }
+.text-align-right { ... }
+.text-align-justify { ... }
 ```
