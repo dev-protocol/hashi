@@ -46,8 +46,8 @@ The initializer has parameters that let you configure the color, shape, and typo
 |----------------------|---------------------------------------------------------------------------------------------------|-------------------------------------|
 | `$primary`           | Sets the color for the emphasized surfaces in an interface.                                       | `dp-black`                          |
 | `$primary-dark`      | Sets the color for the emphasized surfaces in a dark interface.                                   | `dp-blue-grey`                      |
-| `$accent`            | Sets the color for very emphasized, interact-able, and eye-catching portions in an interface.     | `dp-black`                          |
-| `$accent-dark`       | Sets the color for very emphasized, interact-able, and eye-catching portions in a dark interface. | `dp-white`                          |
+| `$accent`            | Sets the color for very emphasized, interact-able, and eye-catching portions in an interface.     | `native-blue`                       |
+| `$accent-dark`       | Sets the color for very emphasized, interact-able, and eye-catching portions in a dark interface. | `native-blue`                       |
 | `$surface`           | Sets the color for the non-emphasized surfaces in an interface. The neutral of the bunch.         | `dp-white`                          |
 | `$surface-dark`      | Sets the color for the non-emphasized surfaces in a dark interface. The neutral of the bunch.     | `dp-blue-grey`                      |
 | `$surface-dark`      | Sets the color for the non-emphasized surfaces in a dark interface. The neutral of the bunch.     | `dp-blue-grey`                      |

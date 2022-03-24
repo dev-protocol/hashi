@@ -47,8 +47,8 @@ $_init-breakpoints: (
 @mixin init(
   $primary: 'dp-black',
   $primary-dark: 'dp-blue-grey',
-  $accent: 'dp-black',
-  $accent-dark: 'dp-white',
+  $accent: 'native-blue',
+  $accent-dark: 'native-blue',
   $surface: 'dp-white',
   $surface-dark: 'dp-blue-grey',
   $radius-small: 'radius-xs',
