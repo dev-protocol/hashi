@@ -21,7 +21,7 @@
 ///
 
 @use 'node_modules/@devprotocol/hashi';
-// @use 'node_modules/@devprotocol/hashi/hs-button';
+@use 'node_modules/@devprotocol/hashi/hs-button';
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
 @include hashi.init() {
@@ -61,7 +61,7 @@
   @include hs-utils.shape-utils();
   @include hs-utils.typography-utils();
 
-  // @include hs-button.render();
+  @include hs-button.render();
   // @include hs-button-group.render();
   // @include hs-card.render();
   // @include hs-link.render();
