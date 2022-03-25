@@ -20,7 +20,6 @@
 //  SOFTWARE.
 ///
 
-@use 'token-support' as support;
 @use '../tools';
 
 $hs-tokens: (
@@ -55,19 +54,19 @@ $hs-tokens: (
     'default': rgba(255, 255, 255, .12),
     'ink': rgba(255, 255, 255, .37),
   ),
-  'scarlet': support.color-split(#ff3815),
+  'scarlet': tools.color-split(#ff3815),
   'scarlet-ink': #fff,
-  'plox': support.color-split(#d500e6),
+  'plox': tools.color-split(#d500e6),
   'plox-ink': #fff,
-  'native-blue': support.color-split(#5b8bf5),
+  'native-blue': tools.color-split(#5b8bf5),
   'native-blue-ink': #fff,
-  'bright-cyan': support.color-split(#00d0fd),
+  'bright-cyan': tools.color-split(#00d0fd),
   'bright-cyan-ink': #000,
-  'success': support.color-split(#30a83d),
+  'success': tools.color-split(#30a83d),
   'success-ink': #fff,
-  'warning': support.color-split(#fdad00),
+  'warning': tools.color-split(#fdad00),
   'warning-ink': #000,
-  'danger': support.color-split(#c92020),
+  'danger': tools.color-split(#c92020),
   'danger-ink': #fff,
   // ===== SHAPE ===== //
   'radius': (
