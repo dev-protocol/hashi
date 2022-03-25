@@ -21,9 +21,12 @@
 ///
 
 @use 'node_modules/@matteusan/sentro';
+@use 'sass:map';
 @use 'sass:string';
 @use 'sass:meta';
 @use '../tools';
+
+$_hs-extended-tokens: ();
 
 @function check($query) {
   @return sentro.token-check($query);
@@ -51,9 +54,18 @@
   @if sentro.token-check($query) {
     @return sentro.token-get($query);
   }
+  @if not sentro.token-check($query) and not tools.is-empty($fallback) {
+    @return $fallback;
+  }
   @return $query;
 }
 
 @mixin config($map: (), $tokens...) {
-  @include sentro.token-config($map: $map, $tokens...);
+  @include sentro.token-config($map: map.merge($map, $_hs-extended-tokens), $tokens...);
+}
+
+@mixin extend($map) {
+  @if not tools.is-empty($map) {
+    $_hs-extended-tokens: $map !global;
+  }
 }
