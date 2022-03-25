@@ -20,11 +20,12 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@devprotocol/hashi';
-@use 'node_modules/@devprotocol/hashi/hs-button';
+@use 'node_modules/@devprotocol/hashi' with ($accent: 'plox', $accent-dark: 'plox');
+@use 'node_modules/@devprotocol/hashi/hs-button' with ($tone: 300);
+@use 'node_modules/@devprotocol/hashi/hs-button-group' with ($tone: 300);
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
-@include hashi.init() {
+@include hashi.init {
   .content-wrap {
     width: calc(100% - 30px);
     max-width: 1077px;
@@ -56,13 +57,14 @@
     }
   }
   
+  @include hs-button.render();
+  @include hs-button-group.render();
+  
   @include hs-utils.layout-utils();
   @include hs-utils.color-utils();
   @include hs-utils.shape-utils();
   @include hs-utils.typography-utils();
-
-  @include hs-button.render();
-  // @include hs-button-group.render();
+  
   // @include hs-card.render();
   // @include hs-link.render();
   // @include hs-profile.render();
