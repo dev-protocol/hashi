@@ -31,14 +31,14 @@ $border: $fill !default;
 $tone: 400 !default;
 
 $radius: 'xs' !default;
-$padding: (0.5rem 0.7rem) !default;
+$padding: (0.4rem 0.6rem) !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
-$weight: 'body' !default;
-$line-height: 'body' !default;
+$weight: 'bold' !default;
+$line-height: 'normal' !default;
 
-$gap: 'xs' !default;
+$gap: 0 !default;
 
 $_states: (
   'success',
@@ -48,20 +48,60 @@ $_states: (
 
 @mixin render() {
   @include button-base.init($gap) {
-    background: hs-core.key-create('button-fill', hs-core.token-switch('#{$fill}-#{$tone}', $fill));
-    color: hs-core.key-create('button-ink', hs-core.token-switch($ink));
-    border: 1px solid hs-core.key-create('button-border', hs-core.token-switch('#{$border}-#{$tone}', $border));
+    @include hs-core.color-apply('button', (
+      fill: $fill,
+      ink: $ink,
+      border: $border
+    ), 'text', true, $tone);
     
-    padding: hs-core.key-create('button-padding', hs-core.token-switch($padding));
-    border-radius: hs-core.key-create('button-radius', hs-core.token-switch($radius));
+    padding: hs-core.key-create('button-padding', hs-core.token-switch('padding-#{$padding}', $padding));
+    border-radius: hs-core.key-create('button-radius', hs-core.token-switch('radius-#{$radius}', $radius));
     
     font-family: hs-core.key-create('button-family', hs-core.token-switch('family-#{$family}', $family));
     font-size: hs-core.key-create('button-size', hs-core.token-switch('size-#{$size}', $size));
     font-weight: hs-core.key-create('button-weight', hs-core.token-switch('weight-#{$weight}', $weight));
     line-height: hs-core.key-create('button-line-height', hs-core.token-switch('line-height-#{$line-height}', $line-height));
+  
+    @each $state in $_states {
+      &.is-#{$state} {
+        @include _state-generator($state, 'text');
+      }
+    }
     
     &.is-outlined {
-      //
+      @include hs-core.color-bind('button', (
+        fill: $fill,
+        ink: $ink,
+        border: $border
+      ), 'outlined', true, $tone);
+      
+      @each $state in $_states {
+        &.is-#{$state} {
+          @include _state-generator($state, 'outlined');
+        }
+      }
+    }
+  
+    &.is-filled {
+      @include hs-core.color-bind('button', (
+        fill: $fill,
+        ink: $ink,
+        border: $border
+      ), 'filled', true, $tone);
+  
+      @each $state in $_states {
+        &.is-#{$state} {
+          @include _state-generator($state, 'filled');
+        }
+      }
     }
   }
+}
+
+@mixin _state-generator($state, $style) {
+  @include hs-core.color-bind('button', (
+    fill: $state,
+    ink: '#{$state}-ink',
+    border: $state
+  ), $style, true, $tone);
 }

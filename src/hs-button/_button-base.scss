@@ -53,23 +53,32 @@
     }
   
     .hs-button__icon {
+      display: flex;
+      align-items: center;
       color: hs-core.key-create('button-icon-ink', inherit);
       font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+      /* @fallback */
+      width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+      height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
     
       > * {
         color: hs-core.key-create('button-icon-ink', inherit);
         font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+        /* @fallback */
+        width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+        height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
       }
     }
   
     .hs-button__label {
       padding: 0 0.3rem;
-      color: hs-core.key-create('button-label-ink', hs-core.key-get('button-ink'));
+      color: hs-core.key-create('button-label-ink', inherit);
       font-family: inherit;
       font-size: hs-core.key-create('button-label-size', inherit);
       font-weight: inherit;
       line-height: inherit;
       text-align: center;
+      letter-spacing: 0.02rem;
     }
   }
   
