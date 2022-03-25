@@ -61,7 +61,7 @@ $_flows: (
 $_wraps: (
   'normal': 'wrap',
   'none': 'nowrap',
-  'reverse': 'reverse'
+  'reverse': 'wrap-reverse'
 );
 
 $_positions: (
@@ -71,6 +71,14 @@ $_positions: (
   'between': 'space-between',
   'around': 'space-around',
   'evenly': 'space-evenly'
+);
+
+$_alignments: (
+  'start': 'start',
+  'center': 'center',
+  'end': 'end',
+  'base': 'baseline',
+  'stretch': 'stretch',
 );
 
 @mixin layout-utils() {
@@ -118,27 +126,27 @@ $_positions: (
   
   @each $position, $position-val in $_positions {
     .justify-#{$position} {
-      justify-content: string.unquote($position);
+      justify-content: string.unquote($position-val);
     }
     
     @each $breakpoint, $shorthand in $_breakpoints {
       @include hs-core.breakpoint-create($breakpoint) {
         .\@#{$shorthand}\:justify-#{$position} {
-          justify-content: string.unquote($position);
+          justify-content: string.unquote($position-val);
         }
       }
     }
   }
   
-  @each $position, $position-val in $_positions {
-    .items-#{$position} {
-      align-items: string.unquote($position-val);
+  @each $alignment, $alignment-val in $_alignments {
+    .items-#{$alignment} {
+      align-items: string.unquote($alignment-val);
     }
     
     @each $breakpoint, $shorthand in $_breakpoints {
       @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:items-#{$position} {
-          align-items: string.unquote($position-val);
+        .\@#{$shorthand}\:items-#{$alignment} {
+          align-items: string.unquote($alignment-val);
         }
       }
     }
