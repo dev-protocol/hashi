@@ -84,19 +84,19 @@ $_required-props: ('fill', 'ink', 'border');
   @if $stateful == true {
     &:hover {
       @include theme.key-bind('#{$component}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
-      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-#{$tone}'));
       @include theme.key-bind('#{$component}-border', rgba(theme.token-get-raw('#{$fill}-400'), 2%));
     }
     
     &:focus {
       @include theme.key-bind('#{$component}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
-      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-#{$tone}'));
       @include theme.key-bind('#{$component}-border', rgba(theme.token-get-raw('#{$fill}-400'), 2%));
     }
     
     &:active {
       @include theme.key-bind('#{$component}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 33%));
-      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-#{$tone}'));
       @include theme.key-bind('#{$component}-border', rgba(theme.token-get-raw('#{$fill}-400'), 3.3%));
     }
     
@@ -134,14 +134,14 @@ $_required-props: ('fill', 'ink', 'border');
   @if $stateful == true {
     &:focus {
       @include theme.key-bind('#{$component}-fill', rgba(theme.token-get-raw('#{$fill}-400'), 20%));
-      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-400'));
-      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-400'));
+      @include theme.key-bind('#{$component}-ink', theme.token-get('#{$fill}-#{$tone}'));
+      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-#{$tone}'));
     }
   
     &:hover {
-      @include theme.key-bind('#{$component}-fill', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component}-fill', theme.token-get('#{$fill}-#{$tone}'));
       @include theme.key-bind('#{$component}-ink', theme.token-get($ink));
-      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-400'));
+      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-#{$tone}'));
     }
     
     &:active {
@@ -184,15 +184,15 @@ $_required-props: ('fill', 'ink', 'border');
   
   @if $stateful == true {
     &:hover {
-      @include theme.key-bind('#{$component}-fill', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component}-fill', theme.token-get('#{$fill}-#{$tone}'));
       @include theme.key-bind('#{$component}-ink', theme.token-get($ink));
-      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-400'));
+      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-#{$tone}'));
     }
     
     &:focus {
-      @include theme.key-bind('#{$component}-fill', theme.token-get('#{$fill}-400'));
+      @include theme.key-bind('#{$component}-fill', theme.token-get('#{$fill}-#{$tone}'));
       @include theme.key-bind('#{$component}-ink', theme.token-get($ink));
-      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-400'));
+      @include theme.key-bind('#{$component}-border', theme.token-get('#{$border}-#{$tone}'));
     }
     
     &:active {
