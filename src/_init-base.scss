@@ -69,10 +69,19 @@ $_families: (
   'small': _get-family($family-small)
 );
 
+$extend-color: () !default;
+$extend-shape: () !default;
+$extend-typography: () !default;
+
+$_extensions: map.merge($extend-color, map.merge($extend-shape, $extend-typography));
+
 @mixin init {
   :root {
     @include hs-core.token-config(
-      $map: tokens.$hs-tokens,
+      $map: map.merge(
+        tokens.$hs-tokens,
+        $_extensions
+      ),
       $primary: (
         200: 'var(--hs-theme-#{$primary}-200)',
         300: 'var(--hs-theme-#{$primary}-300)',

@@ -23,7 +23,7 @@
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-blue-grey' !default;
 $accent: 'native-blue' !default;
-$accent-dark: 'native-blue' !default;
+$accent-dark: $accent !default;
 $surface: 'dp-white' !default;
 $surface-dark: 'dp-blue-grey' !default;
 $radius-small: 'radius-xs' !default;
@@ -41,6 +41,10 @@ $dark-background: 'surface-400' !default;
 $background-ink: 'surface-ink' !default;
 $dark-background-ink: $background-ink !default;
 $breakpoints: () !default;
+
+$extend-color: () !default;
+$extend-shape: () !default;
+$extend-typography: () !default;
 
 @forward 'hs-core';
 @forward 'init-base' with (
@@ -64,4 +68,7 @@ $breakpoints: () !default;
   $dark-background: $dark-background,
   $dark-background-ink: $dark-background-ink,
   $breakpoints: $breakpoints,
+  $extend-color: $extend-color,
+  $extend-shape: $extend-shape,
+  $extend-typography: $extend-typography,
 );
