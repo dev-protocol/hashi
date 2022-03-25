@@ -51,11 +51,11 @@ $_hs-extended-tokens: ();
   @if tools.is-empty($fallback) {
     @return sentro.token-switch($query);
   }
-  @if sentro.token-check($query) {
-    @return sentro.token-get($query);
-  }
   @if not sentro.token-check($query) and not tools.is-empty($fallback) {
     @return $fallback;
+  }
+  @if sentro.token-check($query) {
+    @return sentro.token-get($query);
   }
   @return $query;
 }
