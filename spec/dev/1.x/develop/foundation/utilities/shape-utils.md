@@ -275,3 +275,13 @@ Single-purpose, consistent, and predictable classes for styling/modifying an ele
 .pr-lg { padding-right: var(--hs-theme-padding-lg); }
 .pr-xl { padding-right: var(--hs-theme-padding-xl); }
 ```
+
+## Elevation
+**Syntax:** `raise[-][level]`
+```scss
+.raise-none { box-shadow: none; }
+.raise-low { box-shadow: 0 3px 4px 1px rgba(#000, 15%); }
+.raise { box-shadow: 0 6px 10px 2px rgba(#000, 15%); }
+.raise-high { box-shadow: 0 10px 15px 3px rgba(#000, 15%); }
+.raise-highest { box-shadow: 0 15px 20px 4px rgba(#000, 15%); }
+```
