@@ -79,28 +79,6 @@ const sidebars = {
       'develop/getting-started/terminologies',
       'develop/getting-started/dark-mode',
     ],
-    'Core': [
-      {
-        type: 'category',
-        label: 'Tokens',
-        collapsed: true,
-        items: [
-          'develop/core/tokens/index',
-          'develop/core/tokens/color-tokens',
-          'develop/core/tokens/shape-tokens',
-          'develop/core/tokens/type-tokens'
-        ]
-      },
-      {
-        type: 'category',
-        label: 'Helpers',
-        collapsed: true,
-        items: [
-          'develop/hs-core/helpers/breakpoints',
-          'develop/hs-core/helpers/dark-mode',
-        ]
-      },
-    ],
     'Utilities': [
       'develop/utilities/index',
       'develop/utilities/syntax',
@@ -125,10 +103,17 @@ const sidebars = {
     ],
     'API': [
       'develop/apis/initializer',
-      'develop/apis/composition/index',
-      'develop/apis/composition/color',
-      'develop/apis/composition/shape',
-      'develop/apis/composition/typography',
+      {
+        type: 'category',
+        label: 'Composition',
+        collapsed: true,
+        items: [
+          'develop/apis/composition/index',
+          'develop/apis/composition/color',
+          'develop/apis/composition/shape',
+          'develop/apis/composition/typography',
+        ]
+      },
     ]
   }
 };
