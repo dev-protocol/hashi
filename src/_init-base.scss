@@ -35,7 +35,7 @@ $_validation: if($vue-mode, false, true);
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-blue-grey' !default;
 $accent: 'native-blue' !default;
-$accent-dark: 'native-blue' !default;
+$accent-dark: $accent !default;
 $surface: 'dp-white' !default;
 $surface-dark: 'dp-blue-grey' !default;
 $radius-small: 'radius-xs' !default;
