@@ -37,3 +37,5 @@ current available colors are:
 Escape hatch colors are colors that are not within the given dev protocol brand color presets. Keep in mind that **as much as possible, use the provided color presets instead of creating your own colors**, this guideline is only provided as an "escape hatch" if the provided color presets don't work.
 
 Escape hatch colors have a limit to how many you can have. Generally we only allow 1 to 2 presets to avoid complete deviation.
+
+These colors also need to follow the 200-600 tone schema documented above, and must have an AAA contrast level ink color.
