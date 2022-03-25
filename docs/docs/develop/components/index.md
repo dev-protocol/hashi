@@ -47,7 +47,6 @@ developer-friendly.
 
 ### Aren't there specificity issues?
 To solve specificity issues, these modification classes are created with the base class as the key.
-
 ```scss
 .hs-button {
   // base styles...
@@ -61,6 +60,7 @@ To solve specificity issues, these modification classes are created with the bas
 This lets us use the same class names for every component while not clashing in with other modifiers.
 
 ## Modification (SCSS)
+Modifying the global styles of a component takes advantage of Sass' modules system. Using the `with ()` keyword on import, we can access a handful of modifiable APIs for that specific component. Each component has its API documented on their respective pages.
 
 ```scss
 @use 'node_modules/@devprotocol/hashi/hs-component' with (
@@ -82,10 +82,10 @@ This lets us use the same class names for every component while not clashing in 
 ```scss
 @use 'node_modules/@devprotocol/hashi/hs-component';
 
-@include hs-component.extend('.class-name') {
+@include hs-component.extend('class-name') {
   @include hs-component.color(($preset), $style);
   @include hs-component.shape(($preset));
-  @include hs-component.type(($preset));
+  @include hs-component.typography(($preset));
 }
 ```
 

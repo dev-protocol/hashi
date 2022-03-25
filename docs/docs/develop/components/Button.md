@@ -5,7 +5,9 @@ slug: /develop/button
 displayed_sidebar: develop
 ---
 
-# HSButton Component
+# Buttons
+Buttons call the user to a specific action in the page. May it be in a form, or a hyperlink.
+
 <div class="hs-component-preview col-2">
   <div class="hs-component-preview__row">
     <button class="hs-button native-blue" role="button">
@@ -56,13 +58,13 @@ Additionally, you can use radios and checkboxes whenever you put it under the Bu
 
 ```html
 <div class="hs-button-group">
-  <label class="hs-button hs-button--filled">
-    <span class="hs-button__label">Button</span>
-    <input type="radio" name="choice" value="button">
+  <input id="dev" type="radio" name="choice" value="dev" checked>
+  <label for="dev" class="hs-button">
+    <span class="hs-button__label">DEV</span>
   </label>
-  <label class="hs-button hs-button--filled">
-    <span class="hs-button__label">Button</span>
-    <input type="checkbox" name="choice" value="button">
+  <input id="pro" type="radio" name="choice" value="pro">
+  <label for="pro" class="hs-button">
+    <span class="hs-button__label">PRO</span>
   </label>
 </div>
 ```
@@ -70,9 +72,12 @@ Additionally, you can use radios and checkboxes whenever you put it under the Bu
 ### SCSS/CSS
 
 ```scss
+@use 'path/to/@devprotocol/hashi/hashi';
 @use 'path/to/@devprotocol/hashi/hs-button';
 
-@include hs-button.render();
+@include hashi.init {
+  @include hs-button.render();
+}
 ```
 
 ## API
@@ -81,16 +86,23 @@ Additionally, you can use radios and checkboxes whenever you put it under the Bu
 
 These are used to extend and modify the styles of a component on the markup.
 
-| Class                  | Effect                                       |
-|------------------------|----------------------------------------------|
-| `.hs-button`           | Main button class.                           |
-| `.hs-button__label`    | Class for the button label.                  |
-| `.hs-button__icon`     | Class for the button icon.                   |
-| `.hs-button--outlined` | Renders the component in its outlined style. |
-| `.hs-button--filled`   | Renders the component in its filled style.   |
-| `.is-success`          | Renders the component in its success state.  |
-| `.is-warning`          | Renders the component in its warning state.  |
-| `.is-danger`           | Renders the component in its danger state.   |
+### Anatomical Classes
+| Class               | Effect                                       |
+|---------------------|----------------------------------------------|
+| `.hs-button`        | Main button class.                           |
+| `.hs-button__label` | Class for the button label.                  |
+| `.hs-button__icon`  | Class for the button icon.                   |
+
+### Variant Classes
+For information on how to use these classes, [click here](index.md#modification-html).
+
+| Class          | Effect                                       |
+|----------------|----------------------------------------------|
+| `.is-outlined` | Renders the component in its outlined style. |
+| `.is-filled`   | Renders the component in its filled style.   |
+| `.is-success`  | Renders the component in its success state.  |
+| `.is-warning`  | Renders the component in its warning state.  |
+| `.is-danger`   | Renders the component in its danger state.   |
 
 ### Custom Properties
 
@@ -131,11 +143,11 @@ These are for creating your own component themes.
 ### Hashi `render()` API
 
 Here are all the themeable properties for this component. The directions to use these properties are located in
-the [render API](../hs-core/core-apis/Render.md) page.
+the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'scarlet' !default; // Modifies the button's main fill color
-$ink: 'scarlet-ink' !default; // Modifies the button's main ink color
+$fill: 'accent' !default; // Modifies the button's main fill color
+$ink: 'accent-ink' !default; // Modifies the button's main ink color
 $border: $fill !default; // Modifies the button's main border color
 $tone: 400 !default; // Modifies the button's main color tone
 
@@ -152,6 +164,5 @@ $gap: 0 !default; // Modifies the gap between the label and the icon
 $variants: 'all' !default; // Sets what variants to render
 ```
 
-### Hashi `extend()` API
-
-Please refer to the [extend API](./hs-core/core/api/extend) page.
+### Extending styles
+If you wish to extend the component styles, the [`extend()` API](index.md#extension-scss) might come in handy.

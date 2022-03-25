@@ -1,5 +1,5 @@
 ---
-title: Tokens
+title: Color Tokens
 slug: /design/foundation/color/tokens
 displayed_sidebar: design
 ---
@@ -32,4 +32,10 @@ current available colors are:
 | Native Blue  | #5b8bf5  |
 | Bright Cyan  | #00d0fd  |
 
-As of this version, we are working on making the design system extend to other colors that we may need in the future.
+## Extending The Color Palette
+### Escape Hatch Colors
+Escape hatch colors are colors that are not within the given dev protocol brand color presets. Keep in mind that **as much as possible, use the provided color presets instead of creating your own colors**, this guideline is only provided as an "escape hatch" if the provided color presets don't work.
+
+Escape hatch colors have a limit to how many you can have. Generally we only allow 1 to 2 presets to avoid complete deviation.
+
+These colors also need to follow the 200-600 tone schema documented above, and must have an AAA contrast level ink color.

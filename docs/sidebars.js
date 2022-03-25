@@ -74,31 +74,21 @@ const sidebars = {
   },
   develop: {
     'Getting Started': [
-      'develop/getting-started/introduction',
-      'develop/getting-started/setup',
-      'develop/getting-started/concepts'],
+      'develop/getting-started/index',
+      'develop/getting-started/concepts',
+      'develop/getting-started/terminologies',
+      'develop/getting-started/dark-mode',
+    ],
     'Core': [
       {
         type: 'category',
         label: 'Tokens',
         collapsed: true,
         items: [
-          'develop/hs-core/tokens/tokens-index',
-          'develop/hs-core/tokens/color-tokens',
-          'develop/hs-core/tokens/shape-tokens',
-          'develop/hs-core/tokens/type-tokens'
-        ]
-      },
-      {
-        type: 'category',
-        label: 'Core API',
-        collapsed: true,
-        items: [
-          'develop/hs-core/core-apis/init',
-          'develop/hs-core/core-apis/render',
-          'develop/hs-core/core-apis/extend',
-          'develop/hs-core/core-apis/token',
-          'develop/hs-core/core-apis/key',
+          'develop/core/tokens/index',
+          'develop/core/tokens/color-tokens',
+          'develop/core/tokens/shape-tokens',
+          'develop/core/tokens/type-tokens'
         ]
       },
       {
@@ -111,23 +101,35 @@ const sidebars = {
         ]
       },
     ],
+    'Utilities': [
+      'develop/utilities/index',
+      'develop/utilities/syntax',
+      'develop/utilities/layout-utils',
+      'develop/utilities/color-utils',
+      'develop/utilities/shape-utils',
+      'develop/utilities/typography-utils',
+    ],
     'Components': [
-      'develop/hs-components/hs-button',
-      'develop/hs-components/hs-button-group',
-      'develop/hs-components/hs-card',
-      'develop/hs-components/hs-link',
-      'develop/hs-components/hs-profile',
-      'develop/hs-components/hs-select-field',
-      'develop/hs-components/hs-text-field',
-      'develop/hs-components/hs-utils',
+      'develop/components/index',
+      'develop/components/hs-button',
+      'develop/components/hs-button-group',
+      'develop/components/hs-card',
+      'develop/components/hs-link',
+      'develop/components/hs-profile',
+      'develop/components/hs-select-field',
+      'develop/components/hs-text-field',
+      'develop/components/hs-utils',
     ],
     'Integrations': [
       'develop/integrations/tailwind'
     ],
-    'Spec': [
-      'develop/spec/tokens',
-      'develop/spec/component-usage',
-    ],
+    'API': [
+      'develop/apis/initializer',
+      'develop/apis/composition/index',
+      'develop/apis/composition/color',
+      'develop/apis/composition/shape',
+      'develop/apis/composition/typography',
+    ]
   }
 };
 

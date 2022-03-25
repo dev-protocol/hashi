@@ -29,6 +29,7 @@ This mixin is located inside the main `hashi` module. This mixin allows you to a
 | $theme     | `map<string, string>` | The colors you want to apply. (`fill`, `ink`, `border`)                                  |
 | $style     | `string`              | The color application style. Options are: `text`, `outlined`, and `filled`               |
 | $stateful  | `boolean`             | A boolean switch to render color styles with states (hover, focus, active, and disabled) |
+| $tone      | `number`              | The default tone you want to assign.                                                     |
 
 ## `color-bind()` mixin.
 This mixin is located inside the main `hashi` module. This mixin allows you to bind colors based on Hashi's component color anatomy spec to an existing styled component (with the appropriate keys).
@@ -57,3 +58,4 @@ This is especially useful whenever you want to make variants in color on an alre
 | $theme     | `map<string, string>` | The colors you want to apply. (`fill`, `ink`, `border`)                                  |
 | $style     | `string`              | The color application style. Options are: `text`, `outlined`, and `filled`               |
 | $stateful  | `boolean`             | A boolean switch to render color styles with states (hover, focus, active, and disabled) |
+| $tone      | `number`              | The default tone you want to assign.                                                     |

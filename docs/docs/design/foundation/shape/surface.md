@@ -23,13 +23,13 @@ Here are the default immutable shadow specs.
 
 The y-offset, blur, and spread depends on the elevation level.
 
-| Level | Y Offset | Blur | Spread |
-|-------|----------|------|--------|
-| 0     | 1px      | 0px  | 0px    |
-| 1     | 3px      | 4px  | 1px    |
-| 3     | 6px      | 10px | 2px    |
-| 5     | 10px     | 15px | 3px    |
-| 7     | 15px     | 20px | 4px    |
+| Level       | Y Offset | Blur | Spread |
+|-------------|----------|------|--------|
+| 0 (none)    | 1px      | 0px  | 0px    |
+| 1 (low)     | 3px      | 4px  | 1px    |
+| 3 (default) | 6px      | 10px | 2px    |
+| 5 (high)    | 10px     | 15px | 3px    |
+| 7 (highest) | 15px     | 20px | 4px    |
 
 ![elevations.png](../_media/elevations.png)
 

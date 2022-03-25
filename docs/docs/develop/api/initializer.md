@@ -46,14 +46,14 @@ The initializer has parameters that let you configure the color, shape, and typo
 |----------------------|---------------------------------------------------------------------------------------------------|-------------------------------------|
 | `$primary`           | Sets the color for the emphasized surfaces in an interface.                                       | `dp-black`                          |
 | `$primary-dark`      | Sets the color for the emphasized surfaces in a dark interface.                                   | `dp-blue-grey`                      |
-| `$accent`            | Sets the color for very emphasized, interact-able, and eye-catching portions in an interface.     | `dp-black`                          |
-| `$accent-dark`       | Sets the color for very emphasized, interact-able, and eye-catching portions in a dark interface. | `dp-white`                          |
+| `$accent`            | Sets the color for very emphasized, interact-able, and eye-catching portions in an interface.     | `native-blue`                       |
+| `$accent-dark`       | Sets the color for very emphasized, interact-able, and eye-catching portions in a dark interface. | `native-blue`                       |
 | `$surface`           | Sets the color for the non-emphasized surfaces in an interface. The neutral of the bunch.         | `dp-white`                          |
 | `$surface-dark`      | Sets the color for the non-emphasized surfaces in a dark interface. The neutral of the bunch.     | `dp-blue-grey`                      |
 | `$surface-dark`      | Sets the color for the non-emphasized surfaces in a dark interface. The neutral of the bunch.     | `dp-blue-grey`                      |
-| `$radius-small`      | Sets the radius for small components like buttons, text fields, etc.                              | `radius-sm`                         |
-| `$radius-medium`     | Sets the radius for medium components like cards, profiles, etc.                                  | `radius-md`                         |
-| `$radius-large`      | Sets the radius for large components like headers, drawers, etc.                                  | `radius-lg`                         |
+| `$radius-small`      | Sets the radius for small components like buttons, text fields, etc.                              | `radius-xs`                         |
+| `$radius-medium`     | Sets the radius for medium components like cards, profiles, etc.                                  | `radius-sm`                         |
+| `$radius-large`      | Sets the radius for large components like headers, drawers, etc.                                  | `radius-md`                         |
 | `$family-supertitle` | Sets the font family for the supertitle typography variant.                                       | `('Syne', sans-serif, 700)`         |
 | `$family-title`      | Sets the font family for the title typography variant.                                            | `('Syne', sans-serif, 700)`         |
 | `$family-subtitle`   | Sets the font family for the subtitle typography variant.                                         | `('Syne', sans-serif, 700)`         |
@@ -84,13 +84,13 @@ Finding the font weight is usually done in two ways. Either it's documented on t
 
 #### Example
 ```scss
-@use 'node_modules/@devprotocol/hashi';
-
-@include hashi.init(
+@use 'node_modules/@devprotocol/hashi' with (
   $accent: 'native-blue',
   $accent-ink: 'native-blue-ink',
   $family-supertitle: ('Playfair Display', serif, 700)
-) {
+);
+
+@include hashi.init {
   // ...
 }
 ```

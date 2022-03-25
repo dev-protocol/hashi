@@ -1,8 +1,3 @@
----
-title: Grid
-slug: /design/foundation/layout/grid
-displayed_sidebar: design
----
 # Grid
 Hashi uses grid as our basis for creating layouts. Hashi follows a responsive 12-column grid layout system.
 
