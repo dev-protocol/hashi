@@ -61,11 +61,5 @@ $_hs-extended-tokens: ();
 }
 
 @mixin config($map: (), $tokens...) {
-  @include sentro.token-config($map: map.merge($map, $_hs-extended-tokens), $tokens...);
-}
-
-@mixin extend($map) {
-  @if not tools.is-empty($map) {
-    $_hs-extended-tokens: $map !global;
-  }
+  @include sentro.token-config($map: $map, $tokens...);
 }
