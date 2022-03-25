@@ -74,7 +74,7 @@ This lets us use the same class names for every component while not clashing in 
   $padding: 'sm'
 );
 
-@include hs-component.use();
+@include hs-component.render();
 ```
 
 ## Extension (SCSS)
