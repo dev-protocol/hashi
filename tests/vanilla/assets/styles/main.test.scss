@@ -20,7 +20,19 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@devprotocol/hashi' with ($accent: 'plox', $accent-dark: 'plox');
+@use 'node_modules/@devprotocol/hashi' with (
+  $accent: 'plox',
+  $accent-dark: 'plox',
+  $extend-color: (
+    'ume': (
+      200: #ffeee4,
+      300: #ffd0b4,
+      400: #ffc09c,
+      600: #c88762,
+      'ink': #3c1f11
+    )
+  )
+);
 @use 'node_modules/@devprotocol/hashi/hs-button' with ($tone: 300);
 @use 'node_modules/@devprotocol/hashi/hs-button-group' with ($tone: 300);
 @use 'node_modules/@devprotocol/hashi/hs-utils';
