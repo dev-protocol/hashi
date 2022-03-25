@@ -84,13 +84,13 @@ Finding the font weight is usually done in two ways. Either it's documented on t
 
 #### Example
 ```scss
-@use 'node_modules/@devprotocol/hashi';
-
-@include hashi.init(
+@use 'node_modules/@devprotocol/hashi' with (
   $accent: 'native-blue',
   $accent-ink: 'native-blue-ink',
   $family-supertitle: ('Playfair Display', serif, 700)
-) {
+);
+
+@include hashi.init {
   // ...
 }
 ```

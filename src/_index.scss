@@ -20,6 +20,22 @@
 //  SOFTWARE.
 ///
 
+$primary: 'dp-black' !default;
+$primary-dark: 'dp-blue-grey' !default;
+$accent: 'native-blue' !default;
+$accent-dark: 'native-blue' !default;
+$surface: 'dp-white' !default;
+$surface-dark: 'dp-blue-grey' !default;
+$radius-small: 'radius-xs' !default;
+$radius-medium: 'radius-sm' !default;
+$radius-large: 'radius-md' !default;
+$family-supertitle: ('Syne', sans-serif, 700) !default;
+$family-title: ('Syne', sans-serif, 700) !default;
+$family-subtitle: ('Syne', sans-serif, 700) !default;
+$family-body: ('Whyte', sans-serif, 400) !default;
+$family-mono: ('IBM Plex Mono', monospace, 400) !default;
+$family-small: ('Whyte', sans-serif, 300) !default;
+
 $background: 'surface-200' !default;
 $dark-background: 'surface-400' !default;
 $background-ink: 'surface-ink' !default;
@@ -28,6 +44,21 @@ $breakpoints: () !default;
 
 @forward 'hs-core';
 @forward 'init-base' with (
+  $primary: $primary,
+  $primary-dark: $primary-dark,
+  $accent: $accent,
+  $accent-dark: $accent-dark,
+  $surface: $surface,
+  $surface-dark: $surface-dark,
+  $radius-small: $radius-small,
+  $radius-medium: $radius-medium,
+  $radius-large: $radius-large,
+  $family-supertitle: $family-supertitle,
+  $family-title: $family-title,
+  $family-subtitle: $family-subtitle,
+  $family-body: $family-body,
+  $family-mono: $family-mono,
+  $family-small: $family-small,
   $background: $background,
   $background-ink: $background-ink,
   $dark-background: $dark-background,

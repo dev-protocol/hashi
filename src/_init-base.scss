@@ -32,6 +32,22 @@ $_validation: if($vue-mode, false, true);
 
 @use 'init-font-pack' as font-pack;
 
+$primary: 'dp-black' !default;
+$primary-dark: 'dp-blue-grey' !default;
+$accent: 'native-blue' !default;
+$accent-dark: 'native-blue' !default;
+$surface: 'dp-white' !default;
+$surface-dark: 'dp-blue-grey' !default;
+$radius-small: 'radius-xs' !default;
+$radius-medium: 'radius-sm' !default;
+$radius-large: 'radius-md' !default;
+$family-supertitle: ('Syne', sans-serif, 700) !default;
+$family-title: ('Syne', sans-serif, 700) !default;
+$family-subtitle: ('Syne', sans-serif, 700) !default;
+$family-body: ('Whyte', sans-serif, 400) !default;
+$family-mono: ('IBM Plex Mono', monospace, 400) !default;
+$family-small: ('Whyte', sans-serif, 300) !default;
+
 $background: 'surface-200' !default;
 $dark-background: 'surface-400' !default;
 $background-ink: 'surface-ink' !default;
@@ -44,33 +60,16 @@ $_init-breakpoints: (
   'xlarge': 1280px,
 );
 
-@mixin init(
-  $primary: 'dp-black',
-  $primary-dark: 'dp-blue-grey',
-  $accent: 'native-blue',
-  $accent-dark: 'native-blue',
-  $surface: 'dp-white',
-  $surface-dark: 'dp-blue-grey',
-  $radius-small: 'radius-xs',
-  $radius-medium: 'radius-sm',
-  $radius-large: 'radius-md',
-  $family-supertitle: ('Syne', sans-serif, 700),
-  $family-title: ('Syne', sans-serif, 700),
-  $family-subtitle: ('Syne', sans-serif, 700),
-  $family-body: ('Whyte', sans-serif, 400),
-  $family-mono: ('IBM Plex Mono', monospace, 400),
-  $family-small: ('Whyte', sans-serif, 300),
-) {
-  
-  $_families: (
-    'supertitle': _get-family($family-supertitle),
-    'title': _get-family($family-title),
-    'subtitle': _get-family($family-subtitle),
-    'body': _get-family($family-body),
-    'mono': _get-family($family-mono),
-    'small': _get-family($family-small)
-  );
-  
+$_families: (
+  'supertitle': _get-family($family-supertitle),
+  'title': _get-family($family-title),
+  'subtitle': _get-family($family-subtitle),
+  'body': _get-family($family-body),
+  'mono': _get-family($family-mono),
+  'small': _get-family($family-small)
+);
+
+@mixin init {
   :root {
     @include hs-core.token-config(
       $map: tokens.$hs-tokens,
