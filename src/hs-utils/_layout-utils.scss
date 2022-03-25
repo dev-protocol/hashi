@@ -59,8 +59,8 @@ $_flows: (
 );
 
 $_wraps: (
-  'normal': 'wrap',
   'none': 'nowrap',
+  'default': 'wrap',
   'reverse': 'wrap-reverse'
 );
 
@@ -111,14 +111,26 @@ $_alignments: (
   }
   
   @each $wrap, $wrap-val in $_wraps {
-    .wrap-#{$wrap} {
-      flex-wrap: string.unquote($wrap-val);
+    @if $wrap == 'default' {
+      .wrap {
+        flex-wrap: string.unquote($wrap-val);
+      }
+    } @else {
+      .wrap-#{$wrap} {
+        flex-wrap: string.unquote($wrap-val);
+      }
     }
     
     @each $breakpoint, $shorthand in $_breakpoints {
       @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:wrap-#{$wrap} {
-          flex-wrap: string.unquote($wrap-val);
+        @if $wrap == 'default' {
+          .\@#{$shorthand}\:wrap {
+            flex-wrap: string.unquote($wrap-val);
+          }
+        } @else {
+          .\@#{$shorthand}\:wrap-#{$wrap} {
+            flex-wrap: string.unquote($wrap-val);
+          }
         }
       }
     }
