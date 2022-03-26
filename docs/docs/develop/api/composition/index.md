@@ -1,4 +1,5 @@
 ---
+title: Introduction
 slug: /develop/api/composition
 displayed_sidebar: develop
 ---

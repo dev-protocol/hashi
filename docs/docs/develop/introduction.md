@@ -1,3 +1,7 @@
+---
+slug: /develop/
+displayed_sidebar: develop
+---
 # Hashi Design System
 Hashi is Dev Protocol's design system. Aiming to bring a unified user experience when using Dev Protocol products, to present an elegant user interface for consumers to interact with, and to be able to create the same user interfaces regardless of any frontend framework.
 

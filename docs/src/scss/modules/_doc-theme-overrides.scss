@@ -31,9 +31,9 @@
     --ifm-color-primary-light: #ff4f31;
     --ifm-color-primary-lighter: #ff5b3e;
     --ifm-color-primary-lightest: #ff7e68;
-    --ifm-navbar-background-color: #{hashi.token-get('neutral-600')};
-    --ifm-navbar-link-color: #{hashi.token-get('neutral-ink')};
-    --ifm-footer-background-color: #{hashi.token-get('surface-300')};
+    --ifm-navbar-background-color: #{hashi.token-get('primary-600')};
+    --ifm-navbar-link-color: #{hashi.token-get('primary-ink')};
+    --ifm-footer-background-color: #{hashi.token-get('primary-300')};
     --ifm-toc-border-color: rgba(0 0 0 / 0);
   }
 
@@ -45,12 +45,12 @@
     background-color: #fff;
 
     &[data-theme='dark'] {
-      --ifm-navbar-background-color: #{hashi.token-get('surface-400')};
-      --ifm-navbar-link-color: #{hashi.token-get('surface-ink')};
-      background-color: hashi.token-get('surface-400') !important;
+      --ifm-navbar-background-color: #{hashi.token-get('primary-400')};
+      --ifm-navbar-link-color: #{hashi.token-get('primary-ink')};
+      background-color: hashi.token-get('primary-400') !important;
 
       .menu {
-        background-color: hashi.token-get('surface-600');
+        background-color: hashi.token-get('primary-600');
 
         &__link {
           &--sublist::after {
@@ -62,16 +62,36 @@
     }
 
     body {
-      background-color: #fff;
+      // background-color: #fff;
     }
 
     .menu {
-      background-color: hashi.token-get('neutral-400');
-
+      --ifm-menu-color: #{hashi.token-get('primary-ink')};
+      background-color: hashi.token-get('primary-400');
+      
+      .menu__list-item-collapsible {
+        border: 1px solid rgba(0 0 0 / 0);
+        
+        &:hover,
+        &:focus {
+          outline: none;
+          background-color: rgba(#f1f1f1, 15%);
+          color: #fff;
+          border-color: rgba(#f1f1f1, 1.5%);
+    
+          @include hashi.dark-mode {
+            outline: none;
+            background-color: rgba(#f1f1f1, 15%);
+            color: #fff;
+            border-color: rgba(#f1f1f1, 1.5%);
+          }
+        }
+      }
+      
       .menu__list,
       .menu__list-item {
         .menu__link {
-
+          //
         }
 
         .menu__caret {
@@ -92,22 +112,22 @@
 
       &__link {
         padding: 0.7rem 1rem;
-        color: #fff;
-        fill: hashi.token-get('neutral-ink');
+        color: hashi.token-get('primary-ink');
+        fill: hashi.token-get('primary-ink');
         border: 1px solid rgba(0 0 0 / 0);
         @include hashi.prefix(transition, all 0.1s ease);
 
         &:hover,
         &:focus {
           outline: none;
-          // background-color: rgba(#f1f1f1, 20%);
-          // border: 1px solid rgba(#f1f1f1, 2%);
+          background-color: rgba(#f1f1f1, 15%);
+          border: 1px solid rgba(#f1f1f1, 1.5%);
 
-          // @include hashi.dark-mode {
-          //   outline: none;
-          //   background-color: rgba(#f1f1f1, 20%);
-          //   border: 1px solid rgba(#f1f1f1, 2%);
-          // }
+          @include hashi.dark-mode {
+            outline: none;
+            background-color: rgba(#f1f1f1, 15%);
+            border: 1px solid rgba(#f1f1f1, 1.5%);
+          }
         }
 
         &--active {
@@ -117,7 +137,7 @@
 
         @include hashi.dark-mode {
           color: #fff;
-          fill: hashi.token-get('neutral-ink');
+          fill: hashi.token-get('surface-ink');
         }
 
         &--sublist::after {
@@ -136,16 +156,16 @@
     }
 
     .pagination-nav__link {
-      background-color: rgba(hashi.token-get-raw('scarlet-400'), 0%);
-      border: 1px solid rgba(hashi.token-get-raw('scarlet-400'), 100%);
+      background-color: rgba(hashi.token-get-raw('accent-400'), 0%);
+      border: 1px solid rgba(hashi.token-get-raw('accent-400'), 100%);
       @include hashi.prefix(transition, all 0.1s ease);
 
       &:hover {
-        background-color: rgba(hashi.token-get-raw('scarlet-400'), 20%);
+        background-color: rgba(hashi.token-get-raw('accent-400'), 20%);
       }
 
       &:active {
-        background-color: rgba(hashi.token-get-raw('scarlet-400'), 33%);
+        background-color: rgba(hashi.token-get-raw('accent-400'), 33%);
       }
 
       .pagination-nav__sublabel {

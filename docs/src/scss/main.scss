@@ -20,9 +20,11 @@
 //  SOFTWARE.
 ///
 
-@use '~@devprotocol/hashi';
+@use '~@devprotocol/hashi' with (
+  $accent: 'scarlet'
+);
 @use '~@devprotocol/hashi/hs-button';
-// @use '~@devprotocol/hashi/hs-button-group';
+@use '~@devprotocol/hashi/hs-button-group';
 // @use '~@devprotocol/hashi/hs-card';
 // @use '~@devprotocol/hashi/hs-link';
 // @use '~@devprotocol/hashi/hs-select-field';
@@ -41,9 +43,45 @@
 @include hashi.init() {
   @include doc-theme-overrides.use();
   @include hs-layout.use();
-
+  
+  h1 {
+    @include hashi.typography-apply('h1', (
+      family: 'supertitle',
+      size: 'supertitle',
+      weight: 'supertitle',
+      line-height: 'supertitle',
+    ));
+  }
+  
+  h2 {
+    @include hashi.typography-apply('h2', (
+      family: 'title',
+      size: 'title',
+      weight: 'title',
+      line-height: 'title',
+    ));
+  }
+  
+  h3 {
+    @include hashi.typography-apply('h3', (
+      family: 'subtitle',
+      size: 'subtitle',
+      weight: 'subtitle',
+      line-height: 'subtitle',
+    ));
+  }
+  
+  h4 {
+    @include hashi.typography-apply('h3', (
+      family: 'subtitle',
+      size: 'body',
+      weight: 'bold',
+      line-height: 'normal',
+    ));
+  }
+  
   @include hs-button.render();
-  // @include hs-button-group.render();
+  @include hs-button-group.render();
   // @include hs-card.render();
 
   .hs-card {

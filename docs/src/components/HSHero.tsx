@@ -1,6 +1,5 @@
 /*
- *
- *  Copyright (c) 2021 Dev Protocol
+ *  Copyright (c) 2022 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +18,6 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
- *
  */
 
 import React from 'react';
@@ -36,7 +34,7 @@ const HSHero = () => {
                     <h1>Hashi</h1>
                     <p>Dev Protocol's design system for <b className="text-scarlet">building bridges</b> from software to user.</p>
                     <div className="hs-hero__actions">
-                        <HSButton type="filled" color="scarlet" link="/docs/getting-started/introduction">Get Started</HSButton>
+                        <HSButton type="filled" link="/docs/getting-started/introduction">Get Started</HSButton>
                     </div>
                 </div>
             </div>

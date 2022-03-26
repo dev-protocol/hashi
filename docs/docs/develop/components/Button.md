@@ -58,11 +58,11 @@ Additionally, you can use radios and checkboxes whenever you put it under the Bu
 
 ```html
 <div class="hs-button-group">
-  <input id="dev" type="radio" name="choice" value="dev" checked>
+  <input id="dev" type="radio" name="choice" value="dev" checked/>
   <label for="dev" class="hs-button">
     <span class="hs-button__label">DEV</span>
   </label>
-  <input id="pro" type="radio" name="choice" value="pro">
+  <input id="pro" type="radio" name="choice" value="pro"/>
   <label for="pro" class="hs-button">
     <span class="hs-button__label">PRO</span>
   </label>

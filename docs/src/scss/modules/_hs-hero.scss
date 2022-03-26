@@ -23,79 +23,80 @@
 @use '~@devprotocol/hashi';
 
 @mixin use() {
-    .hs-hero {
-        width: 100%;
-        height: calc(90vh - 60px);
-        display: grid;
-        grid-gap: 1rem;
-        place-items: center;
-        padding: 2.5rem 0;
-        // background-image: url('../media/ui-ux.png');
-        background-color: hashi.token-get('surface-300');
-        border-bottom: 2px solid hashi.token-get('surface-300');
+  .hs-hero {
+    width: 100%;
+    height: calc(90vh - 60px);
+    display: grid;
+    grid-gap: 1rem;
+    place-items: center;
+    padding: 2.5rem 0;
+    // background-image: url('../media/ui-ux.png');
+    background-color: hashi.token-get('surface-300');
+    border-bottom: 2px solid hashi.token-get('surface-300');
+    
+    .hs-hero__wrap {
+      width: calc(100% - 40px);
+      max-width: 640px;
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 0 auto;
+      
+      .hs-hero__logo {
+        position: relative;
+        margin: 0 clamp(1rem, 7vw, 2.5rem) 0 0;
+        font-size: clamp(100px, 20vw, 200px);
+        font-weight: 700;
+        line-height: normal;
+        color: #fff;
+        text-shadow: 3px 3px hashi.token-get('scarlet-400'),
+        6px 6px hashi.token-get('plox-400'),
+        9px 9px hashi.token-get('native-blue-400'),
+        12px 12px hashi.token-get('bright-cyan-400'),;
+        user-select: none;
+        @include hashi.prefix(transition, text-shadow 0.4s ease);
         
-        .hs-hero__wrap {
-            width: calc(100% - 40px);
-            max-width: 640px;
-            display: flex;
-            flex-flow: row nowrap;
-            margin: 0 auto;
-            
-            .hs-hero__logo {
-                position: relative;
-                margin: 0 clamp(1rem, 7vw, 2.5rem) 0 0;
-                font-size: clamp(100px, 20vw, 200px);
-                font-weight: 700;
-                line-height: normal;
-                color: #fff;
-                text-shadow:
-                    3px 3px hashi.token-get('scarlet-400'),
-                    6px 6px hashi.token-get('plox-400'),
-                    9px 9px hashi.token-get('native-blue-400'),
-                    12px 12px hashi.token-get('bright-cyan-400'),
-                ;
-                user-select: none;
-                @include hashi.prefix(transition, text-shadow 0.4s ease);
-                
-                &:hover,
-                &:active {
-                    text-shadow:
-                        (3px * 1.67) (3px * 1.67) hashi.token-get('scarlet-400'),
-                        (6px * 1.67) (6px * 1.67) hashi.token-get('plox-400'),
-                        (9px * 1.67) (9px * 1.67) hashi.token-get('native-blue-400'),
-                        (12px * 1.67) (12px * 1.67) hashi.token-get('bright-cyan-400'),
-                    ;
-                }
-            }
-            
-            .hs-hero__text {
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-items: flex-start;
-    
-                h1 {
-                    --ifm-heading-font-family: #{hashi.token-get('family-supertitle')};
-                    --ifm-heading-font-weight: #{hashi.token-get('weight-supertitle')};
-                    font-family: hashi.token-get('family-supertitle');
-                    margin-bottom: 0.2rem;
-                }
-    
-                .hs-hero__actions {
-                    font-family: hashi.token-get('family-body');
-                    width: 100%;
-                    
-                    a {
-                        text-decoration: none !important;
-                    }
-                }
-            }
+        &:hover,
+        &:active {
+          text-shadow: (3px * 1.67) (3px * 1.67) hashi.token-get('scarlet-400'),
+            (6px * 1.67) (6px * 1.67) hashi.token-get('plox-400'),
+            (9px * 1.67) (9px * 1.67) hashi.token-get('native-blue-400'),
+            (12px * 1.67) (12px * 1.67) hashi.token-get('bright-cyan-400'),;
         }
-    }
-    
-    html[data-theme='dark'] {
-        .hs-hero {
-            background-color: hashi.token-get('surface-300');
+      }
+      
+      .hs-hero__text {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        
+        h1 {
+          --ifm-heading-font-family: #{hashi.token-get('family-supertitle')};
+          --ifm-heading-font-weight: #{hashi.token-get('weight-supertitle')};
+          font-family: hashi.token-get('family-supertitle');
+          font-size: hashi.token-get('size-supertitle');
+          margin-bottom: 0.2rem;
         }
+        
+        .hs-hero__actions {
+          font-family: hashi.token-get('family-body');
+          width: 100%;
+          
+          a {
+            text-decoration: none !important;
+            
+            &:hover {
+              color: var(--hs-button-ink) !important;
+            }
+          }
+        }
+      }
     }
+  }
+  
+  html[data-theme='dark'] {
+    .hs-hero {
+      background-color: hashi.token-get('surface-300');
+    }
+  }
 }

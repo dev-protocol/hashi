@@ -39,7 +39,6 @@ const sidebars = {
     'Getting Started': [
       'design/introduction',
       'design/foundation/terminologies',
-      'design/foundation/concepts-and-influences',
       'design/getting-started/ui-kit',
     ],
     'Foundation': [
@@ -96,22 +95,21 @@ const sidebars = {
       'develop/components/hs-profile',
       'develop/components/hs-select-field',
       'develop/components/hs-text-field',
-      'develop/components/hs-utils',
     ],
     'Integrations': [
       'develop/integrations/tailwind'
     ],
     'API': [
-      'develop/apis/initializer',
+      'develop/api/initializer',
       {
         type: 'category',
         label: 'Composition',
         collapsed: true,
         items: [
-          'develop/apis/composition/index',
-          'develop/apis/composition/color',
-          'develop/apis/composition/shape',
-          'develop/apis/composition/typography',
+          'develop/api/composition/index',
+          'develop/api/composition/color',
+          'develop/api/composition/shape',
+          'develop/api/composition/typography',
         ]
       },
     ]
