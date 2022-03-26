@@ -88,13 +88,13 @@ $_breakpoints: (
       }
   
       .border-#{$color}-#{$tone} {
-        border-color: hs-core.token-get('#{$color}-#{$tone}');
+        border: 1px solid hs-core.token-get('#{$color}-#{$tone}');
       }
   
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
           .\@#{$shorthand}\:border-#{$color}-#{$tone} {
-            border-color: hs-core.token-get('#{$color}-#{$tone}');
+            border: 1px solid hs-core.token-get('#{$color}-#{$tone}');
           }
         }
       }
