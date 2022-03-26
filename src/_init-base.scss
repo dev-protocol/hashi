@@ -139,7 +139,7 @@ $_extensions: map.merge($extend-color, map.merge($extend-shape, $extend-typograp
     padding: 0;
     color: inherit;
     box-sizing: inherit;
-    border: 1px solid rgba(0 0 0 / 0);
+    // border: 1px solid rgba(0 0 0 / 0);
   }
   
   h1,
