@@ -104,7 +104,11 @@
     @if theme.token-check('#{$key}-#{$value}') {
       $result: list.append($result, theme.token-get('#{$key}-#{$value}'), 'space');
     } @else {
-      $result: list.append($result, $value, 'space');
+      @if $value != 0 {
+        @error 'Invalid value: #{$value}. Please use a valid #{$key} token, or the number 0.';
+      } @else {
+        $result: list.append($result, $value, 'space');
+      }
     }
   }
   
