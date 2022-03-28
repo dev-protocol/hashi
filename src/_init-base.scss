@@ -60,15 +60,6 @@ $_init-breakpoints: (
   'xlarge': 1280px,
 );
 
-$_families: (
-  'supertitle': _get-family($family-supertitle),
-  'title': _get-family($family-title),
-  'subtitle': _get-family($family-subtitle),
-  'body': _get-family($family-body),
-  'mono': _get-family($family-mono),
-  'small': _get-family($family-small)
-);
-
 $_extend-color: ();
 $_extend-shape: ();
 $_extend-typography: ();
@@ -128,7 +119,14 @@ $_extensions: map.merge($_extend-color, map.merge($_extend-shape, $_extend-typog
     $map: map.merge($_init-breakpoints, $breakpoints)
   );
   
-  @include font-pack.load($_families);
+  @include font-pack.load((
+    'supertitle': _get-family($family-supertitle),
+    'title': _get-family($family-title),
+    'subtitle': _get-family($family-subtitle),
+    'body': _get-family($family-body),
+    'mono': _get-family($family-mono),
+    'small': _get-family($family-small)
+  ));
   
   *,
   :before,
@@ -230,7 +228,7 @@ $_extensions: map.merge($_extend-color, map.merge($_extend-shape, $_extend-typog
 @function _get-family($query) {
   $family: list.nth($query, 1);
   $type: list.nth($query, 2);
-  @return ('#{$family}', $type);
+  @return ($family, $type);
 }
 
 @function _get-weight($query) {
