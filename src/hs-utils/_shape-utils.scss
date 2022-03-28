@@ -69,11 +69,11 @@ $directions: (
 );
 
 $_elevations: (
-  'none': (1px 0 0),
-  'low': (3px 4px 1px),
-  'default': (6px 10px 2px),
-  'high': (10px 15px 3px),
-  'highest': (15px 20px 4px),
+  'none',
+  'low',
+  'normal',
+  'high',
+  'highest',
 );
 
 @mixin shape-utils() {
@@ -103,14 +103,14 @@ $_elevations: (
     }
   }
   
-  @each $elevation, $elevation-value in $_elevations {
+  @each $elevation in $_elevations {
     @if $elevation == 'normal' or $elevation == 'default' {
-      .raise {
-        box-shadow: 0 #{$elevation-value} rgba(#000, 15%);
+      .shadow {
+        box-shadow: hs-core.token-get('shadow-#{$elevation}');
       }
     } @else {
-      .raise-#{$elevation} {
-        box-shadow: 0 #{$elevation-value} rgba(#000, 15%);
+      .shadow-#{$elevation} {
+        box-shadow: hs-core.token-get('shadow-#{$elevation}');
       }
     }
   }

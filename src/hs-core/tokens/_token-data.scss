@@ -105,6 +105,22 @@ $hs-tokens: (
     'xl': 2rem,
     'pill': 0.8rem,
   ),
+  'shadow': (
+    'none': (0 1px 0 0 rgba(#000, 15%)),
+    'low': (0 3px 4px 1px rgba(#000, 15%)),
+    'normal': (0 6px 10px 2px rgba(#000, 15%)),
+    'high': (0 10px 15px 3px rgba(#000, 15%)),
+    'highest': (0 15px 20px 4px rgba(#000, 15%)),
+  ),
+  // 'dimension': (
+  //   'none': 0,
+  //   'quarter': 25%,
+  //   'third': 33.333333%,
+  //   'half': 50%,
+  //   'full': 100%,
+  //   'screen': 100vh,
+  //   'half-screen': 50vh
+  // ),
   // ===== TYPOGRAPHY ===== //
   'size': (
     'supertitle': tools.to-rem(42px),
