@@ -31,7 +31,7 @@ $border: $fill !default;
 $tone: 400 !default;
 
 $radius: 'xs' !default;
-$padding: (0.4rem 0.6rem) !default;
+$padding: ('xs' 'sm') !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
@@ -54,13 +54,17 @@ $_states: (
       border: $border
     ), 'text', true, $tone);
     
-    padding: hs-core.key-create('button-padding', hs-core.token-switch('padding-#{$padding}', $padding));
-    border-radius: hs-core.key-create('button-radius', hs-core.token-switch('radius-#{$radius}', $radius));
+    @include hs-core.shape-apply('button', (
+      radius: $radius,
+      padding: $padding,
+    ));
     
-    font-family: hs-core.key-create('button-family', hs-core.token-switch('family-#{$family}', $family));
-    font-size: hs-core.key-create('button-size', hs-core.token-switch('size-#{$size}', $size));
-    font-weight: hs-core.key-create('button-weight', hs-core.token-switch('weight-#{$weight}', $weight));
-    line-height: hs-core.key-create('button-line-height', hs-core.token-switch('line-height-#{$line-height}', $line-height));
+    @include hs-core.typography-apply('button', (
+      family: $family,
+      size: $size,
+      weight: $weight,
+      line-height: $line-height
+    ));
   
     @each $state in $_states {
       &.is-#{$state} {
@@ -92,6 +96,25 @@ $_states: (
       @each $state in $_states {
         &.is-#{$state} {
           @include _state-generator($state, 'filled');
+        }
+      }
+  
+      &.is-raised {
+        @include hs-core.shape-apply('button', (
+          shadow: 'low'
+        ));
+    
+        &:hover,
+        &:focus {
+          @include hs-core.shape-apply('button', (
+            shadow: 'normal'
+          ));
+        }
+    
+        &:active {
+          @include hs-core.shape-apply('button', (
+            shadow: 'high'
+          ));
         }
       }
     }
