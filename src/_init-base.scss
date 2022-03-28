@@ -69,19 +69,16 @@ $_families: (
   'small': _get-family($family-small)
 );
 
-$extend-color: () !default;
-$extend-shape: () !default;
-$extend-typography: () !default;
+$_extend-color: ();
+$_extend-shape: ();
+$_extend-typography: ();
 
-$_extensions: map.merge($extend-color, map.merge($extend-shape, $extend-typography));
+$_extensions: map.merge($_extend-color, map.merge($_extend-shape, $_extend-typography));
 
 @mixin init {
   :root {
     @include hs-core.token-config(
-      $map: map.merge(
-        tokens.$hs-tokens,
-        $_extensions
-      ),
+      $map: tokens.$hs-tokens,
       $primary: (
         200: 'var(--hs-theme-#{$primary}-200)',
         300: 'var(--hs-theme-#{$primary}-300)',
@@ -124,6 +121,7 @@ $_extensions: map.merge($extend-color, map.merge($extend-shape, $extend-typograp
         'small': _get-weight($family-small)
       ),
     );
+    @include hs-core.token-config($map: $_extensions);
   }
   
   @include hs-core.breakpoint-config(
@@ -237,4 +235,16 @@ $_extensions: map.merge($extend-color, map.merge($extend-shape, $extend-typograp
 
 @function _get-weight($query) {
   @return list.nth($query, 3);
+}
+
+@mixin color-extend($map) {
+  $_extend-color: $map !global;
+}
+
+@mixin shape-extend($map) {
+  $_extend-shape: $map !global;
+}
+
+@mixin typography-extend($map) {
+  $_extend-typography: $map !global;
 }
