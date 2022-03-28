@@ -37,33 +37,33 @@
   
   @if $family {
     @if $extend {
-      @include theme.key-bind('#{$component}-family', theme.token-switch('family-#{$family}', $family));
+      @include theme.key-bind('#{$component}-family', theme.token-get('family-#{$family}'));
     } @else {
-      font-family: theme.key-create('#{$component}-family', theme.token-switch('family-#{$family}', $family));
+      font-family: theme.key-create('#{$component}-family', theme.token-get('family-#{$family}'));
     }
   }
   
   @if $size {
     @if $extend {
-      @include theme.key-bind('#{$component}-size', theme.token-switch('size-#{$size}', $size));
+      @include theme.key-bind('#{$component}-size', theme.token-get('size-#{$size}'));
     } @else {
-      font-size: theme.key-create('#{$component}-size', theme.token-switch('size-#{$size}', $size));
+      font-size: theme.key-create('#{$component}-size', theme.token-get('size-#{$size}'));
     }
   }
   
   @if $weight {
     @if $extend {
-      @include theme.key-bind('#{$component}-weight', theme.token-switch('weight-#{$weight}', $weight));
+      @include theme.key-bind('#{$component}-weight', theme.token-get('weight-#{$weight}'));
     } @else {
-      font-weight: theme.key-create('#{$component}-weight', theme.token-switch('weight-#{$weight}', $weight));
+      font-weight: theme.key-create('#{$component}-weight', theme.token-get('weight-#{$weight}'));
     }
   }
   
   @if $line-height {
     @if $extend {
-      @include theme.key-bind('#{$component}-line-height', theme.token-switch('line-height-#{$line-height}', $line-height));
+      @include theme.key-bind('#{$component}-line-height', theme.token-get('line-height-#{$line-height}'));
     } @else {
-      line-height: theme.key-create('#{$component}-line-height', theme.token-switch('line-height-#{$line-height}', $line-height));
+      line-height: theme.key-create('#{$component}-line-height', theme.token-get('line-height-#{$line-height}'));
     }
   }
 }

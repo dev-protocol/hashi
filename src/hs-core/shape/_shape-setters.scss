@@ -43,13 +43,13 @@
       @if list.length($radius) != 1 {
         @include theme.key-bind('#{$component}-radius', _parse-value('radius', $radius));
       } @else {
-        @include theme.key-bind('#{$component}-radius', theme.token-switch('radius-#{$radius}', $radius));
+        @include theme.key-bind('#{$component}-radius', theme.token-get('radius-#{$radius}'));
       }
     } @else {
       @if list.length($radius) != 1 {
         border-radius: theme.key-create('#{$component}-radius', _parse-value('radius', $radius));
       } @else {
-        border-radius: theme.key-create('#{$component}-radius', theme.token-switch('radius-#{$radius}', $radius));
+        border-radius: theme.key-create('#{$component}-radius', theme.token-get('radius-#{$radius}'));
       }
     }
   }
@@ -59,13 +59,13 @@
       @if list.length($padding) != 1 {
         @include theme.key-bind('#{$component}-padding', _parse-value('padding', $padding));
       } @else {
-        @include theme.key-bind('#{$component}-padding', theme.token-switch('padding-#{$padding}', $padding));
+        @include theme.key-bind('#{$component}-padding', theme.token-get('padding-#{$padding}'));
       }
     } @else {
       @if list.length($padding) != 1 {
         padding: theme.key-create('#{$component}-padding', _parse-value('padding', $padding));
       } @else {
-        padding: theme.key-create('#{$component}-padding', theme.token-switch('padding-#{$padding}', $padding));
+        padding: theme.key-create('#{$component}-padding', theme.token-get('padding-#{$padding}'));
       }
     }
   }
@@ -75,22 +75,22 @@
       @if list.length($margin) != 1 {
         @include theme.key-bind('#{$component}-margin', _parse-value('margin', $margin));
       } @else {
-        @include theme.key-bind('#{$component}-margin', theme.token-switch('margin-#{$margin}', $margin));
+        @include theme.key-bind('#{$component}-margin', theme.token-get('margin-#{$margin}'));
       }
     } @else {
       @if list.length($margin) != 1 {
         margin: theme.key-create('#{$component}-margin', _parse-value('margin', $margin));
       } @else {
-        margin: theme.key-create('#{$component}-margin', theme.token-switch('margin-#{$margin}', $margin));
+        margin: theme.key-create('#{$component}-margin', theme.token-get('margin-#{$margin}'));
       }
     }
   }
   
   @if $shadow {
     @if $extend {
-      @include theme.key-bind('#{$component}-shadow', theme.token-switch('shadow-#{$shadow}', $shadow));
+      @include theme.key-bind('#{$component}-shadow', theme.token-get('shadow-#{$shadow}'));
     } @else {
-      box-shadow: theme.key-create('#{$component}-shadow', theme.token-switch('shadow-#{$shadow}', $shadow));
+      box-shadow: theme.key-create('#{$component}-shadow', theme.token-get('shadow-#{$shadow}'));
     }
   }
 }
