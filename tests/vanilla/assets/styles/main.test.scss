@@ -23,7 +23,13 @@
 @use 'node_modules/@devprotocol/hashi' with (
   $accent: 'plox',
   $accent-dark: 'plox',
-  $extend-color: (
+);
+@use 'node_modules/@devprotocol/hashi/hs-button' with ($tone: 300);
+@use 'node_modules/@devprotocol/hashi/hs-button-group' with ($tone: 300);
+@use 'node_modules/@devprotocol/hashi/hs-utils';
+
+@include hashi.init {
+  @include hashi.color-extend((
     'ume': (
       200: #ffeee4,
       300: #ffd0b4,
@@ -31,13 +37,7 @@
       600: #c88762,
       'ink': #3c1f11
     )
-  )
-);
-@use 'node_modules/@devprotocol/hashi/hs-button' with ($tone: 300);
-@use 'node_modules/@devprotocol/hashi/hs-button-group' with ($tone: 300);
-@use 'node_modules/@devprotocol/hashi/hs-utils';
-
-@include hashi.init {
+  ));
   .content-wrap {
     width: calc(100% - 30px);
     max-width: 1077px;
