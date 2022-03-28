@@ -91,6 +91,11 @@ $extend: () !default;
         'default': 'var(--hs-theme-#{$background})',
         'ink': 'var(--hs-theme-#{$background-ink})'
       ),
+      $radius: (
+        'small': 'var(--hs-theme-#{$radius-small})',
+        'medium': 'var(--hs-theme-#{$radius-medium})',
+        'large': 'var(--hs-theme-#{$radius-large})',
+      ),
       $family: (
         'supertitle': _get-family($family-supertitle),
         'title': _get-family($family-title),
