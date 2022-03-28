@@ -42,10 +42,6 @@ $background-ink: 'surface-ink' !default;
 $dark-background-ink: $background-ink !default;
 $breakpoints: () !default;
 
-$extend-color: () !default;
-$extend-shape: () !default;
-$extend-typography: () !default;
-
 @forward 'hs-core';
 @forward 'init-base' with (
   $primary: $primary,
@@ -68,7 +64,4 @@ $extend-typography: () !default;
   $dark-background: $dark-background,
   $dark-background-ink: $dark-background-ink,
   $breakpoints: $breakpoints,
-  $extend-color: $extend-color,
-  $extend-shape: $extend-shape,
-  $extend-typography: $extend-typography,
 );
