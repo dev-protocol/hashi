@@ -96,23 +96,16 @@ Finding the font weight is usually done in two ways. Either it's documented on t
 ```
 
 ## Extending Tokens
-Hashi allows you to extend tokens by using its extension mixins. Keep in mind that this should strictly follow the escape hatch guidelines in color, shape, and typography tokens.
+Hashi allows you to extend tokens by using `$extend` in the `with ()` module keyword. Keep in mind that this should strictly follow the escape hatch guidelines in color, shape, and typography tokens.
 
-| Function              | Description                               |
-|-----------------------|-------------------------------------------|
-| `color-extend()`      | Function for extending color tokens.      |
-| `shape-extend()`      | Function for extending shape tokens.      |
-| `typography-extend()` | Function for extending typography tokens. |
-
-All the functions mentioned above only take one (1) parameter, a map of the tokens.
 
 #### Example
+> _It is generally recommended putting comments to segregate tokens._
 
 ```scss
-@use 'node_modules/@devprotocol/hashi';
-
-@include hashi.init {
-  @include hashi.color-extend((
+@use 'node_modules/@devprotocol/hashi' with (
+  $extend: (
+    // Colors
     'ume': (
       200: #ffeee4,
       300: #ffd0b4,
@@ -124,15 +117,18 @@ All the functions mentioned above only take one (1) parameter, a map of the toke
       'default': hashi.color-split(#ce2283),
       'ink': #fff
     ),
-  ));
-  
-  @include hashi.typography-extend((
+    
+    // Typography
     'headliner': (
       'family': ('Syne', sans-serif),
       'size': hashi.to-rem(72px),
       'weight': 700,
       'line-height': 1.5
     ),
-  ));
+  ),
+);
+
+@include hashi.init {
+  //
 }
 ```

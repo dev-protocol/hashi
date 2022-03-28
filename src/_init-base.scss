@@ -60,11 +60,7 @@ $_init-breakpoints: (
   'xlarge': 1280px,
 );
 
-$_extend-color: ();
-$_extend-shape: ();
-$_extend-typography: ();
-
-$_extensions: map.merge($_extend-color, map.merge($_extend-shape, $_extend-typography));
+$extend: () !default;
 
 @mixin init {
   :root {
@@ -233,16 +229,4 @@ $_extensions: map.merge($_extend-color, map.merge($_extend-shape, $_extend-typog
 
 @function _get-weight($query) {
   @return list.nth($query, 3);
-}
-
-@mixin color-extend($map) {
-  $_extend-color: $map !global;
-}
-
-@mixin shape-extend($map) {
-  $_extend-shape: $map !global;
-}
-
-@mixin typography-extend($map) {
-  $_extend-typography: $map !global;
 }
