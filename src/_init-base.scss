@@ -108,7 +108,7 @@ $extend: () !default;
         'small': _get-weight($family-small)
       ),
     );
-    @include hs-core.token-config($map: $_extensions);
+    @include hs-core.token-config($map: $extend);
   }
   
   @include hs-core.breakpoint-config(
