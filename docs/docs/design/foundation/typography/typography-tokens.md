@@ -29,3 +29,11 @@ other two, this also follows a particular schema.
 | Broad     | 2       |
 | Regular   | 1.5     |
 | Condensed | 1.25    |
+
+## Extending Typography Tokens
+### Escape Hatch Typography Tokens
+Escape hatch typography tokens are tokens that are not within the given in the default typography token set. Keep in mind that **as much as possible, use the provided typography tokens instead of creating your own**, this guideline is only provided as an "escape hatch" if the provided typography tokens don't work.
+
+Escape hatch typography tokens have a limit to how many you can have. Generally we only allow 1 to 2 presets to avoid complete deviation.
+
+These tokens also need to have at least one of the following properties: `family`, `size`, `weight`, and `line-height`.

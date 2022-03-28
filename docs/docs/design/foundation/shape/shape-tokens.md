@@ -18,3 +18,10 @@ label `pill` is reserved for creating pill-shaped components (i.e. pill-shaped b
 | lg    | +0.8rem or (md)2 |
 | xl    | +1rem or (lg)2   |
 | pill  | 600px            |
+
+## Extending Shape Tokens
+### Escape Hatch Shape Tokens
+
+Escape hatch shape tokens are tokens that are not within the given in the default shape token set. Keep in mind that **as much as possible, use the provided shape tokens instead of creating your own**, this guideline is only provided as an "escape hatch" if the provided shape tokens don't work.
+
+Escape hatch shape tokens have a limit to how many you can have. Generally we only allow 1 to 2 presets to avoid complete deviation.
