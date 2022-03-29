@@ -31,8 +31,9 @@
     )
   )
 );
-@use 'node_modules/@devprotocol/hashi/hs-button' with ($tone: 300);
-@use 'node_modules/@devprotocol/hashi/hs-button-group' with ($tone: 300);
+@use 'node_modules/@devprotocol/hashi/hs-button';
+@use 'node_modules/@devprotocol/hashi/hs-button-group';
+@use 'node_modules/@devprotocol/hashi/hs-form-field';
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
 @include hashi.init {
@@ -69,6 +70,7 @@
   
   @include hs-button.render();
   @include hs-button-group.render();
+  @include hs-form-field.render();
   
   @include hs-utils.layout-utils();
   @include hs-utils.color-utils();
