@@ -55,8 +55,8 @@ Button groups are a group of related actions that may be used to paginate result
 
 ### SCSS/CSS
 ```scss
-@use 'path/to/@devprotocol/hashi/hashi';
-@use 'path/to/@devprotocol/hashi/hs-button-group';
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-button-group';
 
 @include hashi.init {
   @include hs-button-group.render();
