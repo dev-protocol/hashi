@@ -22,42 +22,43 @@ These contain the preset's set family, size, weight, and line height
 ## Family
 **Syntax:** `family-[family]`
 ```scss
-.family-supertitle { ... }
-.family-title { ... }
-.family-subtitle { ... }
-.family-body { ... }
-.family-mono { ... }
-.family-small { ... }
+.family-supertitle { font-family: var(--hs-theme-family-supertitle); }
+.family-title { font-family: var(--hs-theme-family-title); }
+.family-subtitle { font-family: var(--hs-theme-family-subtitle); }
+.family-body { font-family: var(--hs-theme-family-body); }
+.family-mono { font-family: var(--hs-theme-family-mono); }
+.family-small { font-family: var(--hs-theme-family-small); }
 ```
 ## Size
 **Syntax:** `size-[size]`
 ```scss
-.size-supertitle { ... }
-.size-title { ... }
-.size-subtitle { ... }
-.size-body { ... }
-.size-mono { ... }
-.size-small { ... }
+.size-supertitle { font-size: var(--hs-theme-size-supertitle); }
+.size-title { font-size: var(--hs-theme-size-title); }
+.size-subtitle { font-size: var(--hs-theme-size-subtitle); }
+.size-body { font-size: var(--hs-theme-size-body); }
+.size-mono { font-size: var(--hs-theme-size-mono); }
+.size-small { font-size: var(--hs-theme-size-small); }
 ```
 ## Weight
 **Syntax:** `weight-[weight]`
 ```scss
-.weight-bold { ... }
-.weight-normal { ... }
-.weight-light { ... }
+.weight-black { font-weight: 800; }
+.weight-bold { font-weight: 700; }
+.weight-normal { font-weight: 400; }
+.weight-light { font-weight: 300; }
 ```
 ## Line Height
 **Syntax:** `lh-[line-height]`
 ```scss
-.lh-broad { ... }
-.lh-normal { ... }
-.lh-condensed { ... }
+.lh-broad { line-height: 1.75; }
+.lh-normal { line-height: 1.5; }
+.lh-condensed { line-height: 1.25; }
 ```
 ## Text Alignment
 **Syntax:** `text-align-[text-alignment]`
 ```scss
-.text-align-left { ... }
-.text-align-center { ... }
-.text-align-right { ... }
-.text-align-justify { ... }
+.text-align-left { text-align: left; }
+.text-align-center { text-align: center; }
+.text-align-right { text-align: right; }
+.text-align-justify { text-align: justify; }
 ```
