@@ -91,10 +91,10 @@ const sidebars = {
       'develop/components/hs-button',
       'develop/components/hs-button-group',
       'develop/components/hs-card',
+      'develop/components/hs-form-field',
       'develop/components/hs-link',
       'develop/components/hs-profile',
       'develop/components/hs-select-field',
-      'develop/components/hs-text-field',
     ],
     'Integrations': [
       'develop/integrations/tailwind'
