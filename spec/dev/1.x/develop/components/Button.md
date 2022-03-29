@@ -117,6 +117,7 @@ These are for creating your own component themes.
 | `--hs-button-radius`     | Changes the button's border radius.      |
 | `--hs-button-gap`        | Changes the button's label and icon gap. |
 | `--hs-button-padding`    | Changes the button's padding.            |
+| `--hs-button-shadow`     | Changes the button's shadow.             |
 | `--hs-button-weight`     | Changes the button's border color.       |
 | `--hs-button-icon-ink`   | Changes the button's icon color.         |
 | `--hs-button-icon-size`  | Changes the button's icon size.          |

@@ -62,6 +62,7 @@ These are for creating your own component themes.
 | `--hs-form-field-border`        | Changes the form field's border color.      |
 | `--hs-form-field-radius`        | Changes the form field's border radius.     |
 | `--hs-form-field-padding`       | Changes the form field's padding.           |
+| `--hs-form-field-shadow`        | Changes the form field's shadow.            |
 | `--hs-form-field-size`          | Changes the form field's text size.         |
 | `--hs-form-field-label-size`    | Changes the form field's label size.        |
 | `--hs-form-field-helper-size`   | Changes the form field's helper size.       |
@@ -105,4 +106,4 @@ $line-height: 'normal' !default;
 ```
 
 ### Hashi `extend()` API
-Please refer to the [extend API](../hs-core/core-apis/Extend.md) page.
+If you wish to extend the component styles, the [`extend()` API](index.md#extension-scss) might come in handy.
