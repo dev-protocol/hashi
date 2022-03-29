@@ -1,0 +1,118 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+
+@mixin init(
+  $fill,
+  $ink,
+  $border,
+  $tone,
+  $radius,
+  $padding,
+  $family,
+  $size,
+  $weight,
+  $line-height,
+) {
+  .hs-select-field {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    margin-bottom: 0.9rem;
+    
+    @content;
+    
+    .hs-select-field__label {
+      width: max-content;
+      white-space: nowrap;
+      @include hs-core.color-apply('select-field-label', (
+        ink: 'surface-ink',
+      ), 'filled', $tone: 400);
+      @include hs-core.typography-apply('select-field', (
+        weight: 'bold',
+        line-height: 'broad'
+      ));
+    }
+    
+    .hs-select-field__input {
+      width: 100%;
+      @include hs-core.color-apply('select-field', (
+        fill: $fill,
+        ink: $ink,
+      ), 'filled', $tone: $tone);
+      @include hs-core.shape-apply('select-field', (
+        radius: $radius,
+        padding: $padding
+      ));
+      @include hs-core.typography-apply('select-field', (
+        family: $family,
+        size: $size,
+        weight: $weight,
+        line-height: $line-height
+      ));
+      outline: none;
+      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+  
+      &:not(.is-danger),
+      &:not(.is-filled) {
+        @include hs-core.color-apply('select-field', (
+          border: $border
+        ), 'filled', $tone: 'ink');
+      }
+      
+      &:focus {
+        @include hs-core.color-bind('select-field', (
+          border: 'accent'
+        ), 'filled');
+      }
+    }
+    
+    .hs-select-field__icon {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      place-items: center;
+      position: absolute;
+      top: 53%;
+      left: hs-core.token-get('padding-md');
+      transform: translateY(-53%);
+      
+      + .hs-select-field__input {
+        padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+      }
+    }
+    
+    .hs-select-field__helper {
+      @include hs-core.color-apply('select-field-helper', (
+        ink: 'surface-ink',
+      ), 'filled', $tone: 400);
+      @include hs-core.typography-apply('select-field', (
+        family: 'small',
+        size: 'small',
+        weight: 'light',
+        line-height: 'broad'
+      ));
+    }
+  }
+}
