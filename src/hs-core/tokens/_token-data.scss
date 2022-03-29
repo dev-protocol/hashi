@@ -45,12 +45,12 @@ $hs-tokens: (
     '600': #040b10,
     'ink': #fff
   ),
-  // Disabled is a special token set and does not follow the design specs' 600-200 color naming scheme.
-  'disabled': (
+  // These alpha tokens are special token sets and does not follow the design specs' 600-200 color naming scheme.
+  'dp-black-alpha': (
     'default': rgba(0, 0, 0, .12),
     'ink': rgba(0, 0, 0, .37),
   ),
-  'disabled-dark': (
+  'dp-white-alpha': (
     'default': rgba(255, 255, 255, .12),
     'ink': rgba(255, 255, 255, .37),
   ),
