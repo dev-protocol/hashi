@@ -5,7 +5,7 @@ slug: /develop/form-field
 sidebar_position: 4
 ---
 # Form Fields
-Form Fields take and validate inputs the user in a context of a form, or simple querying.
+Form fields take and validate inputs the user in a context of a form, or simple querying.
 
 <div class="hs-component-preview">
     <label class="hs-form-field">
@@ -60,7 +60,17 @@ You can modify the form field style to be in the filled style by adding the `.is
 ```
 
 > ⚠ **Choosing form field styles** <br/>
-> Form styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+> Form field styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+
+### Required Fields
+To make a field required, attach a `.is-required` class to the parent element class list.
+```html
+<label class="hs-form-field is-required">
+    <span class="hs-form-field__label">Form Field Label</span>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
+    <span class="hs-form-field__helper">Helper text</span>
+</label>
+```
 
 ### Helper Texts
 Helper texts provide additional context to what is being asked of the user.
@@ -78,6 +88,8 @@ Helper texts can also be used for error messages during form validation.
 The position of the form field icon is dependent on putting a class name after the `.hs-form-field__icon` class.
 
 By default, icons are on the trailing icon position. You can modify it to become a leading icon by attaching `.is-leading` in the icon element class list.
+
+To use icons, place an SVG inside the `.hs-form-field__icon` element.
 
 > The class names inside brackets are only for emphasis, not to be used in the actual implementation.
 ```html
@@ -106,17 +118,18 @@ By default, icons are on the trailing icon position. You can modify it to become
 ### CSS Classes
 These are used to structure, extend, and modify the styles of a component on the markup.
 
-| Class                    | Effect                                      |
-|--------------------------|---------------------------------------------|
-| `.hs-form-field`         | Main text field class.                      |
-| `.hs-form-field__label`  | The text field's label class.               |
-| `.hs-form-field__input`  | The text field's main input class.          |
-| `.hs-form-field__icon`   | The text field's icon class.                |
-| `.hs-form-field__helper` | The text field's helper text class.         |
-| `.is-filled`             | Renders the component in its filled style.  |
-| `.is-success`            | Renders the component in its success state. |
-| `.is-warning`            | Renders the component in its warning state. |
-| `.is-danger`             | Renders the component in its danger state.  |
+| Class                    | Effect                                             |
+|--------------------------|----------------------------------------------------|
+| `.hs-form-field`         | Main text field class.                             |
+| `.hs-form-field__label`  | The text field's label class.                      |
+| `.hs-form-field__input`  | The text field's main input class.                 |
+| `.hs-form-field__icon`   | The text field's icon class.                       |
+| `.hs-form-field__helper` | The text field's helper text class.                |
+| `.is-filled`             | Renders the component in its filled style.         |
+| `.is-success`            | Renders the component in its success state.        |
+| `.is-warning`            | Renders the component in its warning state.        |
+| `.is-danger`             | Renders the component in its danger state.         |
+| `.is-leading`            | Renders the component's icon in its leading style. |
 
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.
