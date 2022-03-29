@@ -26,7 +26,7 @@
 
 $fill: 'surface' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary' !default;
+$border: $fill !default;
 $tone: 200 !default;
 
 $radius: 'small' !default;
@@ -59,26 +59,20 @@ $line-height: 'normal' !default;
     }
     
     &.is-filled {
+      @include hs-core.color-bind('form-field', (
+        border: $fill,
+      ), 'filled', $tone: $tone);
+      
       .hs-form-field__input {
-        @include hs-core.color-bind('form-field', (
-          border: $fill,
-        ), 'filled', $tone: $tone);
         @include hs-core.shape-apply('form-field', (
           shadow: 'low'
         ));
-      
-        @include hs-core.dark-mode {
-          @include hs-core.color-bind('form-field', (
-            border: $fill
-          ), 'filled', $tone: $tone);
-        }
       }
     }
   
     &.is-danger {
       @include hs-core.color-bind('form-field', (
         ink: 'danger-400',
-        border: 'danger'
       ), 'filled');
       @include hs-core.color-bind('form-field-label', (
         ink: 'danger-400',
@@ -86,6 +80,12 @@ $line-height: 'normal' !default;
       @include hs-core.color-bind('form-field-helper', (
         ink: 'danger-400',
       ), 'filled');
+  
+      &:not(.is-filled) {
+        @include hs-core.color-bind('form-field', (
+          border: 'danger'
+        ), 'filled');
+      }
     
       svg {
         color: hs-core.token-get('danger-400');

@@ -58,7 +58,6 @@
       @include hs-core.color-apply('form-field', (
         fill: $fill,
         ink: $ink,
-        border: $border
       ), 'filled', $tone: $tone);
       @include hs-core.shape-apply('form-field', (
         radius: $radius,
@@ -72,23 +71,12 @@
       ));
       outline: none;
       @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
-      
-      @include hs-core.dark-mode {
-        @include hs-core.color-bind('form-field', (
-          border: 'dp-white'
-        ), 'filled', $tone: 200);
-        
-        &:focus {
-          @include hs-core.color-bind('form-field', (
-            border: 'accent'
-          ), 'filled', $tone: 400);
-        }
-      }
-      
-      &[readonly] {
-        // @include hs-core.color-bind('form-field', (
-        //   ink: 'surface-ink'
-        // ), 'filled');
+  
+      &:not(.is-danger),
+      &:not(.is-filled) {
+        @include hs-core.color-apply('form-field', (
+          border: $fill
+        ), 'filled', $tone: 'ink');
       }
       
       &:focus {
