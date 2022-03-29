@@ -1,6 +1,6 @@
 ---
 id: hs-button
-title: Button
+title: Buttons
 slug: /develop/button
 displayed_sidebar: develop
 ---

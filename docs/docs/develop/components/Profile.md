@@ -1,8 +1,7 @@
 ---
 id: hs-profile
-title: Profile
+title: Profiles
 slug: /develop/profile
-sidebar_position: 1
 ---
 
 # HSProfile Component

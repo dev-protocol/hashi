@@ -1,8 +1,7 @@
 ---
 id: hs-form-field 
-title: Form Field 
-slug: /develop/form-field 
-sidebar_position: 4
+title: Form Fields
+slug: /develop/form-field
 ---
 # Form Fields
 Form fields take and validate inputs the user in a context of a form, or simple querying.

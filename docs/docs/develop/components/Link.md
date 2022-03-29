@@ -1,11 +1,10 @@
 ---
 id: hs-link
-title: Link
+title: Links
 slug: /develop/link
-sidebar_position: 1
 ---
 
-# HSLink Component
+# Links
 <div class="hs-component-preview">
     <div class="hs-component-preview__row">
         <span>This is a <a href="#" class="hs-link">Default Link</a> inserted between a line of text.</span>

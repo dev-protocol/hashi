@@ -1,8 +1,7 @@
 ---
 id: hs-select-field
-title: Select Field
+title: Select Fields
 slug: /develop/select-field
-sidebar_position: 4
 ---
 # Select Field
 Select fields lets the user pick an option from a finite set of choices, and validate the option in a context of a form, or simple filtering.
