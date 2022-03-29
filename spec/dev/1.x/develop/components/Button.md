@@ -35,10 +35,8 @@ Buttons call the user to a specific action in the page. May it be in a form, or 
 
 ## Usage
 ### HTML
-
 ```html
 <button class="hs-button" role="button">
-  <i class="hs-button__icon" aria-hidden="true"></i>
   <span class="hs-button__label">Button</span>
 </button>
 ```
@@ -49,12 +47,11 @@ Additionally, anchor elements don't have a disabled attribute so you wouldn't re
 
 ```html
 <a class="hs-button" href="https://devprotocol.xyz" target="_blank">
-  <i class="hs-button__icon" aria-hidden="true"></i>
   <span class="hs-button__label">Button</span>
 </a>
 ```
 
-Additionally, you can use radios and checkboxes whenever you put it under the Button Group wrapper.
+Additionally, you can use radios and checkboxes whenever you put it under the [Button Group](Button%20Group.md) wrapper.
 
 ```html
 <div class="hs-button-group">
@@ -72,21 +69,70 @@ Additionally, you can use radios and checkboxes whenever you put it under the Bu
 ### SCSS/CSS
 
 ```scss
-@use 'path/to/@devprotocol/hashi/hashi';
-@use 'path/to/@devprotocol/hashi/hs-button';
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-button';
 
 @include hashi.init {
   @include hs-button.render();
 }
 ```
 
+### Text Button
+Text buttons are used for the least prioritized actions. These are used as action alternatives, or actions to be third and beyond in consideration.
+```html
+<button class="hs-button">
+  <span class="hs-button__label">Button</span>
+</button>
+```
+
+### Outlined Button
+Outlined buttons are used for secondarily prioritized actions. These are used as action alternatives, or actions to be second in consideration. To use this style, add `.is-outlined` to the parent element's class list.
+```html
+<button class="hs-button is-outlined">
+  <span class="hs-button__label">Button</span>
+</button>
+```
+
+### Filled Button
+Text buttons are used for the most prioritized actions. These are used for actions you want the user to see/consider first. To use this style, add `.is-filled` to the parent element's class list.
+```html
+<button class="hs-button is-filled">
+  <span class="hs-button__label">Button</span>
+</button>
+```
+
+### Button Icons
+The position of the button icon is entirely dependent on the markup position.
+
+Leading icons are placed after the label, and trailing icons are placed before the label.
+
+To use icons, place an SVG inside the `.hs-button__icon` element.
+
+```html
+<!-- Trailing Icon -->
+<button class="hs-button">
+    <i class="hs-button__icon" aria-hidden="true">
+        <!-- Icon SVG -->
+    </i>
+    <span class="hs-button__label">Button</span>
+</button>
+
+<!-- Leading Icon -->
+<button class="hs-button">
+    <span class="hs-button__label">Button</span>
+    <i class="hs-button__icon" aria-hidden="true">
+        <!-- Icon SVG -->
+    </i>
+</button>
+```
+
 ## API
-
 ### CSS Classes
-
 These are used to extend and modify the styles of a component on the markup.
 
 ### Anatomical Classes
+These classes make up the elements inside a component.
+
 | Class               | Effect                                       |
 |---------------------|----------------------------------------------|
 | `.hs-button`        | Main button class.                           |
@@ -106,8 +152,7 @@ For information on how to use these classes, [click here](index.md#modification-
 | `.is-danger`   | Renders the component in its danger state.            |
 
 ### Custom Properties
-
-These are for creating your own component themes.
+These are for creating your own component theme classes that you can append to the parent element markup.
 
 | Property                 | Effect                                   |
 |--------------------------|------------------------------------------|
@@ -125,7 +170,6 @@ These are for creating your own component themes.
 | `--hs-button-label-size` | Changes the button's label size.         |
 
 #### Example
-
 ```scss
 .my-button-theme {
   --hs-button-fill: #232323;
@@ -143,7 +187,6 @@ These are for creating your own component themes.
 ```
 
 ### Hashi `render()` API
-
 Here are all the themeable properties for this component. The directions to use these properties are located in
 the [render API](index.md#modification-scss).
 
