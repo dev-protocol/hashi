@@ -147,22 +147,20 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'accent' !default; // Modifies the button's main fill color
-$ink: 'accent-ink' !default; // Modifies the button's main ink color
-$border: $fill !default; // Modifies the button's main border color
-$tone: 400 !default; // Modifies the button's main color tone
+$fill: 'accent' !default;
+$ink: 'accent-ink' !default;
+$border: $fill !default;
+$tone: 400 !default;
 
-$radius: 'radius-xs' !default; // Modifies the button's border-radius
-$padding: (0.5rem 0.7rem) !default; // Modifies the button's padding
+$radius: 'small' !default;
+$padding: ('xs' 'sm') !default;
 
-$family: 'family-action' !default; // Modifies the button's font-family
-$size: 'size-action' !default; // Modifies the button's font-size
-$weight: 'weight-action' !default; // Modifies the button's font-weight
-$line-height: 'line-height-action' !default; // Modifies the button's line-height
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'bold' !default;
+$line-height: 'normal' !default;
 
-$gap: 0 !default; // Modifies the gap between the label and the icon
-
-$variants: 'all' !default; // Sets what variants to render
+$gap: 0 !default;
 ```
 
 ### Extending styles
