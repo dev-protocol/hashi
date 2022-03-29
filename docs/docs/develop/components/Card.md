@@ -1,39 +1,99 @@
 ---
 id: hs-card
-title: Card
+title: Cards
 slug: /develop/card
-sidebar_position: 3
 ---
-# HSCard Component
+# Cards
+Cards are a blank surface component that serves short-form/summarized content to the user.
+
 ![HSCard Component](card.png)
 
 ## Usage
 ### HTML
 ```html
 <div class="hs-card">
-    <div class="hs-card__header">
+    <header class="hs-card__header">
         <div class="hs-card__mast">
             <h2 class="hs-card__title">CARD TITLE</h2>
             <p class="hs-card__subtitle">Card Subtitle.</p>
         </div>
-        <div class="hs-card__icon">
-            <!-- IMG or SVG -->
-        </div>
-    </div>
-    <div class="hs-card__content">
-        <!-- CARD CONTENT HERE -->
-    </div>
-    <div class="hs-card__actions">
-        <!-- BUTTON COMPONENTS HERE -->
-    </div>
+    </header>
+    <main class="hs-card__content">
+        Card content :)
+    </main>
 </div>
 ```
 
 ### SCSS/CSS
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-card';
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-card';
 
-@include hs-card.render();
+@include hashi.init {
+  @include hs-card.render();
+}
+```
+
+### Card Actions
+Card actions is the most bottom section of a card. It contains buttons/hyperlinks that redirect the user to another page, submit an in-card form, or perform any action on click.
+```html
+<div class="hs-card">
+    <header class="hs-card__header">
+        <div class="hs-card__mast">
+            <h2 class="hs-card__title">CARD TITLE</h2>
+            <p class="hs-card__subtitle">Card Subtitle.</p>
+        </div>
+    </header>
+    <main class="hs-card__content">
+        Card content :)
+    </main>
+    <footer class="hs-card__footer">
+        <button class="hs-button is-filled" role="button">
+            <span class="hs-button__label">Button</span>
+        </button>
+        <button class="hs-button" role="button">
+            <span class="hs-button__label">Button</span>
+        </button>
+    </footer>
+</div>
+```
+
+### Card Icons
+Card icons provide a way of associating a certain symbol to a card. This is especially useful for token images. The card icon element can only take either an SVG or an image.
+```html
+<div class="hs-card">
+    <header class="hs-card__header">
+        <div class="hs-card__mast">
+            <h2 class="hs-card__title">CARD TITLE</h2>
+            <p class="hs-card__subtitle">Card Subtitle.</p>
+        </div>
+        <div class="hs-card__icon">
+            <!-- Img or SVG -->
+        </div>
+    </header>
+    <main class="hs-card__content">
+        Card content :)
+    </main>
+</div>
+```
+
+### Card Media
+Card media allows you to have an image that comes along with your card.
+```html
+<div class="hs-card">
+    <section class="hs-card__media">
+        <img src="..." alt="Card Media"/>
+    </section>
+    <header class="hs-card__header">
+        <div class="hs-card__mast">
+            <h2 class="hs-card__title">CARD TITLE</h2>
+            <p class="hs-card__subtitle">Card Subtitle.</p>
+        </div>
+    </header>
+    <main class="hs-card__content">
+        Card content :)
+    </main>
+</div>
 ```
 
 ## API
