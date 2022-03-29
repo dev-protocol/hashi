@@ -75,7 +75,7 @@
       &:not(.is-danger),
       &:not(.is-filled) {
         @include hs-core.color-apply('form-field', (
-          border: $fill
+          border: $border
         ), 'filled', $tone: 'ink');
       }
       
