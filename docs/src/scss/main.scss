@@ -25,11 +25,9 @@
 );
 @use '~@devprotocol/hashi/hs-button';
 @use '~@devprotocol/hashi/hs-button-group';
-// @use '~@devprotocol/hashi/hs-card';
-// @use '~@devprotocol/hashi/hs-link';
-// @use '~@devprotocol/hashi/hs-select-field';
-// @use '~@devprotocol/hashi/hs-text-field';
-// @use '~@devprotocol/hashi/hs-utils';
+@use '~@devprotocol/hashi/hs-form-field';
+@use '~@devprotocol/hashi/hs-select-field';
+@use '~@devprotocol/hashi/hs-utils';
 
 @use 'modules/doc-theme-overrides';
 
@@ -82,7 +80,8 @@
   
   @include hs-button.render();
   @include hs-button-group.render();
-  // @include hs-card.render();
+  @include hs-form-field.render();
+  @include hs-select-field.render();
 
   .hs-card {
     h1,
