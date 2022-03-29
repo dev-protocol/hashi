@@ -163,7 +163,7 @@
         </button>
     </section>
 
-    <div class="flex flow-row justify-between items-center gap-xs mb-sm">
+    <div class="d-flex flow-row justify-between items-center gap-xs mb-sm">
         <button class="hs-button hs-button--filled" role="button">
             <span class="hs-button__label">Button</span>
         </button>
@@ -199,11 +199,48 @@
         </label>
     </div>
 
-    <label class="hs-text-field">
-        <span class="hs-text-field__label">Hello</span>
-        <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
-        <span class="hs-text-field__input__icon"></span>
-        <span class="hs-text-field__helper">Helper text</span>
+    <label class="hs-form-field">
+        <span class="hs-form-field__label">Form Field Label</span>
+        <input class="hs-form-field__input" type="text" value="ur mom haha" placeholder="Placeholder..." readonly/>
+        <span class="hs-form-field__helper">Helper text</span>
+    </label>
+
+    <label class="hs-form-field is-danger">
+        <span class="hs-form-field__label">Form Field Label</span>
+        <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
+        <span class="hs-form-field__helper">Helper text</span>
+    </label>
+
+    <label class="hs-form-field is-required is-filled">
+        <span class="hs-form-field__label">Form Field Label (Required)</span>
+        <i class="hs-form-field__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </i>
+        <i class="hs-form-field__icon is-leading">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </i>
+        <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+        <span class="hs-form-field__helper">Helper text</span>
+    </label>
+
+    <label class="hs-form-field is-required is-filled is-danger">
+        <span class="hs-form-field__label">Form Field Label (Required)</span>
+        <i class="hs-form-field__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </i>
+        <i class="hs-form-field__icon is-leading">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </i>
+        <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+        <span class="hs-form-field__helper">Helper text</span>
     </label>
 
     <label class="hs-select-field">
@@ -215,49 +252,6 @@
             <option class="hs-select-field__option">Option 4</option>
             <option class="hs-select-field__option">Option 5</option>
         </select>
-    </label>
-
-    <label class="hs-text-field is-success">
-        <span class="hs-text-field__label">Hello</span>
-        <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
-        <span class="hs-text-field__input__icon"></span>
-        <span class="hs-text-field__helper">Helper text</span>
-    </label>
-
-    <label class="hs-select-field is-success">
-        <span class="hs-select-field__label">Select</span>
-        <select class="hs-select-field__input">
-            <option class="hs-select-field__option">Option 1</option>
-            <option class="hs-select-field__option">Option 2</option>
-            <option class="hs-select-field__option">Option 3</option>
-            <option class="hs-select-field__option">Option 4</option>
-            <option class="hs-select-field__option">Option 5</option>
-        </select>
-    </label>
-
-    <label class="hs-text-field is-warning">
-        <span class="hs-text-field__label">Hello</span>
-        <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
-        <span class="hs-text-field__input__icon"></span>
-        <span class="hs-text-field__helper">Helper text</span>
-    </label>
-
-    <label class="hs-select-field is-warning">
-        <span class="hs-select-field__label">Select</span>
-        <select class="hs-select-field__input">
-            <option class="hs-select-field__option">Option 1</option>
-            <option class="hs-select-field__option">Option 2</option>
-            <option class="hs-select-field__option">Option 3</option>
-            <option class="hs-select-field__option">Option 4</option>
-            <option class="hs-select-field__option">Option 5</option>
-        </select>
-    </label>
-
-    <label class="hs-text-field is-danger">
-        <span class="hs-text-field__label">Hello</span>
-        <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
-        <span class="hs-text-field__input__icon"></span>
-        <span class="hs-text-field__helper">Helper text</span>
     </label>
 
     <label class="hs-select-field is-danger">
@@ -302,17 +296,17 @@
                         <option class="hs-select-field__option">Option 5</option>
                     </select>
                 </label>
-                <label class="hs-text-field">
-                    <span class="hs-text-field__label">Hello</span>
-                    <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
-                    <span class="hs-text-field__input__icon"></span>
-                    <span class="hs-text-field__helper">Helper text</span>
+                <label class="hs-form-field">
+                    <span class="hs-form-field__label">Hello</span>
+                    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+                    <span class="hs-form-field__input__icon"></span>
+                    <span class="hs-form-field__helper">Helper text</span>
                 </label>
-                <label class="hs-text-field is-danger">
-                    <span class="hs-text-field__label">Hello</span>
-                    <input class="hs-text-field__input" type="text" placeholder="Placeholder...">
-                    <span class="hs-text-field__input__icon"></span>
-                    <span class="hs-text-field__helper">Helper text</span>
+                <label class="hs-form-field is-danger">
+                    <span class="hs-form-field__label">Hello</span>
+                    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+                    <span class="hs-form-field__input__icon"></span>
+                    <span class="hs-form-field__helper">Helper text</span>
                 </label>
             </div>
             <div class="hs-card__actions">
