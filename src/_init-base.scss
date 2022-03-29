@@ -87,6 +87,10 @@ $extend: () !default;
         600: 'var(--hs-theme-#{$surface}-600)',
         'ink': 'var(--hs-theme-#{$surface}-ink)',
       ),
+      $disabled: (
+        'default': var(--hs-theme-dp-black-alpha),
+        'ink': var(--hs-theme-dp-black-alpha-ink)
+      ),
       $background: (
         'default': 'var(--hs-theme-#{$background})',
         'ink': 'var(--hs-theme-#{$background-ink})'
@@ -114,6 +118,7 @@ $extend: () !default;
       ),
     );
     @include hs-core.token-config($map: $extend);
+    --hs-transition-time: 0.2s;
   }
   
   @include hs-core.breakpoint-config(
@@ -214,6 +219,10 @@ $extend: () !default;
           400: 'var(--hs-theme-#{$surface-dark}-400)',
           600: 'var(--hs-theme-#{$surface-dark}-600)',
           'ink': 'var(--hs-theme-#{$surface-dark}-ink)',
+        ),
+        $disabled: (
+          'default': var(--hs-theme-dp-white-alpha),
+          'ink': var(--hs-theme-dp-white-alpha-ink)
         ),
         $background: (
           'default': 'var(--hs-theme-#{$dark-background})',
