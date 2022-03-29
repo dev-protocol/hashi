@@ -59,8 +59,9 @@ You can modify the form field style to be in the filled style by adding the `.is
 </label>
 ```
 
-> ⚠ **Choosing form field styles** <br/>
-> Form field styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+:::info **Choosing form field styles**
+Form field styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+:::
 
 ### Required Fields
 To make a field required, attach a `.is-required` class to the parent element class list.
@@ -92,14 +93,14 @@ By default, icons are on the trailing icon position. You can modify it to become
 To use icons, place an SVG inside the `.hs-form-field__icon` element.
 
 > The class names inside brackets are only for emphasis, not to be used in the actual implementation.
+
 ```html
-<!-- Trailing Icon -->
 <label class="hs-form-field is-required is-filled">
     <span class="hs-form-field__label">Form Field Label</span>
     <i class="hs-form-field__icon">
         <!-- Icon SVG -->
     </i>
-    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..."/>
     <span class="hs-form-field__helper">Helper text</span>
 </label>
 
@@ -109,7 +110,7 @@ To use icons, place an SVG inside the `.hs-form-field__icon` element.
     <i class="hs-form-field__icon [is-leading]">
         <!-- Icon SVG -->
     </i>
-    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..."/>
     <span class="hs-form-field__helper">Helper text</span>
 </label>
 ```

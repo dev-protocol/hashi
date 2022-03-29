@@ -10,24 +10,24 @@ Buttons call the user to a specific action in the page. May it be in a form, or 
 
 <div class="hs-component-preview col-2">
   <div class="hs-component-preview__row">
-    <button class="hs-button native-blue" role="button">
+    <button class="hs-button" role="button">
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--outlined native-blue" role="button">
+    <button class="hs-button is-outlined" role="button">
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--filled native-blue" role="button">
+    <button class="hs-button is-filled" role="button">
       <span class="hs-button__label">Button</span>
     </button>
   </div>
   <div class="hs-component-preview__row">
-    <button class="hs-button native-blue" role="button" disabled>
+    <button class="hs-button" role="button" disabled>
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--outlined native-blue" role="button" disabled>
+    <button class="hs-button is-outlined" role="button" disabled>
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--filled native-blue" role="button" disabled>
+    <button class="hs-button is-filled" role="button" disabled>
       <span class="hs-button__label">Button</span>
     </button>
   </div>

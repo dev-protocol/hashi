@@ -87,9 +87,9 @@ You can modify the form field style to be in the filled style by adding the `.is
     </select>
 </label>
 ```
-
-> ⚠ **Choosing select field styles** <br/>
-> Select field styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+:::info **Choosing select field styles**
+Select field styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+:::
 
 ### Side Label Text Field
 This text field style is generally recommended for select fields outside the form context. To apply this style, attach `.is-side-label` class to the parent element's class list.
