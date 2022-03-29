@@ -9,7 +9,7 @@ other two, this also follows a particular schema.
 
 | Type       | Size (px) | Line Height (1.5) | Default Weight |
 |------------|-----------|-------------------|----------------|
-| Supertitle | 42        | 63                | 700            |
+| Supertitle | 42        | 63                | 800            |
 | Title      | 36        | 54                | 700            |
 | Subtitle   | 24        | 30                | 700            |
 | Body       | 16        | 24                | 400            |
@@ -19,6 +19,7 @@ other two, this also follows a particular schema.
 ### Weight Specs
 | Type    | Weight |
 |---------|--------|
+| Black   | 800    |
 | Bold    | 700    |
 | Regular | 400    |
 | Light   | 300    |

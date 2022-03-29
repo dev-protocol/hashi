@@ -96,13 +96,14 @@ These are used to extend and modify the styles of a component on the markup.
 ### Variant Classes
 For information on how to use these classes, [click here](index.md#modification-html).
 
-| Class          | Effect                                       |
-|----------------|----------------------------------------------|
-| `.is-outlined` | Renders the component in its outlined style. |
-| `.is-filled`   | Renders the component in its filled style.   |
-| `.is-success`  | Renders the component in its success state.  |
-| `.is-warning`  | Renders the component in its warning state.  |
-| `.is-danger`   | Renders the component in its danger state.   |
+| Class          | Effect                                                |
+|----------------|-------------------------------------------------------|
+| `.is-outlined` | Renders the component in its outlined style.          |
+| `.is-filled`   | Renders the component in its filled style.            |
+| `.is-raised`   | Renders the component in its filled + elevated style. |
+| `.is-success`  | Renders the component in its success state.           |
+| `.is-warning`  | Renders the component in its warning state.           |
+| `.is-danger`   | Renders the component in its danger state.            |
 
 ### Custom Properties
 
@@ -116,6 +117,7 @@ These are for creating your own component themes.
 | `--hs-button-radius`     | Changes the button's border radius.      |
 | `--hs-button-gap`        | Changes the button's label and icon gap. |
 | `--hs-button-padding`    | Changes the button's padding.            |
+| `--hs-button-shadow`     | Changes the button's shadow.             |
 | `--hs-button-weight`     | Changes the button's border color.       |
 | `--hs-button-icon-ink`   | Changes the button's icon color.         |
 | `--hs-button-icon-size`  | Changes the button's icon size.          |
@@ -146,22 +148,20 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'accent' !default; // Modifies the button's main fill color
-$ink: 'accent-ink' !default; // Modifies the button's main ink color
-$border: $fill !default; // Modifies the button's main border color
-$tone: 400 !default; // Modifies the button's main color tone
+$fill: 'accent' !default;
+$ink: 'accent-ink' !default;
+$border: $fill !default;
+$tone: 400 !default;
 
-$radius: 'radius-xs' !default; // Modifies the button's border-radius
-$padding: (0.5rem 0.7rem) !default; // Modifies the button's padding
+$radius: 'small' !default;
+$padding: ('xs' 'sm') !default;
 
-$family: 'family-action' !default; // Modifies the button's font-family
-$size: 'size-action' !default; // Modifies the button's font-size
-$weight: 'weight-action' !default; // Modifies the button's font-weight
-$line-height: 'line-height-action' !default; // Modifies the button's line-height
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'bold' !default;
+$line-height: 'normal' !default;
 
-$gap: 0 !default; // Modifies the gap between the label and the icon
-
-$variants: 'all' !default; // Sets what variants to render
+$gap: 0 !default;
 ```
 
 ### Extending styles
