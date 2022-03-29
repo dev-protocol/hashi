@@ -36,10 +36,6 @@ $gap: 'xs' !default;
     display: flex;
     flex-flow: row nowrap;
     box-sizing: border-box;
-    
-    > * + * {
-      margin-left: hs-core.key-create('button-group-gap', hs-core.token-switch('space-#{$gap}', $gap));
-    }
   
     input[type='radio'],
     input[type='checkbox'] {
@@ -66,8 +62,8 @@ $gap: 'xs' !default;
         border: $border
       ), 'outlined', true, $tone);
       
-      &:not(:last-child) {
-        // border-right: none;
+      &:not(:nth-child(2)) {
+        margin-left: hs-core.key-create('button-group-gap', hs-core.token-switch('space-#{$gap}', $gap));
       }
   
       &:nth-child(2) {
