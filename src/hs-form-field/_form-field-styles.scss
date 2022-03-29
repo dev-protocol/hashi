@@ -20,6 +20,58 @@
 //  SOFTWARE.
 ///
 
+@use '../hs-core';
+
+@use 'form-field-base';
+
 @mixin render() {
-  //
+  @include form-field-base.init {
+    &.is-required {
+      .hs-form-field__label::after {
+        content: '*';
+        color: hs-core.token-get('danger-400');
+        margin-left: hs-core.token-get('margin-xs');
+      }
+    }
+    
+    &.is-filled {
+      .hs-form-field__input {
+        @include hs-core.color-bind('form-field', (
+          border: 'surface',
+        ), 'filled', $tone: 200);
+        @include hs-core.shape-apply('form-field', (
+          shadow: 'low'
+        ));
+      
+        @include hs-core.dark-mode {
+          @include hs-core.color-bind('form-field', (
+            border: 'surface'
+          ), 'filled', $tone: 200);
+        }
+      }
+    }
+  
+    &.is-danger {
+      @include hs-core.color-bind('form-field', (
+        ink: 'danger-400',
+        border: 'danger'
+      ), 'filled');
+      @include hs-core.color-bind('form-field-label', (
+        ink: 'danger-400',
+      ), 'filled');
+      @include hs-core.color-bind('form-field-helper', (
+        ink: 'danger-400',
+      ), 'filled');
+    
+      svg {
+        color: hs-core.token-get('danger-400');
+      }
+    
+      .hs-form-field__input:focus {
+        @include hs-core.color-bind('form-field', (
+          border: 'danger'
+        ), 'filled');
+      }
+    }
+  }
 }
