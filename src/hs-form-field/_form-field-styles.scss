@@ -24,8 +24,32 @@
 
 @use 'form-field-base';
 
+$fill: 'surface' !default;
+$ink: 'surface-ink' !default;
+$border: 'primary' !default;
+$tone: 200 !default;
+
+$radius: 'small' !default;
+$padding: ('sm' 'md') !default;
+
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'normal' !default;
+$line-height: 'normal' !default;
+
 @mixin render() {
-  @include form-field-base.init {
+  @include form-field-base.init(
+    $fill,
+    $ink,
+    $border,
+    $tone,
+    $radius,
+    $padding,
+    $family,
+    $size,
+    $weight,
+    $line-height
+  ) {
     &.is-required {
       .hs-form-field__label::after {
         content: '*';
@@ -37,16 +61,16 @@
     &.is-filled {
       .hs-form-field__input {
         @include hs-core.color-bind('form-field', (
-          border: 'surface',
-        ), 'filled', $tone: 200);
+          border: $fill,
+        ), 'filled', $tone: $tone);
         @include hs-core.shape-apply('form-field', (
           shadow: 'low'
         ));
       
         @include hs-core.dark-mode {
           @include hs-core.color-bind('form-field', (
-            border: 'surface'
-          ), 'filled', $tone: 200);
+            border: $fill
+          ), 'filled', $tone: $tone);
         }
       }
     }
