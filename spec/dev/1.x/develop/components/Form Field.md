@@ -1,10 +1,12 @@
 ---
-id: hs-form-field
-title: Form Field
-slug: /develop/form-field
+id: hs-form-field 
+title: Form Field 
+slug: /develop/form-field 
 sidebar_position: 4
 ---
-# HSTextField Component
+# Form Fields
+Form Fields take and validate inputs the user in a context of a form, or simple querying.
+
 <div class="hs-component-preview">
     <label class="hs-form-field">
         <span class="hs-form-field__label">Form Field Label</span>
@@ -23,16 +25,81 @@ sidebar_position: 4
 ```html
 <label class="hs-form-field">
     <span class="hs-form-field__label">Form Field Label</span>
-    <input class="hs-form-field__input" type="text" placeholder="Placeholder..."/>
-    <span class="hs-form-field__helper">Helper text</span>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
 </label>
 ```
 
 ### SCSS/CSS
 ```scss
-@use 'path/to/@devprotocol/hashi/hs-form-field';
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-form-field';
 
-@include hs-form-field.render();
+@include hashi.init {
+  @include hs-form-field.render();
+}
+```
+
+### Outlined Form Field
+By default, the form field is styled using the outlined style. This doesn't provide emphasis differentiation, just stylistic choices.
+```html
+<label class="hs-form-field">
+    <span class="hs-form-field__label">Form Field Label</span>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
+    <span class="hs-form-field__helper">Helper text</span>
+</label>
+```
+
+### Filled Form Field
+You can modify the form field style to be in the filled style by adding the `.is-filled` class to the parent's class list.
+```html
+<label class="hs-form-field is-filled">
+    <span class="hs-form-field__label">Form Field Label</span>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
+    <span class="hs-form-field__helper">Helper text</span>
+</label>
+```
+
+> ⚠ **Choosing form field styles** <br/>
+> Form styles must be consistent in every form. Contextually, a webpage has many forms; It can be in the form of a search field, or a contact form. Generally, you can only select one style per form. For example, in the contact form you can only limit the field's style to the outlined style, and in the search field you only limit it to the filled style.
+
+### Helper Texts
+Helper texts provide additional context to what is being asked of the user.
+
+Helper texts can also be used for error messages during form validation.
+```html
+<label class="hs-form-field">
+    <span class="hs-form-field__label">Form Field Label</span>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
+    <span class="hs-form-field__helper">Helper text</span>
+</label>
+```
+
+### Form Field Icons
+The position of the form field icon is dependent on putting a class name after the `.hs-form-field__icon` class.
+
+By default, icons are on the trailing icon position. You can modify it to become a leading icon by attaching `.is-leading` in the icon element class list.
+
+> The class names inside brackets are only for emphasis, not to be used in the actual implementation.
+```html
+<!-- Trailing Icon -->
+<label class="hs-form-field is-required is-filled">
+    <span class="hs-form-field__label">Form Field Label</span>
+    <i class="hs-form-field__icon">
+        <!-- Icon SVG -->
+    </i>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+    <span class="hs-form-field__helper">Helper text</span>
+</label>
+
+<!-- Leading Icon -->
+<label class="hs-form-field is-required is-filled">
+    <span class="hs-form-field__label">Form Field Label</span>
+    <i class="hs-form-field__icon [is-leading]">
+        <!-- Icon SVG -->
+    </i>
+    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
+    <span class="hs-form-field__helper">Helper text</span>
+</label>
 ```
 
 ## API
@@ -52,7 +119,7 @@ These are used to structure, extend, and modify the styles of a component on the
 | `.is-danger`             | Renders the component in its danger state.  |
 
 ### Custom Properties
-These are for creating your own component themes.
+These are for creating your own component theme classes that you can append to the parent element markup.
 
 | Property                        | Effect                                      |
 |---------------------------------|---------------------------------------------|
@@ -71,6 +138,7 @@ These are for creating your own component themes.
 | `--hs-form-field-helper-weight` | Changes the form field's helper weight.     |
 
 #### Example
+
 ```scss
 .my-text-field-theme {
   --hs-text-field-fill: #232323;
@@ -86,6 +154,7 @@ These are for creating your own component themes.
   }
 }
 ```
+
 ### Hashi `render()` API
 Here are all the themeable properties for this component. The directions to use these properties are located in
 the [render API](index.md#modification-scss).
