@@ -90,21 +90,21 @@
         margin-bottom: hs-core.key-get('card-section-gap');
       }
       
-      &:only-child {
+      &:last-child {
         @include hs-core.shape-bind('card-header', (
-          padding: $padding
+          padding: (0 $padding $padding)
         ));
       }
-      
+  
       &:first-child {
         @include hs-core.shape-bind('card-header', (
           padding: ($padding $padding 0)
         ));
       }
-      
-      &:last-child {
+  
+      &:only-child {
         @include hs-core.shape-bind('card-header', (
-          padding: (0 $padding $padding)
+          padding: $padding
         ));
       }
       
@@ -165,21 +165,21 @@
         margin-bottom: hs-core.key-get('card-section-gap');
       }
       
-      &:only-child {
+      &:last-child {
         @include hs-core.shape-bind('card', (
-          padding: $padding
+          padding: (0 $padding $padding)
         ));
       }
-      
+  
       &:first-child {
         @include hs-core.shape-bind('card', (
           padding: ($padding $padding 0)
         ));
       }
-      
-      &:last-child {
+  
+      &:only-child {
         @include hs-core.shape-bind('card', (
-          padding: (0 $padding $padding)
+          padding: $padding
         ));
       }
     }
@@ -194,21 +194,21 @@
         padding: (0 $padding),
       ));
       
-      &:only-child {
+      &:last-child {
         @include hs-core.shape-bind('card-footer', (
-          padding: $padding
+          padding: (0 $padding $padding)
         ));
       }
-      
+  
       &:first-child {
         @include hs-core.shape-bind('card-footer', (
           padding: ($padding $padding 0)
         ));
       }
-      
-      &:last-child {
+  
+      &:only-child {
         @include hs-core.shape-bind('card-footer', (
-          padding: (0 $padding $padding)
+          padding: $padding
         ));
       }
     }
