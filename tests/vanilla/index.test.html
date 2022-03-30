@@ -341,45 +341,57 @@
         </div>
     </section>
 
-    <section style="width: calc(100% - 30px); max-width: 420px; margin: 0 auto; padding: 3rem 0;">
+    <section>
         <div class="hs-card">
-            <div class="hs-card__header">
-                <h2 class="hs-card__title">CARD TITLE</h2>
-                <p class="hs-card__subtitle">Card Subtitle. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, maiores.</p>
+            <div class="hs-card__media">
+                <img src="https://www.fillmurray.com/1920/1080" alt="Card Image" />
             </div>
-            <div class="hs-card__content">
+            <header class="hs-card__header">
+                <div class="hs-card__mast">
+                    <h2 class="hs-card__title">CARD TITLE</h2>
+                    <p class="hs-card__subtitle">Card Subtitle. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, maiores.</p>
+                </div>
+                <div class="hs-card__icon">
+                    <img src="assets/img/dev-token.png" alt="Dev Token Icon"/>
+                </div>
+            </header>
+            <main class="hs-card__content">
                 <p>Lorem ipsum dolor sit amet, <a href="#" class="hs-link">consectetur</a> adipisicing elit. Optio, repellendus.</p>
-                <label class="hs-select-field">
-                    <span class="hs-select-field__label">Select</span>
-                    <select class="hs-select-field__input">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                        <option>Option 4</option>
-                        <option>Option 5</option>
-                    </select>
-                </label>
-                <label class="hs-form-field">
-                    <span class="hs-form-field__label">Hello</span>
-                    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
-                    <span class="hs-form-field__input__icon"></span>
-                    <span class="hs-form-field__helper">Helper text</span>
-                </label>
-                <label class="hs-form-field is-danger">
-                    <span class="hs-form-field__label">Hello</span>
-                    <input class="hs-form-field__input" type="text" placeholder="Placeholder...">
-                    <span class="hs-form-field__input__icon"></span>
-                    <span class="hs-form-field__helper">Helper text</span>
-                </label>
-            </div>
-            <div class="hs-card__actions">
-                <button class="hs-button hs-button--outlined neutral" role="button">
-                    <span class="hs-button__label">BEG</span>
+            </main>
+            <footer class="hs-card__footer">
+                <button class="hs-button is-outlined neutral" role="button">
+                    <span class="hs-button__label">Card</span>
                 </button>
-                <button class="hs-button hs-button--filled neutral" role="button">
-                    <span class="hs-button__label">BEG</span>
+                <button class="hs-button is-filled neutral" role="button">
+                    <span class="hs-button__label">Actions</span>
                 </button>
+            </footer>
+        </div>
+
+        <div class="hs-card is-filled">
+            <div class="hs-card__media">
+                <img src="https://www.fillmurray.com/1920/1080" alt="Card Image" />
             </div>
+            <header class="hs-card__header">
+                <div class="hs-card__mast">
+                    <h2 class="hs-card__title">CARD TITLE</h2>
+                    <p class="hs-card__subtitle">Card Subtitle. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, maiores.</p>
+                </div>
+                <div class="hs-card__icon">
+                    <img src="assets/img/dev-token.png" alt="Dev Token Icon"/>
+                </div>
+            </header>
+            <main class="hs-card__content">
+                <p>Lorem ipsum dolor sit amet, <a href="#" class="hs-link">consectetur</a> adipisicing elit. Optio, repellendus.</p>
+            </main>
+            <footer class="hs-card__footer">
+                <button class="hs-button is-outlined neutral" role="button">
+                    <span class="hs-button__label">Card</span>
+                </button>
+                <button class="hs-button is-filled neutral" role="button">
+                    <span class="hs-button__label">Actions</span>
+                </button>
+            </footer>
         </div>
     </section>
 </main>

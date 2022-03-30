@@ -33,6 +33,7 @@
 );
 @use 'node_modules/@devprotocol/hashi/hs-button';
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
+@use 'node_modules/@devprotocol/hashi/hs-card';
 @use 'node_modules/@devprotocol/hashi/hs-form-field';
 @use 'node_modules/@devprotocol/hashi/hs-select-field';
 @use 'node_modules/@devprotocol/hashi/hs-utils';
@@ -71,6 +72,7 @@
   
   @include hs-button.render();
   @include hs-button-group.render();
+  @include hs-card.render();
   @include hs-form-field.render();
   @include hs-select-field.render();
   
@@ -78,21 +80,6 @@
   @include hs-utils.color-utils();
   @include hs-utils.shape-utils();
   @include hs-utils.typography-utils();
-  
-  // @include hs-card.render();
-  // @include hs-link.render();
-  // @include hs-profile.render();
-  // @include hs-select-field.render();
-  // @include hs-text-field.render();
-  
-  // @include hs-utils.color-utils();
-  // @include hs-utils.shape-utils();
-  // @include hs-utils.layout-utils();
-
-  // @include hashi.appbar-render();
-  // @include hashi.card-render();
-  // @include hashi.header-render();
-  // @include hashi.navbar-render();
 
   .fill-current {
     fill: currentColor;
