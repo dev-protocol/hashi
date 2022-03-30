@@ -23,44 +23,46 @@
 @use '~@devprotocol/hashi';
 
 @mixin use() {
-    .hs-component-preview {
-        width: 100%;
-        max-width: max-content;
-        display: grid;
-        grid-gap: 0.5rem;
-        grid-template-columns: repeat(1, 1fr);
-        padding: 0.8rem;
-        background-color: hashi.token-get('surface-300');
-        border: 1px solid hashi.token-get('surface-300');
-        border-radius: 0.5rem;
-        
-        // @include hashi.tools-elevation(2);
-        
-        &.col-2 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        &::before {
-            content: "Component Preview";
-            grid-column: 1 / -1;
-            margin-bottom: 0.4rem;
-            padding: 0.3rem 0.5rem;
-            outline: dashed 1px hashi.token-get('surface-ink');
-        }
-        
-        .hs-component-preview__row {
-            width: max-content;
-            display: flex;
-            flex-flow: column nowrap;
-            
-            & > * + * {
-                flex-basis: content;
-                margin-top: 0.5rem;
-            }
-        }
-        
-        .hs-button {
-            max-width: 100% !important;
-        }
+  .hs-component-preview {
+    width: 100%;
+    max-width: max-content;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0.8rem;
+    background-color: hashi.token-get('surface-300');
+    border: 1px solid hashi.token-get('surface-300');
+    border-radius: 0.5rem;
+    
+    @include hashi.shape-apply('component-preview', (
+      shadow: 'low'
+    ));
+    
+    &.col-2 {
+      grid-template-columns: repeat(2, 1fr);
     }
+    
+    &::before {
+      content: 'Interactive Preview';
+      grid-column: 1 / -1;
+      margin-bottom: 0.4rem;
+      padding: 0.3rem 0.5rem;
+      outline: dashed 1px hashi.token-get('disabled-ink');
+    }
+    
+    .hs-component-preview__row {
+      width: max-content;
+      display: flex;
+      flex-flow: column nowrap;
+      
+      & > * + * {
+        flex-basis: content;
+        margin-top: 0.5rem;
+      }
+    }
+    
+    .hs-button {
+      max-width: 100% !important;
+    }
+  }
 }

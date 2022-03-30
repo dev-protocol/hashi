@@ -4,11 +4,11 @@ Icons are a vital part of improving the user experience in a project. It lets us
 ## Guidelines
 We've divided allowed icons by their purpose. There are only a few icon libraries you're allowed to use.
 
-| Purpose                 | Icon Libraries                           |
-|-------------------------|------------------------------------------|
-| General                 | Font Awesome Icons                       |
-| External Brand/Logo     | SimpleIcons                              |
-| Dev Protocol Brand      | Refer to Dev Protocol's branding section |
+| Purpose                | Icon Libraries                           |
+|------------------------|------------------------------------------|
+| General, Component Use | Font Awesome Icons                       |
+| External Brand/Logo    | SimpleIcons                              |
+| Dev Protocol Brand     | Refer to Dev Protocol's branding section |
 
 ### Sizing
 Generally, icon sizes only revolve around 22px to 28px depending on the component size.

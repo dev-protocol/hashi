@@ -6,7 +6,7 @@ slug: /develop/card
 # Cards
 Cards are a blank surface component that serves short-form/summarized content to the user.
 
-![HSCard Component](card.png)
+![HSCard Component](_media/card.png)
 
 ## Usage
 ### HTML

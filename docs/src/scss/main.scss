@@ -88,6 +88,11 @@
   @include hs-link.render();
   @include hs-profile.render();
   @include hs-select-field.render();
+  
+  .hs-button {
+    --ifm-link-color: inherit;
+    --ifm-link-hover-color: inherit;
+  }
 
   .hs-card {
     h1,

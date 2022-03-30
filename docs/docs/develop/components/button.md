@@ -51,7 +51,7 @@ Additionally, anchor elements don't have a disabled attribute so you wouldn't re
 </a>
 ```
 
-Additionally, you can use radios and checkboxes whenever you put it under the [Button Group](Button%20Group.md) wrapper.
+Additionally, you can use radios and checkboxes whenever you put it under the [Button Group](button-group.md) wrapper.
 
 ```html
 <div class="hs-button-group">
@@ -100,6 +100,9 @@ Text buttons are used for the most prioritized actions. These are used for actio
   <span class="hs-button__label">Button</span>
 </button>
 ```
+
+### Button States
+Button states refer to the semantic visual of the button. Examples include: success, warning, and danger. To apply any of these styles to the button, add an `.is-success`, `.is-warning`, or an `.is-danger` class to the parent element's class list.
 
 ### Button Icons
 The position of the button icon is entirely dependent on the markup position.

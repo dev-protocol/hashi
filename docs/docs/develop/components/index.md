@@ -96,7 +96,7 @@ Hashi lets you create custom components to solve your project's design problems.
 radii, to changing the font size, Hashi will cover it all for you.
 
 ### Simple composition (utilities)
-By using [utility classes](utilities/index.md), you can create layouts of components, add color, and modify the shapes
+By using [utility classes](../utilities/index.md), you can create layouts of components, add color, and modify the shapes
 and sizes of a component easily. This is generally recommended for components that are not complex in nature.
 
 ### Advanced composition (composition API)

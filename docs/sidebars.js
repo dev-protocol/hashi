@@ -66,9 +66,12 @@ const sidebars = {
       },
     ],
     'Components': [
+      'design/components/introduction',
       'design/components/hs-button',
       'design/components/hs-card',
-      'design/components/hs-text-field',
+      'design/components/hs-form-field',
+      'design/components/hs-select-field',
+      'design/components/hs-wallet',
     ]
   },
   develop: {
