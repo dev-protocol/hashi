@@ -26,15 +26,21 @@
 $fill: 'surface' !default;
 $ink: 'surface-ink' !default;
 $border: 'primary' !default;
-$tone: 400 !default;
+$tone: 200 !default;
 
 $radius: 'medium' !default;
 $padding: 'md' !default;
 
-$family: 'body' !default;
-$size: 'body' !default;
-$weight: 'normal' !default;
-$line-height: 'normal' !default;
+$title-typography: 'subtitle' !default;
+$subtitle-typography: 'body' !default;
+$content-typography: 'body' !default;
+
+$icon-size: 66px !default;
+$media-height: 120px !default;
+
+$section-gap: 'md' !default;
+$header-gap: 'md' !default;
+$footer-gap: 'sm' !default;
 
 @mixin render() {
   @include card-base.init(
@@ -44,10 +50,14 @@ $line-height: 'normal' !default;
     $tone,
     $radius,
     $padding,
-    $family,
-    $size,
-    $weight,
-    $line-height,
+    $title-typography,
+    $subtitle-typography,
+    $content-typography,
+    $icon-size,
+    $media-height,
+    $section-gap,
+    $header-gap,
+    $footer-gap,
   ) {
     &.is-filled {
       @include hs-core.color-bind('card', (

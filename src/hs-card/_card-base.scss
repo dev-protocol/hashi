@@ -29,21 +29,26 @@
   $tone,
   $radius,
   $padding,
-  $family,
-  $size,
-  $weight,
-  $line-height,
+  $title-typography,
+  $subtitle-typography,
+  $content-typography,
+  $icon-size,
+  $media-height,
+  $section-gap,
+  $header-gap,
+  $footer-gap,
 ) {
   .hs-card {
     @include hs-core.color-apply('card', (
       fill: $fill,
       ink: $ink,
       border: $border,
-    ), 'filled', $tone: 200);
+    ), 'filled', $tone: $tone);
     @include hs-core.shape-apply('card', (
       radius: $radius,
       shadow: 'none'
     ));
+    @include hs-core.key-bind('card-section-gap', hs-core.token-switch('space-#{$section-gap}', $section-gap));
     overflow: hidden;
     
     @include hs-core.dark-mode {
@@ -75,14 +80,14 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
-      gap: hs-core.token-get('space-md');
+      gap: hs-core.key-create('card-header-gap', hs-core.token-switch('space-#{$header-gap}', $header-gap));
       @include hs-core.shape-apply('card-header', (
         padding: ($padding $padding 0)
       ));
       
       &:not(:only-child),
       &:not(:last-child) {
-        margin-bottom: hs-core.token-get('margin-sm');
+        margin-bottom: hs-core.key-get('card-section-gap');
       }
       
       &:only-child {
@@ -106,29 +111,28 @@
       .hs-card__mast {
         .hs-card__title {
           @include hs-core.typography-apply('card-title', (
-            family: 'subtitle',
-            size: 'subtitle',
-            weight: 'subtitle',
-            line-height: 'subtitle'
+            family: $title-typography,
+            size: $title-typography,
+            weight: $title-typography,
+            line-height: $title-typography
           ));
           @include hs-core.line-break(1);
         }
         
         .hs-card__subtitle {
           @include hs-core.typography-apply('card-subtitle', (
-            family: 'body',
-            size: 'body',
-            weight: 'body',
-            line-height: 'body'
+            family: $subtitle-typography,
+            size: $subtitle-typography,
+            weight: $subtitle-typography,
+            line-height: $subtitle-typography
           ));
           @include hs-core.line-break(2);
         }
       }
       
       .hs-card__icon {
-        $icon-size: 66px;
-        width: $icon-size;
-        height: $icon-size;
+        width: hs-core.key-create('card-icon-size', hs-core.token-switch($icon-size));
+        height: hs-core.key-create('card-icon-size', hs-core.token-switch($icon-size));
         border-radius: 50%;
         @include hs-core.color-apply('card-icon', (
           border: 'accent'
@@ -149,16 +153,16 @@
       
       p {
         @include hs-core.typography-apply('card', (
-          family: $family,
-          size: $size,
-          weight: $weight,
-          line-height: $line-height
+          family: $content-typography,
+          size: $content-typography,
+          weight: $content-typography,
+          line-height: $content-typography
         ));
       }
       
       &:not(:only-child),
       &:not(:last-child) {
-        margin-bottom: hs-core.token-get('margin-sm');
+        margin-bottom: hs-core.key-get('card-section-gap');
       }
       
       &:only-child {
@@ -184,7 +188,7 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: end;
-      gap: hs-core.token-get('space-sm');
+      gap: hs-core.key-create('card-footer-gap', hs-core.token-switch('space-#{$footer-gap}', $footer-gap));
       
       @include hs-core.shape-apply('card-footer', (
         padding: (0 $padding),
