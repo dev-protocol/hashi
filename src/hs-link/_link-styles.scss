@@ -20,5 +20,16 @@
 //  SOFTWARE.
 ///
 
-@forward 'link-styles';
-@forward 'link-extend';
+@use '../hs-core';
+
+$ink: 'accent' !default;
+
+@mixin render() {
+  .hs-link {
+    text-decoration: underline;
+    @include hs-core.color-apply('link', (
+      fill: $ink,
+    ), 'text', true);
+    @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+  }
+}
