@@ -3,7 +3,8 @@ title: Shape Tokens
 slug: /design/foundation/shape/tokens
 displayed_sidebar: design
 ---
-# Shape Token System
+Hashi uses tokens to enforce consistency throughout the ecosystem via the smallest of design units.
+
 What constitutes as a shape token is whenever the value is related to the component's structure (e.g. radius, spacing,
 etc.). Hashi's shape tokens also follow a specific schema. Each shape token increments by adding 0.2rem to 0.3rem to its
 amount, or by doubling it from the previous token value. The values are labeled by size (xs → xl), however the

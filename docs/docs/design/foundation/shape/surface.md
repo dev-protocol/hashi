@@ -3,7 +3,6 @@ title: Surface
 slug: /design/foundation/shape/surface
 displayed_sidebar: design
 ---
-# Surface
 Surface is the area all elements operate on. Surfaces can be found in components, or in the back of pages.
 
 ![surface.png](../_media/surface.png)

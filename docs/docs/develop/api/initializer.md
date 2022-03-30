@@ -1,8 +1,8 @@
 ---
+title: Initializer
 slug: /develop/api/initializer
 displayed_sidebar: develop
 ---
-# Initializer
 The `hashi.init()` mixin lets you initialize the entire design system (minus components) with optional 
 configurations.
 

@@ -1,8 +1,8 @@
 ---
+title: Color Utils
 slug: /develop/utilities/color
 displayed_sidebar: develop
 ---
-# Color Utility Classes
 Single-purpose, consistent, and predictable classes for styling/modifying an element's color.
 
 ## Text Colors

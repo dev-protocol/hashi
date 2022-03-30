@@ -1,8 +1,8 @@
 ---
+title: Getting Started
 slug: /develop/getting-started
 displayed_sidebar: develop
 ---
-# Getting Started
 Hashi is [open-sourced on GitHub](https://github.com/dev-protocol/hashi-web) and is [available on npm](https://www.npmjs.com/package/@devprotocol/hashi).
 
 ## Installation

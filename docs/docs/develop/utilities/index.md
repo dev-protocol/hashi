@@ -3,7 +3,6 @@ title: Introduction
 slug: /develop/utilities
 displayed_sidebar: develop
 ---
-# Utilities
 Utility classes are a vital part of Hashi. It allows developers to easily compose layouts, create simple stateless
 components, and make minor modifications in the UI.
 

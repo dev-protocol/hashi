@@ -1,4 +1,8 @@
-# Iconography
+---
+title: Iconography
+slug: /design/foundation/typography/iconography
+displayed_sidebar: design
+---
 Icons are a vital part of improving the user experience in a project. It lets users determine the function, intent, and meaning of the action/information by looking at one glyph.
 
 ## Guidelines

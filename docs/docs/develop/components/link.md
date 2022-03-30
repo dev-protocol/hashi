@@ -3,7 +3,6 @@ id: hs-link
 title: Links
 slug: /develop/link
 ---
-# Links
 Links are elements that take a user from one webpage to another. These are often found inline with regular text.
 
 <div class="hs-component-preview">

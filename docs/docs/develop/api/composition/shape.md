@@ -1,9 +1,8 @@
 ---
+title: Shape Composition
 slug: /develop/api/composition/shape
 displayed_sidebar: develop
 ---
-# Shape Composition API
-
 ## `shape-apply()` mixin.
 This mixin is located inside the main `hashi` module. This mixin allows you to apply shape properties, and creating an API with it.
 

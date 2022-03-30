@@ -1,9 +1,8 @@
 ---
-title: Theming
+title: Typography Theming
 slug: /design/foundation/typography/theming
 displayed_sidebar: design
 ---
-# Typography Theming
 Hashi's typography system is a system designed to handle font/type-related concerns like the font sizes, typefaces,
 line-heights, etc.
 

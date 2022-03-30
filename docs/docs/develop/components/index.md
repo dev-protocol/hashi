@@ -3,7 +3,6 @@ title: Introduction
 slug: /develop/foundation/components 
 displayed_sidebar: develop
 ---
-# Components
 Hashi's components are designed to be primitive, and small. The components should provide the most basic of needs in a
 project like buttons, cards, form fields, wallets, and... profiles? Really? Jokes aside, these are part of Dev
 Protocol's identity, hence, it uses the provided design tokens.

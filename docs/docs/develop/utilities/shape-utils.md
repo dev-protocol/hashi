@@ -1,8 +1,8 @@
 ---
+title: Shape Utils
 slug: /develop/utilities/shape
 displayed_sidebar: develop
 ---
-# Shape Utility Classes
 Single-purpose, consistent, and predictable classes for styling/modifying an element's shape.
 
 ## Widths

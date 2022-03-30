@@ -1,8 +1,8 @@
 ---
+title: Dark Mode
 slug: /develop/dark-mode
 displayed_sidebar: develop
 ---
-# Dark Mode
 Hashi is dark mode-ready out of the box. To enable dark mode, just add the `hashi-theme` attribute to the `<html>` tag in your html file, and specify `dark` as the value.
 ```html
 <html hashi-theme="dark">

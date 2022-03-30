@@ -46,6 +46,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/dev-protocol/hashi-web/docs',
+          breadcrumbs: false,
         },
         blog: {
           showReadingTime: true,

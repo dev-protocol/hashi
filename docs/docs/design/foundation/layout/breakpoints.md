@@ -1,4 +1,7 @@
-# Breakpoints
+---
+title: Breakpoints
+slug: /design/foundation/layout/breakpoints
+---
 Breakpoints are width values that help indicate an element's behavior in different screen sizes.
 
 ## Default Values

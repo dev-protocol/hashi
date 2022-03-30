@@ -1,10 +1,8 @@
 ---
-title: Theming
+title: Color Theming
 slug: /design/foundation/color/theming
 displayed_sidebar: design
 ---
-
-# Color Theming
 Hashi's guidelines for applying colors on a global scope.
 
 ## Main Color Properties

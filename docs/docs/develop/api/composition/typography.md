@@ -1,9 +1,8 @@
 ---
+title: Typography Composition
 slug: /develop/api/composition/typography
 displayed_sidebar: develop
 ---
-# Typography Composition API
-
 ## `typography-apply()` mixin.
 This mixin is located inside the main `hashi` module. This mixin allows you to apply typography properties, and creating an API with it.
 

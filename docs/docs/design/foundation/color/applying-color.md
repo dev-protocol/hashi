@@ -3,7 +3,6 @@ title: Applying Color
 slug: /design/foundation/color/applying
 displayed_sidebar: design
 ---
-# Color Application Guidelines
 Hashi's guidelines for applying color to components.
 
 ## Component Color Anatomy

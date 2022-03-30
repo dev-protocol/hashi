@@ -1,10 +1,8 @@
 ---
 id: hs-wallet
-title: Wallet
+title: Wallets
 slug: /design/wallet
 ---
-# Wallet
-
 :::caution
 This component is in its early development phase, henceforth there are no live implementations yet. It is recommended to follow the current design spec when implementing this in applications.
 :::

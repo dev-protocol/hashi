@@ -1,9 +1,8 @@
 ---
 id: hs-select-field
-title: Select Field
+title: Select Fields
 slug: /design/text-field
 ---
-# Select Fields
 The select field is used whenever you want to make the user choose from a finite set of options.
 
 From the spec, it is required that the top-label select field (default) component is used whenever you want to have a select field in a form. Otherwise, if it’s for a page-related purpose (like a search filter), we recommend the side-label select field to be used.

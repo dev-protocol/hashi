@@ -3,7 +3,6 @@ id: hs-button-group
 title: Button Groups
 slug: /develop/button-group
 ---
-# Button Groups
 Button groups are a group of related actions that may be used to paginate results, tab sections of pages, or simply select an option.
 
 <div class="hs-component-preview">

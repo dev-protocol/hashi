@@ -1,8 +1,8 @@
 ---
+title: Typography Utils
 slug: /develop/utilities/typography
 displayed_sidebar: develop
 ---
-# Typography Utility Classes
 Single-purpose, consistent, and predictable classes for styling/modifying an element's typography.
 
 ## Typography Preset

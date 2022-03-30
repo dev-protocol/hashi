@@ -1,8 +1,8 @@
 ---
+title: Layout Utils
 slug: /develop/utilities/layout
 displayed_sidebar: develop
 ---
-# Layout Utility Classes
 Single-purpose, consistent, and predictable classes for styling/modifying an element's layout.
 
 ## Displays

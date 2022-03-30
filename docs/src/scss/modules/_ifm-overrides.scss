@@ -27,7 +27,15 @@
     box-shadow: none;
     
     .navbar__toggle {
-      // color: #fff !important;
+      color: #fff !important;
+    }
+  
+    button.clean-btn {
+      color: #fff !important;
+      
+      &:hover {
+        background-color: rgba(#fff, 25%);
+      }
     }
     
     .navbar__items {

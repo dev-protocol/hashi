@@ -3,8 +3,6 @@ id: hs-profile
 title: Profiles
 slug: /develop/profile
 ---
-
-# HSProfile Component
 Profiles show information about someone. May it be the user's, a fellow user's, or a person from the team.
 
 ![HSProfile Component](_media/profile.png)

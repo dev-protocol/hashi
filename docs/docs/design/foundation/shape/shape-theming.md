@@ -1,9 +1,8 @@
 ---
-title: Theming
+title: Shape Theming
 slug: /design/foundation/shape/theming
 displayed_sidebar: design
 ---
-# Shape Theming
 Hashi's guidelines for applying shape values on a global scope.
 
 ## Shape Properties

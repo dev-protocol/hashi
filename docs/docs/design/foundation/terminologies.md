@@ -1,4 +1,8 @@
-# Terminologies
+---
+title: Terminologies
+slug: /design/terminologies
+displayed_sidebar: design
+---
 Before we discuss the individual foundational principles of Hashi, we must first dissect how we are going to identify things from here on out.
 
 | Term    | Definition                                                                                                                            |

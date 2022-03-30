@@ -1,8 +1,8 @@
 ---
+title: Concepts
 slug: /develop/concepts
 displayed_sidebar: develop
 ---
-# Concepts
 After realizing our [aims](../introduction.md#aims), we've decided on a few concepts we'd like to apply those aims to the design system.
 
 ## Token-driven Architecture

@@ -1,9 +1,8 @@
 ---
+title: Color Composition
 slug: /develop/api/composition/color
 displayed_sidebar: develop
 ---
-# Color Composition API
-
 ## `color-apply()` mixin.
 This mixin is located inside the main `hashi` module. This mixin allows you to apply colors based on Hashi's component color anatomy spec, and creating an API with it.
 

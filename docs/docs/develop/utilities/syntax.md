@@ -1,8 +1,8 @@
 ---
+title: Syntax
 slug: /develop/utilities/syntax
 displayed_sidebar: develop
 ---
-# Syntax
 Utility classes follow a strict syntax to ensure consistency and predictability.
 
 ## Classes

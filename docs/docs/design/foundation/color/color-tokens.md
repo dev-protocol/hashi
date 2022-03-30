@@ -3,7 +3,8 @@ title: Color Tokens
 slug: /design/foundation/color/tokens
 displayed_sidebar: design
 ---
-# Color Token System
+Hashi uses tokens to enforce consistency throughout the ecosystem via the smallest of design units.
+
 Hashi's color tokens follow a specific schema. The schema is specially designed to cover style and accessibility states.
 Every color token increases/decreases its tint/shade by 16% every 100 increments in tone (i.e. 200 → 300).
 

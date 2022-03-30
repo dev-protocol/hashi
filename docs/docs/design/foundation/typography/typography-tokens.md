@@ -1,9 +1,10 @@
 ---
-title: Tokens
+title: Typography Tokens
 slug: /design/foundation/typography/tokens
 displayed_sidebar: design
 ---
-# Typography Token System
+Hashi uses tokens to enforce consistency throughout the ecosystem via the smallest of design units.
+
 Typography tokens are values that have to do with fonts, from the size and weights, to the leading and spacing. Like the
 other two, this also follows a particular schema.
 

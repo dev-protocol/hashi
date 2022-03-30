@@ -3,7 +3,6 @@ id: hs-form-field
 title: Form Fields
 slug: /develop/form-field
 ---
-# Form Fields
 Form fields take and validate inputs the user in a context of a form, or simple querying.
 
 <div class="hs-component-preview">

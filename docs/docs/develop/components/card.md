@@ -3,7 +3,6 @@ id: hs-card
 title: Cards
 slug: /develop/card
 ---
-# Cards
 Cards are a blank surface component that serves short-form/summarized content to the user.
 
 ![HSCard Component](_media/card.png)

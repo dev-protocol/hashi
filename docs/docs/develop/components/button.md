@@ -4,8 +4,6 @@ title: Buttons
 slug: /develop/button
 displayed_sidebar: develop
 ---
-
-# Buttons
 Buttons call the user to a specific action in the page. May it be in a form, or a hyperlink.
 
 <div class="hs-component-preview col-2">

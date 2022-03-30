@@ -1,4 +1,8 @@
-# Tailwind Integration
+---
+title: Tailwind
+slug: /develop/integrations/tailwind
+displayed_sidebar: develop
+---
 Hashi already provides components, a styling API, and utilities out of the box. However, we've found that the built-ins aren't enough. Admittedly, Hashi's built-in utility classes aren't as powerful as Tailwind's. 
 
 So we've created a `tailwind.config.js` file inside the library. This way, you can use Tailwind without sacrificing [Hashi's concepts](../getting-started/concepts.md). You can now enjoy the best of both worlds: An elegant component style library, a robust styling API, and a powerful utility class library.

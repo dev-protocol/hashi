@@ -1,9 +1,8 @@
 ---
 id: hs-form-field
-title: Form Field
+title: Form Fields
 slug: /design/form-field
 ---
-# Form Fields
 ## Colors
 Form field colors indicate what state the component is in whenever the user interacts with it.
 

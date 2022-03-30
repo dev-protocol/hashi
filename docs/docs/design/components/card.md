@@ -1,9 +1,8 @@
 ---
 id: hs-card
-title: Card
+title: Cards
 slug: /design/card
 ---
-# Cards
 ![HSCard Component](../_media/card.png)
 
 ## Content Guidelines

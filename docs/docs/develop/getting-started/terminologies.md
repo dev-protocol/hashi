@@ -1,8 +1,8 @@
 ---
+title: Terminologies
 slug: /develop/terminologies
 displayed_sidebar: develop
 ---
-# Terminologies
 Before we discuss the individual foundational principles of Hashi, we must first dissect how we are going to identify things from here on out.
 
 | Term    | Definition                                                                                                                            |

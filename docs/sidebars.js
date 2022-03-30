@@ -76,6 +76,7 @@ const sidebars = {
   },
   develop: {
     'Getting Started': [
+      'develop/introduction',
       'develop/getting-started/index',
       'develop/getting-started/concepts',
       'develop/getting-started/terminologies',

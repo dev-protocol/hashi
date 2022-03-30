@@ -4,7 +4,6 @@ title: Introduction
 slug: /design/components
 displayed_sidebar: design
 ---
-# Introduction
 Hashi’s component system is designed to be primitive only and not provide everything. We believe that each project has its own design problems, and there is no “one solution” to the said problems.
 
 ## Creating your own components
