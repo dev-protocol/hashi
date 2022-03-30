@@ -78,7 +78,15 @@
       &:not(.is-filled) {
         @include hs-core.color-apply('select-field', (
           border: $border
-        ), 'filled', $tone: 'ink');
+        ), 'filled', $tone: $tone);
+        
+        @include hs-core.dark-mode {
+          @if $fill == 'surface' {
+            @include hs-core.color-apply('select-field', (
+              border: $fill
+            ), 'filled', $tone: 'ink');
+          }
+        }
       }
       
       &:focus {
