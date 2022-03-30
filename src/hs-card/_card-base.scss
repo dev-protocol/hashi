@@ -22,6 +22,191 @@
 
 @use '../hs-core';
 
-@mixin init() {
-  //
+@mixin init(
+  $fill,
+  $ink,
+  $border,
+  $tone,
+  $radius,
+  $padding,
+  $family,
+  $size,
+  $weight,
+  $line-height,
+) {
+  .hs-card {
+    @include hs-core.color-apply('card', (
+      fill: $fill,
+      ink: $ink,
+      border: $border,
+    ), 'filled', $tone: 200);
+    @include hs-core.shape-apply('card', (
+      radius: $radius,
+      shadow: 'none'
+    ));
+    overflow: hidden;
+    
+    @include hs-core.dark-mode {
+      &:not(.is-filled) {
+        @if $fill == 'surface' {
+          @include hs-core.color-bind('card', (
+            border: $fill,
+          ), 'filled', $tone: 'ink');
+        }
+      }
+    }
+    
+    @content;
+    
+    .hs-card__media {
+      width: 100%;
+      height: 100%;
+      max-height: 120px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    
+    .hs-card__header {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      gap: hs-core.token-get('space-md');
+      @include hs-core.shape-apply('card-header', (
+        padding: ($padding $padding 0)
+      ));
+      
+      &:not(:only-child),
+      &:not(:last-child) {
+        margin-bottom: hs-core.token-get('margin-sm');
+      }
+      
+      &:only-child {
+        @include hs-core.shape-bind('card-header', (
+          padding: $padding
+        ));
+      }
+      
+      &:first-child {
+        @include hs-core.shape-bind('card-header', (
+          padding: ($padding $padding 0)
+        ));
+      }
+      
+      &:last-child {
+        @include hs-core.shape-bind('card-header', (
+          padding: (0 $padding $padding)
+        ));
+      }
+      
+      .hs-card__mast {
+        .hs-card__title {
+          @include hs-core.typography-apply('card-title', (
+            family: 'subtitle',
+            size: 'subtitle',
+            weight: 'subtitle',
+            line-height: 'subtitle'
+          ));
+          @include hs-core.line-break(1);
+        }
+        
+        .hs-card__subtitle {
+          @include hs-core.typography-apply('card-subtitle', (
+            family: 'body',
+            size: 'body',
+            weight: 'body',
+            line-height: 'body'
+          ));
+          @include hs-core.line-break(2);
+        }
+      }
+      
+      .hs-card__icon {
+        $icon-size: 66px;
+        width: $icon-size;
+        height: $icon-size;
+        border-radius: 50%;
+        @include hs-core.color-apply('card-icon', (
+          border: 'accent'
+        ), 'outlined');
+        
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    
+    .hs-card__content {
+      @include hs-core.shape-apply('card', (
+        padding: (0 $padding)
+      ));
+      
+      p {
+        @include hs-core.typography-apply('card', (
+          family: $family,
+          size: $size,
+          weight: $weight,
+          line-height: $line-height
+        ));
+      }
+      
+      &:not(:only-child),
+      &:not(:last-child) {
+        margin-bottom: hs-core.token-get('margin-sm');
+      }
+      
+      &:only-child {
+        @include hs-core.shape-bind('card', (
+          padding: $padding
+        ));
+      }
+      
+      &:first-child {
+        @include hs-core.shape-bind('card', (
+          padding: ($padding $padding 0)
+        ));
+      }
+      
+      &:last-child {
+        @include hs-core.shape-bind('card', (
+          padding: (0 $padding $padding)
+        ));
+      }
+    }
+    
+    .hs-card__footer {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: end;
+      gap: hs-core.token-get('space-sm');
+      
+      @include hs-core.shape-apply('card-footer', (
+        padding: (0 $padding),
+      ));
+      
+      &:only-child {
+        @include hs-core.shape-bind('card-footer', (
+          padding: $padding
+        ));
+      }
+      
+      &:first-child {
+        @include hs-core.shape-bind('card-footer', (
+          padding: ($padding $padding 0)
+        ));
+      }
+      
+      &:last-child {
+        @include hs-core.shape-bind('card-footer', (
+          padding: (0 $padding $padding)
+        ));
+      }
+    }
+  }
 }

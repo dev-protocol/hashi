@@ -21,7 +21,41 @@
 ///
 
 @use '../hs-core';
+@use 'card-base';
+
+$fill: 'surface' !default;
+$ink: 'surface-ink' !default;
+$border: 'primary' !default;
+$tone: 400 !default;
+
+$radius: 'medium' !default;
+$padding: 'md' !default;
+
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'normal' !default;
+$line-height: 'normal' !default;
 
 @mixin render() {
-  //
+  @include card-base.init(
+    $fill,
+    $ink,
+    $border,
+    $tone,
+    $radius,
+    $padding,
+    $family,
+    $size,
+    $weight,
+    $line-height,
+  ) {
+    &.is-filled {
+      @include hs-core.color-bind('card', (
+        border: $fill,
+      ), 'filled', $tone: 200);
+      @include hs-core.shape-bind('card', (
+        shadow: 'low'
+      ));
+    }
+  }
 }
