@@ -155,18 +155,27 @@ To use icons, place an SVG inside the `.hs-select-field__icon` element.
 ### CSS Classes
 These are used to structure, extend, and modify the styles of a component on the markup.
 
+### Anatomical Classes
+These classes make up the elements inside a component.
+
 | Class                     | Effect                                             |
 |---------------------------|----------------------------------------------------|
 | `.hs-select-field`        | Main select field class.                           |
 | `.hs-select-field__label` | The select field's label class.                    |
 | `.hs-select-field__input` | The select field's main input class.               |
 | `.hs-select-field__icon`  | The select field's icon class.                     |
-| `.is-filled`              | Renders the component in its filled style.         |
-| `.is-danger`              | Renders the component in its danger state.         |
-| `.is-leading`             | Renders the component's icon in its leading style. |
+
+### Variant Classes
+For information on how to use these classes, [click here](index.md#modification-html).
+
+| Class         | Effect                                             |
+|---------------|----------------------------------------------------|
+| `.is-filled`  | Renders the component in its filled style.         |
+| `.is-danger`  | Renders the component in its danger state.         |
+| `.is-leading` | Renders the component's icon in its leading style. |
 
 ### Custom Properties
-These are for creating your own component themes.
+These are for creating your own component theme classes that you can append to the parent element markup.
 
 | Property                          | Effect                                       |
 |-----------------------------------|----------------------------------------------|

@@ -66,6 +66,9 @@ Button groups are a group of related actions that may be used to paginate result
 ### CSS Classes
 These are used to extend and modify the styles of a component on the markup.
 
+### Anatomical Classes
+These classes make up the elements inside a component.
+
 | Class              | Effect                                            |
 |--------------------|---------------------------------------------------|
 | `.hs-button-group` | A wrapper class around buttons for grouping them. |

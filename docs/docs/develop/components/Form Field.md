@@ -118,6 +118,9 @@ To use icons, place an SVG inside the `.hs-form-field__icon` element.
 ### CSS Classes
 These are used to structure, extend, and modify the styles of a component on the markup.
 
+### Anatomical Classes
+These classes make up the elements inside a component.
+
 | Class                    | Effect                                             |
 |--------------------------|----------------------------------------------------|
 | `.hs-form-field`         | Main text field class.                             |
@@ -125,11 +128,15 @@ These are used to structure, extend, and modify the styles of a component on the
 | `.hs-form-field__input`  | The text field's main input class.                 |
 | `.hs-form-field__icon`   | The text field's icon class.                       |
 | `.hs-form-field__helper` | The text field's helper text class.                |
-| `.is-filled`             | Renders the component in its filled style.         |
-| `.is-success`            | Renders the component in its success state.        |
-| `.is-warning`            | Renders the component in its warning state.        |
-| `.is-danger`             | Renders the component in its danger state.         |
-| `.is-leading`            | Renders the component's icon in its leading style. |
+
+### Variant Classes
+For information on how to use these classes, [click here](index.md#modification-html).
+
+| Class         | Effect                                             |
+|---------------|----------------------------------------------------|
+| `.is-filled`  | Renders the component in its filled style.         |
+| `.is-danger`  | Renders the component in its danger state.         |
+| `.is-leading` | Renders the component's icon in its leading style. |
 
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.
