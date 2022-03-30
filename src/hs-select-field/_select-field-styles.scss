@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,64 +18,96 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
-@use 'sass:map';
 
 @use 'select-field-base';
 
-$accent: 'native-blue' !default;
-$tone: 400;
+$fill: 'surface' !default;
+$ink: 'surface-ink' !default;
+$border: 'primary' !default;
+$tone: 200 !default;
 
-$radius: 'radius-sm' !default;
-$padding: (0.4rem 0.075rem) !default;
+$radius: 'small' !default;
+$padding: ('sm' 'md') !default;
 
-$family: 'family-body' !default;
-$size: 'size-body' !default;
-$weight: 'weight-body' !default;
-$line-height: 'line-height-body' !default;
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'normal' !default;
+$line-height: 'normal' !default;
 
 @mixin render() {
-
-  @include select-field-base.init() {
-    .hs-select-field__input {
-      &:focus-within {
-        @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('#{$accent}-#{$tone}'));
+  @include select-field-base.init(
+    $fill,
+    $ink,
+    $border,
+    $tone,
+    $radius,
+    $padding,
+    $family,
+    $size,
+    $weight,
+    $line-height,
+  ) {
+    &.is-required {
+      .hs-select-field__label::after {
+        content: '*';
+        color: hs-core.token-get('danger-400');
+        margin-left: hs-core.token-get('margin-xs');
       }
     }
-
-    &.is-success {
-      @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('success-400'));
-      @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('success-400'));
-
+  
+    &.is-filled {
+      @include hs-core.color-bind('select-field', (
+        border: $fill,
+      ), 'filled', $tone: $tone);
+      
       .hs-select-field__input {
-        &:focus-within {
-          @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('success-400'));
-        }
+        @include hs-core.shape-apply('select-field', (
+          shadow: 'low'
+        ));
+      }
+    
+      @include hs-core.dark-mode {
+        @include hs-core.color-bind('select-field', (
+          border: $fill
+        ), 'filled', $tone: $tone);
       }
     }
-
-    &.is-warning {
-      @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('warning-400'));
-      @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('warning-400'));
-
-      .hs-select-field__input {
-        &:focus-within {
-          @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('warning-400'));
-        }
-      }
-    }
-
+  
     &.is-danger {
-      @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-      @include hs-core.theme-key-bind('select-field-label-ink', hs-core.theme-token-get('danger-400'));
-
-      .hs-select-field__input {
-        &:focus-within {
-          @include hs-core.theme-key-bind('select-field-border', hs-core.theme-token-get('danger-400'));
-        }
+      @include hs-core.color-bind('select-field', (
+        ink: 'danger-400',
+      ), 'filled');
+      @include hs-core.color-bind('select-field-label', (
+        ink: 'danger-400',
+      ), 'filled');
+      @include hs-core.color-bind('select-field-helper', (
+        ink: 'danger-400',
+      ), 'filled');
+      
+      &:not(.is-filled) {
+        @include hs-core.color-bind('select-field', (
+          border: 'danger'
+        ), 'filled');
       }
+    
+      svg {
+        color: hs-core.token-get('danger-400');
+      }
+    
+      .hs-select-field__input:focus {
+        @include hs-core.color-bind('select-field', (
+          border: 'danger'
+        ), 'filled');
+      }
+    }
+  
+    &.is-side-label {
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: hs-core.token-get('space-sm');
     }
   }
 }

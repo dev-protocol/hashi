@@ -1,0 +1,88 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+
+@mixin init(
+  $gap,
+  $img-size,
+  $name-typography,
+  $role-typography,
+  $description-typography,
+) {
+  .hs-profile {
+    width: 100%;
+    display: grid;
+    grid-template-columns: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size)) 1fr;
+    gap: hs-core.key-create('profile-gap', hs-core.token-switch('space-#{$gap}', $gap));
+    
+    @content;
+    
+    .hs-profile__img {
+      width: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size));
+      height: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size));
+      border-radius: 50%;
+      @include hs-core.color-apply('profile-img', (
+        border: 'accent'
+      ), 'outlined');
+      overflow: hidden;
+      user-select: none;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    
+    .hs-profile__info {
+      .hs-profile__name {
+        @include hs-core.typography-apply('profile-name', (
+          family: $name-typography,
+          size: $name-typography,
+          weight: $name-typography,
+          line-height: $name-typography,
+        ));
+      }
+      
+      .hs-profile__description {
+        @include hs-core.typography-apply('profile-description', (
+          family: $description-typography,
+          size: $description-typography,
+          weight: $description-typography,
+          line-height: $description-typography,
+        ));
+        @include hs-core.line-break(2);
+      }
+      
+      .hs-profile__role {
+        @include hs-core.typography-apply('profile-role', (
+          family: $role-typography,
+          size: $role-typography,
+          weight: $role-typography,
+          line-height: $role-typography,
+        ));
+      }
+    }
+  }
+}

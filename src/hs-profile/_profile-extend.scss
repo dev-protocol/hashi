@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
 
@@ -37,19 +37,19 @@
 /// @param {int} $tone
 /// @return {*} color styles.
 @mixin color($color-map, $style: 'text', $tone: 400) {
-  @include hs-core.color-apply('button', $color-map, $style, true, $tone);
+  @include hs-core.color-bind('profile', $color-map, $style, true, $tone);
 }
 
 /// Shape variant mixin.
 /// @param {map} $shape-map
 /// @return {*} shape styles.
 @mixin shape($shape-map) {
-  @include hs-core.shape-apply('button', $shape-map);
+  @include hs-core.shape-bind('profile', $shape-map);
 }
 
 /// Typography variant mixin.
 /// @param {map} $type-map
 /// @return {*} typography styles.
 @mixin typography($type-map) {
-  @include hs-core.typography-apply('button', $type-map);
+  @include hs-core.typography-bind('profile', $type-map);
 }

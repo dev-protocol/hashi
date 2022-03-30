@@ -1,0 +1,133 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+
+@mixin init(
+  $fill,
+  $ink,
+  $border,
+  $tone,
+  $radius,
+  $padding,
+  $family,
+  $size,
+  $weight,
+  $line-height,
+) {
+  .hs-form-field {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    margin-bottom: 0.8rem;
+    box-sizing: border-box;
+    
+    @content;
+    
+    .hs-form-field__label {
+      @include hs-core.color-apply('form-field-label', (
+        ink: 'surface-ink',
+      ), 'filled', $tone: 400);
+      @include hs-core.typography-apply('form-field', (
+        weight: 'bold',
+        line-height: 'broad'
+      ));
+    }
+    
+    .hs-form-field__input {
+      @include hs-core.color-apply('form-field', (
+        fill: $fill,
+        ink: $ink,
+      ), 'filled', $tone: $tone);
+      @include hs-core.shape-apply('form-field', (
+        radius: $radius,
+        padding: $padding
+      ));
+      @include hs-core.typography-apply('form-field', (
+        family: $family,
+        size: $size,
+        weight: $weight,
+        line-height: $line-height
+      ));
+      outline: none;
+      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+  
+      &:not(.is-danger),
+      &:not(.is-filled) {
+        @include hs-core.color-apply('form-field', (
+          border: $border
+        ), 'filled', $tone: $tone);
+  
+        @include hs-core.dark-mode {
+          @if $fill == 'surface' {
+            @include hs-core.color-apply('form-field', (
+              border: $fill
+            ), 'filled', $tone: 'ink');
+          }
+        }
+      }
+      
+      &:focus {
+        @include hs-core.color-bind('form-field', (
+          border: 'accent'
+        ), 'filled', $tone: 400);
+      }
+    }
+    
+    .hs-form-field__icon {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      place-items: center;
+      position: absolute;
+      top: 52%;
+      left: hs-core.token-get('padding-md');
+      transform: translateY(-52%);
+      
+      &.is-leading {
+        right: hs-core.token-get('padding-md');
+        left: auto;
+        
+        + .hs-form-field__input {
+          padding-right: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+        }
+      }
+      
+      + .hs-form-field__input {
+        padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+      }
+    }
+    
+    .hs-form-field__helper {
+      @include hs-core.color-apply('form-field-helper', (
+        ink: 'surface-ink',
+      ), 'filled', $tone: 400);
+      @include hs-core.typography-apply('form-field', (
+        family: 'small',
+        size: 'small',
+        weight: 'light',
+        line-height: 'broad'
+      ));
+    }
+  }
+}

@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,31 +18,27 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
 @use 'sass:map';
-@use 'sass:list';
 
 @use 'button-base';
-@use 'button-extend';
 
-$fill: 'scarlet' !default;
-$ink: 'scarlet-ink' !default;
+$fill: 'accent' !default;
+$ink: 'accent-ink' !default;
 $border: $fill !default;
 $tone: 400 !default;
 
-$radius: 'radius-xs' !default;
-$padding: (0.5rem 0.7rem) !default;
+$radius: 'small' !default;
+$padding: ('xs' 'sm') !default;
 
-$family: 'family-action' !default;
-$size: 'size-action' !default;
-$weight: 'weight-action' !default;
-$line-height: 'line-height-action' !default;
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'bold' !default;
+$line-height: 'normal' !default;
 
 $gap: 0 !default;
-
-$variants: 'all' !default;
 
 $_states: (
   'success',
@@ -56,67 +52,79 @@ $_states: (
       fill: $fill,
       ink: $ink,
       border: $border
-    ), 'text', $tone: $tone, $stateful: true);
+    ), 'text', true, $tone);
+    
     @include hs-core.shape-apply('button', (
       radius: $radius,
-      padding: $padding
+      padding: $padding,
     ));
+    
     @include hs-core.typography-apply('button', (
       family: $family,
       size: $size,
       weight: $weight,
       line-height: $line-height
     ));
-    outline: none;
-
+  
     @each $state in $_states {
       &.is-#{$state} {
-        @include hs-core.color-apply('button', (
-          fill: $state,
-          ink: '#{$state}-ink',
-          border: $state
-        ), 'text', $tone: $tone, $stateful: true, $extend: true);
+        @include _state-generator($state, 'text');
       }
     }
-
-    @if list.index($variants, 'outlined') or list.index($variants, 'all') {
-      &.hs-button--outlined {
-        @include hs-core.color-apply('button', (
-          fill: $fill,
-          ink: $ink,
-          border: $border
-        ), 'outlined', $stateful: true, $extend: true);
-
-        @each $state in $_states {
-          &.is-#{$state} {
-            @include hs-core.color-apply('button', (
-              fill: $state,
-              ink: '#{$state}-ink',
-              border: $state
-            ), 'outlined', $tone: $tone, $stateful: true, $extend: true);
-          }
+    
+    &.is-outlined {
+      @include hs-core.color-bind('button', (
+        fill: $fill,
+        ink: $ink,
+        border: $border
+      ), 'outlined', true, $tone);
+      
+      @each $state in $_states {
+        &.is-#{$state} {
+          @include _state-generator($state, 'outlined');
         }
       }
     }
-
-    @if list.index($variants, 'filled') or list.index($variants, 'all') {
-      &.hs-button--filled {
-        @include hs-core.color-apply('button', (
-          fill: $fill,
-          ink: $ink,
-          border: $border
-        ), 'filled', $stateful: true, $extend: true);
-
-        @each $state in $_states {
-          &.is-#{$state} {
-            @include hs-core.color-apply('button', (
-              fill: $state,
-              ink: '#{$state}-ink',
-              border: $state
-            ), 'filled', $tone: $tone, $stateful: true, $extend: true);
-          }
+  
+    &.is-filled {
+      @include hs-core.color-bind('button', (
+        fill: $fill,
+        ink: $ink,
+        border: $border
+      ), 'filled', true, $tone);
+  
+      @each $state in $_states {
+        &.is-#{$state} {
+          @include _state-generator($state, 'filled');
+        }
+      }
+  
+      &.is-raised {
+        @include hs-core.shape-apply('button', (
+          shadow: 'low'
+        ));
+    
+        &:hover,
+        &:focus {
+          @include hs-core.shape-apply('button', (
+            shadow: 'normal'
+          ));
+        }
+    
+        &:active {
+          @include hs-core.shape-apply('button', (
+            shadow: 'high'
+          ));
         }
       }
     }
   }
+}
+
+@mixin _state-generator($state, $style) {
+  @include hs-core.color-bind('button', (
+    fill: $state,
+    ink: '#{$state}-ink',
+    border: $state
+  ), $style, true, $tone);
 }

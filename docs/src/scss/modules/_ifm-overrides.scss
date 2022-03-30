@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,72 +18,72 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '~@devprotocol/hashi';
 
 @mixin use() {
-    .navbar {
-        box-shadow: none;
-        
-        .navbar__toggle {
-            color: #fff !important;
-        }
-        
-        .navbar__items {
-            display: flex;
-            gap: 0.5rem;
-            
-            .navbar__title {
-                font-size: hashi.tools-to-rem(24px);
-            }
-            
-            .navbar__item {
-                // --hs-button-ink: #fff;
-                // @extend .hs-button;
-                max-width: max-content !important;
-                
-                &:hover,
-                &:focus,
-                &:active {
-                    --hs-button-ink: #fff;
-                }
-                
-                > span {
-                    font-family: inherit;
-                    font-size: inherit;
-                    font-weight: inherit;
-                }
-            }
-        }
+  .navbar {
+    box-shadow: none;
+    
+    .navbar__toggle {
+      // color: #fff !important;
     }
     
-    .theme-back-to-top-button {
-        --ifm-color-emphasis-200: #{hashi.theme-token-get('scarlet-400')} !important;
-        --ifm-color-emphasis-1000: #{hashi.theme-token-get('scarlet-ink')} !important;
+    .navbar__items {
+      display: flex;
+      gap: 0.5rem;
+      
+      .navbar__title {
+        font-size: hashi.to-rem(24px);
+      }
+      
+      .navbar__item {
+        // --hs-button-ink: #fff;
+        // @extend .hs-button;
+        max-width: max-content !important;
         
-        &:hover {
-            background-color: hashi.theme-token-get('scarlet-300') !important;
+        &:hover,
+        &:focus,
+        &:active {
+          --hs-button-ink: #fff;
         }
+        
+        > span {
+          font-family: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+        }
+      }
     }
+  }
+  
+  .theme-back-to-top-button {
+    --ifm-color-emphasis-200: #{hashi.token-get('accent-400')} !important;
+    --ifm-color-emphasis-1000: #{hashi.token-get('accent-ink')} !important;
     
-    .table-of-contents__link {
-        padding: 0 0.6rem;
-        border-left: 5px solid rgba(0 0 0 / 0);
-        
-        &.table-of-contents__link--active {
-            color: inherit;
-            border-left: 5px solid var(--ifm-color-primary);
-        }
+    &:hover {
+      background-color: hashi.token-get('accent-300') !important;
     }
+  }
+  
+  .table-of-contents__link {
+    padding: 0 0.6rem;
+    border-left: 5px solid rgba(0 0 0 / 0);
     
-    .footer {
-        --ifm-footer-background-color: #{hashi.theme-token-get('neutral-600')};
-        --ifm-footer-color: #{hashi.theme-token-get('neutral-ink')};
-        
-        @include hashi.dark-mode {
-            --ifm-footer-background-color: #{hashi.theme-token-get('surface-300')};
-            --ifm-footer-color: #{hashi.theme-token-get('surface-ink')};
-        }
+    &.table-of-contents__link--active {
+      color: inherit;
+      border-left: 5px solid var(--ifm-color-primary);
     }
+  }
+  
+  .footer {
+    --ifm-footer-background-color: #{hashi.token-get('primary-600')};
+    --ifm-footer-color: #{hashi.token-get('primary-ink')};
+    
+    @include hashi.dark-mode {
+      --ifm-footer-background-color: #{hashi.token-get('primary-300')};
+      --ifm-footer-color: #{hashi.token-get('primary-ink')};
+    }
+  }
 }

@@ -21,51 +21,51 @@
 ///
 
 @use '../hs-core';
-@use 'sass:map';
-
 @use 'card-base';
 
 $fill: 'surface' !default;
 $ink: 'surface-ink' !default;
-$border: $fill !default;
-$tone: 300 !default;
+$border: 'primary' !default;
+$tone: 200 !default;
 
-$radius: 'radius-sm' !default;
-$padding: 'padding-xl' !default;
+$radius: 'medium' !default;
+$padding: 'md' !default;
 
-$family: 'family-body' !default;
-$size: 'size-body' !default;
-$weight: 'weight-body' !default;
-$line-height: 'line-height-body' !default;
+$title-typography: 'subtitle' !default;
+$subtitle-typography: 'body' !default;
+$content-typography: 'body' !default;
 
-$elevation-level: 2 !default;
-$has-elevation: true !default;
+$icon-size: 66px !default;
+$media-height: 120px !default;
 
-@mixin render(
-  $color: (),
-  $shape: (),
-  $type: (),
-  $settings: ()
-) {
-  @include card-base.init() {
-    @include hs-core.color-apply('card', (
-      fill: $fill,
-      ink: $ink,
-      border: $border
-    ), 'filled', $tone: $tone);
-    @include hs-core.shape-apply('card', (
-      radius: $radius,
-      padding: $padding
-    ));
-    @include hs-core.typography-apply('card', (
-      family: $family,
-      size: $size,
-      weight: $weight,
-      line-height: $line-height
-    ));
+$section-gap: 'md' !default;
+$header-gap: 'md' !default;
+$footer-gap: 'sm' !default;
 
-    @if $has-elevation {
-      @include hs-core.tools-elevation($elevation-level);
+@mixin render() {
+  @include card-base.init(
+    $fill,
+    $ink,
+    $border,
+    $tone,
+    $radius,
+    $padding,
+    $title-typography,
+    $subtitle-typography,
+    $content-typography,
+    $icon-size,
+    $media-height,
+    $section-gap,
+    $header-gap,
+    $footer-gap,
+  ) {
+    &.is-filled {
+      @include hs-core.color-bind('card', (
+        border: $fill,
+      ), 'filled', $tone: 200);
+      @include hs-core.shape-bind('card', (
+        shadow: 'low'
+      ));
     }
   }
 }

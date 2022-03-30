@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,15 +18,18 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
-@use '~@devprotocol/hashi';
+@use '~@devprotocol/hashi' with (
+  $accent: 'scarlet'
+);
 @use '~@devprotocol/hashi/hs-button';
 @use '~@devprotocol/hashi/hs-button-group';
 @use '~@devprotocol/hashi/hs-card';
+@use '~@devprotocol/hashi/hs-form-field';
 @use '~@devprotocol/hashi/hs-link';
+@use '~@devprotocol/hashi/hs-profile';
 @use '~@devprotocol/hashi/hs-select-field';
-@use '~@devprotocol/hashi/hs-text-field';
 @use '~@devprotocol/hashi/hs-utils';
 
 @use 'modules/doc-theme-overrides';
@@ -41,10 +44,55 @@
 @include hashi.init() {
   @include doc-theme-overrides.use();
   @include hs-layout.use();
-
+  
+  h1 {
+    @include hashi.typography-apply('h1', (
+      family: 'supertitle',
+      size: 'supertitle',
+      weight: 'supertitle',
+      line-height: 'supertitle',
+    ));
+  }
+  
+  h2 {
+    @include hashi.typography-apply('h2', (
+      family: 'title',
+      size: 'title',
+      weight: 'title',
+      line-height: 'title',
+    ));
+  }
+  
+  h3 {
+    @include hashi.typography-apply('h3', (
+      family: 'subtitle',
+      size: 'subtitle',
+      weight: 'subtitle',
+      line-height: 'subtitle',
+    ));
+  }
+  
+  h4 {
+    @include hashi.typography-apply('h3', (
+      family: 'subtitle',
+      size: 'body',
+      weight: 'bold',
+      line-height: 'normal',
+    ));
+  }
+  
   @include hs-button.render();
   @include hs-button-group.render();
   @include hs-card.render();
+  @include hs-form-field.render();
+  @include hs-link.render();
+  @include hs-profile.render();
+  @include hs-select-field.render();
+  
+  .hs-button {
+    --ifm-link-color: inherit;
+    --ifm-link-hover-color: inherit;
+  }
 
   .hs-card {
     h1,
@@ -63,9 +111,8 @@
   @include hs-component-preview.use();
   @include hs-doc-card.use();
   @include hs-hero.use();
-  @include hs-link.render();
-  @include hs-select-field.render();
-  @include hs-text-field.render();
+  
+  @include hs-utils.layout-utils();
   @include hs-utils.color-utils();
   @include hs-utils.shape-utils();
   @include hs-utils.typography-utils();
@@ -78,28 +125,28 @@
     margin-bottom: 1rem;
     padding: 0.4rem 0.8rem;
     font-weight: 700;
-    background-color: hashi.theme-key-create('status-tag-fill', rgba(#f4f4f4, 10%));
+    background-color: hashi.key-create('status-tag-fill', rgba(#f4f4f4, 10%));
     color: #fff;
-    border-left: 5px solid hashi.theme-key-create('status-tag-border', #f4f4f4);
+    border-left: 5px solid hashi.key-create('status-tag-border', #f4f4f4);
 
     &.implemented {
-      @include hashi.theme-key-bind('status-tag-fill', rgba(#228437, 10%));
-      @include hashi.theme-key-bind('status-tag-border', #228437);
+      @include hashi.key-bind('status-tag-fill', rgba(#228437, 10%));
+      @include hashi.key-bind('status-tag-border', #228437);
     }
 
     &.proposal {
-      @include hashi.theme-key-bind('status-tag-fill', rgba(#ffac00, 10%));
-      @include hashi.theme-key-bind('status-tag-border', #ffac00);
+      @include hashi.key-bind('status-tag-fill', rgba(#ffac00, 10%));
+      @include hashi.key-bind('status-tag-border', #ffac00);
     }
 
     &.rejected {
-      @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
-      @include hashi.theme-key-bind('status-tag-border', #c72828);
+      @include hashi.key-bind('status-tag-fill', rgba(#c72828, 10%));
+      @include hashi.key-bind('status-tag-border', #c72828);
     }
 
     &.deprecated {
-      @include hashi.theme-key-bind('status-tag-fill', rgba(#c72828, 10%));
-      @include hashi.theme-key-bind('status-tag-border', #c72828);
+      @include hashi.key-bind('status-tag-fill', rgba(#c72828, 10%));
+      @include hashi.key-bind('status-tag-border', #c72828);
     }
   }
 }

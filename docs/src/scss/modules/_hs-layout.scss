@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '~@devprotocol/hashi';
 
@@ -65,20 +65,20 @@
     flex-flow: column nowrap;
 
     & > * + * {
-      margin-top: hashi.theme-token-get('space-xs');
+      margin-top: hashi.token-get('space-xs');
     }
   }
 
   .color-module {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: hashi.theme-token-get('space-xs');
+    grid-gap: hashi.token-get('space-xs');
 
     > div {
       width: 100%;
       height: 50px;
-      padding: hashi.theme-token-get('padding-xs') hashi.theme-token-get('padding-sm');
-      border-radius: hashi.theme-token-get('radius-xs');
+      padding: hashi.token-get('padding-xs') hashi.token-get('padding-sm');
+      border-radius: hashi.token-get('radius-xs');
     }
   }
 }

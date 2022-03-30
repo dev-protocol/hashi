@@ -37,19 +37,19 @@
 /// @param {int} $tone
 /// @return {*} color styles.
 @mixin color($color-map, $style: 'text', $tone: 400) {
-  @include hs-core.color-apply('card', $color-map, $style, true, $tone, $extend: true);
+  @include hs-core.color-bind('card', $color-map, $style, true, $tone);
 }
 
 /// Shape variant mixin.
 /// @param {map} $shape-map
 /// @return {*} shape styles.
 @mixin shape($shape-map) {
-  @include hs-core.shape-apply('card', $shape-map, $extend: true);
+  @include hs-core.shape-bind('card', $shape-map);
 }
 
 /// Typography variant mixin.
 /// @param {map} $type-map
 /// @return {*} typography styles.
 @mixin typography($type-map) {
-  @include hs-core.typography-apply('card', $type-map, $extend: true);
+  @include hs-core.typography-bind('card', $type-map);
 }

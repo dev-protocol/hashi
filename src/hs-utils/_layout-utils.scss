@@ -1,0 +1,222 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+@use 'sass:string';
+
+$_breakpoints: (
+  'small': 'sm',
+  'medium': 'md',
+  'large': 'lg',
+  'xlarge': 'xl',
+);
+
+$_grid-limit: 12;
+
+$_displays: (
+  'block',
+  'flex',
+  'grid',
+  'inline',
+  'inline-block',
+  'inline-flex',
+  'inline-grid'
+);
+
+$_gaps: (
+  'none',
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+);
+
+$_flows: (
+  'col': 'column',
+  'col-reverse': 'column-reverse',
+  'row': 'row',
+  'row-reverse': 'row-reverse',
+);
+
+$_wraps: (
+  'none': 'nowrap',
+  'default': 'wrap',
+  'reverse': 'wrap-reverse'
+);
+
+$_positions: (
+  'start': 'start',
+  'center': 'center',
+  'end': 'end',
+  'between': 'space-between',
+  'around': 'space-around',
+  'evenly': 'space-evenly'
+);
+
+$_alignments: (
+  'start': 'start',
+  'center': 'center',
+  'end': 'end',
+  'base': 'baseline',
+  'stretch': 'stretch',
+);
+
+@mixin layout-utils() {
+  @each $display in $_displays {
+    .d-#{$display} {
+      display: string.unquote($display);
+    }
+  
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:d-#{$display} {
+          display: string.unquote($display);
+        }
+      }
+    }
+  }
+  
+  @each $flow, $flow-val in $_flows {
+    .flow-#{$flow} {
+      flex-direction: string.unquote($flow-val);
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:flow-#{$flow} {
+          flex-direction: string.unquote($flow-val);
+        }
+      }
+    }
+  }
+  
+  @each $wrap, $wrap-val in $_wraps {
+    @if $wrap == 'default' {
+      .wrap {
+        flex-wrap: string.unquote($wrap-val);
+      }
+    } @else {
+      .wrap-#{$wrap} {
+        flex-wrap: string.unquote($wrap-val);
+      }
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        @if $wrap == 'default' {
+          .\@#{$shorthand}\:wrap {
+            flex-wrap: string.unquote($wrap-val);
+          }
+        } @else {
+          .\@#{$shorthand}\:wrap-#{$wrap} {
+            flex-wrap: string.unquote($wrap-val);
+          }
+        }
+      }
+    }
+  }
+  
+  @each $position, $position-val in $_positions {
+    .justify-#{$position} {
+      justify-content: string.unquote($position-val);
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:justify-#{$position} {
+          justify-content: string.unquote($position-val);
+        }
+      }
+    }
+  }
+  
+  @each $alignment, $alignment-val in $_alignments {
+    .items-#{$alignment} {
+      align-items: string.unquote($alignment-val);
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:items-#{$alignment} {
+          align-items: string.unquote($alignment-val);
+        }
+      }
+    }
+  }
+  
+  @each $gap in $_gaps {
+    .gap-#{$gap} {
+      gap: hs-core.token-get('space-#{$gap}');
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:gap-#{$gap} {
+          gap: hs-core.token-get('space-#{$gap}');
+        }
+      }
+    }
+  }
+  
+  @for $i from 1 to $_grid-limit {
+    .cols-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:cols-#{$i} {
+          grid-template-columns: repeat($i, 1fr);
+        }
+      }
+    }
+  }
+  
+  @for $i from 1 to $_grid-limit {
+    .start-#{$i} {
+      grid-column-start: $i;
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:start-#{$i} {
+          grid-column-start: $i;
+        }
+      }
+    }
+  }
+  
+  @for $i from 1 to $_grid-limit {
+    .end-#{$i} {
+      grid-column-end: $i;
+    }
+    
+    @each $breakpoint, $shorthand in $_breakpoints {
+      @include hs-core.breakpoint-create($breakpoint) {
+        .\@#{$shorthand}\:end-#{$i} {
+          grid-column-end: $i;
+        }
+      }
+    }
+  }
+}

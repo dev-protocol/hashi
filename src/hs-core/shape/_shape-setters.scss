@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,37 +18,115 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
+
+@use 'sass:map';
+@use 'sass:list';
 
 @use '../theme';
-@use 'sass:map';
+@use '../tools';
 
-@mixin apply($component-name, $shape-preset, $extend: false) {
-  $radius: map.get($shape-preset, 'radius');
-  $padding: map.get($shape-preset, 'padding');
-  $margin: map.get($shape-preset, 'margin');
-
+/// Base mixin for apply() and bind()
+/// @access private
+@mixin _base($component, $theme, $settings: ()) {
+  $_init-settings: ('bind-mode': false);
+  $_settings: map.merge($_init-settings, $settings);
+  $extend: map.get($_settings, 'bind-mode');
+  
+  $radius: map.get($theme, 'radius');
+  $padding: map.get($theme, 'padding');
+  $margin: map.get($theme, 'margin');
+  $shadow: map.get($theme, 'shadow');
+  
   @if $radius {
     @if $extend {
-      @include theme.key-bind('#{$component-name}-radius', theme.token-switch($radius));
+      @if list.length($radius) != 1 {
+        @include theme.key-bind('#{$component}-radius', _parse-value('radius', $radius));
+      } @else {
+        @include theme.key-bind('#{$component}-radius', theme.token-get('radius-#{$radius}'));
+      }
     } @else {
-      border-radius: theme.key-create('#{$component-name}-radius', theme.token-switch($radius));
+      @if list.length($radius) != 1 {
+        border-radius: theme.key-create('#{$component}-radius', _parse-value('radius', $radius));
+      } @else {
+        border-radius: theme.key-create('#{$component}-radius', theme.token-get('radius-#{$radius}'));
+      }
     }
   }
-
+  
   @if $padding {
     @if $extend {
-      @include theme.key-bind('#{$component-name}-padding', theme.token-switch($padding));
+      @if list.length($padding) != 1 {
+        @include theme.key-bind('#{$component}-padding', _parse-value('padding', $padding));
+      } @else {
+        @include theme.key-bind('#{$component}-padding', theme.token-get('padding-#{$padding}'));
+      }
     } @else {
-      padding: theme.key-create('#{$component-name}-padding', theme.token-switch($padding));
+      @if list.length($padding) != 1 {
+        padding: theme.key-create('#{$component}-padding', _parse-value('padding', $padding));
+      } @else {
+        padding: theme.key-create('#{$component}-padding', theme.token-get('padding-#{$padding}'));
+      }
     }
   }
-
+  
   @if $margin {
     @if $extend {
-      @include theme.key-bind('#{$component-name}-margin', theme.token-switch($margin));
+      @if list.length($margin) != 1 {
+        @include theme.key-bind('#{$component}-margin', _parse-value('margin', $margin));
+      } @else {
+        @include theme.key-bind('#{$component}-margin', theme.token-get('margin-#{$margin}'));
+      }
     } @else {
-      margin: theme.key-create('#{$component-name}-margin', theme.token-switch($margin));
+      @if list.length($margin) != 1 {
+        margin: theme.key-create('#{$component}-margin', _parse-value('margin', $margin));
+      } @else {
+        margin: theme.key-create('#{$component}-margin', theme.token-get('margin-#{$margin}'));
+      }
     }
   }
+  
+  @if $shadow {
+    @if $extend {
+      @include theme.key-bind('#{$component}-shadow', theme.token-get('shadow-#{$shadow}'));
+    } @else {
+      box-shadow: theme.key-create('#{$component}-shadow', theme.token-get('shadow-#{$shadow}'));
+    }
+  }
+}
+
+/// Value parser for the shape setter mixins.
+/// @access private
+@function _parse-value($key, $query) {
+  $result: ();
+  
+  @each $value in $query {
+    @if theme.token-check('#{$key}-#{$value}') {
+      $result: list.append($result, theme.token-get('#{$key}-#{$value}'), 'space');
+    } @else {
+      @if $value != 0 {
+        @error 'Invalid value: #{$value}. Please use a valid #{$key} token, or the number 0.';
+      } @else {
+        $result: list.append($result, $value, 'space');
+      }
+    }
+  }
+  
+  @return $result;
+}
+
+/// Mixin that applies typography styles to a component.
+/// @param {string} $component
+/// @param {map<string, string>} $theme
+/// @return {void} void.
+@mixin apply($component, $theme) {
+  @include _base($component, $theme);
+}
+
+/// Mixin that binds typography styles to a component with existing keys.
+/// @param {string} $component
+/// @param {map<string, string>} $theme
+/// @return {void} void.
+@mixin bind($component, $theme) {
+  @include _base($component, $theme, ('bind-mode': true));
 }

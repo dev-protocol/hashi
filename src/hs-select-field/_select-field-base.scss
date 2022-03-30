@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,44 +18,109 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
 
-@mixin init() {
+@mixin init(
+  $fill,
+  $ink,
+  $border,
+  $tone,
+  $radius,
+  $padding,
+  $family,
+  $size,
+  $weight,
+  $line-height,
+) {
   .hs-select-field {
     width: 100%;
-    max-width: 450px;
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    flex-flow: column nowrap;
+    position: relative;
     margin-bottom: 0.9rem;
-
-    & > * + * {
-      margin-left: hs-core.theme-key-create('select-field-gap', 0.8rem);
-    }
-
+    
     @content;
-
+    
     .hs-select-field__label {
-      color: hs-core.theme-key-create('select-field-label-ink', hs-core.theme-token-get('surface-ink'));
-      font-size: hs-core.theme-key-create('select-field-label-size', hs-core.theme-token-get('size-body'));
+      width: max-content;
+      white-space: nowrap;
+      @include hs-core.color-apply('select-field-label', (
+        ink: 'surface-ink',
+      ), 'filled', $tone: 400);
+      @include hs-core.typography-apply('select-field', (
+        weight: 'bold',
+        line-height: 'broad'
+      ));
     }
-
+    
     .hs-select-field__input {
       width: 100%;
-      padding: 0.4rem 0.075rem;
-      background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
-      color: hs-core.theme-key-create('select-field-ink', hs-core.theme-token-get('surface-ink'));
-      border: none;
-      border-bottom: 2px solid hs-core.theme-key-create('select-field-border', hs-core.theme-token-get('neutral-400'));
-      font-size: hs-core.theme-key-create('select-field-input-size', hs-core.tools-to-rem(16px));
+      @include hs-core.color-apply('select-field', (
+        fill: $fill,
+        ink: $ink,
+      ), 'filled', $tone: $tone);
+      @include hs-core.shape-apply('select-field', (
+        radius: $radius,
+        padding: $padding
+      ));
+      @include hs-core.typography-apply('select-field', (
+        family: $family,
+        size: $size,
+        weight: $weight,
+        line-height: $line-height
+      ));
       outline: none;
+      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+  
+      &:not(.is-danger),
+      &:not(.is-filled) {
+        @include hs-core.color-apply('select-field', (
+          border: $border
+        ), 'filled', $tone: $tone);
+        
+        @include hs-core.dark-mode {
+          @if $fill == 'surface' {
+            @include hs-core.color-apply('select-field', (
+              border: $fill
+            ), 'filled', $tone: 'ink');
+          }
+        }
+      }
+      
+      &:focus {
+        @include hs-core.color-bind('select-field', (
+          border: 'accent'
+        ), 'filled');
+      }
     }
-
-    .hs-select-field__option {
-      background-color: hs-core.theme-key-create('select-field-fill', rgba(0 0 0 / 0));
-      color: #000;
+    
+    .hs-select-field__icon {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      place-items: center;
+      position: absolute;
+      top: 53%;
+      left: hs-core.token-get('padding-md');
+      transform: translateY(-53%);
+      
+      + .hs-select-field__input {
+        padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+      }
+    }
+    
+    .hs-select-field__helper {
+      @include hs-core.color-apply('select-field-helper', (
+        ink: 'surface-ink',
+      ), 'filled', $tone: 400);
+      @include hs-core.typography-apply('select-field', (
+        family: 'small',
+        size: 'small',
+        weight: 'light',
+        line-height: 'broad'
+      ));
     }
   }
 }

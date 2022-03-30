@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,89 +18,61 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
+@use 'profile-base';
 
 $fill: 'surface' !default;
 $ink: 'surface-ink' !default;
-$border: $fill !default;
-$tone: 300 !default;
+$border: 'primary' !default;
+$tone: 200 !default;
 
-$accent: 'native-blue' !default;
-$accent-tone: 400 !default;
+$radius: 'sm' !default;
+$padding: 'md' !default;
 
-$radius: 'radius-sm' !default;
-$padding: 'padding-md' !default;
+$gap: 'md' !default;
+$img-size: 66px !default;
 
-$width: 100% !default;
-$gap: 0.7rem !default;
-$img-size: 70px !default;
-
-$name-type-preset: 'h3' !default;
-$description-type-preset: 'body' !default;
-$role-type-preset: 'small' !default;
-
-$elevation-level: 2 !default;
-$has-elevation: true !default;
+$name-typography: 'subtitle' !default;
+$role-typography: 'small' !default;
+$description-typography: 'body' !default;
 
 @mixin render() {
-  .hs-profile {
-    width: hs-core.theme-key-create('profile-width', hs-core.theme-token-switch($width));
-    display: grid;
-    grid-template-columns: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size)) 1fr;
-    gap: hs-core.theme-key-create('profile-gap', hs-core.theme-token-switch($gap));
+  @include profile-base.init(
+    $gap,
+    $img-size,
+    $name-typography,
+    $role-typography,
+    $description-typography,
+  ) {
     @include hs-core.color-apply('profile', (
       fill: $fill,
       ink: $ink,
       border: $border
     ), 'filled', $tone: $tone);
-    // @include hs-core.theme-key-bind('profile-ink', hs-core.theme-token-switch($ink));
     @include hs-core.shape-apply('profile', (
       radius: $radius,
       padding: $padding
     ));
-
-    @if $has-elevation {
-      @include hs-core.tools-elevation($elevation-level);
-    }
-
-    .hs-profile__img {
-      width: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size));
-      height: hs-core.theme-key-create('profile-img-size', hs-core.theme-token-switch($img-size));
-      border-radius: 50%;
-      border: 2px solid hs-core.theme-key-create('profile-img-border', hs-core.theme-token-get('#{$accent}-#{$accent-tone}'));
-      overflow: hidden;
-      user-select: none;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+  
+    @include hs-core.dark-mode {
+      &:not(.is-filled) {
+        @if $fill == 'surface' {
+          @include hs-core.color-bind('profile', (
+            border: $fill,
+          ), 'filled', $tone: 'ink');
+        }
       }
     }
-
-    .hs-profile__info {
-      //
-
-      .hs-profile__name {
-        font-size: hs-core.theme-key-create('profile-name-size', hs-core.theme-token-switch('size-#{$name-type-preset}'));
-        font-weight: hs-core.theme-key-create('profile-name-weight', hs-core.theme-token-switch('weight-#{$name-type-preset}'));
-        line-height: hs-core.theme-key-create('profile-name-line-height', hs-core.theme-token-switch('line-height-#{$name-type-preset}'));
-      }
-
-      .hs-profile__description {
-        font-size: hs-core.theme-key-create('profile-description-size', hs-core.theme-token-switch('size-#{$description-type-preset}'));
-        font-weight: hs-core.theme-key-create('profile-description-weight', hs-core.theme-token-switch('weight-#{$description-type-preset}'));
-        line-height: hs-core.theme-key-create('profile-description-line-height', hs-core.theme-token-switch('line-height-#{$description-type-preset}'));
-      }
-
-      .hs-profile__role {
-        font-size: hs-core.theme-key-create('profile-role-size', hs-core.theme-token-switch('size-#{$role-type-preset}'));
-        font-weight: hs-core.theme-key-create('profile-role-weight', hs-core.theme-token-switch('weight-#{$role-type-preset}'));
-        line-height: hs-core.theme-key-create('profile-role-line-height', hs-core.theme-token-switch('line-height-#{$role-type-preset}'));
-      }
+  
+    &.is-filled {
+      @include hs-core.color-bind('profile', (
+        border: $fill,
+      ), 'filled', $tone: 200);
+      @include hs-core.shape-apply('profile', (
+        shadow: 'low'
+      ));
     }
   }
 }

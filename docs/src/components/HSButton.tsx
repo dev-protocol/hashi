@@ -1,6 +1,5 @@
 /*
- *
- *  Copyright (c) 2021 Dev Protocol
+ *  Copyright (c) 2022 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +18,6 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
- *
  */
 
 // A5C261
@@ -40,7 +38,7 @@ interface HSButtonProps {
 const HSButton: React.FC<HSButtonProps> = ({ type, color, label, icon, link, isDisabled, children }) => {
 
     const ButtonBase = (
-        <button className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` } disabled={ isDisabled }>
+        <button className={ `hs-button${ type ? ' is-' + type : '' }` } disabled={ isDisabled }>
             { icon && <i className="hs-button__icon">{ icon }</i> }
             <span className="hs-button__label">{ label || children }</span>
         </button>
@@ -48,14 +46,14 @@ const HSButton: React.FC<HSButtonProps> = ({ type, color, label, icon, link, isD
 
     if (!link) {
         return (
-            <button className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` } disabled={ isDisabled }>
+            <button className={ `hs-button${ type ? ' is-' + type : '' }` } disabled={ isDisabled }>
                 { icon && <i className="hs-button__icon">{ icon }</i> }
                 <span className="hs-button__label">{ label || children }</span>
             </button>
         );
     } else {
         return (
-            <Link to={ link } target={ link.indexOf('/') !== 0 ? '_blank' : '_self' } className={ `hs-button${ type ? ' hs-button--' + type : '' }${ color ? ` ${ color }` : ' neutral' }` }>
+            <Link to={ link } target={ link.indexOf('/') !== 0 ? '_blank' : '_self' } className={ `hs-button${ type ? ' is-' + type : '' }` }>
                 { icon && <i className="hs-button__icon">{ icon }</i> }
                 <span className="hs-button__label">{ label || children }</span>
             </Link>

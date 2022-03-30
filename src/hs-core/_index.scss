@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,12 +18,20 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
+
+$validation: true !default;
+
+@use 'node_modules/@matteusan/sentro' with (
+  $prefix: 'hs',
+  $context: 'theme',
+  $token-validation: $validation,
+  $key-validation: $validation,
+  $breakpoint-validation: $validation
+);
 
 @forward 'color' as color-*;
 @forward 'shape' as shape-*;
 @forward 'typography' as typography-*;
-@forward 'theme' as theme-*;
-@forward 'tools' as tools-*;
-@forward 'support';
-@forward 'helpers';
+@forward 'theme';
+@forward 'tools';

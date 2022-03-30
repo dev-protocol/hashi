@@ -37,75 +37,85 @@
 const sidebars = {
   design: {
     'Getting Started': [
-      'design/getting-started/introduction',
-      'design/getting-started/ui-kit'
+      'design/introduction',
+      'design/foundation/terminologies',
+      'design/getting-started/ui-kit',
     ],
-    'Design Fundamentals': [
-      'design/fundamentals/colors',
-      'design/fundamentals/typography'
+    'Foundation': [
+      {
+        'Color': [
+          'design/foundation/color/color-theming',
+          'design/foundation/color/applying-color',
+          'design/foundation/color/color-tokens',
+        ],
+        'Shape': [
+          'design/foundation/shape/shape-theming',
+          'design/foundation/shape/surface',
+          'design/foundation/shape/shape-tokens',
+        ],
+        'Typography': [
+          'design/foundation/typography/typography-theming',
+          'design/foundation/typography/iconography',
+          'design/foundation/typography/typography-tokens',
+        ],
+        'Layout': [
+          'design/foundation/layout/grid',
+          'design/foundation/layout/spacing',
+          'design/foundation/layout/breakpoints',
+        ]
+      },
     ],
     'Components': [
-      'design/hs-components/hs-button',
-      'design/hs-components/hs-card',
-      'design/hs-components/hs-text-field',
+      'design/components/introduction',
+      'design/components/hs-button',
+      'design/components/hs-card',
+      'design/components/hs-form-field',
+      'design/components/hs-select-field',
+      'design/components/hs-wallet',
     ]
   },
   develop: {
     'Getting Started': [
-      'develop/getting-started/introduction',
-      'develop/getting-started/setup',
-      'develop/getting-started/concepts'],
-    'Core': [
-      {
-        type: 'category',
-        label: 'Tokens',
-        collapsed: true,
-        items: [
-          'develop/hs-core/tokens/tokens-index',
-          'develop/hs-core/tokens/color-tokens',
-          'develop/hs-core/tokens/shape-tokens',
-          'develop/hs-core/tokens/type-tokens'
-        ]
-      },
-      {
-        type: 'category',
-        label: 'Core API',
-        collapsed: true,
-        items: [
-          'develop/hs-core/core-apis/init',
-          'develop/hs-core/core-apis/render',
-          'develop/hs-core/core-apis/extend',
-          'develop/hs-core/core-apis/token',
-          'develop/hs-core/core-apis/key',
-        ]
-      },
-      {
-        type: 'category',
-        label: 'Helpers',
-        collapsed: true,
-        items: [
-          'develop/hs-core/helpers/breakpoints',
-          'develop/hs-core/helpers/dark-mode',
-        ]
-      },
+      'develop/getting-started/index',
+      'develop/getting-started/concepts',
+      'develop/getting-started/terminologies',
+      'develop/getting-started/dark-mode',
+    ],
+    'Utilities': [
+      'develop/utilities/index',
+      'develop/utilities/syntax',
+      'develop/utilities/layout-utils',
+      'develop/utilities/color-utils',
+      'develop/utilities/shape-utils',
+      'develop/utilities/typography-utils',
     ],
     'Components': [
-      'develop/hs-components/hs-button',
-      'develop/hs-components/hs-button-group',
-      'develop/hs-components/hs-card',
-      'develop/hs-components/hs-link',
-      'develop/hs-components/hs-profile',
-      'develop/hs-components/hs-select-field',
-      'develop/hs-components/hs-text-field',
-      'develop/hs-components/hs-utils',
+      'develop/components/index',
+      'develop/components/hs-button',
+      'develop/components/hs-button-group',
+      'develop/components/hs-card',
+      'develop/components/hs-form-field',
+      'develop/components/hs-link',
+      'develop/components/hs-profile',
+      'develop/components/hs-select-field',
     ],
     'Integrations': [
       'develop/integrations/tailwind'
     ],
-    'Spec': [
-      'develop/spec/tokens',
-      'develop/spec/component-usage',
-    ],
+    'API': [
+      'develop/api/initializer',
+      {
+        type: 'category',
+        label: 'Composition',
+        collapsed: true,
+        items: [
+          'develop/api/composition/index',
+          'develop/api/composition/color',
+          'develop/api/composition/shape',
+          'develop/api/composition/typography',
+        ]
+      },
+    ]
   }
 };
 

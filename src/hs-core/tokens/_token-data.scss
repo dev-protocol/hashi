@@ -1,0 +1,150 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../tools';
+
+$hs-tokens: (
+  // ===== COLOR ===== //
+  'dp-white': (
+    '200': #ffffff,
+    '300': #f1f1f1,
+    '400': #d7d7d7,
+    '600': #c4c4c4,
+    'ink': #040b10,
+  ),
+  'dp-black': (
+    '200': #383838,
+    '300': #272727,
+    '400': #171717,
+    '600': #000000,
+    'ink': #ffffff,
+  ),
+  'dp-blue-grey': (
+    '200': #3a4158,
+    '300': #222b3d,
+    '400': #111827,
+    '600': #040b10,
+    'ink': #fff
+  ),
+  // These alpha tokens are special token sets and does not follow the design specs' 600-200 color naming scheme.
+  'dp-black-alpha': (
+    'default': rgba(0, 0, 0, .12),
+    'ink': rgba(0, 0, 0, .37),
+  ),
+  'dp-white-alpha': (
+    'default': rgba(255, 255, 255, .12),
+    'ink': rgba(255, 255, 255, .37),
+  ),
+  'scarlet': tools.color-split(#ff3815),
+  'scarlet-ink': #fff,
+  'plox': tools.color-split(#d500e6),
+  'plox-ink': #fff,
+  'native-blue': tools.color-split(#5b8bf5),
+  'native-blue-ink': #fff,
+  'bright-cyan': tools.color-split(#00d0fd),
+  'bright-cyan-ink': #000,
+  'success': tools.color-split(#30a83d),
+  'success-ink': #fff,
+  'warning': tools.color-split(#fdad00),
+  'warning-ink': #000,
+  'danger': tools.color-split(#c92020),
+  'danger-ink': #fff,
+  // ===== SHAPE ===== //
+  'radius': (
+    'none': 0,
+    'xs': 0.3rem,
+    'sm': 0.5rem,
+    'md': 0.7rem,
+    'lg': 1rem,
+    'xl': 1.7rem,
+    'pill': 700px,
+  ),
+  'padding': (
+    'none': 0,
+    'xs': 0.3rem,
+    'sm': 0.5rem,
+    'md': 0.8rem,
+    'lg': 1.5rem,
+    'xl': 2rem,
+    'pill': 1.5rem,
+  ),
+  'margin': (
+    'none': 0,
+    'xs': 0.5rem,
+    'sm': 1rem,
+    'md': 2rem,
+    'lg': 4rem,
+    'xl': 8rem,
+    'pill': 1rem,
+  ),
+  'space': (
+    'none': 0,
+    'xs': 0.3rem,
+    'sm': 0.5rem,
+    'md': 0.8rem,
+    'lg': 1.5rem,
+    'xl': 2rem,
+    'pill': 0.8rem,
+  ),
+  'shadow': (
+    'none': (0 1px 0 0 rgba(#000, 15%)),
+    'low': (0 3px 4px 1px rgba(#000, 15%)),
+    'normal': (0 6px 10px 2px rgba(#000, 15%)),
+    'high': (0 10px 15px 3px rgba(#000, 15%)),
+    'highest': (0 15px 20px 4px rgba(#000, 15%)),
+  ),
+  // 'dimension': (
+  //   'none': 0,
+  //   'quarter': 25%,
+  //   'third': 33.333333%,
+  //   'half': 50%,
+  //   'full': 100%,
+  //   'screen': 100vh,
+  //   'half-screen': 50vh
+  // ),
+  // ===== TYPOGRAPHY ===== //
+  'size': (
+    'supertitle': tools.to-rem(42px),
+    'title': tools.to-rem(36px),
+    'subtitle': tools.to-rem(24px),
+    'body': tools.to-rem(16px),
+    'mono': tools.to-rem(16px),
+    'small': tools.to-rem(14px),
+  ),
+  'weight': (
+    'black': 800,
+    'bold': 700,
+    'normal': 400,
+    'light': 300
+  ),
+  'line-height': (
+    'supertitle': tools.to-rem(63px),
+    'title': tools.to-rem(54px),
+    'subtitle': tools.to-rem(36px),
+    'body': tools.to-rem(24px),
+    'mono': tools.to-rem(24px),
+    'small': tools.to-rem(18px),
+    'broad': 1.75,
+    'normal': 1.5,
+    'condensed': 1.25
+  )
+);

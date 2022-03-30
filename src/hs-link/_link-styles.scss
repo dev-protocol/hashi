@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,36 +18,18 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
-@use 'sass:map';
-@use 'sass:list';
 
-@use 'link-base';
-
-$ink: 'native-blue' !default;
-$tone: 400 !default;
-
-$family: 'family-body' !default;
-$size: 'size-body' !default;
-$weight: 'weight-body' !default;
-$line-height: 'line-height-body' !default;
+$ink: 'accent' !default;
 
 @mixin render() {
-  $color-map: (
-    fill: $ink,
-    ink: '#{$ink}-ink',
-    border: $ink
-  );
-
-  @include link-base.init() {
-    @include hs-core.color-apply('link', $color-map, 'text', true, $extend: false);
-    @include hs-core.typography-apply('link', (
-      'family': $family,
-      'size': $size,
-      'weight': $weight,
-      'line-height': $line-height
-    ));
+  .hs-link {
+    text-decoration: underline;
+    @include hs-core.color-apply('link', (
+      fill: $ink,
+    ), 'text', true);
+    @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
   }
 }

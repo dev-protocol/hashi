@@ -1,5 +1,5 @@
-//
-//  Copyright (c) 2021 Dev Protocol
+///
+//  Copyright (c) 2022 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,53 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
+
+$primary: 'dp-black' !default;
+$primary-dark: 'dp-blue-grey' !default;
+$accent: 'native-blue' !default;
+$accent-dark: $accent !default;
+$surface: 'dp-white' !default;
+$surface-dark: 'dp-blue-grey' !default;
+$radius-small: 'radius-xs' !default;
+$radius-medium: 'radius-sm' !default;
+$radius-large: 'radius-md' !default;
+$family-supertitle: ('Syne', sans-serif, 800) !default;
+$family-title: ('Syne', sans-serif, 700) !default;
+$family-subtitle: ('Syne', sans-serif, 700) !default;
+$family-body: ('Whyte', sans-serif, 400) !default;
+$family-mono: ('IBM Plex Mono', monospace, 400) !default;
+$family-small: ('Whyte', sans-serif, 300) !default;
+
+$background: 'surface-200' !default;
+$dark-background: 'surface-400' !default;
+$background-ink: 'surface-ink' !default;
+$dark-background-ink: $background-ink !default;
+$breakpoints: () !default;
+
+$extend: () !default;
 
 @forward 'hs-core';
-@forward 'hs-init';
+@forward 'init-base' with (
+  $primary: $primary,
+  $primary-dark: $primary-dark,
+  $accent: $accent,
+  $accent-dark: $accent-dark,
+  $surface: $surface,
+  $surface-dark: $surface-dark,
+  $radius-small: $radius-small,
+  $radius-medium: $radius-medium,
+  $radius-large: $radius-large,
+  $family-supertitle: $family-supertitle,
+  $family-title: $family-title,
+  $family-subtitle: $family-subtitle,
+  $family-body: $family-body,
+  $family-mono: $family-mono,
+  $family-small: $family-small,
+  $background: $background,
+  $background-ink: $background-ink,
+  $dark-background: $dark-background,
+  $dark-background-ink: $dark-background-ink,
+  $breakpoints: $breakpoints,
+  $extend: $extend
+);
