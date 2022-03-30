@@ -1,5 +1,5 @@
 ---
-slug: /develop/foundation/utilities/syntax
+slug: /develop/utilities/syntax
 displayed_sidebar: develop
 ---
 # Syntax

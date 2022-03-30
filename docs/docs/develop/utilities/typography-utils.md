@@ -1,5 +1,5 @@
 ---
-slug: /develop/foundation/utilities/typography
+slug: /develop/utilities/typography
 displayed_sidebar: develop
 ---
 # Typography Utility Classes

@@ -1,6 +1,6 @@
 ---
 title: Introduction
-slug: /develop/foundation/utilities
+slug: /develop/utilities
 displayed_sidebar: develop
 ---
 # Utilities

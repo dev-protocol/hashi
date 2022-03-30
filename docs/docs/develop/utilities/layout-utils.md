@@ -1,5 +1,5 @@
 ---
-slug: /develop/foundation/utilities/layout
+slug: /develop/utilities/layout
 displayed_sidebar: develop
 ---
 # Layout Utility Classes

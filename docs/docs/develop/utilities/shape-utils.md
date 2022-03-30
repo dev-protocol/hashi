@@ -1,5 +1,5 @@
 ---
-slug: /develop/foundation/utilities/shape
+slug: /develop/utilities/shape
 displayed_sidebar: develop
 ---
 # Shape Utility Classes

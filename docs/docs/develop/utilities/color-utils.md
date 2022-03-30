@@ -1,5 +1,5 @@
 ---
-slug: /develop/foundation/utilities/color
+slug: /develop/utilities/color
 displayed_sidebar: develop
 ---
 # Color Utility Classes
