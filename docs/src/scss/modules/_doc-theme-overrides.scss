@@ -35,6 +35,8 @@
     --ifm-navbar-link-color: #{hashi.token-get('primary-ink')};
     --ifm-footer-background-color: #{hashi.token-get('primary-300')};
     --ifm-toc-border-color: rgba(0 0 0 / 0);
+    --ifm-link-color: inherit;
+    --ifm-link-hover-color: inherit;
   }
 
   html {

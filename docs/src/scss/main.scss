@@ -25,7 +25,10 @@
 );
 @use '~@devprotocol/hashi/hs-button';
 @use '~@devprotocol/hashi/hs-button-group';
+@use '~@devprotocol/hashi/hs-card';
 @use '~@devprotocol/hashi/hs-form-field';
+@use '~@devprotocol/hashi/hs-link';
+@use '~@devprotocol/hashi/hs-profile';
 @use '~@devprotocol/hashi/hs-select-field';
 @use '~@devprotocol/hashi/hs-utils';
 
@@ -80,7 +83,10 @@
   
   @include hs-button.render();
   @include hs-button-group.render();
+  @include hs-card.render();
   @include hs-form-field.render();
+  @include hs-link.render();
+  @include hs-profile.render();
   @include hs-select-field.render();
 
   .hs-card {
@@ -100,12 +106,11 @@
   @include hs-component-preview.use();
   @include hs-doc-card.use();
   @include hs-hero.use();
-  // @include hs-link.render();
-  // @include hs-select-field.render();
-  // @include hs-text-field.render();
-  // @include hs-utils.color-utils();
-  // @include hs-utils.shape-utils();
-  // @include hs-utils.typography-utils();
+  
+  @include hs-utils.layout-utils();
+  @include hs-utils.color-utils();
+  @include hs-utils.shape-utils();
+  @include hs-utils.typography-utils();
 
   @include ifm-overrides.use();
 

@@ -1,6 +1,5 @@
 /*
- *
- *  Copyright (c) 2021 Dev Protocol
+ *  Copyright (c) 2022 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +18,6 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
- *
  */
 
 import React from 'react';
@@ -32,12 +30,14 @@ interface HSCardProps {
 
 const HSCard: React.FC<HSCardProps> = ({ title, description, actions, children }) => {
     return (
-        <div className="hs-card">
+        <div className="hs-card is-filled">
             <div className="hs-card__header">
-                <h2 className="hs-card__title">{ title }</h2>
-                { description &&
+                <div className="hs-card__mast">
+                  <h2 className="hs-card__title">{ title }</h2>
+                  { description &&
                     <p className="hs-card__subtitle">{ description }</p>
-                }
+                  }
+                </div>
             </div>
             { children &&
             <div className="hs-card__content">
