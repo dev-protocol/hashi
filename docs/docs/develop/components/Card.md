@@ -107,7 +107,8 @@ These are used to structure, extend, and modify the styles of a component on the
 | `.hs-card__mast`     | The identification section of the card.             |
 | `.hs-card__title`    | The title of the card.                              |
 | `.hs-card__subtitle` | The subtitle of the card.                           |
-| `.hs-card__icon`     | The right icon of the card.                         |
+| `.hs-card__icon`     | The icon of the card.                               |
+| `.hs-card__media`    | The media of the card.                              |
 | `.hs-card__content`  | The content section of the card.                    |
 | `.hs-card__actions`  | Here is where you put all the buttons for the card. |
 
@@ -122,49 +123,45 @@ These are for creating your own component themes.
 | `--hs-card-radius`        | Changes the card's border radius.    |
 | `--hs-card-padding`       | Changes the card's padding.          |
 | `--hs-card-weight`        | Changes the card's border color.     |
-| `--hs-card-ink`           | Changes the card's label color.      |
-| `--hs-card-size`          | Changes the card's label size.       |
-| `--hs-card-title-size`    | Changes the card's label size.       |
-| `--hs-card-subtitle-size` | Changes the card's label size.       |
-| `--hs-card-icon-size`     | Changes the card's label size.       |
-| `--hs-card-action-gap`    | Changes the card's action gap.       |
+| `--hs-card-ink`           | Changes the card's content color.    |
+| `--hs-card-size`          | Changes the card's content size.     |
+| `--hs-card-title-size`    | Changes the card's title size.       |
+| `--hs-card-subtitle-size` | Changes the card's subtitle size.    |
 
 #### Example
 ```scss
 .my-card-theme {
-    --hs-card-fill: #232323;
-    --hs-card-ink: lime;
-    --hs-card-border: var(--hs-button-fill);
-    
-    &:hover {
-        --hs-card-fill: #353535;
-    }
-    
-    &:active {
-        --hs-card-fill: #535353;
-    }
+  --hs-card-fill: #232323;
+  --hs-card-ink: lime;
+  --hs-card-border: var(--hs-button-fill);
+  
+  &:hover {
+    --hs-card-fill: #353535;
+  }
+  
+  &:active {
+    --hs-card-fill: #535353;
+  }
 }
 ```
-### Hashi `render()` API
-For more information please refer to the [render API](../hs-core/core-apis/Render.md) page.
+### Configuring styles
+Here are all the themeable properties for this component. The directions to use these properties are located in
+the [render API](index.md#modification-scss).
 
 ```scss
 $fill: 'surface' !default;
 $ink: 'surface-ink' !default;
-$border: $fill !default;
-$tone: 300 !default;
+$border: 'primary' !default;
+$tone: 400 !default;
 
-$radius: 'radius-sm' !default;
-$padding: 'padding-xl' !default;
+$radius: 'medium' !default;
+$padding: 'md' !default;
 
-$family: 'family-body' !default;
-$size: 'size-body' !default;
-$weight: 'weight-body' !default;
-$line-height: 'line-height-body' !default;
-
-$elevation-level: 2 !default;
-$has-elevation: true !default;
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'normal' !default;
+$line-height: 'normal' !default;
 ```
 
-### Hashi `extend()` API
-Please refer to the [extend API](../hs-core/core-apis/Extend.md) page.
+### Extending styles
+If you wish to extend the component styles, the [`extend()` API](index.md#extension-scss) might come in handy.
