@@ -35,6 +35,7 @@
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
 @use 'node_modules/@devprotocol/hashi/hs-card';
 @use 'node_modules/@devprotocol/hashi/hs-form-field';
+@use 'node_modules/@devprotocol/hashi/hs-profile';
 @use 'node_modules/@devprotocol/hashi/hs-select-field';
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
@@ -74,6 +75,7 @@
   @include hs-button-group.render();
   @include hs-card.render();
   @include hs-form-field.render();
+  @include hs-profile.render();
   @include hs-select-field.render();
   
   @include hs-utils.layout-utils();
