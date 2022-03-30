@@ -166,11 +166,7 @@ $extend: () !default;
   }
   
   a {
-    text-decoration: underline;
-    @include hs-core.color-apply('link', (
-      fill: 'accent',
-    ), 'text', true);
-    @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+    text-decoration: none;
   }
   
   small {
