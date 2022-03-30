@@ -186,7 +186,7 @@ These are for creating your own component theme classes that you can append to t
 }
 ```
 
-### Hashi `render()` API
+### Configuring styles
 Here are all the themeable properties for this component. The directions to use these properties are located in
 the [render API](index.md#modification-scss).
 

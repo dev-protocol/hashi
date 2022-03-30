@@ -201,7 +201,7 @@ These are for creating your own component themes.
   }
 }
 ```
-### Hashi `render()` API
+### Configuring styles
 Here are all the themeable properties for this component. The directions to use these properties are located in
 the [render API](index.md#modification-scss).
 
@@ -220,5 +220,5 @@ $weight: 'normal' !default;
 $line-height: 'normal' !default;
 ```
 
-### Hashi `extend()` API
+### Extending styles
 If you wish to extend the component styles, the [`extend()` API](index.md#extension-scss) might come in handy.
