@@ -20,5 +20,25 @@
 //  SOFTWARE.
 ///
 
-@forward 'wallet-styles';
-@forward 'wallet-extend';
+@use '../hs-core';
+@use 'wallet-base';
+
+$fill: 'primary' !default;
+$ink: 'primary-ink' !default;
+$border: $fill !default;
+
+$tone: 400 !default;
+
+$radius: 'small' !default;
+$padding: ('xs', 'sm') !default;
+
+@mixin render() {
+  @include wallet-base.init(
+    $fill,
+    $ink,
+    $border,
+    $tone,
+    $radius,
+    $padding
+  );
+}
