@@ -33,14 +33,16 @@ $_validation: if($vue-mode, false, true);
 @use 'init-font-pack' as font-pack;
 
 $primary: 'dp-black' !default;
-$primary-dark: 'dp-blue-grey' !default;
+$primary-dark: 'dp-white' !default;
 $accent: 'native-blue' !default;
 $accent-dark: $accent !default;
 $surface: 'dp-white' !default;
 $surface-dark: 'dp-blue-grey' !default;
+
 $radius-small: 'radius-xs' !default;
 $radius-medium: 'radius-sm' !default;
 $radius-large: 'radius-md' !default;
+
 $family-supertitle: ('Syne', sans-serif, 800) !default;
 $family-title: ('Syne', sans-serif, 700) !default;
 $family-subtitle: ('Syne', sans-serif, 700) !default;
@@ -167,6 +169,10 @@ $extend: () !default;
   
   a {
     text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
   }
   
   small {
