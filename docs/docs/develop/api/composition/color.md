@@ -3,7 +3,58 @@ title: Color Composition
 slug: /develop/api/composition/color
 displayed_sidebar: develop
 ---
-## `color-apply()` mixin.
+## Fill Mixin
+The fill mixin lets you apply background color to an element while creating an API around it that follows the Hashi spec.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+
+.hs-component {
+  @include hashi.color-fill('component', hashi.token-get('primary-400'));
+}
+```
+
+| Parameter  | Type             | Description                                                                 |
+|------------|------------------|-----------------------------------------------------------------------------|
+| $component | `string`         | The component name. This is used for the keys.                              |
+| $color     | `token or color` | The fill color you want to apply.                                           |
+| $intent    | `string`         | The intention of the color application. Choose between `create` and `bind`. |
+
+## Ink Mixin
+The ink mixin lets you apply text color to an element while creating an API around it that follows the Hashi spec.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+
+.hs-component {
+  @include hashi.color-ink('component', hashi.token-get('primary-400'));
+}
+```
+
+| Parameter  | Type             | Description                                                                 |
+|------------|------------------|-----------------------------------------------------------------------------|
+| $component | `string`         | The component name. This is used for the keys.                              |
+| $color     | `token or color` | The text color you want to apply.                                           |
+| $intent    | `string`         | The intention of the color application. Choose between `create` and `bind`. |
+
+## Border Mixin
+The border mixin lets you apply border color to an element while creating an API around it that follows the Hashi spec.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+
+.hs-component {
+  @include hashi.color-border('component', hashi.token-get('primary-400'));
+}
+```
+
+| Parameter  | Type             | Description                                                                 |
+|------------|------------------|-----------------------------------------------------------------------------|
+| $component | `string`         | The component name. This is used for the keys.                              |
+| $color     | `token or color` | The border color you want to apply.                                         |
+| $intent    | `string`         | The intention of the color application. Choose between `create` and `bind`. |
+
+## Apply Mixin
 This mixin is located inside the main `hashi` module. This mixin allows you to apply colors based on Hashi's component color anatomy spec, and creating an API with it.
 
 ```scss
@@ -14,23 +65,20 @@ This mixin is located inside the main `hashi` module. This mixin allows you to a
     fill: '',
     ink: '',
     border: ''
-  ), 'outlined');
+  ));
 }
 ```
 
 #### Syntax
 ```scss
-@mixin color-apply($component, $theme, $style, $stateful: false) { ... }
+@mixin color-apply($component, $theme) { ... }
 ```
-| Parameter  | Type                  | Description                                                                              |
-|------------|-----------------------|------------------------------------------------------------------------------------------|
-| $component | `string`              | The component name. This is used for the keys.                                           |
-| $theme     | `map<string, string>` | The colors you want to apply. (`fill`, `ink`, `border`)                                  |
-| $style     | `string`              | The color application style. Options are: `text`, `outlined`, and `filled`               |
-| $stateful  | `boolean`             | A boolean switch to render color styles with states (hover, focus, active, and disabled) |
-| $tone      | `number`              | The default tone you want to assign.                                                     |
+| Parameter  | Type                  | Description                                             |
+|------------|-----------------------|---------------------------------------------------------|
+| $component | `string`              | The component name. This is used for the keys.          |
+| $theme     | `map<string, string>` | The colors you want to apply. (`fill`, `ink`, `border`) |
 
-## `color-bind()` mixin.
+## Bind Mixin
 This mixin is located inside the main `hashi` module. This mixin allows you to bind colors based on Hashi's component color anatomy spec to an existing styled component (with the appropriate keys).
 
 This is especially useful whenever you want to make variants in color on an already styled component.
@@ -43,18 +91,15 @@ This is especially useful whenever you want to make variants in color on an alre
     fill: '',
     ink: '',
     border: ''
-  ), 'outlined');
+  ));
 }
 ```
 
 #### Syntax
 ```scss
-@mixin color-bind($component, $theme, $style, $stateful: false) { ... }
+@mixin color-bind($component, $theme) { ... }
 ```
-| Parameter  | Type                  | Description                                                                              |
-|------------|-----------------------|------------------------------------------------------------------------------------------|
-| $component | `string`              | The component name. This is used for the keys.                                           |
-| $theme     | `map<string, string>` | The colors you want to apply. (`fill`, `ink`, `border`)                                  |
-| $style     | `string`              | The color application style. Options are: `text`, `outlined`, and `filled`               |
-| $stateful  | `boolean`             | A boolean switch to render color styles with states (hover, focus, active, and disabled) |
-| $tone      | `number`              | The default tone you want to assign.                                                     |
+| Parameter  | Type                  | Description                                             |
+|------------|-----------------------|---------------------------------------------------------|
+| $component | `string`              | The component name. This is used for the keys.          |
+| $theme     | `map<string, string>` | The colors you want to apply. (`fill`, `ink`, `border`) |
