@@ -26,6 +26,8 @@
 @use 'button-base';
 @use 'button-shared' as shared;
 
+$width: max-content !default;
+
 $fill: 'accent-400' !default;
 $fill-hover: 'accent-400' !default;
 $fill-focus: 'accent-400' !default;
@@ -48,6 +50,11 @@ $family: 'body' !default;
 $size: 'body' !default;
 $weight: 'bold' !default;
 $line-height: 'normal' !default;
+
+$icon-ink: inherit !default;
+$label-ink: inherit !default;
+
+$gap: 'sm' !default;
 
 $_states: (
   'success',
@@ -77,7 +84,12 @@ $_borders: (
 );
 
 @mixin render() {
-  @include button-base.init {
+  @include button-base.init(
+    $width: $width,
+    $icon-ink: $icon-ink,
+    $label-ink: $label-ink,
+    $gap: $gap
+  ) {
     @include hs-core.color-apply('button', (
       fill: 'dp-black-400',
       ink: 'dp-black-ink',
