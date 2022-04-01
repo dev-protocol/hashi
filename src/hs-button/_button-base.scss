@@ -22,21 +22,19 @@
 
 @use '../hs-core';
 
-$width: max-content !default;
-
-$icon-ink: inherit !default;
-$label-ink: inherit !default;
-
-$gap: 'sm' !default;
-
-@mixin init() {
+@mixin init(
+  $width: max-content,
+  $icon-ink: inherit,
+  $label-ink: inherit,
+  $gap: 'sm',
+) {
   .hs-button {
     @include hs-core.shape-width('button', (
       default: 100%,
       min: 64px,
       max: $width
     ));
-    height: max-content;
+    @include hs-core.shape-height('button', max-content);
   
     display: inline-flex;
     justify-content: center;
@@ -65,14 +63,14 @@ $gap: 'sm' !default;
       display: flex;
       align-items: center;
       @include hs-core.color-ink('button-icon', $icon-ink);
-      font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+      @include hs-core.typography-size('button-icon', hs-core.to-rem(22px));
       /* @fallback */
       width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
       height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
     
       > * {
         @include hs-core.color-ink('button-icon', $icon-ink);
-        font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+        @include hs-core.typography-size('button-icon', hs-core.to-rem(22px));
         /* @fallback */
         width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
         height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
@@ -82,10 +80,10 @@ $gap: 'sm' !default;
     .hs-button__label {
       @include hs-core.shape-padding('button-label', 0);
       @include hs-core.color-ink('button-label', $label-ink);
-      font-family: inherit;
-      font-size: hs-core.key-create('button-label-size', inherit);
-      font-weight: inherit;
-      line-height: inherit;
+      @include hs-core.typography-family('button-label', inherit);
+      @include hs-core.typography-size('button-label', inherit);
+      @include hs-core.typography-weight('button-label', inherit);
+      @include hs-core.typography-line-height('button-label', inherit);
       text-align: center;
       letter-spacing: 0.02rem;
     }
