@@ -26,80 +26,204 @@
 @use '../theme';
 @use '../tools';
 
+$_valid-props: (
+  'width',
+  'radius',
+  'padding',
+  'margin',
+  'gap',
+  'shadow',
+  'border-style',
+  'border-width'
+);
+
 /// Base mixin for apply() and bind()
 /// @access private
 @mixin _base($component, $theme, $settings: ()) {
-  $_init-settings: ('bind-mode': false);
+  $_init-settings: ('intent': create);
   $_settings: map.merge($_init-settings, $settings);
-  $extend: map.get($_settings, 'bind-mode');
+  
+  /// @type string
+  $intent: map.get($_settings, 'intent');
   
   $radius: map.get($theme, 'radius');
   $padding: map.get($theme, 'padding');
   $margin: map.get($theme, 'margin');
+  $gap: map.get($theme, 'gap');
   $shadow: map.get($theme, 'shadow');
+  $border-style: map.get($theme, 'border-style');
+  $border-width: map.get($theme, 'border-width');
   
-  @if $radius {
-    @if $extend {
-      @if list.length($radius) != 1 {
-        @include theme.key-bind('#{$component}-radius', _parse-value('radius', $radius));
-      } @else {
-        @include theme.key-bind('#{$component}-radius', theme.token-get('radius-#{$radius}'));
-      }
-    } @else {
-      @if list.length($radius) != 1 {
-        border-radius: theme.key-create('#{$component}-radius', _parse-value('radius', $radius));
-      } @else {
-        border-radius: theme.key-create('#{$component}-radius', theme.token-get('radius-#{$radius}'));
+  @if not tools.is-type('map', $theme) {
+    @error '$theme is expecting a map. Map was not given.';
+  } @else {
+    $keys: map.keys($theme);
+    @each $key in $keys {
+      @if not list.index($_valid-props, $key) {
+        @error 'Invalid/unrecognized prop: #{$key}. Please use one of the following props: #{$_valid-props}.'
       }
     }
-  }
   
-  @if $padding {
-    @if $extend {
-      @if list.length($padding) != 1 {
-        @include theme.key-bind('#{$component}-padding', _parse-value('padding', $padding));
-      } @else {
-        @include theme.key-bind('#{$component}-padding', theme.token-get('padding-#{$padding}'));
-      }
-    } @else {
-      @if list.length($padding) != 1 {
-        padding: theme.key-create('#{$component}-padding', _parse-value('padding', $padding));
-      } @else {
-        padding: theme.key-create('#{$component}-padding', theme.token-get('padding-#{$padding}'));
-      }
+    @if $radius {
+      @include radius($component, $radius, $intent);
+    }
+    @if $padding {
+      @include padding($component, $padding, $intent);
+    }
+    @if $margin {
+      @include margin($component, $margin, $intent)
+    }
+    @if $gap {
+      @include gap($component, $gap, $intent)
+    }
+    @if $border-width {
+      @include border-width($component, $border-width, $intent)
+    }
+    @if $border-style {
+      @include border-style($component, $border-style, $intent)
+    }
+    @if $shadow {
+      @include shadow($component, $shadow, $intent);
     }
   }
-  
-  @if $margin {
-    @if $extend {
-      @if list.length($margin) != 1 {
-        @include theme.key-bind('#{$component}-margin', _parse-value('margin', $margin));
-      } @else {
-        @include theme.key-bind('#{$component}-margin', theme.token-get('margin-#{$margin}'));
-      }
-    } @else {
-      @if list.length($margin) != 1 {
-        margin: theme.key-create('#{$component}-margin', _parse-value('margin', $margin));
-      } @else {
-        margin: theme.key-create('#{$component}-margin', theme.token-get('margin-#{$margin}'));
-      }
+}
+
+/// Mixin for applying widths.
+/// @param {string} $component
+/// @param {map<string, any>|number|width} $width
+/// @param {string} $intent
+/// @return {void} width styles.
+@mixin width($component, $width, $intent: 'create') {
+  @if tools.is-type(map, $width) {
+    $min: map.get($width, 'min');
+    $default: map.get($width, 'default');
+    $max: map.get($width, 'max');
+    
+    @if $min {
+      @include theme.property(
+        min-width,
+        ('#{$component}-min-width', $min),
+        $intent
+      );
     }
-  }
-  
-  @if $shadow {
-    @if $extend {
-      @include theme.key-bind('#{$component}-shadow', theme.token-get('shadow-#{$shadow}'));
-    } @else {
-      box-shadow: theme.key-create('#{$component}-shadow', theme.token-get('shadow-#{$shadow}'));
+    @if $default {
+      @include theme.property(
+        width,
+        ('#{$component}-width', $default),
+        $intent
+      );
     }
+    @if $max {
+      @include theme.property(
+        max-width,
+        ('#{$component}-max-width', $max),
+        $intent
+      );
+    }
+  } @else {
+    @include theme.property(
+      width,
+      ('#{$component}-width', $width),
+      $intent
+    );
   }
+}
+
+/// Mixin for applying radii.
+/// @param {string} $component
+/// @param {list<token|number>|token|number} $radius
+/// @param {string} $intent
+/// @return {void} radii styles.
+@mixin radius($component, $radius, $intent: 'create') {
+  @include theme.property(
+    border-radius,
+    ('#{$component}-radius', _parse-value('radius', $radius)),
+    $intent
+  );
+}
+
+/// Mixin for applying padding.
+/// @param {string} $component
+/// @param {list<token|number>|token|number} $padding
+/// @param {string} $intent
+/// @return {void} padding styles.
+@mixin padding($component, $padding, $intent: 'create') {
+  @include theme.property(
+    padding,
+    ('#{$component}-padding', _parse-value('padding', $padding)),
+    $intent
+  );
+}
+
+/// Mixin for applying margin.
+/// @param {string} $component
+/// @param {list<token|number>|token|number} $margin
+/// @param {string} $intent
+/// @return {void} margin styles.
+@mixin margin($component, $margin, $intent: 'create') {
+  @include theme.property(
+    margin,
+    ('#{$component}-margin', _parse-value('margin', $margin)),
+    $intent
+  );
+}
+
+/// Mixin for applying border width.
+/// @param {string} $component
+/// @param {token|number} $border-width
+/// @param {string} $intent
+/// @return {void} border width styles.
+@mixin border-width($component, $border-width, $intent: 'create') {
+  @include theme.property(
+    border-width,
+    ('#{$component}-border-width', theme.token-switch($border-width)),
+    $intent
+  );
+}
+
+/// Mixin for applying border style.
+/// @param {string} $component
+/// @param {string} $border-style
+/// @param {string} $intent
+/// @return {void} border style styles.
+@mixin border-style($component, $border-style, $intent: 'create') {
+  @include theme.property(
+    border-style,
+    ('#{$component}-border-style', theme.token-switch($border-style)),
+    $intent
+  );
+}
+
+/// Mixin for applying shadow.
+/// @param {string} $component
+/// @param {token} $shadow
+/// @param {string} $intent
+/// @return {void} shadow styles.
+@mixin shadow($component, $shadow, $intent: 'create') {
+  @include theme.property(
+    box-shadow,
+    ('#{$component}-shadow', theme.token-switch('shadow-#{$shadow}', $shadow)),
+    $intent
+  );
+}
+
+/// Mixin for applying gap.
+/// @param {string} $component
+/// @param {token} $gap
+/// @param {string} $intent
+/// @return {void} gap styles.
+@mixin gap($component, $gap, $intent: 'create') {
+  @include theme.property(
+    gap,
+    ('#{$component}-gap', theme.token-switch('shadow-#{$gap}', $gap)),
+    $intent
+  );
 }
 
 /// Value parser for the shape setter mixins.
 /// @access private
 @function _parse-value($key, $query) {
   $result: ();
-  
   @each $value in $query {
     @if theme.token-check('#{$key}-#{$value}') {
       $result: list.append($result, theme.token-get('#{$key}-#{$value}'), 'space');
@@ -111,7 +235,6 @@
       }
     }
   }
-  
   @return $result;
 }
 
