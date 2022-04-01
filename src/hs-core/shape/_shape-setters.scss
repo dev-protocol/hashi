@@ -94,7 +94,7 @@ $_valid-props: (
 /// @param {string} $intent
 /// @return {void} width styles.
 @mixin width($component, $width, $intent: 'create') {
-  @if tools.is-type(map, $width) {
+  @if tools.is-type(map, $width, $errors: false) {
     $min: map.get($width, 'min');
     $default: map.get($width, 'default');
     $max: map.get($width, 'max');
@@ -135,7 +135,7 @@ $_valid-props: (
 /// @param {string} $intent
 /// @return {void} height styles.
 @mixin height($component, $height, $intent: 'create') {
-  @if tools.is-type(map, $height) {
+  @if tools.is-type(map, $height, $errors: false) {
     $min: map.get($height, 'min');
     $default: map.get($height, 'default');
     $max: map.get($height, 'max');
