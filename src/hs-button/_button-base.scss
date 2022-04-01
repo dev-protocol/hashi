@@ -22,11 +22,20 @@
 
 @use '../hs-core';
 
-@mixin init($gap) {
+$width: max-content !default;
+
+$icon-ink: inherit !default;
+$label-ink: inherit !default;
+
+$gap: 'sm' !default;
+
+@mixin init() {
   .hs-button {
-    width: 100%;
-    min-width: 62px;
-    max-width: max-content;
+    @include hs-core.shape-width('button', (
+      default: 100%,
+      min: 64px,
+      max: $width
+    ));
     height: max-content;
   
     display: inline-flex;
@@ -44,8 +53,8 @@
     @content;
   
     ::-moz-focus-inner {
-      border-style: none;
       padding: 0;
+      border-style: none;
     }
   
     & > * + * {
@@ -55,14 +64,14 @@
     .hs-button__icon {
       display: flex;
       align-items: center;
-      color: hs-core.key-create('button-icon-ink', inherit);
+      @include hs-core.color-ink('button-icon', $icon-ink);
       font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
       /* @fallback */
       width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
       height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
     
       > * {
-        color: hs-core.key-create('button-icon-ink', inherit);
+        @include hs-core.color-ink('button-icon', $icon-ink);
         font-size: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
         /* @fallback */
         width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
@@ -71,8 +80,8 @@
     }
   
     .hs-button__label {
-      padding: 0 0.3rem;
-      color: hs-core.key-create('button-label-ink', inherit);
+      @include hs-core.shape-padding('button-label', 0);
+      @include hs-core.color-ink('button-label', $label-ink);
       font-family: inherit;
       font-size: hs-core.key-create('button-label-size', inherit);
       font-weight: inherit;

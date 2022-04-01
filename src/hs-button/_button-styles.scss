@@ -24,21 +24,30 @@
 @use 'sass:map';
 
 @use 'button-base';
+@use 'button-shared' as shared;
 
-$fill: 'accent' !default;
+$fill: 'accent-400' !default;
+$fill-hover: 'accent-400' !default;
+$fill-focus: 'accent-400' !default;
+$fill-active: 'accent-200' !default;
+$fill-disabled: 'disabled' !default;
+
 $ink: 'accent-ink' !default;
+$ink-disabled: 'disabled-ink' !default;
+
 $border: $fill !default;
-$tone: 400 !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
+$border-disabled: $fill-disabled !default;
 
 $radius: 'small' !default;
-$padding: ('xs' 'sm') !default;
+$padding: ('xs' 'md') !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
 $weight: 'bold' !default;
 $line-height: 'normal' !default;
-
-$gap: 0 !default;
 
 $_states: (
   'success',
@@ -46,56 +55,140 @@ $_states: (
   'danger'
 );
 
+$_fills: (
+  'default': $fill,
+  'hover': $fill-hover,
+  'focus': $fill-focus,
+  'active': $fill-active,
+  'disabled': $fill-disabled
+);
+
+$_inks: (
+  'default': $ink,
+  'disabled': $ink-disabled
+);
+
+$_borders: (
+  'default': $border,
+  'hover': $border-hover,
+  'focus': $border-focus,
+  'active': $border-active,
+  'disabled': $border-disabled
+);
+
 @mixin render() {
-  @include button-base.init($gap) {
+  @include button-base.init {
     @include hs-core.color-apply('button', (
-      fill: $fill,
-      ink: $ink,
-      border: $border
-    ), 'text', true, $tone);
-    
+      fill: 'dp-black-400',
+      ink: 'dp-black-ink',
+      border: 'dp-black-400'
+    ));
+    @include hs-core.shape-border-width('button', 1px);
+    @include hs-core.shape-border-style('button', solid);
     @include hs-core.shape-apply('button', (
       radius: $radius,
       padding: $padding,
     ));
-    
     @include hs-core.typography-apply('button', (
       family: $family,
       size: $size,
       weight: $weight,
       line-height: $line-height
     ));
+    
+    @include shared.text-style(
+      $fills: $_fills,
+      $inks: $_inks,
+      $borders: $_borders
+    );
   
     @each $state in $_states {
       &.is-#{$state} {
-        @include _state-generator($state, 'text');
+        @include shared.text-style(
+          $fills: (
+            'default': '#{$state}-400',
+            'hover': '#{$state}-400',
+            'focus': '#{$state}-400',
+            'active': '#{$state}-200',
+            'disabled': $fill-disabled,
+          ),
+          $inks: (
+            'default': '#{$state}-ink',
+            'disabled': $ink-disabled
+          ),
+          $borders: (
+            'default': '#{$state}-400',
+            'hover': '#{$state}-400',
+            'focus': '#{$state}-400',
+            'active': '#{$state}-200',
+            'disabled': $border-disabled,
+          )
+        );
       }
     }
     
     &.is-outlined {
-      @include hs-core.color-bind('button', (
-        fill: $fill,
-        ink: $ink,
-        border: $border
-      ), 'outlined', true, $tone);
+      @include shared.outlined-style(
+        $fills: $_fills,
+        $inks: $_inks,
+        $borders: $_borders
+      );
       
       @each $state in $_states {
         &.is-#{$state} {
-          @include _state-generator($state, 'outlined');
+          @include shared.outlined-style(
+            $fills: (
+              'default': '#{$state}-400',
+              'hover': '#{$state}-400',
+              'focus': '#{$state}-400',
+              'active': '#{$state}-200',
+              'disabled': $fill-disabled,
+            ),
+            $inks: (
+              'default': '#{$state}-ink',
+              'disabled': $ink-disabled
+            ),
+            $borders: (
+              'default': '#{$state}-400',
+              'hover': '#{$state}-400',
+              'focus': '#{$state}-400',
+              'active': '#{$state}-200',
+              'disabled': $border-disabled,
+            )
+          );
         }
       }
     }
   
     &.is-filled {
-      @include hs-core.color-bind('button', (
-        fill: $fill,
-        ink: $ink,
-        border: $border
-      ), 'filled', true, $tone);
+      @include shared.filled-style(
+        $fills: $_fills,
+        $inks: $_inks,
+        $borders: $_borders
+      );
   
       @each $state in $_states {
         &.is-#{$state} {
-          @include _state-generator($state, 'filled');
+          @include shared.filled-style(
+            $fills: (
+              'default': '#{$state}-400',
+              'hover': '#{$state}-400',
+              'focus': '#{$state}-400',
+              'active': '#{$state}-200',
+              'disabled': $fill-disabled,
+            ),
+            $inks: (
+              'default': '#{$state}-ink',
+              'disabled': $ink-disabled
+            ),
+            $borders: (
+              'default': '#{$state}-400',
+              'hover': '#{$state}-400',
+              'focus': '#{$state}-400',
+              'active': '#{$state}-200',
+              'disabled': $border-disabled,
+            )
+          );
         }
       }
   
@@ -119,12 +212,4 @@ $_states: (
       }
     }
   }
-}
-
-@mixin _state-generator($state, $style) {
-  @include hs-core.color-bind('button', (
-    fill: $state,
-    ink: '#{$state}-ink',
-    border: $state
-  ), $style, true, $tone);
 }
