@@ -21,15 +21,40 @@
 ///
 
 @use '../hs-core';
+@use '../hs-button/button-shared' as shared;
 
-$fill: 'accent' !default;
+$fill: 'accent-400' !default;
+$fill-hover: 'accent-400' !default;
+$fill-focus: 'accent-400' !default;
+$fill-active: 'accent-200' !default;
+
 $ink: 'accent-ink' !default;
+
 $border: $fill !default;
-$tone: 400 !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
 
 $radius: 'small' !default;
-
 $gap: 'xs' !default;
+
+$_fills: (
+  'default': $fill,
+  'hover': $fill-hover,
+  'focus': $fill-focus,
+  'active': $fill-active,
+);
+
+$_inks: (
+  'default': $ink,
+);
+
+$_borders: (
+  'default': $border,
+  'hover': $border-hover,
+  'focus': $border-focus,
+  'active': $border-active,
+);
 
 @mixin render() {
   .hs-button-group {
@@ -45,22 +70,24 @@ $gap: 'xs' !default;
     
       &:checked {
         + .hs-button {
-          @include hs-core.color-bind('button', (
-            fill: $fill,
-            ink: $ink,
-            border: $border
-          ), 'filled', true, $tone);
+          &:not(:disabled) {
+            @include hs-core.color-bind('button', (
+              fill: $fill,
+              ink: $ink,
+              border: $border
+            ));
+          }
         }
       }
     }
     
     .hs-button {
       @include hs-core.key-bind('button-radius', hs-core.token-get('radius-none'));
-      @include hs-core.color-bind('button', (
-        fill: $fill,
-        ink: $ink,
-        border: $border
-      ), 'outlined', true, $tone);
+      @include shared.outlined-style(
+        $fills: $_fills,
+        $inks: $_inks,
+        $borders: $_borders
+      );
       
       &:not(:nth-child(2)) {
         margin-left: hs-core.key-create('button-group-gap', hs-core.token-switch('space-#{$gap}', $gap));
@@ -86,7 +113,7 @@ $gap: 'xs' !default;
           fill: $fill,
           ink: $ink,
           border: $border
-        ), 'filled', true, $tone);
+        ));
       }
     }
   }
