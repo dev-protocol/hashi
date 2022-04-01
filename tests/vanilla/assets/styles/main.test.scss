@@ -83,10 +83,10 @@
   // @include hs-select-field.render();
   // @include hs-wallet.render();
 
-  // @include hs-utils.layout-utils();
-  // @include hs-utils.color-utils();
-  // @include hs-utils.shape-utils();
-  // @include hs-utils.typography-utils();
+  @include hs-utils.layout-utils();
+  @include hs-utils.color-utils();
+  @include hs-utils.shape-utils();
+  @include hs-utils.typography-utils();
 
   .fill-current {
     fill: currentColor;
