@@ -66,7 +66,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin family($component, $family, $intent: 'create') {
   @include theme.property(
     font-family,
-    ('#{$component}-family', theme.token-switch('family-#{$family}')),
+    ('#{$component}-family', theme.token-switch('family-#{$family}', $family)),
     $intent
   );
 }
@@ -79,7 +79,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin size($component, $size, $intent: 'create') {
   @include theme.property(
     font-size,
-    ('#{$component}-size', theme.token-switch('size-#{$size}')),
+    ('#{$component}-size', theme.token-switch('size-#{$size}', $size)),
     $intent
   );
 }
@@ -92,7 +92,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin weight($component, $weight, $intent: 'create') {
   @include theme.property(
     font-weight,
-    ('#{$component}-weight', theme.token-switch('weight-#{$weight}')),
+    ('#{$component}-weight', theme.token-switch('weight-#{$weight}', $weight)),
     $intent
   );
 }
@@ -105,7 +105,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin line-height($component, $line-height, $intent: 'create') {
   @include theme.property(
     line-height,
-    ('#{$component}-line-height', theme.token-switch('line-height-#{$line-height}')),
+    ('#{$component}-line-height', theme.token-switch('line-height-#{$line-height}', $line-height)),
     $intent
   );
 }
