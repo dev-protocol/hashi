@@ -39,17 +39,16 @@ const hsTypographySize = {
 };
 
 const hsTypographyWeight = {
+  'black': 800,
   'bold': 700,
   'normal': 400,
+  'light': 300,
 };
 
 const hsTypographyLineHeight = {
-  'supertitle': 'var(--hs-theme-line-height-supertitle)',
-  'title': 'var(--hs-theme-line-height-title)',
-  'subtitle': 'var(--hs-theme-line-height-subtitle)',
-  'body': 'var(--hs-theme-line-height-body)',
-  'mono': 'var(--hs-theme-line-height-mono)',
-  'small': 'var(--hs-theme-line-height-small)',
+  'broad': 'var(--hs-theme-line-height-broad)',
+  'normal': 'var(--hs-theme-line-height-normal)',
+  'condensed': 'var(--hs-theme-line-height-condensed)',
 };
 
 export { hsTypographyFamily, hsTypographySize, hsTypographyWeight, hsTypographyLineHeight };

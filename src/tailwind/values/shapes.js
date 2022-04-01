@@ -28,6 +28,9 @@ const hsShapeRadius = {
   'lg': 'var(--hs-theme-radius-lg)',
   'xl': 'var(--hs-theme-radius-xl)',
   'pill': 'var(--hs-theme-radius-pill)',
+  'small': 'var(--hs-theme-radius-small)',
+  'medium': 'var(--hs-theme-radius-medium)',
+  'large': 'var(--hs-theme-radius-large)',
 };
 
 const hsShapeGap = {

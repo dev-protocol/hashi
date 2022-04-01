@@ -21,23 +21,34 @@
  */
 
 export const hsColorTokens = {
-  surface: {
-    200: 'var(--hs-theme-surface-200)',
-    300: 'var(--hs-theme-surface-300)',
-    400: 'var(--hs-theme-surface-400)',
-    600: 'var(--hs-theme-surface-600)',
-    'ink': 'var(--hs-theme-surface-ink)'
+  'dp-white': {
+    200: 'var(--hs-theme-dp-white-200)',
+    300: 'var(--hs-theme-dp-white-300)',
+    400: 'var(--hs-theme-dp-white-400)',
+    600: 'var(--hs-theme-dp-white-600)',
+    'ink': 'var(--hs-theme-dp-white-ink)'
   },
-  neutral: {
-    200: 'var(--hs-theme-neutral-200)',
-    300: 'var(--hs-theme-neutral-300)',
-    400: 'var(--hs-theme-neutral-400)',
-    600: 'var(--hs-theme-neutral-600)',
-    'ink': 'var(--hs-theme-neutral-ink)'
+  'dp-black': {
+    200: 'var(--hs-theme-dp-black-200)',
+    300: 'var(--hs-theme-dp-black-300)',
+    400: 'var(--hs-theme-dp-black-400)',
+    600: 'var(--hs-theme-dp-black-600)',
+    'ink': 'var(--hs-theme-dp-black-ink)'
   },
-  disabled: {
-    DEFAULT: 'var(--hs-theme-disabled)',
-    'ink': 'var(--hs-theme-disabled-ink)'
+  'dp-blue-grey': {
+    200: 'var(--hs-theme-dp-blue-grey-200)',
+    300: 'var(--hs-theme-dp-blue-grey-300)',
+    400: 'var(--hs-theme-dp-blue-grey-400)',
+    600: 'var(--hs-theme-dp-blue-grey-600)',
+    'ink': 'var(--hs-theme-dp-blue-grey-ink)'
+  },
+  'dp-black-alpha': {
+    DEFAULT: 'var(--hs-theme-dp-black-alpha)',
+    'ink': 'var(--hs-theme-dp-black-alpha-ink)'
+  },
+  'dp-white-alpha': {
+    DEFAULT: 'var(--hs-theme-dp-white-alpha)',
+    'ink': 'var(--hs-theme-dp-white-alpha-ink)'
   },
   scarlet: {
     200: 'var(--hs-theme-scarlet-200)',
@@ -88,9 +99,25 @@ export const hsColorTokens = {
     600: 'var(--hs-theme-danger-600)',
     'ink': 'var(--hs-theme-danger-ink)'
   },
+  primary: {
+    200: 'var(--hs-theme-primary-200)',
+    300: 'var(--hs-theme-primary-300)',
+    400: 'var(--hs-theme-primary-400)',
+    600: 'var(--hs-theme-primary-600)',
+    'ink': 'var(--hs-theme-primary-ink)'
+  },
+  accent: {
+    200: 'var(--hs-theme-accent-200)',
+    300: 'var(--hs-theme-accent-300)',
+    400: 'var(--hs-theme-accent-400)',
+    600: 'var(--hs-theme-accent-600)',
+    'ink': 'var(--hs-theme-accent-ink)'
+  },
+  surface: {
+    200: 'var(--hs-theme-surface-200)',
+    300: 'var(--hs-theme-surface-300)',
+    400: 'var(--hs-theme-surface-400)',
+    600: 'var(--hs-theme-surface-600)',
+    'ink': 'var(--hs-theme-surface-ink)'
+  },
 };
-
-hsColorTokens.primary = hsColorTokens.surface;
-hsColorTokens.accent = hsColorTokens.scarlet;
-hsColorTokens.lightBackground = hsColorTokens.surface['200'];
-hsColorTokens.darkBackground = hsColorTokens.surface['600'];
