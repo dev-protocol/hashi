@@ -251,5 +251,7 @@ $_valid-props: (
 /// @param {map<string, string>} $theme
 /// @return {void} void.
 @mixin bind($component, $theme) {
-  @include _base($component, $theme, ('bind-mode': true));
+  @include _base($component, $theme, (
+    'bind-mode': true
+  ));
 }
