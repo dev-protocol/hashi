@@ -55,6 +55,21 @@
   @return false;
 }
 
+/// Checks if query is not empty.
+/// @param {*} $value
+/// @return {boolean} true if not empty, false if empty.
+@function is-not-empty($value) {
+  @if $value
+       or $value != ''
+       or $value != ()
+       or $value != none
+       or $value != null
+       or length($value) != 0 {
+    @return true;
+  }
+  @return false;
+}
+
 /// Validates a data type on a given reference and query.
 /// @access private
 /// @param {string} $reference
