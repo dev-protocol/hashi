@@ -88,7 +88,7 @@ $_valid-props: (
   }
 }
 
-/// Mixin for applying widths.
+/// Mixin for applying width.
 /// @param {string} $component
 /// @param {map<string, any>|number|width} $width
 /// @param {string} $intent
@@ -124,6 +124,47 @@ $_valid-props: (
     @include theme.property(
       width,
       ('#{$component}-width', $width),
+      $intent
+    );
+  }
+}
+
+/// Mixin for applying height.
+/// @param {string} $component
+/// @param {map<string, any>|number|height} $height
+/// @param {string} $intent
+/// @return {void} height styles.
+@mixin height($component, $height, $intent: 'create') {
+  @if tools.is-type(map, $height) {
+    $min: map.get($height, 'min');
+    $default: map.get($height, 'default');
+    $max: map.get($height, 'max');
+    
+    @if $min {
+      @include theme.property(
+        min-height,
+        ('#{$component}-min-height', $min),
+        $intent
+      );
+    }
+    @if $default {
+      @include theme.property(
+        height,
+        ('#{$component}-height', $default),
+        $intent
+      );
+    }
+    @if $max {
+      @include theme.property(
+        max-height,
+        ('#{$component}-max-height', $max),
+        $intent
+      );
+    }
+  } @else {
+    @include theme.property(
+      height,
+      ('#{$component}-height', $height),
       $intent
     );
   }
