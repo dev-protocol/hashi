@@ -24,10 +24,13 @@
 
 @use 'form-field-base';
 
-$fill: 'surface' !default;
+$fill: 'surface-200' !default;
+$fill-disabled: 'disabled' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary' !default;
-$tone: 200 !default;
+$ink-disabled: 'disabled-ink' !default;
+$border: 'primary-200' !default;
+$border-focus: 'accent-400' !default;
+$border-disabled: 'disabled' !default;
 
 $radius: 'small' !default;
 $padding: ('sm' 'md') !default;
@@ -37,19 +40,50 @@ $size: 'body' !default;
 $weight: 'normal' !default;
 $line-height: 'normal' !default;
 
+$label-ink: 'surface-ink' !default;
+$helper-ink: 'surface-ink' !default;
+
 @mixin render() {
-  @include form-field-base.init(
-    $fill,
-    $ink,
-    $border,
-    $tone,
-    $radius,
-    $padding,
-    $family,
-    $size,
-    $weight,
-    $line-height
-  ) {
+  @include form-field-base.init($label-ink, $helper-ink) {
+    .hs-form-field__input {
+      @include hs-core.shape-apply('form-field', (
+        radius: $radius,
+        padding: $padding,
+        border-width: 1px,
+        border-style: solid
+      ));
+      @include hs-core.typography-apply('form-field', (
+        family: $family,
+        size: $size,
+        weight: $weight,
+        line-height: $line-height
+      ));
+      outline: none;
+      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+      
+      &:not(:read-only) {
+        @include hs-core.color-apply('form-field', (
+          fill: $fill,
+          ink: $ink,
+          border: $border
+        ));
+    
+        &:focus {
+          @include hs-core.color-bind('form-field', (
+            border: $border-focus
+          ));
+        }
+      }
+  
+      &:read-only {
+        @include hs-core.color-apply('form-field', (
+          fill: $fill-disabled,
+          ink: $ink-disabled,
+          border: $border-disabled
+        ));
+      }
+    }
+    
     &.is-required {
       .hs-form-field__label::after {
         content: '*';
@@ -59,11 +93,10 @@ $line-height: 'normal' !default;
     }
     
     &.is-filled {
-      @include hs-core.color-bind('form-field', (
-        border: $fill,
-      ), 'filled', $tone: $tone);
-      
-      .hs-form-field__input {
+      .hs-form-field__input:not(:read-only) {
+        @include hs-core.color-bind('form-field', (
+          border: $fill
+        ));
         @include hs-core.shape-apply('form-field', (
           shadow: 'low'
         ));
@@ -71,30 +104,31 @@ $line-height: 'normal' !default;
     }
   
     &.is-danger {
-      @include hs-core.color-bind('form-field', (
-        ink: 'danger-400',
-      ), 'filled');
       @include hs-core.color-bind('form-field-label', (
         ink: 'danger-400',
-      ), 'filled');
+      ));
       @include hs-core.color-bind('form-field-helper', (
         ink: 'danger-400',
-      ), 'filled');
+      ));
+  
+      .hs-form-field__input:not(:read-only) {
+        &:focus {
+          @include hs-core.color-bind('form-field', (
+            border: 'danger-400'
+          ));
+        }
+      }
   
       &:not(.is-filled) {
-        @include hs-core.color-bind('form-field', (
-          border: 'danger'
-        ), 'filled');
+        .hs-form-field__input:not(:read-only) {
+          @include hs-core.color-bind('form-field', (
+            border: 'danger-400'
+          ));
+        }
       }
     
       svg {
         color: hs-core.token-get('danger-400');
-      }
-    
-      .hs-form-field__input:focus {
-        @include hs-core.color-bind('form-field', (
-          border: 'danger'
-        ), 'filled');
       }
     }
   }

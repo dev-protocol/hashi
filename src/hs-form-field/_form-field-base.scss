@@ -22,17 +22,11 @@
 
 @use '../hs-core';
 
+@use 'sass:map';
+
 @mixin init(
-  $fill,
-  $ink,
-  $border,
-  $tone,
-  $radius,
-  $padding,
-  $family,
-  $size,
-  $weight,
-  $line-height,
+  $label-ink,
+  $helper-ink,
 ) {
   .hs-form-field {
     width: 100%;
@@ -46,52 +40,12 @@
     
     .hs-form-field__label {
       @include hs-core.color-apply('form-field-label', (
-        ink: 'surface-ink',
-      ), 'filled', $tone: 400);
+        ink: $label-ink,
+      ));
       @include hs-core.typography-apply('form-field', (
         weight: 'bold',
         line-height: 'broad'
       ));
-    }
-    
-    .hs-form-field__input {
-      @include hs-core.color-apply('form-field', (
-        fill: $fill,
-        ink: $ink,
-      ), 'filled', $tone: $tone);
-      @include hs-core.shape-apply('form-field', (
-        radius: $radius,
-        padding: $padding
-      ));
-      @include hs-core.typography-apply('form-field', (
-        family: $family,
-        size: $size,
-        weight: $weight,
-        line-height: $line-height
-      ));
-      outline: none;
-      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
-  
-      &:not(.is-danger),
-      &:not(.is-filled) {
-        @include hs-core.color-apply('form-field', (
-          border: $border
-        ), 'filled', $tone: $tone);
-  
-        @include hs-core.dark-mode {
-          @if $fill == 'surface' {
-            @include hs-core.color-apply('form-field', (
-              border: $fill
-            ), 'filled', $tone: 'ink');
-          }
-        }
-      }
-      
-      &:focus {
-        @include hs-core.color-bind('form-field', (
-          border: 'accent'
-        ), 'filled', $tone: 400);
-      }
     }
     
     .hs-form-field__icon {
@@ -120,8 +74,8 @@
     
     .hs-form-field__helper {
       @include hs-core.color-apply('form-field-helper', (
-        ink: 'surface-ink',
-      ), 'filled', $tone: 400);
+        ink: $helper-ink,
+      ));
       @include hs-core.typography-apply('form-field', (
         family: 'small',
         size: 'small',
