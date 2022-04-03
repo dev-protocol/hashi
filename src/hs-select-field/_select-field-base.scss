@@ -22,18 +22,7 @@
 
 @use '../hs-core';
 
-@mixin init(
-  $fill,
-  $ink,
-  $border,
-  $tone,
-  $radius,
-  $padding,
-  $family,
-  $size,
-  $weight,
-  $line-height,
-) {
+@mixin init($label-ink, $helper-ink) {
   .hs-select-field {
     width: 100%;
     display: flex;
@@ -47,53 +36,12 @@
       width: max-content;
       white-space: nowrap;
       @include hs-core.color-apply('select-field-label', (
-        ink: 'surface-ink',
-      ), 'filled', $tone: 400);
+        ink: $label-ink,
+      ));
       @include hs-core.typography-apply('select-field', (
         weight: 'bold',
         line-height: 'broad'
       ));
-    }
-    
-    .hs-select-field__input {
-      width: 100%;
-      @include hs-core.color-apply('select-field', (
-        fill: $fill,
-        ink: $ink,
-      ), 'filled', $tone: $tone);
-      @include hs-core.shape-apply('select-field', (
-        radius: $radius,
-        padding: $padding
-      ));
-      @include hs-core.typography-apply('select-field', (
-        family: $family,
-        size: $size,
-        weight: $weight,
-        line-height: $line-height
-      ));
-      outline: none;
-      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
-  
-      &:not(.is-danger),
-      &:not(.is-filled) {
-        @include hs-core.color-apply('select-field', (
-          border: $border
-        ), 'filled', $tone: $tone);
-        
-        @include hs-core.dark-mode {
-          @if $fill == 'surface' {
-            @include hs-core.color-apply('select-field', (
-              border: $fill
-            ), 'filled', $tone: 'ink');
-          }
-        }
-      }
-      
-      &:focus {
-        @include hs-core.color-bind('select-field', (
-          border: 'accent'
-        ), 'filled');
-      }
     }
     
     .hs-select-field__icon {
@@ -113,8 +61,8 @@
     
     .hs-select-field__helper {
       @include hs-core.color-apply('select-field-helper', (
-        ink: 'surface-ink',
-      ), 'filled', $tone: 400);
+        ink: $helper-ink,
+      ));
       @include hs-core.typography-apply('select-field', (
         family: 'small',
         size: 'small',
