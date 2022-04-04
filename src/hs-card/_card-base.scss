@@ -114,6 +114,10 @@
         @include hs-core.color-apply('card-icon', (
           border: 'accent-400'
         ));
+        @include hs-core.shape-apply('card-icon', (
+          border-width: 1px,
+          border-style: solid
+        ));
         
         img {
           height: 100%;
