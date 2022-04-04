@@ -23,9 +23,9 @@
 @use '../hs-core';
 @use 'card-base';
 
-$fill: 'surface' !default;
+$fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary' !default;
+$border: 'primary-400' !default;
 $tone: 200 !default;
 
 $radius: 'medium' !default;
@@ -44,10 +44,6 @@ $footer-gap: 'sm' !default;
 
 @mixin render() {
   @include card-base.init(
-    $fill,
-    $ink,
-    $border,
-    $tone,
     $radius,
     $padding,
     $title-typography,
@@ -59,10 +55,22 @@ $footer-gap: 'sm' !default;
     $header-gap,
     $footer-gap,
   ) {
+    @include hs-core.color-apply('card', (
+      fill: $fill,
+      ink: $ink,
+      border: $border,
+    ));
+    @include hs-core.shape-apply('card', (
+      radius: $radius,
+      shadow: 'none',
+      border-width: 1px,
+      border-style: solid
+    ));
+    
     &.is-filled {
       @include hs-core.color-bind('card', (
         border: $fill,
-      ), 'filled', $tone: 200);
+      ));
       @include hs-core.shape-bind('card', (
         shadow: 'low'
       ));

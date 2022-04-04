@@ -23,10 +23,6 @@
 @use '../hs-core';
 
 @mixin init(
-  $fill,
-  $ink,
-  $border,
-  $tone,
   $radius,
   $padding,
   $title-typography,
@@ -39,27 +35,8 @@
   $footer-gap,
 ) {
   .hs-card {
-    @include hs-core.color-apply('card', (
-      fill: $fill,
-      ink: $ink,
-      border: $border,
-    ), 'filled', $tone: $tone);
-    @include hs-core.shape-apply('card', (
-      radius: $radius,
-      shadow: 'none'
-    ));
     @include hs-core.key-bind('card-section-gap', hs-core.token-switch('space-#{$section-gap}', $section-gap));
     overflow: hidden;
-    
-    @include hs-core.dark-mode {
-      &:not(.is-filled) {
-        @if $fill == 'surface' {
-          @include hs-core.color-bind('card', (
-            border: $fill,
-          ), 'filled', $tone: 'ink');
-        }
-      }
-    }
     
     @content;
     
@@ -135,8 +112,8 @@
         height: hs-core.key-create('card-icon-size', hs-core.token-switch($icon-size));
         border-radius: 50%;
         @include hs-core.color-apply('card-icon', (
-          border: 'accent'
-        ), 'outlined');
+          border: 'accent-400'
+        ));
         
         img {
           height: 100%;
