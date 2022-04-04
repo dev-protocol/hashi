@@ -23,10 +23,9 @@
 @use '../hs-core';
 @use 'profile-base';
 
-$fill: 'surface' !default;
+$fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary' !default;
-$tone: 200 !default;
+$border: 'primary-400' !default;
 
 $radius: 'sm' !default;
 $padding: 'md' !default;
@@ -50,26 +49,18 @@ $description-typography: 'body' !default;
       fill: $fill,
       ink: $ink,
       border: $border
-    ), 'filled', $tone: $tone);
+    ));
     @include hs-core.shape-apply('profile', (
       radius: $radius,
-      padding: $padding
+      padding: $padding,
+      border-width: 1px,
+      border-style: solid
     ));
-  
-    @include hs-core.dark-mode {
-      &:not(.is-filled) {
-        @if $fill == 'surface' {
-          @include hs-core.color-bind('profile', (
-            border: $fill,
-          ), 'filled', $tone: 'ink');
-        }
-      }
-    }
   
     &.is-filled {
       @include hs-core.color-bind('profile', (
         border: $fill,
-      ), 'filled', $tone: 200);
+      ));
       @include hs-core.shape-apply('profile', (
         shadow: 'low'
       ));

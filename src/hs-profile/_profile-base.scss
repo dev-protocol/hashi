@@ -42,8 +42,12 @@
       height: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size));
       border-radius: 50%;
       @include hs-core.color-apply('profile-img', (
-        border: 'accent'
-      ), 'outlined');
+        border: 'accent-400'
+      ));
+      @include hs-core.shape-apply('profile-img', (
+        border-width: 1px,
+        border-style: solid
+      ));
       overflow: hidden;
       user-select: none;
       
