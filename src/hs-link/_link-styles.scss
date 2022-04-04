@@ -22,14 +22,40 @@
 
 @use '../hs-core';
 
-$ink: 'accent' !default;
+$ink: 'accent-400' !default;
 
 @mixin render() {
   .hs-link {
     text-decoration: underline;
-    @include hs-core.color-apply('link', (
-      fill: $ink,
-    ), 'text', true);
+    @include hs-core.color-apply('button', (
+      fill: transparent,
+      ink: $ink,
+      border: transparent
+    ));
+  
+    &:hover {
+      @include hs-core.color-bind('button', (
+        fill: rgba(hs-core.token-get-raw($ink), hs-core.$color-fill-hover-opacity),
+        ink: $ink,
+        border: rgba(hs-core.token-get-raw($ink), hs-core.$color-border-hover-opacity)
+      ));
+    }
+  
+    &:focus {
+      @include hs-core.color-bind('button', (
+        fill: rgba(hs-core.token-get-raw($ink), hs-core.$color-fill-focus-opacity),
+        ink: $ink,
+        border: rgba(hs-core.token-get-raw($ink), hs-core.$color-border-focus-opacity)
+      ));
+    }
+  
+    &:active {
+      @include hs-core.color-bind('button', (
+        fill: rgba(hs-core.token-get-raw($ink), hs-core.$color-fill-active-opacity),
+        ink: $ink,
+        border: rgba(hs-core.token-get-raw($ink), hs-core.$color-border-active-opacity)
+      ));
+    }
     @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
   }
 }
