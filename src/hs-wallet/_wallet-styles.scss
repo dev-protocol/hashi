@@ -23,21 +23,52 @@
 @use '../hs-core';
 @use 'wallet-base';
 
-$fill: 'primary' !default;
+$fill: 'primary-400' !default;
+$fill-hover: 'primary-400' !default;
+$fill-focus: 'primary-400' !default;
+$fill-active: 'primary-200' !default;
+$fill-disabled: 'disabled' !default;
+
 $ink: 'primary-ink' !default;
+$ink-disabled: 'disabled-ink' !default;
+
 $border: $fill !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
+$border-disabled: $fill-disabled !default;
 
 $tone: 400 !default;
 
 $radius: 'small' !default;
-$padding: ('xs', 'sm') !default;
+$padding: ('xs' 'md') !default;
+
+$_fills: (
+  'default': $fill,
+  'hover': $fill-hover,
+  'focus': $fill-focus,
+  'active': $fill-active,
+  'disabled': $fill-disabled
+);
+
+$_inks: (
+  'default': $ink,
+  'disabled': $ink-disabled
+);
+
+$_borders: (
+  'default': $border,
+  'hover': $border-hover,
+  'focus': $border-focus,
+  'active': $border-active,
+  'disabled': $border-disabled
+);
 
 @mixin render() {
   @include wallet-base.init(
-    $fill,
-    $ink,
-    $border,
-    $tone,
+    $_fills,
+    $_inks,
+    $_borders,
     $radius,
     $padding
   );

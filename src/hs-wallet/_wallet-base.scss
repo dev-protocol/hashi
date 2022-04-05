@@ -21,12 +21,14 @@
 ///
 
 @use '../hs-core';
+@use '../hs-button/button-shared' as shared;
+
+@use 'sass:map';
 
 @mixin init(
-  $fill,
-  $ink,
-  $border,
-  $tone,
+  $fills,
+  $inks,
+  $borders,
   $radius,
   $padding
 ) {
@@ -40,18 +42,17 @@
     @content;
     
     .hs-button.is-wallet-button {
-      @include hs-core.color-bind('button', (
-        fill: $fill,
-        ink: $ink,
-        border: $border
-      ), 'filled', true, $tone);
+      @include shared.filled-style($fills, $inks, $borders);
       @include hs-core.shape-bind('button', (
         radius: $radius,
         padding: $padding,
+        border-width: 1px,
+        border-style: solid,
       ));
     }
   
     &:not(.is-connected) {
+      @include hs-core.key-bind('button-gap', 0 !important);
       .hs-button__icon {
         display: none;
       }
@@ -59,6 +60,8 @@
   
     &.is-connected {
       .hs-button.is-wallet-button {
+        @include hs-core.key-bind('button-gap', 0.3rem);
+        
         .hs-button__icon {
           background-color: hs-core.token-get('success-400');
           border: 6px solid hs-core.key-get('button-fill');
@@ -85,14 +88,16 @@
         @include hs-core.prefix(transition, all var(--hs-transition-time) ease-in-out);
   
         @include hs-core.color-apply('wallet-details', (
-          fill: $fill,
-          ink: $ink,
-          border: $border
-        ), 'filled', $tone: $tone);
+          fill: map.get($fills, 'default'),
+          ink: map.get($inks, 'default'),
+          border: map.get($borders, 'default')
+        ));
         @include hs-core.shape-apply('wallet-details', (
           radius: $radius,
           padding: $padding,
-          shadow: 'low'
+          shadow: 'low',
+          border-width: 1px,
+          border-style: solid
         ));
         @include hs-core.typography-apply('wallet-details', (
           family: 'small',
