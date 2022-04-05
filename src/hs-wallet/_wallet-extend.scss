@@ -33,11 +33,9 @@
 
 /// Color variant map.
 /// @param {map} $color-map
-/// @param {string} $style
-/// @param {int} $tone
 /// @return {*} color styles.
-@mixin color($color-map, $style: 'text', $tone: 400) {
-  @include hs-core.color-bind('wallet', $color-map, $style, true, $tone);
+@mixin color($color-map) {
+  @include hs-core.color-bind('wallet', $color-map);
 }
 
 /// Shape variant mixin.
