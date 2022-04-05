@@ -10,7 +10,7 @@ The fill mixin lets you apply background color to an element while creating an A
 @use 'node_modules/@devprotocol/hashi';
 
 .hs-component {
-  @include hashi.color-fill('component', hashi.token-get('primary-400'));
+  @include hashi.color-fill('component', 'primary-400');
 }
 ```
 
@@ -27,7 +27,7 @@ The ink mixin lets you apply text color to an element while creating an API arou
 @use 'node_modules/@devprotocol/hashi';
 
 .hs-component {
-  @include hashi.color-ink('component', hashi.token-get('primary-400'));
+  @include hashi.color-ink('component', 'primary-400');
 }
 ```
 
@@ -44,7 +44,7 @@ The border mixin lets you apply border color to an element while creating an API
 @use 'node_modules/@devprotocol/hashi';
 
 .hs-component {
-  @include hashi.color-border('component', hashi.token-get('primary-400'));
+  @include hashi.color-border('component', 'primary-400');
 }
 ```
 
