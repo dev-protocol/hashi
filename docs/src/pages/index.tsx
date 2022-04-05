@@ -44,7 +44,7 @@ export default function Home(): JSX.Element {
                   description="Be able to create the same user interfaces regardless of any frontend framework." />
         </section>
         <section className="absolute-center">
-          <HSButton type="filled" color="scarlet" link="/docs/getting-started/introduction">Ready to bridge?</HSButton>
+          <HSButton type="filled" color="scarlet" link="/docs/next/design">Ready to bridge?</HSButton>
         </section>
       </main>
     </Layout>
