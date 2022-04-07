@@ -35,6 +35,8 @@
     --ifm-navbar-link-color: #{hashi.token-get('primary-ink')};
     --ifm-footer-background-color: #{hashi.token-get('primary-300')};
     --ifm-toc-border-color: rgba(0 0 0 / 0);
+    --ifm-dropdown-background-color: #{hashi.token-get('primary-400')};
+    --ifm-dropdown-link-color: #{hashi.token-get('primary-ink')};
   }
 
   html {
@@ -47,6 +49,8 @@
     &[data-theme='dark'] {
       --ifm-navbar-background-color: #{rgba(hashi.token-get-raw('dp-blue-grey-400'), 90%)};
       --ifm-navbar-link-color: #{hashi.token-get('dp-blue-grey-ink')};
+      --ifm-dropdown-background-color: #{hashi.token-get('dp-blue-grey-400')} !important;
+      --ifm-dropdown-link-color: #{hashi.token-get('dp-blue-grey-ink')};
       background-color: hashi.token-get('dp-blue-grey-400') !important;
 
       .menu {

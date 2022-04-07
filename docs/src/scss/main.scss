@@ -149,4 +149,27 @@
       @include hashi.key-bind('status-tag-border', #c72828);
     }
   }
+  
+  .hs-docs-notice {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: hashi.token-get('padding-sm') hashi.token-get('padding-md');
+    background-color: hashi.token-get('accent-400');
+    color: hashi.token-get('accent-ink');
+    
+    p {
+      margin: 0 !important;
+      font-weight: hashi.token-get('weight-bold');
+      font-size: hashi.token-get('size-body');
+      text-align: center;
+      
+      a {
+        font-weight: hashi.token-get('weight-bold');
+        font-size: hashi.token-get('size-body');
+        color: hashi.token-get('accent-ink') !important;
+      }
+    }
+  }
 }
