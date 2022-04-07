@@ -207,10 +207,10 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'surface' !default;
+$fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary' !default;
-$tone: 400 !default;
+$border: 'primary-400' !default;
+$tone: 200 !default;
 
 $radius: 'medium' !default;
 $padding: 'md' !default;
@@ -222,6 +222,7 @@ $content-typography: 'body' !default;
 $icon-size: 66px !default;
 $media-height: 120px !default;
 
+$section-gap: 'md' !default;
 $header-gap: 'md' !default;
 $footer-gap: 'sm' !default;
 ```

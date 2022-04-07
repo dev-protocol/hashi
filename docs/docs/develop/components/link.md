@@ -59,7 +59,7 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$ink: 'accent' !default;
+$ink: 'accent-400' !default;
 ```
 
 ### Extending styles

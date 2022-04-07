@@ -71,3 +71,24 @@ These classes make up the elements inside a component.
 | Class              | Effect                                            |
 |--------------------|---------------------------------------------------|
 | `.hs-button-group` | A wrapper class around buttons for grouping them. |
+
+### Configuring styles
+Here are all the themeable properties for this component. The directions to use these properties are located in
+the [render API](index.md#modification-scss).
+
+```scss
+$fill: 'accent-400' !default;
+$fill-hover: 'accent-400' !default;
+$fill-focus: 'accent-400' !default;
+$fill-active: 'accent-200' !default;
+
+$ink: 'accent-ink' !default;
+
+$border: $fill !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
+
+$radius: 'small' !default;
+$gap: 'xs' !default;
+```

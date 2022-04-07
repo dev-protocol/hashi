@@ -94,14 +94,23 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'primary' !default;
-$ink: 'primary-ink' !default;
-$border: $fill !default;
+$fill: 'primary-400' !default;
+$fill-hover: 'primary-400' !default;
+$fill-focus: 'primary-400' !default;
+$fill-active: 'primary-200' !default;
+$fill-disabled: 'disabled' !default;
 
-$tone: 400 !default;
+$ink: 'primary-ink' !default;
+$ink-disabled: 'disabled-ink' !default;
+
+$border: $fill !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
+$border-disabled: $fill-disabled !default;
 
 $radius: 'small' !default;
-$padding: ('xs', 'sm') !default;
+$padding: ('xs' 'md') !default;
 ```
 
 ### Extending styles

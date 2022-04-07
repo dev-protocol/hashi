@@ -214,10 +214,13 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'surface' !default;
+$fill: 'surface-200' !default;
+$fill-disabled: 'disabled' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary' !default;
-$tone: 200 !default;
+$ink-disabled: 'disabled-ink' !default;
+$border: 'primary-200' !default;
+$border-focus: 'accent-400' !default;
+$border-disabled: 'disabled' !default;
 
 $radius: 'small' !default;
 $padding: ('sm' 'md') !default;
@@ -226,6 +229,9 @@ $family: 'body' !default;
 $size: 'body' !default;
 $weight: 'normal' !default;
 $line-height: 'normal' !default;
+
+$label-ink: 'surface-ink' !default;
+$helper-ink: 'surface-ink' !default;
 ```
 
 ### Extending styles

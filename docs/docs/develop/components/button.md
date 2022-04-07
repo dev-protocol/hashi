@@ -192,20 +192,35 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'accent' !default;
+$width: max-content !default;
+
+$fill: 'accent-400' !default;
+$fill-hover: 'accent-400' !default;
+$fill-focus: 'accent-400' !default;
+$fill-active: 'accent-200' !default;
+$fill-disabled: 'disabled' !default;
+
 $ink: 'accent-ink' !default;
+$ink-disabled: 'disabled-ink' !default;
+
 $border: $fill !default;
-$tone: 400 !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
+$border-disabled: $fill-disabled !default;
 
 $radius: 'small' !default;
-$padding: ('xs' 'sm') !default;
+$padding: ('xs' 'md') !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
 $weight: 'bold' !default;
 $line-height: 'normal' !default;
 
-$gap: 0 !default;
+$icon-ink: inherit !default;
+$label-ink: inherit !default;
+
+$gap: 'sm' !default;
 ```
 
 ### Extending styles

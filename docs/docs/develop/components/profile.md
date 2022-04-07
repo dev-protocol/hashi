@@ -120,27 +120,19 @@ Here are all the themeable properties for this component. The directions to use 
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'surface' !default;
+$fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
-$border: $fill !default;
-$tone: 300 !default;
+$border: 'primary-400' !default;
 
-$accent: 'native-blue' !default;
-$accent-tone: 400 !default;
+$radius: 'sm' !default;
+$padding: 'md' !default;
 
-$radius: 'radius-sm' !default;
-$padding: 'padding-md' !default;
+$gap: 'md' !default;
+$img-size: 66px !default;
 
-$width: 100% !default;
-$gap: 0.7rem !default;
-$img-size: 70px !default;
-
-$name-type-preset: 'h3' !default;
-$description-type-preset: 'body' !default;
-$role-type-preset: 'small' !default;
-
-$elevation-level: 2 !default;
-$has-elevation: true !default;
+$name-typography: 'subtitle' !default;
+$role-typography: 'small' !default;
+$description-typography: 'body' !default;
 ```
 
 ### Extending styles
