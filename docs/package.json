@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.0.0",
+  "version": "1.0.0-rc",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -15,7 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@devprotocol/hashi": "1.0.0-beta",
+    "@devprotocol/hashi": "1.0.0-rc",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/preset-classic": "2.0.0-beta.18",
     "@mdx-js/react": "1.6.22",
