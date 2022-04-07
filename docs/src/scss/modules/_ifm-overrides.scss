@@ -85,13 +85,25 @@
     }
   }
   
+  main[class^='docMainContainer'] {
+    div[class^='docItemContainer'] {
+      li {
+        list-style: circle;
+      }
+      
+      a {
+        @extend .hs-link;
+      }
+    }
+  }
+  
   .footer {
     --ifm-footer-background-color: #{hashi.token-get('primary-600')};
     --ifm-footer-color: #{hashi.token-get('primary-ink')};
     
     @include hashi.dark-mode {
-      --ifm-footer-background-color: #{hashi.token-get('primary-300')};
-      --ifm-footer-color: #{hashi.token-get('primary-ink')};
+      --ifm-footer-background-color: #{hashi.token-get('dp-blue-grey-300')};
+      --ifm-footer-color: #{hashi.token-get('dp-blue-grey-ink')};
     }
   }
 }

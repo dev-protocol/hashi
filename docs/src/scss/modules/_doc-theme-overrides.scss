@@ -45,12 +45,12 @@
     background-color: #fff;
 
     &[data-theme='dark'] {
-      --ifm-navbar-background-color: #{hashi.token-get('primary-400')};
-      --ifm-navbar-link-color: #{hashi.token-get('primary-ink')};
-      background-color: hashi.token-get('primary-400') !important;
+      --ifm-navbar-background-color: #{rgba(hashi.token-get-raw('dp-blue-grey-400'), 90%)};
+      --ifm-navbar-link-color: #{hashi.token-get('dp-blue-grey-ink')};
+      background-color: hashi.token-get('dp-blue-grey-400') !important;
 
       .menu {
-        background-color: hashi.token-get('primary-600');
+        background-color: hashi.token-get('dp-blue-grey-600');
 
         &__link {
           &--sublist::after {
@@ -68,6 +68,10 @@
     .menu {
       --ifm-menu-color: #{hashi.token-get('primary-ink')};
       background-color: hashi.token-get('primary-400');
+      
+      @include hashi.dark-mode {
+        background-color: hashi.token-get('dp-blue-grey-400');
+      }
       
       .menu__list-item-collapsible {
         border: 1px solid rgba(0 0 0 / 0);
@@ -112,8 +116,8 @@
 
       &__link {
         padding: 0.7rem 1rem;
-        color: hashi.token-get('primary-ink');
-        fill: hashi.token-get('primary-ink');
+        color: #fff !important;
+        fill: #fff !important;
         border: 1px solid rgba(0 0 0 / 0);
         @include hashi.prefix(transition, all 0.1s ease);
 
@@ -135,21 +139,16 @@
           // color: sentro.token-get('blurple-ink')
         }
 
-        @include hashi.dark-mode {
-          color: #fff;
-          fill: hashi.token-get('surface-ink');
-        }
-
         &--sublist::after {
           $aye: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(255, 255, 255, 1.0)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
           background: #{$aye} 50% / 2rem 2rem;
         }
 
         &--active {
-          color: var(--ifm-color-primary);
+          color: var(--ifm-color-primary) !important;
 
           @include hashi.dark-mode {
-            color: var(--ifm-color-primary);
+            color: var(--ifm-color-primary) !important;
           }
         }
       }
