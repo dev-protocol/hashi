@@ -31,22 +31,27 @@ import HSButton from '@site/src/components/HSButton';
 
 export default function Home(): JSX.Element {
   return (
-    <Layout
-      title={ `` }
-      description="Dev Protocol's design system for building bridges from software to user.">
-      <HSHero />
-      <main className="content-wrap">
-        <h1>Aims</h1>
-        <section className="grid">
-          <HSCard title="Consistency" description="Bring a unified user experience when using Dev Protocol products." />
-          <HSCard title="Beauty" description="Present an elegant user interface for consumers to look on." />
-          <HSCard title="Framework Agnostic"
-                  description="Be able to create the same user interfaces regardless of any frontend framework." />
-        </section>
-        <section className="absolute-center">
-          <HSButton type="filled" color="scarlet" link="/docs/next/design">Ready to bridge?</HSButton>
-        </section>
-      </main>
-    </Layout>
+    <>
+      <section className="hs-docs-notice">
+        <p><a href="/docs/next/design">Hashi v1.0 Release Candidate is OUT!</a></p>
+      </section>
+      <Layout
+        title={ `` }
+        description="Dev Protocol's design system for building bridges from software to user.">
+        <HSHero />
+        <main className="content-wrap">
+          <h1>Aims</h1>
+          <section className="grid">
+            <HSCard title="Consistency" description="Bring a unified user experience when using Dev Protocol products." />
+            <HSCard title="Beauty" description="Present an elegant user interface for consumers to look on." />
+            <HSCard title="Framework Agnostic"
+                    description="Be able to create the same user interfaces regardless of any frontend framework." />
+          </section>
+          <section className="absolute-center">
+            <HSButton type="filled" color="scarlet" link="/docs/next/design">Ready to bridge?</HSButton>
+          </section>
+        </main>
+      </Layout>
+    </>
   );
 }
