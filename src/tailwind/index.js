@@ -219,8 +219,12 @@ const hsTypographyLineHeight = {
 module.exports = {
   theme: {
     screens: {
+      // Duplicated for backwards compat.
+      sm: '320px',
       small: '320px',
+      md: '630px',
       medium: '630px',
+      lg: '890px',
       large: '890px'
     },
     colors: hsColorTokens,
