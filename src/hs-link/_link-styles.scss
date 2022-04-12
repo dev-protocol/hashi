@@ -21,39 +21,44 @@
 ///
 
 @use '../hs-core';
+@use 'sass:map';
 
 $ink: 'accent-400' !default;
+
+$theme: () !default;
+
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
 
 @mixin render() {
   .hs-link {
     text-decoration: underline;
     @include hs-core.color-apply('button', (
       fill: transparent,
-      ink: $ink,
+      ink: $_ink,
       border: transparent
     ));
   
     &:hover {
       @include hs-core.color-bind('button', (
-        fill: rgba(hs-core.token-get-raw($ink), hs-core.$color-fill-hover-opacity),
-        ink: $ink,
-        border: rgba(hs-core.token-get-raw($ink), hs-core.$color-border-hover-opacity)
+        fill: rgba(hs-core.token-get-raw($_ink), hs-core.$color-fill-hover-opacity),
+        ink: $_ink,
+        border: rgba(hs-core.token-get-raw($_ink), hs-core.$color-border-hover-opacity)
       ));
     }
   
     &:focus {
       @include hs-core.color-bind('button', (
-        fill: rgba(hs-core.token-get-raw($ink), hs-core.$color-fill-focus-opacity),
-        ink: $ink,
-        border: rgba(hs-core.token-get-raw($ink), hs-core.$color-border-focus-opacity)
+        fill: rgba(hs-core.token-get-raw($_ink), hs-core.$color-fill-focus-opacity),
+        ink: $_ink,
+        border: rgba(hs-core.token-get-raw($_ink), hs-core.$color-border-focus-opacity)
       ));
     }
   
     &:active {
       @include hs-core.color-bind('button', (
-        fill: rgba(hs-core.token-get-raw($ink), hs-core.$color-fill-active-opacity),
-        ink: $ink,
-        border: rgba(hs-core.token-get-raw($ink), hs-core.$color-border-active-opacity)
+        fill: rgba(hs-core.token-get-raw($_ink), hs-core.$color-fill-active-opacity),
+        ink: $_ink,
+        border: rgba(hs-core.token-get-raw($_ink), hs-core.$color-border-active-opacity)
       ));
     }
     @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
