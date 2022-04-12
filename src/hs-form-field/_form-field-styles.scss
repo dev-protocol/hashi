@@ -21,7 +21,7 @@
 ///
 
 @use '../hs-core';
-
+@use 'sass:map';
 @use 'form-field-base';
 
 $fill: 'surface-200' !default;
@@ -43,43 +43,64 @@ $line-height: 'normal' !default;
 $label-ink: 'surface-ink' !default;
 $helper-ink: 'surface-ink' !default;
 
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_fill-disabled: hs-core.prioritize(map.get($theme, 'fill-disabled'), $fill-disabled);
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_ink-disabled: hs-core.prioritize(map.get($theme, 'ink-disabled'), $ink-disabled);
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+$_border-focus: hs-core.prioritize(map.get($theme, 'border-focus'), $border-focus);
+$_border-disabled: hs-core.prioritize(map.get($theme, 'border-disabled'), $border-disabled);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+
+$_family: hs-core.prioritize(map.get($theme, 'family'), $family);
+$_size: hs-core.prioritize(map.get($theme, 'size'), $size);
+$_weight: hs-core.prioritize(map.get($theme, 'weight'), $weight);
+$_line-height: hs-core.prioritize(map.get($theme, 'line-height'), $line-height);
+
+$_label-ink: hs-core.prioritize(map.get($theme, 'label-ink'), $label-ink);
+$_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
+
 @mixin render() {
-  @include form-field-base.init($label-ink, $helper-ink) {
+  @include form-field-base.init($_label-ink, $_helper-ink) {
     .hs-form-field__input {
       @include hs-core.shape-apply('form-field', (
-        radius: $radius,
-        padding: $padding,
+        radius: $_radius,
+        padding: $_padding,
         border-width: 1px,
         border-style: solid
       ));
       @include hs-core.typography-apply('form-field', (
-        family: $family,
-        size: $size,
-        weight: $weight,
-        line-height: $line-height
+        family: $_family,
+        size: $_size,
+        weight: $_weight,
+        line-height: $_line-height
       ));
       outline: none;
       @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
       
       &:not(:read-only) {
         @include hs-core.color-apply('form-field', (
-          fill: $fill,
-          ink: $ink,
-          border: $border
+          fill: $_fill,
+          ink: $_ink,
+          border: $_border
         ));
     
         &:focus {
           @include hs-core.color-bind('form-field', (
-            border: $border-focus
+            border: $_border-focus
           ));
         }
       }
   
       &:read-only {
         @include hs-core.color-apply('form-field', (
-          fill: $fill-disabled,
-          ink: $ink-disabled,
-          border: $border-disabled
+          fill: $_fill-disabled,
+          ink: $_ink-disabled,
+          border: $_border-disabled
         ));
       }
     }
@@ -95,7 +116,7 @@ $helper-ink: 'surface-ink' !default;
     &.is-filled {
       .hs-form-field__input:not(:read-only) {
         @include hs-core.color-bind('form-field', (
-          border: $fill
+          border: $_fill
         ));
         @include hs-core.shape-apply('form-field', (
           shadow: 'low'
@@ -103,7 +124,7 @@ $helper-ink: 'surface-ink' !default;
   
         &:focus {
           @include hs-core.color-bind('form-field', (
-            border: $border-focus
+            border: $_border-focus
           ));
         }
       }
