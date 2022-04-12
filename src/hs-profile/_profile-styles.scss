@@ -21,6 +21,7 @@
 ///
 
 @use '../hs-core';
+@use 'sass:map';
 @use 'profile-base';
 
 $fill: 'surface-200' !default;
@@ -37,29 +38,45 @@ $name-typography: 'subtitle' !default;
 $role-typography: 'small' !default;
 $description-typography: 'body' !default;
 
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+
+$_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
+$_img-size: hs-core.prioritize(map.get($theme, 'img-size'), $img-size);
+
+$_name-typography: hs-core.prioritize(map.get($theme, 'name-typography'), $name-typography);
+$_role-typography: hs-core.prioritize(map.get($theme, 'role-typography'), $role-typography);
+$_description-typography: hs-core.prioritize(map.get($theme, 'description-typography'), $description-typography);
+
 @mixin render() {
   @include profile-base.init(
-    $gap,
-    $img-size,
-    $name-typography,
-    $role-typography,
-    $description-typography,
+    $_gap,
+    $_img-size,
+    $_name-typography,
+    $_role-typography,
+    $_description-typography,
   ) {
     @include hs-core.color-apply('profile', (
-      fill: $fill,
-      ink: $ink,
-      border: $border
+      fill: $_fill,
+      ink: $_ink,
+      border: $_border,
     ));
     @include hs-core.shape-apply('profile', (
-      radius: $radius,
-      padding: $padding,
+      radius: $_radius,
+      padding: $_padding,
       border-width: 1px,
       border-style: solid
     ));
   
     &.is-filled {
       @include hs-core.color-bind('profile', (
-        border: $fill,
+        border: $_fill,
       ));
       @include hs-core.shape-apply('profile', (
         shadow: 'low'
