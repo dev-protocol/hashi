@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       <section className="hs-docs-notice">
-        <p><a href="/docs/1.x/design">Hashi v1.0 is OUT!</a></p>
+        <p><a href="/docs/design">Hashi v1.0 is OUT!</a></p>
       </section>
       <Layout
         title={ `` }
