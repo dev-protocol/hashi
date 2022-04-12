@@ -63,77 +63,104 @@ $_init-breakpoints: (
 );
 
 $extend: () !default;
+$theme: () !default;
+
+$_primary: hs-core.prioritize(map.get($theme, 'primary'), $primary);
+$_primary-dark: hs-core.prioritize(map.get($theme, 'primary-dark'), $primary-dark);
+$_accent: hs-core.prioritize(map.get($theme, 'accent'), $accent);
+$_accent-dark: hs-core.prioritize(map.get($theme, 'accent-dark'), $accent-dark);
+$_surface: hs-core.prioritize(map.get($theme, 'surface'), $surface);
+$_surface-dark: hs-core.prioritize(map.get($theme, 'surface-dark'), $surface-dark);
+
+$_background: hs-core.prioritize(map.get($theme, 'background'), $background);
+$_dark-background: hs-core.prioritize(map.get($theme, 'dark-background'), $dark-background);
+$_background-ink: hs-core.prioritize(map.get($theme, 'background-ink'), $background-ink);
+$_dark-background-ink: hs-core.prioritize(map.get($theme, 'dark-background-ink'), $dark-background-ink);
+
+$_radius-small: hs-core.prioritize(map.get($theme, 'radius-small'), $radius-small);
+$_radius-medium: hs-core.prioritize(map.get($theme, 'radius-medium'), $radius-medium);
+$_radius-large: hs-core.prioritize(map.get($theme, 'radius-large'), $radius-large);
+
+$_family-supertitle: hs-core.prioritize(map.get($theme, 'family-supertitle'), $family-supertitle);
+$_family-title: hs-core.prioritize(map.get($theme, 'family-title'), $family-title);
+$_family-subtitle: hs-core.prioritize(map.get($theme, 'family-subtitle'), $family-subtitle);
+$_family-body: hs-core.prioritize(map.get($theme, 'family-body'), $family-body);
+$_family-mono: hs-core.prioritize(map.get($theme, 'family-mono'), $family-mono);
+$_family-small: hs-core.prioritize(map.get($theme, 'family-small'), $family-small);
+
+$_extend: hs-core.prioritize(map.get($theme, 'extend'), $extend);
+$_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
 
 @mixin init {
   :root {
     @include hs-core.token-config(
       $map: tokens.$hs-tokens,
       $primary: (
-        200: 'var(--hs-theme-#{$primary}-200)',
-        300: 'var(--hs-theme-#{$primary}-300)',
-        400: 'var(--hs-theme-#{$primary}-400)',
-        600: 'var(--hs-theme-#{$primary}-600)',
-        'ink': 'var(--hs-theme-#{$primary}-ink)',
+        200: 'var(--hs-theme-#{$_primary}-200)',
+        300: 'var(--hs-theme-#{$_primary}-300)',
+        400: 'var(--hs-theme-#{$_primary}-400)',
+        600: 'var(--hs-theme-#{$_primary}-600)',
+        'ink': 'var(--hs-theme-#{$_primary}-ink)',
       ),
       $accent: (
-        200: 'var(--hs-theme-#{$accent}-200)',
-        300: 'var(--hs-theme-#{$accent}-300)',
-        400: 'var(--hs-theme-#{$accent}-400)',
-        600: 'var(--hs-theme-#{$accent}-600)',
-        'ink': 'var(--hs-theme-#{$accent}-ink)',
+        200: 'var(--hs-theme-#{$_accent}-200)',
+        300: 'var(--hs-theme-#{$_accent}-300)',
+        400: 'var(--hs-theme-#{$_accent}-400)',
+        600: 'var(--hs-theme-#{$_accent}-600)',
+        'ink': 'var(--hs-theme-#{$_accent}-ink)',
       ),
       $surface: (
-        200: 'var(--hs-theme-#{$surface}-200)',
-        300: 'var(--hs-theme-#{$surface}-300)',
-        400: 'var(--hs-theme-#{$surface}-400)',
-        600: 'var(--hs-theme-#{$surface}-600)',
-        'ink': 'var(--hs-theme-#{$surface}-ink)',
+        200: 'var(--hs-theme-#{$_surface}-200)',
+        300: 'var(--hs-theme-#{$_surface}-300)',
+        400: 'var(--hs-theme-#{$_surface}-400)',
+        600: 'var(--hs-theme-#{$_surface}-600)',
+        'ink': 'var(--hs-theme-#{$_surface}-ink)',
       ),
       $disabled: (
         'default': var(--hs-theme-dp-black-alpha),
         'ink': var(--hs-theme-dp-black-alpha-ink)
       ),
       $background: (
-        'default': 'var(--hs-theme-#{$background})',
-        'ink': 'var(--hs-theme-#{$background-ink})'
+        'default': 'var(--hs-theme-#{$_background})',
+        'ink': 'var(--hs-theme-#{$_background-ink})'
       ),
       $radius: (
-        'small': 'var(--hs-theme-#{$radius-small})',
-        'medium': 'var(--hs-theme-#{$radius-medium})',
-        'large': 'var(--hs-theme-#{$radius-large})',
+        'small': 'var(--hs-theme-#{$_radius-small})',
+        'medium': 'var(--hs-theme-#{$_radius-medium})',
+        'large': 'var(--hs-theme-#{$_radius-large})',
       ),
       $family: (
-        'supertitle': _get-family($family-supertitle),
-        'title': _get-family($family-title),
-        'subtitle': _get-family($family-subtitle),
-        'body': _get-family($family-body),
-        'mono': _get-family($family-mono),
-        'small': _get-family($family-small)
+        'supertitle': _get-family($_family-supertitle),
+        'title': _get-family($_family-title),
+        'subtitle': _get-family($_family-subtitle),
+        'body': _get-family($_family-body),
+        'mono': _get-family($_family-mono),
+        'small': _get-family($_family-small),
       ),
       $weight: (
-        'supertitle': _get-weight($family-supertitle),
-        'title': _get-weight($family-title),
-        'subtitle': _get-weight($family-subtitle),
-        'body': _get-weight($family-body),
-        'mono': _get-weight($family-mono),
-        'small': _get-weight($family-small)
+        'supertitle': _get-weight($_family-supertitle),
+        'title': _get-weight($_family-title),
+        'subtitle': _get-weight($_family-subtitle),
+        'body': _get-weight($_family-body),
+        'mono': _get-weight($_family-mono),
+        'small': _get-weight($_family-small),
       ),
     );
-    @include hs-core.token-config($map: $extend);
+    @include hs-core.token-config($map: $_extend);
     --hs-transition-time: 0.2s;
   }
   
   @include hs-core.breakpoint-config(
-    $map: map.merge($_init-breakpoints, $breakpoints)
+    $map: map.merge($_init-breakpoints, $_breakpoints)
   );
   
   @include font-pack.load((
-    'supertitle': _get-family($family-supertitle),
-    'title': _get-family($family-title),
-    'subtitle': _get-family($family-subtitle),
-    'body': _get-family($family-body),
-    'mono': _get-family($family-mono),
-    'small': _get-family($family-small)
+    'supertitle': _get-family($_family-supertitle),
+    'title': _get-family($_family-title),
+    'subtitle': _get-family($_family-subtitle),
+    'body': _get-family($_family-body),
+    'mono': _get-family($_family-mono),
+    'small': _get-family($_family-small),
   ));
   
   *,
@@ -206,33 +233,33 @@ $extend: () !default;
       color-scheme: dark;
       @include hs-core.token-config(
         $primary: (
-          200: 'var(--hs-theme-#{$primary-dark}-200)',
-          300: 'var(--hs-theme-#{$primary-dark}-300)',
-          400: 'var(--hs-theme-#{$primary-dark}-400)',
-          600: 'var(--hs-theme-#{$primary-dark}-600)',
-          'ink': 'var(--hs-theme-#{$primary-dark}-ink)',
+          200: 'var(--hs-theme-#{$_primary-dark}-200)',
+          300: 'var(--hs-theme-#{$_primary-dark}-300)',
+          400: 'var(--hs-theme-#{$_primary-dark}-400)',
+          600: 'var(--hs-theme-#{$_primary-dark}-600)',
+          'ink': 'var(--hs-theme-#{$_primary-dark}-ink)',
         ),
         $accent: (
-          200: 'var(--hs-theme-#{$accent-dark}-200)',
-          300: 'var(--hs-theme-#{$accent-dark}-300)',
-          400: 'var(--hs-theme-#{$accent-dark}-400)',
-          600: 'var(--hs-theme-#{$accent-dark}-600)',
-          'ink': 'var(--hs-theme-#{$accent-dark}-ink)',
+          200: 'var(--hs-theme-#{$_accent-dark}-200)',
+          300: 'var(--hs-theme-#{$_accent-dark}-300)',
+          400: 'var(--hs-theme-#{$_accent-dark}-400)',
+          600: 'var(--hs-theme-#{$_accent-dark}-600)',
+          'ink': 'var(--hs-theme-#{$_accent-dark}-ink)',
         ),
         $surface: (
-          200: 'var(--hs-theme-#{$surface-dark}-200)',
-          300: 'var(--hs-theme-#{$surface-dark}-300)',
-          400: 'var(--hs-theme-#{$surface-dark}-400)',
-          600: 'var(--hs-theme-#{$surface-dark}-600)',
-          'ink': 'var(--hs-theme-#{$surface-dark}-ink)',
+          200: 'var(--hs-theme-#{$_surface-dark}-200)',
+          300: 'var(--hs-theme-#{$_surface-dark}-300)',
+          400: 'var(--hs-theme-#{$_surface-dark}-400)',
+          600: 'var(--hs-theme-#{$_surface-dark}-600)',
+          'ink': 'var(--hs-theme-#{$_surface-dark}-ink)',
         ),
         $disabled: (
           'default': var(--hs-theme-dp-white-alpha),
           'ink': var(--hs-theme-dp-white-alpha-ink)
         ),
         $background: (
-          'default': 'var(--hs-theme-#{$dark-background})',
-          'ink': 'var(--hs-theme-#{$dark-background-ink})'
+          'default': 'var(--hs-theme-#{$_dark-background})',
+          'ink': 'var(--hs-theme-#{$_dark-background-ink})'
         ),
       );
     }
