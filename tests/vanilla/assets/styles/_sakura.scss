@@ -22,7 +22,8 @@
 
 $main-theme: (
   'accent': 'ume',
-  'surface': 'hana',
+  'accent-dark': 'ume',
+  // 'surface': 'hana',
   'extend': (
     'ume': (
       200: #f8dacb,
@@ -39,4 +40,14 @@ $main-theme: (
       'ink': #ffffff
     )
   ),
+);
+
+$button-theme: (
+  'padding': ('md', 'lg'),
+  'radius': 'pill',
+);
+
+$form-theme: (
+  'fill': 'hana-200',
+  'ink': 'hana-ink'
 );

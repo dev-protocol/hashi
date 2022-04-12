@@ -25,14 +25,22 @@
 @use 'node_modules/@devprotocol/hashi' with (
   $theme: sakura.$main-theme
 );
-@use 'node_modules/@devprotocol/hashi/hs-button';
+@use 'node_modules/@devprotocol/hashi/hs-button' with (
+  $theme: sakura.$button-theme
+);
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
 @use 'node_modules/@devprotocol/hashi/hs-card';
-@use 'node_modules/@devprotocol/hashi/hs-form-field';
+@use 'node_modules/@devprotocol/hashi/hs-form-field' with (
+  $theme: sakura.$form-theme
+);
 @use 'node_modules/@devprotocol/hashi/hs-link';
 @use 'node_modules/@devprotocol/hashi/hs-profile';
-@use 'node_modules/@devprotocol/hashi/hs-select-field';
-@use 'node_modules/@devprotocol/hashi/hs-wallet';
+@use 'node_modules/@devprotocol/hashi/hs-select-field' with (
+  $theme: sakura.$form-theme
+);
+@use 'node_modules/@devprotocol/hashi/hs-wallet' with (
+  $theme: sakura.$button-theme
+);
 
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
