@@ -21,12 +21,12 @@
 ///
 
 @use '../hs-core';
+@use 'sass:map';
 @use 'card-base';
 
 $fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
 $border: 'primary-400' !default;
-$tone: 200 !default;
 
 $radius: 'medium' !default;
 $padding: 'md' !default;
@@ -42,26 +42,46 @@ $section-gap: 'md' !default;
 $header-gap: 'md' !default;
 $footer-gap: 'sm' !default;
 
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+
+$_title-typography: hs-core.prioritize(map.get($theme, 'title-typography'), $title-typography);
+$_subtitle-typography: hs-core.prioritize(map.get($theme, 'subtitle-typography'), $subtitle-typography);
+$_content-typography: hs-core.prioritize(map.get($theme, 'content-typography'), $content-typography);
+
+$_icon-size: hs-core.prioritize(map.get($theme, 'icon-size'), $icon-size);
+$_media-height: hs-core.prioritize(map.get($theme, 'media-height'), $media-height);
+
+$_section-gap: hs-core.prioritize(map.get($theme, 'section-gap'), $section-gap);
+$_header-gap: hs-core.prioritize(map.get($theme, 'header-gap'), $header-gap);
+$_footer-gap: hs-core.prioritize(map.get($theme, 'footer-gap'), $footer-gap);
+
 @mixin render() {
   @include card-base.init(
-    $radius,
-    $padding,
-    $title-typography,
-    $subtitle-typography,
-    $content-typography,
-    $icon-size,
-    $media-height,
-    $section-gap,
-    $header-gap,
-    $footer-gap,
+    $_radius,
+    $_padding,
+    $_title-typography,
+    $_subtitle-typography,
+    $_content-typography,
+    $_icon-size,
+    $_media-height,
+    $_section-gap,
+    $_header-gap,
+    $_footer-gap,
   ) {
     @include hs-core.color-apply('card', (
-      fill: $fill,
-      ink: $ink,
-      border: $border,
+      fill: $_fill,
+      ink: $_ink,
+      border: $_border,
     ));
     @include hs-core.shape-apply('card', (
-      radius: $radius,
+      radius: $_radius,
       shadow: 'none',
       border-width: 1px,
       border-style: solid
@@ -69,7 +89,7 @@ $footer-gap: 'sm' !default;
     
     &.is-filled {
       @include hs-core.color-bind('card', (
-        border: $fill,
+        border: $_fill,
       ));
       @include hs-core.shape-bind('card', (
         shadow: 'low'
