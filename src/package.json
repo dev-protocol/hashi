@@ -1,6 +1,6 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "1.0.0-rc",
+  "version": "1.0.0",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "tailwind/index.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
