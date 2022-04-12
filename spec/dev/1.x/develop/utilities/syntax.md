@@ -32,3 +32,37 @@ The variant field indicates the value its going to output in the property.
     <h1 class="size-title [@lg:size-supertitle] weight-bold">Header inside a card</h1>
 </div>
 ```
+
+## Excluding and Including Utilities
+Every utility initializer comes with the `$exclude` and `$include` parameters. This allows you to exclude certain
+utility classes, or include the ones you only need.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-utils';
+
+@include hashi.init {
+  @include hs-utils.color-utils(
+    $include: ('color', 'border-color')
+  );
+  @include hs-utils.layout-utils(
+    $exclude: ('display', 'gap', 'flex-direction')
+  );
+}
+```
+
+However, you can only use one or the other parameter. Using both will result in an error.
+
+Selecting the utilities to include/exclude is done by passing the class prefix of the utilities. Example: `text`
+is mapped to `text-[color]-[tone]` utilities.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-utils';
+
+@include hashi.init {
+  @include hs-utils.color-utils(
+    $include: ('text', 'bg')
+  );
+}
+```
