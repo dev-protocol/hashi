@@ -66,12 +66,12 @@ const config = {
       title: 'Hashi',
       items: [
         {
-          to: '/docs/next/design',
+          to: '/docs/1.x/design',
           label: 'Design',
           position: 'left'
         },
         {
-          to: '/docs/next/develop',
+          to: '/docs/1.x/develop',
           label: 'Develop',
           position: 'left'
         },

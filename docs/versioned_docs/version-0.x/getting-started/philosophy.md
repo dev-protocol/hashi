@@ -15,7 +15,7 @@ In conjunction to the design system being token driven, we also reduced the comp
 The design system also follows the base-variance pattern, this has proven to be (according to AirBnb) a very effective method in solving design consistency while having the flexibility to solve a project's own design problems.
 
 ### Utility Philosophy
-We strongly believe that a token-driven approach to the design system is the best way to enforce consistency in a user interface. Hence, we created pre-built utility classes that match the [token specifications](/docs/spec/tokens), and the needs of the developers to solve design problems consistently, beautifully, and quickly.
+We strongly believe that a token-driven approach to the design system is the best way to enforce consistency in a user interface. Hence, we created pre-built utility classes that match the [token specifications](/docs/0.x/spec/tokens), and the needs of the developers to solve design problems consistently, beautifully, and quickly.
 
 However, there's a certain limitation to our usage of utility classes. We strongly recommend that if you were to create a reusable small-to-medium-sized component, that you directly use Hashi's built in component creation API ([Token](../hs-core/core-apis/Token.md) and [Key](../hs-core/core-apis/Key.md) API). This way, sharing component styles is easier than say just using utility classes. This is also the reason why there's only a limited amount of utility classes, and does not cover all CSS properties.
 

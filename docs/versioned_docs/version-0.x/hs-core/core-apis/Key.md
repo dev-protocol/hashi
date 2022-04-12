@@ -6,7 +6,7 @@ slug: /core/api/key
 # Key
 This is a part of the component creation API. This API allows you to create a theming API for your components. This is especially handy when it comes to sharing component between projects.
 
-It is recommended to be used with the [token API](/docs/core/api/token), specifically with the `token-get()` and `token-switch()` functions.
+It is recommended to be used with the [token API](/docs/0.x/core/api/token), specifically with the `token-get()` and `token-switch()` functions.
 
 ```scss
 @use 'node_modules/@devprotocol/hashi/hs-core';
