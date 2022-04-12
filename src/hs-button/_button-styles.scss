@@ -56,6 +56,38 @@ $label-ink: inherit !default;
 
 $gap: 'sm' !default;
 
+$theme: () !default;
+
+$_width: max-content !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_fill-hover: hs-core.prioritize(map.get($theme, 'fill-hover'), $fill-hover);
+$_fill-focus: hs-core.prioritize(map.get($theme, 'fill-focus'), $fill-focus);
+$_fill-active: hs-core.prioritize(map.get($theme, 'fill-active'), $fill-active);
+$_fill-disabled: hs-core.prioritize(map.get($theme, 'fill-disabled'), $fill-disabled);
+
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_ink-disabled: hs-core.prioritize(map.get($theme, 'ink-disabled'), $ink-disabled);
+
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+$_border-hover: hs-core.prioritize(map.get($theme, 'border-hover'), $border-hover);
+$_border-focus: hs-core.prioritize(map.get($theme, 'border-focus'), $border-focus);
+$_border-active: hs-core.prioritize(map.get($theme, 'border-active'), $border-active);
+$_border-disabled: hs-core.prioritize(map.get($theme, 'border-disabled'), $border-disabled);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+
+$_family: hs-core.prioritize(map.get($theme, 'family'), $family);
+$_size: hs-core.prioritize(map.get($theme, 'size'), $size);
+$_weight: hs-core.prioritize(map.get($theme, 'weight'), $weight);
+$_line-height: hs-core.prioritize(map.get($theme, 'line-height'), $line-height);
+
+$_icon-ink: hs-core.prioritize(map.get($theme, 'icon-ink'), $icon-ink);
+$_label-ink: hs-core.prioritize(map.get($theme, 'label-ink'), $label-ink);
+
+$_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
+
 $_states: (
   'success',
   'warning',
@@ -63,32 +95,32 @@ $_states: (
 );
 
 $_fills: (
-  'default': $fill,
-  'hover': $fill-hover,
-  'focus': $fill-focus,
-  'active': $fill-active,
-  'disabled': $fill-disabled
+  'default': $_fill,
+  'hover': $_fill-hover,
+  'focus': $_fill-focus,
+  'active': $_fill-active,
+  'disabled': $_fill-disabled,
 );
 
 $_inks: (
-  'default': $ink,
-  'disabled': $ink-disabled
+  'default': $_ink,
+  'disabled': $_ink-disabled,
 );
 
 $_borders: (
-  'default': $border,
-  'hover': $border-hover,
-  'focus': $border-focus,
-  'active': $border-active,
-  'disabled': $border-disabled
+  'default': $_border,
+  'hover': $_border-hover,
+  'focus': $_border-focus,
+  'active': $_border-active,
+  'disabled': $_border-disabled,
 );
 
 @mixin render() {
   @include button-base.init(
-    $width: $width,
-    $icon-ink: $icon-ink,
-    $label-ink: $label-ink,
-    $gap: $gap
+    $width: $_width,
+    $icon-ink: $_icon-ink,
+    $label-ink: $_label-ink,
+    $gap: $_gap
   ) {
     @include hs-core.color-apply('button', (
       fill: 'dp-black-400',
@@ -98,14 +130,14 @@ $_borders: (
     @include hs-core.shape-border-width('button', 1px);
     @include hs-core.shape-border-style('button', solid);
     @include hs-core.shape-apply('button', (
-      radius: $radius,
-      padding: $padding,
+      radius: $_radius,
+      padding: $_padding,
     ));
     @include hs-core.typography-apply('button', (
-      family: $family,
-      size: $size,
-      weight: $weight,
-      line-height: $line-height
+      family: $_family,
+      size: $_size,
+      weight: $_weight,
+      line-height: $_line-height
     ));
     
     @include shared.text-style(
@@ -122,18 +154,18 @@ $_borders: (
             'hover': '#{$state}-400',
             'focus': '#{$state}-400',
             'active': '#{$state}-200',
-            'disabled': $fill-disabled,
+            'disabled': $_fill-disabled,
           ),
           $inks: (
             'default': '#{$state}-ink',
-            'disabled': $ink-disabled
+            'disabled': $_ink-disabled
           ),
           $borders: (
             'default': '#{$state}-400',
             'hover': '#{$state}-400',
             'focus': '#{$state}-400',
             'active': '#{$state}-200',
-            'disabled': $border-disabled,
+            'disabled': $_border-disabled,
           )
         );
       }
@@ -154,18 +186,18 @@ $_borders: (
               'hover': '#{$state}-400',
               'focus': '#{$state}-400',
               'active': '#{$state}-200',
-              'disabled': $fill-disabled,
+              'disabled': $_fill-disabled,
             ),
             $inks: (
               'default': '#{$state}-ink',
-              'disabled': $ink-disabled
+              'disabled': $_ink-disabled
             ),
             $borders: (
               'default': '#{$state}-400',
               'hover': '#{$state}-400',
               'focus': '#{$state}-400',
               'active': '#{$state}-200',
-              'disabled': $border-disabled,
+              'disabled': $_border-disabled,
             )
           );
         }
@@ -187,18 +219,18 @@ $_borders: (
               'hover': '#{$state}-400',
               'focus': '#{$state}-400',
               'active': '#{$state}-200',
-              'disabled': $fill-disabled,
+              'disabled': $_fill-disabled,
             ),
             $inks: (
               'default': '#{$state}-ink',
-              'disabled': $ink-disabled
+              'disabled': $_ink-disabled
             ),
             $borders: (
               'default': '#{$state}-400',
               'hover': '#{$state}-400',
               'focus': '#{$state}-400',
               'active': '#{$state}-200',
-              'disabled': $border-disabled,
+              'disabled': $_border-disabled,
             )
           );
         }
