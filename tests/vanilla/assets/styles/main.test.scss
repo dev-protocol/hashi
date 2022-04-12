@@ -21,6 +21,7 @@
 ///
 
 @use 'node_modules/@devprotocol/hashi' with (
+  $accent: 'ume',
   $extend: (
     'ume': (
       200: #ffeee4,
@@ -84,8 +85,8 @@
   @include hs-wallet.render();
 
   @include hs-utils.layout-utils();
-  @include hs-utils.color-utils();
-  @include hs-utils.shape-utils();
+  @include hs-utils.color-utils($exclude: ('text'));
+  @include hs-utils.shape-utils($exclude: ('radius', 'shadow'));
   @include hs-utils.typography-utils();
 
   .fill-current {
