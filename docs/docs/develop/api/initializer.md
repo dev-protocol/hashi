@@ -132,3 +132,53 @@ Hashi allows you to extend tokens by using `$extend` in the `with ()` module key
   //
 }
 ```
+
+## Theming
+Hashi provides a simple theme system that allows you to easily change different properties of the entire stylesheet like
+color, shape, typography, and layout.
+
+The way we treat this concept is to think of the theme like JSON data.
+
+The main module has the `$theme` parameter in the `with ()` keyword. It takes in a map of the theme properties. The
+theme properties are **always** the same as the ones defined in the [configurations section](#configurations).
+
+This feature easily allows the internal team and the community to create themes.
+
+```scss
+// node_modules/@example-organization/haru/_index.scss
+$main-theme: (
+  'accent': 'hana',
+  'accent-dark': 'hana',
+  'surface': 'ume',
+  'extend': (
+    'ume': (
+      200: #f8dacb,
+      300: #ffd0b4,
+      400: #ffc09c,
+      600: #c88762,
+      'ink': #3c1f11
+    ),
+    'hana': (
+      200: #ffb8d7,
+      300: #ff77a9,
+      400: #ec407a,
+      600: #b4004e,
+      'ink': #ffffff
+    )
+  ),
+);
+```
+
+```scss
+// main.scss
+@use 'node_modules/@example-organization/haru';
+// the map-based theme in a package
+
+@use 'node_modules/@devprotocol/hashi' with (
+  $theme: haru.$global-theme
+);
+
+@include hashi.init {
+  //
+}
+```
