@@ -20,11 +20,11 @@
 //  SOFTWARE.
 ///
 
-@forward 'breakpoint' as breakpoint-*;
-@forward 'converters';
-@forward 'color-mixers';
-@forward 'color-mode';
-@forward 'line-break';
-@forward 'prefix';
-@forward 'prioritizer';
-@forward 'validators';
+@use 'validators';
+
+@function prioritize($priority, $fallback) {
+  @if validators.is-empty($priority) {
+    @return $fallback;
+  }
+  @return $priority;
+}
