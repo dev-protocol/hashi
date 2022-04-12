@@ -21,9 +21,9 @@
 ///
 
 $main-theme: (
-  'accent': 'ume',
-  'accent-dark': 'ume',
-  // 'surface': 'hana',
+  'accent': 'hana',
+  'accent-dark': 'hana',
+  'surface': 'ume',
   'extend': (
     'ume': (
       200: #f8dacb,
@@ -43,11 +43,12 @@ $main-theme: (
 );
 
 $button-theme: (
+  'fill-active': 'accent-300',
   'padding': ('md', 'lg'),
   'radius': 'pill',
 );
 
 $form-theme: (
-  'fill': 'hana-200',
-  'ink': 'hana-ink'
+  'fill': 'dp-white-200',
+  'ink': 'dp-white-ink'
 );
