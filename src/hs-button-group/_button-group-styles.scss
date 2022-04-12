@@ -23,6 +23,8 @@
 @use '../hs-core';
 @use '../hs-button/button-shared' as shared;
 
+@use 'sass:map';
+
 $fill: 'accent-400' !default;
 $fill-hover: 'accent-400' !default;
 $fill-focus: 'accent-400' !default;
@@ -37,6 +39,23 @@ $border-active: $fill-active !default;
 
 $radius: 'small' !default;
 $gap: 'xs' !default;
+
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_fill-hover: hs-core.prioritize(map.get($theme, 'fill-hover'), $fill-hover);
+$_fill-focus: hs-core.prioritize(map.get($theme, 'fill-focus'), $fill-focus);
+$_fill-active: hs-core.prioritize(map.get($theme, 'fill-active'), $fill-active);
+
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+$_border-hover: hs-core.prioritize(map.get($theme, 'border-hover'), $border-hover);
+$_border-focus: hs-core.prioritize(map.get($theme, 'border-focus'), $border-focus);
+$_border-active: hs-core.prioritize(map.get($theme, 'border-active'), $border-active);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
 
 $_fills: (
   'default': $fill,
