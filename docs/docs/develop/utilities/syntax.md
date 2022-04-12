@@ -1,16 +1,19 @@
 ---
-title: Syntax
-slug: /develop/utilities/syntax
+title: Syntax 
+slug: /develop/utilities/syntax 
 displayed_sidebar: develop
 ---
 Utility classes follow a strict syntax to ensure consistency and predictability.
 
 ## Classes
 The classes follow this particular syntax.
+
 ```scss
 [property]-[variant]
 ```
-The property field could be a predictable shorthand for the property like p for padding, m for margin, pb for padding bottom, mx for margin on the x-axis.
+
+The property field could be a predictable shorthand for the property like p for padding, m for margin, pb for padding
+bottom, mx for margin on the x-axis.
 
 The variant field indicates the value its going to output in the property.
 
