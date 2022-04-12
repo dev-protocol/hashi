@@ -78,9 +78,10 @@ const sidebars = {
     'Getting Started': [
       'develop/introduction',
       'develop/getting-started/index',
+      'develop/getting-started/gradual-adoption',
+      'develop/getting-started/dark-mode',
       'develop/getting-started/concepts',
       'develop/getting-started/terminologies',
-      'develop/getting-started/dark-mode',
     ],
     'Utilities': [
       'develop/utilities/index',
