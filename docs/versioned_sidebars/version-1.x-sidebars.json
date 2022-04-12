@@ -1,0 +1,86 @@
+{
+  "design": {
+    "Getting Started": [
+      "design/introduction",
+      "design/foundation/terminologies",
+      "design/getting-started/ui-kit"
+    ],
+    "Foundation": [
+      {
+        "Color": [
+          "design/foundation/color/color-theming",
+          "design/foundation/color/applying-color",
+          "design/foundation/color/color-tokens"
+        ],
+        "Shape": [
+          "design/foundation/shape/shape-theming",
+          "design/foundation/shape/surface",
+          "design/foundation/shape/shape-tokens"
+        ],
+        "Typography": [
+          "design/foundation/typography/typography-theming",
+          "design/foundation/typography/iconography",
+          "design/foundation/typography/typography-tokens"
+        ],
+        "Layout": [
+          "design/foundation/layout/grid",
+          "design/foundation/layout/spacing",
+          "design/foundation/layout/breakpoints"
+        ]
+      }
+    ],
+    "Components": [
+      "design/components/introduction",
+      "design/components/hs-button",
+      "design/components/hs-card",
+      "design/components/hs-form-field",
+      "design/components/hs-select-field",
+      "design/components/hs-wallet"
+    ]
+  },
+  "develop": {
+    "Getting Started": [
+      "develop/introduction",
+      "develop/getting-started/index",
+      "develop/getting-started/gradual-adoption",
+      "develop/getting-started/dark-mode",
+      "develop/getting-started/concepts",
+      "develop/getting-started/terminologies"
+    ],
+    "Utilities": [
+      "develop/utilities/index",
+      "develop/utilities/syntax",
+      "develop/utilities/layout-utils",
+      "develop/utilities/color-utils",
+      "develop/utilities/shape-utils",
+      "develop/utilities/typography-utils"
+    ],
+    "Components": [
+      "develop/components/index",
+      "develop/components/hs-button",
+      "develop/components/hs-button-group",
+      "develop/components/hs-card",
+      "develop/components/hs-form-field",
+      "develop/components/hs-link",
+      "develop/components/hs-profile",
+      "develop/components/hs-select-field"
+    ],
+    "Integrations": [
+      "develop/integrations/tailwind"
+    ],
+    "API": [
+      "develop/api/initializer",
+      {
+        "type": "category",
+        "label": "Composition",
+        "collapsed": true,
+        "items": [
+          "develop/api/composition/index",
+          "develop/api/composition/color",
+          "develop/api/composition/shape",
+          "develop/api/composition/typography"
+        ]
+      }
+    ]
+  }
+}

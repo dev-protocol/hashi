@@ -1,0 +1,89 @@
+---
+id: hs-button
+title: Buttons
+slug: /design/button
+displayed_sidebar: design
+---
+Buttons call the user to a specific action in the page. May it be in a form, or a hyperlink.
+
+## Button Variants
+### Text (Default)
+Text buttons are used for the least prioritized actions. These are used as action alternatives, or actions to be third and beyond in consideration.
+
+<div className="hs-component-preview col-2">
+  <div className="hs-component-preview__row">
+    <button className="hs-button" role="button">
+      <span className="hs-button__label">Button</span>
+    </button>
+  </div>
+  <div className="hs-component-preview__row">
+    <button className="hs-button" role="button" disabled>
+      <span className="hs-button__label">Button</span>
+    </button>
+  </div>
+</div>
+
+### Outlined
+Outlined buttons are used for secondarily prioritized actions. These are used as action alternatives, or actions to be second in consideration.
+
+<div className="hs-component-preview col-2">
+  <div className="hs-component-preview__row">
+    <button className="hs-button is-outlined" role="button">
+      <span className="hs-button__label">Button</span>
+    </button>
+  </div>
+  <div className="hs-component-preview__row">
+    <button className="hs-button is-outlined" role="button" disabled>
+      <span className="hs-button__label">Button</span>
+    </button>
+  </div>
+</div>
+
+### Filled
+Text buttons are used for the most prioritized actions. These are used for actions you want the user to see/consider first.
+
+<div className="hs-component-preview col-2">
+  <div className="hs-component-preview__row">
+    <button className="hs-button is-filled" role="button">
+      <span className="hs-button__label">Button</span>
+    </button>
+  </div>
+  <div className="hs-component-preview__row">
+    <button className="hs-button is-filled" role="button" disabled>
+      <span className="hs-button__label">Button</span>
+    </button>
+  </div>
+</div>
+
+### States
+Button states refer to the semantic visual of the button. Examples include: success, warning, and danger.
+
+<div className="hs-component-preview">
+  <button className="hs-button is-success" role="button">
+    <span className="hs-button__label">Button</span>
+  </button>
+  <button className="hs-button is-outlined is-warning" role="button">
+    <span className="hs-button__label">Button</span>
+  </button>
+  <button className="hs-button is-filled is-danger" role="button">
+    <span className="hs-button__label">Button</span>
+  </button>
+</div>
+
+## Icons
+Icons help the user identify a certain button easily. Icons could either be in their trailing, or leading positions. Leading icons are placed after the label, and trailing icons are placed before the label. The minimum spacing between the icon and the label is around the `space-sm` token value.
+
+Typically, button icons are `22px` in size.
+
+Regarding which icons to use, please refer to the [iconography guide](../foundation/typography/iconography.md).
+
+## Color
+The button can only use one color throughout the entire application (except states). By default, it is assigned to the `accent` theme property. You can change this to any of the provided (or extended) theme properties or color tokens.
+
+The minimum contrast between the text and the fill color is at the AA rating contrast.
+
+## Shape
+The button can only use one shape property value for each shape property (radius, padding, margin, space).
+
+## Typography
+The button label size, weight, line height, and family must be consistent throughout the design system.
