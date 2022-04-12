@@ -21,6 +21,7 @@
 ///
 
 @use '../hs-core';
+@use 'sass:map';
 @use 'wallet-base';
 
 $fill: 'primary-400' !default;
@@ -40,6 +41,26 @@ $border-disabled: $fill-disabled !default;
 
 $radius: 'small' !default;
 $padding: ('xs' 'md') !default;
+
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_fill-hover: hs-core.prioritize(map.get($theme, 'fill-hover'), $fill-hover);
+$_fill-focus: hs-core.prioritize(map.get($theme, 'fill-focus'), $fill-focus);
+$_fill-active: hs-core.prioritize(map.get($theme, 'fill-active'), $fill-active);
+$_fill-disabled: hs-core.prioritize(map.get($theme, 'fill-disabled'), $fill-disabled);
+
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_ink-disabled: hs-core.prioritize(map.get($theme, 'ink-disabled'), $ink-disabled);
+
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+$_border-hover: hs-core.prioritize(map.get($theme, 'border-hover'), $border-hover);
+$_border-focus: hs-core.prioritize(map.get($theme, 'border-focus'), $border-focus);
+$_border-active: hs-core.prioritize(map.get($theme, 'border-active'), $border-active);
+$_border-disabled: hs-core.prioritize(map.get($theme, 'border-disabled'), $border-disabled);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
 
 $_fills: (
   'default': $fill,
