@@ -30,7 +30,7 @@ and there, and promotes consistency.
 #### Global, Body, and Small Typefaces
 We recommend using a typeface that's easily-readable, expressive, and in context of the project's purpose--say a more
 static, blog-ish type website could use either a serif or a sans-serif typeface. Some of our recommended fonts
-include: `Whyte`, `Inter`, `Roboto`, `Roboto Serif`, etc. The default typeface is `Whyte`.
+include: `DM Sans`, `Inter`, `Roboto`, `Roboto Serif`, etc. The default typeface is `DM Sans`.
 
 #### Supertitle, Title, and Subtitle Typefaces
 We recommend using a typeface that's expressive, yet non-intrusive. This can be the brand's own typeface, or a
@@ -40,7 +40,7 @@ default typeface is `Syne`.
 #### Monospace Typefaces
 This typeface is mostly used inside code snippets in projects. Since Dev Protocol is geared towards development in the
 blockchain, we've decided to include Monospace in our guidelines for consistency. Some of our recommended fonts
-include: `IBM Plex Mono`, `Fira Code`, etc. The default typeface is `IBM Plex Mono`.
+include: `IBM Plex Mono`, `Fira Code`, `Jetbrains Mono`, etc. The default typeface is `IBM Plex Mono`.
 
 ## Sizes, Line Heights and Weights
 These are non-modifiable constants for Hashi's standardized typography sizes, default line heights, and default weights.

@@ -45,7 +45,7 @@ The initializer has parameters that let you configure the color, shape, and typo
 | Parameter            | Description                                                                                       | Default Value                       |
 |----------------------|---------------------------------------------------------------------------------------------------|-------------------------------------|
 | `$primary`           | Sets the color for the emphasized surfaces in an interface.                                       | `dp-black`                          |
-| `$primary-dark`      | Sets the color for the emphasized surfaces in a dark interface.                                   | `dp-blue-grey`                      |
+| `$primary-dark`      | Sets the color for the emphasized surfaces in a dark interface.                                   | `dp-white`                          |
 | `$accent`            | Sets the color for very emphasized, interact-able, and eye-catching portions in an interface.     | `native-blue`                       |
 | `$accent-dark`       | Sets the color for very emphasized, interact-able, and eye-catching portions in a dark interface. | `native-blue`                       |
 | `$surface`           | Sets the color for the non-emphasized surfaces in an interface. The neutral of the bunch.         | `dp-white`                          |
@@ -57,9 +57,9 @@ The initializer has parameters that let you configure the color, shape, and typo
 | `$family-supertitle` | Sets the font family for the supertitle typography variant.                                       | `('Syne', sans-serif, 700)`         |
 | `$family-title`      | Sets the font family for the title typography variant.                                            | `('Syne', sans-serif, 700)`         |
 | `$family-subtitle`   | Sets the font family for the subtitle typography variant.                                         | `('Syne', sans-serif, 700)`         |
-| `$family-body`       | Sets the font family for the body typography variant.                                             | `('Whyte', sans-serif, 400)`        |
+| `$family-body`       | Sets the font family for the body typography variant.                                             | `('DM Sans', sans-serif, 400)`      |
 | `$family-mono`       | Sets the font family for the mono typography variant.                                             | `('IBM Plex Mono', monospace, 400)` |
-| `$family-small`      | Sets the font family for the small typography variant.                                            | `('Whyte', sans-serif, 300)`        |
+| `$family-small`      | Sets the font family for the small typography variant.                                            | `('DM Sans', sans-serif, 300)`      |
 
 ### Typography-related parameter values
 The typography-related parameter values have a specific syntax: family name, font type, and font weight. This value will be parsed by Hashi internally and assign it to the appropriate token slots.
