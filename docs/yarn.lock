@@ -2254,10 +2254,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@devprotocol/hashi@1.0.0-rc":
-  version "1.0.0-rc"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.0.0-rc.tgz#33e9cbeb10cfe91909aefb7a32addeb52b990eeb"
-  integrity sha512-/eZUpFNimWIR/KRgNCYz0dwu+e5paPXDF4mJgFhZWAQ55par+d4BlK+4uuddqojSN4O6QUKOSpf1+rusAODImA==
+"@devprotocol/hashi@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.0.1.tgz#b01597a24729d0e544f8ed58a33051195c4b93f4"
+  integrity sha512-9KYCqL1cL/2ri12tP1giBXlFDtSAKk8cJxf3YP1quWlNz0r/2UgvuxPfva/Uvp3GY/U//x5AyISfQEKmIuGBmQ==
   dependencies:
     "@matteusan/sentro" "0.1.21"
 
