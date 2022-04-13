@@ -34,7 +34,7 @@ const HSHero = () => {
                     <h1>Hashi</h1>
                     <p>Dev Protocol's design system for <b className="text-scarlet">building bridges</b> from software to user.</p>
                     <div className="hs-hero__actions">
-                        <HSButton type="filled" link="/docs/next/design">Get Started</HSButton>
+                        <HSButton type="filled" link="/docs/design">Get Started</HSButton>
                     </div>
                 </div>
             </div>
