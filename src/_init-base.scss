@@ -217,6 +217,10 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     line-height: hs-core.token-get('line-height-mono');
   }
   
+  dialog {
+    all: unset;
+  }
+  
   html {
     width: 100%;
     height: 100%;
