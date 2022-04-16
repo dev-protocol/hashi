@@ -60,6 +60,19 @@ $_hs-extended-tokens: ();
   @return $query;
 }
 
+@function switch-raw($query, $fallback: ()) {
+  @if tools.is-empty($fallback) {
+    @return sentro.token-switch($query);
+  }
+  @if not sentro.token-check($query) and not tools.is-empty($fallback) {
+    @return $fallback;
+  }
+  @if sentro.token-check($query) {
+    @return sentro.token-get-raw($query);
+  }
+  @return $query;
+}
+
 @mixin config($map: (), $tokens...) {
   @include sentro.token-config($map: $map, $tokens...);
 }
