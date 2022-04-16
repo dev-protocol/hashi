@@ -46,6 +46,8 @@ $_valid-props: (
   /// @type string
   $intent: map.get($_settings, 'intent');
   
+  $width: map.get($theme, 'width');
+  $height: map.get($theme, 'height');
   $radius: map.get($theme, 'radius');
   $padding: map.get($theme, 'padding');
   $margin: map.get($theme, 'margin');
@@ -64,6 +66,12 @@ $_valid-props: (
       }
     }
   
+    @if $width {
+      @include width($component, $radius, $intent);
+    }
+    @if $height {
+      @include height($component, $radius, $intent);
+    }
     @if $radius {
       @include radius($component, $radius, $intent);
     }
