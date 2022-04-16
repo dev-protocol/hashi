@@ -30,6 +30,7 @@
 );
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
 @use 'node_modules/@devprotocol/hashi/hs-card';
+@use 'node_modules/@devprotocol/hashi/hs-dialog';
 @use 'node_modules/@devprotocol/hashi/hs-form-field' with (
   $theme: sakura.$form-theme
 );
@@ -52,7 +53,7 @@
     padding: 67px 0 60px 0;
   }
 
-  section {
+  section:not([class^='hs-']) {
     display: flex;
     gap: hashi.token-get('space-xs');
     margin: hashi.token-get('margin-sm') 0;
@@ -79,6 +80,7 @@
   @include hs-button.render();
   @include hs-button-group.render();
   @include hs-card.render();
+  @include hs-dialog.render();
   @include hs-form-field.render();
   @include hs-link.render();
   @include hs-profile.render();

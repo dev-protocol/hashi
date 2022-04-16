@@ -22,7 +22,8 @@
 
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const purgecss = require('gulp-purgecss')
+const purgecss = require('gulp-purgecss');
+const hashi = require('@devprotocol/hashi/config/purgecss');
 
 function sassTaskDev() {
   return src(['src/**/*.scss', 'src/**/*.test.scss', '!src/**/main.scss'], { sourcemaps: true })
@@ -50,9 +51,9 @@ function sassTaskTest() {
 
 function purge() {
   return src('tests/**/*.css')
-    .pipe(purgecss({
+    .pipe(purgecss(hashi.purgeConfig(['html', {
       content: ['tests/**/*.html']
-    }))
+    }])))
     .pipe(dest('./tests'))
 }
 
