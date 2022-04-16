@@ -124,6 +124,6 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 /// @return {void} void.
 @mixin bind($component, $theme) {
   @include _base($component, $theme, (
-    'intent': create
+    'intent': bind
   ));
 }

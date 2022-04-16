@@ -293,6 +293,6 @@ $_valid-props: (
 /// @return {void} void.
 @mixin bind($component, $theme) {
   @include _base($component, $theme, (
-    'bind-mode': true
+    'intent': bind
   ));
 }
