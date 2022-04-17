@@ -24,7 +24,7 @@
 const path = require("path");
 
 module.exports = {
-    entry: ['./tests/assets/scripts/main.ts'],
+    entry: ['./tests/vanilla/assets/scripts/main.test.ts'],
     module: {
         rules: [
             {
@@ -40,6 +40,6 @@ module.exports = {
     },
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'tests/assets/scripts'),
+        path: path.resolve(__dirname, 'tests/vanilla/assets/scripts'),
     },
 };

@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
           rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="assets/scripts/main.test.js" defer></script>
+    <script src="assets/scripts/main.js" defer></script>
 </head>
 <body>
 
@@ -130,7 +130,11 @@
         </a>
     </section>
 
-    <div class="hs-dialog">
+    <button class="hs-button is-filled" id="open-dialog">
+        <span class="hs-button__label">OPEN DIALOG</span>
+    </button>
+
+    <div class="hs-dialog is-open">
         <header class="hs-dialog__header">
             <h2>Dialog Header</h2>
             <button class="hs-button hs-dialog__close-button is-icon-only is-danger">
@@ -147,7 +151,7 @@
                 <span class="hs-form-field__helper">Helper text</span>
             </label>
         </section>
-        <footer class="hs-dialog__footer">
+        <footer class="hs-dialog__footer is-content-right">
             <button class="hs-button is-filled is-success">
                 <span class="hs-button__label">Accept</span>
             </button>

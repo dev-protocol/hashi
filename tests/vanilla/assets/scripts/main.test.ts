@@ -22,7 +22,18 @@
  *
  */
 
-import { HSNavbar } from "../../../src/hs-navbar/component";
+import { HSDialog } from '@devprotocol/hashi/hs-dialog';
 
-const myNavbar = new HSNavbar('.hs-navbar', '.hs-js-navbar__trigger');
-myNavbar.init();
+const testDialog = new HSDialog('#test-dialog');
+const dialogOpenButton = document.querySelector('#open-dialog');
+dialogOpenButton?.addEventListener('click', () => {
+  // if (testDialog.isOpen()) {
+  //   testDialog.closeDialog();
+  // }
+  // testDialog.openDialog();
+  console.log(testDialog.isOpen());
+  console.log('Opened Dialog');
+  if (testDialog.isOpen()) {
+    console.log('Closed Dialog');
+  }
+});
