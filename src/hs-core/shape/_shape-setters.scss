@@ -67,10 +67,10 @@ $_valid-props: (
     }
   
     @if $width {
-      @include width($component, $radius, $intent);
+      @include width($component, $width, $intent);
     }
     @if $height {
-      @include height($component, $radius, $intent);
+      @include height($component, $height, $intent);
     }
     @if $radius {
       @include radius($component, $radius, $intent);
@@ -110,28 +110,28 @@ $_valid-props: (
     @if $min {
       @include theme.property(
         min-width,
-        ('#{$component}-min-width', $min),
+        ('#{$component}-min-width', theme.token-switch('width-#{$min}', $min)),
         $intent
       );
     }
     @if $default {
       @include theme.property(
         width,
-        ('#{$component}-width', $default),
+        ('#{$component}-width', theme.token-switch('width-#{$default}', $default)),
         $intent
       );
     }
     @if $max {
       @include theme.property(
         max-width,
-        ('#{$component}-max-width', $max),
+        ('#{$component}-max-width', theme.token-switch('width-#{$max}', $max)),
         $intent
       );
     }
   } @else {
     @include theme.property(
       width,
-      ('#{$component}-width', $width),
+      ('#{$component}-width', theme.token-switch('width-#{$width}', $width)),
       $intent
     );
   }
@@ -151,28 +151,28 @@ $_valid-props: (
     @if $min {
       @include theme.property(
         min-height,
-        ('#{$component}-min-height', $min),
+        ('#{$component}-min-height', theme.token-switch('height-#{$min}', $min)),
         $intent
       );
     }
     @if $default {
       @include theme.property(
         height,
-        ('#{$component}-height', $default),
+        ('#{$component}-height', theme.token-switch('height-#{$default}', $default)),
         $intent
       );
     }
     @if $max {
       @include theme.property(
         max-height,
-        ('#{$component}-max-height', $max),
+        ('#{$component}-max-height', theme.token-switch('height-#{$max}', $max)),
         $intent
       );
     }
   } @else {
     @include theme.property(
       height,
-      ('#{$component}-height', $height),
+      ('#{$component}-height', theme.token-switch('height-#{$height}', $height)),
       $intent
     );
   }
