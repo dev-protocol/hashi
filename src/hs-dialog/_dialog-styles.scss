@@ -1,0 +1,79 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+@use 'sass:map';
+@use 'dialog-base';
+
+$fill: 'surface-200' !default;
+$ink: 'surface-ink' !default;
+$border: $fill !default;
+
+$width: 570px !default;
+$radius: 'medium' !default;
+$padding: 'md' !default;
+
+$header-typography: 'subtitle' !default;
+
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+
+$_width: hs-core.prioritize(map.get($theme, 'width'), $width);
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+
+$_header-typography: hs-core.prioritize(map.get($theme, 'header-typography'), $header-typography);
+
+@mixin render() {
+  @include dialog-base.init() {
+    display: none;
+    @include hs-core.shape-apply('dialog', (
+      width: (
+        'default': 100%,
+        'max': $width
+      ),
+      radius: $radius,
+      shadow: 'normal'
+    ));
+    @include hs-core.color-bind('dialog', (
+      fill: $fill,
+      ink: $ink,
+      border: $border
+    ));
+    @include hs-core.shape-bind('dialog', (
+      padding: $padding,
+    ));
+    @include hs-core.typography-bind('dialog-header', (
+      family: $header-typography,
+      size: $header-typography,
+      weight: $header-typography,
+      line-height: $header-typography,
+    ));
+    
+    &.is-open {
+      display: block;
+    }
+  }
+}
