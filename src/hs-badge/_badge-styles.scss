@@ -1,0 +1,68 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+@use 'sass:map';
+@use 'badge-base';
+
+$fill: 'primary-600' !default;
+$ink: 'primary-ink' !default;
+$border: $fill !default;
+
+$radius: 'small' !default;
+$padding: ('xs' 'sm') !default;
+$gap: 'xs' !default;
+
+$label-typography: 'small' !default;
+
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+$_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
+
+$_label-typography: hs-core.prioritize(map.get($theme, 'label-typography'), $label-typography);
+
+@mixin render() {
+  @include badge-base.init {
+    @include hs-core.color-apply('badge', (
+      fill: $_fill,
+      ink: $_ink,
+      border: $_border,
+    ));
+    @include hs-core.shape-apply('badge', (
+      radius: $_radius,
+      padding: $_padding,
+      gap: $_gap,
+    ));
+    @include hs-core.typography-bind('badge', (
+      family: $_label-typography,
+      size: $_label-typography,
+      weight: $_label-typography,
+      line-height: $_label-typography,
+    ));
+  }
+}
