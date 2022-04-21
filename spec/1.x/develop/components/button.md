@@ -1,33 +1,31 @@
 ---
 id: hs-button
-title: Button
+title: Buttons
 slug: /develop/button
 displayed_sidebar: develop
 ---
-
-# Buttons
 Buttons call the user to a specific action in the page. May it be in a form, or a hyperlink.
 
 <div class="hs-component-preview col-2">
   <div class="hs-component-preview__row">
-    <button class="hs-button native-blue" role="button">
+    <button class="hs-button" role="button">
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--outlined native-blue" role="button">
+    <button class="hs-button is-outlined" role="button">
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--filled native-blue" role="button">
+    <button class="hs-button is-filled" role="button">
       <span class="hs-button__label">Button</span>
     </button>
   </div>
   <div class="hs-component-preview__row">
-    <button class="hs-button native-blue" role="button" disabled>
+    <button class="hs-button" role="button" disabled>
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--outlined native-blue" role="button" disabled>
+    <button class="hs-button is-outlined" role="button" disabled>
       <span class="hs-button__label">Button</span>
     </button>
-    <button class="hs-button hs-button--filled native-blue" role="button" disabled>
+    <button class="hs-button is-filled" role="button" disabled>
       <span class="hs-button__label">Button</span>
     </button>
   </div>
@@ -51,7 +49,7 @@ Additionally, anchor elements don't have a disabled attribute so you wouldn't re
 </a>
 ```
 
-Additionally, you can use radios and checkboxes whenever you put it under the [Button Group](Button%20Group.md) wrapper.
+Additionally, you can use radios and checkboxes whenever you put it under the [Button Group](button-group.md) wrapper.
 
 ```html
 <div class="hs-button-group">
@@ -101,6 +99,9 @@ Text buttons are used for the most prioritized actions. These are used for actio
 </button>
 ```
 
+### Button States
+Button states refer to the semantic visual of the button. Examples include: success, warning, and danger. To apply any of these styles to the button, add an `.is-success`, `.is-warning`, or an `.is-danger` class to the parent element's class list.
+
 ### Button Icons
 The position of the button icon is entirely dependent on the markup position.
 
@@ -142,14 +143,15 @@ These classes make up the elements inside a component.
 ### Variant Classes
 For information on how to use these classes, [click here](index.md#modification-html).
 
-| Class          | Effect                                                |
-|----------------|-------------------------------------------------------|
-| `.is-outlined` | Renders the component in its outlined style.          |
-| `.is-filled`   | Renders the component in its filled style.            |
-| `.is-raised`   | Renders the component in its filled + elevated style. |
-| `.is-success`  | Renders the component in its success state.           |
-| `.is-warning`  | Renders the component in its warning state.           |
-| `.is-danger`   | Renders the component in its danger state.            |
+| Class           | Effect                                                |
+|-----------------|-------------------------------------------------------|
+| `.is-outlined`  | Renders the component in its outlined style.          |
+| `.is-filled`    | Renders the component in its filled style.            |
+| `.is-raised`    | Renders the component in its filled + elevated style. |
+| `.is-fullwidth` | Renders the component in its fullwidth style.         |
+| `.is-success`   | Renders the component in its success state.           |
+| `.is-warning`   | Renders the component in its warning state.           |
+| `.is-danger`    | Renders the component in its danger state.            |
 
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.
@@ -163,7 +165,7 @@ These are for creating your own component theme classes that you can append to t
 | `--hs-button-gap`        | Changes the button's label and icon gap. |
 | `--hs-button-padding`    | Changes the button's padding.            |
 | `--hs-button-shadow`     | Changes the button's shadow.             |
-| `--hs-button-weight`     | Changes the button's border color.       |
+| `--hs-button-weight`     | Changes the button's weight.             |
 | `--hs-button-icon-ink`   | Changes the button's icon color.         |
 | `--hs-button-icon-size`  | Changes the button's icon size.          |
 | `--hs-button-label-ink`  | Changes the button's label color.        |
@@ -186,25 +188,40 @@ These are for creating your own component theme classes that you can append to t
 }
 ```
 
-### Hashi `render()` API
+### Configuring styles
 Here are all the themeable properties for this component. The directions to use these properties are located in
 the [render API](index.md#modification-scss).
 
 ```scss
-$fill: 'accent' !default;
+$width: max-content !default;
+
+$fill: 'accent-400' !default;
+$fill-hover: 'accent-400' !default;
+$fill-focus: 'accent-400' !default;
+$fill-active: 'accent-200' !default;
+$fill-disabled: 'disabled' !default;
+
 $ink: 'accent-ink' !default;
+$ink-disabled: 'disabled-ink' !default;
+
 $border: $fill !default;
-$tone: 400 !default;
+$border-hover: $fill-hover !default;
+$border-focus: $fill-focus !default;
+$border-active: $fill-active !default;
+$border-disabled: $fill-disabled !default;
 
 $radius: 'small' !default;
-$padding: ('xs' 'sm') !default;
+$padding: ('xs' 'md') !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
 $weight: 'bold' !default;
 $line-height: 'normal' !default;
 
-$gap: 0 !default;
+$icon-ink: inherit !default;
+$label-ink: inherit !default;
+
+$gap: 'sm' !default;
 ```
 
 ### Extending styles
