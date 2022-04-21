@@ -56,7 +56,6 @@ $_label-typography: hs-core.prioritize(map.get($theme, 'label-typography'), $lab
     @include hs-core.shape-apply('badge', (
       radius: $_radius,
       padding: $_padding,
-      gap: $_gap,
     ));
     @include hs-core.typography-bind('badge', (
       family: $_label-typography,
@@ -64,5 +63,9 @@ $_label-typography: hs-core.prioritize(map.get($theme, 'label-typography'), $lab
       weight: $_label-typography,
       line-height: $_label-typography,
     ));
+    
+    > * + * {
+      margin-left: hs-core.key-create('badge-gap', hs-core.token-switch('space-#{$_gap}', $_gap));
+    }
   }
 }
