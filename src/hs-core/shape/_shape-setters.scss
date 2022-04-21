@@ -264,7 +264,7 @@ $_valid-props: (
 @mixin gap($component, $gap, $intent: 'create') {
   @include theme.property(
     gap,
-    ('#{$component}-gap', theme.token-switch('shadow-#{$gap}', $gap)),
+    ('#{$component}-gap', theme.token-switch('space-#{$gap}', $gap)),
     $intent
   );
 }
