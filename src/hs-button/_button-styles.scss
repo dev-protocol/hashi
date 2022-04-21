@@ -260,6 +260,13 @@ $_borders: (
         }
       }
     }
+    
+    &.is-fullwidth {
+      @include hs-core.key-bind('button-width', 100%);
+      @include hs-core.key-bind('button-min-width', auto);
+      @include hs-core.key-bind('button-max-width', 100%);
+      display: flex;
+    }
   }
 }
 
