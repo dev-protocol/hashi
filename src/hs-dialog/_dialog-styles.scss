@@ -47,16 +47,10 @@ $_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
 $_header-typography: hs-core.prioritize(map.get($theme, 'header-typography'), $header-typography);
 
 @mixin render() {
-  @include dialog-base.init() {
+  @include dialog-base.init($width, $radius) {
     display: none;
-    @include hs-core.shape-apply('dialog', (
-      width: (
-        'default': 100%,
-        'max': $width
-      ),
-      radius: $radius,
-      shadow: 'normal'
-    ));
+    place-items: center;
+    background-color: rgba(0 0 0 / 20%);
     @include hs-core.color-bind('dialog', (
       fill: $fill,
       ink: $ink,
@@ -73,7 +67,7 @@ $_header-typography: hs-core.prioritize(map.get($theme, 'header-typography'), $h
     ));
     
     &.is-open {
-      display: block;
+      display: grid;
     }
   }
 }
