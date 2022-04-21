@@ -27,7 +27,15 @@ export class ComponentBase {
     this.targetComponent = targetComponent;
   }
 
+  protected getComponent(): HTMLElement|null {
+    return this.targetComponent;
+  }
+
   protected getClasses(): DOMTokenList|undefined {
     return this.targetComponent?.classList;
+  }
+
+  protected getId(): string|undefined {
+    return this.targetComponent?.id;
   }
 }
