@@ -143,14 +143,15 @@ These classes make up the elements inside a component.
 ### Variant Classes
 For information on how to use these classes, [click here](index.md#modification-html).
 
-| Class          | Effect                                                |
-|----------------|-------------------------------------------------------|
-| `.is-outlined` | Renders the component in its outlined style.          |
-| `.is-filled`   | Renders the component in its filled style.            |
-| `.is-raised`   | Renders the component in its filled + elevated style. |
-| `.is-success`  | Renders the component in its success state.           |
-| `.is-warning`  | Renders the component in its warning state.           |
-| `.is-danger`   | Renders the component in its danger state.            |
+| Class           | Effect                                                |
+|-----------------|-------------------------------------------------------|
+| `.is-outlined`  | Renders the component in its outlined style.          |
+| `.is-filled`    | Renders the component in its filled style.            |
+| `.is-raised`    | Renders the component in its filled + elevated style. |
+| `.is-fullwidth` | Renders the component in its fullwidth style.         |
+| `.is-success`   | Renders the component in its success state.           |
+| `.is-warning`   | Renders the component in its warning state.           |
+| `.is-danger`    | Renders the component in its danger state.            |
 
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.
@@ -164,7 +165,7 @@ These are for creating your own component theme classes that you can append to t
 | `--hs-button-gap`        | Changes the button's label and icon gap. |
 | `--hs-button-padding`    | Changes the button's padding.            |
 | `--hs-button-shadow`     | Changes the button's shadow.             |
-| `--hs-button-weight`     | Changes the button's border color.       |
+| `--hs-button-weight`     | Changes the button's weight.             |
 | `--hs-button-icon-ink`   | Changes the button's icon color.         |
 | `--hs-button-icon-size`  | Changes the button's icon size.          |
 | `--hs-button-label-ink`  | Changes the button's label color.        |
