@@ -20,36 +20,43 @@
  *  SOFTWARE.
  */
 
-import { ComponentBase, ComponentHelper } from '../hs-core/component';
+import { ComponentBase } from '../hs-core/component';
 
 export class HSDialog extends ComponentBase {
 
-  private readonly dialogID: string;
-  private readonly DIALOG_OPEN_STATE: string = 'is-open';
+  private readonly HSDialogID: string;
+  private readonly closeButton?: Element;
+  private readonly HS_DIALOG_OPEN_STATE: string = 'is-open';
 
-  constructor(dialogID: string) {
+  public isOpen: boolean = false;
+  public isClosed: boolean = true;
+
+
+  constructor(HSDialogID: string) {
     super(document.querySelector('.hs-dialog'));
-    this.dialogID = dialogID;
+    this.HSDialogID = HSDialogID;
+    this.closeButton = document.getElementById(this.HSDialogID)?.getElementsByClassName('hs-dialog__close-button')[0];
   }
 
-  openDialog(): void {
-    if (this.getClasses()?.contains(this.dialogID)) {
-      ComponentHelper.addClass(document.querySelector(this.dialogID), this.DIALOG_OPEN_STATE);
+  open(): void {
+    if (this.isClosed) {
+      document.querySelector(this.HSDialogID)?.classList.add(this.HS_DIALOG_OPEN_STATE);
     }
+    this.isOpen = true;
+    this.isClosed = false;
   }
 
-  closeDialog(): void {
-    if (this.getClasses()?.contains(this.dialogID)) {
-      ComponentHelper.removeClass(document.querySelector(this.dialogID), this.DIALOG_OPEN_STATE);
+  // TODO: Fix this broken close method.
+  close(): void {
+    if (this.isOpen) {
+      document.querySelector(this.HSDialogID)?.classList.remove(this.HS_DIALOG_OPEN_STATE);
     }
+    this.isOpen = false;
+    this.isClosed = true;
   }
 
-  isOpen(): boolean|undefined {
-    return this.getClasses()?.contains(this.DIALOG_OPEN_STATE);
-  }
-
-  isClosed(): boolean|undefined {
-    return !this.getClasses()?.contains(this.DIALOG_OPEN_STATE);
+  getCloseButton(): Element|undefined {
+    return this.closeButton;
   }
 
 }
