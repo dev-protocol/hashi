@@ -21,7 +21,8 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en" hashi-theme="light">
+<html lang="en" hashi-theme="light" xmlns:x-on="http://www.w3.org/1999/xhtml"
+      xmlns:x-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
@@ -32,11 +33,12 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
           rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="assets/scripts/main.js" defer></script>
 </head>
 <body>
 
-<main class="content-wrap">
+<main class="content-wrap" x-data="{ isModalOpen: false }">
     <div class="hs-wallet mb-sm">
         <button class="hs-button is-wallet-button">
             <i class="hs-button__icon"></i>
@@ -139,32 +141,39 @@
         </a>
     </section>
 
-    <button class="hs-button is-filled" id="open-dialog">
+    <button @click="isModalOpen = !isModalOpen" class="hs-button is-filled" id="open-dialog">
         <span class="hs-button__label">OPEN DIALOG</span>
     </button>
 
-    <div class="hs-dialog is-open">
-        <header class="hs-dialog__header">
-            <h2>Dialog Header</h2>
-            <button class="hs-button hs-dialog__close-button is-icon-only is-danger">
-                <i class="hs-button__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
-                </i>
-            </button>
-        </header>
-        <section class="hs-dialog__content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem esse expedita incidunt inventore quibusdam unde? Accusantium dolorum eligendi esse minima quo saepe sapiente tempore. Amet error facere porro repellendus voluptates?</p>
-            <label class="hs-form-field is-filled">
-                <span class="hs-form-field__label">Form Field Label</span>
-                <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
-                <span class="hs-form-field__helper">Helper text</span>
-            </label>
-        </section>
-        <footer class="hs-dialog__footer is-content-right">
-            <button class="hs-button is-filled is-success">
-                <span class="hs-button__label">Accept</span>
-            </button>
-        </footer>
+    <div class="hs-dialog" id="test-dialog">
+        <div class="hs-dialog__container">
+            <header class="hs-dialog__header">
+                <h2>Stake Project</h2>
+                <button class="hs-button hs-dialog__close-button is-icon-only is-danger">
+                    <i class="hs-button__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+                    </i>
+                </button>
+            </header>
+            <section class="hs-dialog__content">
+                <label class="hs-form-field is-required">
+                    <span class="hs-form-field__label">Project</span>
+                    <input class="hs-form-field__input" type="text" placeholder="Project Name" readonly>
+                </label>
+                <label class="hs-form-field is-required">
+                    <span class="hs-form-field__label">Amount to stake</span>
+                    <input class="hs-form-field__input" type="number" placeholder="0">
+                </label>
+            </section>
+            <footer class="hs-dialog__footer is-content-right">
+                <button class="hs-button is-filled is-success">
+                    <span class="hs-button__label">Stake</span>
+                </button>
+                <button class="hs-button is-outlined is-danger">
+                    <span class="hs-button__label">Cancel</span>
+                </button>
+            </footer>
+        </div>
     </div>
 
     <section id="text-buttons">
@@ -360,7 +369,6 @@
     </label>
 
     <label class="hs-select-field is-required is-side-label">
-<!--        <span class="hs-select-field__label">Select Field Label (Required)</span>-->
         <i class="hs-select-field__icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />

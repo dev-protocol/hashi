@@ -24,16 +24,16 @@
 
 import { HSDialog } from '@devprotocol/hashi/hs-dialog';
 
-const testDialog = new HSDialog('#test-dialog');
+const dialog = new HSDialog('#test-dialog');
+const dialogCloseButton = dialog.getCloseButton();
 const dialogOpenButton = document.querySelector('#open-dialog');
+
 dialogOpenButton?.addEventListener('click', () => {
-  // if (testDialog.isOpen()) {
-  //   testDialog.closeDialog();
-  // }
-  // testDialog.openDialog();
-  console.log(testDialog.isOpen());
-  console.log('Opened Dialog');
-  if (testDialog.isOpen()) {
-    console.log('Closed Dialog');
-  }
+  dialog.open();
+  console.log('Did it open?');
+});
+
+dialogCloseButton?.addEventListener('click', () => {
+  dialog.close();
+  console.log('Did it close?');
 });
