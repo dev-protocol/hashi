@@ -1,16 +1,16 @@
 # Hashiに貢献
-進む前、[Code of Conduct](https://github.com/dev-protocol/.github/blob/main/CODE_OF_CONDUCT.md)を読んでください。
+進める前に、[Code of Conduct](https://github.com/dev-protocol/.github/blob/main/CODE_OF_CONDUCT.md)を読んでください。
 
 ## 言語
 - [英語](README_JP.md)
-- **日本語 (ここにいます！)**
+- **日本語 (今ここにいます！)**
 
 ## 貢献流れのまとめ
 1. このRepositoryをフォークして、ローカルでクローンします。
-2. 全部の準備パーケジをインストールするために、`npm install`か`yarn install`をします。
-   - Documentationに作業すると, `/docs`のフォルダーに`cd`をしてください。
-   - あるいは, Testsに作業すると, `/tests`のフォルダーに`cd`をしてください。
-   - そして、必要な準備のパーケジをインストール詳細があるますので、[これ](#installing-dependencies)を読んでください。
+2. 全部の準備パッケージをインストールするために、`npm install`か`yarn install`をします。
+   - Documentationの作業をする場合, `/docs`のフォルダーに`cd`をしてください。
+   - あるいは, Testsの作業をする場合, `/tests`のフォルダーに`cd`をしてください。
+   - そして、dependenciesのインストールについて知っておく必要のある詳細があるので、[これ](#installing-dependencies)を読んでください。
  
 3. このフォーマットでブランチを作ります:
 
@@ -18,11 +18,11 @@
 [username]-[issue-number]_[issue-title]
 ```
 
-4. コードする.
-5. Pull Requestを開けます.
+4. コードを書く.コードを書く.コードを書く.
+5. Pull Requestを開いてください.
 6. Pull Requestの確認を待ってください.
-   - Pull Requestを確認したら、 `main`ブランチに合わせます.
-7. 🎉 おめでとう! Hashiに貢献してきました！！
+   - Pull Requestが承認されたら、 `main`ブランチにマージされます.
+7. 🎉 おめでとう! Hashiに貢献しました！！
 
 ## Details on Contributing
 ### Contributing Scopes
