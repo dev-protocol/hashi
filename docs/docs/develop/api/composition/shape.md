@@ -7,7 +7,7 @@ displayed_sidebar: develop
 The width mixin lets you apply width to an element while creating an API around it that follows the Hashi spec.
 
 ```scss
-@use 'node_modules/@devprotocol/hashi';
+@use '../../../../../node_modules/@devprotocol/hashi/index';
 
 .hs-component {
   @include hashi.shape-width('component', 100vw);
