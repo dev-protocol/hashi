@@ -1,0 +1,13 @@
+{
+  "name": "@devprotocol/hashi-themes",
+  "version": "0.1.0",
+  "description": "Pre-made Hashi themes for internal company use.",
+  "main": "index.js",
+  "repository": "https://github.com/dev-protocol/hashi-web",
+  "author": "Matteu",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@devprotocol/hashi": "^1.1.0"
+  }
+}
