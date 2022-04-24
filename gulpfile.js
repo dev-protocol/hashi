@@ -26,7 +26,7 @@ const purgecss = require('gulp-purgecss');
 const hashi = require('@devprotocol/hashi/config/purgecss');
 
 function sassTaskDev() {
-  return src(['src/**/*.scss', 'src/**/*.test.scss', '!src/**/main.scss'], { sourcemaps: true })
+  return src(['packages/hashi/**/*.scss', 'packages/hashi/**/*.test.scss', '!packages/hashi/**/main.scss'], { sourcemaps: true })
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))
@@ -34,7 +34,7 @@ function sassTaskDev() {
 }
 
 function sassTaskProd() {
-  return src(['src/**/main.scss'], { sourcemaps: true })
+  return src(['packages/hashi/**/main.scss'], { sourcemaps: true })
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))
@@ -58,9 +58,9 @@ function purge() {
 }
 
 function watchTasks() {
-  watch(['src/**/*.scss', '!src/**/*.test.scss'], sassTaskDev());
+  watch(['packages/hashi/**/*.scss', '!packages/hashi/**/*.test.scss'], sassTaskDev());
   watch(['tests/**/*.scss'], sassTaskTest());
-  // watch(['src/main.scss'], sassTaskProd());
+  // watch(['packages/hashi/main.scss'], sassTaskProd());
   // watch('test/scripts/**/*.ts', tsTask());
 }
 
