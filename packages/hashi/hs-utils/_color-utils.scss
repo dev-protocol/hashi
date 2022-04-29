@@ -47,6 +47,10 @@ $_breakpoints: (
 );
 
 @mixin color-utils() {
+  @include color();
+}
+
+@mixin color() {
   @each $color in $_colors {
     @each $tone, $opacity in $_tones {
       .bg-#{$color}-#{$tone} {

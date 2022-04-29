@@ -77,6 +77,10 @@ $_elevations: (
 );
 
 @mixin shape-utils() {
+  //
+}
+
+@mixin shape() {
   @each $dimension, $dimension-val in $_dimensions {
     .w-#{$dimension} {
       width: $dimension-val;

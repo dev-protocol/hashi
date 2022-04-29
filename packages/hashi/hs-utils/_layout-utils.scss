@@ -82,6 +82,10 @@ $_alignments: (
 );
 
 @mixin layout-utils() {
+  @include layout();
+}
+
+@mixin layout() {
   @each $display in $_displays {
     .d-#{$display} {
       display: string.unquote($display);

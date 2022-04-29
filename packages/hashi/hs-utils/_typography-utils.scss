@@ -60,6 +60,10 @@ $_alignments: (
 );
 
 @mixin typography-utils() {
+  @include typography();
+}
+
+@mixin typography() {
   @each $preset in $_families {
     .#{$preset} {
       font-family: hs-core.token-get('family-#{$preset}');
