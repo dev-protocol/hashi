@@ -5,5 +5,8 @@
   "main": "index.js",
   "author": "MatteuSan",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@devprotocol/hashi": "file:../../packages/hashi"
+  }
 }

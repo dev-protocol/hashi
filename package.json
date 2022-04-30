@@ -14,11 +14,9 @@
     "publish:public": "cd src && npm publish --access=public",
     "bump": "npm --no-git-tag-version version patch && cd src && npm --no-git-tag-version version patch"
   },
-  "dependencies": {
-    "@matteusan/sentro": "0.1.21"
-  },
   "devDependencies": {
-    "@devprotocol/hashi": "1.1.0",
+    "@devprotocol/hashi": "file:./packages/hashi",
+    "@matteusan/sentro": "0.1.21",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "4.1.3",
