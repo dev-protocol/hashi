@@ -1,10 +1,6 @@
 # Hashiに貢献
 進める前に、[Code of Conduct](https://github.com/dev-protocol/.github/blob/main/CODE_OF_CONDUCT.md)を読んでください。
 
-## 言語
-- [英語](README_JP.md)
-- **日本語 (今ここにいます！)**
-
 ## 貢献流れのまとめ
 1. このRepositoryをフォークして、ローカルでクローンします。
 2. 全部の準備パッケージをインストールするために、`npm install`か`yarn install`をします。

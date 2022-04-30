@@ -2255,9 +2255,9 @@
     to-fast-properties "^2.0.0"
 
 "@devprotocol/hashi@1.1.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.0.1.tgz#b01597a24729d0e544f8ed58a33051195c4b93f4"
-  integrity sha512-9KYCqL1cL/2ri12tP1giBXlFDtSAKk8cJxf3YP1quWlNz0r/2UgvuxPfva/Uvp3GY/U//x5AyISfQEKmIuGBmQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.1.0.tgz#70bf4a7faddb6e7c285fd58f99809a90b7332725"
+  integrity sha512-IBWglIqSTFYAE58J1QciZowzEPPANDKto0IsAfHAXS7i4nAvQtXGoTH5SV1dNzKLgye3IJFe9rqqAg6Npc3d7w==
   dependencies:
     "@matteusan/sentro" "0.1.21"
 
@@ -8442,10 +8442,10 @@ sass-loader@^10.1.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@1.50.1:
-  version "1.50.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.50.1.tgz#e9b078a1748863013c4712d2466ce8ca4e4ed292"
-  integrity sha512-noTnY41KnlW2A9P8sdwESpDmo+KBNkukI1i8+hOK3footBUcohNHtdOJbckp46XO95nuvcHDDZ+4tmOnpK3hjw==
+sass@1.51.0:
+  version "1.51.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.51.0.tgz#25ea36cf819581fe1fe8329e8c3a4eaaf70d2845"
+  integrity sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
