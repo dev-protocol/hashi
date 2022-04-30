@@ -5,9 +5,10 @@ Dev Protocolのデザインシステムのウェブ向けの実現。
 
 ## 準備
 NodeJS　v14.x のインストールが必要です。それ以上と以下のヴァージョンでは、ローカルでプロジェクトが動作しないリスクがあります。
-Be sure to have NodeJS v14.x installed. Any version higher will risk the project not working locally.
 
-
+## 言語
+- [英語](README.md)
+- **日本語 (今ここにいます！)**
 
 ## Setup
 ```shell
