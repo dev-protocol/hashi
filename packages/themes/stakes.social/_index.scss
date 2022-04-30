@@ -21,5 +21,13 @@
 ///
 
 $theme: (
-  //
+  'primary': 'dp-black',
+  'primary-dark': 'dp-black',
+  'accent': 'dp-black',
+  'accent-dark': 'dp-black',
+  'size': (
+    'small': 12px,
+    'body': 14px,
+    'mono': 14px
+  ),
 );
