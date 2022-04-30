@@ -23,6 +23,7 @@
 @use '~@devprotocol/hashi' with (
   $accent: 'scarlet'
 );
+@use '~@devprotocol/hashi/hs-badge';
 @use '~@devprotocol/hashi/hs-button';
 @use '~@devprotocol/hashi/hs-button-group';
 @use '~@devprotocol/hashi/hs-card';
@@ -81,6 +82,7 @@
     ));
   }
   
+  @include hs-badge.render();
   @include hs-button.render();
   @include hs-button-group.render();
   @include hs-card.render();
