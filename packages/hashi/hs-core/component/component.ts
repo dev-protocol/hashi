@@ -20,22 +20,36 @@
  *  SOFTWARE.
  */
 
-export class ComponentBase {
-  protected targetComponent: HTMLElement|null;
+export class HSComponentBase {
 
-  constructor(targetComponent: HTMLElement|null) {
-    this.targetComponent = targetComponent;
+  protected HS_TARGET_COMPONENT: Element | HTMLElement | null;
+
+  constructor(targetComponent: Element | HTMLElement | null) {
+    this.HS_TARGET_COMPONENT = targetComponent;
   }
 
-  protected getComponent(): HTMLElement|null {
-    return this.targetComponent;
+  protected addClass(className: string): void {
+    this.HS_TARGET_COMPONENT?.classList.add(className);
+  }
+
+  protected removeClass(className: string): void {
+    this.HS_TARGET_COMPONENT?.classList.remove(className);
+  }
+
+  protected hasClass(className: string): boolean {
+    return this.HS_TARGET_COMPONENT?.classList.contains(className) ?? false;
   }
 
   protected getClasses(): DOMTokenList|undefined {
-    return this.targetComponent?.classList;
+    return this.HS_TARGET_COMPONENT?.classList;
+  }
+
+  protected getComponent(): Element|HTMLElement|null {
+    return this.HS_TARGET_COMPONENT;
   }
 
   protected getId(): string|undefined {
-    return this.targetComponent?.id;
+    return this.HS_TARGET_COMPONENT?.id;
   }
+
 }
