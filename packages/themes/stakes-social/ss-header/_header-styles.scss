@@ -20,6 +20,10 @@
 //  SOFTWARE.
 ///
 
+@use 'header-base';
+
 @mixin render() {
-  //
+  @include header-base.init() {
+    //
+  }
 }
