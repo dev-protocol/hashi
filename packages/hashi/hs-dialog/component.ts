@@ -20,43 +20,41 @@
  *  SOFTWARE.
  */
 
-import { ComponentBase } from '../hs-core/component';
+import { HSComponentBase } from '../hs-core/component';
 
-export class HSDialog extends ComponentBase {
+export class HSDialog extends HSComponentBase {
 
-  private readonly HSDialogID: string;
-  private readonly closeButton?: Element;
+  private readonly HS_DIALOG_ID: string;
   private readonly HS_DIALOG_OPEN_STATE: string = 'is-open';
+  private readonly HS_DIALOG_CLOSE_BUTTON?: Element;
 
   public isOpen: boolean = false;
   public isClosed: boolean = true;
 
-
-  constructor(HSDialogID: string) {
-    super(document.querySelector('.hs-dialog'));
-    this.HSDialogID = HSDialogID;
-    this.closeButton = document.getElementById(this.HSDialogID)?.getElementsByClassName('hs-dialog__close-button')[0];
+  constructor(hsDialogId: string) {
+    super(document.querySelector(hsDialogId));
+    this.HS_DIALOG_ID = hsDialogId;
+    this.HS_DIALOG_CLOSE_BUTTON = document.getElementById(this.HS_DIALOG_ID)?.getElementsByClassName('hs-dialog__close-button')[0];
   }
 
   open(): void {
     if (this.isClosed) {
-      document.querySelector(this.HSDialogID)?.classList.add(this.HS_DIALOG_OPEN_STATE);
+      this.addClass(this.HS_DIALOG_OPEN_STATE);
     }
     this.isOpen = true;
     this.isClosed = false;
   }
 
-  // TODO: Fix this broken close method.
   close(): void {
     if (this.isOpen) {
-      document.querySelector(this.HSDialogID)?.classList.remove(this.HS_DIALOG_OPEN_STATE);
+      this.removeClass(this.HS_DIALOG_OPEN_STATE);
     }
     this.isOpen = false;
     this.isClosed = true;
   }
 
   getCloseButton(): Element|undefined {
-    return this.closeButton;
+    return this.HS_DIALOG_CLOSE_BUTTON;
   }
 
 }
