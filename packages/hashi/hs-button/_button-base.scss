@@ -45,7 +45,8 @@
     vertical-align: middle;
     box-sizing: border-box;
     cursor: pointer;
-    
+  
+    -webkit-appearance: caret;
     @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
   
     @content;

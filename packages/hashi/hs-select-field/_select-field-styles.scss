@@ -81,6 +81,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
         line-height: $_line-height
       ));
       outline: none;
+      @include hs-core.prefix(appearance, none, ('moz', 'webkit'));
       @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
   
       @include hs-core.color-apply('select-field', (
