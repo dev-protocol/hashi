@@ -20,7 +20,7 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@devprotocol/hashi-themes/stakes.social' as stakes-social;
+@use 'node_modules/@devprotocol/hashi-themes/stakes-social';
 @use 'node_modules/@devprotocol/hashi' with (
   $theme: stakes-social.$theme
 );

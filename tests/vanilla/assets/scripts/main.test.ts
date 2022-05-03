@@ -25,15 +25,12 @@
 import { HSDialog } from '@devprotocol/hashi/hs-dialog';
 
 const dialog = new HSDialog('#test-dialog');
-const dialogCloseButton = dialog.getCloseButton();
 const dialogOpenButton = document.querySelector('#open-dialog');
+const dialogCloseButton = dialog.getCloseButton();
 
 dialogOpenButton?.addEventListener('click', () => {
   dialog.open();
   console.log('Did it open?');
-});
 
-dialogCloseButton?.addEventListener('click', () => {
-  dialog.close();
-  console.log('Did it close?');
+  dialogCloseButton?.addEventListener('click', () => dialog.close());
 });
