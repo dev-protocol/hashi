@@ -20,10 +20,8 @@
  *  SOFTWARE.
  */
 
-import { ComponentBase } from './component';
-import { ComponentHelper } from './helpers';
+import { HSComponentBase } from './component';
 
 export {
-  ComponentBase,
-  ComponentHelper
+  HSComponentBase
 }
