@@ -2,10 +2,8 @@
 # yarn lockfile v1
 
 
-"@devprotocol/hashi@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.1.0.tgz#70bf4a7faddb6e7c285fd58f99809a90b7332725"
-  integrity sha512-IBWglIqSTFYAE58J1QciZowzEPPANDKto0IsAfHAXS7i4nAvQtXGoTH5SV1dNzKLgye3IJFe9rqqAg6Npc3d7w==
+"@devprotocol/hashi@file:./packages/hashi":
+  version "1.1.1"
   dependencies:
     "@matteusan/sentro" "0.1.21"
 
@@ -2937,10 +2935,10 @@ typedarray@^0.0.6:
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.6.3:
-  version "4.6.3"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.6.3.tgz"
-  integrity sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==
+typescript@4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
+  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"
