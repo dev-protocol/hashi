@@ -56,17 +56,12 @@ const myDialog = new HSDialog('#my-dialog-identifier');
 ```
 
 ### Typescript
-:::danger
-This portion of the API is broken when performing the close action. We recommend using [Alpine.js](https://alpinejs.dev)
-as an alternative for vanilla HTML, CSS, JS projects.
-:::
 
 ```ts
 import HSDialog from '@devprotocol/hashi/hs-dialog';
 
 const dialog = new HSDialog('#my-dialog-identifier');
-const dialogCloseButton = dialog.getCloseButton();
-const dialogOpenButton = document.querySelector('#my-dialog-open-button');
+dialog.open();
 ```
 
 ## Dialog Contents
@@ -239,10 +234,6 @@ $header-typography: 'subtitle' !default;
 If you wish to extend the component styles, the [`extend()` API](index.md#extension-scss) might come in handy.
 
 ### Typescript Properties
-:::danger
-This portion of the API is broken when performing the close action. We recommend using [Alpine.js](https://alpinejs.dev)
-as an alternative for vanilla HTML, CSS, JS projects.
-:::
 
 | Property                | Description                                |
 |-------------------------|--------------------------------------------|
@@ -250,13 +241,8 @@ as an alternative for vanilla HTML, CSS, JS projects.
 | `isClosed: boolean`     | Returns if instance of a dialog is closed. |
 
 ### Typescript Methods
-:::danger
-This portion of the API is broken when performing the close action. We recommend using [Alpine.js](https://alpinejs.dev)
-as an alternative for vanilla HTML, CSS, JS projects.
-:::
 
 | Method                     | Description                       |
 |----------------------------|-----------------------------------|
 | `open() => void`           | Opens the dialog component.       |
 | `close() => void`          | Closes the dialog component.      |
-| `getCloseButton() => void` | Gets the instance's close button. |
