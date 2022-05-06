@@ -24,17 +24,13 @@ import { HSComponentBase } from '../hs-core/component';
 
 export class HSDialog extends HSComponentBase {
 
-  private readonly HS_DIALOG_ID: string;
   private readonly HS_DIALOG_OPEN_STATE: string = 'is-open';
-  private readonly HS_DIALOG_CLOSE_BUTTON?: Element;
 
   public isOpen: boolean = false;
   public isClosed: boolean = true;
 
-  constructor(hsDialogId: string) {
-    super(document.querySelector(hsDialogId));
-    this.HS_DIALOG_ID = hsDialogId;
-    this.HS_DIALOG_CLOSE_BUTTON = document.getElementById(this.HS_DIALOG_ID)?.getElementsByClassName('hs-dialog__close-button')[0];
+  constructor(targetDialog: string) {
+    super(document.querySelector(targetDialog));
   }
 
   open(): void {
@@ -51,10 +47,6 @@ export class HSDialog extends HSComponentBase {
     }
     this.isOpen = false;
     this.isClosed = true;
-  }
-
-  getCloseButton(): Element|undefined {
-    return this.HS_DIALOG_CLOSE_BUTTON;
   }
 
 }
