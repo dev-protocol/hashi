@@ -45,7 +45,7 @@ $breakpoints: () !default;
 $extend: () !default;
 $theme: () !default;
 
-@forward 'hs-core';
+@forward 'hs-core' hide prioritize, is-type, is-not-empty;
 @forward 'init-base' with (
   $primary: $primary,
   $primary-dark: $primary-dark,
