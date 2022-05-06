@@ -1,0 +1,27 @@
+name: Question/Inquiry
+description: Ask the team a question about Hashi.
+title: "[QUESTION] <description>"
+labels: [question]
+body:
+  - type: input
+    id: description
+    attributes:
+      label: Question information
+      description: Please write your question/discussion about this project here
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional information
+      description: Is there anything else we should know about this issue?
+    validations:
+      required: false
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, I confirm I've read and complied with the [CoC](https://github.com/dev-protocol/community/blob/main/CODE_OF_CONDUCT.md) 🖖
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

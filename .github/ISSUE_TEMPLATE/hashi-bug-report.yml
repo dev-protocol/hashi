@@ -1,0 +1,70 @@
+name: Bug Report
+description: Report bugs you found in Hashi.
+title: "[BUG] <description>"
+labels: [bug]
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: What device are you using?
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: What browser are you using and what version?
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you running on?
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Write a brief description of the bug. Attach images if applicable.
+      placeholder: What's the problem?
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Supposed Behavior
+      description: Write a brief summary on how the issue should've behaved. Attach images if applicable.
+      placeholder: What's the supposed behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: recreation
+    attributes:
+      label: Steps to Recreate
+      description: Write a detailed report on how to recreate the problem. Attach images if applicable.
+      placeholder: |
+        1. Step 1
+        2. Step 2
+        3. Step 3
+        4. ...
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant Log Output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+    validations:
+        required: false
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, I confirm I've read and complied with the [CoC](https://github.com/dev-protocol/protocol/blob/main/CODE_OF_CONDUCT.md) 🖖
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

@@ -1,0 +1,29 @@
+name: Specifications
+description: Propose a specification document for Hashi.
+title: "[SPEC] <description>"
+labels: [specification]
+assignees:
+  - MatteuSan
+body:
+  - type: textarea
+    id: spec-description
+    attributes:
+      label: Specification Description
+      description: Write a detailed description on what the specification is, and how it will play out.
+    validations:
+      required: true
+  - type: textarea
+    id: spec-context
+    attributes:
+      label: Specification Context
+      description: Why does this matter? Who will benefit from this and in what way?
+    validations:
+      required: true
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, I confirm I've read and complied with the [CoC](https://github.com/dev-protocol/community/blob/main/CODE_OF_CONDUCT.md) 🖖
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
