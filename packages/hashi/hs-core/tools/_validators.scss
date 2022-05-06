@@ -41,30 +41,30 @@
 }
 
 /// Checks if query is empty.
-/// @param {*} $value
+/// @param {*} $query
 /// @return {boolean} true if empty, false if not.
-@function is-empty($value) {
-  @if not $value
-       or $value == ''
-       or $value == ()
-       or $value == none
-       or $value == null
-       or length($value) == 0 {
+@function is-empty($query) {
+  @if not $query
+       or $query == ''
+       or $query == ()
+       or $query == none
+       or $query == null
+       or length($query) == 0 {
     @return true;
   }
   @return false;
 }
 
 /// Checks if query is not empty.
-/// @param {*} $value
+/// @param {*} $query
 /// @return {boolean} true if not empty, false if empty.
-@function is-not-empty($value) {
-  @if $value
-       or $value != ''
-       or $value != ()
-       or $value != none
-       or $value != null
-       or length($value) != 0 {
+@function is-not-empty($query) {
+  @if $query
+       or $query != ''
+       or $query != ()
+       or $query != none
+       or $query != null
+       or length($query) != 0 {
     @return true;
   }
   @return false;
