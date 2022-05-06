@@ -156,11 +156,5 @@ $border-active-opacity: 3.3%;
     rgba(0 0 0 / 0)
   );
   
-  @if not theme.token-check($color) or
-    not list.index($_valid-colors, $color) {
-    // TODO: Fix this error.
-    // @error "Invalid color: #{$color}! Please use a valid color token, or the following: #{$_valid-colors}.";
-  }
-  
   @content;
 }

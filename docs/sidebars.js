@@ -107,8 +107,12 @@ const sidebars = {
     'Integrations': [
       'develop/integrations/tailwind'
     ],
+    'Guide': [
+      'develop/guides/authoring-components'
+    ],
     'API': [
       'develop/api/initializer',
+      'develop/api/tools',
       {
         type: 'category',
         label: 'Composition',

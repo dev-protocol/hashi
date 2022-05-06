@@ -7,7 +7,7 @@ displayed_sidebar: develop
 The fill mixin lets you apply background color to an element while creating an API around it that follows the Hashi spec.
 
 ```scss
-@use '../../../../../node_modules/@devprotocol/hashi/index';
+@use 'node_modules/@devprotocol/hashi';
 
 .hs-component {
   @include hashi.color-fill('component', 'primary-400');

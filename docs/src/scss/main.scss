@@ -21,7 +21,12 @@
 ///
 
 @use '~@devprotocol/hashi' with (
-  $accent: 'scarlet'
+  $accent: 'scarlet',
+  $extend: (
+    'size': (
+      'subtitle-2': 18px
+    )
+  )
 );
 @use '~@devprotocol/hashi/hs-badge';
 @use '~@devprotocol/hashi/hs-button';
@@ -76,7 +81,7 @@
   h4 {
     @include hashi.typography-apply('h3', (
       family: 'subtitle',
-      size: 'body',
+      size: 'subtitle-2',
       weight: 'bold',
       line-height: 'normal',
     ));
@@ -90,6 +95,11 @@
   @include hs-link.render();
   @include hs-profile.render();
   @include hs-select-field.render();
+  
+  .hs-badge {
+    --ifm-link-hover-color: #{hashi.token-get('primary-ink')} !important;
+    --ifm-link-hover-decoration: none !important;
+  }
   
   .hs-button {
     --ifm-link-color: inherit;

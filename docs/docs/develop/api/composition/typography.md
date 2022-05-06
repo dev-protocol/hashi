@@ -7,7 +7,7 @@ displayed_sidebar: develop
 The family mixin lets you apply font family to an element while creating an API around it that follows the Hashi spec.
 
 ```scss
-@use '../../../../../node_modules/@devprotocol/hashi/index';
+@use 'node_modules/@devprotocol/hashi';
 
 .hs-component {
   @include hashi.typography-family('component', 'subtitle');

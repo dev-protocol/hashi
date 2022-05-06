@@ -91,7 +91,7 @@
         list-style: circle;
       }
       
-      a {
+      :not(.hs-component-preview) > a {
         @extend .hs-link;
       }
     }
