@@ -21,7 +21,9 @@
 ///
 
 @use '../hs-core';
+@use 'sass:list';
 @use 'sass:string';
+@use 'util-helpers' as helper;
 
 $_breakpoints: (
   'small': 'sm',
@@ -81,144 +83,174 @@ $_alignments: (
   'stretch': 'stretch',
 );
 
-@mixin layout-utils() {
-  @include layout();
+@mixin layout-utils($include: (), $exclude: ()) {
+  @include layout($include, $exclude);
 }
 
-@mixin layout() {
-  @each $display in $_displays {
-    .d-#{$display} {
-      display: string.unquote($display);
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:d-#{$display} {
-          display: string.unquote($display);
-        }
+@mixin layout($include: (), $exclude: ()) {
+  $utils-to-render: helper.handle-include-exclude((
+    'd',
+    'gap',
+    'flow',
+    'wrap',
+    'justify',
+    'items',
+    'cols',
+    'start',
+    'end'
+  ), $include, $exclude);
+
+  @if list.index($utils-to-render, 'd') {
+    @each $display in $_displays {
+      .d-#{$display} {
+        display: string.unquote($display);
       }
-    }
-  }
-  
-  @each $flow, $flow-val in $_flows {
-    .flow-#{$flow} {
-      flex-direction: string.unquote($flow-val);
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:flow-#{$flow} {
-          flex-direction: string.unquote($flow-val);
-        }
-      }
-    }
-  }
-  
-  @each $wrap, $wrap-val in $_wraps {
-    @if $wrap == 'default' {
-      .wrap {
-        flex-wrap: string.unquote($wrap-val);
-      }
-    } @else {
-      .wrap-#{$wrap} {
-        flex-wrap: string.unquote($wrap-val);
-      }
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        @if $wrap == 'default' {
-          .\@#{$shorthand}\:wrap {
-            flex-wrap: string.unquote($wrap-val);
-          }
-        } @else {
-          .\@#{$shorthand}\:wrap-#{$wrap} {
-            flex-wrap: string.unquote($wrap-val);
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:d-#{$display} {
+            display: string.unquote($display);
           }
         }
       }
     }
   }
-  
-  @each $position, $position-val in $_positions {
-    .justify-#{$position} {
-      justify-content: string.unquote($position-val);
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:justify-#{$position} {
-          justify-content: string.unquote($position-val);
+
+  @if list.index($utils-to-render, 'flow') {
+    @each $flow, $flow-val in $_flows {
+      .flow-#{$flow} {
+        flex-direction: string.unquote($flow-val);
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:flow-#{$flow} {
+            flex-direction: string.unquote($flow-val);
+          }
         }
       }
     }
   }
-  
-  @each $alignment, $alignment-val in $_alignments {
-    .items-#{$alignment} {
-      align-items: string.unquote($alignment-val);
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:items-#{$alignment} {
-          align-items: string.unquote($alignment-val);
+
+  @if list.index($utils-to-render, 'wrap') {
+    @each $wrap, $wrap-val in $_wraps {
+      @if $wrap == 'default' {
+        .wrap {
+          flex-wrap: string.unquote($wrap-val);
+        }
+      } @else {
+        .wrap-#{$wrap} {
+          flex-wrap: string.unquote($wrap-val);
+        }
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          @if $wrap == 'default' {
+            .\@#{$shorthand}\:wrap {
+              flex-wrap: string.unquote($wrap-val);
+            }
+          } @else {
+            .\@#{$shorthand}\:wrap-#{$wrap} {
+              flex-wrap: string.unquote($wrap-val);
+            }
+          }
         }
       }
     }
   }
-  
-  @each $gap in $_gaps {
-    .gap-#{$gap} {
-      gap: hs-core.token-get('space-#{$gap}');
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:gap-#{$gap} {
-          gap: hs-core.token-get('space-#{$gap}');
+
+  @if list.index($utils-to-render, 'justify') {
+    @each $position, $position-val in $_positions {
+      .justify-#{$position} {
+        justify-content: string.unquote($position-val);
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:justify-#{$position} {
+            justify-content: string.unquote($position-val);
+          }
         }
       }
     }
   }
-  
-  @for $i from 1 to $_grid-limit {
-    .cols-#{$i} {
-      grid-template-columns: repeat($i, 1fr);
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:cols-#{$i} {
-          grid-template-columns: repeat($i, 1fr);
+
+  @if list.index($utils-to-render, 'items') {
+    @each $alignment, $alignment-val in $_alignments {
+      .items-#{$alignment} {
+        align-items: string.unquote($alignment-val);
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:items-#{$alignment} {
+            align-items: string.unquote($alignment-val);
+          }
         }
       }
     }
   }
-  
-  @for $i from 1 to $_grid-limit {
-    .start-#{$i} {
-      grid-column-start: $i;
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:start-#{$i} {
-          grid-column-start: $i;
+
+  @if list.index($utils-to-render, 'gap') {
+    @each $gap in $_gaps {
+      .gap-#{$gap} {
+        gap: hs-core.token-get('space-#{$gap}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:gap-#{$gap} {
+            gap: hs-core.token-get('space-#{$gap}');
+          }
         }
       }
     }
   }
-  
-  @for $i from 1 to $_grid-limit {
-    .end-#{$i} {
-      grid-column-end: $i;
+
+  @if list.index($utils-to-render, 'cols') {
+    @for $i from 1 to $_grid-limit {
+      .cols-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:cols-#{$i} {
+            grid-template-columns: repeat($i, 1fr);
+          }
+        }
+      }
     }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:end-#{$i} {
-          grid-column-end: $i;
+  }
+
+  @if list.index($utils-to-render, 'start') {
+    @for $i from 1 to $_grid-limit {
+      .start-#{$i} {
+        grid-column-start: $i;
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:start-#{$i} {
+            grid-column-start: $i;
+          }
+        }
+      }
+    }
+  }
+
+  @if list.index($utils-to-render, 'end') {
+    @for $i from 1 to $_grid-limit {
+      .end-#{$i} {
+        grid-column-end: $i;
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:end-#{$i} {
+            grid-column-end: $i;
+          }
         }
       }
     }

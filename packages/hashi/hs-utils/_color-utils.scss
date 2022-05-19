@@ -21,7 +21,9 @@
 ///
 
 @use '../hs-core';
+@use 'sass:list';
 @use 'sass:string';
+@use 'util-helpers' as helper;
 
 $_colors: (
   'primary',
@@ -46,59 +48,68 @@ $_breakpoints: (
   'xlarge': 'xl',
 );
 
-@mixin color-utils() {
-  @include color();
+@mixin color-utils($include: (), $exclude: ()) {
+  @include color($include, $exclude);
 }
 
-@mixin color() {
+@mixin color($include: (), $exclude: ()) {
+  $utils-to-render: helper.handle-include-exclude(('bg', 'text', 'border'), $include, $exclude);
+  // @debug $utils-to-render;
+
   @each $color in $_colors {
     @each $tone, $opacity in $_tones {
-      .bg-#{$color}-#{$tone} {
-        background: hs-core.token-get('#{$color}-#{$tone}');
-        color: hs-core.token-get('#{$color}-ink');
-      }
-  
-      @each $breakpoint, $shorthand in $_breakpoints {
-        @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:bg-#{$color}-#{$tone} {
-            background: hs-core.token-get('#{$color}-#{$tone}');
-            color: hs-core.token-get('#{$color}-ink');
+      @if list.index($utils-to-render, 'bg') {
+        .bg-#{$color}-#{$tone} {
+          background: hs-core.token-get('#{$color}-#{$tone}');
+          color: hs-core.token-get('#{$color}-ink');
+        }
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:bg-#{$color}-#{$tone} {
+              background: hs-core.token-get('#{$color}-#{$tone}');
+              color: hs-core.token-get('#{$color}-ink');
+            }
+          }
+        }
+
+        .bg-#{$color}-alpha-#{$tone} {
+          background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+        }
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:bg-#{$color}-alpha-#{$tone} {
+              background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+            }
           }
         }
       }
-  
-      .bg-#{$color}-alpha-#{$tone} {
-        background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
-      }
-  
-      @each $breakpoint, $shorthand in $_breakpoints {
-        @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:bg-#{$color}-alpha-#{$tone} {
-            background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+
+      @if list.index($utils-to-render, 'text') {
+        .text-#{$color}-#{$tone} {
+          color: hs-core.token-get('#{$color}-#{$tone}');
+        }
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:text-#{$color}-#{$tone} {
+              color: hs-core.token-get('#{$color}-#{$tone}');
+            }
           }
         }
       }
-  
-      .text-#{$color}-#{$tone} {
-        color: hs-core.token-get('#{$color}-#{$tone}');
-      }
-  
-      @each $breakpoint, $shorthand in $_breakpoints {
-        @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:text-#{$color}-#{$tone} {
-            color: hs-core.token-get('#{$color}-#{$tone}');
-          }
+
+      @if list.index($utils-to-render, 'border') {
+        .border-#{$color}-#{$tone} {
+          border: 1px solid hs-core.token-get('#{$color}-#{$tone}');
         }
-      }
-  
-      .border-#{$color}-#{$tone} {
-        border: 1px solid hs-core.token-get('#{$color}-#{$tone}');
-      }
-  
-      @each $breakpoint, $shorthand in $_breakpoints {
-        @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:border-#{$color}-#{$tone} {
-            border: 1px solid hs-core.token-get('#{$color}-#{$tone}');
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:border-#{$color}-#{$tone} {
+              border: 1px solid hs-core.token-get('#{$color}-#{$tone}');
+            }
           }
         }
       }

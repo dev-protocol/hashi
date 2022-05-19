@@ -21,7 +21,9 @@
 ///
 
 @use '../hs-core';
+@use 'sass:list';
 @use 'sass:string';
+@use 'util-helpers' as helper;
 
 $_families: (
   'supertitle',
@@ -59,96 +61,117 @@ $_alignments: (
   'justify'
 );
 
-@mixin typography-utils() {
-  @include typography();
+@mixin typography-utils($include: (), $exclude: ()) {
+  @include typography($include, $exclude);
 }
 
-@mixin typography() {
-  @each $preset in $_families {
-    .#{$preset} {
-      font-family: hs-core.token-get('family-#{$preset}');
-      font-size: hs-core.token-get('size-#{$preset}');
-      font-weight: hs-core.token-get('weight-#{$preset}');
-      line-height: hs-core.token-get('line-height-#{$preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:#{$preset} {
-          font-family: hs-core.token-get('family-#{$preset}');
-          font-size: hs-core.token-get('size-#{$preset}');
-          font-weight: hs-core.token-get('weight-#{$preset}');
-          line-height: hs-core.token-get('line-height-#{$preset}');
+@mixin typography($include: (), $exclude: ()) {
+  $utils-to-render: helper.handle-include-exclude((
+    'preset',
+    'family',
+    'size',
+    'weight',
+    'lh',
+    'text-align'
+  ), $include, $exclude);
+
+  @if list.index($utils-to-render, 'preset') {
+    @each $preset in $_families {
+      .#{$preset} {
+        font-family: hs-core.token-get('family-#{$preset}');
+        font-size: hs-core.token-get('size-#{$preset}');
+        font-weight: hs-core.token-get('weight-#{$preset}');
+        line-height: hs-core.token-get('line-height-#{$preset}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:#{$preset} {
+            font-family: hs-core.token-get('family-#{$preset}');
+            font-size: hs-core.token-get('size-#{$preset}');
+            font-weight: hs-core.token-get('weight-#{$preset}');
+            line-height: hs-core.token-get('line-height-#{$preset}');
+          }
         }
       }
     }
   }
-  
-  @each $preset in $_families {
-    .family-#{$preset} {
-      font-family: hs-core.token-get('family-#{$preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:family-#{$preset} {
-          font-family: hs-core.token-get('family-#{$preset}');
+
+  @if list.index($utils-to-render, 'family') {
+    @each $preset in $_families {
+      .family-#{$preset} {
+        font-family: hs-core.token-get('family-#{$preset}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:family-#{$preset} {
+            font-family: hs-core.token-get('family-#{$preset}');
+          }
         }
       }
     }
   }
-  
-  @each $preset in $_families {
-    .size-#{$preset} {
-      font-size: hs-core.token-get('size-#{$preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:size-#{$preset} {
-          font-size: hs-core.token-get('size-#{$preset}');
+
+  @if list.index($utils-to-render, 'size') {
+    @each $preset in $_families {
+      .size-#{$preset} {
+        font-size: hs-core.token-get('size-#{$preset}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:size-#{$preset} {
+            font-size: hs-core.token-get('size-#{$preset}');
+          }
         }
       }
     }
   }
-  
-  @each $preset in $_weights {
-    .weight-#{$preset} {
-      font-weight: hs-core.token-get('weight-#{$preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:weight-#{$preset} {
-          font-weight: hs-core.token-get('weight-#{$preset}');
+
+  @if list.index($utils-to-render, 'weight') {
+    @each $preset in $_weights {
+      .weight-#{$preset} {
+        font-weight: hs-core.token-get('weight-#{$preset}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:weight-#{$preset} {
+            font-weight: hs-core.token-get('weight-#{$preset}');
+          }
         }
       }
     }
   }
-  
-  @each $preset in $_line-heights {
-    .lh-#{$preset} {
-      line-height: hs-core.token-get('line-height-#{$preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:lh-#{$preset} {
-          line-height: hs-core.token-get('line-height-#{$preset}');
+
+  @if list.index($utils-to-render, 'lh') {
+    @each $preset in $_line-heights {
+      .lh-#{$preset} {
+        line-height: hs-core.token-get('line-height-#{$preset}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:lh-#{$preset} {
+            line-height: hs-core.token-get('line-height-#{$preset}');
+          }
         }
       }
     }
   }
-  
-  @each $preset in $_alignments {
-    .text-align-#{$preset} {
-      text-align: string.unquote($preset);
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:text-align-#{$preset} {
-          text-align: string.unquote($preset);
+
+  @if list.index($utils-to-render, 'text-align') {
+    @each $preset in $_alignments {
+      .text-align-#{$preset} {
+        text-align: string.unquote($preset);
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:text-align-#{$preset} {
+            text-align: string.unquote($preset);
+          }
         }
       }
     }

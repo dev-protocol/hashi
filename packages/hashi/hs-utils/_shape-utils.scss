@@ -21,6 +21,8 @@
 ///
 
 @use '../hs-core';
+@use 'sass:list';
+@use 'util-helpers' as helper;
 
 $_breakpoints: (
   'small': 'sm',
@@ -76,139 +78,160 @@ $_elevations: (
   'highest',
 );
 
-@mixin shape-utils() {
-  //
+@mixin shape-utils($include: (), $exclude: ()) {
+  @include shape($include, $exclude);
 }
 
-@mixin shape() {
+@mixin shape($include: (), $exclude: ()) {
+  $utils-to-render: helper.handle-include-exclude((
+    'w',
+    'h',
+    'r',
+    'p',
+    'm',
+    'raise'
+  ), $include, $exclude);
+
   @each $dimension, $dimension-val in $_dimensions {
-    .w-#{$dimension} {
-      width: $dimension-val;
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:w-#{$dimension} {
-          width: $dimension-val;
-        }
+    @if list.index($utils-to-render, 'w') {
+      .w-#{$dimension} {
+        width: $dimension-val;
       }
-    }
-  
-    .h-#{$dimension} {
-      height: $dimension-val;
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:h-#{$dimension} {
-          height: $dimension-val;
-        }
-      }
-    }
-  }
-  
-  @each $elevation in $_elevations {
-    @if $elevation == 'normal' or $elevation == 'default' {
-      .shadow {
-        box-shadow: hs-core.token-get('shadow-#{$elevation}');
-      }
-    } @else {
-      .shadow-#{$elevation} {
-        box-shadow: hs-core.token-get('shadow-#{$elevation}');
-      }
-    }
-  }
-  
-  @each $shape-preset in $shape-presets {
-    .r-#{$shape-preset} {
-      border-radius: hs-core.token-get('radius-#{$shape-preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:r-#{$shape-preset} {
-          border-radius: hs-core.token-get('radius-#{$shape-preset}');
-        }
-      }
-    }
-    
-    @each $direction-id, $directions in $radius-directions {
-      .r#{$direction-id}-#{$shape-preset} {
-        @each $direction in $directions {
-          border-#{$direction}-radius: hs-core.token-get('radius-#{$shape-preset}');
-        }
-      }
-  
+
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:r#{$direction-id}-#{$shape-preset} {
-            @each $direction in $directions {
-              border-#{$direction}-radius: hs-core.token-get('radius-#{$shape-preset}');
+          .\@#{$shorthand}\:w-#{$dimension} {
+            width: $dimension-val;
+          }
+        }
+      }
+    }
+
+    @if list.index($utils-to-render, 'h') {
+      .h-#{$dimension} {
+        height: $dimension-val;
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:h-#{$dimension} {
+            height: $dimension-val;
+          }
+        }
+      }
+    }
+  }
+
+  @if list.index($utils-to-render, 'raise') {
+    @each $elevation in $_elevations {
+      @if $elevation == 'normal' or $elevation == 'default' {
+        .shadow {
+          box-shadow: hs-core.token-get('shadow-#{$elevation}');
+        }
+      } @else {
+        .shadow-#{$elevation} {
+          box-shadow: hs-core.token-get('shadow-#{$elevation}');
+        }
+      }
+    }
+  }
+
+  @if list.index($utils-to-render, 'r') {
+    @each $shape-preset in $shape-presets {
+      .r-#{$shape-preset} {
+        border-radius: hs-core.token-get('radius-#{$shape-preset}');
+      }
+
+      @each $breakpoint, $shorthand in $_breakpoints {
+        @include hs-core.breakpoint-create($breakpoint) {
+          .\@#{$shorthand}\:r-#{$shape-preset} {
+            border-radius: hs-core.token-get('radius-#{$shape-preset}');
+          }
+        }
+      }
+
+      @each $direction-id, $directions in $radius-directions {
+        .r#{$direction-id}-#{$shape-preset} {
+          @each $direction in $directions {
+            border-#{$direction}-radius: hs-core.token-get('radius-#{$shape-preset}');
+          }
+        }
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:r#{$direction-id}-#{$shape-preset} {
+              @each $direction in $directions {
+                border-#{$direction}-radius: hs-core.token-get('radius-#{$shape-preset}');
+              }
             }
           }
         }
       }
     }
   }
-  
-  @each $shape-preset in $shape-presets {
-    .p-#{$shape-preset} {
-      padding: hs-core.token-get('padding-#{$shape-preset}');
-    }
-  
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:p-#{$shape-preset} {
-          padding: hs-core.token-get('padding-#{$shape-preset}');
-        }
+
+  @if list.index($utils-to-render, 'p') {
+    @each $shape-preset in $shape-presets {
+      .p-#{$shape-preset} {
+        padding: hs-core.token-get('padding-#{$shape-preset}');
       }
-    }
-    
-    @each $direction-id, $directions in $directions {
-      .p#{$direction-id}-#{$shape-preset} {
-        @each $direction in $directions {
-          padding-#{$direction}: hs-core.token-get('padding-#{$shape-preset}');
-        }
-      }
-  
+
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:p#{$direction-id}-#{$shape-preset} {
-            @each $direction in $directions {
-              padding-#{$direction}: hs-core.token-get('padding-#{$shape-preset}');
+          .\@#{$shorthand}\:p-#{$shape-preset} {
+            padding: hs-core.token-get('padding-#{$shape-preset}');
+          }
+        }
+      }
+
+      @each $direction-id, $directions in $directions {
+        .p#{$direction-id}-#{$shape-preset} {
+          @each $direction in $directions {
+            padding-#{$direction}: hs-core.token-get('padding-#{$shape-preset}');
+          }
+        }
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:p#{$direction-id}-#{$shape-preset} {
+              @each $direction in $directions {
+                padding-#{$direction}: hs-core.token-get('padding-#{$shape-preset}');
+              }
             }
           }
         }
       }
     }
   }
-  
-  @each $shape-preset in $shape-presets {
-    .m-#{$shape-preset} {
-      margin: hs-core.token-get('margin-#{$shape-preset}');
-    }
-    
-    @each $breakpoint, $shorthand in $_breakpoints {
-      @include hs-core.breakpoint-create($breakpoint) {
-        .\@#{$shorthand}\:m-#{$shape-preset} {
-          margin: hs-core.token-get('margin-#{$shape-preset}');
-        }
+
+  @if list.index($utils-to-render, 'm') {
+    @each $shape-preset in $shape-presets {
+      .m-#{$shape-preset} {
+        margin: hs-core.token-get('margin-#{$shape-preset}');
       }
-    }
-    
-    
-    @each $direction-id, $directions in $directions {
-      .m#{$direction-id}-#{$shape-preset} {
-        @each $direction in $directions {
-          margin-#{$direction}: hs-core.token-get('margin-#{$shape-preset}');
-        }
-      }
-  
+
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:m#{$direction-id}-#{$shape-preset} {
-            @each $direction in $directions {
-              margin-#{$direction}: hs-core.token-get('margin-#{$shape-preset}');
+          .\@#{$shorthand}\:m-#{$shape-preset} {
+            margin: hs-core.token-get('margin-#{$shape-preset}');
+          }
+        }
+      }
+
+
+      @each $direction-id, $directions in $directions {
+        .m#{$direction-id}-#{$shape-preset} {
+          @each $direction in $directions {
+            margin-#{$direction}: hs-core.token-get('margin-#{$shape-preset}');
+          }
+        }
+
+        @each $breakpoint, $shorthand in $_breakpoints {
+          @include hs-core.breakpoint-create($breakpoint) {
+            .\@#{$shorthand}\:m#{$direction-id}-#{$shape-preset} {
+              @each $direction in $directions {
+                margin-#{$direction}: hs-core.token-get('margin-#{$shape-preset}');
+              }
             }
           }
         }
