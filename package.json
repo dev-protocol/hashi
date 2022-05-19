@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@devprotocol/hashi": "file:./packages/hashi",
-    "@matteusan/sentro": "0.1.21",
+    "@matteusan/sentro": "0.1.22",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "4.1.3",
@@ -23,7 +23,7 @@
     "sass": "1.51.0",
     "ts-loader": "9.3.0",
     "typescript": "4.6.4",
-    "webpack": "5.72.0",
+    "webpack": "5.72.1",
     "webpack-cli": "4.9.2"
   }
 }
