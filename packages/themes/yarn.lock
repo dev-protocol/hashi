@@ -2,14 +2,14 @@
 # yarn lockfile v1
 
 
-"@devprotocol/hashi@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.1.0.tgz#70bf4a7faddb6e7c285fd58f99809a90b7332725"
-  integrity sha512-IBWglIqSTFYAE58J1QciZowzEPPANDKto0IsAfHAXS7i4nAvQtXGoTH5SV1dNzKLgye3IJFe9rqqAg6Npc3d7w==
+"@devprotocol/hashi@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.2.0.tgz#b5418203a42f5e4e90c4a8727520f056ea8a0e21"
+  integrity sha512-aQFUulx+w+mLuPlq2rIKHUKF0zD6PVob96pApZ0EJ+WmQBkuub5gEQVO4Ht/FOuPAFsAaRpBHAm3gdOy747DpQ==
   dependencies:
-    "@matteusan/sentro" "0.1.21"
+    "@matteusan/sentro" "0.1.22"
 
-"@matteusan/sentro@0.1.21":
-  version "0.1.21"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.21.tgz#ed8360dcc755040653939326b077b6d413707015"
-  integrity sha512-Cha0Adu9PqHURzexPIAu7d/fIbW7uduBpXFHm4FewSQ6O35lvVBLZYqiSjx5jDrfrqLyzJcv0dETFPNmVTaBow==
+"@matteusan/sentro@0.1.22":
+  version "0.1.22"
+  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.22.tgz#0caff06245426db6ca58c7817ba3c0ed08ea2674"
+  integrity sha512-j7XFgzKiPB8Az9cJVdfeFBP4VHiJu5y9zGPMg9JtzG5ILQwmg29rWzgTWotigeGix/iK1pQCQ8T97wDWyYRwsQ==
