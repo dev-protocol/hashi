@@ -8,11 +8,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build:ts": "webpack --config webpack.config.js",
-    "build:ts:watch": "webpack --config webpack.config.js --watch",
-    "build:sass": "gulp",
-    "publish:public": "cd src && npm publish --access=public",
-    "bump": "npm --no-git-tag-version version patch && cd src && npm --no-git-tag-version version patch"
+    "build:ts": "webpack --config webpack-build.config.js",
+    "build:sass": "gulp --gulpfile=\"./gulpfile-build.js\"",
+    "test:sass": "gulp --gulpfile=\"./gulpfile-tests.js\"",
+    "test:ts": "webpack --config webpack-tests.config.js --watch"
   },
   "devDependencies": {
     "@devprotocol/hashi": "file:./packages/hashi",
