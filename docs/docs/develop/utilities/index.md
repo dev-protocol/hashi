@@ -6,6 +6,53 @@ displayed_sidebar: develop
 Utility classes are a vital part of Hashi. It allows developers to easily compose layouts, create simple stateless
 components, and make minor modifications in the UI.
 
+## Instantiating
+Use the `hs-utils` module in your style file and call in the specific utility mixin you want to use.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-utils';
+
+@include hashi.init {
+  @include hs-utils.color();
+  ...
+}
+```
+
+### Selective Class Rendering
+Every utility initializer comes with the `$exclude` and `$include` parameters. This allows you to exclude certain
+utility classes, or include the ones you only need.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-utils';
+
+@include hashi.init {
+  @include hs-utils.color-utils(
+    $include: ('text', 'border')
+  );
+  @include hs-utils.layout-utils(
+    $exclude: ('d', 'gap', 'flow')
+  );
+}
+```
+
+However, you can only use one or the other parameter. Using both will result in an error.
+
+Selecting the utilities to include/exclude is done by passing the class prefix of the utilities. Example: `text`
+is mapped to `text-[color]-[tone]` utilities.
+
+```scss
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi/hs-utils';
+
+@include hashi.init {
+  @include hs-utils.color-utils(
+    $include: ('text', 'bg')
+  );
+}
+```
+
 ## Expected Behaviors
 The utility classes are defined to only compose layouts, create simple stateless components, and make minor UI
 modifications. Henceforth, it will only support default states, and media queries.
