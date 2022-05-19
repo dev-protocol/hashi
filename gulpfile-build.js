@@ -20,54 +20,26 @@
  *  SOFTWARE.
  */
 
-const { src, dest, watch, series } = require('gulp');
+const { src, dest, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const purgecss = require('gulp-purgecss');
-const hashi = require('@devprotocol/hashi/config/purgecss');
 
 function sassTaskDev() {
-  return src(['packages/hashi/**/*.scss', 'packages/hashi/**/*.test.scss', '!packages/hashi/**/main.scss'], { sourcemaps: true })
+  return src(['packages/hashi/**/*.scss', '!packages/hashi/**/build.scss'], { sourcemaps: true })
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))
-    .pipe(dest('./src', { sourcemaps: '.' }));
+    .pipe(dest('./packages/hashi', { sourcemaps: '.' }));
 }
 
 function sassTaskProd() {
-  return src(['packages/hashi/**/main.scss'], { sourcemaps: true })
+  return src(['packages/hashi/**/build.scss'], { sourcemaps: true })
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))
-    .pipe(dest('./src', { sourcemaps: '.' }));
-}
-
-function sassTaskTest() {
-  return src(['tests/**/*.scss'], { sourcemaps: true })
-    .pipe(sass({
-      includePaths: ['node_modules']
-    }).on('error', sass.logError))
-    .pipe(dest('./tests', { sourcemaps: '.' }));
-}
-
-function purge() {
-  return src('tests/**/*.css')
-    .pipe(purgecss(hashi.purgeConfig(['html', {
-      content: ['tests/**/*.html']
-    }])))
-    .pipe(dest('./tests'))
-}
-
-function watchTasks() {
-  watch(['packages/hashi/**/*.scss', '!packages/hashi/**/*.test.scss'], sassTaskDev());
-  watch(['tests/**/*.scss'], sassTaskTest());
-  // watch(['packages/hashi/main.scss'], sassTaskProd());
-  // watch('test/scripts/**/*.ts', tsTask());
+    .pipe(dest('./packages/hashi', { sourcemaps: '.' }));
 }
 
 exports.default = series(
-  // sassTaskDev,
-  // sassTaskProd,
-  sassTaskTest,
-  // purge,
-  // watchTasks
+  sassTaskDev,
+  sassTaskProd,
 );
