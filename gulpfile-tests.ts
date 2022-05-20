@@ -26,7 +26,7 @@ const purgecss = require('gulp-purgecss');
 const hashi = require('@devprotocol/hashi/config/purgecss');
 
 function sassTaskTest() {
-  return src(['tests/**/*.scss'], { sourcemaps: true })
+  return src(['tests/**/*.test.scss'], { sourcemaps: true })
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))
@@ -36,7 +36,7 @@ function sassTaskTest() {
 function purge() {
   return src('tests/**/*.css')
     .pipe(purgecss(hashi.purgeConfig(['html', {
-      content: ['tests/**/*.html']
+      content: ['tests/**/*.test.html']
     }])))
     .pipe(dest('./tests'))
 }
