@@ -8,9 +8,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
     "build:ts": "webpack --config webpack-build.config.js",
-    "build:sass": "gulp --gulpfile=\"./gulpfile-build.js\"",
-    "test:sass": "gulp --gulpfile=\"./gulpfile-tests.js\"",
+    "test:sass": "gulp --gulpfile=\"./gulpfile-tests.ts\"",
     "test:ts": "webpack --config webpack-tests.config.js --watch"
   },
   "devDependencies": {
@@ -21,7 +21,9 @@
     "gulp-purgecss": "4.1.3",
     "gulp-sass": "5.1.0",
     "sass": "1.51.0",
+    "sass-true": "6.1.0",
     "ts-loader": "9.3.0",
+    "ts-node": "10.7.0",
     "typescript": "4.6.4",
     "webpack": "5.72.1",
     "webpack-cli": "4.9.2"
