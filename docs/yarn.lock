@@ -2254,12 +2254,12 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@devprotocol/hashi@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.1.1.tgz#7ac2c6f18db6c10169b191b21b2fbb9609e0fa3b"
-  integrity sha512-hfVCAjK8Nkxl8D4OkA61uncW60MYic++me6Vbozyjdafukkd85MHVJANwr74vk8Ks3HZKlTbkgJbJXruBEBAdQ==
+"@devprotocol/hashi@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.2.0.tgz#b5418203a42f5e4e90c4a8727520f056ea8a0e21"
+  integrity sha512-aQFUulx+w+mLuPlq2rIKHUKF0zD6PVob96pApZ0EJ+WmQBkuub5gEQVO4Ht/FOuPAFsAaRpBHAm3gdOy747DpQ==
   dependencies:
-    "@matteusan/sentro" "0.1.21"
+    "@matteusan/sentro" "0.1.22"
 
 "@docsearch/css@3.0.0":
   version "3.0.0"
@@ -2677,10 +2677,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@matteusan/sentro@0.1.21":
-  version "0.1.21"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.21.tgz#ed8360dcc755040653939326b077b6d413707015"
-  integrity sha512-Cha0Adu9PqHURzexPIAu7d/fIbW7uduBpXFHm4FewSQ6O35lvVBLZYqiSjx5jDrfrqLyzJcv0dETFPNmVTaBow==
+"@matteusan/sentro@0.1.22":
+  version "0.1.22"
+  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.22.tgz#0caff06245426db6ca58c7817ba3c0ed08ea2674"
+  integrity sha512-j7XFgzKiPB8Az9cJVdfeFBP4VHiJu5y9zGPMg9JtzG5ILQwmg29rWzgTWotigeGix/iK1pQCQ8T97wDWyYRwsQ==
 
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
@@ -8445,10 +8445,10 @@ sass-loader@^10.1.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@1.51.0:
-  version "1.51.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.51.0.tgz#25ea36cf819581fe1fe8329e8c3a4eaaf70d2845"
-  integrity sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==
+sass@1.52.0:
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.52.0.tgz#3dc755ff459858ce7062887181648701f028c4f5"
+  integrity sha512-6EnTglag2oVD8sNJCxUi2Jd3ICH9tJ5Mqudt/gIZNBR2uKJUBZuTpW9O1t04SkDLP7VFa76FCWTV2rwchqM8Kw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
