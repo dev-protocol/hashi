@@ -1,0 +1,23 @@
+name: Hashi CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  test-sass:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ '14.x' ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use NodeJS version ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn test:sass
