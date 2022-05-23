@@ -20,9 +20,6 @@
 //  SOFTWARE.
 ///
 
-$vue-mode: false !default;
-$_validation: if($vue-mode, false, true);
-
 @use 'hs-core';
 @use 'hs-core/tokens';
 
@@ -149,11 +146,11 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     @include hs-core.token-config($map: $_extend);
     --hs-transition-time: 0.2s;
   }
-  
+
   @include hs-core.breakpoint-config(
     $map: map.merge($_init-breakpoints, $_breakpoints)
   );
-  
+
   @include font-pack.load((
     'supertitle': _get-family($_family-supertitle),
     'title': _get-family($_family-title),
@@ -162,7 +159,7 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     'mono': _get-family($_family-mono),
     'small': _get-family($_family-small),
   ));
-  
+
   *,
   :before,
   :after {
@@ -172,7 +169,7 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     box-sizing: inherit;
     // border: 1px solid rgba(0 0 0 / 0);
   }
-  
+
   h1,
   h2,
   h3,
@@ -184,7 +181,7 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     font-weight: inherit;
     line-height: inherit;
   }
-  
+
   p,
   span,
   a {
@@ -193,22 +190,22 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     font-weight: hs-core.token-get('weight-body');
     line-height: hs-core.token-get('line-height-body');
   }
-  
+
   a {
     text-decoration: none;
   }
-  
+
   li {
     list-style: none;
   }
-  
+
   small {
     font-family: hs-core.token-get('family-small');
     font-size: hs-core.token-get('size-small');
     font-weight: hs-core.token-get('weight-small');
     line-height: hs-core.token-get('line-height-small');
   }
-  
+
   code,
   code * {
     font-family: hs-core.token-get('family-mono');
@@ -216,11 +213,11 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     font-weight: hs-core.token-get('weight-mono');
     line-height: hs-core.token-get('line-height-mono');
   }
-  
+
   dialog {
     all: unset;
   }
-  
+
   html {
     width: 100%;
     height: 100%;
@@ -230,7 +227,7 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
     font-family: hs-core.token-get('family-body');
     box-sizing: border-box;
     color-scheme: light;
-    
+
     &[hashi-theme='dark'],
     &[theme='dark'],
     &[data-theme='dark'] {
@@ -268,7 +265,7 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
       );
     }
   }
-  
+
   @content;
 }
 

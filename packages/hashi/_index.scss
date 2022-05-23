@@ -20,6 +20,9 @@
 //  SOFTWARE.
 ///
 
+$modular-mode: false !default;
+$vue-mode: $modular-mode !default;
+
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-white' !default;
 $accent: 'native-blue' !default;
@@ -45,7 +48,10 @@ $breakpoints: () !default;
 $extend: () !default;
 $theme: () !default;
 
-@forward 'hs-core' hide prioritize, is-type, is-not-empty;
+@forward 'hs-core' hide prioritize, is-type, is-not-empty with (
+  $modular-mode: $modular-mode,
+  $vue-mode: $vue-mode
+);
 @forward 'init-base' with (
   $primary: $primary,
   $primary-dark: $primary-dark,

@@ -20,14 +20,16 @@
 //  SOFTWARE.
 ///
 
-$validation: true !default;
+$modular-mode: false !default;
+$vue-mode: $modular-mode !default;
+$_validation: if($vue-mode, false, true);
 
 @use 'node_modules/@matteusan/sentro' with (
   $prefix: 'hs',
   $context: 'theme',
-  $token-validation: $validation,
-  $key-validation: $validation,
-  $breakpoint-validation: $validation
+  $token-validation: $_validation,
+  $key-validation: $_validation,
+  $breakpoint-validation: $_validation
 );
 
 @forward 'color' as color-*;
