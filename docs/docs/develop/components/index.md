@@ -84,9 +84,9 @@ Modifying the global styles of a component takes advantage of Sass' modules syst
 @use 'node_modules/@devprotocol/hashi/hs-component';
 
 @include hs-component.extend('class-name') {
-  @include hs-component.color(($preset));
-  @include hs-component.shape(($preset));
-  @include hs-component.typography(($preset));
+  @include hs-component.color($preset);
+  @include hs-component.shape($preset);
+  @include hs-component.typography($preset);
 }
 ```
 
