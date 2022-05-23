@@ -70,6 +70,12 @@ modifications. Henceforth, it will only support default states, and media querie
 </section>
 ```
 
+### Applying utility classes to modify hashi components
+By design, you CANNOT use utility classes to modify pre-made components. The stylesheets for those were architected to
+minimize style bleeding and accepting unwanted effects from style cascading. This decision was also made to enforce more
+consistency in terms of component styling exclusive to the project. To include more variants, you'd have to use the
+component's [`extend()` API](../components/index.md#extension-scss).
+
 ## Utility Classes Documentation
 - [Syntax](syntax.md)
 - [Layout Utils](layout-utils.md)
