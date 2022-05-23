@@ -21,7 +21,7 @@
  */
 
 const hashiExtractor = (content) => {
-  return content.match(/[@]?[hs-]?[A-z0-9-:\/]+/g);
+  return content.match(/@?[hs-]?[A-z\d-:\/]+/g);
 }
 
 /**
