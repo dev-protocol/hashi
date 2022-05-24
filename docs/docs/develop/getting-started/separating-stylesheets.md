@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Separating Stylesheets
 slug: /develop/getting-started/separating-stylesheets
 displayed_sidebar: develop
 ---
