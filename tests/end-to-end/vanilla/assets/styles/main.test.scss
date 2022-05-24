@@ -46,7 +46,7 @@
 
   section:not([class^='hs-']) {
     display: flex;
-    gap: hashi.token-get('space-xsa');
+    gap: hashi.token-get('space-xs');
     margin: hashi.token-get('margin-sm') 0;
   }
 
