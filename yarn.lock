@@ -12,16 +12,9 @@
 "@devprotocol/hashi-themes@file:./packages/themes":
   version "0.1.0"
   dependencies:
-    "@devprotocol/hashi" "1.2.0"
+    "@devprotocol/hashi" "1.2.1"
 
-"@devprotocol/hashi@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.2.0.tgz#b5418203a42f5e4e90c4a8727520f056ea8a0e21"
-  integrity sha512-aQFUulx+w+mLuPlq2rIKHUKF0zD6PVob96pApZ0EJ+WmQBkuub5gEQVO4Ht/FOuPAFsAaRpBHAm3gdOy747DpQ==
-  dependencies:
-    "@matteusan/sentro" "0.1.22"
-
-"@devprotocol/hashi@file:./packages/hashi":
+"@devprotocol/hashi@1.2.1", "@devprotocol/hashi@file:./packages/hashi":
   version "1.2.1"
   dependencies:
     "@matteusan/sentro" "0.1.22"
@@ -3122,10 +3115,10 @@ typedarray@^0.0.6:
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.6.4:
-  version "4.6.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
-  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
+typescript@4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
+  integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"
