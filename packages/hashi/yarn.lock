@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@matteusan/sentro@0.1.22":
-  "integrity" "sha512-j7XFgzKiPB8Az9cJVdfeFBP4VHiJu5y9zGPMg9JtzG5ILQwmg29rWzgTWotigeGix/iK1pQCQ8T97wDWyYRwsQ=="
-  "resolved" "https://registry.npmjs.org/@matteusan/sentro/-/sentro-0.1.22.tgz"
-  "version" "0.1.22"
+"@matteusan/sentro@0.1.23":
+  "integrity" "sha512-lVnDTSy/xjn7KHPkAXEGMCOHKSEY3OBMtbhfXxZu9ZcDWWbU57pttojVV/XMW7Wkr7BGOlM1hbBggzV22adTnA=="
+  "resolved" "https://registry.npmjs.org/@matteusan/sentro/-/sentro-0.1.23.tgz"
+  "version" "0.1.23"

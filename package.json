@@ -16,7 +16,7 @@
   "devDependencies": {
     "@devprotocol/hashi": "file:./packages/hashi",
     "@devprotocol/hashi-themes": "file:./packages/themes",
-    "@matteusan/sentro": "0.1.22",
+    "@matteusan/sentro": "0.1.23",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "4.1.3",
