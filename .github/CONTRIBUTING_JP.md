@@ -31,4 +31,5 @@ Hashiに貢献するときに、「いけること」と「いけないこと」
 今の準備パッケージのリストはHashiの今の版にいつも動きます。でも、ルートフォルダとテストフォルダが「Hashiの開発中版」が必要です。だから、そのフォルダが「Hashiの開発中版」を使いに設定しました。
 
 ### コードのスタイル
-If you're worried about code style, we've provided an `.editorconfig` file for you to consume.
+Hashiの`.editorconfig`ファイルを使ってください。
+
