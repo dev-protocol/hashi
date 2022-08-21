@@ -32,14 +32,14 @@
   $fill-disabled: map.get($fills, 'disabled');
   $ink-disabled: map.get($inks, 'disabled');
   $border: map.get($borders, 'default');
-  
+
   &:not(:disabled) {
     @include hs-core.color-bind('button', (
       fill: transparent,
       ink: $fill,
       border: transparent
     ));
-    
+
     &:hover {
       @include hs-core.color-bind('button', (
         fill: rgba(_raw($fill), hs-core.$color-fill-hover-opacity),
@@ -47,7 +47,7 @@
         border: rgba(_raw($border), hs-core.$color-border-hover-opacity)
       ));
     }
-    
+
     &:focus {
       @include hs-core.color-bind('button', (
         fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
@@ -55,7 +55,7 @@
         border: rgba(_raw($border), hs-core.$color-border-focus-opacity)
       ));
     }
-    
+
     &:active {
       @include hs-core.color-bind('button', (
         fill: rgba(_raw($fill), hs-core.$color-fill-active-opacity),
@@ -64,7 +64,8 @@
       ));
     }
   }
-  
+
+  &.is-disabled,
   &:disabled {
     @include hs-core.color-bind('button', (
       fill: transparent,
@@ -87,14 +88,14 @@
   $border-focus: map.get($borders, 'focus');
   $border-active: map.get($borders, 'active');
   $border-disabled: map.get($borders, 'disabled');
-  
+
   &:not(:disabled) {
     @include hs-core.color-bind('button', (
       fill: transparent,
       ink: $fill,
       border: $border
     ));
-  
+
     &:focus {
       @include hs-core.color-bind('button', (
         fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
@@ -102,7 +103,7 @@
         border: $border
       ));
     }
-    
+
     &:hover {
       @include hs-core.color-bind('button', (
         fill: $fill-hover,
@@ -110,7 +111,7 @@
         border: $border-hover
       ));
     }
-    
+
     &:active {
       @include hs-core.color-bind('button', (
         fill: $fill-active,
@@ -119,7 +120,8 @@
       ));
     }
   }
-  
+
+  &.is-disabled,
   &:disabled {
     @include hs-core.color-bind('button', (
       fill: transparent,
@@ -142,14 +144,14 @@
   $border-focus: map.get($borders, 'focus');
   $border-active: map.get($borders, 'active');
   $border-disabled: map.get($borders, 'disabled');
-  
+
   &:not(:disabled) {
     @include hs-core.color-bind('button', (
       fill: $fill,
       ink: $ink,
       border: $border
     ));
-    
+
     &:hover {
       @include hs-core.color-bind('button', (
         fill: $fill-hover,
@@ -157,7 +159,7 @@
         border: $border-hover
       ));
     }
-    
+
     &:focus {
       @include hs-core.color-bind('button', (
         fill: $fill-focus,
@@ -165,7 +167,7 @@
         border: $border-focus
       ));
     }
-    
+
     &:active {
       @include hs-core.color-bind('button', (
         fill: $fill-active,
@@ -174,7 +176,8 @@
       ));
     }
   }
-  
+
+  &.is-disabled,
   &:disabled {
     @include hs-core.color-bind('button', (
       fill: $fill-disabled,
