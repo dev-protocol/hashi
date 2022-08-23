@@ -20,28 +20,7 @@
  *  SOFTWARE.
  */
 
-const { src, dest, series } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const purgecss = require('gulp-purgecss');
-const hashi = require('@devprotocol/hashi/config/purgecss');
-
-function sassTaskTest() {
-  return src(['tests/end-to-end/**/*.test.scss'], { sourcemaps: true })
-    .pipe(sass({
-      includePaths: ['node_modules']
-    }).on('error', sass.logError))
-    .pipe(dest('./tests', { sourcemaps: '.' }));
-}
-
-function purge() {
-  return src('tests/end-to-end/**/*.css')
-    .pipe(purgecss(hashi.purgeConfig(['html', {
-      content: ['tests/**/*.test.html']
-    }])))
-    .pipe(dest('./tests'))
-}
-
-exports.default = series(
-  sassTaskTest,
-  // purge
-);
+const path = require('path');
+const sassTest = require('sass-true');
+const filePath = path.join(__dirname, './main.test.scss');
+sassTest.runSass({ file: filePath }, { describe, it });
