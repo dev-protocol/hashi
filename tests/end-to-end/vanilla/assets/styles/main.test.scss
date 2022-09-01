@@ -31,6 +31,7 @@
 @use 'node_modules/@devprotocol/hashi/hs-form-field';
 @use 'node_modules/@devprotocol/hashi/hs-link';
 @use 'node_modules/@devprotocol/hashi/hs-profile';
+@use 'node_modules/@devprotocol/hashi/hs-tick-field';
 @use 'node_modules/@devprotocol/hashi/hs-select-field';
 @use 'node_modules/@devprotocol/hashi/hs-wallet';
 
@@ -76,6 +77,7 @@
   @include hs-form-field.render();
   @include hs-link.render();
   @include hs-profile.render();
+  @include hs-tick-field.render();
   @include hs-select-field.render();
   @include hs-wallet.render();
 

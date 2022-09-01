@@ -30,7 +30,7 @@ function sassTaskTest() {
     .pipe(sass({
       includePaths: ['node_modules']
     }).on('error', sass.logError))
-    .pipe(dest('./tests', { sourcemaps: '.' }));
+    .pipe(dest('./tests/end-to-end', { sourcemaps: '.' }));
 }
 
 function purge() {
