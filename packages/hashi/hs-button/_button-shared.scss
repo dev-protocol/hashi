@@ -33,35 +33,37 @@
   $ink-disabled: map.get($inks, 'disabled');
   $border: map.get($borders, 'default');
 
-  &:not(:disabled) {
-    @include hs-core.color-bind('button', (
-      fill: transparent,
-      ink: $fill,
-      border: transparent
-    ));
-
-    &:hover {
+  &:not(.is-disabled) {
+    &:not(:disabled) {
       @include hs-core.color-bind('button', (
-        fill: rgba(_raw($fill), hs-core.$color-fill-hover-opacity),
+        fill: transparent,
         ink: $fill,
-        border: rgba(_raw($border), hs-core.$color-border-hover-opacity)
+        border: transparent
       ));
-    }
 
-    &:focus {
-      @include hs-core.color-bind('button', (
-        fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
-        ink: $fill,
-        border: rgba(_raw($border), hs-core.$color-border-focus-opacity)
-      ));
-    }
+      &:hover {
+        @include hs-core.color-bind('button', (
+          fill: rgba(_raw($fill), hs-core.$color-fill-hover-opacity),
+          ink: $fill,
+          border: rgba(_raw($border), hs-core.$color-border-hover-opacity)
+        ));
+      }
 
-    &:active {
-      @include hs-core.color-bind('button', (
-        fill: rgba(_raw($fill), hs-core.$color-fill-active-opacity),
-        ink: $fill,
-        border: rgba(_raw($border), hs-core.$color-border-active-opacity)
-      ));
+      &:focus {
+        @include hs-core.color-bind('button', (
+          fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
+          ink: $fill,
+          border: rgba(_raw($border), hs-core.$color-border-focus-opacity)
+        ));
+      }
+
+      &:active {
+        @include hs-core.color-bind('button', (
+          fill: rgba(_raw($fill), hs-core.$color-fill-active-opacity),
+          ink: $fill,
+          border: rgba(_raw($border), hs-core.$color-border-active-opacity)
+        ));
+      }
     }
   }
 
@@ -89,35 +91,37 @@
   $border-active: map.get($borders, 'active');
   $border-disabled: map.get($borders, 'disabled');
 
-  &:not(:disabled) {
-    @include hs-core.color-bind('button', (
-      fill: transparent,
-      ink: $fill,
-      border: $border
-    ));
-
-    &:focus {
+  &:not(.is-disabled) {
+    &:not(:disabled) {
       @include hs-core.color-bind('button', (
-        fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
+        fill: transparent,
         ink: $fill,
         border: $border
       ));
-    }
 
-    &:hover {
-      @include hs-core.color-bind('button', (
-        fill: $fill-hover,
-        ink: $ink,
-        border: $border-hover
-      ));
-    }
+      &:focus {
+        @include hs-core.color-bind('button', (
+          fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
+          ink: $fill,
+          border: $border
+        ));
+      }
 
-    &:active {
-      @include hs-core.color-bind('button', (
-        fill: $fill-active,
-        ink: $ink,
-        border: $border-active
-      ));
+      &:hover {
+        @include hs-core.color-bind('button', (
+          fill: $fill-hover,
+          ink: $ink,
+          border: $border-hover
+        ));
+      }
+
+      &:active {
+        @include hs-core.color-bind('button', (
+          fill: $fill-active,
+          ink: $ink,
+          border: $border-active
+        ));
+      }
     }
   }
 
@@ -145,35 +149,37 @@
   $border-active: map.get($borders, 'active');
   $border-disabled: map.get($borders, 'disabled');
 
-  &:not(:disabled) {
-    @include hs-core.color-bind('button', (
-      fill: $fill,
-      ink: $ink,
-      border: $border
-    ));
-
-    &:hover {
+  &:not(.is-disabled) {
+    &:not(:disabled) {
       @include hs-core.color-bind('button', (
-        fill: $fill-hover,
+        fill: $fill,
         ink: $ink,
-        border: $border-hover
+        border: $border
       ));
-    }
 
-    &:focus {
-      @include hs-core.color-bind('button', (
-        fill: $fill-focus,
-        ink: $ink,
-        border: $border-focus
-      ));
-    }
+      &:hover {
+        @include hs-core.color-bind('button', (
+          fill: $fill-hover,
+          ink: $ink,
+          border: $border-hover
+        ));
+      }
 
-    &:active {
-      @include hs-core.color-bind('button', (
-        fill: $fill-active,
-        ink: $ink,
-        border: $border-active
-      ));
+      &:focus {
+        @include hs-core.color-bind('button', (
+          fill: $fill-focus,
+          ink: $ink,
+          border: $border-focus
+        ));
+      }
+
+      &:active {
+        @include hs-core.color-bind('button', (
+          fill: $fill-active,
+          ink: $ink,
+          border: $border-active
+        ));
+      }
     }
   }
 
