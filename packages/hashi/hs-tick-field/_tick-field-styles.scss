@@ -1,0 +1,139 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../hs-core';
+@use 'sass:map';
+
+@use 'tick-field-base';
+
+$fill: 'surface-200' !default;
+$fill-hover: 'primary-200';
+$fill-focus: 'accent-400';
+$fill-disabled: 'disabled' !default;
+$ink: 'surface-ink' !default;
+$ink-disabled: 'disabled-ink' !default;
+$border: 'primary-400' !default;
+$border-hover: 'accent-400' !default;
+$border-disabled: 'disabled' !default;
+
+$radius: 'small' !default;
+$padding: ('sm' 'md') !default;
+
+$family: 'body' !default;
+$size: 'body' !default;
+$weight: 'bold' !default;
+$line-height: 'normal' !default;
+
+$label-ink: 'surface-ink' !default;
+$helper-ink: 'surface-ink' !default;
+
+$gap: 'md' !default;
+
+$theme: () !default;
+
+$_fill: hs-core.prioritize(map.get($theme, 'fill'), $fill);
+$_fill-hover: hs-core.prioritize(map.get($theme, 'fill-hover'), $fill-hover);
+$_fill-focus: hs-core.prioritize(map.get($theme, 'fill-focus'), $fill-focus);
+$_fill-disabled: hs-core.prioritize(map.get($theme, 'fill-disabled'), $fill-disabled);
+$_ink: hs-core.prioritize(map.get($theme, 'ink'), $ink);
+$_ink-disabled: hs-core.prioritize(map.get($theme, 'ink-disabled'), $ink-disabled);
+$_border: hs-core.prioritize(map.get($theme, 'border'), $border);
+$_border-hover: hs-core.prioritize(map.get($theme, 'border-hover'), $border-hover);
+$_border-disabled: hs-core.prioritize(map.get($theme, 'border-disabled'), $border-disabled);
+
+$_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
+$_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+
+$_family: hs-core.prioritize(map.get($theme, 'family'), $family);
+$_size: hs-core.prioritize(map.get($theme, 'size'), $size);
+$_weight: hs-core.prioritize(map.get($theme, 'weight'), $weight);
+$_line-height: hs-core.prioritize(map.get($theme, 'line-height'), $line-height);
+
+$_label-ink: hs-core.prioritize(map.get($theme, 'label-ink'), $label-ink);
+$_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
+
+$_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
+
+// TODO: Find a way to include this svg for checkboxes.
+// $_svg-content: "%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='white' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' /%3E%3C/svg%3E";
+
+@mixin render() {
+  @include tick-field-base.init() {
+    @include hs-core.color-apply('tick-field', (
+      fill: $_fill,
+      ink: $_ink,
+      border: $_border,
+    ));
+    @include hs-core.shape-apply('tick-field', (
+      padding: $_padding,
+      radius: $_radius,
+      border-width: 1px,
+      border-style: solid,
+      gap: $_gap
+    ));
+
+    @include hs-core.color-bind('tick-field-label', (
+      ink: $_label-ink,
+    ));
+    @include hs-core.typography-bind('tick-field-label', (
+      family: $_family,
+      size: $_size,
+      weight: $_weight,
+      line-height: $_line-height
+    ));
+
+    @include hs-core.color-bind('tick-field-helper', (
+      ink: $_helper-ink,
+    ));
+    @include hs-core.typography-apply('tick-field-helper', (
+      family: 'small',
+      size: 'small',
+      weight: 'light',
+      line-height: 'condensed'
+    ));
+
+    &:hover {
+      @include hs-core.color-bind('tick-field', (
+        border: $_border-hover
+      ));
+    }
+
+    .hs-tick-field__input {
+      @include hs-core.color-border('tick-field-input', 'disabled');
+
+      &:checked {
+        @include hs-core.color-border('tick-field-input', $_border-hover, 'bind');
+      }
+    }
+
+    &.is-filled {
+      @include hs-core.color-border('tick-field', $_fill, 'bind');
+      @include hs-core.shape-shadow('tick-field', 'low');
+
+      &:hover {
+        @include hs-core.color-bind('tick-field', (
+          border: $_border-hover
+        ));
+      }
+    }
+  }
+}
