@@ -20,7 +20,7 @@
     "@matteusan/sentro": "0.1.23",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
-    "gulp-purgecss": "4.1.3",
+    "gulp-purgecss": "5.0.0",
     "gulp-sass": "5.1.0",
     "sass": "1.54.4",
     "sass-true": "6.1.0",
