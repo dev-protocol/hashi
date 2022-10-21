@@ -83,20 +83,30 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       outline: none;
       @include hs-core.prefix(appearance, none, ('moz', 'webkit'));
       @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
-  
-      @include hs-core.color-apply('select-field', (
-        fill: $_fill,
-        ink: $_ink,
-        border: $_border
-      ));
-  
-      &:focus {
-        @include hs-core.color-bind('select-field', (
-          border: $_border-focus
+
+      &:not(:disabled) {
+        @include hs-core.color-apply('select-field', (
+          fill: $_fill,
+          ink: $_ink,
+          border: $_border
+        ));
+
+        &:focus {
+          @include hs-core.color-bind('select-field', (
+            border: $_border-focus
+          ));
+        }
+      }
+
+      &:disabled {
+        @include hs-core.color-apply('select-field', (
+          fill: $_fill-disabled,
+          ink: $_ink-disabled,
+          border: $_border-disabled
         ));
       }
     }
-    
+
     &.is-required {
       .hs-select-field__label::after {
         content: '*';
@@ -104,19 +114,19 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
         margin-left: hs-core.token-get('margin-xs');
       }
     }
-  
+
     &.is-filled {
       @include hs-core.color-bind('select-field', (
         border: $_fill,
       ));
-      
-      .hs-select-field__input {
+
+      .hs-select-field__input:not(:disabled) {
         @include hs-core.shape-apply('select-field', (
           shadow: 'low'
         ));
       }
     }
-  
+
     &.is-danger {
       @include hs-core.color-bind('select-field', (
         ink: 'danger-400',
@@ -127,28 +137,28 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       @include hs-core.color-bind('select-field-helper', (
         ink: 'danger-400',
       ));
-  
-      .hs-select-field__input {
+
+      .hs-select-field__input:not(:disabled) {
         &:focus {
           @include hs-core.color-bind('select-field', (
             border: 'danger-400'
           ));
         }
       }
-  
+
       &:not(.is-filled) {
-        .hs-select-field__input {
+        .hs-select-field__input:not(:disabled) {
           @include hs-core.color-bind('select-field', (
             border: 'danger-400'
           ));
         }
       }
-    
+
       svg {
         color: hs-core.token-get('danger-400');
       }
     }
-  
+
     &.is-side-label {
       flex-flow: row nowrap;
       align-items: center;
