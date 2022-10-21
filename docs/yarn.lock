@@ -2363,12 +2363,12 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@devprotocol/hashi@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.2.1.tgz#f20725eab68e5daa48bd1bd410b8505897b9d64b"
-  integrity sha512-OghUDbal+ufDCknp9EQes58SHZBxFFMnuUMweQcE+gE3N+abyJMJTWM5sSmabE0UwO6dW7qFRxTHTsMWudUDWA==
+"@devprotocol/hashi@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.3.1.tgz#56d76bb0eb956d774ddeb114c23c094d3c01bf4c"
+  integrity sha512-Wv/pYyqwYix2NlG6QglrYIWhY2moofm8jcIIlnzhl0KxngP+PTMI9nJzaHSB7sGiVsNanKhC4XBYlchz23Nlyg==
   dependencies:
-    "@matteusan/sentro" "0.1.22"
+    "@matteusan/sentro" "0.1.23"
 
 "@docsearch/css@3.0.0":
   version "3.0.0"
@@ -2815,10 +2815,10 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@matteusan/sentro@0.1.22":
-  version "0.1.22"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.22.tgz#0caff06245426db6ca58c7817ba3c0ed08ea2674"
-  integrity sha512-j7XFgzKiPB8Az9cJVdfeFBP4VHiJu5y9zGPMg9JtzG5ILQwmg29rWzgTWotigeGix/iK1pQCQ8T97wDWyYRwsQ==
+"@matteusan/sentro@0.1.23":
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.23.tgz#9554653f6d7eba7a6358c4dabb21b320b5bd4547"
+  integrity sha512-lVnDTSy/xjn7KHPkAXEGMCOHKSEY3OBMtbhfXxZu9ZcDWWbU57pttojVV/XMW7Wkr7BGOlM1hbBggzV22adTnA==
 
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
