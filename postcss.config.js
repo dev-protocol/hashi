@@ -20,11 +20,4 @@
  *  SOFTWARE.
  */
 
-const defaultTheme = require('dev.theme');
-const defaultPlugin = require('dev.plugin');
-
-module.exports = {
-  prefix: 'hs',
-  plugins: defaultPlugin,
-  theme: defaultTheme,
-}
+module.exports = {};
