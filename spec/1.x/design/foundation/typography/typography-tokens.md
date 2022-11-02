@@ -8,14 +8,14 @@ Hashi uses tokens to enforce consistency throughout the ecosystem via the smalle
 Typography tokens are values that have to do with fonts, from the size and weights, to the leading and spacing. Like the
 other two, this also follows a particular schema.
 
-| Type       | Size (px) | Line Height (1.5) | Default Weight |
-|------------|-----------|-------------------|----------------|
-| Supertitle | 42        | 63                | 800            |
-| Title      | 36        | 54                | 700            |
-| Subtitle   | 24        | 30                | 700            |
-| Body       | 16        | 24                | 400            |
-| Mono       | 16        | 24                | 400            |
-| Small      | 12        | 18                | 300            |
+| Type       | Size (px)               | Line Height (1.5) | Default Weight |
+|------------|-------------------------|-------------------|----------------|
+| Supertitle | clamp(36px, 10vw, 42px) | 63                | 800            |
+| Title      | clamp(26px, 8vw, 36px)  | 54                | 700            |
+| Subtitle   | clamp(18px, 6vw, 24px)  | 30                | 700            |
+| Body       | clamp(14px, 4vw, 16px)  | 24                | 400            |
+| Mono       | clamp(14px, 4vw, 16px)  | 24                | 400            |
+| Small      | clamp(10px, 2vw, 12px)  | 18                | 300            |
 
 ### Weight Specs
 | Type    | Weight |
