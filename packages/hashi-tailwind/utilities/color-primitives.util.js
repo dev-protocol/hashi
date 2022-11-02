@@ -50,14 +50,14 @@ module.exports = {
     DEFAULT: 'rgba(255, 255, 255, .12)',
     'ink': 'rgba(255, 255, 255, .37)',
   },
-  scarlet: {
+  'scarlet': {
     200: '#ff7860',
     300: '#ff583a',
     400: '#ff3815',
     600: '#b71f04',
     'ink': '#ffffff',
   },
-  plox: {
+  'plox': {
     200: '#eb48f8',
     300: '#e71cf7',
     400: '#d500e6',
@@ -78,21 +78,21 @@ module.exports = {
     600: '#008dac',
     'ink': '#000000',
   },
-  success: {
+  'success': {
     200: '#67cf72',
     300: '#43c451',
     400: '#30a83d',
     600: '#197a23',
     'ink': '#ffffff',
   },
-  warning: {
+  'warning': {
     200: '#ffc751',
     300: '#ffbb27',
     400: '#fdad00',
     600: '#ac7600',
     'ink': '#000000',
   },
-  danger: {
+  'danger': {
     200: '#e45d5d',
     300: '#df3737',
     400: '#c92020',

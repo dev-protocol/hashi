@@ -20,43 +20,13 @@
  *  SOFTWARE.
  */
 
-const color = require('utilities/color.util');
-const shape = require('utilities/shape.util');
-const typography = require('utilities/typography.util');
+const primitives = require('./color-primitives.util');
 
 module.exports = {
-  screens: {
-    // Duplicated for backwards compat.
-    sm: '320px',
-    small: '320px',
-    md: '630px',
-    medium: '630px',
-    lg: '890px',
-    large: '890px'
-  },
-  colors: color,
-  // rounded-[]
-  borderRadius: shape['radius'],
-  // border-[]
-  borderWidth: shape['stroke-width'],
-  // gap-[]
-  gap: shape['gap'],
-  // m[]-[]
-  margin: shape['spacing'],
-  // p[]-[]
-  padding: shape['el-spacing'],
-  // outline-[]
-  outlineWidth: shape['stroke-width'],
-  // outline-offset-[]
-  outlineOffset: shape['spacing'],
-  // ring-offset-[]
-  ringOffsetWidth: shape['spacing'],
-  // ring-[]
-  ringWidth: shape['stroke-width'],
-  // space-[]-[]
-  spacing: shape['spacing'],
-  // text-[]
-  fontSize: typography['size'],
-  // leading-[]
-  lineHeight: typography['line-height'],
+  'primary': primitives['dp-black'],
+  'accent': primitives['native-blue'],
+  'surface': {
+    default: primitives['dp-white'][200],
+    ink: primitives['dp-white']['ink']
+  }
 };
