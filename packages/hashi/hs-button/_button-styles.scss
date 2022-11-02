@@ -139,18 +139,18 @@ $_borders: (
       weight: $_weight,
       line-height: $_line-height
     ));
-    
+
     @include shared.text-style(
       $fills: $_fills,
       $inks: $_inks,
       $borders: $_borders
     );
-  
+
     &.is-icon-only {
       @include hs-core.key-bind('button-min-width', auto !important);
       @include hs-core.key-bind('button-padding', _assert-icon-only-padding($_padding));
     }
-  
+
     @each $state in $_states {
       &.is-#{$state} {
         @include shared.text-style(
@@ -175,14 +175,14 @@ $_borders: (
         );
       }
     }
-    
+
     &.is-outlined {
       @include shared.outlined-style(
         $fills: $_fills,
         $inks: $_inks,
         $borders: $_borders
       );
-      
+
       @each $state in $_states {
         &.is-#{$state} {
           @include shared.outlined-style(
@@ -208,14 +208,14 @@ $_borders: (
         }
       }
     }
-  
+
     &.is-filled {
       @include shared.filled-style(
         $fills: $_fills,
         $inks: $_inks,
         $borders: $_borders
       );
-  
+
       @each $state in $_states {
         &.is-#{$state} {
           @include shared.filled-style(
@@ -240,19 +240,19 @@ $_borders: (
           );
         }
       }
-  
+
       &.is-raised {
         @include hs-core.shape-apply('button', (
           shadow: 'low'
         ));
-    
+
         &:hover,
         &:focus {
           @include hs-core.shape-apply('button', (
             shadow: 'normal'
           ));
         }
-    
+
         &:active {
           @include hs-core.shape-apply('button', (
             shadow: 'high'
@@ -260,7 +260,7 @@ $_borders: (
         }
       }
     }
-    
+
     &.is-fullwidth {
       @include hs-core.key-bind('button-width', 100%);
       @include hs-core.key-bind('button-min-width', auto);
@@ -276,15 +276,15 @@ $_borders: (
 @function _assert-icon-only-padding($padding-list) {
   $padding-top: hs-core.token-switch-raw('padding-#{list.nth($padding-list, 1)}', list.nth($padding-list, 1));
   @return $padding-top;
-  
+
   @if list.length($padding-list) == 2 {
     $padding-right: hs-core.token-switch-raw('padding-#{list.nth($padding-list, 2)}', list.nth($padding-list, 2));
     @return math.max($padding-top, $padding-right);
-    
+
     @if list.length($padding-list) == 3 {
       $padding-bottom: hs-core.token-switch-raw('padding-#{list.nth($padding-list, 3)}', list.nth($padding-list, 3));
       @return math.max($padding-top, $padding-right, $padding-bottom);
-      
+
       @if list.length($padding-list) == 4 {
         $padding-left: hs-core.token-switch-raw('padding-#{list.nth($padding-list, 4)}', list.nth($padding-list, 4));
         @return math.max($padding-top, $padding-right, $padding-bottom, $padding-left);
