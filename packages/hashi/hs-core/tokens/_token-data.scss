@@ -123,12 +123,12 @@ $hs-tokens: (
   // ),
   // ===== TYPOGRAPHY ===== //
   'size': (
-    'supertitle': tools.to-rem(42px),
-    'title': tools.to-rem(36px),
-    'subtitle': tools.to-rem(24px),
-    'body': tools.to-rem(16px),
-    'mono': tools.to-rem(16px),
-    'small': tools.to-rem(14px),
+    'supertitle': clamp(#{tools.to-rem(32px)}, 10vw, #{tools.to-rem(42px)}),
+    'title': clamp(#{tools.to-rem(26px)}, 8vw, #{tools.to-rem(36px)}),
+    'subtitle': clamp(#{tools.to-rem(18px)}, 6vw, #{tools.to-rem(24px)}),
+    'body': clamp(#{tools.to-rem(14px)}, 4vw, #{tools.to-rem(16px)}),
+    'mono': clamp(#{tools.to-rem(14px)}, 4vw, #{tools.to-rem(16px)}),
+    'small': clamp(#{tools.to-rem(10px)}, 2vw, #{tools.to-rem(12px)}),
   ),
   'weight': (
     'black': 800,
