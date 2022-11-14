@@ -19,7 +19,7 @@
     "@csstools/postcss-sass": "5.0.1",
     "@devprotocol/hashi": "file:./packages/hashi",
     "@devprotocol/hashi-themes": "file:./packages/themes",
-    "@matteusan/sentro": "0.1.23",
+    "@matteusan/sentro": "0.1.25",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "5.0.0",

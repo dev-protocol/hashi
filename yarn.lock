@@ -326,7 +326,7 @@
 "@devprotocol/hashi@1.4.0", "@devprotocol/hashi@file:./packages/hashi":
   version "1.4.0"
   dependencies:
-    "@matteusan/sentro" "0.1.23"
+    "@matteusan/sentro" "0.1.25"
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.5"
@@ -619,10 +619,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@matteusan/sentro@0.1.23":
-  version "0.1.23"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.23.tgz#9554653f6d7eba7a6358c4dabb21b320b5bd4547"
-  integrity sha512-lVnDTSy/xjn7KHPkAXEGMCOHKSEY3OBMtbhfXxZu9ZcDWWbU57pttojVV/XMW7Wkr7BGOlM1hbBggzV22adTnA==
+"@matteusan/sentro@0.1.25":
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.25.tgz#626f8795ada5f31a746acad80c4c49cc6134d879"
+  integrity sha512-WADroUoOEnbGBij9ZSJkGbYp2yiNVi6UJZymJsSVyo1zuekM1pIzKF8+nI31SGt5wS3ChmOOR5+w1Z7c6jg9TQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
