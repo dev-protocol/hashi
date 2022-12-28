@@ -11,6 +11,7 @@
     "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
     "build:ts": "webpack --config webpack.config.js",
     "build:tw": "prejss-cli ./packages/hashi-tailwind/**/index.css --format commonjs",
+    "build:hs-tw": "rollup -c",
     "test:html": "gulp --gulpfile=\"./gulpfile-tests.ts\"",
     "test:sass": "jest --config=\"jest-sass.config.ts\"",
     "test:ts": "jest --config=\"jest-ts.config.ts\""
@@ -20,6 +21,7 @@
     "@devprotocol/hashi": "file:./packages/hashi",
     "@devprotocol/hashi-themes": "file:./packages/themes",
     "@matteusan/sentro": "0.1.25",
+    "@rollup/plugin-commonjs": "^24.0.0",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "5.0.0",
@@ -27,6 +29,7 @@
     "postcss": "8.4.20",
     "postcss-cli": "10.1.0",
     "prejss-cli": "0.3.3",
+    "rollup": "^3.9.0",
     "sass": "1.56.2",
     "sass-true": "6.1.0",
     "tailwindcss": "3.2.4",

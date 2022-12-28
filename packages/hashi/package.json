@@ -2,7 +2,13 @@
   "name": "@devprotocol/hashi",
   "version": "1.4.0",
   "description": "Dev Protocol's design system implementation for the web.",
-  "main": "tailwind/index.js",
+  "main": "tailwind/index.cjs",
+  "exports":{
+		"./tailwind": {
+			"import": "./tailwind/index.mjs",
+			"require": "./tailwind/index.cjs"
+		}
+  },
   "repository": "https://github.com/dev-protocol/hashi-web",
   "author": "Dev Protocol",
   "license": "MIT",
