@@ -1,18 +1,20 @@
-import commonjs from '@rollup/plugin-commonjs'
+const files=[
+  'packages/hashi/tailwind/index.js',
+  'packages/hashi/config/purgecss.js'
+]
 
 export default [
-  {
-    input: 'packages/hashi/tailwind/index.js',
+  ...files.map(input=>({
+    input,
     output: [
       {
-        file: 'packages/hashi/tailwind/index.mjs',
+        file: input.replace('.js', '.mjs'),
         format: 'es',
       },
       {
-        file: 'packages/hashi/tailwind/index.cjs',
+        file: input.replace('.js', '.cjs'),
         format: 'cjs',
       },
     ],
-    plugins: [commonjs()],
-  },
+  }))
 ]
