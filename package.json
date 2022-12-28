@@ -11,6 +11,7 @@
     "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
     "build:ts": "webpack --config webpack.config.js",
     "build:tw": "prejss-cli ./packages/hashi-tailwind/**/index.css --format commonjs",
+    "build:hs-tw": "rollup -c",
     "test:html": "gulp --gulpfile=\"./gulpfile-tests.ts\"",
     "test:sass": "jest --config=\"jest-sass.config.ts\"",
     "test:ts": "jest --config=\"jest-ts.config.ts\""
