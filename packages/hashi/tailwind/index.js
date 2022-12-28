@@ -216,7 +216,7 @@ const hsTypographyLineHeight = {
   'condensed': 'var(--hs-theme-line-height-condensed)',
 };
 
-export default {
+module.exports = {
   theme: {
     screens: {
       // Duplicated for backwards compat.
