@@ -42,6 +42,6 @@ function purgeConfig (extensions, options = {}) {
   return { ..._initConfig, ...options };
 }
 
-module.exports = {
+export default {
   purgeConfig
 }
