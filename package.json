@@ -1,6 +1,6 @@
 {
   "name": "hashi",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "index.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
@@ -11,7 +11,7 @@
     "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
     "build:ts": "webpack --config webpack.config.js",
     "build:tw": "prejss-cli ./packages/hashi-tailwind/**/index.css --format commonjs",
-    "build:hs-tw": "rollup -c",
+    "prebuild": "rollup -c",
     "test:html": "gulp --gulpfile=\"./gulpfile-tests.ts\"",
     "test:sass": "jest --config=\"jest-sass.config.ts\"",
     "test:ts": "jest --config=\"jest-ts.config.ts\""
@@ -28,7 +28,7 @@
     "postcss": "8.4.20",
     "postcss-cli": "10.1.0",
     "prejss-cli": "0.3.3",
-    "rollup": "^3.9.0",
+    "rollup": "3.9.0",
     "sass": "1.57.1",
     "sass-true": "6.1.0",
     "tailwindcss": "3.2.4",
