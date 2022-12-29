@@ -88,6 +88,13 @@ $_family-small: hs-core.prioritize(map.get($theme, 'family-small'), $family-smal
 $_extend: hs-core.prioritize(map.get($theme, 'extend'), $extend);
 $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
 
+$_tones: (
+  200: 8%,
+  300: 12%,
+  400: 20%,
+  600: 33%
+);
+
 @mixin init {
   :root {
     @include hs-core.token-config(
@@ -98,6 +105,13 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
         400: 'var(--hs-theme-#{$_primary}-400)',
         600: 'var(--hs-theme-#{$_primary}-600)',
         'ink': 'var(--hs-theme-#{$_primary}-ink)',
+        'dark': (
+          200: 'var(--hs-theme-#{$_primary-dark}-200)',
+          300: 'var(--hs-theme-#{$_primary-dark}-300)',
+          400: 'var(--hs-theme-#{$_primary-dark}-400)',
+          600: 'var(--hs-theme-#{$_primary-dark}-600)',
+          'ink': 'var(--hs-theme-#{$_primary-dark}-ink)',
+        ),
       ),
       $accent: (
         200: 'var(--hs-theme-#{$_accent}-200)',
@@ -105,6 +119,13 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
         400: 'var(--hs-theme-#{$_accent}-400)',
         600: 'var(--hs-theme-#{$_accent}-600)',
         'ink': 'var(--hs-theme-#{$_accent}-ink)',
+        'dark': (
+          200: 'var(--hs-theme-#{$_accent-dark}-200)',
+          300: 'var(--hs-theme-#{$_accent-dark}-300)',
+          400: 'var(--hs-theme-#{$_accent-dark}-400)',
+          600: 'var(--hs-theme-#{$_accent-dark}-600)',
+          'ink': 'var(--hs-theme-#{$_accent-dark}-ink)',
+        ),
       ),
       $surface: (
         200: 'var(--hs-theme-#{$_surface}-200)',
@@ -112,6 +133,13 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
         400: 'var(--hs-theme-#{$_surface}-400)',
         600: 'var(--hs-theme-#{$_surface}-600)',
         'ink': 'var(--hs-theme-#{$_surface}-ink)',
+        'dark': (
+          200: 'var(--hs-theme-#{$_surface-dark}-200)',
+          300: 'var(--hs-theme-#{$_surface-dark}-300)',
+          400: 'var(--hs-theme-#{$_surface-dark}-400)',
+          600: 'var(--hs-theme-#{$_surface-dark}-600)',
+          'ink': 'var(--hs-theme-#{$_surface-dark}-ink)',
+        ),
       ),
       $disabled: (
         'default': var(--hs-theme-dp-black-alpha),
@@ -119,7 +147,11 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
       ),
       $background: (
         'default': 'var(--hs-theme-#{$_background})',
-        'ink': 'var(--hs-theme-#{$_background-ink})'
+        'ink': 'var(--hs-theme-#{$_background-ink})',
+        'dark': (
+          'default': 'var(--hs-theme-#{$_dark-background})',
+          'ink': 'var(--hs-theme-#{$_dark-background-ink})',
+        ),
       ),
       $radius: (
         'small': 'var(--hs-theme-#{$_radius-small})',
@@ -144,6 +176,26 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
       ),
     );
     @include hs-core.token-config($map: $_extend);
+    @include hs-core.token-config(
+      $primary-alpha: (
+        200: rgba(_raw('#{$_primary}-200'), 8%),
+        300: rgba(_raw('#{$_primary}-300'), 12%),
+        400: rgba(_raw('#{$_primary}-400'), 20%),
+        600: rgba(_raw('#{$_primary}-600'), 33%)
+      ),
+      $accent-alpha: (
+        200: rgba(_raw('#{$_accent}-200'), 8%),
+        300: rgba(_raw('#{$_accent}-300'), 12%),
+        400: rgba(_raw('#{$_accent}-400'), 20%),
+        600: rgba(_raw('#{$_accent}-600'), 33%)
+      ),
+      $surface-alpha: (
+        200: rgba(_raw('#{$_surface}-200'), 8%),
+        300: rgba(_raw('#{$_surface}-300'), 12%),
+        400: rgba(_raw('#{$_surface}-400'), 20%),
+        600: rgba(_raw('#{$_surface}-600'), 33%)
+      ),
+    );
     --hs-transition-time: 0.2s;
   }
 
@@ -234,33 +286,51 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
       color-scheme: dark;
       @include hs-core.token-config(
         $primary: (
-          200: 'var(--hs-theme-#{$_primary-dark}-200)',
-          300: 'var(--hs-theme-#{$_primary-dark}-300)',
-          400: 'var(--hs-theme-#{$_primary-dark}-400)',
-          600: 'var(--hs-theme-#{$_primary-dark}-600)',
-          'ink': 'var(--hs-theme-#{$_primary-dark}-ink)',
+          200: hs-core.token-get('primary-dark-200'),
+          300: hs-core.token-get('primary-dark-300'),
+          400: hs-core.token-get('primary-dark-400'),
+          600: hs-core.token-get('primary-dark-600'),
+          'ink': hs-core.token-get('primary-dark-ink'),
+          'alpha': (
+            200: rgba(_raw('primary-dark-200'), 8%),
+            300: rgba(_raw('primary-dark-300'), 12%),
+            400: rgba(_raw('primary-dark-400'), 20%),
+            600: rgba(_raw('primary-dark-600'), 33%)
+          ),
         ),
         $accent: (
-          200: 'var(--hs-theme-#{$_accent-dark}-200)',
-          300: 'var(--hs-theme-#{$_accent-dark}-300)',
-          400: 'var(--hs-theme-#{$_accent-dark}-400)',
-          600: 'var(--hs-theme-#{$_accent-dark}-600)',
-          'ink': 'var(--hs-theme-#{$_accent-dark}-ink)',
+          200: hs-core.token-get('accent-dark-200'),
+          300: hs-core.token-get('accent-dark-300'),
+          400: hs-core.token-get('accent-dark-400'),
+          600: hs-core.token-get('accent-dark-600'),
+          'ink': hs-core.token-get('accent-dark-ink'),
+          'alpha': (
+            200: rgba(_raw('accent-dark-200'), 8%),
+            300: rgba(_raw('accent-dark-300'), 12%),
+            400: rgba(_raw('accent-dark-400'), 20%),
+            600: rgba(_raw('accent-dark-600'), 33%)
+          ),
         ),
         $surface: (
-          200: 'var(--hs-theme-#{$_surface-dark}-200)',
-          300: 'var(--hs-theme-#{$_surface-dark}-300)',
-          400: 'var(--hs-theme-#{$_surface-dark}-400)',
-          600: 'var(--hs-theme-#{$_surface-dark}-600)',
-          'ink': 'var(--hs-theme-#{$_surface-dark}-ink)',
+          200: hs-core.token-get('surface-dark-200'),
+          300: hs-core.token-get('surface-dark-300'),
+          400: hs-core.token-get('surface-dark-400'),
+          600: hs-core.token-get('surface-dark-600'),
+          'ink': hs-core.token-get('surface-dark-ink'),
+          'alpha': (
+            200: rgba(_raw('surface-dark-200'), 8%),
+            300: rgba(_raw('surface-dark-300'), 12%),
+            400: rgba(_raw('surface-dark-400'), 20%),
+            600: rgba(_raw('surface-dark-600'), 33%)
+          ),
         ),
         $disabled: (
           'default': var(--hs-theme-dp-white-alpha),
           'ink': var(--hs-theme-dp-white-alpha-ink)
         ),
         $background: (
-          'default': 'var(--hs-theme-#{$_dark-background})',
-          'ink': 'var(--hs-theme-#{$_dark-background-ink})'
+          'default': hs-core.token-get('background-dark'),
+          'ink': hs-core.token-get('background-dark-ink'),
         ),
       );
     }
@@ -277,4 +347,8 @@ $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
 
 @function _get-weight($query) {
   @return list.nth($query, 3);
+}
+
+@function _raw($query) {
+  @return hs-core.token-get-raw($query);
 }

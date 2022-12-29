@@ -34,6 +34,12 @@ $_colors: (
   'danger'
 );
 
+$_valid-alphas: (
+  'primary',
+  'accent',
+  'surface',
+);
+
 $_tones: (
   200: 8%,
   300: 12%,
@@ -74,13 +80,21 @@ $_breakpoints: (
         }
 
         .bg-#{$color}-alpha-#{$tone} {
-          background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+          @if list.index($_valid-alphas, $color) {
+            background: hs-core.token-get('#{$color}-alpha-#{$tone}');
+          } @else {
+            background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+          }
         }
 
         @each $breakpoint, $shorthand in $_breakpoints {
           @include hs-core.breakpoint-create($breakpoint) {
             .\@#{$shorthand}\:bg-#{$color}-alpha-#{$tone} {
-              background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+              @if list.index($_valid-alphas, $color) {
+                background: hs-core.token-get('#{$color}-alpha-#{$tone}');
+              } @else {
+                background: rgba(hs-core.token-get-raw('#{$color}-#{$tone}'), $opacity);
+              }
             }
           }
         }

@@ -22,6 +22,7 @@
 
 @use '../hs-core';
 @use 'sass:map';
+@use 'sass:string';
 
 @function _get-state($map, $state) {
   @return map.get($map, $state);
@@ -43,25 +44,25 @@
 
       &:hover {
         @include hs-core.color-bind('button', (
-          fill: rgba(_raw($fill), hs-core.$color-fill-hover-opacity),
+          fill: _smart-alpha-color($fill, hs-core.$color-fill-hover-opacity),
           ink: $fill,
-          border: rgba(_raw($border), hs-core.$color-border-hover-opacity)
+          border: _smart-alpha-color($border, hs-core.$color-border-hover-opacity, $type: 'border')
         ));
       }
 
       &:focus {
         @include hs-core.color-bind('button', (
-          fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
+          fill: _smart-alpha-color($fill, hs-core.$color-fill-focus-opacity),
           ink: $fill,
-          border: rgba(_raw($border), hs-core.$color-border-focus-opacity)
+          border: _smart-alpha-color($border, hs-core.$color-border-focus-opacity, $type: 'border')
         ));
       }
 
       &:active {
         @include hs-core.color-bind('button', (
-          fill: rgba(_raw($fill), hs-core.$color-fill-active-opacity),
+          fill: _smart-alpha-color($fill, hs-core.$color-fill-active-opacity, $state: 'active'),
           ink: $fill,
-          border: rgba(_raw($border), hs-core.$color-border-active-opacity)
+          border: _smart-alpha-color($border, hs-core.$color-border-active-opacity, $type: 'border', $state: 'active')
         ));
       }
     }
@@ -101,7 +102,7 @@
 
       &:focus {
         @include hs-core.color-bind('button', (
-          fill: rgba(_raw($fill), hs-core.$color-fill-focus-opacity),
+          fill: _smart-alpha-color($fill, hs-core.$color-fill-focus-opacity),
           ink: $fill,
           border: $border
         ));
@@ -193,6 +194,17 @@
   }
 }
 
-@function _raw($query) {
-  @return hs-core.token-get-raw($query);
+@function _smart-alpha-color($query, $opacity, $type: 'fill', $state: 'hover') {
+  $_tones: ('hover': 400, 'active': 600);
+  $_color: string.slice($query, 1, (string.length($query) - 4));
+  // $_tone: string.slice($query, (string.length($_color) + 2), (string.length($query)));
+  @if $type == 'border' { @return rgba(#fff, 0%); }
+  @if hs-core.token-check('#{$_color}-alpha-#{map.get($_tones, $state)}') {
+    @return hs-core.token-get('#{$_color}-alpha-#{map.get($_tones, $state)}');
+  }
+  @return _raw($query, $opacity);
+}
+
+@function _raw($query, $opacity) {
+  @return rgba(hs-core.token-get-raw($query), $opacity);
 }

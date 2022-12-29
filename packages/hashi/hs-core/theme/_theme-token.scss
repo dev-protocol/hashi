@@ -37,11 +37,13 @@ $_hs-extended-tokens: ();
 }
 
 @function get-raw($query) {
-  @if check($query) and meta.type-of(sentro.token-get-raw($query)) == string {
+  @if check($query)
+      and meta.type-of(sentro.token-get-raw($query)) == string
+      and meta.type-of(sentro.token-get-raw($query)) != color {
     $_token: sentro.token-get-raw($query);
     @if string.index($_token, 'var(--hs-theme-') == 1 {
       $_extracted: string.slice($_token, 16, (string.length($_token) - 1));
-      @return sentro.token-get-raw($_extracted);
+      @return get-raw($_extracted);
     }
   }
   @return sentro.token-get-raw($query);
