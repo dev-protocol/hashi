@@ -1,9 +1,9 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "tailwind/index.cjs",
-  "exports":{
+  "exports": {
     "./config/purgecss": {
       "import": "./config/purgecss.mjs",
       "require": "./config/purgecss.cjs"
@@ -13,7 +13,7 @@
       "require": "./tailwind/index.cjs"
     }
   },
-  "files":[
+  "files": [
     "**/*.{mjs,cjs,js,css,scss,ts}"
   ],
   "repository": "https://github.com/dev-protocol/hashi-web",
