@@ -22,9 +22,9 @@
 
 @use 'sakura';
 
-@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/@devprotocol/hashi' with ($theme: sakura.$main-theme);
 @use 'node_modules/@devprotocol/hashi/hs-badge';
-@use 'node_modules/@devprotocol/hashi/hs-button';
+@use 'node_modules/@devprotocol/hashi/hs-button' with ($theme: sakura.$button-theme);
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
 @use 'node_modules/@devprotocol/hashi/hs-card';
 @use 'node_modules/@devprotocol/hashi/hs-dialog';
