@@ -35,9 +35,9 @@
     position: relative;
     margin-bottom: 0.8rem;
     box-sizing: border-box;
-    
+
     @content;
-    
+
     .hs-form-field__label {
       @include hs-core.color-apply('form-field-label', (
         ink: $label-ink,
@@ -47,31 +47,31 @@
         line-height: 'broad'
       ));
     }
-    
+
     .hs-form-field__icon {
       width: 22px;
       height: 22px;
       display: inline-flex;
       place-items: center;
       position: absolute;
-      top: 52%;
+      top: 55%;
       left: hs-core.token-get('padding-md');
       transform: translateY(-52%);
-      
+
       &.is-leading {
         right: hs-core.token-get('padding-md');
         left: auto;
-        
+
         + .hs-form-field__input {
           padding-right: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
         }
       }
-      
+
       + .hs-form-field__input {
         padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
       }
     }
-    
+
     .hs-form-field__helper {
       @include hs-core.color-apply('form-field-helper', (
         ink: $helper-ink,

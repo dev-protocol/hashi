@@ -29,9 +29,9 @@
     flex-flow: column nowrap;
     position: relative;
     margin-bottom: 0.9rem;
-    
+
     @content;
-    
+
     .hs-select-field__label {
       width: max-content;
       white-space: nowrap;
@@ -43,22 +43,22 @@
         line-height: 'broad'
       ));
     }
-    
+
     .hs-select-field__icon {
       width: 22px;
       height: 22px;
       display: inline-flex;
       place-items: center;
       position: absolute;
-      top: 53%;
+      top: 54.5%;
       left: hs-core.token-get('padding-md');
       transform: translateY(-53%);
-      
+
       + .hs-select-field__input {
         padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
       }
     }
-    
+
     .hs-select-field__helper {
       @include hs-core.color-apply('select-field-helper', (
         ink: $helper-ink,
