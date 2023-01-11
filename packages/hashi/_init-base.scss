@@ -59,6 +59,7 @@ $_init-breakpoints: (
   'xlarge': 1280px,
 );
 
+$dark-mode: 'attribute' !default;
 $extend: () !default;
 $theme: () !default;
 
@@ -85,6 +86,7 @@ $_family-body: hs-core.prioritize(map.get($theme, 'family-body'), $family-body);
 $_family-mono: hs-core.prioritize(map.get($theme, 'family-mono'), $family-mono);
 $_family-small: hs-core.prioritize(map.get($theme, 'family-small'), $family-small);
 
+$_dark-mode: hs-core.prioritize(map.get($theme, 'dark-mode'), $dark-mode);
 $_extend: hs-core.prioritize(map.get($theme, 'extend'), $extend);
 $_breakpoints: hs-core.prioritize(map.get($theme, 'breakpoints'), $breakpoints);
 
@@ -211,6 +213,63 @@ $_tones: (
     'mono': _get-family($_family-mono),
     'small': _get-family($_family-small),
   ));
+
+  @if $_dark-mode == 'media' {
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        @include hs-core.token-config(
+          $primary: (
+            200: hs-core.token-get('primary-dark-200'),
+            300: hs-core.token-get('primary-dark-300'),
+            400: hs-core.token-get('primary-dark-400'),
+            600: hs-core.token-get('primary-dark-600'),
+            'ink': hs-core.token-get('primary-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('primary-dark-200'), 8%),
+              300: rgba(_raw('primary-dark-300'), 12%),
+              400: rgba(_raw('primary-dark-400'), 20%),
+              600: rgba(_raw('primary-dark-600'), 33%)
+            ),
+          ),
+          $accent: (
+            200: hs-core.token-get('accent-dark-200'),
+            300: hs-core.token-get('accent-dark-300'),
+            400: hs-core.token-get('accent-dark-400'),
+            600: hs-core.token-get('accent-dark-600'),
+            'ink': hs-core.token-get('accent-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('accent-dark-200'), 8%),
+              300: rgba(_raw('accent-dark-300'), 12%),
+              400: rgba(_raw('accent-dark-400'), 20%),
+              600: rgba(_raw('accent-dark-600'), 33%)
+            ),
+          ),
+          $surface: (
+            200: hs-core.token-get('surface-dark-200'),
+            300: hs-core.token-get('surface-dark-300'),
+            400: hs-core.token-get('surface-dark-400'),
+            600: hs-core.token-get('surface-dark-600'),
+            'ink': hs-core.token-get('surface-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('surface-dark-200'), 8%),
+              300: rgba(_raw('surface-dark-300'), 12%),
+              400: rgba(_raw('surface-dark-400'), 20%),
+              600: rgba(_raw('surface-dark-600'), 33%)
+            ),
+          ),
+          $disabled: (
+            'default': var(--hs-theme-dp-white-alpha),
+            'ink': var(--hs-theme-dp-white-alpha-ink)
+          ),
+          $background: (
+            'default': hs-core.token-get('background-dark'),
+            'ink': hs-core.token-get('background-dark-ink'),
+          ),
+        );
+      }
+    }
+  }
 
   *,
   :before,
