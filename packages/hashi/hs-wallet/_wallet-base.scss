@@ -38,10 +38,10 @@
     flex-flow: row nowrap;
     justify-content: center;
     position: relative;
-    
+
     @content;
-    
-    .hs-button.is-wallet-button {
+
+    .hs-button:where(.is-wallet-button) {
       @include shared.filled-style($fills, $inks, $borders);
       @include hs-core.shape-bind('button', (
         radius: $radius,
@@ -50,31 +50,31 @@
         border-style: solid,
       ));
     }
-  
-    &:not(.is-connected) {
+
+    &:where(:not(.is-connected)) {
       @include hs-core.key-bind('button-gap', 0 !important);
       .hs-button__icon {
         display: none;
       }
     }
-  
-    &.is-connected {
+
+    &:where(.is-connected) {
       .hs-button.is-wallet-button {
         @include hs-core.key-bind('button-gap', 0.3rem);
-        
+
         .hs-button__icon {
           background-color: hs-core.token-get('success-400');
           border: 6px solid hs-core.key-get('button-fill');
           border-radius: 50%;
         }
-        
+
         &:hover {
           + .hs-wallet__details {
             @include hs-core.key-bind('wallet-details-opacity', 1);
           }
         }
       }
-      
+
       .hs-wallet__details {
         display: block;
         position: absolute;
@@ -86,7 +86,7 @@
         white-space: nowrap;
         box-sizing: border-box;
         @include hs-core.prefix(transition, all var(--hs-transition-time) ease-in-out);
-  
+
         @include hs-core.color-apply('wallet-details', (
           fill: map.get($fills, 'default'),
           ink: map.get($inks, 'default'),
@@ -105,7 +105,7 @@
           weight: 'small',
           line-height: 'small'
         ));
-  
+
         @include hs-core.breakpoint-create('medium', 'max') {
           display: none !important;
           @include hs-core.key-bind('wallet-details-opacity', 0 !important);

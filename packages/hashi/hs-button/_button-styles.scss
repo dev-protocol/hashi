@@ -146,13 +146,13 @@ $_borders: (
       $borders: $_borders
     );
 
-    &.is-icon-only {
+    &:where(.is-icon-only) {
       @include hs-core.key-bind('button-min-width', auto !important);
       @include hs-core.key-bind('button-padding', _assert-icon-only-padding($_padding));
     }
 
     @each $state in $_states {
-      &.is-#{$state} {
+      &:where(.is-#{$state}) {
         @include shared.text-style(
           $fills: (
             'default': '#{$state}-400',
@@ -176,7 +176,7 @@ $_borders: (
       }
     }
 
-    &.is-outlined {
+    &:where(.is-outlined) {
       @include shared.outlined-style(
         $fills: $_fills,
         $inks: $_inks,
@@ -184,7 +184,7 @@ $_borders: (
       );
 
       @each $state in $_states {
-        &.is-#{$state} {
+        &:where(.is-#{$state}) {
           @include shared.outlined-style(
             $fills: (
               'default': '#{$state}-400',
@@ -209,7 +209,7 @@ $_borders: (
       }
     }
 
-    &.is-filled {
+    &:where(.is-filled) {
       @include shared.filled-style(
         $fills: $_fills,
         $inks: $_inks,
@@ -217,7 +217,7 @@ $_borders: (
       );
 
       @each $state in $_states {
-        &.is-#{$state} {
+        &:where(.is-#{$state}) {
           @include shared.filled-style(
             $fills: (
               'default': '#{$state}-400',
