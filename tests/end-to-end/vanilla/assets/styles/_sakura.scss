@@ -52,3 +52,9 @@ $form-theme: (
   'fill': 'dp-white-200',
   'ink': 'dp-white-ink'
 );
+
+$wallet-theme: (
+  'fill-active': 'accent-300',
+  'padding': ('md', 'lg'),
+  'radius': 'pill',
+);

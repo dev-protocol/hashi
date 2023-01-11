@@ -33,7 +33,7 @@
 @use 'node_modules/@devprotocol/hashi/hs-profile';
 @use 'node_modules/@devprotocol/hashi/hs-tick-field';
 @use 'node_modules/@devprotocol/hashi/hs-select-field';
-@use 'node_modules/@devprotocol/hashi/hs-wallet';
+@use 'node_modules/@devprotocol/hashi/hs-wallet' with ($theme: sakura.$wallet-theme);
 
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
@@ -71,6 +71,11 @@
 
   @include hs-badge.render();
   @include hs-button.render();
+  @include hs-button.extend('blocky') {
+    @include hs-button.shape((
+      radius: ('sm')
+    ));
+  }
   @include hs-button-group.render();
   @include hs-card.render();
   @include hs-dialog.render();
