@@ -30,10 +30,10 @@
     "./hs-core": {
       "default": "./hs-core/_index.scss"
     },
-    "./hs-dialog": {
+    "./hs-dialog/components": {
       "default": "./hs-dialog/index.ts"
     },
-    "./hs-dialog/scss": {
+    "./hs-dialog": {
       "default": "./hs-dialog/_index.scss"
     },
     "./hs-form-field": {
