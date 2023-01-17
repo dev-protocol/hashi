@@ -1,9 +1,12 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "tailwind/index.cjs",
   "exports": {
+    ".": {
+      "default": "./_index.scss"
+    },
     "./config/purgecss": {
       "import": "./config/purgecss.mjs",
       "require": "./config/purgecss.cjs"
@@ -11,6 +14,48 @@
     "./tailwind": {
       "import": "./tailwind/index.mjs",
       "require": "./tailwind/index.cjs"
+    },
+    "./hs-badge": {
+      "default": "./hs-badge/_index.scss"
+    },
+    "./hs-button": {
+      "default": "./hs-button/_index.scss"
+    },
+    "./hs-button-group": {
+      "default": "./hs-button-group/_index.scss"
+    },
+    "./hs-card": {
+      "default": "./hs-card/_index.scss"
+    },
+    "./hs-core": {
+      "default": "./hs-core/_index.scss"
+    },
+    "./hs-dialog/components": {
+      "default": "./hs-dialog/index.ts"
+    },
+    "./hs-dialog": {
+      "default": "./hs-dialog/_index.scss"
+    },
+    "./hs-form-field": {
+      "default": "./hs-form-field/_index.scss"
+    },
+    "./hs-link": {
+      "default": "./hs-link/_index.scss"
+    },
+    "./hs-profile": {
+      "default": "./hs-profile/_index.scss"
+    },
+    "./hs-select-field": {
+      "default": "./hs-select-field/_index.scss"
+    },
+    "./hs-tick-field": {
+      "default": "./hs-tick-field/_index.scss"
+    },
+    "./hs-utils": {
+      "default": "./hs-utils/_index.scss"
+    },
+    "./hs-wallet": {
+      "default": "./hs-wallet/_index.scss"
     }
   },
   "files": [
