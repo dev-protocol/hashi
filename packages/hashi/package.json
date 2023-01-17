@@ -2,7 +2,7 @@
   "name": "@devprotocol/hashi",
   "version": "1.6.1",
   "description": "Dev Protocol's design system implementation for the web.",
-  "main": "tailwind/index.cjs",
+  "main": "./_index.scss",
   "exports": {
     ".": {
       "default": "./_index.scss"
