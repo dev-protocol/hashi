@@ -25,9 +25,12 @@
 
 @use 'sass:map';
 @use 'sass:list';
+@use 'sass:selector';
 @use 'sass:string';
 
 @use 'init-font-pack' as font-pack;
+
+$_valid-dark-modes: ('attribute', 'media', 'class');
 
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-white' !default;
@@ -96,6 +99,36 @@ $_tones: (
   400: 20%,
   600: 33%
 );
+
+@if not list.index($_valid-dark-modes, $_dark-mode) {
+  @error "Invalid dark mode: #{$_dark-mode}. Please use one of the following dark modes: #{$_valid-dark-modes}.";
+}
+
+/// Duplicate dark mode mixin (current viable workaround as of now).
+/// @access public
+@mixin dark-mode {
+  @if not list.index($_valid-dark-modes, $_dark-mode) {
+    @error "Invalid dark mode: #{$dark-mode}. Please use one of the following dark modes: #{$_valid-dark-modes}.";
+  }
+
+  @if $_dark-mode == 'media' {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+
+  @if $_dark-mode == 'attribute' {
+    @at-root #{selector.nest('html[hashi-theme="dark"], html[data-theme="dark"], html[theme="dark"]', &)} {
+      @content;
+    }
+  }
+
+  @if $_dark-mode == 'class' {
+    @at-root #{selector.nest('html.is-dark', &)} {
+      @content;
+    }
+  }
+}
 
 @mixin init {
   :root {
@@ -339,59 +372,116 @@ $_tones: (
     box-sizing: border-box;
     color-scheme: light;
 
-    &[hashi-theme='dark'],
-    &[theme='dark'],
-    &[data-theme='dark'] {
-      color-scheme: dark;
-      @include hs-core.token-config(
-        $primary: (
-          200: hs-core.token-get('primary-dark-200'),
-          300: hs-core.token-get('primary-dark-300'),
-          400: hs-core.token-get('primary-dark-400'),
-          600: hs-core.token-get('primary-dark-600'),
-          'ink': hs-core.token-get('primary-dark-ink'),
-          'alpha': (
-            200: rgba(_raw('primary-dark-200'), 8%),
-            300: rgba(_raw('primary-dark-300'), 12%),
-            400: rgba(_raw('primary-dark-400'), 20%),
-            600: rgba(_raw('primary-dark-600'), 33%)
+    @if $_dark-mode == 'class' {
+      &.is-dark {
+        color-scheme: dark;
+        @include hs-core.token-config(
+          $primary: (
+            200: hs-core.token-get('primary-dark-200'),
+            300: hs-core.token-get('primary-dark-300'),
+            400: hs-core.token-get('primary-dark-400'),
+            600: hs-core.token-get('primary-dark-600'),
+            'ink': hs-core.token-get('primary-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('primary-dark-200'), 8%),
+              300: rgba(_raw('primary-dark-300'), 12%),
+              400: rgba(_raw('primary-dark-400'), 20%),
+              600: rgba(_raw('primary-dark-600'), 33%)
+            ),
           ),
-        ),
-        $accent: (
-          200: hs-core.token-get('accent-dark-200'),
-          300: hs-core.token-get('accent-dark-300'),
-          400: hs-core.token-get('accent-dark-400'),
-          600: hs-core.token-get('accent-dark-600'),
-          'ink': hs-core.token-get('accent-dark-ink'),
-          'alpha': (
-            200: rgba(_raw('accent-dark-200'), 8%),
-            300: rgba(_raw('accent-dark-300'), 12%),
-            400: rgba(_raw('accent-dark-400'), 20%),
-            600: rgba(_raw('accent-dark-600'), 33%)
+          $accent: (
+            200: hs-core.token-get('accent-dark-200'),
+            300: hs-core.token-get('accent-dark-300'),
+            400: hs-core.token-get('accent-dark-400'),
+            600: hs-core.token-get('accent-dark-600'),
+            'ink': hs-core.token-get('accent-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('accent-dark-200'), 8%),
+              300: rgba(_raw('accent-dark-300'), 12%),
+              400: rgba(_raw('accent-dark-400'), 20%),
+              600: rgba(_raw('accent-dark-600'), 33%)
+            ),
           ),
-        ),
-        $surface: (
-          200: hs-core.token-get('surface-dark-200'),
-          300: hs-core.token-get('surface-dark-300'),
-          400: hs-core.token-get('surface-dark-400'),
-          600: hs-core.token-get('surface-dark-600'),
-          'ink': hs-core.token-get('surface-dark-ink'),
-          'alpha': (
-            200: rgba(_raw('surface-dark-200'), 8%),
-            300: rgba(_raw('surface-dark-300'), 12%),
-            400: rgba(_raw('surface-dark-400'), 20%),
-            600: rgba(_raw('surface-dark-600'), 33%)
+          $surface: (
+            200: hs-core.token-get('surface-dark-200'),
+            300: hs-core.token-get('surface-dark-300'),
+            400: hs-core.token-get('surface-dark-400'),
+            600: hs-core.token-get('surface-dark-600'),
+            'ink': hs-core.token-get('surface-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('surface-dark-200'), 8%),
+              300: rgba(_raw('surface-dark-300'), 12%),
+              400: rgba(_raw('surface-dark-400'), 20%),
+              600: rgba(_raw('surface-dark-600'), 33%)
+            ),
           ),
-        ),
-        $disabled: (
-          'default': var(--hs-theme-dp-white-alpha),
-          'ink': var(--hs-theme-dp-white-alpha-ink)
-        ),
-        $background: (
-          'default': hs-core.token-get('background-dark'),
-          'ink': hs-core.token-get('background-dark-ink'),
-        ),
-      );
+          $disabled: (
+            'default': var(--hs-theme-dp-white-alpha),
+            'ink': var(--hs-theme-dp-white-alpha-ink)
+          ),
+          $background: (
+            'default': hs-core.token-get('background-dark'),
+            'ink': hs-core.token-get('background-dark-ink'),
+          ),
+        );
+      }
+    }
+
+    @if $_dark-mode == 'attribute' {
+      &[hashi-theme='dark'],
+      &[theme='dark'],
+      &[data-theme='dark'] {
+        color-scheme: dark;
+        @include hs-core.token-config(
+          $primary: (
+            200: hs-core.token-get('primary-dark-200'),
+            300: hs-core.token-get('primary-dark-300'),
+            400: hs-core.token-get('primary-dark-400'),
+            600: hs-core.token-get('primary-dark-600'),
+            'ink': hs-core.token-get('primary-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('primary-dark-200'), 8%),
+              300: rgba(_raw('primary-dark-300'), 12%),
+              400: rgba(_raw('primary-dark-400'), 20%),
+              600: rgba(_raw('primary-dark-600'), 33%)
+            ),
+          ),
+          $accent: (
+            200: hs-core.token-get('accent-dark-200'),
+            300: hs-core.token-get('accent-dark-300'),
+            400: hs-core.token-get('accent-dark-400'),
+            600: hs-core.token-get('accent-dark-600'),
+            'ink': hs-core.token-get('accent-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('accent-dark-200'), 8%),
+              300: rgba(_raw('accent-dark-300'), 12%),
+              400: rgba(_raw('accent-dark-400'), 20%),
+              600: rgba(_raw('accent-dark-600'), 33%)
+            ),
+          ),
+          $surface: (
+            200: hs-core.token-get('surface-dark-200'),
+            300: hs-core.token-get('surface-dark-300'),
+            400: hs-core.token-get('surface-dark-400'),
+            600: hs-core.token-get('surface-dark-600'),
+            'ink': hs-core.token-get('surface-dark-ink'),
+            'alpha': (
+              200: rgba(_raw('surface-dark-200'), 8%),
+              300: rgba(_raw('surface-dark-300'), 12%),
+              400: rgba(_raw('surface-dark-400'), 20%),
+              600: rgba(_raw('surface-dark-600'), 33%)
+            ),
+          ),
+          $disabled: (
+            'default': var(--hs-theme-dp-white-alpha),
+            'ink': var(--hs-theme-dp-white-alpha-ink)
+          ),
+          $background: (
+            'default': hs-core.token-get('background-dark'),
+            'ink': hs-core.token-get('background-dark-ink'),
+          ),
+        );
+      }
     }
   }
 

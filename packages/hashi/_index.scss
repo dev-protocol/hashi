@@ -45,12 +45,15 @@ $background-ink: 'surface-ink' !default;
 $dark-background-ink: $background-ink !default;
 $breakpoints: () !default;
 
+$dark-mode: 'attribute' !default;
 $extend: () !default;
 $theme: () !default;
 
-@forward 'hs-core' hide prioritize, is-type, is-not-empty with (
+$_valid-dark-modes: ('attribute', 'media', 'class');
+
+@forward 'hs-core' hide prioritize, is-type, is-not-empty, dark-mode with (
   $modular-mode: $modular-mode,
-  $vue-mode: $vue-mode
+  $vue-mode: $vue-mode,
 );
 @forward 'init-base' with (
   $primary: $primary,
@@ -73,6 +76,7 @@ $theme: () !default;
   $dark-background: $dark-background,
   $dark-background-ink: $dark-background-ink,
   $breakpoints: $breakpoints,
+  $dark-mode: $dark-mode,
   $extend: $extend,
   $theme: $theme
 );
