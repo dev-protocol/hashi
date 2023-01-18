@@ -1,5 +1,5 @@
 ///
-//  Copyright (c) 2022 Dev Protocol
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -20,21 +20,37 @@
 //  SOFTWARE.
 ///
 
-$modular-mode: false !default;
-$vue-mode: $modular-mode !default;
-$_validation: if($vue-mode, false, true);
+@use 'sass:list';
+@use 'sass:string';
+@use '../tools';
 
-@use 'node_modules/@matteusan/sentro' with (
-  $prefix: 'hs',
-  $context: 'theme',
-  $token-validation: $_validation,
-  $key-validation: $_validation,
-  $breakpoint-validation: $_validation
-);
+@mixin base-extend($component-name, $extension) {
+  $_extensions: tools.str-split($extension, '.');
+  $_sanitized-extension: '';
 
-@forward 'color' as color-*;
-@forward 'component' as component-*;
-@forward 'shape' as shape-*;
-@forward 'typography' as typography-*;
-@forward 'theme';
-@forward 'tools';
+  @each $ext in $_extensions {
+    @if list.index($_extensions, $ext) == 1 {
+      @if string.slice($ext, 1, 3) == 'is-' {
+        $_sanitized-extension: $_sanitized-extension + string.slice($ext, 4);
+      } @else {
+        $_sanitized-extension: $_sanitized-extension + $ext;
+      }
+    } @else if list.index($_extensions, $ext) == list.length($_extensions) {
+      @if string.slice($ext, 1, 3) == 'is-' {
+        $_sanitized-extension: $_sanitized-extension + '.#{$ext}';
+      } @else {
+        $_sanitized-extension: $_sanitized-extension + '.is-#{$ext}';
+      }
+    } @else {
+      @if string.slice($ext, 1, 3) == 'is-' {
+        $_sanitized-extension: $_sanitized-extension + '.#{$ext}';
+      } @else {
+        $_sanitized-extension: $_sanitized-extension + '.is-#{$ext}';
+      }
+    }
+  }
+
+  .hs-#{$component-name}.is-#{$_sanitized-extension} {
+    @content;
+  }
+}

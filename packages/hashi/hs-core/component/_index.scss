@@ -1,5 +1,5 @@
 ///
-//  Copyright (c) 2022 Dev Protocol
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -20,21 +20,4 @@
 //  SOFTWARE.
 ///
 
-$modular-mode: false !default;
-$vue-mode: $modular-mode !default;
-$_validation: if($vue-mode, false, true);
-
-@use 'node_modules/@matteusan/sentro' with (
-  $prefix: 'hs',
-  $context: 'theme',
-  $token-validation: $_validation,
-  $key-validation: $_validation,
-  $breakpoint-validation: $_validation
-);
-
-@forward 'color' as color-*;
-@forward 'component' as component-*;
-@forward 'shape' as shape-*;
-@forward 'typography' as typography-*;
-@forward 'theme';
-@forward 'tools';
+@forward 'component-helpers';
