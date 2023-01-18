@@ -55,6 +55,7 @@
       transform: translateY(-53%);
 
       + .hs-select-field__input {
+        -webkit-appearance: caret;
         padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
       }
     }

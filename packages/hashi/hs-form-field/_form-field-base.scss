@@ -68,6 +68,7 @@
       }
 
       + .hs-form-field__input {
+        -webkit-appearance: caret;
         padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
       }
     }
