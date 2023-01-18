@@ -23,14 +23,13 @@
 @use '../hs-core';
 
 /// Component variant maker.
-/// @param {string} $variant
+/// @param {string} $variants
 /// @return {*} extension class.
-@mixin extend($variant) {
-  .hs-tick-field.is-#{$variant} {
+@mixin extend($variants) {
+  @include hs-core.component-base-extend('tick-field', $variants) {
     @content;
   }
 }
-
 /// Color variant map.
 /// @param {map} $color-map
 /// @return {*} color styles.

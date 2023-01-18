@@ -23,10 +23,10 @@
 @use '../hs-core';
 
 /// Component variant maker.
-/// @param {string} $variant
+/// @param {string} $variants
 /// @return {*} extension class.
-@mixin extend($variant) {
-  .hs-button.is-#{$variant} {
+@mixin extend($variants) {
+  @include hs-core.component-base-extend('button', $variants) {
     @content;
   }
 }
