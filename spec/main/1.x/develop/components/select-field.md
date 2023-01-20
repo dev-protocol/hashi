@@ -198,7 +198,7 @@ These are for creating your own component theme classes that you can append to t
 .my-select-field-theme {
   --hs-select-field-fill: #232323;
   --hs-select-field-ink: lime;
-  --hs-select-field-border: var(--hs-button-fill);
+  --hs-select-field-border: var(--hs-select-field-fill);
   
   &:hover {
     --hs-select-field-fill: #353535;
@@ -224,6 +224,8 @@ $border-disabled: 'disabled' !default;
 
 $radius: 'small' !default;
 $padding: ('sm' 'md') !default;
+$border-width: 1px !default;
+$border-style: solid !default;
 
 $family: 'body' !default;
 $size: 'body' !default;

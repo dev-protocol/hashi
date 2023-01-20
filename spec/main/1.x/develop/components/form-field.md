@@ -120,13 +120,13 @@ These are used to structure, extend, and modify the styles of a component on the
 ### Anatomical Classes
 These classes make up the elements inside a component.
 
-| Class                    | Effect                                             |
-|--------------------------|----------------------------------------------------|
-| `.hs-form-field`         | Main text field class.                             |
-| `.hs-form-field__label`  | The text field's label class.                      |
-| `.hs-form-field__input`  | The text field's main input class.                 |
-| `.hs-form-field__icon`   | The text field's icon class.                       |
-| `.hs-form-field__helper` | The text field's helper text class.                |
+| Class                    | Effect                              |
+|--------------------------|-------------------------------------|
+| `.hs-form-field`         | Main form field class.              |
+| `.hs-form-field__label`  | The form field's label class.       |
+| `.hs-form-field__input`  | The form field's main input class.  |
+| `.hs-form-field__icon`   | The form field's icon class.        |
+| `.hs-form-field__helper` | The form field's helper text class. |
 
 ### Variant Classes
 For information on how to use these classes, [click here](index.md#modification-html).
@@ -159,17 +159,17 @@ These are for creating your own component theme classes that you can append to t
 #### Example
 
 ```scss
-.my-text-field-theme {
-  --hs-text-field-fill: #232323;
-  --hs-text-field-ink: lime;
-  --hs-text-field-border: var(--hs-button-fill);
+.my-form-field-theme {
+  --hs-form-field-fill: #232323;
+  --hs-form-field-ink: lime;
+  --hs-form-field-border: var(--hs-form-field-fill);
   
   &:hover {
-    --hs-text-field-fill: #353535;
+    --hs-form-field-fill: #353535;
   }
   
   &:active {
-    --hs-text-field-fill: #535353;
+    --hs-form-field-fill: #535353;
   }
 }
 ```
@@ -189,6 +189,8 @@ $border-disabled: 'disabled' !default;
 
 $radius: 'small' !default;
 $padding: ('sm' 'md') !default;
+$border-width: 1px !default;
+$border-style: solid !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
