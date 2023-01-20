@@ -28,3 +28,16 @@ This will most likely be used when you style a component using our [component co
   }
 }
 ```
+
+### Changing the way dark mode works
+If you don't want to use the default attribute rendering for dark mode styles. You can change its rendering by directly accessing the dark mode engine options through the main hashi `@use` statement.
+```scss
+@use 'node_modules/@devprotocol/hashi' with (
+  $dark-mode: 'class', // or 'media', or 'attribute'
+);
+```
+
+The dark mode engine can only take the following values:
+- `attribute` - The default rendering method. This will render the dark mode styles whenever you set the attribute `theme`, or `hashi-theme`, or `data-theme` to `dark` in the `<html>` tag.
+- `class` - This will render the dark mode styles when you attach the `is-dark` class to the `<html>` tag. You can then use this class to enable dark mode.
+- `media` - This will render the dark mode styles inside a media query using `prefers-color-scheme`.
