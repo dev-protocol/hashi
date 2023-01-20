@@ -46,6 +46,8 @@ $border-disabled: $fill-disabled !default;
 $width: max-content !default;
 $radius: 'small' !default;
 $padding: ('xs' 'md') !default;
+$border-width: 1px !default;
+$border-style: solid !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
@@ -77,6 +79,8 @@ $_border-disabled: hs-core.prioritize(map.get($theme, 'border-disabled'), $borde
 $_width: hs-core.prioritize(map.get($theme, 'width'), $width) !default;
 $_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
 $_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+$_border-width: hs-core.prioritize(map.get($theme, 'border-width'), $border-width);
+$_border-style: hs-core.prioritize(map.get($theme, 'border-style'), $border-style);
 
 $_family: hs-core.prioritize(map.get($theme, 'family'), $family);
 $_size: hs-core.prioritize(map.get($theme, 'size'), $size);
@@ -127,8 +131,8 @@ $_borders: (
       ink: 'dp-black-ink',
       border: 'dp-black-400'
     ));
-    @include hs-core.shape-border-width('button', 1px);
-    @include hs-core.shape-border-style('button', solid);
+    @include hs-core.shape-border-width('button', $_border-width);
+    @include hs-core.shape-border-style('button', $_border-style);
     @include hs-core.shape-apply('button', (
       radius: $_radius,
       padding: $_padding,
