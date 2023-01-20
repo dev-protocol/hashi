@@ -21,10 +21,15 @@
 ///
 
 @use 'node_modules/@devprotocol/hashi';
-@use 'node_modules/sass-true/sass/true' with ($terminal-output: true);
+@use 'node_modules/sass-true/sass/true';
 
 @include hashi.init {
   @include true.describe('Theme Token [module]') {
+    @include true.it('should be able to check a token\'s validity') {
+      $test: hashi.token-check('dp-white-200');
+      @include true.assert-equal($test, true, true);
+    }
+
     @include true.it('should be able to get a token') {
       $test: hashi.token-get('scarlet-400');
       $test2: hashi.token-get('accent-400');
@@ -34,12 +39,56 @@
       @include true.assert-equal($test2, var(--hs-theme-accent-400), true);
       @include true.assert-equal($test3, var(--hs-theme-radius-small), true);
       @include true.assert-equal($test4, var(--hs-theme-size-body), true);
+    }
 
-      // Invalid token test
-      // $test5: hashi.token-get('size-superdupertitle');
-      // @include true.assert-equal($test4, var(--hs-theme-superdupertitle), true);
+    @include true.it('should be able to get a token\'s raw value') {
+      $test: hashi.token-get-raw('dp-black-600');
+      $test2: hashi.token-get-raw('dp-white-200');
+      @include true.assert-equal($test, #000000, true);
+      @include true.assert-equal($test2, #ffffff, true);
+    }
+
+    @include true.it('should be able to switch a token\'s value') {
+      $test: hashi.token-switch(#e56c1a);
+      $test2: hashi.token-switch('dp-white-200', #e56c1a);
+      $test3: hashi.token-switch('invalid-token', #e56c1a);
+      @include true.assert-equal($test, #e56c1a, true);
+      @include true.assert-equal($test2, var(--hs-theme-dp-white-200), true);
+      @include true.assert-equal($test3, #e56c1a, true);
+    }
+
+    @include true.it('should be able to switch a token\'s raw value') {
+      $test: hashi.token-switch-raw(#e56c1a);
+      $test2: hashi.token-switch-raw('dp-white-200', #e56c1a);
+      $test3: hashi.token-switch-raw('invalid-token', #e56c1a);
+      @include true.assert-equal($test, #e56c1a, true);
+      @include true.assert-equal($test2, #ffffff, true);
+      @include true.assert-equal($test3, #e56c1a, true);
+    }
+
+    @include true.it('should cofigure tokens as css variables') {
+      @include true.assert {
+        @include true.output {
+          :root {
+            @include hashi.token-config((
+              'test': grey,
+              'leveled-test': (
+                default: #000,
+                variant: 1.2rem
+              )
+            ));
+          }
+        }
+        @include true.expect {
+          :root {
+            --hs-theme-test: grey;
+            --hs-theme-leveled-test: #000;
+            --hs-theme-leveled-test-variant: 1.2rem;
+          }
+        }
+      }
     }
   }
 }
 
-@include true.report;
+@include true.report();

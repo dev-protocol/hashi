@@ -1,0 +1,65 @@
+///
+//  Copyright (c) 2022 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use 'node_modules/@devprotocol/hashi';
+@use 'node_modules/sass-true/sass/true';
+
+@include hashi.init {
+  @include true.describe('Theme key [module]') {
+    @include true.it('should create a key') {
+      $test: hashi.key-create('test-ink', hashi.token-get('dp-black-400'));
+      @include true.assert-equal($test, var(--hs-test-ink, var(--hs-theme-dp-black-400)));
+    }
+
+    @include true.it('should be able to check a key\'s validity') {
+      $test: hashi.key-check('test-ink');
+      @include true.assert-equal($test, true, true);
+    }
+
+    @include true.it('should be able to get a key') {
+      $test: hashi.key-get('test-ink');
+      @include true.assert-equal($test, var(--hs-test-ink), true);
+    }
+
+    @include true.it('should be able to get a key\'s raw value') {
+      $test: hashi.key-get-raw('test-ink');
+      @include true.assert-equal($test, var(--hs-theme-dp-black-400), true);
+    }
+
+    @include true.it('should bimd a key to a new value') {
+      @include true.assert {
+        @include true.output {
+          .hs-test {
+            @include hashi.key-bind('test-ink', #fff);
+          }
+        }
+        @include true.expect {
+          .hs-test {
+            --hs-test-ink: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include true.report();
