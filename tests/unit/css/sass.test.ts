@@ -23,4 +23,4 @@
 const path = require('path');
 const sassTest = require('sass-true');
 const filePath = path.join(__dirname, './main.test.scss');
-sassTest.runSass({ describe, it }, filePath);
+sassTest.runSass({ file: filePath }, { describe, it });
