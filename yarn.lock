@@ -321,17 +321,10 @@
 "@devprotocol/hashi-themes@file:./packages/themes":
   version "0.1.0"
   dependencies:
-    "@devprotocol/hashi" "1.4.0"
+    "@devprotocol/hashi" "1.7.0"
 
-"@devprotocol/hashi@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.4.0.tgz#1d3203fcea260c23483e8b7aab58b9e377b1eae5"
-  integrity sha512-N5krU/oIFylZd1crhMEXc3DZjWPtWHV6eM8eO0r8QERm9AaOuZs9aRhxE7/yPYBNmrHcs+y6xsDG5FL3rwYP4w==
-  dependencies:
-    "@matteusan/sentro" "0.1.23"
-
-"@devprotocol/hashi@file:./packages/hashi":
-  version "1.6.0"
+"@devprotocol/hashi@1.7.0", "@devprotocol/hashi@file:./packages/hashi":
+  version "1.7.0"
   dependencies:
     "@matteusan/sentro" "0.1.25"
 
@@ -625,11 +618,6 @@
   dependencies:
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
-
-"@matteusan/sentro@0.1.23":
-  version "0.1.23"
-  resolved "https://registry.yarnpkg.com/@matteusan/sentro/-/sentro-0.1.23.tgz#9554653f6d7eba7a6358c4dabb21b320b5bd4547"
-  integrity sha512-lVnDTSy/xjn7KHPkAXEGMCOHKSEY3OBMtbhfXxZu9ZcDWWbU57pttojVV/XMW7Wkr7BGOlM1hbBggzV22adTnA==
 
 "@matteusan/sentro@0.1.25":
   version "0.1.25"
