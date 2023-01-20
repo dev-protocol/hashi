@@ -12,8 +12,9 @@ configurations.
 ```
 
 ## Basic Usage
+
 ```scss
-@use 'node_modules/@devprotocol/hashi';
+@use '../../../../node_modules/@devprotocol/hashi/index';
 
 @include hashi.init() {
   // ...
