@@ -79,7 +79,7 @@ Modifying the global styles of a component takes advantage of Sass' modules syst
 ```
 
 ## Extension (SCSS)
-
+Extension is a useful feature that lets you create component variants. An example usage is like so:
 ```scss
 @use 'node_modules/@devprotocol/hashi/hs-component';
 
@@ -87,6 +87,22 @@ Modifying the global styles of a component takes advantage of Sass' modules syst
   @include hs-component.color(($preset));
   @include hs-component.shape(($preset));
   @include hs-component.typography(($preset));
+}
+```
+Each preset is a map containing the properties and values present in the [composition API](../api/composition/index.md).
+
+### Multiple selection
+The extension API allows you to do multiple selection. Meaning you can create sub-variants of variants. A good example of this is extending an already present button variant like `is-outlined`, and creating a color variant for it.
+
+You can do multiple selection by separating variants using a period (`.`).
+
+```scss
+@use 'node_modules/@devprotocol/hashi/hs-button';
+
+@include hs-button.extend('filled.blue-ink') {
+  @include hs-button.color((
+    ink: #0000ff,
+  ));
 }
 ```
 
