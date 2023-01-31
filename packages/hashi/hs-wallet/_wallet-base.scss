@@ -33,7 +33,8 @@
   $padding
 ) {
   .hs-wallet {
-    width: auto;
+    width: 100%;
+    max-width: max-content;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -109,6 +110,14 @@
         @include hs-core.breakpoint-create('medium', 'max') {
           display: none !important;
           @include hs-core.key-bind('wallet-details-opacity', 0 !important);
+        }
+
+        &:where(.is-right) {
+          right: 0;
+        }
+
+        &:where(.is-left) {
+          left: 0;
         }
       }
     }
