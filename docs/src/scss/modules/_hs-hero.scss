@@ -31,16 +31,16 @@
     place-items: center;
     padding: 2.5rem 0;
     // background-image: url('../media/ui-ux.png');
-    background-color: hashi.token-get('surface-300');
+    background-color: hashi.token-get('primary-400');
     border-bottom: 2px solid hashi.token-get('surface-300');
-    
+
     .hs-hero__wrap {
       width: calc(100% - 40px);
       max-width: 640px;
       display: flex;
       flex-flow: row nowrap;
       margin: 0 auto;
-      
+
       .hs-hero__logo {
         position: relative;
         margin: 0 clamp(1rem, 7vw, 2.5rem) 0 0;
@@ -54,7 +54,7 @@
         12px 12px hashi.token-get('bright-cyan-400'),;
         user-select: none;
         @include hashi.prefix(transition, text-shadow 0.4s ease);
-        
+
         &:hover,
         &:active {
           text-shadow: (3px * 1.67) (3px * 1.67) hashi.token-get('scarlet-400'),
@@ -63,13 +63,18 @@
             (12px * 1.67) (12px * 1.67) hashi.token-get('bright-cyan-400'),;
         }
       }
-      
+
       .hs-hero__text {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: flex-start;
-        
+        color: hashi.token-get('primary-ink');
+
+        @include hashi.dark-mode {
+          color: hashi.token-get('surface-ink');
+        }
+
         h1 {
           --ifm-heading-font-family: #{hashi.token-get('family-supertitle')};
           --ifm-heading-font-weight: #{hashi.token-get('weight-supertitle')};
@@ -77,14 +82,14 @@
           font-size: hashi.token-get('size-supertitle');
           margin-bottom: 0.2rem;
         }
-        
+
         .hs-hero__actions {
           font-family: hashi.token-get('family-body');
           width: 100%;
-          
+
           a {
             text-decoration: none !important;
-            
+
             &:hover {
               color: var(--hs-button-ink) !important;
             }
@@ -93,7 +98,7 @@
       }
     }
   }
-  
+
   html[data-theme='dark'] {
     .hs-hero {
       background-color: hashi.token-get('surface-300');

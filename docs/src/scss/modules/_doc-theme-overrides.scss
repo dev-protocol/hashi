@@ -70,23 +70,24 @@
     }
 
     .menu {
+      height: 100% !important;
       --ifm-menu-color: #{hashi.token-get('primary-ink')};
       background-color: hashi.token-get('primary-400');
-      
+
       @include hashi.dark-mode {
         background-color: hashi.token-get('dp-blue-grey-400');
       }
-      
+
       .menu__list-item-collapsible {
         border: 1px solid rgba(0 0 0 / 0);
-        
+
         &:hover,
         &:focus {
           outline: none;
           background-color: rgba(#f1f1f1, 15%);
           color: #fff;
           border-color: rgba(#f1f1f1, 1.5%);
-    
+
           @include hashi.dark-mode {
             outline: none;
             background-color: rgba(#f1f1f1, 15%);
@@ -95,7 +96,7 @@
           }
         }
       }
-      
+
       .menu__list,
       .menu__list-item {
         .menu__link {
