@@ -32,9 +32,6 @@ import HSButton from '@site/src/components/HSButton';
 export default function Home(): JSX.Element {
   return (
     <>
-      <section className="hs-docs-notice">
-        <p><a href="/docs/design">Hashi v1.0 is OUT!</a></p>
-      </section>
       <Layout
         title={ `` }
         description="Dev Protocol's design system for building bridges from software to user.">
