@@ -20,16 +20,11 @@
 //  SOFTWARE.
 ///
 
-@use '~@devprotocol/hashi' with (
-  $accent: 'scarlet',
-  $extend: (
-    'size': (
-      'subtitle-2': 18px
-    )
-  )
-);
+@use 'dev-docs.theme' as docs;
+
+@use '~@devprotocol/hashi' with ($theme: docs.$theme);
 @use '~@devprotocol/hashi/hs-badge';
-@use '~@devprotocol/hashi/hs-button';
+@use '~@devprotocol/hashi/hs-button' with ($theme: docs.$button);
 @use '~@devprotocol/hashi/hs-button-group';
 @use '~@devprotocol/hashi/hs-card';
 @use '~@devprotocol/hashi/hs-form-field';
@@ -50,7 +45,7 @@
 @include hashi.init() {
   @include doc-theme-overrides.use();
   @include hs-layout.use();
-  
+
   h1 {
     @include hashi.typography-apply('h1', (
       family: 'supertitle',
@@ -59,7 +54,7 @@
       line-height: 'supertitle',
     ));
   }
-  
+
   h2 {
     @include hashi.typography-apply('h2', (
       family: 'title',
@@ -68,7 +63,7 @@
       line-height: 'title',
     ));
   }
-  
+
   h3 {
     @include hashi.typography-apply('h3', (
       family: 'subtitle',
@@ -77,7 +72,7 @@
       line-height: 'subtitle',
     ));
   }
-  
+
   h4 {
     @include hashi.typography-apply('h3', (
       family: 'subtitle',
@@ -86,7 +81,7 @@
       line-height: 'normal',
     ));
   }
-  
+
   @include hs-badge.render();
   @include hs-button.render();
   @include hs-button-group.render();
@@ -95,15 +90,20 @@
   @include hs-link.render();
   @include hs-profile.render();
   @include hs-select-field.render();
-  
+
   .hs-badge {
     --ifm-link-hover-color: #{hashi.token-get('primary-ink')} !important;
     --ifm-link-hover-decoration: none !important;
   }
-  
-  .hs-button {
-    --ifm-link-color: inherit;
-    --ifm-link-hover-color: inherit;
+
+  a.hs-button {
+    --ifm-link-color: var(--hs-button-ink) !important;
+    --ifm-link-hover-color: var(--hs-button-ink) !important;
+    color: var(--ifm-link-color);
+
+    &:hover {
+      color: var(--ifm-link-hover-color);
+    }
   }
 
   .hs-card {
@@ -123,7 +123,7 @@
   @include hs-component-preview.use();
   @include hs-doc-card.use();
   @include hs-hero.use();
-  
+
   @include hs-utils.layout-utils();
   @include hs-utils.color-utils();
   @include hs-utils.shape-utils();
@@ -161,7 +161,7 @@
       @include hashi.key-bind('status-tag-border', #c72828);
     }
   }
-  
+
   .hs-docs-notice {
     width: 100%;
     display: flex;
@@ -170,13 +170,13 @@
     padding: hashi.token-get('padding-sm') hashi.token-get('padding-md');
     background-color: hashi.token-get('accent-400');
     color: hashi.token-get('accent-ink');
-    
+
     p {
       margin: 0 !important;
       font-weight: hashi.token-get('weight-bold');
       font-size: hashi.token-get('size-body');
       text-align: center;
-      
+
       a {
         font-weight: hashi.token-get('weight-bold');
         font-size: hashi.token-get('size-body');
