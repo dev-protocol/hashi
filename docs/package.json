@@ -15,7 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@devprotocol/hashi": "1.7.0",
+    "@devprotocol/hashi": "1.8.0",
     "@docusaurus/core": "2.3.0",
     "@docusaurus/preset-classic": "2.3.0",
     "@mdx-js/react": "1.6.22",
