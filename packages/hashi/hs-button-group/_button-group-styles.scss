@@ -80,13 +80,13 @@ $_borders: (
     display: flex;
     flex-flow: row nowrap;
     box-sizing: border-box;
-  
+
     input[type='radio'],
     input[type='checkbox'] {
       position: absolute;
       clip: rect(0,0,0,0);
       pointer-events: none;
-    
+
       &:checked {
         + .hs-button {
           &:not(:disabled) {
@@ -99,7 +99,7 @@ $_borders: (
         }
       }
     }
-    
+
     .hs-button {
       @include hs-core.key-bind('button-radius', hs-core.token-get('radius-none'));
       @include shared.outlined-style(
@@ -107,27 +107,27 @@ $_borders: (
         $inks: $_inks,
         $borders: $_borders
       );
-      
+
       &:not(:nth-child(2)) {
         margin-left: hs-core.key-create('button-group-gap', hs-core.token-switch('space-#{$gap}', $gap));
       }
-  
+
       &:nth-child(2) {
         @include hs-core.key-bind('button-radius',
           hs-core.token-switch('radius-#{$radius}', $radius) 0 0 hs-core.token-switch('radius-#{$radius}', $radius)
         );
       }
-  
+
       &:last-child {
         @include hs-core.key-bind('button-radius',
           0 hs-core.token-switch('radius-#{$radius}', $radius) hs-core.token-switch('radius-#{$radius}', $radius) 0
         );
       }
-      
-      &.is-active,
-      &[aria-selected='true'],
-      &[hashi-selected='true'],
-      &[data-selected='true'] {
+
+      &:where(.is-active),
+      &:where([aria-selected='true']),
+      &:where([hashi-selected='true']),
+      &:where([data-selected='true']) {
         @include hs-core.color-bind('button', (
           fill: $fill,
           ink: $ink,

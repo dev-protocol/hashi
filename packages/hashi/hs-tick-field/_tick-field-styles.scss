@@ -125,7 +125,7 @@ $_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
       }
     }
 
-    &.is-filled {
+    &:where(.is-filled) {
       @include hs-core.color-border('tick-field', $_fill, 'bind');
       @include hs-core.shape-shadow('tick-field', 'low');
 

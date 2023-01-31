@@ -110,7 +110,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-required {
+    &:where(.is-required) {
       .hs-form-field__label::after {
         content: '*';
         color: hs-core.token-get('danger-400');
@@ -118,7 +118,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-filled {
+    &:where(.is-filled) {
       .hs-form-field__input:not(:read-only) {
         @include hs-core.color-bind('form-field', (
           border: $_fill
@@ -135,7 +135,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-danger {
+    &:where(.is-danger) {
       @include hs-core.color-bind('form-field-label', (
         ink: 'danger-400',
       ));
@@ -151,7 +151,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
         }
       }
 
-      &:not(.is-filled) {
+      &:where(:not(.is-filled)) {
         .hs-form-field__input:not(:read-only) {
           @include hs-core.color-bind('form-field', (
             border: 'danger-400'

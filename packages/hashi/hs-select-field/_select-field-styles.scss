@@ -111,7 +111,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-required {
+    &:where(.is-required) {
       .hs-select-field__label::after {
         content: '*';
         color: hs-core.token-get('danger-400');
@@ -119,7 +119,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-filled {
+    &:where(.is-filled) {
       @include hs-core.color-bind('select-field', (
         border: $_fill,
       ));
@@ -131,7 +131,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-danger {
+    &:where(.is-danger) {
       @include hs-core.color-bind('select-field', (
         ink: 'danger-400',
       ));
@@ -150,7 +150,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
         }
       }
 
-      &:not(.is-filled) {
+      &:where(:not(.is-filled)) {
         .hs-select-field__input:not(:disabled) {
           @include hs-core.color-bind('select-field', (
             border: 'danger-400'
@@ -163,7 +163,7 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &.is-side-label {
+    &:where(.is-side-label) {
       flex-flow: row nowrap;
       align-items: center;
       gap: hs-core.token-get('space-sm');

@@ -86,8 +86,8 @@ $_footer-gap: hs-core.prioritize(map.get($theme, 'footer-gap'), $footer-gap);
       border-width: 1px,
       border-style: solid
     ));
-    
-    &.is-filled {
+
+    &:where(.is-filled) {
       @include hs-core.color-bind('card', (
         border: $_fill,
       ));
