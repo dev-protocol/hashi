@@ -65,6 +65,13 @@ For information on how to use these classes, [click here](index.md#modification-
 | `.is-connected`     | Renders styling if the wallet is connected. |
 | `.is-wallet-button` | Indicates the wallet button.                |
 
+We also include variant classes for the `hs-wallet__details` subcomponent. These are mainly for positioning where the details render.
+
+| Class       | Effect                                         |
+|-------------|------------------------------------------------|
+| `.is-left`  | Renders the subcomponent aligned to the left   |
+| `.is-right` | Renders the subcomponent aligned to the right. |
+
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.
 
