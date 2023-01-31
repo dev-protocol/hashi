@@ -34,7 +34,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'https://docs.devprotocol.xyz/_includes/assets/images/devprotocol-logo.png',
+  favicon: '/img/hashi-logo.svg',
   organizationName: 'devprotocol',
   projectName: 'hashi',
   plugins: ['docusaurus-plugin-sass'],
@@ -60,10 +60,16 @@ const config = {
   ],
 
   themeConfig: {
-    autoCollapseSidebarCategories: false,
+    sidebar: {
+      autoCollapseCategories: false,
+    },
     colorMode: { defaultMode: 'dark' },
     navbar: {
       title: 'Hashi',
+      logo: {
+        alt: 'Hashi Logo',
+        src: '/img/hashi-logo-minimal.svg',
+      },
       items: [
         {
           to: '/docs/design',
@@ -84,11 +90,6 @@ const config = {
           href: 'https://github.com/dev-protocol/hashi-web',
           label: 'Source',
           position: 'left',
-        },
-        {
-          type: 'docsVersionDropdown',
-          position: 'left',
-          dropdownActiveClassDisabled: true,
         },
       ],
     },
