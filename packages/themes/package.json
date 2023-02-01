@@ -8,6 +8,6 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@devprotocol/hashi": "1.7.0"
+    "@devprotocol/hashi": "1.8.0"
   }
 }
