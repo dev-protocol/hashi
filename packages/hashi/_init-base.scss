@@ -133,7 +133,6 @@ $_tones: (
 @mixin init {
   :root {
     @include hs-core.token-config(
-      $map: tokens.$hs-tokens,
       $primary: (
         200: 'var(--hs-theme-#{$_primary}-200)',
         300: 'var(--hs-theme-#{$_primary}-300)',
