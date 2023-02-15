@@ -21,7 +21,6 @@
 ///
 
 $modular-mode: false !default;
-$vue-mode: $modular-mode !default;
 
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-white' !default;
@@ -53,7 +52,6 @@ $_valid-dark-modes: ('attribute', 'media', 'class');
 
 @forward 'hs-core' hide prioritize, is-type, is-not-empty, dark-mode with (
   $modular-mode: $modular-mode,
-  $vue-mode: $vue-mode,
 );
 @forward 'init-base' with (
   $primary: $primary,
