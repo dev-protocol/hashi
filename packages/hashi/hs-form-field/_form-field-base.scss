@@ -55,21 +55,21 @@
       place-items: center;
       position: absolute;
       top: 55%;
-      left: hs-core.token-get('padding-md');
+      left: hs-core.primitive-token-get('padding.md');
       transform: translateY(-52%);
 
       &.is-leading {
-        right: hs-core.token-get('padding-md');
+        right: hs-core.primitive-token-get('padding.md');
         left: auto;
 
         + .hs-form-field__input {
-          padding-right: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+          padding-right: calc(#{hs-core.primitive-token-get('padding.md')} + 30px);
         }
       }
 
       + .hs-form-field__input {
         -webkit-appearance: caret;
-        padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+        padding-left: calc(#{hs-core.primitive-token-get('padding.md')} + 30px);
       }
     }
 
