@@ -28,19 +28,20 @@ $accent: 'native-blue' !default;
 $accent-dark: $accent !default;
 $surface: 'dp-white' !default;
 $surface-dark: 'dp-blue-grey' !default;
-$radius-small: 'radius-xs' !default;
-$radius-medium: 'radius-sm' !default;
-$radius-large: 'radius-md' !default;
-$family-supertitle: ('Syne', sans-serif, 800) !default;
-$family-title: ('Syne', sans-serif, 700) !default;
-$family-subtitle: ('Syne', sans-serif, 700) !default;
-$family-body: ('DM Sans', sans-serif, 400) !default;
-$family-mono: ('IBM Plex Mono', monospace, 400) !default;
-$family-small: ('DM Sans', sans-serif, 300) !default;
+$radius-small: 'xs' !default;
+$radius-medium: 'sm' !default;
+$radius-large: 'md' !default;
 
-$background: 'surface-200' !default;
-$dark-background: 'surface-400' !default;
-$background-ink: 'surface-ink' !default;
+$supertitle: () !default;
+$title: () !default;
+$subtitle: () !default;
+$body: () !default;
+$mono: () !default;
+$small: () !default;
+
+$background: 'dp-white.200' !default;
+$dark-background: 'dp-blue-grey.600' !default;
+$background-ink: 'dp-white.ink' !default;
 $dark-background-ink: $background-ink !default;
 $breakpoints: () !default;
 
@@ -63,12 +64,12 @@ $_valid-dark-modes: ('attribute', 'media', 'class');
   $radius-small: $radius-small,
   $radius-medium: $radius-medium,
   $radius-large: $radius-large,
-  $family-supertitle: $family-supertitle,
-  $family-title: $family-title,
-  $family-subtitle: $family-subtitle,
-  $family-body: $family-body,
-  $family-mono: $family-mono,
-  $family-small: $family-small,
+  $supertitle: $supertitle,
+  $title: $title,
+  $subtitle: $subtitle,
+  $body: $body,
+  $mono: $mono,
+  $small: $small,
   $background: $background,
   $background-ink: $background-ink,
   $dark-background: $dark-background,

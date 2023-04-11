@@ -37,3 +37,4 @@ $_validation: if($modular-mode, false, true);
 @forward 'typography' as typography-*;
 @forward 'theme';
 @forward 'tools';
+@forward 'tokens' as primitive-token-*;
