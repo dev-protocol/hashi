@@ -101,7 +101,7 @@ $_borders: (
     }
 
     .hs-button {
-      @include hs-core.key-bind('button-radius', hs-core.token-get('radius-none'));
+      @include hs-core.key-bind('button-radius', hs-core.primitive-token-get('radius.none'));
       @include shared.outlined-style(
         $fills: $_fills,
         $inks: $_inks,
@@ -109,19 +109,19 @@ $_borders: (
       );
 
       &:not(:nth-child(2)) {
-        margin-left: hs-core.key-create('button-group-gap', hs-core.token-switch('space-#{$gap}', $gap));
+        margin-left: hs-core.key-create('button-group-gap', hs-core.primitive-token-switch('spacing.#{$gap}', $gap));
       }
 
       &:nth-child(2) {
-        @include hs-core.key-bind('button-radius',
-          hs-core.token-switch('radius-#{$radius}', $radius) 0 0 hs-core.token-switch('radius-#{$radius}', $radius)
-        );
+        @include hs-core.shape-radius('button', (
+          $radius 0 0 $radius
+        ), 'bind');
       }
 
       &:last-child {
-        @include hs-core.key-bind('button-radius',
-          0 hs-core.token-switch('radius-#{$radius}', $radius) hs-core.token-switch('radius-#{$radius}', $radius) 0
-        );
+        @include hs-core.shape-radius('button', (
+          0 $radius $radius 0
+        ), 'bind');
       }
 
       &:where(.is-active),
