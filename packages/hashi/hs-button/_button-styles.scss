@@ -92,11 +92,7 @@ $_label-ink: hs-core.prioritize(map.get($theme, 'label-ink'), $label-ink);
 
 $_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
 
-$_states: (
-  'success',
-  'warning',
-  'danger'
-);
+$_states: ('error');
 
 $_fills: (
   'default': $_fill,
