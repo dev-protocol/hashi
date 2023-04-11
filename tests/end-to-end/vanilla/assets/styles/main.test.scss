@@ -47,8 +47,8 @@
 
   section:not([class^='hs-']) {
     display: flex;
-    gap: hashi.token-get('space-xs');
-    margin: hashi.token-get('margin-sm') 0;
+    gap: hashi.primitive-token-get('spacing.xs');
+    margin: hashi.primitive-token-get('margin.sm') 0;
   }
 
   #typography,
@@ -59,13 +59,13 @@
   .color-module {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: hashi.token-get('space-xs');
+    gap: hashi.primitive-token-get('spacing.xs');
 
     > div {
       width: 100%;
       height: 50px;
-      padding: hashi.token-get('padding-xs') hashi.token-get('padding-sm');
-      border-radius: hashi.token-get('radius-xs');
+      padding: hashi.primitive-token-get('padding.xs') hashi.primitive-token-get('padding.sm');
+      border-radius: hashi.primitive-token-get('radius.xs');
     }
   }
 
