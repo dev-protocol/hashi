@@ -25,6 +25,7 @@
 
 @use '../theme';
 @use '../tools';
+@use '../tokens';
 
 $_valid-props: (
   'width',
@@ -42,10 +43,10 @@ $_valid-props: (
 @mixin _base($component, $theme, $settings: ()) {
   $_init-settings: ('intent': create);
   $_settings: map.merge($_init-settings, $settings);
-  
+
   /// @type string
   $intent: map.get($_settings, 'intent');
-  
+
   $width: map.get($theme, 'width');
   $height: map.get($theme, 'height');
   $radius: map.get($theme, 'radius');
@@ -55,7 +56,7 @@ $_valid-props: (
   $shadow: map.get($theme, 'shadow');
   $border-style: map.get($theme, 'border-style');
   $border-width: map.get($theme, 'border-width');
-  
+
   @if not tools.is-type('map', $theme) {
     @error '$theme is expecting a map. Map was not given.';
   } @else {
@@ -65,7 +66,7 @@ $_valid-props: (
         @error 'Invalid/unrecognized prop: #{$key}. Please use one of the following props: #{$_valid-props}.'
       }
     }
-  
+
     @if $width {
       @include width($component, $width, $intent);
     }
@@ -106,32 +107,32 @@ $_valid-props: (
     $min: map.get($width, 'min');
     $default: map.get($width, 'default');
     $max: map.get($width, 'max');
-    
+
     @if $min {
       @include theme.property(
         min-width,
-        ('#{$component}-min-width', theme.token-switch('width-#{$min}', $min)),
+        ('#{$component}-min-width', theme.token-switch('width-#{$min}', tokens.switch('width-#{$min}', $min))),
         $intent
       );
     }
     @if $default {
       @include theme.property(
         width,
-        ('#{$component}-width', theme.token-switch('width-#{$default}', $default)),
+        ('#{$component}-width', theme.token-switch('width-#{$default}', tokens.switch('width-#{$default}', $default))),
         $intent
       );
     }
     @if $max {
       @include theme.property(
         max-width,
-        ('#{$component}-max-width', theme.token-switch('width-#{$max}', $max)),
+        ('#{$component}-max-width', theme.token-switch('width-#{$max}', tokens.switch('width-#{$max}', $max))),
         $intent
       );
     }
   } @else {
     @include theme.property(
       width,
-      ('#{$component}-width', theme.token-switch('width-#{$width}', $width)),
+      ('#{$component}-width', theme.token-switch('width-#{$width}', tokens.switch('width-#{$width}', $width))),
       $intent
     );
   }
@@ -147,32 +148,32 @@ $_valid-props: (
     $min: map.get($height, 'min');
     $default: map.get($height, 'default');
     $max: map.get($height, 'max');
-    
+
     @if $min {
       @include theme.property(
         min-height,
-        ('#{$component}-min-height', theme.token-switch('height-#{$min}', $min)),
+        ('#{$component}-min-height', theme.token-switch('height-#{$min}', tokens.switch('height.#{$min}', $min))),
         $intent
       );
     }
     @if $default {
       @include theme.property(
         height,
-        ('#{$component}-height', theme.token-switch('height-#{$default}', $default)),
+        ('#{$component}-height', theme.token-switch('height-#{$default}', tokens.switch('height.#{$default}', $default))),
         $intent
       );
     }
     @if $max {
       @include theme.property(
         max-height,
-        ('#{$component}-max-height', theme.token-switch('height-#{$max}', $max)),
+        ('#{$component}-max-height', theme.token-switch('height-#{$max}', tokens.switch('height.#{$max}', $max))),
         $intent
       );
     }
   } @else {
     @include theme.property(
       height,
-      ('#{$component}-height', theme.token-switch('height-#{$height}', $height)),
+      ('#{$component}-height', theme.token-switch('height-#{$height}', tokens.switch('height.#{$height}', $height))),
       $intent
     );
   }
@@ -225,7 +226,7 @@ $_valid-props: (
 @mixin border-width($component, $border-width, $intent: 'create') {
   @include theme.property(
     border-width,
-    ('#{$component}-border-width', theme.token-switch($border-width)),
+    ('#{$component}-border-width', theme.token-switch($border-width, tokens.switch('border.#{$border-width}', $border-width))),
     $intent
   );
 }
@@ -238,7 +239,7 @@ $_valid-props: (
 @mixin border-style($component, $border-style, $intent: 'create') {
   @include theme.property(
     border-style,
-    ('#{$component}-border-style', theme.token-switch($border-style)),
+    ('#{$component}-border-style', theme.token-switch($border-style, tokens.switch($border-style))),
     $intent
   );
 }
@@ -251,7 +252,7 @@ $_valid-props: (
 @mixin shadow($component, $shadow, $intent: 'create') {
   @include theme.property(
     box-shadow,
-    ('#{$component}-shadow', theme.token-switch('shadow-#{$shadow}', $shadow)),
+    ('#{$component}-shadow', theme.token-switch('shadow-#{$shadow}', tokens.switch('shadow.#{$shadow}', $shadow))),
     $intent
   );
 }
@@ -264,7 +265,7 @@ $_valid-props: (
 @mixin gap($component, $gap, $intent: 'create') {
   @include theme.property(
     gap,
-    ('#{$component}-gap', theme.token-switch('space-#{$gap}', $gap)),
+    ('#{$component}-gap', theme.token-switch('spacing-#{$gap}', tokens.switch('spacing.#{$gap}', $gap))),
     $intent
   );
 }
@@ -275,7 +276,9 @@ $_valid-props: (
   $result: ();
   @each $value in $query {
     @if theme.token-check('#{$key}-#{$value}') {
-      $result: list.append($result, theme.token-get('#{$key}-#{$value}'), 'space');
+      $result: list.append($result, theme.token-switch('#{$key}-#{$value}'));
+    } @else if tokens.check('#{$key}.#{$value}') {
+      $result: list.append($result, tokens.get('#{$key}.#{$value}'));
     } @else {
       @if $value != 0 {
         @error 'Invalid value: #{$value}. Please use a valid #{$key} token, or the number 0.';
