@@ -464,19 +464,19 @@ __metadata:
 
 "@devprotocol/hashi-themes@file:./packages/themes::locator=hashi%40workspace%3A.":
   version: 0.1.0
-  resolution: "@devprotocol/hashi-themes@file:./packages/themes#./packages/themes::hash=59ebb3&locator=hashi%40workspace%3A."
+  resolution: "@devprotocol/hashi-themes@file:./packages/themes#./packages/themes::hash=1d888a&locator=hashi%40workspace%3A."
   dependencies:
     "@devprotocol/hashi": 1.8.0
-  checksum: 26e65ec5bddb2be83248294b29d40213d45f7333e43c9d78655061283fdee7f5509a6dfcb756fc077713371c5570a7a758d6c85ed5ce6b603953e3676a81317e
+  checksum: 5de277bb8e01d47de5b2196f7979ad6bbbdc60e81681eb1b3be80b4e81e74d0e495e5192e47c862139db7a768d0be8faa68cc4c72ee4ce97ece796ba2d4d8194
   languageName: node
   linkType: hard
 
 "@devprotocol/hashi@file:./packages/hashi::locator=hashi%40workspace%3A.":
-  version: 1.8.0
-  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=ff5195&locator=hashi%40workspace%3A."
+  version: 2.0.0-dev
+  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=9899c8&locator=hashi%40workspace%3A."
   dependencies:
     "@matteusan/sentro": 0.1.25
-  checksum: b5dc29bce1845e72317caa823bc7ff12a74c438876de6f2a22736a1f902d6fd1c35210fcda36f733b4736ad7fc534b328a8fa17b0db4ffacb802f9e3ac5a4987
+  checksum: b6e4a8dd7e8dac79c7d57fd9ef0c0843a2031d5e4c4447c8a0d338a297e4fc015d72b38d11518cef0f9457d61274c0dd1afb337869e363540c575fefb57b4270
   languageName: node
   linkType: hard
 
