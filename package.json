@@ -6,7 +6,6 @@
   "repository": "https://github.com/dev-protocol/hashi-web",
   "author": "Dev Protocol",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
     "build:ts": "webpack --config webpack.config.js",
