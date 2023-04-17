@@ -28,3 +28,7 @@
 /.idea
 /.vscode
 /dump/
+
+# Yarn
+.yarnrc.yml
+.yarn
