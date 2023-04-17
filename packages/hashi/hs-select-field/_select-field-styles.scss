@@ -114,8 +114,8 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
     &:where(.is-required) {
       .hs-select-field__label::after {
         content: '*';
-        color: hs-core.token-get('danger-400');
-        margin-left: hs-core.token-get('margin-xs');
+        color: hs-core.token-get('error-400');
+        margin-left: hs-core.primitive-token-get('margin.xs');
       }
     }
 
@@ -131,21 +131,21 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       }
     }
 
-    &:where(.is-danger) {
+    &:where(.is-error) {
       @include hs-core.color-bind('select-field', (
-        ink: 'danger-400',
+        ink: 'error-400',
       ));
       @include hs-core.color-bind('select-field-label', (
-        ink: 'danger-400',
+        ink: 'error-400',
       ));
       @include hs-core.color-bind('select-field-helper', (
-        ink: 'danger-400',
+        ink: 'error-400',
       ));
 
       .hs-select-field__input:not(:disabled) {
         &:focus {
           @include hs-core.color-bind('select-field', (
-            border: 'danger-400'
+            border: 'error-400'
           ));
         }
       }
@@ -153,20 +153,20 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
       &:where(:not(.is-filled)) {
         .hs-select-field__input:not(:disabled) {
           @include hs-core.color-bind('select-field', (
-            border: 'danger-400'
+            border: 'error-400'
           ));
         }
       }
 
       svg {
-        color: hs-core.token-get('danger-400');
+        color: hs-core.token-get('error-400');
       }
     }
 
     &:where(.is-side-label) {
       flex-flow: row nowrap;
       align-items: center;
-      gap: hs-core.token-get('space-sm');
+      gap: hs-core.primitive-token-get('spacing.sm');
     }
   }
 }
