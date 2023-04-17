@@ -64,7 +64,7 @@
         @include hs-core.key-bind('button-gap', 0.3rem);
 
         .hs-button__icon {
-          background-color: hs-core.token-get('success-400');
+          background-color: hs-core.primitive-token-get('dp-green.400');
           border: 6px solid hs-core.key-get('button-fill');
           border-radius: 50%;
         }
@@ -79,7 +79,7 @@
       .hs-wallet__details {
         display: block;
         position: absolute;
-        bottom: calc(-90% - #{hs-core.token-get('space-xs')});
+        bottom: calc(-90% - #{hs-core.primitive-token-get('spacing.xs')});
         z-index: 100;
         opacity: hs-core.key-create('wallet-details-opacity', 0);
         pointer-events: none;
