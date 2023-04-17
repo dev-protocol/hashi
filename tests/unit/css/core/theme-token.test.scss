@@ -31,26 +31,26 @@
     }
 
     @include true.it('should be able to get a token') {
-      $test: hashi.token-get('scarlet-400');
+      $test: hashi.token-get('primary-400');
       $test2: hashi.token-get('accent-400');
       $test3: hashi.token-get('radius-small');
       $test4: hashi.token-get('size-body');
-      @include true.assert-equal($test, var(--hs-theme-scarlet-400), true);
+      @include true.assert-equal($test, var(--hs-theme-primary-400), true);
       @include true.assert-equal($test2, var(--hs-theme-accent-400), true);
       @include true.assert-equal($test3, var(--hs-theme-radius-small), true);
       @include true.assert-equal($test4, var(--hs-theme-size-body), true);
     }
 
     @include true.it('should be able to get a token\'s raw value') {
-      $test: hashi.token-get-raw('dp-black-600');
-      $test2: hashi.token-get-raw('dp-white-200');
+      $test: hashi.token-get-raw('primary-600');
+      $test2: hashi.token-get-raw('secondary-200');
       @include true.assert-equal($test, #000000, true);
       @include true.assert-equal($test2, #ffffff, true);
     }
 
     @include true.it('should be able to switch a token\'s value') {
       $test: hashi.token-switch(#e56c1a);
-      $test2: hashi.token-switch('dp-white-200', #e56c1a);
+      $test2: hashi.token-switch('primary-200', #e56c1a);
       $test3: hashi.token-switch('invalid-token', #e56c1a);
       @include true.assert-equal($test, #e56c1a, true);
       @include true.assert-equal($test2, var(--hs-theme-dp-white-200), true);
