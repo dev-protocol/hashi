@@ -141,6 +141,7 @@ $_shape-tokens: (
     '6xl': 8.2rem,
     'pill': 5000px,
     'circle': 50%,
+    'auto': 'n/a'
   ),
   'spacing': (
     'none': 0,
@@ -154,6 +155,7 @@ $_shape-tokens: (
     '4xl': tools.to-rem(80px),
     '5xl': tools.to-rem(96px),
     '6xl': tools.to-rem(112px),
+    'pill': 'n/a',
     'auto': auto
   ),
   'el-spacing': (
@@ -168,6 +170,7 @@ $_shape-tokens: (
     '4xl': 6.1rem,
     '5xl': 8.2rem,
     '6xl': 12.3rem,
+    'pill': 'n/a',
     'auto': auto
   ),
   'dimension': (
@@ -187,6 +190,7 @@ $_shape-tokens: (
     'md': 5px,
     'lg': 7px,
     'xl': 11px,
+    'auto': auto,
   ),
   'shadow': (
     'none': (0 1px 0 0 var(--hs-shadow-color)),
