@@ -177,6 +177,7 @@ $_tones: (
   );
 
   :root {
+    @include hs-core.token-config($map: $_extend);
     @include hs-core.token-config(
       $primary: (
         200: _get-color($_primary, 200),
@@ -288,7 +289,6 @@ $_tones: (
         line-height: _get-line-height(map.merge(map.get($_itp, 'small'), $_small)),
       ),
     );
-    @include hs-core.token-config($map: $_extend);
     @include hs-core.token-config(
       $primary-alpha: (
         200: rgba(_raw('primary-200'), 8%),
