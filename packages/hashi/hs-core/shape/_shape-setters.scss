@@ -280,11 +280,7 @@ $_valid-props: (
     } @else if tokens.check('#{$key}.#{$value}') {
       $result: list.append($result, tokens.get('#{$key}.#{$value}'));
     } @else {
-      @if $value != 0 {
-        @error 'Invalid value: #{$value}. Please use a valid #{$key} token, or the number 0.';
-      } @else {
-        $result: list.append($result, $value, 'space');
-      }
+      $result: list.append($result, $value, 'space');
     }
   }
   @return $result;
