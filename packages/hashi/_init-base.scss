@@ -27,6 +27,7 @@
 @use 'sass:list';
 @use 'sass:selector';
 @use 'sass:string';
+@use 'sass:color';
 
 @use 'init-font-pack' as font-pack;
 
@@ -41,9 +42,9 @@ $surface-dark: 'dp-blue-grey' !default;
 $error: 'dp-red' !default;
 $error-dark: $error !default;
 
-$radius-small: 'xs' !default;
-$radius-medium: 'sm' !default;
-$radius-large: 'md' !default;
+$radius-small: 'sm' !default;
+$radius-medium: 'md' !default;
+$radius-large: 'lg' !default;
 
 $supertitle: () !default;
 $title: () !default;
@@ -158,19 +159,19 @@ $_tones: (
     ),
     'body': (
       family: ('DM Sans', sans-serif),
-      size: 'md',
+      size: 'sm',
       weight: 400,
       line-height: 'normal'
     ),
     'mono': (
       family: ('IBM Plex Mono', monospace),
-      size: 'md',
+      size: 'sm',
       weight: 400,
       line-height: 'normal'
     ),
     'small': (
       family: ('DM Sans', sans-serif),
-      size: 'sm',
+      size: 'xs',
       weight: 200,
       line-height: 'normal'
     )
@@ -253,40 +254,40 @@ $_tones: (
         'large': hs-core.primitive-token-switch('radius.#{$_radius-large}', $_radius-large),
       ),
       $supertitle: (
-        family: _get-family(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
-        size: _get-size(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
-        weight: _get-weight(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
-        line-height: _get-line-height(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'family': _get-family(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'size': _get-size(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
       ),
       $title: (
-        family: _get-family(map.merge(map.get($_itp, 'title'), $_title)),
-        size: _get-size(map.merge(map.get($_itp, 'title'), $_title)),
-        weight: _get-weight(map.merge(map.get($_itp, 'title'), $_title)),
-        line-height: _get-line-height(map.merge(map.get($_itp, 'title'), $_title)),
+        'family': _get-family(map.merge(map.get($_itp, 'title'), $_title)),
+        'size': _get-size(map.merge(map.get($_itp, 'title'), $_title)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'title'), $_title)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'title'), $_title)),
       ),
       $subtitle: (
-        family: _get-family(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
-        size: _get-size(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
-        weight: _get-weight(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
-        line-height: _get-line-height(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'family': _get-family(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'size': _get-size(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
       ),
       $body: (
-        family: _get-family(map.merge(map.get($_itp, 'body'), $_body)),
-        size: _get-size(map.merge(map.get($_itp, 'body'), $_body)),
-        weight: _get-weight(map.merge(map.get($_itp, 'body'), $_body)),
-        line-height: _get-line-height(map.merge(map.get($_itp, 'body'), $_body)),
+        'family': _get-family(map.merge(map.get($_itp, 'body'), $_body)),
+        'size': _get-size(map.merge(map.get($_itp, 'body'), $_body)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'body'), $_body)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'body'), $_body)),
       ),
       $mono: (
-        family: _get-family(map.merge(map.get($_itp, 'mono'), $_mono)),
-        size: _get-size(map.merge(map.get($_itp, 'mono'), $_mono)),
-        weight: _get-weight(map.merge(map.get($_itp, 'mono'), $_mono)),
+        'family': _get-family(map.merge(map.get($_itp, 'mono'), $_mono)),
+        'size': _get-size(map.merge(map.get($_itp, 'mono'), $_mono)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'mono'), $_mono)),
         line-height: _get-line-height(map.merge(map.get($_itp, 'mono'), $_mono)),
       ),
       $small: (
-        family: _get-family(map.merge(map.get($_itp, 'small'), $_small)),
-        size: _get-size(map.merge(map.get($_itp, 'small'), $_small)),
-        weight: _get-weight(map.merge(map.get($_itp, 'small'), $_small)),
-        line-height: _get-line-height(map.merge(map.get($_itp, 'small'), $_small)),
+        'family': _get-family(map.merge(map.get($_itp, 'small'), $_small)),
+        'size': _get-size(map.merge(map.get($_itp, 'small'), $_small)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'small'), $_small)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'small'), $_small)),
       ),
     );
     @include hs-core.token-config(
@@ -310,7 +311,7 @@ $_tones: (
       ),
     );
     --hs-transition-time: 0.2s;
-    --hs-shadow-color: rgba(#000, 15%);
+    --hs-shadow-color: rgba(0,0,0,0.15);
   }
 
   @include hs-core.breakpoint-config(
@@ -318,12 +319,12 @@ $_tones: (
   );
 
   @include font-pack.load((
-    'supertitle': _get-family($_supertitle),
-    'title': _get-family($_title),
-    'subtitle': _get-family($_subtitle),
-    'body': _get-family($_body),
-    'mono': _get-family($_mono),
-    'small': _get-family($_small),
+    'supertitle': _get-family(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+    'title': _get-family(map.merge(map.get($_itp, 'title'), $_title)),
+    'subtitle': _get-family(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+    'body': _get-family(map.merge(map.get($_itp, 'body'), $_body)),
+    'mono': _get-family(map.merge(map.get($_itp, 'mono'), $_mono)),
+    'small': _get-family(map.merge(map.get($_itp, 'small'), $_small)),
   ));
 
   @if $_dark-mode == 'media' {
@@ -576,7 +577,7 @@ $_tones: (
 }
 
 @function _get-size($query) {
-  @return hs-core.primitive-token-switch('size.#{map.get($query, 'style')}', map.get($query, 'size'));
+  @return hs-core.primitive-token-switch('size.#{map.get($query, 'size')}', map.get($query, 'size'));
 }
 
 @function _get-weight($query) {
@@ -588,5 +589,5 @@ $_tones: (
 }
 
 @function _raw($query) {
-  @return hs-core.token-switch-raw($query);
+  @return hs-core.token-get-raw($query);
 }

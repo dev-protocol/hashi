@@ -53,24 +53,24 @@ $_hs-extended-tokens: ();
   @if tools.is-empty($fallback) {
     @return sentro.token-switch($query);
   }
-  @if not sentro.token-check($query) and not tools.is-empty($fallback) {
+  @if not check($query) and not tools.is-empty($fallback) {
     @return $fallback;
   }
-  @if sentro.token-check($query) {
-    @return sentro.token-get($query);
+  @if check($query) {
+    @return get($query);
   }
   @return $query;
 }
 
 @function switch-raw($query, $fallback: ()) {
   @if tools.is-empty($fallback) {
-    @return sentro.token-switch($query);
+    @return switch($query);
   }
-  @if not sentro.token-check($query) and not tools.is-empty($fallback) {
+  @if not check($query) and not tools.is-empty($fallback) {
     @return $fallback;
   }
-  @if sentro.token-check($query) {
-    @return sentro.token-get-raw($query);
+  @if check($query) {
+    @return get-raw($query);
   }
   @return $query;
 }
