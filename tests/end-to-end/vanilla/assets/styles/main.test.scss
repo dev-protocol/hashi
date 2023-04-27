@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,13 +18,13 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'sakura';
 
 @use 'node_modules/@devprotocol/hashi' with ($theme: sakura.$main-theme);
 @use 'node_modules/@devprotocol/hashi/hs-badge';
-@use 'node_modules/@devprotocol/hashi/hs-button' with ($theme: sakura.$button-theme);
+@use 'node_modules/@devprotocol/hashi/hs-button';
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
 @use 'node_modules/@devprotocol/hashi/hs-card';
 @use 'node_modules/@devprotocol/hashi/hs-dialog';
@@ -33,7 +33,7 @@
 @use 'node_modules/@devprotocol/hashi/hs-profile';
 @use 'node_modules/@devprotocol/hashi/hs-tick-field';
 @use 'node_modules/@devprotocol/hashi/hs-select-field';
-@use 'node_modules/@devprotocol/hashi/hs-wallet' with ($theme: sakura.$wallet-theme);
+@use 'node_modules/@devprotocol/hashi/hs-wallet';
 
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 

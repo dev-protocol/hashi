@@ -40,13 +40,17 @@ $main-theme: (
       'ink': #ffffff
     )
   ),
-  'dark-mode': 'media'
+  'dark-mode': 'attribute'
 );
 
 $button-theme: (
   'fill-active': 'accent-300',
   'padding': ('md', 'lg'),
   'radius': 'pill',
+);
+
+$button-group-theme: (
+  'radius': 'pill'
 );
 
 $form-theme: (
