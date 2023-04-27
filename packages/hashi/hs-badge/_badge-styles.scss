@@ -29,7 +29,7 @@ $ink: 'primary-ink' !default;
 $border: $fill !default;
 
 $radius: 'small' !default;
-$padding: ('xs' 'sm') !default;
+$padding: ('sm' 'md') !default;
 $gap: 'xs' !default;
 
 $label-typography: 'small' !default;
@@ -63,7 +63,7 @@ $_label-typography: hs-core.prioritize(map.get($theme, 'label-typography'), $lab
       weight: $_label-typography,
       line-height: $_label-typography,
     ));
-    
+
     > * + * {
       margin-left: hs-core.key-create('badge-gap', hs-core.token-switch('space-#{$_gap}', $_gap));
     }
