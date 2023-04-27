@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 @use 'sass:map';
@@ -26,10 +26,12 @@
 
 $fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary-400' !default;
+$border: $fill !default;
 
 $radius: 'medium' !default;
-$padding: 'md' !default;
+$padding: 'lg' !default;
+$border-width: 1px !default;
+$border-style: solid !default;
 
 $title-typography: 'subtitle' !default;
 $subtitle-typography: 'body' !default;
@@ -50,6 +52,8 @@ $_border: hs-core.prioritize(map.get($theme, 'border'), $border);
 
 $_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
 $_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+$_border-width: hs-core.prioritize(map.get($theme, 'border-width'), $border-width);
+$_border-style: hs-core.prioritize(map.get($theme, 'border-style'), $border-style);
 
 $_title-typography: hs-core.prioritize(map.get($theme, 'title-typography'), $title-typography);
 $_subtitle-typography: hs-core.prioritize(map.get($theme, 'subtitle-typography'), $subtitle-typography);
@@ -83,14 +87,11 @@ $_footer-gap: hs-core.prioritize(map.get($theme, 'footer-gap'), $footer-gap);
     @include hs-core.shape-apply('card', (
       radius: $_radius,
       shadow: 'none',
-      border-width: 1px,
-      border-style: solid
+      border-width: $_border-width,
+      border-style: $_border-style
     ));
 
-    &:where(.is-filled) {
-      @include hs-core.color-bind('card', (
-        border: $_fill,
-      ));
+    &:where(.is-raised) {
       @include hs-core.shape-bind('card', (
         shadow: 'low'
       ));

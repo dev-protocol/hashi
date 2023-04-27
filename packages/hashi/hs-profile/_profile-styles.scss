@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 @use 'sass:map';
@@ -26,10 +26,12 @@
 
 $fill: 'surface-200' !default;
 $ink: 'surface-ink' !default;
-$border: 'primary-400' !default;
+$border: $fill !default;
 
 $radius: 'sm' !default;
 $padding: 'md' !default;
+$border-width: 1px !default;
+$border-style: solid !default;
 
 $gap: 'md' !default;
 $img-size: 66px !default;
@@ -46,6 +48,8 @@ $_border: hs-core.prioritize(map.get($theme, 'border'), $border);
 
 $_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
 $_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+$_border-width: hs-core.prioritize(map.get($theme, 'border-width'), $border-width);
+$_border-style: hs-core.prioritize(map.get($theme, 'border-style'), $border-style);
 
 $_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
 $_img-size: hs-core.prioritize(map.get($theme, 'img-size'), $img-size);
@@ -70,14 +74,11 @@ $_description-typography: hs-core.prioritize(map.get($theme, 'description-typogr
     @include hs-core.shape-apply('profile', (
       radius: $_radius,
       padding: $_padding,
-      border-width: 1px,
-      border-style: solid
+      border-width: $_border-width,
+      border-style: $_border-style,
     ));
-  
-    &.is-filled {
-      @include hs-core.color-bind('profile', (
-        border: $_fill,
-      ));
+
+    &.is-raised {
       @include hs-core.shape-apply('profile', (
         shadow: 'low'
       ));
