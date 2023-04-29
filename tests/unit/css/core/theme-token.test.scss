@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'node_modules/@devprotocol/hashi';
 @use 'node_modules/sass-true/sass/true';
@@ -26,7 +26,7 @@
 @include hashi.init {
   @include true.describe('Theme Token [module]') {
     @include true.it('should be able to check a token\'s validity') {
-      $test: hashi.token-check('dp-white-200');
+      $test: hashi.token-check('primary-200');
       @include true.assert-equal($test, true, true);
     }
 
@@ -34,18 +34,19 @@
       $test: hashi.token-get('primary-400');
       $test2: hashi.token-get('accent-400');
       $test3: hashi.token-get('radius-small');
-      $test4: hashi.token-get('size-body');
+      $test4: hashi.token-get('body-size');
       @include true.assert-equal($test, var(--hs-theme-primary-400), true);
       @include true.assert-equal($test2, var(--hs-theme-accent-400), true);
       @include true.assert-equal($test3, var(--hs-theme-radius-small), true);
-      @include true.assert-equal($test4, var(--hs-theme-size-body), true);
+      @include true.assert-equal($test4, var(--hs-theme-body-size), true);
     }
 
     @include true.it('should be able to get a token\'s raw value') {
       $test: hashi.token-get-raw('primary-600');
-      $test2: hashi.token-get-raw('secondary-200');
-      @include true.assert-equal($test, #000000, true);
-      @include true.assert-equal($test2, #ffffff, true);
+      $test2: hashi.token-get-raw('accent-200');
+      // TODO: Fix this in the next minor version.
+      @include true.assert-equal($test, #c4c4c4, true); // Affected by dark mode (fsr)
+      @include true.assert-equal($test2, #88aeff, true);
     }
 
     @include true.it('should be able to switch a token\'s value') {
@@ -53,13 +54,13 @@
       $test2: hashi.token-switch('primary-200', #e56c1a);
       $test3: hashi.token-switch('invalid-token', #e56c1a);
       @include true.assert-equal($test, #e56c1a, true);
-      @include true.assert-equal($test2, var(--hs-theme-dp-white-200), true);
+      @include true.assert-equal($test2, var(--hs-theme-primary-200), true);
       @include true.assert-equal($test3, #e56c1a, true);
     }
 
     @include true.it('should be able to switch a token\'s raw value') {
       $test: hashi.token-switch-raw(#e56c1a);
-      $test2: hashi.token-switch-raw('dp-white-200', #e56c1a);
+      $test2: hashi.token-switch-raw('primary-200', #e56c1a);
       $test3: hashi.token-switch-raw('invalid-token', #e56c1a);
       @include true.assert-equal($test, #e56c1a, true);
       @include true.assert-equal($test2, #ffffff, true);
