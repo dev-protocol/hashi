@@ -450,10 +450,10 @@ __metadata:
 
 "@devprotocol/hashi@file:./packages/hashi::locator=hashi%40workspace%3A.":
   version: 2.0.0-dev
-  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=9899c8&locator=hashi%40workspace%3A."
+  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=8c96da&locator=hashi%40workspace%3A."
   dependencies:
     "@matteusan/sentro": 0.1.25
-  checksum: b6e4a8dd7e8dac79c7d57fd9ef0c0843a2031d5e4c4447c8a0d338a297e4fc015d72b38d11518cef0f9457d61274c0dd1afb337869e363540c575fefb57b4270
+  checksum: 3a94cb3b2ea8078d939187af8b815f9b79fd9ad0ce713c99fad404c78a8f3ffe2df71fd74ebe9dbed8fd2edab097a909f5bf985ece469d9e7614be52aa1c3b40
   languageName: node
   linkType: hard
 
