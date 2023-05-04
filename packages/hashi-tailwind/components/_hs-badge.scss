@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'node_modules/@devprotocol/hashi/hs-core';
 
@@ -28,27 +28,14 @@
     @apply bg-primary-600 text-primary-ink border-primary-600 border;
 
     .hs-badge__label {
-      font-family: hs-core.key-get('badge-family');
-      font-size: hs-core.key-get('badge-size');
-      font-weight: hs-core.key-get('badge-weight');
-      line-height: hs-core.key-get('badge-line-height');
+      @apply small;
     }
 
     .hs-badge__icon {
-      display: flex;
-      align-items: center;
-      @include hs-core.color-ink('badge-icon', currentColor);
-      @include hs-core.typography-size('badge-icon', hs-core.to-rem(22px));
-      /* @fallback */
-      width: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
-      height: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+      @apply flex items-center w-[#{hs-core.to-rem(22px)}] h-[#{hs-core.to-rem(22px)}] text-[currentColor] size-[#{hs-core.to-rem(22px)}];
 
       > * {
-        @include hs-core.color-ink('badge-icon', currentColor);
-        @include hs-core.typography-size('badge-icon', hs-core.to-rem(22px));
-        /* @fallback */
-        width: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
-        height: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+        @apply flex items-center w-[#{hs-core.to-rem(22px)}] h-[#{hs-core.to-rem(22px)}] text-[currentColor] size-[#{hs-core.to-rem(22px)}];
       }
     }
   }
