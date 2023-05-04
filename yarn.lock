@@ -481,11 +481,11 @@ __metadata:
   linkType: hard
 
 "@devprotocol/hashi@file:./packages/hashi::locator=hashi%40workspace%3A.":
-  version: 2.0.0-alpha
-  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=65cbdc&locator=hashi%40workspace%3A."
+  version: 2.0.0-beta
+  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=7699aa&locator=hashi%40workspace%3A."
   dependencies:
     "@matteusan/sentro": 0.1.25
-  checksum: 802207bf3c775de28f751ca6a1098b700da76e71556ca208ba8791d995dd67d791f49a1b7d8f01f96a79a3e1e0075a4a0694c81b0ba419b407747270d294c809
+  checksum: fe4705d63c0ab8ae023dee3c5089ccb378098dfb1dd2bf9e6ba0b61994da67a52d671827e94233e2885ba22d6555617eb6eb1043481807643f138ba9286bf062
   languageName: node
   linkType: hard
 
