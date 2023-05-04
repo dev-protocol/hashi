@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,13 +18,13 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'sakura';
 
 @use 'node_modules/@devprotocol/hashi' with ($theme: sakura.$main-theme);
 @use 'node_modules/@devprotocol/hashi/hs-badge';
-@use 'node_modules/@devprotocol/hashi/hs-button' with ($theme: sakura.$button-theme);
+@use 'node_modules/@devprotocol/hashi/hs-button';
 @use 'node_modules/@devprotocol/hashi/hs-button-group';
 @use 'node_modules/@devprotocol/hashi/hs-card';
 @use 'node_modules/@devprotocol/hashi/hs-dialog';
@@ -33,7 +33,7 @@
 @use 'node_modules/@devprotocol/hashi/hs-profile';
 @use 'node_modules/@devprotocol/hashi/hs-tick-field';
 @use 'node_modules/@devprotocol/hashi/hs-select-field';
-@use 'node_modules/@devprotocol/hashi/hs-wallet' with ($theme: sakura.$wallet-theme);
+@use 'node_modules/@devprotocol/hashi/hs-wallet';
 
 @use 'node_modules/@devprotocol/hashi/hs-utils';
 
@@ -47,8 +47,8 @@
 
   section:not([class^='hs-']) {
     display: flex;
-    gap: hashi.token-get('space-xs');
-    margin: hashi.token-get('margin-sm') 0;
+    gap: hashi.primitive-token-get('spacing.xs');
+    margin: hashi.primitive-token-get('margin.sm') 0;
   }
 
   #typography,
@@ -59,13 +59,13 @@
   .color-module {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: hashi.token-get('space-xs');
+    gap: hashi.primitive-token-get('spacing.xs');
 
     > div {
       width: 100%;
       height: 50px;
-      padding: hashi.token-get('padding-xs') hashi.token-get('padding-sm');
-      border-radius: hashi.token-get('radius-xs');
+      padding: hashi.primitive-token-get('padding.xs') hashi.primitive-token-get('padding.sm');
+      border-radius: hashi.primitive-token-get('radius.xs');
     }
   }
 

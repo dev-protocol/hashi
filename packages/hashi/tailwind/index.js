@@ -1,5 +1,6 @@
 /*
- *  Copyright (c) 2022 Dev Protocol
+ *
+ *  Copyright (c) 2023 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -18,162 +19,119 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
+ *
  */
 
 const hsColorTokens = {
-  'dp-white': {
-    200: 'var(--hs-theme-dp-white-200)',
-    300: 'var(--hs-theme-dp-white-300)',
-    400: 'var(--hs-theme-dp-white-400)',
-    600: 'var(--hs-theme-dp-white-600)',
-    'ink': 'var(--hs-theme-dp-white-ink)'
-  },
-  'dp-black': {
-    200: 'var(--hs-theme-dp-black-200)',
-    300: 'var(--hs-theme-dp-black-300)',
-    400: 'var(--hs-theme-dp-black-400)',
-    600: 'var(--hs-theme-dp-black-600)',
-    'ink': 'var(--hs-theme-dp-black-ink)'
-  },
-  'dp-blue-grey': {
-    200: 'var(--hs-theme-dp-blue-grey-200)',
-    300: 'var(--hs-theme-dp-blue-grey-300)',
-    400: 'var(--hs-theme-dp-blue-grey-400)',
-    600: 'var(--hs-theme-dp-blue-grey-600)',
-    'ink': 'var(--hs-theme-dp-blue-grey-ink)'
-  },
-  'dp-black-alpha': {
-    DEFAULT: 'var(--hs-theme-dp-black-alpha)',
-    'ink': 'var(--hs-theme-dp-black-alpha-ink)'
-  },
-  'dp-white-alpha': {
-    DEFAULT: 'var(--hs-theme-dp-white-alpha)',
-    'ink': 'var(--hs-theme-dp-white-alpha-ink)'
-  },
-  scarlet: {
-    200: 'var(--hs-theme-scarlet-200)',
-    300: 'var(--hs-theme-scarlet-300)',
-    400: 'var(--hs-theme-scarlet-400)',
-    600: 'var(--hs-theme-scarlet-600)',
-    'ink': 'var(--hs-theme-scarlet-ink)'
-  },
-  plox: {
-    200: 'var(--hs-theme-plox-200)',
-    300: 'var(--hs-theme-plox-300)',
-    400: 'var(--hs-theme-plox-400)',
-    600: 'var(--hs-theme-plox-600)',
-    'ink': 'var(--hs-theme-plox-ink)'
-  },
-  'native-blue': {
-    200: 'var(--hs-theme-native-blue-200)',
-    300: 'var(--hs-theme-native-blue-300)',
-    400: 'var(--hs-theme-native-blue-400)',
-    600: 'var(--hs-theme-native-blue-600)',
-    'ink': 'var(--hs-theme-native-blue-ink)'
-  },
-  'bright-cyan': {
-    200: 'var(--hs-theme-bright-cyan-200)',
-    300: 'var(--hs-theme-bright-cyan-300)',
-    400: 'var(--hs-theme-bright-cyan-400)',
-    600: 'var(--hs-theme-bright-cyan-600)',
-    'ink': 'var(--hs-theme-bright-cyan-ink)'
-  },
-  success: {
-    200: 'var(--hs-theme-success-200)',
-    300: 'var(--hs-theme-success-300)',
-    400: 'var(--hs-theme-success-400)',
-    600: 'var(--hs-theme-success-600)',
-    'ink': 'var(--hs-theme-success-ink)'
-  },
-  warning: {
-    200: 'var(--hs-theme-warning-200)',
-    300: 'var(--hs-theme-warning-300)',
-    400: 'var(--hs-theme-warning-400)',
-    600: 'var(--hs-theme-warning-600)',
-    'ink': 'var(--hs-theme-warning-ink)'
-  },
-  danger: {
-    200: 'var(--hs-theme-danger-200)',
-    300: 'var(--hs-theme-danger-300)',
-    400: 'var(--hs-theme-danger-400)',
-    600: 'var(--hs-theme-danger-600)',
-    'ink': 'var(--hs-theme-danger-ink)'
-  },
-  primary: {
+  'primary': {
     200: 'var(--hs-theme-primary-200)',
     300: 'var(--hs-theme-primary-300)',
     400: 'var(--hs-theme-primary-400)',
     600: 'var(--hs-theme-primary-600)',
-    'ink': 'var(--hs-theme-primary-ink)'
+    ink: 'var(--hs-theme-primary-ink)',
+    'dark': {
+      200: 'var(--hs-theme-primary-dark-200)',
+      300: 'var(--hs-theme-primary-dark-300)',
+      400: 'var(--hs-theme-primary-dark-400)',
+      600: 'var(--hs-theme-primary-dark-600)',
+      ink: 'var(--hs-theme-primary-dark-ink)',
+    },
+    'alpha': {
+      200: 'var(--hs-theme-primary-alpha-200)',
+      300: 'var(--hs-theme-primary-alpha-300)',
+      400: 'var(--hs-theme-primary-alpha-400)',
+      600: 'var(--hs-theme-primary-alpha-600)',
+    }
   },
-  accent: {
+  'accent': {
     200: 'var(--hs-theme-accent-200)',
     300: 'var(--hs-theme-accent-300)',
     400: 'var(--hs-theme-accent-400)',
     600: 'var(--hs-theme-accent-600)',
-    'ink': 'var(--hs-theme-accent-ink)'
+    ink: 'var(--hs-theme-accent-ink)',
+    'dark': {
+      200: 'var(--hs-theme-accent-dark-200)',
+      300: 'var(--hs-theme-accent-dark-300)',
+      400: 'var(--hs-theme-accent-dark-400)',
+      600: 'var(--hs-theme-accent-dark-600)',
+      ink: 'var(--hs-theme-accent-dark-ink)',
+    },
+    'alpha': {
+      200: 'var(--hs-theme-accent-alpha-200)',
+      300: 'var(--hs-theme-accent-alpha-300)',
+      400: 'var(--hs-theme-accent-alpha-400)',
+      600: 'var(--hs-theme-accent-alpha-600)',
+    }
   },
-  surface: {
+  'surface': {
     200: 'var(--hs-theme-surface-200)',
     300: 'var(--hs-theme-surface-300)',
     400: 'var(--hs-theme-surface-400)',
     600: 'var(--hs-theme-surface-600)',
-    'ink': 'var(--hs-theme-surface-ink)'
+    ink: 'var(--hs-theme-surface-ink)',
+    'dark': {
+      200: 'var(--hs-theme-surface-dark-200)',
+      300: 'var(--hs-theme-surface-dark-300)',
+      400: 'var(--hs-theme-surface-dark-400)',
+      600: 'var(--hs-theme-surface-dark-600)',
+      ink: 'var(--hs-theme-surface-dark-ink)',
+    },
+    'alpha': {
+      200: 'var(--hs-theme-surface-alpha-200)',
+      300: 'var(--hs-theme-surface-alpha-300)',
+      400: 'var(--hs-theme-surface-alpha-400)',
+      600: 'var(--hs-theme-surface-alpha-600)',
+    }
   },
+  'error': {
+    200: 'var(--hs-theme-error-200)',
+    300: 'var(--hs-theme-error-300)',
+    400: 'var(--hs-theme-error-400)',
+    600: 'var(--hs-theme-error-600)',
+    ink: 'var(--hs-theme-error-ink)',
+  }
 };
 
 const hsShapeRadius = {
-  'none': 'var(--hs-theme-radius-none)',
-  'xs': 'var(--hs-theme-radius-xs)',
-  'sm': 'var(--hs-theme-radius-sm)',
-  'md': 'var(--hs-theme-radius-md)',
-  'lg': 'var(--hs-theme-radius-lg)',
-  'xl': 'var(--hs-theme-radius-xl)',
-  'pill': 'var(--hs-theme-radius-pill)',
+  'none': 0,
   'small': 'var(--hs-theme-radius-small)',
   'medium': 'var(--hs-theme-radius-medium)',
   'large': 'var(--hs-theme-radius-large)',
-};
-
-const hsShapeGap = {
-  'none': 'var(--hs-theme-space-none)',
-  'xs': 'var(--hs-theme-space-xs)',
-  'sm': 'var(--hs-theme-space-sm)',
-  'md': 'var(--hs-theme-space-md)',
-  'lg': 'var(--hs-theme-space-lg)',
-  'xl': 'var(--hs-theme-space-xl)',
-  'pill': 'var(--hs-theme-space-pill)',
-};
-
-const hsShapeMargin = {
-  'none': 'var(--hs-theme-margin-none)',
-  'xs': 'var(--hs-theme-margin-xs)',
-  'sm': 'var(--hs-theme-margin-sm)',
-  'md': 'var(--hs-theme-margin-md)',
-  'lg': 'var(--hs-theme-margin-lg)',
-  'xl': 'var(--hs-theme-margin-xl)',
-  'pill': 'var(--hs-theme-margin-pill)',
-};
-
-const hsShapePadding = {
-  'none': 'var(--hs-theme-padding-none)',
-  'xs': 'var(--hs-theme-padding-xs)',
-  'sm': 'var(--hs-theme-padding-sm)',
-  'md': 'var(--hs-theme-padding-md)',
-  'lg': 'var(--hs-theme-padding-lg)',
-  'xl': 'var(--hs-theme-padding-xl)',
-  'pill': 'var(--hs-theme-padding-pill)',
+  'pill': '5000px',
+  'circle': '50%',
 };
 
 const hsShapeSpacing = {
-  'none': 'var(--hs-theme-space-none)',
-  'xs': 'var(--hs-theme-space-xs)',
-  'sm': 'var(--hs-theme-space-sm)',
-  'md': 'var(--hs-theme-space-md)',
-  'lg': 'var(--hs-theme-space-lg)',
-  'xl': 'var(--hs-theme-space-xl)',
-  'pill': 'var(--hs-theme-space-pill)',
+  'none': 0,
+  'xs': '4px',
+  'sm': '8px',
+  'md': '16px',
+  'lg': '24px',
+  'xl': '32px',
+  '2xl': '48px',
+  '3xl': '64px',
+  '4xl': '80px',
+  '5xl': '96px',
+  '6xl': '112px',
+  // 'pill': 'n/a',
+  'auto': 'auto'
 };
+
+const hsShapeElSpacing = {
+  'none': 0,
+  'xs': '0.1rem',
+  'sm': '0.3rem',
+  'md': '0.7rem',
+  'lg': '1.2rem',
+  'xl': '2.3rem',
+  '2xl': '3.4rem',
+  '3xl': '4.5rem',
+  '4xl': '6.1rem',
+  '5xl': '8.2rem',
+  '6xl': '12.3rem',
+  // 'pill': 'n/a',
+  'auto': 'auto'
+}
 
 const hsShapeBorderWidth = {
   DEFAULT: '1px',
@@ -186,21 +144,21 @@ const hsShapeBorderWidth = {
 };
 
 const hsTypographyFamily = {
-  'supertitle': 'var(--hs-theme-family-supertitle)',
-  'title': 'var(--hs-theme-family-title)',
-  'subtitle': 'var(--hs-theme-family-subtitle)',
-  'body': 'var(--hs-theme-family-body)',
-  'mono': 'var(--hs-theme-family-mono)',
-  'small': 'var(--hs-theme-family-small)',
+  'supertitle': 'var(--hs-theme-supertitle-family)',
+  'title': 'var(--hs-theme-title-family)',
+  'subtitle': 'var(--hs-theme-subtitle-family)',
+  'body': 'var(--hs-theme-body-family)',
+  'mono': 'var(--hs-theme-mono-family)',
+  'small': 'var(--hs-theme-small-family)',
 };
 
 const hsTypographySize = {
-  'supertitle': 'var(--hs-theme-size-supertitle)',
-  'title': 'var(--hs-theme-size-title)',
-  'subtitle': 'var(--hs-theme-size-subtitle)',
-  'body': 'var(--hs-theme-size-body)',
-  'mono': 'var(--hs-theme-size-mono)',
-  'small': 'var(--hs-theme-size-small)',
+  'supertitle': 'var(--hs-theme-supertitle-size)',
+  'title': 'var(--hs-theme-title-size)',
+  'subtitle': 'var(--hs-theme-subtitle-size)',
+  'body': 'var(--hs-theme-body-size)',
+  'mono': 'var(--hs-theme-mono-size)',
+  'small': 'var(--hs-theme-small-size)',
 };
 
 const hsTypographyWeight = {
@@ -211,9 +169,9 @@ const hsTypographyWeight = {
 };
 
 const hsTypographyLineHeight = {
-  'broad': 'var(--hs-theme-line-height-broad)',
-  'normal': 'var(--hs-theme-line-height-normal)',
-  'condensed': 'var(--hs-theme-line-height-condensed)',
+  'broad': 1.75,
+  'normal': 1.5,
+  'condensed': 1.25,
 };
 
 export default {
@@ -233,11 +191,11 @@ export default {
     // border-[]
     borderWidth: hsShapeBorderWidth,
     // gap-[]
-    gap: hsShapeGap,
+    gap: hsShapeSpacing,
     // m[]-[]
-    margin: hsShapeMargin,
+    margin: hsShapeSpacing,
     // p[]-[]
-    padding: hsShapePadding,
+    padding: hsShapeElSpacing,
     // outline-[]
     outlineWidth: hsShapeBorderWidth,
     // outline-offset-[]

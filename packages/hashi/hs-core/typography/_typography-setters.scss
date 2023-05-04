@@ -25,6 +25,7 @@
 
 @use '../theme';
 @use '../tools';
+@use '../tokens';
 
 /// Required component props
 /// @access private
@@ -35,15 +36,15 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin _base($component, $theme, $settings: ()) {
   $_init-settings: ('intent': create);
   $_settings: map.merge($_init-settings, $settings);
-  
+
   /// @type string
   $intent: map.get($_settings, 'intent');
-  
+
   $family: map.get($theme, 'family');
   $size: map.get($theme, 'size');
   $weight: map.get($theme, 'weight');
   $line-height: map.get($theme, 'line-height');
-  
+
   @if $family {
     @include family($component, $family, $intent);
   }
@@ -66,7 +67,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin family($component, $family, $intent: 'create') {
   @include theme.property(
     font-family,
-    ('#{$component}-family', theme.token-switch('family-#{$family}', $family)),
+    ('#{$component}-family', theme.token-switch('#{$family}-family', tokens.switch('family.#{$family}', $family))),
     $intent
   );
 }
@@ -79,7 +80,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin size($component, $size, $intent: 'create') {
   @include theme.property(
     font-size,
-    ('#{$component}-size', theme.token-switch('size-#{$size}', $size)),
+    ('#{$component}-size', theme.token-switch('#{$size}-size', tokens.switch('size.#{$size}', $size))),
     $intent
   );
 }
@@ -92,7 +93,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin weight($component, $weight, $intent: 'create') {
   @include theme.property(
     font-weight,
-    ('#{$component}-weight', theme.token-switch('weight-#{$weight}', $weight)),
+    ('#{$component}-weight', theme.token-switch('#{$weight}-weight', tokens.switch('weight.#{$weight}', $weight))),
     $intent
   );
 }
@@ -105,7 +106,7 @@ $_valid-props: ('family', 'size', 'weight', 'line-height');
 @mixin line-height($component, $line-height, $intent: 'create') {
   @include theme.property(
     line-height,
-    ('#{$component}-line-height', theme.token-switch('line-height-#{$line-height}', $line-height)),
+    ('#{$component}-line-height', theme.token-switch('#{$line-height}-line-height', tokens.switch('line-height.#{$line-height}', $line-height))),
     $intent
   );
 }

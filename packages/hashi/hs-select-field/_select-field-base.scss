@@ -51,12 +51,12 @@
       place-items: center;
       position: absolute;
       top: 54.5%;
-      left: hs-core.token-get('padding-md');
+      left: hs-core.primitive-token-get('padding.md');
       transform: translateY(-53%);
 
       + .hs-select-field__input {
         -webkit-appearance: caret;
-        padding-left: calc(#{hs-core.token-get-raw('padding-md')} + 30px);
+        padding-left: calc(#{hs-core.primitive-token-get('padding.md')} + 30px);
       }
     }
 

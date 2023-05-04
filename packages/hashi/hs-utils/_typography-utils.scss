@@ -34,6 +34,19 @@ $_families: (
   'small'
 );
 
+$_sizes: (
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  '2xl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+);
+
 $_weights: (
   'black',
   'bold',
@@ -78,19 +91,19 @@ $_alignments: (
   @if list.index($utils-to-render, 'preset') {
     @each $preset in $_families {
       .#{$preset} {
-        font-family: hs-core.token-get('family-#{$preset}');
-        font-size: hs-core.token-get('size-#{$preset}');
-        font-weight: hs-core.token-get('weight-#{$preset}');
-        line-height: hs-core.token-get('line-height-#{$preset}');
+        font-family: hs-core.token-get('#{$preset}-family');
+        font-size: hs-core.token-get('#{$preset}-size');
+        font-weight: hs-core.token-get('#{$preset}-weight');
+        line-height: hs-core.token-get('#{$preset}-line-height');
       }
 
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
           .\@#{$shorthand}\:#{$preset} {
-            font-family: hs-core.token-get('family-#{$preset}');
-            font-size: hs-core.token-get('size-#{$preset}');
-            font-weight: hs-core.token-get('weight-#{$preset}');
-            line-height: hs-core.token-get('line-height-#{$preset}');
+            font-family: hs-core.token-get('#{$preset}-family');
+            font-size: hs-core.token-get('#{$preset}-size');
+            font-weight: hs-core.token-get('#{$preset}-weight');
+            line-height: hs-core.token-get('#{$preset}-line-height');
           }
         }
       }
@@ -100,13 +113,13 @@ $_alignments: (
   @if list.index($utils-to-render, 'family') {
     @each $preset in $_families {
       .family-#{$preset} {
-        font-family: hs-core.token-get('family-#{$preset}');
+        font-family: hs-core.token-get('#{$preset}-family');
       }
 
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
           .\@#{$shorthand}\:family-#{$preset} {
-            font-family: hs-core.token-get('family-#{$preset}');
+            font-family: hs-core.token-get('#{$preset}-family');
           }
         }
       }
@@ -114,15 +127,15 @@ $_alignments: (
   }
 
   @if list.index($utils-to-render, 'size') {
-    @each $preset in $_families {
-      .size-#{$preset} {
-        font-size: hs-core.token-get('size-#{$preset}');
+    @each $size in $_sizes {
+      .size-#{$size} {
+        font-size: hs-core.primitive-token-get('size.#{$size}');
       }
 
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
-          .\@#{$shorthand}\:size-#{$preset} {
-            font-size: hs-core.token-get('size-#{$preset}');
+          .\@#{$shorthand}\:size-#{$size} {
+            font-size: hs-core.primitive-token-get('size.#{$size}');
           }
         }
       }
@@ -132,13 +145,13 @@ $_alignments: (
   @if list.index($utils-to-render, 'weight') {
     @each $preset in $_weights {
       .weight-#{$preset} {
-        font-weight: hs-core.token-get('weight-#{$preset}');
+        font-weight: hs-core.primitive-token-get('weight.#{$preset}');
       }
 
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
           .\@#{$shorthand}\:weight-#{$preset} {
-            font-weight: hs-core.token-get('weight-#{$preset}');
+            font-weight: hs-core.primitive-token-get('weight.#{$preset}');
           }
         }
       }
@@ -148,13 +161,13 @@ $_alignments: (
   @if list.index($utils-to-render, 'lh') {
     @each $preset in $_line-heights {
       .lh-#{$preset} {
-        line-height: hs-core.token-get('line-height-#{$preset}');
+        line-height: hs-core.primitive-token-get('line-height.#{$preset}');
       }
 
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
           .\@#{$shorthand}\:lh-#{$preset} {
-            line-height: hs-core.token-get('line-height-#{$preset}');
+            line-height: hs-core.primitive-token-get('line-height.#{$preset}');
           }
         }
       }

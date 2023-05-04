@@ -1,0 +1,94 @@
+///
+//  Copyright (c) 2023 Dev Protocol
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+///
+
+@use '../tools';
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
+@use 'token-data' as data;
+
+$_primitive-token-registry: ();
+$token-keys: map.keys(data.$hs-tokens);
+@each $token-key in $token-keys {
+  $variant-keys: map.keys(map.get(data.$hs-tokens, $token-key));
+  @each $variant-key in $variant-keys {
+    @if $variant-key == 'default' {
+      $_primitive-token-registry: list.append($_primitive-token-registry, '#{$token-key}') !global;
+    } @else {
+      $_primitive-token-registry: list.append($_primitive-token-registry, '#{$token-key}.#{$variant-key}') !global;
+    }
+  }
+}
+
+/// Retrieves a token from the primitive token registry based on a given query.
+/// @param {PrimitiveToken} $query
+/// @return {*} primitive token value.
+@function get($query) {
+  @if _validate($query) {
+    $keys: tools.str-split($query, '.');
+    $token: map.get(data.$hs-tokens, list.nth($keys, 1));
+    @if list.length($keys) != 2 {
+      @return map.get($token, 'default');
+    }
+    @return map.get($token, list.nth($keys, 2));
+  }
+}
+
+/// Retrieves a token from the primitive token registry based on a given query.
+/// @param {PrimitiveToken} $query
+/// @param {*} $fallback
+/// @return {*} primitive token value.
+@function switch($query, $fallback: ()) {
+  @if check($query) == true {
+    $keys: tools.str-split($query, '.');
+    $token: map.get(data.$hs-tokens, list.nth($keys, 1));
+    @if list.length($keys) != 2 {
+      @return map.get($token, 'default');
+    }
+    @return map.get($token, list.nth($keys, 2));
+  }
+  @if not tools.is-empty($fallback) {
+    @return $fallback;
+  }
+  @return $query;
+}
+
+/// Soft validates if the query is a valid primitive token.
+/// @param {string} $query
+/// @return {boolean} true if valid, false if not.
+@function check($query) {
+  @return _validate($query, $errors: false);
+}
+
+/// Validates if the query is a valid primitive token.
+/// @access private
+/// @param {string} $query
+/// @return {boolean|error} true if valid, false or an error if not.
+@function _validate($query, $errors: true) {
+  @if not list.index($_primitive-token-registry, $query) {
+    @if $errors {
+      @error 'Invalid primitive token: #{$query}. Expecting a valid primitive token.';
+    }
+    @return false;
+  }
+  @return true;
+}

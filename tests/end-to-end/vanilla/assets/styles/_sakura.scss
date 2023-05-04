@@ -40,7 +40,7 @@ $main-theme: (
       'ink': #ffffff
     )
   ),
-  'dark-mode': 'media'
+  'dark-mode': 'attribute'
 );
 
 $button-theme: (
@@ -49,9 +49,13 @@ $button-theme: (
   'radius': 'pill',
 );
 
+$button-group-theme: (
+  'radius': 'pill'
+);
+
 $form-theme: (
-  'fill': 'dp-white-200',
-  'ink': 'dp-white-ink'
+  'fill': 'dp-white.200',
+  'ink': 'dp-white.ink'
 );
 
 $wallet-theme: (

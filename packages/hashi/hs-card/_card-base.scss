@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 
@@ -35,16 +35,21 @@
   $footer-gap,
 ) {
   .hs-card {
-    @include hs-core.key-bind('card-section-gap', hs-core.token-switch('space-#{$section-gap}', $section-gap));
-    overflow: hidden;
-    
+    // @include hs-core.key-bind('card-section-gap', hs-core.primitive-token-switch('spacing.#{$section-gap}', $section-gap));
+    @include hs-core.shape-gap('card-section', $section-gap, 'bind');
+    // overflow: hidden;
+
     @content;
-    
+
     .hs-card__media {
       width: 100%;
       height: 100%;
       max-height: 120px;
-      
+      overflow: hidden;
+      @include hs-core.shape-apply('card-media', (
+        radius: ($radius $radius 0 0),
+      ));
+
       img {
         width: 100%;
         height: 100%;
@@ -52,39 +57,43 @@
         object-position: center;
       }
     }
-    
+
     .hs-card__header {
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
-      gap: hs-core.key-create('card-header-gap', hs-core.token-switch('space-#{$header-gap}', $header-gap));
+      gap: hs-core.key-create('card-header-gap', hs-core.primitive-token-switch('spacing.#{$header-gap}', $header-gap));
       @include hs-core.shape-apply('card-header', (
-        padding: ($padding $padding 0)
+        radius: ($radius $radius 0 0),
+        padding: ($padding $padding 0),
       ));
-      
+
       &:not(:only-child),
       &:not(:last-child) {
         margin-bottom: hs-core.key-get('card-section-gap');
       }
-      
+
       &:last-child {
         @include hs-core.shape-bind('card-header', (
-          padding: (0 $padding $padding)
+          radius: (0 0 $radius $radius),
+          padding: (0 $padding $padding),
         ));
       }
-  
+
       &:first-child {
         @include hs-core.shape-bind('card-header', (
-          padding: ($padding $padding 0)
+          radius: ($radius $radius 0 0),
+          padding: ($padding $padding 0),
         ));
       }
-  
+
       &:only-child {
         @include hs-core.shape-bind('card-header', (
-          padding: $padding
+          radius: $radius,
+          padding: $padding,
         ));
       }
-      
+
       .hs-card__mast {
         .hs-card__title {
           @include hs-core.typography-apply('card-title', (
@@ -95,7 +104,7 @@
           ));
           @include hs-core.line-break(1);
         }
-        
+
         .hs-card__subtitle {
           @include hs-core.typography-apply('card-subtitle', (
             family: $subtitle-typography,
@@ -106,7 +115,7 @@
           @include hs-core.line-break(2);
         }
       }
-      
+
       .hs-card__icon {
         width: hs-core.key-create('card-icon-size', hs-core.token-switch($icon-size));
         height: hs-core.key-create('card-icon-size', hs-core.token-switch($icon-size));
@@ -118,7 +127,7 @@
           border-width: 1px,
           border-style: solid
         ));
-        
+
         img {
           height: 100%;
           object-fit: cover;
@@ -126,12 +135,13 @@
         }
       }
     }
-    
+
     .hs-card__content {
       @include hs-core.shape-apply('card', (
-        padding: (0 $padding)
+        radius: (0 0 $radius $radius),
+        padding: (0 $padding),
       ));
-      
+
       p {
         @include hs-core.typography-apply('card', (
           family: $content-typography,
@@ -140,56 +150,63 @@
           line-height: $content-typography
         ));
       }
-      
+
       &:not(:only-child),
       &:not(:last-child) {
         margin-bottom: hs-core.key-get('card-section-gap');
       }
-      
+
       &:last-child {
         @include hs-core.shape-bind('card', (
-          padding: (0 $padding $padding)
+          radius: (0 0 $radius $radius),
+          padding: (0 $padding $padding),
         ));
       }
-  
+
       &:first-child {
         @include hs-core.shape-bind('card', (
-          padding: ($padding $padding 0)
+          radius: ($radius $radius 0 0),
+          padding: ($padding $padding 0),
         ));
       }
-  
+
       &:only-child {
         @include hs-core.shape-bind('card', (
-          padding: $padding
+          radius: $radius,
+          padding: $padding,
         ));
       }
     }
-    
+
     .hs-card__footer {
       display: flex;
       flex-flow: row nowrap;
       justify-content: end;
-      gap: hs-core.key-create('card-footer-gap', hs-core.token-switch('space-#{$footer-gap}', $footer-gap));
-      
+      gap: hs-core.key-create('card-footer-gap', hs-core.primitive-token-switch('spacing.#{$footer-gap}', $footer-gap));
+
       @include hs-core.shape-apply('card-footer', (
+        radius: (0 0 $radius $radius),
         padding: (0 $padding),
       ));
-      
+
       &:last-child {
         @include hs-core.shape-bind('card-footer', (
-          padding: (0 $padding $padding)
+          radius: (0 0 $radius $radius),
+          padding: (0 $padding $padding),
         ));
       }
-  
+
       &:first-child {
         @include hs-core.shape-bind('card-footer', (
-          padding: ($padding $padding 0)
+          radius: ($radius $radius 0 0),
+          padding: ($padding $padding 0),
         ));
       }
-  
+
       &:only-child {
         @include hs-core.shape-bind('card-footer', (
-          padding: $padding
+          radius: $radius,
+          padding: $padding,
         ));
       }
     }

@@ -1,5 +1,6 @@
 <!--
-  ~  Copyright (c) 2022 Dev Protocol
+  ~
+  ~  Copyright (c) 2023 Dev Protocol
   ~
   ~  Permission is hereby granted, free of charge, to any person obtaining a copy
   ~  of this software and associated documentation files (the "Software"), to deal
@@ -18,10 +19,11 @@
   ~  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   ~  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   ~  SOFTWARE.
+  ~
   -->
 
 <!DOCTYPE html>
-<html lang="en" hashi-theme="light" xmlns:x-on="http://www.w3.org/1999/xhtml"
+<html lang="en" hashi-theme="dark" xmlns:x-on="http://www.w3.org/1999/xhtml"
       xmlns:x-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +36,6 @@
           rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="assets/scripts/main.js" defer></script>
 </head>
 <body>
 
@@ -95,34 +96,14 @@
             <div class="bg-surface-alpha-600"><span>Surface Alpha 600</span></div>
         </div>
         <div class="color-module">
-            <div class="bg-success-200"><span>Success 200</span></div>
-            <div class="bg-success-300"><span>Success 300</span></div>
-            <div class="bg-success-400"><span>Success 400</span></div>
-            <div class="bg-success-600"><span>Success 600</span></div>
-            <div class="bg-success-alpha-200"><span>Success Alpha 200</span></div>
-            <div class="bg-success-alpha-300"><span>Success Alpha 300</span></div>
-            <div class="bg-success-alpha-400"><span>Success Alpha 400</span></div>
-            <div class="bg-success-alpha-600"><span>Success Alpha 600</span></div>
-        </div>
-        <div class="color-module">
-            <div class="bg-warning-200"><span>Warning 200</span></div>
-            <div class="bg-warning-300"><span>Warning 300</span></div>
-            <div class="bg-warning-400"><span>Warning 400</span></div>
-            <div class="bg-warning-600"><span>Warning 600</span></div>
-            <div class="bg-warning-alpha-200"><span>Warning Alpha 200</span></div>
-            <div class="bg-warning-alpha-300"><span>Warning Alpha 300</span></div>
-            <div class="bg-warning-alpha-400"><span>Warning Alpha 400</span></div>
-            <div class="bg-warning-alpha-600"><span>Warning Alpha 600</span></div>
-        </div>
-        <div class="d-grid cols-4 gap-md">
-            <div class="bg-danger-200"><span>Danger 200</span></div>
-            <div class="bg-danger-300"><span>Danger 300</span></div>
-            <div class="bg-danger-400"><span>Danger 400</span></div>
-            <div class="bg-danger-600"><span>Danger 600</span></div>
-            <div class="bg-danger-alpha-200"><span>Danger Alpha 200</span></div>
-            <div class="bg-danger-alpha-300" ><span>Danger Alpha 300</span></div>
-            <div class="bg-danger-alpha-400"><span>Danger Alpha 400</span></div>
-            <div class="bg-danger-alpha-600"><span>Danger Alpha 600</span></div>
+            <div class="bg-error-200"><span>Danger 200</span></div>
+            <div class="bg-error-300"><span>Danger 300</span></div>
+            <div class="bg-error-400"><span>Danger 400</span></div>
+            <div class="bg-error-600"><span>Danger 600</span></div>
+            <div class="bg-error-alpha-200"><span>Danger Alpha 200</span></div>
+            <div class="bg-error-alpha-300" ><span>Danger Alpha 300</span></div>
+            <div class="bg-error-alpha-400"><span>Danger Alpha 400</span></div>
+            <div class="bg-error-alpha-600"><span>Danger Alpha 600</span></div>
         </div>
     </section>
 
@@ -149,7 +130,7 @@
         <div class="hs-dialog__container">
             <header class="hs-dialog__header">
                 <h2>Stake Project</h2>
-                <button class="hs-button hs-dialog__close-button is-icon-only is-danger">
+                <button class="hs-button hs-dialog__close-button is-icon-only is-error">
                     <i class="hs-button__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
                     </i>
@@ -169,7 +150,7 @@
                 <button class="hs-button is-filled is-success">
                     <span class="hs-button__label">Stake</span>
                 </button>
-                <button class="hs-button is-outlined is-danger">
+                <button class="hs-button is-outlined is-error">
                     <span class="hs-button__label">Cancel</span>
                 </button>
             </footer>
@@ -183,16 +164,10 @@
         <button class="hs-button is-disabled" role="button">
             <span class="hs-button__label">Button</span>
         </button>
-        <button class="hs-button is-blocky" role="button">
+        <button class="hs-button" role="button">
             <span class="hs-button__label">Button</span>
         </button>
-        <button class="hs-button is-success" role="button">
-            <span class="hs-button__label">Button</span>
-        </button>
-        <button class="hs-button is-warning" role="button">
-            <span class="hs-button__label">Button</span>
-        </button>
-        <button class="hs-button is-danger" role="button">
+        <button class="hs-button is-error" role="button">
             <span class="hs-button__label">Button</span>
         </button>
     </section>
@@ -207,13 +182,7 @@
         <button class="hs-button is-outlined" role="button">
             <span class="hs-button__label">Button</span>
         </button>
-        <button class="hs-button is-outlined is-success" role="button">
-            <span class="hs-button__label">Button</span>
-        </button>
-        <button class="hs-button is-outlined is-warning" role="button">
-            <span class="hs-button__label">Button</span>
-        </button>
-        <button class="hs-button is-outlined is-danger" role="button">
+        <button class="hs-button is-outlined is-error" role="button">
             <span class="hs-button__label">Button</span>
         </button>
     </section>
@@ -228,25 +197,19 @@
         <button class="hs-button is-filled is-raised" role="button">
             <span class="hs-button__label">Button</span>
         </button>
-        <button class="hs-button is-filled is-success" role="button">
-            <span class="hs-button__label">Button</span>
-        </button>
-        <button class="hs-button is-filled is-warning" role="button">
-            <span class="hs-button__label">Button</span>
-        </button>
-        <button class="hs-button is-filled is-danger" role="button">
+        <button class="hs-button is-filled is-error" role="button">
             <span class="hs-button__label">Button</span>
         </button>
     </section>
 
     <div class="d-flex flow-row justify-between items-center gap-xs mb-sm">
-        <button class="hs-button hs-button--filled" role="button">
+        <button class="hs-button is-filled" role="button">
             <span class="hs-button__label">Button</span>
         </button>
-        <button class="hs-button hs-button--filled" role="button" disabled>
+        <button class="hs-button is-filled" role="button" disabled>
             <span class="hs-button__label">Button</span>
         </button>
-        <a class="hs-button hs-button--outlined" href="#">
+        <a class="hs-button is-outlined" href="#">
             <i class="hs-button__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
@@ -281,13 +244,13 @@
         <span class="hs-form-field__helper">Helper text</span>
     </label>
 
-    <label class="hs-form-field is-danger">
+    <label class="hs-form-field is-error">
         <span class="hs-form-field__label">Form Field Label</span>
         <input class="hs-form-field__input" type="text" placeholder="Placeholder..." />
         <span class="hs-form-field__helper">Helper text</span>
     </label>
 
-    <label class="hs-form-field is-required is-filled">
+    <label class="hs-form-field is-required is-raised">
         <span class="hs-form-field__label">Form Field Label (Required)</span>
         <i class="hs-form-field__icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -303,7 +266,7 @@
         <span class="hs-form-field__helper">Helper text</span>
     </label>
 
-    <label class="hs-form-field is-required is-filled is-danger">
+    <label class="hs-form-field is-required is-raised is-error">
         <span class="hs-form-field__label">Form Field Label (Required)</span>
         <i class="hs-form-field__icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -331,7 +294,7 @@
         <span class="hs-select-field__helper">Helper text</span>
     </label>
 
-    <label class="hs-select-field is-danger">
+    <label class="hs-select-field is-error">
         <span class="hs-select-field__label">Select Field Label</span>
         <select class="hs-select-field__input">
             <option>Option 1</option>
@@ -343,7 +306,7 @@
         <span class="hs-select-field__helper">Helper text</span>
     </label>
 
-    <label class="hs-select-field is-required is-filled">
+    <label class="hs-select-field is-required is-raised">
         <span class="hs-select-field__label">Select Field Label (Required)</span>
         <i class="hs-select-field__icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -360,7 +323,7 @@
         <span class="hs-select-field__helper">Helper text</span>
     </label>
 
-    <label class="hs-select-field is-required is-filled is-danger">
+    <label class="hs-select-field is-required is-raised is-error">
         <span class="hs-select-field__label">Select Field Label (Required)</span>
         <i class="hs-select-field__icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -403,26 +366,8 @@
         </select>
     </label>
 
-    <div class="d-flex flow-col @md:flow-row gap-sm">
-        <label class="hs-tick-field">
-            <input class="hs-tick-field__input" type="radio" id="value" name="input" value="value" />
-            <div class="d-flex flow-col items-start">
-                <span class="hs-tick-field__label">HSTickField Label</span>
-                <span class="hs-tick-field__helper">Helper Text</span>
-            </div>
-        </label>
-
-        <label class="hs-tick-field">
-            <input class="hs-tick-field__input" type="radio" id="value" name="input" value="value" />
-            <div class="d-flex flow-col items-start">
-                <span class="hs-tick-field__label">HSTickField Label</span>
-                <span class="hs-tick-field__helper">Helper Text</span>
-            </div>
-        </label>
-    </div>
-
     <div class="d-flex flow-col @md:flow-row gap-sm mt-sm">
-        <label class="hs-tick-field is-filled">
+        <label class="hs-tick-field">
             <input class="hs-tick-field__input" type="radio" id="value" name="inputFilled" value="value" />
             <div class="d-flex flow-col items-start">
                 <span class="hs-tick-field__label">HSTickField Label</span>
@@ -430,7 +375,7 @@
             </div>
         </label>
 
-        <label class="hs-tick-field is-filled">
+        <label class="hs-tick-field is-raised">
             <input class="hs-tick-field__input" type="radio" id="value" name="inputFilled" value="value" />
             <div class="d-flex flow-col items-start">
                 <span class="hs-tick-field__label">HSTickField Label</span>
@@ -448,7 +393,7 @@
             </div>
         </label>
 
-        <label class="hs-tick-field is-filled">
+        <label class="hs-tick-field is-raised">
             <input class="hs-tick-field__input" type="checkbox" id="value" name="inputFilled" value="value" />
             <div class="d-flex flow-col items-start">
                 <span class="hs-tick-field__label">HSTickField Label</span>
@@ -468,7 +413,7 @@
                 <p class="hs-profile__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quas.</p>
             </div>
         </div>
-        <div class="hs-profile is-filled">
+        <div class="hs-profile is-raised">
             <div class="hs-profile__img">
                 <img src="https://devprotocol.xyz/assets/logo.png" alt="Profile Image">
             </div>
@@ -483,7 +428,7 @@
     <section class="d-flex flow-row gap-md">
         <div class="hs-card">
             <div class="hs-card__media">
-                <img src="https://www.fillmurray.com/1920/1080" alt="Card Image" />
+                <img src="https://picsum.photos/1920/1080" alt="Card Image" />
             </div>
             <header class="hs-card__header">
                 <div class="hs-card__mast">
@@ -507,9 +452,9 @@
             </footer>
         </div>
 
-        <div class="hs-card is-filled">
+        <div class="hs-card is-raised">
             <div class="hs-card__media">
-                <img src="https://www.fillmurray.com/1920/1080" alt="Card Image" />
+                <img src="https://picsum.photos/1920/1080" alt="Card Image" />
             </div>
             <header class="hs-card__header">
                 <div class="hs-card__mast">

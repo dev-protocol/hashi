@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 @use 'sass:map';
@@ -28,12 +28,12 @@ $fill: 'surface-200' !default;
 $fill-disabled: 'disabled' !default;
 $ink: 'surface-ink' !default;
 $ink-disabled: 'disabled-ink' !default;
-$border: 'primary-200' !default;
+$border: $fill !default;
 $border-focus: 'accent-400' !default;
 $border-disabled: 'disabled' !default;
 
 $radius: 'small' !default;
-$padding: ('sm' 'md') !default;
+$padding: ('md' 'lg') !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 
@@ -113,54 +113,37 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
     &:where(.is-required) {
       .hs-form-field__label::after {
         content: '*';
-        color: hs-core.token-get('danger-400');
-        margin-left: hs-core.token-get('margin-xs');
+        color: hs-core.token-get('error-400');
+        margin-left: hs-core.primitive-token-get('margin.xs');
       }
     }
 
-    &:where(.is-filled) {
+    &:where(.is-raised) {
       .hs-form-field__input:not(:read-only) {
-        @include hs-core.color-bind('form-field', (
-          border: $_fill
-        ));
         @include hs-core.shape-apply('form-field', (
           shadow: 'low'
         ));
-
-        &:focus {
-          @include hs-core.color-bind('form-field', (
-            border: $_border-focus
-          ));
-        }
       }
     }
 
-    &:where(.is-danger) {
+    &:where(.is-error) {
       @include hs-core.color-bind('form-field-label', (
-        ink: 'danger-400',
+        ink: 'error-400',
       ));
       @include hs-core.color-bind('form-field-helper', (
-        ink: 'danger-400',
+        ink: 'error-400',
       ));
 
       .hs-form-field__input:not(:read-only) {
         &:focus {
           @include hs-core.color-bind('form-field', (
-            border: 'danger-400'
-          ));
-        }
-      }
-
-      &:where(:not(.is-filled)) {
-        .hs-form-field__input:not(:read-only) {
-          @include hs-core.color-bind('form-field', (
-            border: 'danger-400'
+            border: 'error-400'
           ));
         }
       }
 
       svg {
-        color: hs-core.token-get('danger-400');
+        color: hs-core.token-get('error-400');
       }
     }
   }

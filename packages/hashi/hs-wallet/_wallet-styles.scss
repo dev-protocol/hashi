@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 @use 'sass:map';
@@ -40,7 +40,7 @@ $border-active: $fill-active !default;
 $border-disabled: $fill-disabled !default;
 
 $radius: 'small' !default;
-$padding: ('xs' 'md') !default;
+$padding: ('sm' 'md') !default;
 
 $theme: () !default;
 

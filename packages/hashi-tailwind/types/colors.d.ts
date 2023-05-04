@@ -22,23 +22,22 @@
  *
  */
 
-const files=[
-  'packages/hashi/tailwind/index.js',
-  'packages/hashi/config/purgecss.js'
-]
+type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] extends N
+    ? Acc[number]
+    : Enumerate<N, [...Acc, Acc['length']]>
 
-export default [
-  ...files.map(input=>({
-    input,
-    output: [
-      {
-        file: input.replace('.js', '.mjs'),
-        format: 'es',
-      },
-      {
-        file: input.replace('.js', '.cjs'),
-        format: 'cjs',
-      },
-    ],
-  }))
-]
+type IntRange<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+
+type _HexadecimalNumbers = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+type _HexadecimalLetters = 'a' | 'b' | 'c' | 'd' | 'e' | 'f';
+
+type _RgbNumbers = IntRange<0, 255>;
+type _AlphaNumbers = IntRange<0, 1>;
+
+export type _Hexadecimal = `${_HexadecimalNumbers | _HexadecimalLetters}`;
+// @ts-ignore
+export type HexColor = `#${_Hexadecimal}${_Hexadecimal}${_Hexadecimal}${_Hexadecimal}${_Hexadecimal}${_Hexadecimal}`;
+// @ts-ignore
+export type RgbaColor = `rgba(${_RgbNumbers}, ${_RgbNumbers}, ${_RgbNumbers}, ${_AlphaNumbers})`;
+// @ts-ignore
+export type RgbColor = `rgb(${_RgbNumbers}, ${_RgbNumbers}, ${_RgbNumbers})`;

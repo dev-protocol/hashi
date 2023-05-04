@@ -21,8 +21,7 @@
 ///
 
 $modular-mode: false !default;
-$vue-mode: $modular-mode !default;
-$_validation: if($vue-mode, false, true);
+$_validation: if($modular-mode, false, true);
 
 @use 'node_modules/@matteusan/sentro' with (
   $prefix: 'hs',
@@ -38,3 +37,4 @@ $_validation: if($vue-mode, false, true);
 @forward 'typography' as typography-*;
 @forward 'theme';
 @forward 'tools';
+@forward 'tokens' as primitive-token-*;

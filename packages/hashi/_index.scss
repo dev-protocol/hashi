@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,10 +18,9 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 $modular-mode: false !default;
-$vue-mode: $modular-mode !default;
 
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-white' !default;
@@ -29,20 +28,21 @@ $accent: 'native-blue' !default;
 $accent-dark: $accent !default;
 $surface: 'dp-white' !default;
 $surface-dark: 'dp-blue-grey' !default;
-$radius-small: 'radius-xs' !default;
-$radius-medium: 'radius-sm' !default;
-$radius-large: 'radius-md' !default;
-$family-supertitle: ('Syne', sans-serif, 800) !default;
-$family-title: ('Syne', sans-serif, 700) !default;
-$family-subtitle: ('Syne', sans-serif, 700) !default;
-$family-body: ('DM Sans', sans-serif, 400) !default;
-$family-mono: ('IBM Plex Mono', monospace, 400) !default;
-$family-small: ('DM Sans', sans-serif, 300) !default;
+$radius-small: 'sm' !default;
+$radius-medium: 'md' !default;
+$radius-large: 'lg' !default;
 
-$background: 'surface-200' !default;
-$dark-background: 'surface-400' !default;
-$background-ink: 'surface-ink' !default;
-$dark-background-ink: $background-ink !default;
+$supertitle: () !default;
+$title: () !default;
+$subtitle: () !default;
+$body: () !default;
+$mono: () !default;
+$small: () !default;
+
+$background: 'dp-white.200' !default;
+$dark-background: 'dp-blue-grey.600' !default;
+$background-ink: 'dp-white.ink' !default;
+$dark-background-ink: 'dp-blue-grey.ink' !default;
 $breakpoints: () !default;
 
 $dark-mode: 'attribute' !default;
@@ -53,7 +53,6 @@ $_valid-dark-modes: ('attribute', 'media', 'class');
 
 @forward 'hs-core' hide prioritize, is-type, is-not-empty, dark-mode with (
   $modular-mode: $modular-mode,
-  $vue-mode: $vue-mode,
 );
 @forward 'init-base' with (
   $primary: $primary,
@@ -65,12 +64,12 @@ $_valid-dark-modes: ('attribute', 'media', 'class');
   $radius-small: $radius-small,
   $radius-medium: $radius-medium,
   $radius-large: $radius-large,
-  $family-supertitle: $family-supertitle,
-  $family-title: $family-title,
-  $family-subtitle: $family-subtitle,
-  $family-body: $family-body,
-  $family-mono: $family-mono,
-  $family-small: $family-small,
+  $supertitle: $supertitle,
+  $title: $title,
+  $subtitle: $subtitle,
+  $body: $body,
+  $mono: $mono,
+  $small: $small,
   $background: $background,
   $background-ink: $background-ink,
   $dark-background: $dark-background,

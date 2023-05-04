@@ -25,6 +25,7 @@
 
 @use '../theme';
 @use '../tools';
+@use '../tokens';
 
 // TODO: Use new color setters API.
 
@@ -47,14 +48,14 @@ $border-active-opacity: 3.3%;
 @mixin _base($component, $theme, $settings: ()) {
   $_init-settings: ('intent': create);
   $_settings: map.merge($_init-settings, $settings);
-  
+
   /// @type string
   $intent: map.get($_settings, 'intent');
-  
+
   $fill: map.get($theme, 'fill');
   $ink: map.get($theme, 'ink');
   $border: map.get($theme, 'border');
-  
+
   @if not tools.is-type('map', $theme) {
     @error '$theme is expecting a map. Map was not given.';
   } @else {
@@ -85,7 +86,7 @@ $border-active-opacity: 3.3%;
   @include _validate-color($color) {
     @include theme.property(
       background-color,
-      ('#{$component}-fill', theme.token-switch($color)),
+      ('#{$component}-fill', _get-color($color)),
       $intent
     );
   }
@@ -100,7 +101,7 @@ $border-active-opacity: 3.3%;
   @include _validate-color($color) {
     @include theme.property(
       color,
-      ('#{$component}-ink', theme.token-switch($color)),
+      ('#{$component}-ink', _get-color($color)),
       $intent
     );
   }
@@ -115,7 +116,7 @@ $border-active-opacity: 3.3%;
   @include _validate-color($color) {
     @include theme.property(
       border-color,
-      ('#{$component}-border', theme.token-switch($color)),
+      ('#{$component}-border', _get-color($color)),
       $intent
     );
   }
@@ -155,6 +156,10 @@ $border-active-opacity: 3.3%;
     rgba(0, 0, 0, 0),
     rgba(0 0 0 / 0)
   );
-  
+
   @content;
+}
+
+@function _get-color($query) {
+  @return theme.token-switch($query, tokens.switch($query));
 }

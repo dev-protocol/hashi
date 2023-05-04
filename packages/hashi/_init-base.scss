@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'hs-core';
 @use 'hs-core/tokens';
@@ -27,6 +27,7 @@
 @use 'sass:list';
 @use 'sass:selector';
 @use 'sass:string';
+@use 'sass:color';
 
 @use 'init-font-pack' as font-pack;
 
@@ -38,22 +39,24 @@ $accent: 'native-blue' !default;
 $accent-dark: $accent !default;
 $surface: 'dp-white' !default;
 $surface-dark: 'dp-blue-grey' !default;
+$error: 'dp-red' !default;
+$error-dark: $error !default;
 
-$radius-small: 'radius-xs' !default;
-$radius-medium: 'radius-sm' !default;
-$radius-large: 'radius-md' !default;
+$radius-small: 'sm' !default;
+$radius-medium: 'md' !default;
+$radius-large: 'lg' !default;
 
-$family-supertitle: ('Syne', sans-serif, 800) !default;
-$family-title: ('Syne', sans-serif, 700) !default;
-$family-subtitle: ('Syne', sans-serif, 700) !default;
-$family-body: ('DM Sans', sans-serif, 400) !default;
-$family-mono: ('IBM Plex Mono', monospace, 400) !default;
-$family-small: ('DM Sans', sans-serif, 300) !default;
+$supertitle: () !default;
+$title: () !default;
+$subtitle: () !default;
+$body: () !default;
+$mono: () !default;
+$small: () !default;
 
-$background: 'surface-200' !default;
-$dark-background: 'surface-400' !default;
-$background-ink: 'surface-ink' !default;
-$dark-background-ink: $background-ink !default;
+$background: 'dp-white.200' !default;
+$dark-background: 'dp-blue-grey.600' !default;
+$background-ink: 'dp-white.ink' !default;
+$dark-background-ink: 'dp-blue-grey.ink' !default;
 $breakpoints: () !default;
 $_init-breakpoints: (
   'small': 320px,
@@ -72,6 +75,8 @@ $_accent: hs-core.prioritize(map.get($theme, 'accent'), $accent);
 $_accent-dark: hs-core.prioritize(map.get($theme, 'accent-dark'), $accent-dark);
 $_surface: hs-core.prioritize(map.get($theme, 'surface'), $surface);
 $_surface-dark: hs-core.prioritize(map.get($theme, 'surface-dark'), $surface-dark);
+$_error: hs-core.prioritize(map.get($theme, 'error'), $error);
+$_error-dark: hs-core.prioritize(map.get($theme, 'error-dark'), $error-dark);
 
 $_background: hs-core.prioritize(map.get($theme, 'background'), $background);
 $_dark-background: hs-core.prioritize(map.get($theme, 'dark-background'), $dark-background);
@@ -82,12 +87,12 @@ $_radius-small: hs-core.prioritize(map.get($theme, 'radius-small'), $radius-smal
 $_radius-medium: hs-core.prioritize(map.get($theme, 'radius-medium'), $radius-medium);
 $_radius-large: hs-core.prioritize(map.get($theme, 'radius-large'), $radius-large);
 
-$_family-supertitle: hs-core.prioritize(map.get($theme, 'family-supertitle'), $family-supertitle);
-$_family-title: hs-core.prioritize(map.get($theme, 'family-title'), $family-title);
-$_family-subtitle: hs-core.prioritize(map.get($theme, 'family-subtitle'), $family-subtitle);
-$_family-body: hs-core.prioritize(map.get($theme, 'family-body'), $family-body);
-$_family-mono: hs-core.prioritize(map.get($theme, 'family-mono'), $family-mono);
-$_family-small: hs-core.prioritize(map.get($theme, 'family-small'), $family-small);
+$_supertitle: hs-core.prioritize(map.get($theme, 'supertitle'), $supertitle);
+$_title: hs-core.prioritize(map.get($theme, 'title'), $title);
+$_subtitle: hs-core.prioritize(map.get($theme, 'subtitle'), $subtitle);
+$_body: hs-core.prioritize(map.get($theme, 'body'), $body);
+$_mono: hs-core.prioritize(map.get($theme, 'mono'), $mono);
+$_small: hs-core.prioritize(map.get($theme, 'small'), $small);
 
 $_dark-mode: hs-core.prioritize(map.get($theme, 'dark-mode'), $dark-mode);
 $_extend: hs-core.prioritize(map.get($theme, 'extend'), $extend);
@@ -131,107 +136,182 @@ $_tones: (
 }
 
 @mixin init {
+  /// itp = initial typography presets
+  /// @access private
+  $_itp: (
+    'supertitle': (
+      family: ('Syne', sans-serif),
+      size: '2xl',
+      weight: 900,
+      line-height: 'normal'
+    ),
+    'title': (
+      family: ('Syne', sans-serif),
+      size: 'xl',
+      weight: 700,
+      line-height: 'normal'
+    ),
+    'subtitle': (
+      family: ('Syne', sans-serif),
+      size: 'lg',
+      weight: 700,
+      line-height: 'normal'
+    ),
+    'body': (
+      family: ('DM Sans', sans-serif),
+      size: 'sm',
+      weight: 400,
+      line-height: 'normal'
+    ),
+    'mono': (
+      family: ('IBM Plex Mono', monospace),
+      size: 'sm',
+      weight: 400,
+      line-height: 'normal'
+    ),
+    'small': (
+      family: ('DM Sans', sans-serif),
+      size: 'xs',
+      weight: 200,
+      line-height: 'normal'
+    )
+  );
+
   :root {
+    @include hs-core.token-config($map: $_extend);
     @include hs-core.token-config(
-      $map: tokens.$hs-tokens,
       $primary: (
-        200: 'var(--hs-theme-#{$_primary}-200)',
-        300: 'var(--hs-theme-#{$_primary}-300)',
-        400: 'var(--hs-theme-#{$_primary}-400)',
-        600: 'var(--hs-theme-#{$_primary}-600)',
-        'ink': 'var(--hs-theme-#{$_primary}-ink)',
+        200: _get-color($_primary, 200),
+        300: _get-color($_primary, 300),
+        400: _get-color($_primary, 400),
+        600: _get-color($_primary, 600),
+        'ink': _get-color($_primary, 'ink'),
         'dark': (
-          200: 'var(--hs-theme-#{$_primary-dark}-200)',
-          300: 'var(--hs-theme-#{$_primary-dark}-300)',
-          400: 'var(--hs-theme-#{$_primary-dark}-400)',
-          600: 'var(--hs-theme-#{$_primary-dark}-600)',
-          'ink': 'var(--hs-theme-#{$_primary-dark}-ink)',
+          200: _get-color($_primary-dark, 200),
+          300: _get-color($_primary-dark, 300),
+          400: _get-color($_primary-dark, 400),
+          600: _get-color($_primary-dark, 600),
+          'ink': _get-color($_primary-dark, 'ink')
         ),
       ),
       $accent: (
-        200: 'var(--hs-theme-#{$_accent}-200)',
-        300: 'var(--hs-theme-#{$_accent}-300)',
-        400: 'var(--hs-theme-#{$_accent}-400)',
-        600: 'var(--hs-theme-#{$_accent}-600)',
-        'ink': 'var(--hs-theme-#{$_accent}-ink)',
+        200: _get-color($_accent, 200),
+        300: _get-color($_accent, 300),
+        400: _get-color($_accent, 400),
+        600: _get-color($_accent, 600),
+        'ink': _get-color($_accent, 'ink'),
         'dark': (
-          200: 'var(--hs-theme-#{$_accent-dark}-200)',
-          300: 'var(--hs-theme-#{$_accent-dark}-300)',
-          400: 'var(--hs-theme-#{$_accent-dark}-400)',
-          600: 'var(--hs-theme-#{$_accent-dark}-600)',
-          'ink': 'var(--hs-theme-#{$_accent-dark}-ink)',
+          200: _get-color($_accent-dark, 200),
+          300: _get-color($_accent-dark, 300),
+          400: _get-color($_accent-dark, 400),
+          600: _get-color($_accent-dark, 600),
+          'ink': _get-color($_accent-dark, 'ink')
         ),
       ),
       $surface: (
-        200: 'var(--hs-theme-#{$_surface}-200)',
-        300: 'var(--hs-theme-#{$_surface}-300)',
-        400: 'var(--hs-theme-#{$_surface}-400)',
-        600: 'var(--hs-theme-#{$_surface}-600)',
-        'ink': 'var(--hs-theme-#{$_surface}-ink)',
+        200: _get-color($_surface, 200),
+        300: _get-color($_surface, 300),
+        400: _get-color($_surface, 400),
+        600: _get-color($_surface, 600),
+        'ink': _get-color($_surface, 'ink'),
         'dark': (
-          200: 'var(--hs-theme-#{$_surface-dark}-200)',
-          300: 'var(--hs-theme-#{$_surface-dark}-300)',
-          400: 'var(--hs-theme-#{$_surface-dark}-400)',
-          600: 'var(--hs-theme-#{$_surface-dark}-600)',
-          'ink': 'var(--hs-theme-#{$_surface-dark}-ink)',
+          200: _get-color($_surface-dark, 200),
+          300: _get-color($_surface-dark, 300),
+          400: _get-color($_surface-dark, 400),
+          600: _get-color($_surface-dark, 600),
+          'ink': _get-color($_surface-dark, 'ink')
+        ),
+      ),
+      $error: (
+        200: _get-color($_error, 200),
+        300: _get-color($_error, 300),
+        400: _get-color($_error, 400),
+        600: _get-color($_error, 600),
+        'ink': _get-color($_error, 'ink'),
+        'dark': (
+          200: _get-color($_error-dark, 200),
+          300: _get-color($_error-dark, 300),
+          400: _get-color($_error-dark, 400),
+          600: _get-color($_error-dark, 600),
+          'ink': _get-color($_error-dark, 'ink')
         ),
       ),
       $disabled: (
-        'default': var(--hs-theme-dp-black-alpha),
-        'ink': var(--hs-theme-dp-black-alpha-ink)
+        'default': hs-core.primitive-token-get('dp-black-alpha'),
+        'ink': hs-core.primitive-token-get('dp-black-alpha.ink')
       ),
       $background: (
-        'default': 'var(--hs-theme-#{$_background})',
-        'ink': 'var(--hs-theme-#{$_background-ink})',
+        'default': hs-core.token-switch($_background, hs-core.primitive-token-switch($_background)),
+        'ink': hs-core.token-switch($_background-ink, hs-core.primitive-token-switch($_background-ink)),
         'dark': (
-          'default': 'var(--hs-theme-#{$_dark-background})',
-          'ink': 'var(--hs-theme-#{$_dark-background-ink})',
+          'default': hs-core.primitive-token-get($_dark-background),
+          'ink': hs-core.primitive-token-get($_dark-background-ink),
         ),
       ),
       $radius: (
-        'small': 'var(--hs-theme-#{$_radius-small})',
-        'medium': 'var(--hs-theme-#{$_radius-medium})',
-        'large': 'var(--hs-theme-#{$_radius-large})',
+        'small': hs-core.primitive-token-switch('radius.#{$_radius-small}', $_radius-small),
+        'medium': hs-core.primitive-token-switch('radius.#{$_radius-medium}', $_radius-medium),
+        'large': hs-core.primitive-token-switch('radius.#{$_radius-large}', $_radius-large),
       ),
-      $family: (
-        'supertitle': _get-family($_family-supertitle),
-        'title': _get-family($_family-title),
-        'subtitle': _get-family($_family-subtitle),
-        'body': _get-family($_family-body),
-        'mono': _get-family($_family-mono),
-        'small': _get-family($_family-small),
+      $supertitle: (
+        'family': _get-family(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'size': _get-size(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
       ),
-      $weight: (
-        'supertitle': _get-weight($_family-supertitle),
-        'title': _get-weight($_family-title),
-        'subtitle': _get-weight($_family-subtitle),
-        'body': _get-weight($_family-body),
-        'mono': _get-weight($_family-mono),
-        'small': _get-weight($_family-small),
+      $title: (
+        'family': _get-family(map.merge(map.get($_itp, 'title'), $_title)),
+        'size': _get-size(map.merge(map.get($_itp, 'title'), $_title)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'title'), $_title)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'title'), $_title)),
+      ),
+      $subtitle: (
+        'family': _get-family(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'size': _get-size(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+      ),
+      $body: (
+        'family': _get-family(map.merge(map.get($_itp, 'body'), $_body)),
+        'size': _get-size(map.merge(map.get($_itp, 'body'), $_body)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'body'), $_body)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'body'), $_body)),
+      ),
+      $mono: (
+        'family': _get-family(map.merge(map.get($_itp, 'mono'), $_mono)),
+        'size': _get-size(map.merge(map.get($_itp, 'mono'), $_mono)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'mono'), $_mono)),
+        line-height: _get-line-height(map.merge(map.get($_itp, 'mono'), $_mono)),
+      ),
+      $small: (
+        'family': _get-family(map.merge(map.get($_itp, 'small'), $_small)),
+        'size': _get-size(map.merge(map.get($_itp, 'small'), $_small)),
+        'weight': _get-weight(map.merge(map.get($_itp, 'small'), $_small)),
+        'line-height': _get-line-height(map.merge(map.get($_itp, 'small'), $_small)),
       ),
     );
-    @include hs-core.token-config($map: $_extend);
     @include hs-core.token-config(
       $primary-alpha: (
-        200: rgba(_raw('#{$_primary}-200'), 8%),
-        300: rgba(_raw('#{$_primary}-300'), 12%),
-        400: rgba(_raw('#{$_primary}-400'), 20%),
-        600: rgba(_raw('#{$_primary}-600'), 33%)
+        200: rgba(_raw('primary-200'), 8%),
+        300: rgba(_raw('primary-300'), 12%),
+        400: rgba(_raw('primary-400'), 20%),
+        600: rgba(_raw('primary-600'), 33%)
       ),
       $accent-alpha: (
-        200: rgba(_raw('#{$_accent}-200'), 8%),
-        300: rgba(_raw('#{$_accent}-300'), 12%),
-        400: rgba(_raw('#{$_accent}-400'), 20%),
-        600: rgba(_raw('#{$_accent}-600'), 33%)
+        200: rgba(_raw('accent-200'), 8%),
+        300: rgba(_raw('accent-300'), 12%),
+        400: rgba(_raw('accent-400'), 20%),
+        600: rgba(_raw('accent-600'), 33%)
       ),
       $surface-alpha: (
-        200: rgba(_raw('#{$_surface}-200'), 8%),
-        300: rgba(_raw('#{$_surface}-300'), 12%),
-        400: rgba(_raw('#{$_surface}-400'), 20%),
-        600: rgba(_raw('#{$_surface}-600'), 33%)
+        200: rgba(_raw('surface-200'), 8%),
+        300: rgba(_raw('surface-300'), 12%),
+        400: rgba(_raw('surface-400'), 20%),
+        600: rgba(_raw('surface-600'), 33%)
       ),
     );
     --hs-transition-time: 0.2s;
+    --hs-shadow-color: rgba(0,0,0,0.15);
   }
 
   @include hs-core.breakpoint-config(
@@ -239,12 +319,12 @@ $_tones: (
   );
 
   @include font-pack.load((
-    'supertitle': _get-family($_family-supertitle),
-    'title': _get-family($_family-title),
-    'subtitle': _get-family($_family-subtitle),
-    'body': _get-family($_family-body),
-    'mono': _get-family($_family-mono),
-    'small': _get-family($_family-small),
+    'supertitle': _get-family(map.merge(map.get($_itp, 'supertitle'), $_supertitle)),
+    'title': _get-family(map.merge(map.get($_itp, 'title'), $_title)),
+    'subtitle': _get-family(map.merge(map.get($_itp, 'subtitle'), $_subtitle)),
+    'body': _get-family(map.merge(map.get($_itp, 'body'), $_body)),
+    'mono': _get-family(map.merge(map.get($_itp, 'mono'), $_mono)),
+    'small': _get-family(map.merge(map.get($_itp, 'small'), $_small)),
   ));
 
   @if $_dark-mode == 'media' {
@@ -292,8 +372,8 @@ $_tones: (
             ),
           ),
           $disabled: (
-            'default': var(--hs-theme-dp-white-alpha),
-            'ink': var(--hs-theme-dp-white-alpha-ink)
+            'default': hs-core.primitive-token-get('dp-white-alpha'),
+            'ink': hs-core.primitive-token-get('dp-white-alpha.ink'),
           ),
           $background: (
             'default': hs-core.token-get('background-dark'),
@@ -329,10 +409,10 @@ $_tones: (
   p,
   span,
   a {
-    font-family: hs-core.token-get('family-body');
-    font-size: hs-core.token-get('size-body');
-    font-weight: hs-core.token-get('weight-body');
-    line-height: hs-core.token-get('line-height-body');
+    font-family: hs-core.token-get('body-family');
+    font-size: hs-core.token-get('body-size');
+    font-weight: hs-core.token-get('body-weight');
+    line-height: hs-core.token-get('body-line-height');
   }
 
   a {
@@ -344,18 +424,18 @@ $_tones: (
   }
 
   small {
-    font-family: hs-core.token-get('family-small');
-    font-size: hs-core.token-get('size-small');
-    font-weight: hs-core.token-get('weight-small');
-    line-height: hs-core.token-get('line-height-small');
+    font-family: hs-core.token-get('small-family');
+    font-size: hs-core.token-get('small-size');
+    font-weight: hs-core.token-get('small-weight');
+    line-height: hs-core.token-get('small-line-height');
   }
 
   code,
   code * {
-    font-family: hs-core.token-get('family-mono');
-    font-size: hs-core.token-get('size-mono');
-    font-weight: hs-core.token-get('weight-mono');
-    line-height: hs-core.token-get('line-height-mono');
+    font-family: hs-core.token-get('mono-family');
+    font-size: hs-core.token-get('mono-size');
+    font-weight: hs-core.token-get('mono-weight');
+    line-height: hs-core.token-get('mono-line-height');
   }
 
   dialog {
@@ -368,7 +448,7 @@ $_tones: (
     font-size: 100%;
     background: hs-core.token-get('background');
     color: hs-core.token-get('background-ink');
-    font-family: hs-core.token-get('family-body');
+    font-family: hs-core.token-get('body-family');
     box-sizing: border-box;
     color-scheme: light;
 
@@ -416,8 +496,8 @@ $_tones: (
             ),
           ),
           $disabled: (
-            'default': var(--hs-theme-dp-white-alpha),
-            'ink': var(--hs-theme-dp-white-alpha-ink)
+            'default': hs-core.primitive-token-get('dp-white-alpha'),
+            'ink': hs-core.primitive-token-get('dp-white-alpha.ink')
           ),
           $background: (
             'default': hs-core.token-get('background-dark'),
@@ -473,8 +553,8 @@ $_tones: (
             ),
           ),
           $disabled: (
-            'default': var(--hs-theme-dp-white-alpha),
-            'ink': var(--hs-theme-dp-white-alpha-ink)
+            'default': hs-core.primitive-token-get('dp-white-alpha'),
+            'ink': hs-core.primitive-token-get('dp-white-alpha.ink')
           ),
           $background: (
             'default': hs-core.token-get('background-dark'),
@@ -488,14 +568,24 @@ $_tones: (
   @content;
 }
 
+@function _get-color($query, $tone) {
+  @return hs-core.token-switch('#{$query}-#{$tone}', hs-core.primitive-token-switch('#{$query}.#{$tone}', $query))
+}
+
 @function _get-family($query) {
-  $family: list.nth($query, 1);
-  $type: list.nth($query, 2);
-  @return ($family, $type);
+  @return hs-core.primitive-token-switch('family.#{map.get($query, 'family')}', map.get($query, 'family'));
+}
+
+@function _get-size($query) {
+  @return hs-core.primitive-token-switch('size.#{map.get($query, 'size')}', map.get($query, 'size'));
 }
 
 @function _get-weight($query) {
-  @return list.nth($query, 3);
+  @return hs-core.primitive-token-switch('weight.#{map.get($query, 'weight')}', map.get($query, 'weight'));
+}
+
+@function _get-line-height($query) {
+  @return hs-core.primitive-token-switch('line-height.#{map.get($query, 'line-height')}', map.get($query, 'line-height'));
 }
 
 @function _raw($query) {

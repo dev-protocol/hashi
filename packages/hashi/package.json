@@ -1,6 +1,6 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "1.8.0",
+  "version": "2.0.0-beta",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "./_index.scss",
   "exports": {
@@ -64,7 +64,6 @@
   "repository": "https://github.com/dev-protocol/hashi-web",
   "author": "Dev Protocol",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "@matteusan/sentro": "0.1.25"
   }

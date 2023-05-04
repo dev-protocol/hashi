@@ -35,49 +35,49 @@
       max: $width
     ));
     @include hs-core.shape-height('button', max-content);
-  
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
-  
+
     user-select: none;
     overflow: visible;
     vertical-align: middle;
     box-sizing: border-box;
     cursor: pointer;
-  
+
     -webkit-appearance: caret;
     @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
-  
+
     @content;
-  
+
     ::-moz-focus-inner {
       padding: 0;
       border-style: none;
     }
-  
+
     & > * + * {
-      margin-left: hs-core.key-create('button-gap', hs-core.token-switch('space-#{$gap}', $gap));
+      margin-left: hs-core.key-create('button-gap', hs-core.primitive-token-switch('spacing.#{$gap}', $gap));
     }
-  
+
     .hs-button__icon {
       display: flex;
       align-items: center;
       @include hs-core.color-ink('button-icon', $icon-ink);
-      @include hs-core.typography-size('button-icon', hs-core.to-rem(22px));
+      @include hs-core.typography-size('button-icon', hs-core.to-rem(20px));
       /* @fallback */
-      width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
-      height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
-    
+      width: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+      height: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+
       > * {
         @include hs-core.color-ink('button-icon', $icon-ink);
-        @include hs-core.typography-size('button-icon', hs-core.to-rem(22px));
+        @include hs-core.typography-size('button-icon', hs-core.to-rem(20px));
         /* @fallback */
-        width: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
-        height: hs-core.key-create('button-icon-size', hs-core.to-rem(22px));
+        width: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+        height: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
       }
     }
-  
+
     .hs-button__label {
       @include hs-core.shape-padding('button-label', 0);
       @include hs-core.color-ink('button-label', $label-ink);
@@ -89,5 +89,5 @@
       letter-spacing: 0.02rem;
     }
   }
-  
+
 }

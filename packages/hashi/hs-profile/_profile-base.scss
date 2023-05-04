@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../hs-core';
 
@@ -33,10 +33,10 @@
     width: 100%;
     display: grid;
     grid-template-columns: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size)) 1fr;
-    gap: hs-core.key-create('profile-gap', hs-core.token-switch('space-#{$gap}', $gap));
-    
+    gap: hs-core.key-create('profile-gap', hs-core.primitive-token-switch('spacing.#{$gap}', $gap));
+
     @content;
-    
+
     .hs-profile__img {
       width: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size));
       height: hs-core.key-create('profile-img-size', hs-core.token-switch($img-size));
@@ -50,7 +50,7 @@
       ));
       overflow: hidden;
       user-select: none;
-      
+
       img {
         width: 100%;
         height: 100%;
@@ -58,7 +58,7 @@
         object-position: center;
       }
     }
-    
+
     .hs-profile__info {
       .hs-profile__name {
         @include hs-core.typography-apply('profile-name', (
@@ -68,7 +68,7 @@
           line-height: $name-typography,
         ));
       }
-      
+
       .hs-profile__description {
         @include hs-core.typography-apply('profile-description', (
           family: $description-typography,
@@ -78,7 +78,7 @@
         ));
         @include hs-core.line-break(2);
       }
-      
+
       .hs-profile__role {
         @include hs-core.typography-apply('profile-role', (
           family: $role-typography,

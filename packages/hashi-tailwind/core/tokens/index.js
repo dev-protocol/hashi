@@ -22,23 +22,11 @@
  *
  */
 
-const files=[
-  'packages/hashi/tailwind/index.js',
-  'packages/hashi/config/purgecss.js'
-]
+const { primitiveTokens } = require('./data');
+const { toRem, getPrimitiveToken } = require('./methods');
 
-export default [
-  ...files.map(input=>({
-    input,
-    output: [
-      {
-        file: input.replace('.js', '.mjs'),
-        format: 'es',
-      },
-      {
-        file: input.replace('.js', '.cjs'),
-        format: 'cjs',
-      },
-    ],
-  }))
-]
+module.exports = {
+    primitiveTokens,
+    toRem,
+    getPrimitiveToken
+}

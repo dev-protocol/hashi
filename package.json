@@ -1,12 +1,11 @@
 {
   "name": "hashi",
-  "version": "1.8.0",
+  "version": "2.0.0-beta",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "index.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
   "author": "Dev Protocol",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
     "build:ts": "webpack --config webpack.config.js",
@@ -19,6 +18,7 @@
   "devDependencies": {
     "@csstools/postcss-sass": "5.0.1",
     "@devprotocol/hashi": "file:./packages/hashi",
+    "@devprotocol/hashi-tailwind": "file:./packages/hashi-tailwind",
     "@devprotocol/hashi-themes": "file:./packages/themes",
     "@matteusan/sentro": "0.1.25",
     "gulp": "4.0.2",

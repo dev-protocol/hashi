@@ -51,6 +51,12 @@ $_gaps: (
   'md',
   'lg',
   'xl',
+  '2xl',
+  '3xl',
+  '4xl',
+  '5xl',
+  '6xl',
+  'auto'
 );
 
 $_flows: (
@@ -195,13 +201,13 @@ $_alignments: (
   @if list.index($utils-to-render, 'gap') {
     @each $gap in $_gaps {
       .gap-#{$gap} {
-        gap: hs-core.token-get('space-#{$gap}');
+        gap: hs-core.primitive-token-get('spacing.#{$gap}');
       }
 
       @each $breakpoint, $shorthand in $_breakpoints {
         @include hs-core.breakpoint-create($breakpoint) {
           .\@#{$shorthand}\:gap-#{$gap} {
-            gap: hs-core.token-get('space-#{$gap}');
+            gap: hs-core.primitive-token-get('spacing.#{$gap}');
           }
         }
       }

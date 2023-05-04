@@ -31,7 +31,7 @@
     left: 0;
     right: 0;
     z-index: hs-core.key-create('dialog-z-index', 100);
-    
+
     .hs-dialog__container {
       @include hs-core.shape-apply('dialog', (
         width: (
@@ -42,7 +42,7 @@
         shadow: 'normal'
       ));
       overflow: hidden;
-  
+
       .hs-dialog__header {
         width: 100%;
         display: flex;
@@ -51,22 +51,22 @@
         align-items: center;
         position: relative;
         padding: hs-core.key-get('dialog-padding');
-    
+
         background-color: hs-core.key-get('dialog-fill');
         color: hs-core.key-get('dialog-ink');
         border: 1px solid hs-core.key-get('dialog-border');
-    
+
         font-family: hs-core.key-get('dialog-header-family');
         font-size: hs-core.key-get('dialog-header-size');
         font-weight: hs-core.key-get('dialog-header-weight');
         line-height: hs-core.key-get('dialog-header-line-height');
-    
+
         .hs-dialog__close-button {
           position: absolute;
           right: hs-core.key-get('dialog-padding');
         }
       }
-  
+
       .hs-dialog__content {
         width: 100%;
         display: flex;
@@ -74,16 +74,16 @@
         background-color: hs-core.key-get('dialog-fill');
         color: hs-core.key-get('dialog-ink');
         border: 1px solid hs-core.key-get('dialog-border');
-    
+
         &:not(:last-child) {
           padding: 0 hs-core.key-get('dialog-padding');
         }
-    
+
         &:last-child {
           padding: 0 hs-core.key-get('dialog-padding') hs-core.key-get('dialog-padding') hs-core.key-get('dialog-padding');
         }
       }
-  
+
       .hs-dialog__footer {
         width: 100%;
         display: flex;
@@ -92,19 +92,19 @@
         background-color: hs-core.key-get('dialog-fill');
         color: hs-core.key-get('dialog-ink');
         border: 1px solid hs-core.key-get('dialog-border');
-        
+
         > * + * {
-          margin-left: hs-core.token-get('space-sm');
+          margin-left: hs-core.primitive-token-get('spacing.sm');
         }
-    
+
         &.is-content-left {
           justify-content: start;
         }
-    
+
         &.is-content-center {
           justify-content: center;
         }
-    
+
         &.is-content-right {
           justify-content: end;
         }

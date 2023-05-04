@@ -22,23 +22,18 @@
  *
  */
 
-const files=[
-  'packages/hashi/tailwind/index.js',
-  'packages/hashi/config/purgecss.js'
-]
+const { primitiveTokens } = require('./data');
 
-export default [
-  ...files.map(input=>({
-    input,
-    output: [
-      {
-        file: input.replace('.js', '.mjs'),
-        format: 'es',
-      },
-      {
-        file: input.replace('.js', '.cjs'),
-        format: 'cjs',
-      },
-    ],
-  }))
-]
+const toRem = (px) => `${px / 16}rem`;
+
+const getPrimitiveToken = (query) => {
+    let keys = query.split('.');
+    let token = primitiveTokens[keys[0]];
+    if (keys.length !== 2) return token['default'];
+    return token[keys[1]];
+}
+
+module.exports = {
+    toRem,
+    getPrimitiveToken
+}

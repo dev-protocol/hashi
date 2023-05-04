@@ -45,7 +45,7 @@ $border-disabled: $fill-disabled !default;
 
 $width: max-content !default;
 $radius: 'small' !default;
-$padding: ('xs' 'md') !default;
+$padding: ('sm' 'md') !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 
@@ -92,11 +92,7 @@ $_label-ink: hs-core.prioritize(map.get($theme, 'label-ink'), $label-ink);
 
 $_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
 
-$_states: (
-  'success',
-  'warning',
-  'danger'
-);
+$_states: ('error');
 
 $_fills: (
   'default': $_fill,

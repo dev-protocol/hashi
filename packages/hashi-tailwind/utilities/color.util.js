@@ -1,5 +1,6 @@
 /*
- *  Copyright (c) 2022 Dev Protocol
+ *
+ *  Copyright (c) 2023 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -18,15 +19,31 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
+ *
  */
 
-const primitives = require('./color-primitives.util');
+const { getPrimitiveToken } = require("../core/tokens");
+
+const getColorTokens = (parentToken, darkParentToken = parentToken) => {
+  return {
+    200: getPrimitiveToken(`${parentToken}.200`),
+    300: getPrimitiveToken(`${ parentToken}.300`),
+    400: getPrimitiveToken(`${parentToken}.400`),
+    600: getPrimitiveToken(`${parentToken}.600`),
+    ink: getPrimitiveToken(`${parentToken}.ink`),
+    'dark': {
+      200: getPrimitiveToken(`${darkParentToken}.200`),
+      300: getPrimitiveToken(`${darkParentToken}.300`),
+      400: getPrimitiveToken(`${darkParentToken}.400`),
+      600: getPrimitiveToken(`${darkParentToken}.600`),
+      ink: getPrimitiveToken(`${darkParentToken}.ink`),
+    }
+  }
+}
 
 module.exports = {
-  'primary': primitives['dp-black'],
-  'accent': primitives['native-blue'],
-  'surface': {
-    default: primitives['dp-white'][200],
-    ink: primitives['dp-white']['ink']
-  }
+  'primary': getColorTokens('dp-black', 'dp-white'),
+  'accent': getColorTokens('dp-blue'),
+  'surface': getColorTokens('dp-white', 'dp-blue-gray'),
+  'error': getColorTokens('dp-red'),
 };
