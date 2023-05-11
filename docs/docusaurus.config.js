@@ -1,5 +1,6 @@
 /*
- *  Copyright (c) 2022 Dev Protocol
+ *
+ *  Copyright (c) 2023 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -18,6 +19,7 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
+ *
  */
 
 // @ts-check
@@ -45,7 +47,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/dev-protocol/hashi-web/docs',
+          editUrl: 'https://github.com/dev-protocol/hashi/',
           breadcrumbs: false,
         },
         blog: {
@@ -87,7 +89,7 @@ const config = {
           position: 'left'
         },
         {
-          href: 'https://github.com/dev-protocol/hashi-web',
+          href: 'https://github.com/dev-protocol/hashi',
           label: 'Source',
           position: 'left',
         },
