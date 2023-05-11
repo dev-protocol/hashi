@@ -30,251 +30,86 @@ Single-purpose, consistent, and predictable classes for styling/modifying an ele
 ## Radius
 **Syntax:** `r[direction]-[size]`
 ```scss
-// All sides
-.r-none { border-radius: var(--hs-theme-radius-none); }
-.r-xs { border-radius: var(--hs-theme-radius-xs); }
-.r-sm { border-radius: var(--hs-theme-radius-sm); }
-.r-md { border-radius: var(--hs-theme-radius-md); }
-.r-lg { border-radius: var(--hs-theme-radius-lg); }
-.r-xl { border-radius: var(--hs-theme-radius-xl); }
-.r-pill { border-radius: var(--hs-theme-radius-pill); }
-
-// Top
-.rt-none { 
-  border-top-left-radius: var(--hs-theme-radius-none);
-  border-top-right-radius: var(--hs-theme-radius-none);
-}
-.rt-xs {
-  border-top-left-radius: var(--hs-theme-radius-xs);
-  border-top-right-radius: var(--hs-theme-radius-xs);
-}
-.rt-sm {
-  border-top-left-radius: var(--hs-theme-radius-sm);
-  border-top-right-radius: var(--hs-theme-radius-sm);
-}
-.rt-md {
-  border-top-left-radius: var(--hs-theme-radius-md);
-  border-top-right-radius: var(--hs-theme-radius-md);
-}
-.rt-lg {
-  border-top-left-radius: var(--hs-theme-radius-lg);
-  border-top-right-radius: var(--hs-theme-radius-lg);
-}
-.rt-xl {
-  border-top-left-radius: var(--hs-theme-radius-xl);
-  border-top-right-radius: var(--hs-theme-radius-xl);
-}
-.rt-pill {
-  border-top-left-radius: var(--hs-theme-radius-pill);
-  border-top-right-radius: var(--hs-theme-radius-pill);
-}
-
-// Bottom
-.rb-none {
-  border-bottom-left-radius: var(--hs-theme-radius-none);
-  border-bottom-right-radius: var(--hs-theme-radius-none);
-}
-.rb-xs {
-  border-bottom-left-radius: var(--hs-theme-radius-xs);
-  border-bottom-right-radius: var(--hs-theme-radius-xs);
-}
-.rb-sm {
-  border-bottom-left-radius: var(--hs-theme-radius-sm);
-  border-bottom-right-radius: var(--hs-theme-radius-sm);
-}
-.rb-md {
-  border-bottom-left-radius: var(--hs-theme-radius-md);
-  border-bottom-right-radius: var(--hs-theme-radius-md);
-}
-.rb-lg {
-  border-bottom-left-radius: var(--hs-theme-radius-lg);
-  border-bottom-right-radius: var(--hs-theme-radius-lg);
-}
-.rb-xl {
-  border-bottom-left-radius: var(--hs-theme-radius-xl);
-  border-bottom-right-radius: var(--hs-theme-radius-xl);
-}
-.rb-pill {
-  border-bottom-left-radius: var(--hs-theme-radius-pill);
-  border-bottom-right-radius: var(--hs-theme-radius-pill);
-}
-
-// Left
-.rl-none {
-  border-top-left-radius: var(--hs-theme-radius-none);
-  border-bottom-left-radius: var(--hs-theme-radius-none);
-}
-.rl-xs {
-  border-top-left-radius: var(--hs-theme-radius-xs);
-  border-bottom-left-radius: var(--hs-theme-radius-xs);
-}
-.rl-sm {
-  border-top-left-radius: var(--hs-theme-radius-sm);
-  border-bottom-left-radius: var(--hs-theme-radius-sm);
-}
-.rl-md {
-  border-top-left-radius: var(--hs-theme-radius-md);
-  border-bottom-left-radius: var(--hs-theme-radius-md);
-}
-.rl-lg {
-  border-top-left-radius: var(--hs-theme-radius-lg);
-  border-bottom-left-radius: var(--hs-theme-radius-lg);
-}
-.rl-xl {
-  border-top-left-radius: var(--hs-theme-radius-xl);
-  border-bottom-left-radius: var(--hs-theme-radius-xl);
-}
-.rl-pill {
-  border-top-left-radius: var(--hs-theme-radius-pill);
-  border-bottom-left-radius: var(--hs-theme-radius-pill);
-}
-
-// Right
-.rr-none {
-  border-top-right-radius: var(--hs-theme-radius-none);
-  border-bottom-right-radius: var(--hs-theme-radius-none);
-}
-.rr-xs {
-  border-top-right-radius: var(--hs-theme-radius-xs);
-  border-bottom-right-radius: var(--hs-theme-radius-xs);
-}
-.rr-sm {
-  border-top-right-radius: var(--hs-theme-radius-sm);
-  border-bottom-right-radius: var(--hs-theme-radius-sm);
-}
-.rr-md {
-  border-top-right-radius: var(--hs-theme-radius-md);
-  border-bottom-right-radius: var(--hs-theme-radius-md);
-}
-.rr-lg {
-  border-top-right-radius: var(--hs-theme-radius-lg);
-  border-bottom-right-radius: var(--hs-theme-radius-lg);
-}
-.rr-xl {
-  border-top-right-radius: var(--hs-theme-radius-xl);
-  border-bottom-right-radius: var(--hs-theme-radius-xl);
-}
-.rr-pill {
-  border-top-right-radius: var(--hs-theme-radius-pill);
-  border-bottom-right-radius: var(--hs-theme-radius-pill);
-}
+.r-[size] { ... } // All sides
+.rt-[size] { ... } // Top
+.rb-[size] { ... } // Bottom
+.rl-[size] { ... } // Left
+.rr-[size] { ... } // Right
+.rtl-[size] { ... } // Top Left
+.rtr-[size] { ... } // Top Right
+.rbl-[size] { ... } // Bottom Left
+.rbr-[size] { ... } // Bottom Right
 ```
+
+| Size     | Value    |
+|----------|----------|
+| `none`   | `0`      |
+| `xs`     | `0.1rem` |
+| `sm`     | `0.3rem` |
+| `md`     | `0.5rem` |
+| `lg`     | `0.7rem` |
+| `xl`     | `1.2rem` |
+| `2xl`    | `2.3rem` |
+| `3xl`    | `3.4rem` |
+| `4xl`    | `4.5rem` |
+| `5xl`    | `6.1rem` |
+| `6xl`    | `8.2rem` |
+| `pill`   | `5000px` |
+| `circle` | `50%`    |
+
 ## Margin
 **Syntax:** `m[direction]-[size]`
 ```scss
-// All sides
-.m-none { margin: var(--hs-theme-margin-none); }
-.m-xs { margin: var(--hs-theme-margin-xs); }
-.m-sm { margin: var(--hs-theme-margin-sm); }
-.m-md { margin: var(--hs-theme-margin-md); }
-.m-lg { margin: var(--hs-theme-margin-lg); }
-.m-xl { margin: var(--hs-theme-margin-xl); }
-
-// Single axis (x, y)
-.mx-none { margin: 0 var(--hs-theme-margin-none); }
-.mx-xs { margin: 0 var(--hs-theme-margin-xs); }
-.mx-sm { margin: 0 var(--hs-theme-margin-sm); }
-.mx-md { margin: 0 var(--hs-theme-margin-md); }
-.mx-lg { margin: 0 var(--hs-theme-margin-lg); }
-.mx-xl { margin: 0 var(--hs-theme-margin-xl); }
-
-.my-none { margin: var(--hs-theme-margin-none) 0; }
-.my-xs { margin: var(--hs-theme-margin-xs) 0; }
-.my-sm { margin: var(--hs-theme-margin-sm) 0; }
-.my-md { margin: var(--hs-theme-margin-md) 0; }
-.my-lg { margin: var(--hs-theme-margin-lg) 0; }
-.my-xl { margin: var(--hs-theme-margin-xl) 0; }
-
-// Top
-.mt-none { margin-top: var(--hs-theme-margin-none); }
-.mt-xs { margin-top: var(--hs-theme-margin-xs); }
-.mt-sm { margin-top: var(--hs-theme-margin-sm); }
-.mt-md { margin-top: var(--hs-theme-margin-md); }
-.mt-lg { margin-top: var(--hs-theme-margin-lg); }
-.mt-xl { margin-top: var(--hs-theme-margin-xl); }
-
-// Bottom
-.mb-none { margin-bottom: var(--hs-theme-margin-none); }
-.mb-xs { margin-bottom: var(--hs-theme-margin-xs); }
-.mb-sm { margin-bottom: var(--hs-theme-margin-sm); }
-.mb-md { margin-bottom: var(--hs-theme-margin-md); }
-.mb-lg { margin-bottom: var(--hs-theme-margin-lg); }
-.mb-xl { margin-bottom: var(--hs-theme-margin-xl); }
-
-// Left
-.ml-none { margin-left: var(--hs-theme-margin-none); }
-.ml-xs { margin-left: var(--hs-theme-margin-xs); }
-.ml-sm { margin-left: var(--hs-theme-margin-sm); }
-.ml-md { margin-left: var(--hs-theme-margin-md); }
-.ml-lg { margin-left: var(--hs-theme-margin-lg); }
-.ml-xl { margin-left: var(--hs-theme-margin-xl); }
-
-// Right
-.mr-none { margin-right: var(--hs-theme-margin-none); }
-.mr-xs { margin-right: var(--hs-theme-margin-xs); }
-.mr-sm { margin-right: var(--hs-theme-margin-sm); }
-.mr-md { margin-right: var(--hs-theme-margin-md); }
-.mr-lg { margin-right: var(--hs-theme-margin-lg); }
-.mr-xl { margin-right: var(--hs-theme-margin-xl); }
+.m-[size] { ... } // All sides
+.mt-[size] { ... } // Top
+.mb-[size] { ... } // Bottom
+.ml-[size] { ... } // Left
+.mr-[size] { ... } // Right
+.mx-[size] { ... } // Left & Right
+.my-[size] { ... } // Top & Bottom
 ```
+
+| Size   | Value           |
+|--------|-----------------|
+| `none` | `0`             |
+| `xs`   | `to-rem(4px)`   |
+| `sm`   | `to-rem(8px)`   |
+| `md`   | `to-rem(16px)`  |
+| `lg`   | `to-rem(24px)`  |
+| `xl`   | `to-rem(32px)`  |
+| `2xl`  | `to-rem(48px)`  |
+| `3xl`  | `to-rem(64px)`  |
+| `4xl`  | `to-rem(80px)`  |
+| `5xl`  | `to-rem(96px)`  |
+| `6xl`  | `to-rem(112px)` |
+| `auto` | `auto`          |
+
 ## Padding
 **Syntax:** `p[direction]-[size]`
 ```scss
-// All sides
-.p-none { padding: var(--hs-theme-padding-none); }
-.p-xs { padding: var(--hs-theme-padding-xs); }
-.p-sm { padding: var(--hs-theme-padding-sm); }
-.p-md { padding: var(--hs-theme-padding-md); }
-.p-lg { padding: var(--hs-theme-padding-lg); }
-.p-xl { padding: var(--hs-theme-padding-xl); }
-
-// Single axis (x, y)
-.px-none { padding: 0 var(--hs-theme-padding-none); }
-.px-xs { padding: 0 var(--hs-theme-padding-xs); }
-.px-sm { padding: 0 var(--hs-theme-padding-sm); }
-.px-md { padding: 0 var(--hs-theme-padding-md); }
-.px-lg { padding: 0 var(--hs-theme-padding-lg); }
-.px-xl { padding: 0 var(--hs-theme-padding-xl); }
-
-.py-none { padding: var(--hs-theme-padding-none) 0; }
-.py-xs { padding: var(--hs-theme-padding-xs) 0; }
-.py-sm { padding: var(--hs-theme-padding-sm) 0; }
-.py-md { padding: var(--hs-theme-padding-md) 0; }
-.py-lg { padding: var(--hs-theme-padding-lg) 0; }
-.py-xl { padding: var(--hs-theme-padding-xl) 0; }
-
-// Top
-.pt-none { padding-top: var(--hs-theme-padding-none); }
-.pt-xs { padding-top: var(--hs-theme-padding-xs); }
-.pt-sm { padding-top: var(--hs-theme-padding-sm); }
-.pt-md { padding-top: var(--hs-theme-padding-md); }
-.pt-lg { padding-top: var(--hs-theme-padding-lg); }
-.pt-xl { padding-top: var(--hs-theme-padding-xl); }
-
-// Bottom
-.pb-none { padding-bottom: var(--hs-theme-padding-none); }
-.pb-xs { padding-bottom: var(--hs-theme-padding-xs); }
-.pb-sm { padding-bottom: var(--hs-theme-padding-sm); }
-.pb-md { padding-bottom: var(--hs-theme-padding-md); }
-.pb-lg { padding-bottom: var(--hs-theme-padding-lg); }
-.pb-xl { padding-bottom: var(--hs-theme-padding-xl); }
-
-// Left
-.pl-none { padding-left: var(--hs-theme-padding-none); }
-.pl-xs { padding-left: var(--hs-theme-padding-xs); }
-.pl-sm { padding-left: var(--hs-theme-padding-sm); }
-.pl-md { padding-left: var(--hs-theme-padding-md); }
-.pl-lg { padding-left: var(--hs-theme-padding-lg); }
-.pl-xl { padding-left: var(--hs-theme-padding-xl); }
-
-// Right
-.pr-none { padding-right: var(--hs-theme-padding-none); }
-.pr-xs { padding-right: var(--hs-theme-padding-xs); }
-.pr-sm { padding-right: var(--hs-theme-padding-sm); }
-.pr-md { padding-right: var(--hs-theme-padding-md); }
-.pr-lg { padding-right: var(--hs-theme-padding-lg); }
-.pr-xl { padding-right: var(--hs-theme-padding-xl); }
+.p-[size] { ... } // All sides
+.pt-[size] { ... } // Top
+.pb-[size] { ... } // Bottom
+.pl-[size] { ... } // Left
+.pr-[size] { ... } // Right
+.px-[size] { ... } // Left & Right
+.py-[size] { ... } // Top & Bottom
 ```
+
+| Size   | Value     |
+|--------|-----------|
+| `none` | `0`       |
+| `xs`   | `0.1rem`  |
+| `sm`   | `0.3rem`  |
+| `md`   | `0.7rem`  |
+| `lg`   | `1.2rem`  |
+| `xl`   | `2.3rem`  |
+| `2xl`  | `3.4rem`  |
+| `3xl`  | `4.5rem`  |
+| `4xl`  | `6.1rem`  |
+| `5xl`  | `8.2rem`  |
+| `6xl`  | `12.3rem` |
+| `auto` | `auto`    |
 
 ## Elevation
 **Syntax:** `raise[-][level]`
