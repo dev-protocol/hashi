@@ -9,6 +9,7 @@
 /build
 /dist
 /.yarn
+/**/.yarn
 
 # Compiled package files
 /packages/hashi/**/*.css
@@ -28,7 +29,7 @@
 # Workstations
 /.idea
 /.vscode
-/dump/
 
 # Generated files
 .yarnrc.yml
+*/**/.yarnrc.yml
