@@ -589,5 +589,5 @@ $_tones: (
 }
 
 @function _raw($query) {
-  @return hs-core.token-get-raw($query);
+  @return hs-core.token-switch-raw($query, hs-core.primitive-token-switch($query));
 }
