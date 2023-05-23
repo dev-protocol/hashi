@@ -154,7 +154,7 @@ For information on how to use these classes, [click here](index.md#modification-
 
 | Class        | Effect                                |
 |--------------|---------------------------------------|
-| `.is-filled` | Renders the card in its filled style. |
+| `.is-raised` | Renders the card in its raised style. |
 
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.

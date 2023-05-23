@@ -149,9 +149,7 @@ For information on how to use these classes, [click here](index.md#modification-
 | `.is-filled`    | Renders the component in its filled style.            |
 | `.is-raised`    | Renders the component in its filled + elevated style. |
 | `.is-fullwidth` | Renders the component in its fullwidth style.         |
-| `.is-success`   | Renders the component in its success state.           |
-| `.is-warning`   | Renders the component in its warning state.           |
-| `.is-danger`    | Renders the component in its danger state.            |
+| `.is-error`     | Renders the component in its error state.             |
 
 ### Custom Properties
 These are for creating your own component theme classes that you can append to the parent element markup.

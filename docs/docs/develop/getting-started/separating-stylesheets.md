@@ -17,14 +17,6 @@ breakpoint validations for you to be able to use tokens in separate files.
 
 By default, `$modular-mode` is set to `false`. Set it to `true` to use it.
 
-It also has an alias called `$vue-mode`. However, this variable will be deprecated from the major 2.x release.
-
-```scss
-@use 'node_modules/@devprotocol/hashi' with (
-  $vue-mode: true
-);
-```
-
 You do need to declare the `$modular-mode: true` in every separated style file, or else it will throw an error for
 invalid tokens, keys, and breakpoints.
 

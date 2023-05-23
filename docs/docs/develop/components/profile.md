@@ -86,7 +86,7 @@ For information on how to use these classes, [click here](index.md#modification-
 
 | Class        | Effect                                   |
 |--------------|------------------------------------------|
-| `.is-filled` | Renders the profile in its filled style. |
+| `.is-raised` | Renders the profile in its raised style. |
 
 
 ### Custom Properties

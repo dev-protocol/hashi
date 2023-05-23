@@ -11,7 +11,7 @@ Form fields take and validate inputs the user in a context of a form, or simple 
         <input class="hs-form-field__input" type="text" placeholder="Placeholder..."/>
         <span class="hs-form-field__helper">Helper text</span>
     </label>
-    <label class="hs-form-field is-danger">
+    <label class="hs-form-field is-error">
         <span class="hs-form-field__label">Form Field Label</span>
         <input class="hs-form-field__input" type="text" placeholder="Placeholder..."/>
         <span class="hs-form-field__helper">Helper text</span>
@@ -133,8 +133,8 @@ For information on how to use these classes, [click here](index.md#modification-
 
 | Class         | Effect                                             |
 |---------------|----------------------------------------------------|
-| `.is-filled`  | Renders the component in its filled style.         |
-| `.is-danger`  | Renders the component in its danger state.         |
+| `.is-raised`  | Renders the component in its raised style.         |
+| `.is-error`   | Renders the component in its error state.          |
 | `.is-leading` | Renders the component's icon in its leading style. |
 
 ### Custom Properties

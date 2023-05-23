@@ -17,7 +17,7 @@ Select fields lets the user pick an option from a finite set of choices, and val
         </select>
         <span class="hs-select-field__helper">Helper text</span>
     </label>
-    <label class="hs-select-field is-danger">
+    <label class="hs-select-field is-error">
         <span class="hs-select-field__label">Select Field Label</span>
         <select class="hs-select-field__input">
             <option>Option 1</option>
@@ -169,8 +169,8 @@ For information on how to use these classes, [click here](index.md#modification-
 
 | Class         | Effect                                             |
 |---------------|----------------------------------------------------|
-| `.is-filled`  | Renders the component in its filled style.         |
-| `.is-danger`  | Renders the component in its danger state.         |
+| `.is-raised`  | Renders the component in its raised style.         |
+| `.is-error`   | Renders the component in its error state.          |
 | `.is-leading` | Renders the component's icon in its leading style. |
 
 ### Custom Properties
