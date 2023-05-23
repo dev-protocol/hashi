@@ -13,7 +13,7 @@ interface. Actions range from sharing a link, to navigating to a greater details
   </a>
   <a href="#" class="hs-badge">
     <i class="hs-badge__icon">
-      <img src="https://raw.githubusercontent.com/dev-protocol/hashi-web/main/tests/vanilla/assets/img/dev-token.png" alt="Dev Token Icon"/>
+      <img src="https://raw.githubusercontent.com/dev-protocol/hashi/main/docs/static/img/hashi-logo-minimal.png" alt="Dev Token Icon"/>
     </i>
     <span class="hs-badge__label">Stake Me</span>
   </a>
