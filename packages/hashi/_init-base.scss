@@ -237,7 +237,7 @@ $_tones: (
         ),
       ),
       $disabled: (
-        'default': hs-core.primitive-token-get('dp-black-alpha'),
+        'default': hs-core.primitive-token-get('dp-black-alpha.default'),
         'ink': hs-core.primitive-token-get('dp-black-alpha.ink')
       ),
       $background: (
@@ -372,7 +372,7 @@ $_tones: (
             ),
           ),
           $disabled: (
-            'default': hs-core.primitive-token-get('dp-white-alpha'),
+            'default': hs-core.primitive-token-get('dp-white-alpha.default'),
             'ink': hs-core.primitive-token-get('dp-white-alpha.ink'),
           ),
           $background: (
@@ -553,7 +553,7 @@ $_tones: (
             ),
           ),
           $disabled: (
-            'default': hs-core.primitive-token-get('dp-white-alpha'),
+            'default': hs-core.primitive-token-get('dp-white-alpha.default'),
             'ink': hs-core.primitive-token-get('dp-white-alpha.ink')
           ),
           $background: (

@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'node_modules/@matteusan/sentro';
 @use 'sass:map';
@@ -50,28 +50,13 @@ $_hs-extended-tokens: ();
 }
 
 @function switch($query, $fallback: ()) {
-  @if tools.is-empty($fallback) {
-    @return sentro.token-switch($query);
-  }
-  @if not check($query) and not tools.is-empty($fallback) {
-    @return $fallback;
-  }
-  @if check($query) {
-    @return get($query);
-  }
-  @return $query;
+  @return sentro.token-switch($query, $fallback);
 }
 
 @function switch-raw($query, $fallback: ()) {
-  @if tools.is-empty($fallback) {
-    @return switch($query);
-  }
-  @if not check($query) and not tools.is-empty($fallback) {
-    @return $fallback;
-  }
-  @if check($query) {
-    @return get-raw($query);
-  }
+  @if tools.is-empty($fallback) { @return switch($query); }
+  @if not check($query) and not tools.is-empty($fallback) { @return $fallback; }
+  @if check($query) { @return get-raw($query); }
   @return $query;
 }
 

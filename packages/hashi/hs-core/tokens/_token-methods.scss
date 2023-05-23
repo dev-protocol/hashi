@@ -1,4 +1,4 @@
-///
+//
 //  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '../tools';
 @use 'sass:map';
@@ -31,9 +31,15 @@ $token-keys: map.keys(data.$hs-tokens);
 @each $token-key in $token-keys {
   $variant-keys: map.keys(map.get(data.$hs-tokens, $token-key));
   @each $variant-key in $variant-keys {
-    @if $variant-key == 'default' {
-      $_primitive-token-registry: list.append($_primitive-token-registry, '#{$token-key}') !global;
-    } @else {
+    $_primitive-token-registry: list.append($_primitive-token-registry, '#{$token-key}.#{$variant-key}') !global;
+  }
+}
+
+@mixin register($map: ()) {
+  $token-keys: map.keys($map);
+  @each $token-key in $token-keys {
+    $variant-keys: map.keys(map.get($map, $token-key));
+    @each $variant-key in $variant-keys {
       $_primitive-token-registry: list.append($_primitive-token-registry, '#{$token-key}.#{$variant-key}') !global;
     }
   }
@@ -46,10 +52,8 @@ $token-keys: map.keys(data.$hs-tokens);
   @if _validate($query) {
     $keys: tools.str-split($query, '.');
     $token: map.get(data.$hs-tokens, list.nth($keys, 1));
-    @if list.length($keys) != 2 {
-      @return map.get($token, 'default');
-    }
-    @return map.get($token, list.nth($keys, 2));
+    $value: map.get($token, list.nth($keys, 2));
+    @return $value;
   }
 }
 
@@ -61,14 +65,10 @@ $token-keys: map.keys(data.$hs-tokens);
   @if check($query) == true {
     $keys: tools.str-split($query, '.');
     $token: map.get(data.$hs-tokens, list.nth($keys, 1));
-    @if list.length($keys) != 2 {
-      @return map.get($token, 'default');
-    }
+    @if list.length($keys) != 2 { @return map.get($token, 'default'); }
     @return map.get($token, list.nth($keys, 2));
   }
-  @if not tools.is-empty($fallback) {
-    @return $fallback;
-  }
+  @if not tools.is-empty($fallback) { @return $fallback; }
   @return $query;
 }
 
