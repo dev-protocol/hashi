@@ -33,3 +33,4 @@
 # Generated files
 .yarnrc.yml
 */**/.yarnrc.yml
+*/**/package-lock.json

@@ -1,6 +1,6 @@
 {
   "name": "hashi",
-  "version": "2.0.0-beta",
+  "version": "2.0.0",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "index.js",
   "repository": "https://github.com/dev-protocol/hashi-web",
@@ -21,6 +21,7 @@
     "@devprotocol/hashi-tailwind": "file:./packages/hashi-tailwind",
     "@devprotocol/hashi-themes": "file:./packages/themes",
     "@matteusan/sentro": "0.1.25",
+    "@types/node": "20.2.3",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "5.0.0",
