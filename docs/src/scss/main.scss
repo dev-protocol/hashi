@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use 'dev-docs.theme' as docs;
 
@@ -167,19 +167,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: hashi.token-get('padding-sm') hashi.token-get('padding-md');
+    padding: hashi.primitive-token-get('padding.sm') hashi.primitive-token-get('padding.md');
     background-color: hashi.token-get('accent-400');
     color: hashi.token-get('accent-ink');
 
     p {
       margin: 0 !important;
-      font-weight: hashi.token-get('weight-bold');
-      font-size: hashi.token-get('size-body');
+      font-weight: hashi.primitive-token-get('weight.bold');
+      font-size: hashi.token-get('body-size');
       text-align: center;
 
       a {
-        font-weight: hashi.token-get('weight-bold');
-        font-size: hashi.token-get('size-body');
+        font-weight: hashi.primitive-token-get('weight.bold');
+        font-size: hashi.token-get('body-size');
         color: hashi.token-get('accent-ink') !important;
       }
     }

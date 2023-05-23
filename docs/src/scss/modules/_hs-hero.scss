@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '~@devprotocol/hashi';
 
@@ -48,19 +48,19 @@
         font-weight: 700;
         line-height: normal;
         color: #fff;
-        text-shadow: 3px 3px hashi.token-get('scarlet-400'),
-        6px 6px hashi.token-get('plox-400'),
-        9px 9px hashi.token-get('native-blue-400'),
-        12px 12px hashi.token-get('bright-cyan-400'),;
+        text-shadow: 3px 3px hashi.primitive-token-get('scarlet.400'),
+        6px 6px hashi.primitive-token-get('plox.400'),
+        9px 9px hashi.primitive-token-get('native-blue.400'),
+        12px 12px hashi.primitive-token-get('bright-cyan.400'),;
         user-select: none;
         @include hashi.prefix(transition, text-shadow 0.4s ease);
 
         &:hover,
         &:active {
-          text-shadow: (3px * 1.67) (3px * 1.67) hashi.token-get('scarlet-400'),
-            (6px * 1.67) (6px * 1.67) hashi.token-get('plox-400'),
-            (9px * 1.67) (9px * 1.67) hashi.token-get('native-blue-400'),
-            (12px * 1.67) (12px * 1.67) hashi.token-get('bright-cyan-400'),;
+          text-shadow: (3px * 1.67) (3px * 1.67) hashi.primitive-token-get('scarlet.400'),
+            (6px * 1.67) (6px * 1.67) hashi.primitive-token-get('plox.400'),
+            (9px * 1.67) (9px * 1.67) hashi.primitive-token-get('native-blue.400'),
+            (12px * 1.67) (12px * 1.67) hashi.primitive-token-get('bright-cyan.400'),;
         }
       }
 
@@ -76,15 +76,15 @@
         }
 
         h1 {
-          --ifm-heading-font-family: #{hashi.token-get('family-supertitle')};
-          --ifm-heading-font-weight: #{hashi.token-get('weight-supertitle')};
-          font-family: hashi.token-get('family-supertitle');
-          font-size: hashi.token-get('size-supertitle');
+          --ifm-heading-font-family: #{hashi.token-get('supertitle-family')};
+          --ifm-heading-font-weight: #{hashi.token-get('supertitle-weight')};
+          font-family: hashi.token-get('supertitle-family');
+          font-size: hashi.token-get('supertitle-size');
           margin-bottom: 0.2rem;
         }
 
         .hs-hero__actions {
-          font-family: hashi.token-get('family-body');
+          font-family: hashi.token-get('body-family');
           width: 100%;
 
           a {

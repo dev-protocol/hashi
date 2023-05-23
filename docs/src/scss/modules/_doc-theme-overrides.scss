@@ -1,5 +1,5 @@
-///
-//  Copyright (c) 2022 Dev Protocol
+//
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-///
+//
 
 @use '~@devprotocol/hashi';
 
@@ -47,14 +47,14 @@
     background-color: #fff;
 
     &[data-theme='dark'] {
-      --ifm-navbar-background-color: #{rgba(hashi.token-get-raw('dp-blue-grey-400'), 90%)};
-      --ifm-navbar-link-color: #{hashi.token-get('dp-blue-grey-ink')};
-      --ifm-dropdown-background-color: #{hashi.token-get('dp-blue-grey-400')} !important;
-      --ifm-dropdown-link-color: #{hashi.token-get('dp-blue-grey-ink')};
-      background-color: hashi.token-get('dp-blue-grey-400') !important;
+      --ifm-navbar-background-color: #{rgba(hashi.primitive-token-get('dp-blue-grey.400'), 90%)};
+      --ifm-navbar-link-color: #{hashi.primitive-token-get('dp-blue-grey.ink')};
+      --ifm-dropdown-background-color: #{hashi.primitive-token-get('dp-blue-grey.400')} !important;
+      --ifm-dropdown-link-color: #{hashi.primitive-token-get('dp-blue-grey.ink')};
+      background-color: hashi.primitive-token-get('dp-blue-grey.400') !important;
 
       .menu {
-        background-color: hashi.token-get('dp-blue-grey-600');
+        background-color: hashi.primitive-token-get('dp-blue-grey.600');
 
         &__link {
           &--sublist::after {
@@ -75,7 +75,7 @@
       background-color: hashi.token-get('primary-400');
 
       @include hashi.dark-mode {
-        background-color: hashi.token-get('dp-blue-grey-400');
+        background-color: hashi.primitive-token-get('dp-blue-grey.400');
       }
 
       .menu__list-item-collapsible {
