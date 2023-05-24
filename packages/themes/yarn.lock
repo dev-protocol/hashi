@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@devprotocol/hashi@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-1.8.0.tgz#5a00703c92fb6aec5e4f878130107649eded28b2"
-  integrity sha512-2CT9Bn+J43/xJ9ueYfQOrFgZWZJCLRrGUibEMFFIai8TaQxuGSE7pCeiPvMFt8QIpUjObrhuwl7FF+MDDKwB9g==
+"@devprotocol/hashi@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-2.0.1.tgz#0e816545ac341ccd0f514a79148633efa52d8ec8"
+  integrity sha512-mAivJapWO68XlDfOounwTvOYGcGCHSAsVPiN3uy2U0ZONPyHJH68/JekniMe/qR3peDxYvUQy09PjMrWXELKaA==
   dependencies:
     "@matteusan/sentro" "0.1.25"
 
