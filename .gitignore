@@ -29,6 +29,7 @@
 # Workstations
 /.idea
 /.vscode
+.DS_Store
 
 # Generated files
 .yarnrc.yml

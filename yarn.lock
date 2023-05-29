@@ -463,11 +463,11 @@ __metadata:
   linkType: hard
 
 "@devprotocol/hashi@file:./packages/hashi::locator=hashi%40workspace%3A.":
-  version: 2.0.0
-  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=cc7624&locator=hashi%40workspace%3A."
+  version: 2.0.1
+  resolution: "@devprotocol/hashi@file:./packages/hashi#./packages/hashi::hash=160154&locator=hashi%40workspace%3A."
   dependencies:
     "@matteusan/sentro": 0.1.25
-  checksum: 15a5ec9e2f0633866e7a635632fd99f896d82943fdd833bb219e328778f63a029b14dd2fd662df43d77562acb12de6cfdce250e8856de48a3109bc87e5b6bd17
+  checksum: 6e663cee911b33402de4c13ea9af5e34ae61bffc73071a246c8837f60bf01373a28dc8a305f73efd8cf0977f949074d876cd0a044774f7e85f7eb9bbca03072c
   languageName: node
   linkType: hard
 
