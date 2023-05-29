@@ -40,9 +40,9 @@ $mono: () !default;
 $small: () !default;
 
 $background: 'dp-white.200' !default;
-$dark-background: 'dp-blue-grey.600' !default;
+$background-dark: 'dp-blue-grey.600' !default;
 $background-ink: 'dp-white.ink' !default;
-$dark-background-ink: 'dp-blue-grey.ink' !default;
+$background-dark-ink: 'dp-blue-grey.ink' !default;
 $breakpoints: () !default;
 
 $dark-mode: 'attribute' !default;
@@ -72,8 +72,8 @@ $_valid-dark-modes: ('attribute', 'media', 'class');
   $small: $small,
   $background: $background,
   $background-ink: $background-ink,
-  $dark-background: $dark-background,
-  $dark-background-ink: $dark-background-ink,
+  $background-dark: $background-dark,
+  $background-dark-ink: $background-dark-ink,
   $breakpoints: $breakpoints,
   $dark-mode: $dark-mode,
   $extend: $extend,

@@ -54,9 +54,9 @@ $mono: () !default;
 $small: () !default;
 
 $background: 'dp-white.200' !default;
-$dark-background: 'dp-blue-grey.600' !default;
+$background-dark: 'dp-blue-grey.600' !default;
 $background-ink: 'dp-white.ink' !default;
-$dark-background-ink: 'dp-blue-grey.ink' !default;
+$background-dark-ink: 'dp-blue-grey.ink' !default;
 $breakpoints: () !default;
 $_init-breakpoints: (
   'small': 320px,
@@ -79,9 +79,9 @@ $_error: hs-core.prioritize(map.get($theme, 'error'), $error);
 $_error-dark: hs-core.prioritize(map.get($theme, 'error-dark'), $error-dark);
 
 $_background: hs-core.prioritize(map.get($theme, 'background'), $background);
-$_dark-background: hs-core.prioritize(map.get($theme, 'dark-background'), $dark-background);
+$_background-dark: hs-core.prioritize(map.get($theme, 'background-dark'), $background-dark);
 $_background-ink: hs-core.prioritize(map.get($theme, 'background-ink'), $background-ink);
-$_dark-background-ink: hs-core.prioritize(map.get($theme, 'dark-background-ink'), $dark-background-ink);
+$_background-dark-ink: hs-core.prioritize(map.get($theme, 'background-dark-ink'), $background-dark-ink);
 
 $_radius-small: hs-core.prioritize(map.get($theme, 'radius-small'), $radius-small);
 $_radius-medium: hs-core.prioritize(map.get($theme, 'radius-medium'), $radius-medium);
@@ -244,8 +244,8 @@ $_tones: (
         'default': hs-core.token-switch($_background, hs-core.primitive-token-switch($_background)),
         'ink': hs-core.token-switch($_background-ink, hs-core.primitive-token-switch($_background-ink)),
         'dark': (
-          'default': hs-core.primitive-token-get($_dark-background),
-          'ink': hs-core.primitive-token-get($_dark-background-ink),
+          'default': hs-core.primitive-token-get($_background-dark),
+          'ink': hs-core.primitive-token-get($_background-dark-ink),
         ),
       ),
       $radius: (
@@ -311,7 +311,7 @@ $_tones: (
       ),
     );
     --hs-transition-time: 0.2s;
-    --hs-shadow-color: rgba(0,0,0,0.15);
+    --hs-shadow-color: #{rgba(#000, 15%)};
   }
 
   @include hs-core.breakpoint-config(
