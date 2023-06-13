@@ -331,10 +331,10 @@
 "@devprotocol/hashi-themes@file:./packages/themes":
   version "0.1.0"
   dependencies:
-    "@devprotocol/hashi" "2.1.0"
+    "@devprotocol/hashi" "2.1.1"
 
-"@devprotocol/hashi@2.1.0", "@devprotocol/hashi@file:./packages/hashi":
-  version "2.1.0"
+"@devprotocol/hashi@2.1.1", "@devprotocol/hashi@file:./packages/hashi":
+  version "2.1.1"
   dependencies:
     "@matteusan/sentro" "0.1.25"
 
@@ -4950,7 +4950,16 @@ sass-true@6.1.0:
     jest-diff "^27.5.1"
     lodash "^4.17.21"
 
-sass@1.62.1, sass@^1.49.7:
+sass@1.63.3:
+  version "1.63.3"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.63.3.tgz#527746aa43bf2e4eac1ab424f67f6f18a081061a"
+  integrity sha512-ySdXN+DVpfwq49jG1+hmtDslYqpS7SkOR5GpF6o2bmb1RL/xS+wvPmegMvMywyfsmAV6p7TgwXYGrCZIFFbAHg==
+  dependencies:
+    chokidar ">=3.0.0 <4.0.0"
+    immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
+
+sass@^1.49.7:
   version "1.62.1"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.62.1.tgz#caa8d6bf098935bc92fc73fa169fb3790cacd029"
   integrity sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==
