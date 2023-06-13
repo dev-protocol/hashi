@@ -37,6 +37,7 @@ $border-disabled: 'disabled' !default;
 
 $radius: 'small' !default;
 $padding: ('md' 'lg') !default;
+$border-width: 1px !default;
 
 $family: 'body' !default;
 $size: 'body' !default;
@@ -62,6 +63,7 @@ $_border-disabled: hs-core.prioritize(map.get($theme, 'border-disabled'), $borde
 
 $_radius: hs-core.prioritize(map.get($theme, 'radius'), $radius);
 $_padding: hs-core.prioritize(map.get($theme, 'padding'), $padding);
+$_border-width: hs-core.prioritize(map.get($theme, 'border-width'), $border-width);
 
 $_family: hs-core.prioritize(map.get($theme, 'family'), $family);
 $_size: hs-core.prioritize(map.get($theme, 'size'), $size);
@@ -86,7 +88,7 @@ $_gap: hs-core.prioritize(map.get($theme, 'gap'), $gap);
     @include hs-core.shape-apply('tick-field', (
       padding: $_padding,
       radius: $_radius,
-      border-width: 1px,
+      border-width: $_border-width,
       border-style: solid,
       gap: $_gap
     ));
