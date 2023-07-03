@@ -21,7 +21,7 @@
     "@devprotocol/hashi-tailwind": "file:./packages/hashi-tailwind",
     "@devprotocol/hashi-themes": "file:./packages/themes",
     "@matteusan/sentro": "0.1.25",
-    "@types/node": "20.3.2",
+    "@types/node": "20.3.3",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "5.0.0",
@@ -29,7 +29,7 @@
     "postcss": "8.4.24",
     "postcss-cli": "10.1.0",
     "prejss-cli": "0.3.3",
-    "rollup": "3.25.3",
+    "rollup": "3.26.0",
     "sass": "1.63.6",
     "sass-true": "6.1.0",
     "tailwindcss": "3.3.2",
@@ -42,6 +42,6 @@
   "dependencies": {
     "jest": "29.5.0",
     "jest-environment-jsdom": "29.5.0",
-    "ts-jest": "29.1.0"
+    "ts-jest": "29.1.1"
   }
 }
