@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2022 Dev Protocol
+ *  Copyright (c) 2023 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -83,6 +83,10 @@ const sidebars = {
       'develop/getting-started/gradual-adoption',
       'develop/getting-started/separating-stylesheets',
       'develop/getting-started/dark-mode',
+    ],
+    'Theming': [
+      'develop/theming/index',
+      'develop/theming/advanced',
     ],
     'Utilities': [
       'develop/utilities/index',
