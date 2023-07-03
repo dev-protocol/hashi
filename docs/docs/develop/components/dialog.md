@@ -125,7 +125,7 @@ This dialog use case allows users to modify parts, features, and/or current cons
 
 This dialog use case allows users to stake their tokens to projects to earn rewards.
 ```html
-<div class="hs-dialog">
+<dialog class="hs-dialog">
     <div class="hs-dialog__container">
         <header class="hs-dialog__header">
             <h2>Stake Project</h2>
@@ -154,8 +154,12 @@ This dialog use case allows users to stake their tokens to projects to earn rewa
             </button>
         </footer>
     </div>
-</div>
+</dialog>
 ```
+
+:::info **Regarding native `<dialog>` support**
+As of right now, the current version of Hashi only partially supports the native `<dialog>` element. In future versions we will fully migrate to the said implementation.
+:::
 
 ## API
 ### CSS Classes
@@ -242,7 +246,7 @@ If you wish to extend the component styles, the [`extend()` API](index.md#extens
 
 ### Typescript Methods
 
-| Method                     | Description                       |
-|----------------------------|-----------------------------------|
-| `open() => void`           | Opens the dialog component.       |
-| `close() => void`          | Closes the dialog component.      |
+| Method                  | Description                                                               |
+|-------------------------|---------------------------------------------------------------------------|
+| `open() => void`        | Opens the dialog component.                                               |
+| `close() => void`       | Closes the dialog component.                                              |

@@ -1,5 +1,5 @@
 ///
-//  Copyright (c) 2022 Dev Protocol
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@
       overflow: hidden;
 
       .hs-dialog__header {
-        width: 100%;
+        // width: 100%;
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
@@ -68,7 +68,7 @@
       }
 
       .hs-dialog__content {
-        width: 100%;
+        // width: 100%;
         display: flex;
         flex-flow: column nowrap;
         background-color: hs-core.key-get('dialog-fill');
@@ -85,7 +85,7 @@
       }
 
       .hs-dialog__footer {
-        width: 100%;
+        // width: 100%;
         display: flex;
         flex-flow: row nowrap;
         padding: hs-core.key-get('dialog-padding');

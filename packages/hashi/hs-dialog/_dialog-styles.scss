@@ -1,5 +1,5 @@
 ///
-//  Copyright (c) 2022 Dev Protocol
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,13 +24,13 @@
 @use 'sass:map';
 @use 'dialog-base';
 
-$fill: 'surface-200' !default;
+$fill: 'surface-300' !default;
 $ink: 'surface-ink' !default;
 $border: $fill !default;
 
 $width: 570px !default;
 $radius: 'medium' !default;
-$padding: 'md' !default;
+$padding: 'lg' !default;
 
 $header-typography: 'subtitle' !default;
 
@@ -48,7 +48,7 @@ $_header-typography: hs-core.prioritize(map.get($theme, 'header-typography'), $h
 
 @mixin render() {
   @include dialog-base.init($width, $radius) {
-    display: none;
+    width: 100%;
     place-items: center;
     background-color: rgba(0 0 0 / 20%);
     @include hs-core.color-bind('dialog', (
@@ -65,8 +65,13 @@ $_header-typography: hs-core.prioritize(map.get($theme, 'header-typography'), $h
       weight: $header-typography,
       line-height: $header-typography,
     ));
-    
-    &.is-open {
+
+    &:not([open]) {
+      display: none;
+    }
+
+    &.is-open,
+    &[open] {
       display: grid;
     }
   }
