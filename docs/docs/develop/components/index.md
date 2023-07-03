@@ -61,22 +61,7 @@ To solve specificity issues, these modification classes are created with the bas
 This lets us use the same class names for every component while not clashing in with other modifiers.
 
 ## Modification (SCSS)
-Modifying the global styles of a component takes advantage of Sass' modules system. Using the `with ()` keyword on import, we can access a handful of modifiable APIs for that specific component. Each component has its API documented on their respective pages.
-
-```scss
-@use 'node_modules/@devprotocol/hashi/hs-component' with (
-  // This styles the defaults for the component.
-  //
-  // All values to be passed should be 
-  // valid token queries.
-  $fill: 'accent', 
-  $ink: 'accent-ink',
-  $radius: 'xs',
-  $padding: 'sm'
-);
-
-@include hs-component.render();
-```
+// Theming > Theme Variables
 
 ## Extension (SCSS)
 Extension is a useful feature that lets you create component variants. An example usage is like so:
@@ -117,59 +102,4 @@ and sizes of a component easily. This is generally recommended for components th
 ### Advanced composition (composition API)
 This is for components that are complex in structure, and requires more attention, care, and effort to building. We
 expose a handful of [composition APIs](../api/composition/index.md) to help you in building these complex components.
-You are required to write SCSS. 
-
-## Theming
-Hashi provides a simple theme system that allows you to easily change different properties of your components like color, shape, typography, and layout.
-
-The way we treat this concept is to think of the theme like JSON data.
-
-Every component has the `$theme` parameter in the `with ()` keyword. It takes in a map of the theme properties. The theme properties are **always** the same as the ones defined in the [Modification (SCSS) API](#modification-scss).
-
-This feature easily allows the internal team and the community to create themes.
-
-```scss
-// node_modules/@example-organization/haru/_index.scss
-$main-theme: (
-  'accent': 'hana',
-  'accent-dark': 'hana',
-  'surface': 'ume',
-  'extend': (
-    'ume': (
-      200: #f8dacb,
-      300: #ffd0b4,
-      400: #ffc09c,
-      600: #c88762,
-      'ink': #3c1f11
-    ),
-    'hana': (
-      200: #ffb8d7,
-      300: #ff77a9,
-      400: #ec407a,
-      600: #b4004e,
-      'ink': #ffffff
-    )
-  ),
-);
-
-$button-theme: (
-  'padding': ('md', 'lg'),
-  'radius': 'pill',
-);
-```
-
-```scss
-// main.scss
-@use 'node_modules/@example-organization/haru'; // the map-based theme in a package
-
-@use 'node_modules/@devprotocol/hashi' with (
-  $theme: haru.$global-theme
-);
-@use 'node_modules/@devprotocol/hashi/hs-button' with (
-  $theme: haru.$button-theme
-);
-
-@include hashi.init {
-  @include hs-button.render();
-}
-```
+You are required to write SCSS.
