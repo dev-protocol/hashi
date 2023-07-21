@@ -1,6 +1,6 @@
 {
   "name": "@devprotocol/hashi",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Dev Protocol's design system implementation for the web.",
   "main": "./_index.scss",
   "exports": {
