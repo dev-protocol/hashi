@@ -333,8 +333,15 @@
   dependencies:
     "@devprotocol/hashi" "2.1.1"
 
-"@devprotocol/hashi@2.1.1", "@devprotocol/hashi@file:./packages/hashi":
+"@devprotocol/hashi@2.1.1":
   version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-2.1.1.tgz#623cf88aaf1a9cff8029df7cdd54350c39b6305f"
+  integrity sha512-Nb18dQnsMUBJZiYKz5qJP0V4S8txLd7E4SdoKO1dRYasRJxt2DHSXWE6LBopcYjntPxcaQ7Cx3daRcN9C5DlEA==
+  dependencies:
+    "@matteusan/sentro" "0.1.25"
+
+"@devprotocol/hashi@file:./packages/hashi":
+  version "2.2.0"
   dependencies:
     "@matteusan/sentro" "0.1.25"
 
@@ -788,10 +795,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.0.tgz#01d637d1891e419bc85763b46f42809cd2d5addb"
   integrity sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==
 
-"@types/node@20.3.3":
-  version "20.3.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.3.3.tgz#329842940042d2b280897150e023e604d11657d6"
-  integrity sha512-wheIYdr4NYML61AjC8MKj/2jrR/kDQri/CIpVoZwldwhnIrD/j9jIU5bJ8yBKuB2VhpFV7Ab6G2XkBjv9r9Zzw==
+"@types/node@20.5.1":
+  version "20.5.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.1.tgz#178d58ee7e4834152b0e8b4d30cbfab578b9bb30"
+  integrity sha512-4tT2UrL5LBqDwoed9wZ6N3umC4Yhz3W3FloMmiiG4JwmUJWpie0c7lcnUNd4gtMKuDEO4wRVS8B6Xa0uMRsMKg==
 
 "@types/prettier@^2.1.5":
   version "2.7.3"
