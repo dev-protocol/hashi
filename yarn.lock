@@ -333,8 +333,15 @@
   dependencies:
     "@devprotocol/hashi" "2.1.1"
 
-"@devprotocol/hashi@2.1.1", "@devprotocol/hashi@file:./packages/hashi":
+"@devprotocol/hashi@2.1.1":
   version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/hashi/-/hashi-2.1.1.tgz#623cf88aaf1a9cff8029df7cdd54350c39b6305f"
+  integrity sha512-Nb18dQnsMUBJZiYKz5qJP0V4S8txLd7E4SdoKO1dRYasRJxt2DHSXWE6LBopcYjntPxcaQ7Cx3daRcN9C5DlEA==
+  dependencies:
+    "@matteusan/sentro" "0.1.25"
+
+"@devprotocol/hashi@file:./packages/hashi":
+  version "2.2.0"
   dependencies:
     "@matteusan/sentro" "0.1.25"
 
@@ -4881,10 +4888,10 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
-rollup@3.26.0:
-  version "3.26.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.26.0.tgz#9f2e0316a4ca641911cefd8515c562a9124e6130"
-  integrity sha512-YzJH0eunH2hr3knvF3i6IkLO/jTjAEwU4HoMUbQl4//Tnl3ou0e7P5SjxdDr8HQJdeUJShlbEHXrrnEHy1l7Yg==
+rollup@3.28.0:
+  version "3.28.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.28.0.tgz#a3c70004b01934760c0cb8df717c7a1d932389a2"
+  integrity sha512-d7zhvo1OUY2SXSM6pfNjgD5+d0Nz87CUp4mt8l/GgVP3oBsPwzNvSzyu1me6BSG9JIgWNTVcafIXBIyM8yQ3yw==
   optionalDependencies:
     fsevents "~2.3.2"
 
