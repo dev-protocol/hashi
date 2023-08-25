@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "jest": "29.6.4",
-    "jest-environment-jsdom": "29.6.2",
+    "jest-environment-jsdom": "29.6.4",
     "ts-jest": "29.1.1"
   }
 }
