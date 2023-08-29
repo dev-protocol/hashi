@@ -24,6 +24,7 @@
 
 const files=[
   'packages/hashi/tailwind/index.js',
+  'packages/hashi/tailwind/extensions.js',
   'packages/hashi/config/purgecss.js'
 ]
 

@@ -15,6 +15,10 @@
       "import": "./tailwind/index.mjs",
       "require": "./tailwind/index.cjs"
     },
+    "./tailwind/extensions": {
+      "import": "./tailwind/extensions.mjs",
+      "require": "./tailwind/extensions.cjs"
+    },
     "./hs-badge": {
       "default": "./hs-badge/_index.scss"
     },
