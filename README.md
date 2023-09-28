@@ -1,5 +1,6 @@
 # Hashi・橋
-![hashi-cover.png](media/hashi-cover.png)
+![Hashi Cover Light Mode](https://raw.githubusercontent.com/dev-protocol/hashi/main/media/hashi-cover.png?sanitize=true#gh-light-mode-only)
+![Hashi Cover Dark Mode](https://raw.githubusercontent.com/dev-protocol/hashi/main/media/hashi-cover--dark.png?sanitize=true#gh-dark-mode-only)
 
 Dev Protocol's design system implementation for the web.
 
@@ -8,7 +9,7 @@ Dev Protocol's design system implementation for the web.
 - [日本語](README_JP.md)
 
 ## Prerequisites
-Be sure to have NodeJS v14.x installed. Any version higher will risk the project not working locally.
+Be sure to have NodeJS v16.x installed. Any version higher will risk the project not working locally.
 
 ## Setup
 ```shell
@@ -20,9 +21,9 @@ $ yarn add @devprotocol/hashi
 ```
 ```scss
 // Include design system initializer.
-@use 'path/to/@devprotocol/hashi';
+@use '@devprotocol/hashi';
 // Include all components here.
-@use 'path/to/@devprotocol/hashi/hs-component';
+@use '@devprotocol/hashi/hs-component';
 
 @include hashi.init() {
     @include hs-component.render();
