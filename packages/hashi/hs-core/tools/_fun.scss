@@ -20,13 +20,8 @@
 //  SOFTWARE.
 ///
 
-@forward 'breakpoint' as breakpoint-*;
-@forward 'converters';
-@forward 'color-mixers';
-@forward 'color-mode';
-@forward 'fun';
-@forward 'line-break';
-@forward 'prefix';
-@forward 'prioritizer';
-@forward 'string';
-@forward 'validators';
+/// ワンピース
+/// @return {void}
+@mixin gomu-gomu-no-uta() {
+  @debug "ありったけの夢をかき集め \n 捜し物を探しにゆくのさぁ \n ポケットのコイン \n それとYou wanna be my friend? \n We are, we are on the cruise! \n ウィーアー！";
+}
