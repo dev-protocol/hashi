@@ -3,7 +3,7 @@ id: hs-card
 title: Cards
 slug: /design/card
 ---
-![HSCard Component](../_media/card.png)
+![HSDialog Component](../_media/dialog.png)
 
 ## Card Header
 The card header contains all the titular information of the card. It serves as a hook for the user. It should display necessary (but not deep) information.

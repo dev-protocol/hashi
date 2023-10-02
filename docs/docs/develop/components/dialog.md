@@ -6,6 +6,8 @@ displayed_sidebar: develop
 ---
 Dialogs let the user see important information, and/or perform an action that requires attention.
 
+![HSDialog.png](_media/dialog.png)
+
 ## Usage
 ### HTML
 ```html
