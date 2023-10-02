@@ -6,7 +6,8 @@ displayed_sidebar: design
 ---
 Hashi is Dev Protocol's design system. Aiming to bring a unified user experience when using Dev Protocol products, to present an elegant user interface for consumers to interact with, and to be able to create the same user interfaces regardless of any frontend framework.
 
-![Hashi Cover](_media/hashi-cover.png)
+![Hashi Cover Light Mode](https://raw.githubusercontent.com/dev-protocol/hashi/main/media/hashi-cover.png?sanitize=true#gh-light-mode-only)
+![Hashi Cover Dark Mode](https://raw.githubusercontent.com/dev-protocol/hashi/main/media/hashi-cover--dark.png?sanitize=true#gh-dark-mode-only)
 
 Hashi has documented all of its design guidelines to help UI designers design their ideal product in accordance to the design system.
 

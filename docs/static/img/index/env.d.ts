@@ -20,19 +20,4 @@
 //  SOFTWARE.
 ///
 
-import React from 'react';
-
-interface HSStatusTagProps {
-    label?: string;
-    children?: React.ReactNode;
-}
-
-const HSStatusTag: React.FC<HSStatusTagProps> = ({ label, children }) => {
-    return (
-        <div className={`hs-status-tag`}>
-            <span>{ label || children }</span>
-        </div>
-    );
-};
-
-export default HSStatusTag;
+declare module '*.png';

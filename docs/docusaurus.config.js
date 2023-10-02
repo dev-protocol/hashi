@@ -1,5 +1,4 @@
 /*
- *
  *  Copyright (c) 2023 Dev Protocol
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,7 +18,6 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
- *
  */
 
 // @ts-check
@@ -40,6 +38,7 @@ const config = {
   organizationName: 'devprotocol',
   projectName: 'hashi',
   plugins: ['docusaurus-plugin-sass'],
+  staticDirectories: ['public', 'static'],
   presets: [
     [
       '@docusaurus/preset-classic',

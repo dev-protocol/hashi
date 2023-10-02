@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '~@devprotocol/hashi';
 
@@ -30,8 +30,10 @@
     grid-gap: 1rem;
     place-items: center;
     padding: 2.5rem 0;
-    // background-image: url('../media/ui-ux.png');
-    background-color: hashi.token-get('primary-400');
+    background-image: var(--hero-img-url, url('/img/hashi-blank--light.png'));
+    background-position: center;
+    background-size: cover;
+    background-color: hashi.token-get('background');
     border-bottom: 2px solid hashi.token-get('surface-300');
 
     .hs-hero__wrap {
@@ -48,19 +50,24 @@
         font-weight: 700;
         line-height: normal;
         color: #fff;
-        text-shadow: 3px 3px hashi.primitive-token-get('scarlet.400'),
-        6px 6px hashi.primitive-token-get('plox.400'),
-        9px 9px hashi.primitive-token-get('native-blue.400'),
-        12px 12px hashi.primitive-token-get('bright-cyan.400'),;
+        text-shadow: 0 0 2px #000,
+                      -3px 3px hashi.primitive-token-get('scarlet.400'),
+                      -6px 6px hashi.primitive-token-get('plox.400'),
+                      -9px 9px hashi.primitive-token-get('native-blue.400'),
+                      -12px 12px hashi.primitive-token-get('bright-cyan.400'),;
         user-select: none;
-        @include hashi.prefix(transition, text-shadow 0.4s ease);
+        @include hashi.prefix(transition, all 0.4s ease);
 
         &:hover,
         &:active {
-          text-shadow: (3px * 1.67) (3px * 1.67) hashi.primitive-token-get('scarlet.400'),
-            (6px * 1.67) (6px * 1.67) hashi.primitive-token-get('plox.400'),
-            (9px * 1.67) (9px * 1.67) hashi.primitive-token-get('native-blue.400'),
-            (12px * 1.67) (12px * 1.67) hashi.primitive-token-get('bright-cyan.400'),;
+          $constant-x: 1.5;
+          $constant-y: 2;
+          transform: translate3d(0, -12px, 0);
+          text-shadow: 0 0 2px #000,
+              (-3px * $constant-x) (3px * $constant-y) hashi.primitive-token-get('scarlet.400'),
+              (-6px * $constant-x) (6px * $constant-y) hashi.primitive-token-get('plox.400'),
+              (-9px * $constant-x) (9px * $constant-y) hashi.primitive-token-get('native-blue.400'),
+              (-12px * $constant-x) (12px * $constant-y) hashi.primitive-token-get('bright-cyan.400'),;
         }
       }
 
@@ -69,7 +76,7 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: flex-start;
-        color: hashi.token-get('primary-ink');
+        color: hashi.token-get('background-ink');
 
         @include hashi.dark-mode {
           color: hashi.token-get('surface-ink');
