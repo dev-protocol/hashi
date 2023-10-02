@@ -38,8 +38,12 @@ const sidebars = {
   design: {
     'Getting Started': [
       'design/introduction',
-      'design/foundation/terminologies',
+      'design/getting-started/terminologies',
+    ],
+    'UI kit': [
       'design/getting-started/ui-kit',
+      'design/getting-started/using-the-sidebar',
+      'design/getting-started/slots',
     ],
     'Foundation': [
       {
@@ -69,6 +73,7 @@ const sidebars = {
       'design/components/introduction',
       'design/components/hs-button',
       'design/components/hs-card',
+      'design/components/hs-dialog',
       'design/components/hs-form-field',
       'design/components/hs-select-field',
       'design/components/hs-wallet',
