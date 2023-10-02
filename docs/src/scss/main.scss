@@ -46,7 +46,12 @@
   @include doc-theme-overrides.use();
   @include hs-layout.use();
 
-  html[data-theme="dark"] {
+  [data-theme='light'] img[src$='#gh-dark-mode-only'],
+  [data-theme='dark'] img[src$='#gh-light-mode-only'] {
+    display: none;
+  }
+
+  [data-theme="dark"] .hs-hero {
     --hero-img-url: url('/img/hashi-blank--dark.png');
   }
 
