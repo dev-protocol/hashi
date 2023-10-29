@@ -20,7 +20,6 @@
 //  SOFTWARE.
 ///
 
-
 @use 'dev-docs.theme' as docs;
 
 @use '~@devprotocol/hashi' with ($theme: docs.$theme);
