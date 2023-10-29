@@ -1,5 +1,5 @@
 ///
-//  Copyright (c) 2022 Dev Protocol
+//  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -29,142 +29,19 @@
   $body: map.get($families, 'body');
   $mono: map.get($families, 'mono');
   $small: map.get($families, 'small');
-  
+
   @if $body == ('DM Sans', sans-serif) or $small == ('DM Sans', sans-serif) {
-    // latin-text
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/dmsans/v10/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    // latin
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/dmsans/v10/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    // latin-text
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/dmsans/v10/rP2Cp2ywxg089UriASitCBamC2QX.woff2) format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    // latin
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/dmsans/v10/rP2Cp2ywxg089UriASitCBimCw.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,400;0,9..40,700;0,9..40,1000;1,9..40,200;1,9..40,400;1,9..40,700;1,9..40,1000&display=swap');
   }
-  
+
   @if $supertitle == ('Syne', sans-serif)
     or $title == ('Syne', sans-serif)
     or $subtitle == ('Syne', sans-serif) {
-    // greek
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_04uQ6gTY_9CQ.woff2) format('woff2');
-      unicode-range: U+0370-03FF;
-    }
-    // latin-ext
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_04uQ6tTY_9CQ.woff2) format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    // latin
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_04uQ6jTY8.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    // greek
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvg6gTY_9CQ.woff2) format('woff2');
-      unicode-range: U+0370-03FF;
-    }
-    // latin-ext
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvg6tTY_9CQ.woff2) format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    // latin
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvg6jTY8.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    // greek
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_24vg6gTY_9CQ.woff2) format('woff2');
-      unicode-range: U+0370-03FF;
-    }
-    // latin-ext
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_24vg6tTY_9CQ.woff2) format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    // latin
-    @font-face {
-      font-family: 'Syne';
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/syne/v13/8vIS7w4qzmVxsWxjBZRjr0FKM_24vg6jTY8.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
+
   }
-  
+
   @if $mono == ('IBM Plex Mono', sans-serif) {
-    @font-face {
-      font-family: 'IBM Plex Mono';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/ibmplexmono/v7/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-      U+FEFF, U+FFFD;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
   }
 }
