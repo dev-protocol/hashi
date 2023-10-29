@@ -1,4 +1,4 @@
-//
+///
 //  Copyright (c) 2023 Dev Protocol
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,7 +18,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
+///
 
 @use '../hs-core';
 
@@ -61,7 +61,7 @@
     }
 
     .hs-button__icon {
-      display: flex;
+      display: hs-core.key-create('button-icon-visibility', flex);
       align-items: center;
       @include hs-core.color-ink('button-icon', $icon-ink);
       @include hs-core.typography-size('button-icon', hs-core.to-rem(20px));
@@ -79,6 +79,7 @@
     }
 
     .hs-button__label {
+      display: hs-core.key-create('button-label-visibility', inline-block);
       @include hs-core.shape-padding('button-label', 0);
       @include hs-core.color-ink('button-label', $label-ink);
       @include hs-core.typography-family('button-label', inherit);
