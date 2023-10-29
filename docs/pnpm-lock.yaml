@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@devprotocol/hashi':
-    specifier: 2.2.1
-    version: 2.2.1
+    specifier: 2.2.2
+    version: 2.2.2
   '@docusaurus/core':
     specifier: 2.4.3
     version: 2.4.3(@docusaurus/types@2.4.3)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -1584,8 +1588,8 @@ packages:
     dev: false
     optional: true
 
-  /@devprotocol/hashi@2.2.1:
-    resolution: {integrity: sha512-k4TqwnxWCTQCvFieZnlt4JyWHOWKLXEVaRk8zZDuqaE3sqGq0a793LRjzRXL+tAlmZTVyS8bl5JuYgkIEnB1Vw==}
+  /@devprotocol/hashi@2.2.2:
+    resolution: {integrity: sha512-xch6D6KX6Ht7KG1J1V4xS6PbacTM2kLAhbvTXThBduTQDKw+iKE9EojWaQxMU1HdF/Uiq/5lU5/kDmwFG8JxSw==}
     dependencies:
       '@matteusan/sentro': 0.1.25
     dev: false
