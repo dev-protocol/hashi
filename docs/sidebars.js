@@ -112,6 +112,7 @@ const sidebars = {
       'develop/components/hs-link',
       'develop/components/hs-profile',
       'develop/components/hs-select-field',
+      'develop/components/hs-tick-field',
       'develop/components/hs-wallet',
     ],
     'Integrations': [

@@ -31,6 +31,7 @@
 @use '~@devprotocol/hashi/hs-link';
 @use '~@devprotocol/hashi/hs-profile';
 @use '~@devprotocol/hashi/hs-select-field';
+@use '~@devprotocol/hashi/hs-tick-field';
 @use '~@devprotocol/hashi/hs-utils';
 
 @use 'modules/doc-theme-overrides';
@@ -101,6 +102,7 @@
   @include hs-link.render();
   @include hs-profile.render();
   @include hs-select-field.render();
+  @include hs-tick-field.render();
 
   .hs-badge {
     --ifm-link-hover-color: #{hashi.token-get('primary-ink')} !important;

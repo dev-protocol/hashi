@@ -6,6 +6,41 @@ displayed_sidebar: develop
 ---
 Tickboxes allow the user to toggle a specific option on or off. They are commonly used in forms and site settings.
 
+<div class="hs-component-preview col-2">
+  <div class="hs-component-preview__row">
+    <label class="hs-tick-field">
+      <input class="hs-tick-field__input" type="radio" id="value" name="input" value="value" />
+      <div class="d-flex flow-col items-start">
+        <span class="hs-tick-field__label">HSTickField Label</span>
+        <span class="hs-tick-field__helper">Helper Text</span>
+      </div>
+    </label>
+    <label class="hs-tick-field">
+      <input class="hs-tick-field__input" type="radio" id="value" name="input" value="value" />
+      <div class="d-flex flow-col items-start">
+        <span class="hs-tick-field__label">HSTickField Label</span>
+        <span class="hs-tick-field__helper">Helper Text</span>
+      </div>
+    </label>
+  </div>
+  <div class="hs-component-preview__row">
+    <label class="hs-tick-field">
+      <input class="hs-tick-field__input" type="checkbox" id="value" name="input" value="value" />
+      <div class="d-flex flow-col items-start">
+        <span class="hs-tick-field__label">HSTickField Label</span>
+        <span class="hs-tick-field__helper">Helper Text</span>
+      </div>
+    </label>
+    <label class="hs-tick-field">
+      <input class="hs-tick-field__input" type="checkbox" id="value" name="input" value="value" />
+      <div class="d-flex flow-col items-start">
+        <span class="hs-tick-field__label">HSTickField Label</span>
+        <span class="hs-tick-field__helper">Helper Text</span>
+      </div>
+    </label>
+  </div>
+</div>
+
 ## Usage
 ### HTML
 This component can be used both as a `radio` input.
