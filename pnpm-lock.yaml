@@ -68,8 +68,8 @@ devDependencies:
     specifier: 3.3.5
     version: 3.3.5(ts-node@10.9.1)
   ts-loader:
-    specifier: 9.5.0
-    version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
+    specifier: 9.5.1
+    version: 9.5.1(typescript@5.2.2)(webpack@5.89.0)
   ts-node:
     specifier: 10.9.1
     version: 10.9.1(@types/node@20.8.10)(typescript@5.2.2)
@@ -450,8 +450,8 @@ packages:
     engines: {node: '>=4.0.0'}
     dev: true
 
-  /@devprotocol/hashi@2.2.1:
-    resolution: {integrity: sha512-k4TqwnxWCTQCvFieZnlt4JyWHOWKLXEVaRk8zZDuqaE3sqGq0a793LRjzRXL+tAlmZTVyS8bl5JuYgkIEnB1Vw==}
+  /@devprotocol/hashi@2.2.2:
+    resolution: {integrity: sha512-xch6D6KX6Ht7KG1J1V4xS6PbacTM2kLAhbvTXThBduTQDKw+iKE9EojWaQxMU1HdF/Uiq/5lU5/kDmwFG8JxSw==}
     dependencies:
       '@matteusan/sentro': 0.1.25
     dev: true
@@ -5746,8 +5746,8 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  /ts-loader@9.5.0(typescript@5.2.2)(webpack@5.89.0):
-    resolution: {integrity: sha512-LLlB/pkB4q9mW2yLdFMnK3dEHbrBjeZTYguaaIfusyojBgAGf5kF+O6KcWqiGzWqHk0LBsoolrp4VftEURhybg==}
+  /ts-loader@9.5.1(typescript@5.2.2)(webpack@5.89.0):
+    resolution: {integrity: sha512-rNH3sK9kGZcH9dYzC7CewQm4NtxJTjSEVRJ2DyBZR7f8/wcta+iV44UPCXc5+nzDzivKtlzV6c9P4e+oFhDLYg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -6306,5 +6306,5 @@ packages:
     resolution: {directory: packages/themes, type: directory}
     name: '@devprotocol/hashi-themes'
     dependencies:
-      '@devprotocol/hashi': 2.2.1
+      '@devprotocol/hashi': 2.2.2
     dev: true
