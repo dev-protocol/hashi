@@ -31,7 +31,7 @@
 
 @use 'init-font-pack' as font-pack;
 
-$_valid-dark-modes: ('attribute', 'media', 'class');
+$_valid-dark-modes: ('attribute', 'media', 'class', 'auto');
 
 $primary: 'dp-black' !default;
 $primary-dark: 'dp-white' !default;
@@ -131,6 +131,18 @@ $_tones: (
   @if $_dark-mode == 'class' {
     @at-root #{selector.nest('html.is-dark', &)} {
       @content;
+    }
+  }
+
+  @if $_dark-mode == 'auto' {
+    @at-root #{selector.nest('html[hashi-theme="dark"], html[data-theme="dark"], html[theme="dark"], html.is-dark', &)} {
+      @content;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @at-root #{selector.nest('html:not([hashi-theme="light"]), html:not([data-theme="light"]), html:not([theme="light"]), html:not(.is-light)', &)} {
+        @content;
+      }
     }
   }
 }
