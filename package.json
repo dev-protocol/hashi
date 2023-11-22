@@ -21,7 +21,7 @@
     "@devprotocol/hashi-tailwind": "file:./packages/hashi-tailwind",
     "@devprotocol/hashi-themes": "file:./packages/themes",
     "@matteusan/sentro": "0.1.25",
-    "@types/node": "20.9.0",
+    "@types/node": "20.9.4",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "5.0.0",
