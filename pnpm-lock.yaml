@@ -65,8 +65,8 @@ devDependencies:
     specifier: 6.1.0
     version: 6.1.0
   tailwindcss:
-    specifier: 3.3.5
-    version: 3.3.5(ts-node@10.9.1)
+    specifier: 3.4.1
+    version: 3.4.1(ts-node@10.9.1)
   ts-loader:
     specifier: 9.5.1
     version: 9.5.1(typescript@5.3.2)(webpack@5.89.0)
@@ -5514,8 +5514,8 @@ packages:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
     dev: false
 
-  /tailwindcss@3.3.5(ts-node@10.9.1):
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.4.1(ts-node@10.9.1):
+    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
