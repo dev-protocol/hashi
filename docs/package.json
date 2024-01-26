@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@devprotocol/hashi": "2.2.2",
-    "@docusaurus/core": "2.4.3",
-    "@docusaurus/preset-classic": "2.4.3",
+    "@docusaurus/core": "3.1.1",
+    "@docusaurus/preset-classic": "3.1.1",
     "@mdx-js/react": "1.6.22",
     "@svgr/webpack": "8.1.0",
     "clsx": "2.0.0",
@@ -30,7 +30,7 @@
     "url-loader": "4.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.3",
+    "@docusaurus/module-type-aliases": "3.1.1",
     "@tsconfig/docusaurus": "2.0.2",
     "typescript": "5.3.2"
   },
