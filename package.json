@@ -16,7 +16,7 @@
     "test:ts": "jest --config=\"jest-ts.config.ts\""
   },
   "devDependencies": {
-    "@csstools/postcss-sass": "5.0.1",
+    "@csstools/postcss-sass": "5.1.1",
     "@devprotocol/hashi": "file:./packages/hashi",
     "@devprotocol/hashi-tailwind": "file:./packages/hashi-tailwind",
     "@devprotocol/hashi-themes": "file:./packages/themes",
