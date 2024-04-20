@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@devprotocol/hashi':
-        specifier: 2.2.2
-        version: 2.2.2
+        specifier: 2.3.1
+        version: 2.3.1
       '@docusaurus/core':
         specifier: 2.4.3
         version: 2.4.3(@docusaurus/types@2.4.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.5)
@@ -785,8 +785,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@devprotocol/hashi@2.2.2':
-    resolution: {integrity: sha512-xch6D6KX6Ht7KG1J1V4xS6PbacTM2kLAhbvTXThBduTQDKw+iKE9EojWaQxMU1HdF/Uiq/5lU5/kDmwFG8JxSw==}
+  '@devprotocol/hashi@2.3.1':
+    resolution: {integrity: sha512-LKsU0N1l3tN6btp3zz8KKEtEsKMK+HVzFttuEAs1nUT0ZY3WfdchD9T5Z8dhArbucZ29vZ/HjkM/GICila8ikQ==}
 
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -5466,7 +5466,7 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@devprotocol/hashi@2.2.2':
+  '@devprotocol/hashi@2.3.1':
     dependencies:
       '@matteusan/sentro': 0.1.25
 
