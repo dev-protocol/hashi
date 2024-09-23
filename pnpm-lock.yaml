@@ -53,7 +53,7 @@ importers:
         version: 8.4.38
       postcss-cli:
         specifier: 11.0.0
-        version: 11.0.0(postcss@8.4.38)
+        version: 11.0.0(jiti@1.21.6)(postcss@8.4.38)
       prejss-cli:
         specifier: 0.3.3
         version: 0.3.3
@@ -67,8 +67,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1(ts-node@10.9.2(@types/node@20.14.1)(typescript@5.4.5))
+        specifier: 3.4.13
+        version: 3.4.13(ts-node@10.9.2(@types/node@20.14.1)(typescript@5.4.5))
       ts-loader:
         specifier: 9.5.1
         version: 9.5.1(typescript@5.4.5)(webpack@5.91.0(webpack-cli@5.1.4))
@@ -1380,10 +1380,6 @@ packages:
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
-  fast-glob@3.3.1:
-    resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
-    engines: {node: '>=8.6.0'}
-
   fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
@@ -1480,7 +1476,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -2028,8 +2024,8 @@ packages:
       node-notifier:
         optional: true
 
-  jiti@1.20.0:
-    resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
+  jiti@1.21.6:
+    resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
   js-base64@2.6.4:
@@ -3021,8 +3017,8 @@ packages:
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
-  tailwindcss@3.4.1:
-    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
+  tailwindcss@3.4.13:
+    resolution: {integrity: sha512-KqjHOJKogOUt5Bs752ykCeiwvi0fKVkr5oqsFNt/8px/tA8scFPIlkygsf6jXrfCqGHz7VflA6+yytWuM+XhFw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3409,10 +3405,6 @@ packages:
 
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
-
-  yaml@2.3.3:
-    resolution: {integrity: sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==}
-    engines: {node: '>= 14'}
 
   yaml@2.3.4:
     resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
@@ -4913,14 +4905,6 @@ snapshots:
 
   fast-deep-equal@3.1.3: {}
 
-  fast-glob@3.3.1:
-    dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
-      glob-parent: 5.1.2
-      merge2: 1.4.1
-      micromatch: 4.0.5
-
   fast-glob@3.3.2:
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -5806,7 +5790,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  jiti@1.20.0: {}
+  jiti@1.21.6: {}
 
   js-base64@2.6.4: {}
 
@@ -6271,7 +6255,7 @@ snapshots:
 
   posix-character-classes@0.1.1: {}
 
-  postcss-cli@11.0.0(postcss@8.4.38):
+  postcss-cli@11.0.0(jiti@1.21.6)(postcss@8.4.38):
     dependencies:
       chokidar: 3.5.3
       dependency-graph: 0.11.0
@@ -6280,7 +6264,7 @@ snapshots:
       globby: 14.0.0
       picocolors: 1.0.0
       postcss: 8.4.38
-      postcss-load-config: 5.0.2(postcss@8.4.38)
+      postcss-load-config: 5.0.2(jiti@1.21.6)(postcss@8.4.38)
       postcss-reporter: 7.0.5(postcss@8.4.38)
       pretty-hrtime: 1.0.3
       read-cache: 1.0.0
@@ -6316,16 +6300,17 @@ snapshots:
   postcss-load-config@4.0.1(postcss@8.4.38)(ts-node@10.9.2(@types/node@20.14.1)(typescript@5.4.5)):
     dependencies:
       lilconfig: 2.1.0
-      yaml: 2.3.3
+      yaml: 2.3.4
     optionalDependencies:
       postcss: 8.4.38
       ts-node: 10.9.2(@types/node@20.14.1)(typescript@5.4.5)
 
-  postcss-load-config@5.0.2(postcss@8.4.38):
+  postcss-load-config@5.0.2(jiti@1.21.6)(postcss@8.4.38):
     dependencies:
       lilconfig: 3.0.0
       yaml: 2.3.4
     optionalDependencies:
+      jiti: 1.21.6
       postcss: 8.4.38
 
   postcss-load-options@1.2.0:
@@ -6864,17 +6849,17 @@ snapshots:
 
   symbol-tree@3.2.4: {}
 
-  tailwindcss@3.4.1(ts-node@10.9.2(@types/node@20.14.1)(typescript@5.4.5)):
+  tailwindcss@3.4.13(ts-node@10.9.2(@types/node@20.14.1)(typescript@5.4.5)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
       chokidar: 3.5.3
       didyoumean: 1.2.2
       dlv: 1.1.3
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       glob-parent: 6.0.2
       is-glob: 4.0.3
-      jiti: 1.20.0
+      jiti: 1.21.6
       lilconfig: 2.1.0
       micromatch: 4.0.5
       normalize-path: 3.0.0
@@ -7300,8 +7285,6 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@4.0.0: {}
-
-  yaml@2.3.3: {}
 
   yaml@2.3.4: {}
 
