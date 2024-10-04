@@ -38,12 +38,10 @@ $_valid-intents: (
     @error "Invalid intent: #{$intent}. Please use a valid intent: #{$_valid-intents}.";
   }
 
-  @if $intent == 'bind' {
-    & {
+  & {
+    @if $intent == 'bind' {
       @include key.bind($key, $value);
-    }
-  } @else if $intent == 'create' {
-    & {
+    } @else if $intent == 'create' {
       #{$property}: key.create($key, $value);
     }
   }

@@ -83,7 +83,9 @@ $_helper-ink: hs-core.prioritize(map.get($theme, 'helper-ink'), $helper-ink);
         weight: $_weight,
         line-height: $_line-height
       ));
-      outline: none;
+      & {
+        outline: none;
+      }
       @include hs-core.prefix(appearance, none, ('moz', 'webkit'));
       @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
 

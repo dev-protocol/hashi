@@ -50,7 +50,9 @@
       -webkit-appearance: caret;
     }
 
-    @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+    & {
+      @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
+    }
 
     @content;
 
