@@ -33,14 +33,18 @@ $_valid-intents: (
 @mixin property($property, $values, $intent: 'create') {
   $key: list.nth($values, 1);
   $value: list.nth($values, 2);
-  
+
   @if not list.index($_valid-intents, $intent) {
     @error "Invalid intent: #{$intent}. Please use a valid intent: #{$_valid-intents}.";
   }
-  
+
   @if $intent == 'bind' {
-    @include key.bind($key, $value);
+    & {
+      @include key.bind($key, $value);
+    }
   } @else if $intent == 'create' {
-    #{$property}: key.create($key, $value);
+    & {
+      #{$property}: key.create($key, $value);
+    }
   }
 }

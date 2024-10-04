@@ -41,7 +41,9 @@
         radius: $radius,
         shadow: 'normal'
       ));
-      overflow: hidden;
+      & {
+        overflow: hidden;
+      }
 
       .hs-dialog__header {
         // width: 100%;

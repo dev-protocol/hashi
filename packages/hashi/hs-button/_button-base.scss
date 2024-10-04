@@ -36,24 +36,29 @@
     ));
     @include hs-core.shape-height('button', max-content);
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    & {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
 
-    user-select: none;
-    overflow: visible;
-    vertical-align: middle;
-    box-sizing: border-box;
-    cursor: pointer;
+      user-select: none;
+      overflow: visible;
+      vertical-align: middle;
+      box-sizing: border-box;
+      cursor: pointer;
 
-    -webkit-appearance: caret;
+      -webkit-appearance: caret;
+    }
+
     @include hs-core.prefix(transition, all var(--hs-transition-time) ease);
 
     @content;
 
-    ::-moz-focus-inner {
-      padding: 0;
-      border-style: none;
+    & {
+      ::-moz-focus-inner {
+        padding: 0;
+        border-style: none;
+      }
     }
 
     & > * + * {
@@ -66,15 +71,19 @@
       @include hs-core.color-ink('button-icon', $icon-ink);
       @include hs-core.typography-size('button-icon', hs-core.to-rem(20px));
       /* @fallback */
-      width: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
-      height: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+      & {
+        width: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+        height: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+      }
 
       > * {
         @include hs-core.color-ink('button-icon', $icon-ink);
         @include hs-core.typography-size('button-icon', hs-core.to-rem(20px));
         /* @fallback */
-        width: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
-        height: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+        & {
+          width: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+          height: hs-core.key-create('button-icon-size', hs-core.to-rem(20px));
+        }
       }
     }
 
@@ -86,8 +95,10 @@
       @include hs-core.typography-size('button-label', inherit);
       @include hs-core.typography-weight('button-label', inherit);
       @include hs-core.typography-line-height('button-label', inherit);
-      text-align: center;
-      letter-spacing: 0.02rem;
+      & {
+        text-align: center;
+        letter-spacing: 0.02rem;
+      }
     }
   }
 

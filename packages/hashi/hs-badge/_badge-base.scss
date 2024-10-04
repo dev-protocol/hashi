@@ -31,29 +31,33 @@
     justify-content: center;
     align-items: center;
     @content;
-    
+
     .hs-badge__label {
       font-family: hs-core.key-get('badge-family');
       font-size: hs-core.key-get('badge-size');
       font-weight: hs-core.key-get('badge-weight');
       line-height: hs-core.key-get('badge-line-height');
     }
-    
+
     .hs-badge__icon {
       display: flex;
       align-items: center;
       @include hs-core.color-ink('badge-icon', currentColor);
       @include hs-core.typography-size('badge-icon', hs-core.to-rem(22px));
       /* @fallback */
-      width: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
-      height: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
-  
+      & {
+        width: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+        height: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+      }
+
       > * {
         @include hs-core.color-ink('badge-icon', currentColor);
         @include hs-core.typography-size('badge-icon', hs-core.to-rem(22px));
         /* @fallback */
-        width: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
-        height: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+        & {
+          width: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+          height: hs-core.key-create('badge-icon-size', hs-core.to-rem(22px));
+        }
       }
     }
   }
