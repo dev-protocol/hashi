@@ -7,6 +7,6 @@
   "author": "Matteu",
   "license": "MIT",
   "dependencies": {
-    "@devprotocol/hashi": "2.2.2"
+    "@devprotocol/hashi": "2.3.4"
   }
 }
