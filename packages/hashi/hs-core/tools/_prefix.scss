@@ -20,7 +20,7 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@matteusan/sentro';
+@use '../../node_modules/@matteusan/sentro';
 
 @mixin prefix($property, $value, $targets: ()) {
   & {
