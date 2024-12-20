@@ -20,7 +20,7 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@devprotocol/hashi/hs-core';
+@use '@devprotocol/hashi/hs-core';
 
 @mixin render() {
   .hs-badge {

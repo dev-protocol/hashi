@@ -23,7 +23,7 @@
 $modular-mode: false !default;
 $_validation: if($modular-mode, false, true);
 
-@use '../node_modules/@matteusan/sentro' with (
+@use '@matteusan/sentro' with (
   $prefix: 'hs',
   $context: 'theme',
   $token-validation: $_validation,

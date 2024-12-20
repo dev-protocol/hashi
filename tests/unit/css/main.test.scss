@@ -20,7 +20,7 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@devprotocol/hashi';
-@use 'node_modules/sass-true/sass/true' with ($terminal-output: true);
+@use '@devprotocol/hashi';
+@use 'sass-true/sass/true' with ($terminal-output: true);
 
 @use 'core';

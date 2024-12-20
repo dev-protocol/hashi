@@ -20,6 +20,6 @@
 //  SOFTWARE.
 ///
 
-@use 'node_modules/@devprotocol/hashi';
+@use '@devprotocol/hashi';
 
 @include hashi.init();

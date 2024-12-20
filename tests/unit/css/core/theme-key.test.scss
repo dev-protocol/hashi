@@ -20,8 +20,8 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@devprotocol/hashi';
-@use 'node_modules/sass-true/sass/true';
+@use '@devprotocol/hashi';
+@use 'sass-true/sass/true';
 
 @include hashi.init {
   @include true.describe('Theme key [module]') {

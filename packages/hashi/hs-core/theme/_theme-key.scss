@@ -20,7 +20,7 @@
 //  SOFTWARE.
 ///
 
-@use '../../node_modules/@matteusan/sentro';
+@use '@matteusan/sentro';
 
 @function check($key) {
   @return sentro.key-check($key);

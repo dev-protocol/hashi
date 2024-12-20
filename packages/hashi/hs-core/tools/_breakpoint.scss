@@ -20,7 +20,7 @@
 //  SOFTWARE.
 ///
 
-@use '../../node_modules/@matteusan/sentro';
+@use '@matteusan/sentro';
 
 @mixin config($map: (), $breakpoints...) {
   @include sentro.breakpoint-config($map: $map, $breakpoints...);

@@ -20,18 +20,18 @@
 //  SOFTWARE.
 //
 
-@use 'node_modules/@devprotocol/hashi';
+@use '@devprotocol/hashi';
 @use './hs-badge';
-@use 'node_modules/@devprotocol/hashi/hs-button';
-@use 'node_modules/@devprotocol/hashi/hs-button-group';
-@use 'node_modules/@devprotocol/hashi/hs-card';
-@use 'node_modules/@devprotocol/hashi/hs-dialog';
-@use 'node_modules/@devprotocol/hashi/hs-form-field';
-@use 'node_modules/@devprotocol/hashi/hs-link';
-@use 'node_modules/@devprotocol/hashi/hs-profile';
-@use 'node_modules/@devprotocol/hashi/hs-tick-field';
-@use 'node_modules/@devprotocol/hashi/hs-select-field';
-@use 'node_modules/@devprotocol/hashi/hs-wallet';
+@use '@devprotocol/hashi/hs-button';
+@use '@devprotocol/hashi/hs-button-group';
+@use '@devprotocol/hashi/hs-card';
+@use '@devprotocol/hashi/hs-dialog';
+@use '@devprotocol/hashi/hs-form-field';
+@use '@devprotocol/hashi/hs-link';
+@use '@devprotocol/hashi/hs-profile';
+@use '@devprotocol/hashi/hs-tick-field';
+@use '@devprotocol/hashi/hs-select-field';
+@use '@devprotocol/hashi/hs-wallet';
 
 @include hashi.init() {
   @include hs-badge.render();
