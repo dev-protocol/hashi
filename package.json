@@ -27,7 +27,7 @@
     "gulp-purgecss": "5.0.0",
     "gulp-sass": "5.1.0",
     "postcss": "8.4.38",
-    "postcss-cli": "11.0.0",
+    "postcss-cli": "11.0.1",
     "prejss-cli": "0.3.3",
     "rollup": "4.18.0",
     "sass": "1.83.0",
