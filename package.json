@@ -7,42 +7,31 @@
   "author": "Dev Protocol",
   "license": "MIT",
   "scripts": {
-    "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
-    "build:ts": "webpack --config webpack.config.js",
-    "build:tw": "prejss-cli ./packages/hashi-tailwind/**/index.css --format commonjs",
+    "build": "pnpm build:sass",
     "prebuild": "rollup -c",
+    "build:sass": "gulp --gulpfile=\"./gulpfile-build.ts\"",
+    "publish:hashi": "pnpm build && cd packages/hashi && npm publish",
     "test:html": "gulp --gulpfile=\"./gulpfile-tests.ts\"",
-    "test:sass": "jest --config=\"jest-sass.config.ts\"",
-    "test:ts": "jest --config=\"jest-ts.config.ts\""
+    "test:sass": "jest --config=\"jest-sass.config.ts\""
+  },
+  "dependencies": {
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "ts-jest": "29.1.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5"
   },
   "devDependencies": {
-    "@csstools/postcss-sass": "5.1.1",
     "@devprotocol/hashi": "file:./packages/hashi",
-    "@devprotocol/hashi-tailwind": "file:./packages/hashi-tailwind",
-    "@devprotocol/hashi-themes": "file:./packages/themes",
     "@matteusan/sentro": "0.1.25",
     "@types/node": "20.14.1",
     "gulp": "4.0.2",
     "gulp-cli": "2.3.0",
     "gulp-purgecss": "5.0.0",
     "gulp-sass": "5.1.0",
-    "postcss": "8.4.38",
-    "postcss-cli": "11.0.0",
-    "prejss-cli": "0.3.3",
     "rollup": "4.18.0",
     "sass": "1.83.0",
-    "sass-true": "6.1.0",
-    "tailwindcss": "3.4.1",
-    "ts-loader": "9.5.1",
-    "ts-node": "10.9.2",
-    "typescript": "5.4.5",
-    "webpack": "5.91.0",
-    "webpack-cli": "5.1.4"
-  },
-  "dependencies": {
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "29.7.0",
-    "ts-jest": "29.1.2"
+    "sass-true": "6.1.0"
   },
   "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }

@@ -39,17 +39,7 @@ function sassTaskDev() {
 //     .pipe(dest('./packages/hashi', { sourcemaps: '.' }));
 // }
 
-function sassTaskTw() {
-  return src(['packages/hashi-tailwind/**/index.scss'], { sourcemaps: true })
-    .pipe(sass({
-      includePaths: ['node_modules']
-    }).on('error', sass.logError))
-    .pipe(dest('./packages/hashi-tailwind', { sourcemaps: '.' }));
-}
-
-
 exports.default = series(
   sassTaskDev,
   // sassTaskProd,
-  sassTaskTw,
 );

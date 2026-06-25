@@ -23,4 +23,5 @@ jobs:
           cache: 'pnpm'
           version: '6'
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm test:sass
